@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2549" systemVersion="12A269" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2">
+    <dependencies>
+        <deployment defaultVersion="1296" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1498"/>
+    </dependencies>
+    <scenes>
+        <!--Slide View Controller-->
+        <scene sceneID="5">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
+                <viewController id="2" customClass="WUSlideViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="-1626" y="-359"/>
+        </scene>
+        <!--Left Controller-->
+        <scene sceneID="0k4-Oc-FPU">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y4k-1Z-3SB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="Left" id="kpy-1J-ars" customClass="LeftController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="a8e-so-J1i">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="2293" y="-1548"/>
+        </scene>
+        <!--Left Menu View Controller-->
+        <scene sceneID="JcU-lD-KPu">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aq1-an-faf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="kLeftMenuViewController" id="5UB-mc-c9b" customClass="LeftMenuViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bdn-mo-WaY">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="FiG-66-cX1">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="5UB-mc-c9b" id="o6p-di-Bzu"/>
+                                    <outlet property="delegate" destination="5UB-mc-c9b" id="U69-vv-Uub"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="menuTableView" destination="FiG-66-cX1" id="iXe-Pu-dDz"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="-1179" y="-1055"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="weU-Fr-gFO">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pf2-tA-9lF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController storyboardIdentifier="kPersonalViewController" definesPresentationContext="YES" id="C67-tB-W8i" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qvF-E1-gU9">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="gt7-DQ-CTZ" kind="relationship" relationship="rootViewController" id="OGi-IE-9qy"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="-1195" y="-355"/>
+        </scene>
+        <!--Personal Wall View Controller-->
+        <scene sceneID="03E-SC-Jn2">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SaJ-c4-Ze0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="" id="gt7-DQ-CTZ" customClass="PersonalWallViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Dui-8V-Ybg">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="favorite.png" id="stE-Fl-kDI">
+                                <rect key="frame" x="6" y="355" width="153" height="96"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="schedule.png" id="ImZ-U6-4bs">
+                                <rect key="frame" x="162" y="355" width="153" height="96"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="reminderBG.png" id="ItH-6Z-5Or">
+                                <rect key="frame" x="6" y="222" width="310" height="125"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="reco.JPG" id="E1I-s8-z5Y">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="168"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="profileBG.png" id="ePA-Ag-g9l">
+                                <rect key="frame" x="15" y="129" width="80" height="80"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="yong.jpg" id="DeY-cA-PkM">
+                                <rect key="frame" x="20" y="133" width="70" height="70"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="42b-fz-ZiF"/>
+                    <connections>
+                        <outlet property="reminderView" destination="ItH-6Z-5Or" id="kpf-qp-Q1S"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="-828" y="-355"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="t8E-oY-g2Q">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WF5-mr-sOS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController storyboardIdentifier="kCampusViewController" definesPresentationContext="YES" id="oJn-MM-h23" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="j3n-01-Xmi">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="k38-So-KfZ" kind="relationship" relationship="rootViewController" id="e9u-G0-gPP"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="-1190" y="271"/>
+        </scene>
+        <!--Campus View Controller-->
+        <scene sceneID="f3G-zL-ff3">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xbv-dT-G7Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="k38-So-KfZ" customClass="CampusViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="m50-41-toR">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="campusBG.png" id="aPX-Jc-VNK">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="N0u-iv-rrI">
+                                <rect key="frame" x="2" y="1" width="106" height="37"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <state key="normal" title=" 济人">
+                                    <color key="titleColor" white="0.70006930443548387" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="k38-So-KfZ" eventType="touchUpInside" id="3Al-SH-HKM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="KvV-kP-cBX">
+                                <rect key="frame" x="106" y="1" width="106" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <state key="normal" title="活动">
+                                    <color key="titleColor" white="0.70000000000000007" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="k38-So-KfZ" eventType="touchUpInside" id="tsH-vX-gXG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="nqe-c9-fwy">
+                                <rect key="frame" x="208" y="1" width="106" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <state key="normal" title="资讯">
+                                    <color key="titleColor" white="0.70000000000000007" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="k38-So-KfZ" eventType="touchUpInside" id="nws-aW-ueN"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="indictor.png" id="fpr-QJ-lya">
+                                <rect key="frame" x="250" y="32" width="21" height="14"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="p80-JF-qth">
+                                <rect key="frame" x="0.0" y="51" width="320" height="365"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="JND-1E-W98"/>
+                    <connections>
+                        <outlet property="celebrityButton" destination="N0u-iv-rrI" id="9nA-Ed-b05"/>
+                        <outlet property="eventButton" destination="KvV-kP-cBX" id="hFe-vU-2h7"/>
+                        <outlet property="indicator" destination="fpr-QJ-lya" id="BFU-5B-tr9"/>
+                        <outlet property="newsButton" destination="nqe-c9-fwy" id="tHK-Ay-dcn"/>
+                        <outlet property="scrollView" destination="p80-JF-qth" id="jku-hS-ZPy"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="-800" y="271"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="mtr-3P-6Sh">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VTo-DA-6PG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController storyboardIdentifier="Middle" definesPresentationContext="YES" id="YuD-8P-uGO" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="iB5-PK-gXd">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="1Nc-Pj-t9x" kind="relationship" relationship="rootViewController" id="iJk-np-y3s"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="1753" y="-867"/>
+        </scene>
+        <!--Feed Controller - Feed-->
+        <scene sceneID="xCJ-Pz-Ya8">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zi3-tw-9bt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="" id="1Nc-Pj-t9x" customClass="FeedController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FvM-Qp-iM5">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Feed" id="D4b-RT-JFR"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="2284" y="-859"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="campusBG.png" width="320" height="420"/>
+        <image name="favorite.png" width="153" height="96"/>
+        <image name="indictor.png" width="21" height="14"/>
+        <image name="profileBG.png" width="82" height="82"/>
+        <image name="reco.JPG" width="320" height="168"/>
+        <image name="reminderBG.png" width="310" height="125"/>
+        <image name="schedule.png" width="153" height="96"/>
+        <image name="yong.jpg" width="70" height="70"/>
+    </resources>
+    <classes>
+        <class className="CampusViewController" superclassName="MiddleAbstractViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CampusViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="buttonPressed:" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="celebrityButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="eventButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="indicator" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="newsButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+            </relationships>
+        </class>
+        <class className="LeftMenuViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LeftMenuViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="menuTableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="MiddleAbstractViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MiddleAbstractViewController.h"/>
+        </class>
+        <class className="PersonalWallViewController" superclassName="MiddleAbstractViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PersonalWallViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="reminderView" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="WUSlideViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WUSlideViewController.h"/>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>
