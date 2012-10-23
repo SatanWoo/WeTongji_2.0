@@ -10,6 +10,7 @@
 
 @implementation LeftMenuCell
 @synthesize title;
+@synthesize identifer = _identifer;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {

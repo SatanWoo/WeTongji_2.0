@@ -276,6 +276,7 @@
         <class className="LeftMenuViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LeftMenuViewController.h"/>
             <relationships>
+                <relationship kind="outlet" name="delegate"/>
                 <relationship kind="outlet" name="menuTableView" candidateClass="UITableView"/>
             </relationships>
         </class>

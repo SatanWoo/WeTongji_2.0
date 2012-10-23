@@ -10,5 +10,6 @@
 
 @interface LeftMenuCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *title;
+@property (strong, nonatomic) NSString *identifer;
 
 @end

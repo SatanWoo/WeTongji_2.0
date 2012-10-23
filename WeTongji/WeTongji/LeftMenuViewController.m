@@ -9,6 +9,8 @@
 #import "LeftMenuViewController.h"
 #import "Macro.h"
 #import "LeftMenuCell.h"
+#import "PlistReader.h"
+#import "LeftMenuCellModel.h"
 
 #define kLabelHeight 30
 
@@ -47,7 +49,8 @@
 - (NSArray *)identifierArray
 {
     if (_identifierArray == nil) {
-        _identifierArray = [NSArray arrayWithObjects:kPersonalViewController,kCampusViewController,nil];
+        _identifierArray = [[[PlistReader alloc] init] getLeftMenuResult];
+        //NSLog(@"array is %@",_identifierArray);
     }
     return _identifierArray;
 }
@@ -74,11 +77,12 @@
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if (self.isLogin) {
-        return 4;
-    } else {
-        return 3;
-    }
+//    if (self.isLogin) {
+//        return [self.identifierArray count];
+//    } else {
+//        return ;
+//    }
+    return [self.identifierArray count];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -89,21 +93,21 @@
 #pragma mark - UITableViewDelegate
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    LeftMenuCell *cell = [tableView dequeueReusableCellWithIdentifier:kLeftMenuCell];
+    LeftMenuCell *cell = [tableView dequeueReusableCellWithIdentifier:kLeftMenuCell] ;
     if (cell == nil) {
         cell = [[LeftMenuCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kLeftMenuCell];
     }
+    LeftMenuCellModel *model = (LeftMenuCellModel *)[self.identifierArray objectAtIndex:indexPath.row];
+    cell.title.text = model.cellName;
+    cell.identifer = model.identifier;
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    LeftMenuCell *cell = (LeftMenuCell *)[tableView cellForRowAtIndexPath:indexPath];
-//    cell.title.textColor = [UIColor whiteColor];
-//    
+    LeftMenuCell *cell = (LeftMenuCell *)[tableView cellForRowAtIndexPath:indexPath];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
-    UIViewController *controller = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:[self.identifierArray objectAtIndex:indexPath.row]];
+    UIViewController *controller = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:cell.identifer];
     [self.delegate changeMiddleContent:controller];
 }
 
