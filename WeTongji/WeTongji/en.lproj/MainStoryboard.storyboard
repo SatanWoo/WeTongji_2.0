@@ -85,36 +85,30 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="favorite.png" id="stE-Fl-kDI">
-                                <rect key="frame" x="6" y="355" width="153" height="96"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="schedule.png" id="ImZ-U6-4bs">
-                                <rect key="frame" x="162" y="355" width="153" height="96"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="reminderBG.png" id="ItH-6Z-5Or">
-                                <rect key="frame" x="6" y="222" width="310" height="125"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="reco.JPG" id="E1I-s8-z5Y">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="168"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="profileBG.png" id="ePA-Ag-g9l">
-                                <rect key="frame" x="15" y="129" width="80" height="80"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="today.png" id="Mfj-ks-hIi">
+                                <rect key="frame" x="198" y="72" width="80" height="24"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="yong.jpg" id="DeY-cA-PkM">
-                                <rect key="frame" x="20" y="133" width="70" height="70"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="3vv-82-r3C">
+                                <rect key="frame" x="0.0" y="168" width="320" height="248"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="gt7-DQ-CTZ" id="3Qz-bp-dWb"/>
+                                    <outlet property="delegate" destination="gt7-DQ-CTZ" id="Lvn-8g-Xc9"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="42b-fz-ZiF"/>
                     <connections>
-                        <outlet property="reminderView" destination="ItH-6Z-5Or" id="kpf-qp-Q1S"/>
+                        <outlet property="reminderView" destination="E1I-s8-z5Y" id="vRP-ET-QIB"/>
+                        <outlet property="scheduleTableView" destination="3vv-82-r3C" id="RI0-Bq-BLB"/>
                     </connections>
                 </viewController>
             </objects>
@@ -253,13 +247,9 @@
     </scenes>
     <resources>
         <image name="campusBG.png" width="320" height="420"/>
-        <image name="favorite.png" width="153" height="96"/>
         <image name="indictor.png" width="21" height="14"/>
-        <image name="profileBG.png" width="82" height="82"/>
         <image name="reco.JPG" width="320" height="168"/>
-        <image name="reminderBG.png" width="310" height="125"/>
-        <image name="schedule.png" width="153" height="96"/>
-        <image name="yong.jpg" width="70" height="70"/>
+        <image name="today.png" width="80" height="24"/>
     </resources>
     <classes>
         <class className="CampusViewController" superclassName="MiddleAbstractViewController">

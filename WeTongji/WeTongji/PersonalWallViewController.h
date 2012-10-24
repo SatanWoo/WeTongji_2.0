@@ -11,5 +11,5 @@
 
 @interface PersonalWallViewController : MiddleAbstractViewController
 @property (nonatomic ,weak) IBOutlet UIImageView *reminderView;
-
+@property (nonatomic ,weak) IBOutlet UITableView *scheduleTableView;
 @end

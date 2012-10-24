@@ -55,6 +55,12 @@
     return _identifierArray;
 }
 
+- (void)setIsLogin:(BOOL)isLogin
+{
+    _isLogin = isLogin;
+    [self.menuTableView reloadData];
+}
+
 #pragma mark - Lifecycle
 - (void)viewDidLoad
 {
