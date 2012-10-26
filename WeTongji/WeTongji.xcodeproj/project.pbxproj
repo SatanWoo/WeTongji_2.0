@@ -195,11 +195,10 @@
 		B00D6926162CFCAC00592B1D /* WeTongji */ = {
 			isa = PBXGroup;
 			children = (
+				B00D693D162CFCDF00592B1D /* Category */,
 				E5482E431636E6E80054C771 /* Model */,
 				E5482E421636E5A90054C771 /* Utility */,
 				B00D6947162D03CE00592B1D /* ViewController */,
-				B00D693D162CFCDF00592B1D /* Category */,
-				E52352D81631954A00DBFF7C /* Subclass */,
 				B00B6391162FCDB300AD7712 /* Resource */,
 				B00D692F162CFCAC00592B1D /* AppDelegate.h */,
 				B00D6930162CFCAC00592B1D /* AppDelegate.m */,
@@ -386,6 +385,7 @@
 		E5482E431636E6E80054C771 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E52352D81631954A00DBFF7C /* Subclass */,
 				E5482E441636E6FE0054C771 /* LeftMenuCellModel.h */,
 				E5482E451636E6FE0054C771 /* LeftMenuCellModel.m */,
 			);

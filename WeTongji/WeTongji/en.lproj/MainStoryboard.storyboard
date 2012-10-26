@@ -277,6 +277,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PersonalWallViewController.h"/>
             <relationships>
                 <relationship kind="outlet" name="reminderView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="scheduleTableView" candidateClass="UITableView"/>
             </relationships>
         </class>
         <class className="WUSlideViewController" superclassName="UIViewController">
