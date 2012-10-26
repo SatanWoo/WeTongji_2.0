@@ -11,9 +11,10 @@
 @interface CampusViewController : MiddleAbstractViewController
 @property (nonatomic, weak) IBOutlet UIScrollView *scrollView;
 @property (nonatomic ,weak) IBOutlet UIImageView *indicator;
-@property (nonatomic ,weak) IBOutlet UIButton *celebrityButton;
-@property (nonatomic ,weak) IBOutlet UIButton *eventButton;
-@property (nonatomic ,weak) IBOutlet UIButton *newsButton;
+@property (nonatomic ,weak) IBOutlet UIButton *schoolInfoButton;
+@property (nonatomic ,weak) IBOutlet UIButton *groupInfoButton;
+@property (nonatomic ,weak) IBOutlet UIButton *actionButton;
+@property (nonatomic ,weak) IBOutlet UIButton *recommendButton;
 
 - (IBAction)buttonPressed:(UIButton *)sender;
 

@@ -16,6 +16,7 @@
 
 // TableViewCell
 #define kLeftMenuCell @"kLeftMenuCell"
+#define KRecommendCell @"KRecommendCell"
 
 // Slide
 #define kMenuFullWidth 320.0f

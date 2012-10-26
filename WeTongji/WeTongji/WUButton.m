@@ -20,16 +20,6 @@
     return self;
 }
 
-- (void)setSelected:(BOOL)selected
-{
-    NSLog(@"This method get called");
-    if (selected) {
-        self.titleLabel.textColor = [UIColor blueColor];
-    } else {
-        self.titleLabel.textColor = [UIColor grayColor];
-    }
-}
-
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

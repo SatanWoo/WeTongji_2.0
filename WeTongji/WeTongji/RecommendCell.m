@@ -9,6 +9,10 @@
 #import "RecommendCell.h"
 
 @implementation RecommendCell
+@synthesize infoTitle = _infoTitle;
+@synthesize source = _source;
+@synthesize icon = _icon;
+@synthesize count = _count;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {

@@ -10,4 +10,9 @@
 
 @interface RecommendCell : UITableViewCell
 
+@property (nonatomic ,weak) IBOutlet UILabel *infoTitle;
+@property (nonatomic ,weak) IBOutlet UILabel *source;
+@property (nonatomic ,weak) IBOutlet UIImageView *icon;
+@property (nonatomic ,weak) IBOutlet UILabel *count;
+
 @end
