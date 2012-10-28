@@ -147,7 +147,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="qzw-X1-xCS" customClass="WUButton">
-                                <rect key="frame" x="0.0" y="0.0" width="84" height="51"/>
+                                <rect key="frame" x="0.0" y="0.0" width="80" height="41"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <state key="normal" title="校园咨询" backgroundImage="block_unsl.png">
@@ -162,7 +162,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="NyE-ts-7MZ" customClass="WUButton">
-                                <rect key="frame" x="79" y="0.0" width="84" height="51"/>
+                                <rect key="frame" x="80" y="0.0" width="80" height="41"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <state key="normal" title="社团通告" backgroundImage="block_unsl.png">
@@ -177,7 +177,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="I0W-dw-4yL" customClass="WUButton">
-                                <rect key="frame" x="158" y="0.0" width="84" height="51"/>
+                                <rect key="frame" x="160" y="0.0" width="80" height="41"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <state key="normal" title="校园动态" backgroundImage="block_unsl.png">
@@ -192,7 +192,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="gDn-Zt-he8" customClass="WUButton">
-                                <rect key="frame" x="237" y="0.0" width="84" height="51"/>
+                                <rect key="frame" x="240" y="0.0" width="80" height="41"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <state key="normal" title="周边推荐" backgroundImage="block_unsl.png">
@@ -253,7 +253,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="block_unsl.png" width="88" height="47"/>
+        <image name="block_unsl.png" width="80" height="41"/>
         <image name="campusBG.png" width="320" height="420"/>
         <image name="reco.JPG" width="320" height="168"/>
         <image name="today.png" width="80" height="24"/>

@@ -7,6 +7,7 @@
 //
 
 #import "CampusViewController.h"
+#import <QuartzCore/QuartzCore.h>
 #import "Macro.h"
 #import "RecommendCell.h"
 
@@ -25,6 +26,7 @@
 - (void)pageChange:(UIButton *)clickButton;
 - (void)configureTabBar;
 - (void)configureTableView;
+- (void)renderShadow:(UIView *)view;
 @end
 
 @implementation CampusViewController
@@ -43,6 +45,16 @@
 @synthesize recommendTableView = _recommendTableView;
 
 #pragma mark - Setter and Getter
+
+- (void)renderShadow:(UIView *)view
+{
+    if (view) {
+        view.layer.shadowOpacity = 0.8f;
+        view.layer.cornerRadius = 0.1f;
+        view.layer.shadowRadius = 0.4f;
+        view.layer.shadowPath = [UIBezierPath bezierPathWithRect:view.bounds].CGPath;
+    }
+}
 
 - (UITableView *)recommendTableView
 {
@@ -98,6 +110,11 @@
     [self.recommendButton setBackgroundImage:[UIImage imageNamed:@"block_sl.png"] forState:UIControlStateSelected];
     [self.recommendButton setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
     [self.recommendButton setTitleColor:[UIColor blueColor] forState:UIControlStateSelected];
+    
+    [self renderShadow:self.schoolInfoButton];
+    [self renderShadow:self.groupInfoButton];
+    [self renderShadow:self.actionButton];
+    [self renderShadow:self.recommendButton];
 }
 
 - (void)configureTableView

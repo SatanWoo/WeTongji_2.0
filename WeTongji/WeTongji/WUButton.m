@@ -20,13 +20,18 @@
     return self;
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
+- (void)setSelected:(BOOL)selected
 {
-    // Drawing code
+    if (selected) {
+        CGRect oldFrame = self.frame;
+        CGRect newFrame = CGRectMake(oldFrame.origin.x, oldFrame.origin.y, oldFrame.size.width, 44);
+        self.frame = newFrame;
+    } else {
+        CGRect oldFrame = self.frame;
+        CGRect newFrame = CGRectMake(oldFrame.origin.x, oldFrame.origin.y, oldFrame.size.width, 41);
+        self.frame = newFrame;
+    }
+    [super setSelected:selected];
 }
-*/
 
 @end

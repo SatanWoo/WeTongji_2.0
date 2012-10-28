@@ -17,6 +17,10 @@
 // TableViewCell
 #define kLeftMenuCell @"kLeftMenuCell"
 #define KRecommendCell @"KRecommendCell"
+#define kReminderCell @"kReminderCell"
+#define kFavoriteCell @"kFavoriteCell"
+#define kPersonalInfoCell @"kPersonalInfoCell"
+#define kScheduleCell @"kScheduleCell"
 
 // Slide
 #define kMenuFullWidth 320.0f

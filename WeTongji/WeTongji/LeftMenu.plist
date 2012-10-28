@@ -14,7 +14,7 @@
 		</dict>
 		<dict>
 			<key>kTableViewCellName</key>
-			<string>校园</string>
+			<string>校园资讯</string>
 			<key>kViewControllerIdentifier</key>
 			<string>kCampusViewController</string>
 			<key>kNeedLogin</key>
