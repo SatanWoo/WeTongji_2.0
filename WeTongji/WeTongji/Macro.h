@@ -26,6 +26,7 @@
 #define kSchoolInfoCell @"kSchoolInfoCell"
 #define kScheduleReminderCell @"kScheduleReminderCell"
 #define kGroupInfoCell @"kGroupInfoCell"
+#define kTextViewTableCell @"kTextViewTableCell"
 
 // Segue
 #define kMyFavortieViewControllerSegue @"kMyFavortieViewController"

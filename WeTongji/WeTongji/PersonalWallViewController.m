@@ -167,7 +167,6 @@
         } completion:^(BOOL finished) {
             self.wuTapView.userInteractionEnabled = YES;
             self.scheduleTableView.userInteractionEnabled = NO;
-            
         }];
     } else if (isFinished == false) {
         [UIView animateWithDuration:0.05f animations:^{
