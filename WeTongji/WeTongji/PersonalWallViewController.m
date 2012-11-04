@@ -12,12 +12,22 @@
 #import "PersonalInfoCell.h"
 #import "ScheduleCell.h"
 #import "FavoriteCell.h"
+#import "WUTapImageView.h"
+#import "WUScrollBackgroundView.h"
 
-@interface PersonalWallViewController () <UITableViewDataSource, UITableViewDelegate>
+#define kContentOffSet 168
+#define kRowHeight 44
+#define kStateY -150
+
+@interface PersonalWallViewController () <UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate>
+@property (nonatomic, strong) WUTapImageView *wuTapView;
 - (void)configureTableView;
+- (void)didTap:(UITapGestureRecognizer *)recognizer;
 @end
 
 @implementation PersonalWallViewController
+@synthesize wuTapView = _wuTapView;
+
 #pragma mark - Private Method
 - (void)configureTableView
 {
@@ -25,7 +35,42 @@
     [self.scheduleTableView registerNib:[UINib nibWithNibName:@"FavoriteCell" bundle:nil] forCellReuseIdentifier:kFavoriteCell];
     [self.scheduleTableView registerNib:[UINib nibWithNibName:@"PersonalInfoCell" bundle:nil] forCellReuseIdentifier:kPersonalInfoCell];
     [self.scheduleTableView registerNib:[UINib nibWithNibName:@"ScheduleCell" bundle:nil] forCellReuseIdentifier:kScheduleCell];
+    
+    self.scheduleTableView.contentInset = UIEdgeInsetsMake(kContentOffSet, 0.0f, 0.0f, 0.0f);
+    self.scheduleTableView.backgroundColor =[UIColor clearColor];
+    
+    [self.view insertSubview:self.wuTapView belowSubview:self.scheduleTableView];
 }
+
+#pragma mark - Tap
+- (void)didTap:(UITapGestureRecognizer *)recognizer
+{
+    [UIView animateWithDuration:0.55f animations:^{
+        self.scheduleTableView.frame = self.view.frame;
+    } completion:^(BOOL finished) {
+        self.scheduleTableView.userInteractionEnabled = YES;
+    }];
+    
+    [UIView animateWithDuration:0.8f animations:^{
+        self.wuTapView.frame = CGRectMake(0, kStateY, self.wuTapView.frame.size.width, self.wuTapView.frame.size.height);
+    } completion:^(BOOL finished) {
+        self.wuTapView.userInteractionEnabled = NO;
+    }];
+}
+
+#pragma mark - Setter & Getter
+- (WUTapImageView *)wuTapView
+{
+    if (_wuTapView == nil) {
+        _wuTapView = [[WUTapImageView alloc] initWithImage:[UIImage imageNamed:@"scaleview.png"]];
+        [_wuTapView setFrame:CGRectMake(0, kStateY, 320 ,480)];
+        [_wuTapView setGestureSelector:@selector(didTap:) target:self];
+        _wuTapView.userInteractionEnabled = NO;
+    }
+    return _wuTapView;
+}
+
+#pragma mark - Pangesture
 
 #pragma mark - Lifecycle
 - (void)viewDidLoad
@@ -46,7 +91,7 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-#pragma mark - UITableViewDataSource 
+#pragma mark - UITableViewDataSource
 - (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 4;
@@ -61,7 +106,7 @@
 {
     if (indexPath.section == 0 || indexPath.section == 1) {
         return 86;
-    } 
+    }
     return 44;
 }
 
@@ -99,7 +144,38 @@
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
+    if (indexPath.section == 1) {
+        [self performSegueWithIdentifier:kMyFavortieViewControllerSegue sender:self];
+    }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+#pragma mark - UIScrollViewDelegate
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    static int velocity = 15;
+    
+    static BOOL isFinished = false;
+    
+    float rate = (scrollView.contentOffset.y + kContentOffSet) / -kRowHeight;
+    
+    if (rate > 2) {
+        isFinished = true;
+        [UIView animateWithDuration:0.25f animations:^{
+            self.scheduleTableView.frame = CGRectMake(0, self.view.frame.size.height, self.scheduleTableView.frame.size.width, self.scheduleTableView.frame.size.height);
+            self.wuTapView.frame = CGRectMake(0,0, self.wuTapView.frame.size.width, self.wuTapView.frame.size.height);
+        } completion:^(BOOL finished) {
+            self.wuTapView.userInteractionEnabled = YES;
+            self.scheduleTableView.userInteractionEnabled = NO;
+            
+        }];
+    } else if (isFinished == false) {
+        [UIView animateWithDuration:0.05f animations:^{
+            self.wuTapView.frame = CGRectMake(0, kStateY + velocity * rate, self.wuTapView.frame.size.width, self.wuTapView.frame.size.height);
+        } completion:^(BOOL finished) {
+            
+        }];
+    }
 }
 
 @end

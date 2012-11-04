@@ -76,7 +76,7 @@
             </objects>
             <point key="canvasLocation" x="-1195" y="-355"/>
         </scene>
-        <!--Personal Wall View Controller-->
+        <!--Personal Wall View Controller - 个人墙-->
         <scene sceneID="03E-SC-Jn2">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SaJ-c4-Ze0" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -85,16 +85,12 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="reco.JPG" id="E1I-s8-z5Y">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="168"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="today.png" id="Mfj-ks-hIi">
                                 <rect key="frame" x="198" y="72" width="80" height="24"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="3vv-82-r3C">
-                                <rect key="frame" x="0.0" y="168" width="320" height="248"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -105,10 +101,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="42b-fz-ZiF"/>
+                    <navigationItem key="navigationItem" title="个人墙" id="42b-fz-ZiF"/>
                     <connections>
-                        <outlet property="reminderView" destination="E1I-s8-z5Y" id="vRP-ET-QIB"/>
                         <outlet property="scheduleTableView" destination="3vv-82-r3C" id="RI0-Bq-BLB"/>
+                        <segue destination="tSa-hA-s91" kind="push" identifier="kMyFavortieViewController" id="7aw-Dh-Mmo"/>
                     </connections>
                 </viewController>
             </objects>
@@ -216,6 +212,7 @@
                         <outlet property="recommendButton" destination="gDn-Zt-he8" id="zOJ-HJ-nFf"/>
                         <outlet property="schoolInfoButton" destination="qzw-X1-xCS" id="y1b-HC-rQD"/>
                         <outlet property="scrollView" destination="p80-JF-qth" id="jku-hS-ZPy"/>
+                        <segue destination="D5h-rN-X3u" kind="push" identifier="kSchoolNewsViewController" id="nGL-0f-2v0"/>
                     </connections>
                 </viewController>
             </objects>
@@ -251,11 +248,444 @@
             </objects>
             <point key="canvasLocation" x="2284" y="-859"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="qE8-bs-bzB">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hK3-DO-2Zj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController storyboardIdentifier="kEventInfoViewController" definesPresentationContext="YES" id="Vq5-V8-cRx" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="uR3-sc-fkj">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="TRQ-q9-Af8" kind="relationship" relationship="rootViewController" id="74j-6e-g0R"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="-1190" y="947"/>
+        </scene>
+        <!--Event Info View Controller-->
+        <scene sceneID="xMl-QL-XPZ">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kgg-5f-0Nh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="TRQ-q9-Af8" customClass="EventInfoViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="z92-Rp-Ph6">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="MJk-4K-Qoz">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="TRQ-q9-Af8" id="arS-Qg-G0L"/>
+                                    <outlet property="delegate" destination="TRQ-q9-Af8" id="HzH-Ef-3VT"/>
+                                </connections>
+                            </tableView>
+                            <view contentMode="scaleToFill" id="8Rh-Fo-ogS" customClass="WUPopOverView">
+                                <rect key="frame" x="70" y="0.0" width="183" height="138"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="pop_window.png" id="z9g-Hi-kYO">
+                                        <rect key="frame" x="0.0" y="0.0" width="183" height="138"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="mKZ-Dg-Qac">
+                                        <rect key="frame" x="7" y="13" width="168" height="37"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="最新活动">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="itemTriggered:" destination="8Rh-Fo-ogS" eventType="touchUpInside" id="36G-pw-c20"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="hXY-mR-Vvt">
+                                        <rect key="frame" x="7" y="54" width="168" height="37"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="最火活动">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="itemTriggered:" destination="8Rh-Fo-ogS" eventType="touchUpInside" id="w6P-cb-uhN"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="kVM-EM-yrD">
+                                        <rect key="frame" x="7" y="95" width="168" height="37"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="最近活动">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="itemTriggered:" destination="8Rh-Fo-ogS" eventType="touchUpInside" id="fOr-6d-9Ns"/>
+                                        </connections>
+                                    </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="partition_line.png" id="gCT-fZ-acn">
+                                        <rect key="frame" x="6" y="51" width="170" height="2"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="partition_line.png" id="E8D-0G-rGP">
+                                        <rect key="frame" x="6" y="92" width="170" height="2"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="delegate" destination="TRQ-q9-Af8" id="nYp-l9-U2D"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Fc4-JF-NGN">
+                        <nil key="title"/>
+                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="qi3-id-nXi">
+                            <rect key="frame" x="117" y="6" width="86" height="33"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                            <state key="normal" title="最新活动">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="highlighted">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="filterEvent:" destination="TRQ-q9-Af8" eventType="touchUpInside" id="kwQ-T9-4nb"/>
+                            </connections>
+                        </button>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="eventTableView" destination="MJk-4K-Qoz" id="Cbr-Av-qlu"/>
+                        <outlet property="filterButton" destination="qi3-id-nXi" id="U04-kE-kYr"/>
+                        <outlet property="filterView" destination="8Rh-Fo-ogS" id="sgJ-uW-Xcf"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="-800" y="947"/>
+        </scene>
+        <!--My Favortie View Controller-->
+        <scene sceneID="FWt-Oa-Kkq">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FOX-Hq-xjC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="tSa-hA-s91" customClass="MyFavortieViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1UW-4f-mGv">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="8LJ-q2-rY6">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="tSa-hA-s91" id="SOR-Cz-0E7"/>
+                                    <outlet property="delegate" destination="tSa-hA-s91" id="ebQ-hw-Jci"/>
+                                </connections>
+                            </tableView>
+                            <view contentMode="scaleToFill" id="yO2-uB-AH4" customClass="WUPopOverView">
+                                <rect key="frame" x="69" y="0.0" width="183" height="138"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="pop_window.png" id="iYG-Ib-RIz">
+                                        <rect key="frame" x="0.0" y="0.0" width="183" height="138"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="wfv-wZ-vsN">
+                                        <rect key="frame" x="7" y="13" width="168" height="37"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="推荐活动">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="itemTriggered:" destination="yO2-uB-AH4" eventType="touchUpInside" id="1pH-rf-3yL"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="DFC-gM-0oj">
+                                        <rect key="frame" x="7" y="54" width="168" height="37"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="校园资讯">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="itemTriggered:" destination="yO2-uB-AH4" eventType="touchUpInside" id="5TU-di-nfQ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="PqA-1N-MI8">
+                                        <rect key="frame" x="7" y="95" width="168" height="37"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="每周人物">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="itemTriggered:" destination="yO2-uB-AH4" eventType="touchUpInside" id="ZSb-PY-DnX"/>
+                                        </connections>
+                                    </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="partition_line.png" id="iDM-dn-nsX">
+                                        <rect key="frame" x="6" y="51" width="170" height="2"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="partition_line.png" id="g3h-Pg-gW8">
+                                        <rect key="frame" x="6" y="92" width="170" height="2"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="delegate" destination="tSa-hA-s91" id="i6s-JL-njc"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="OQ1-sz-nfB">
+                        <nil key="title"/>
+                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="dye-an-oEl">
+                            <rect key="frame" x="96" y="6" width="128" height="33"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                            <state key="normal" title="推荐活动">
+                                <color key="titleColor" red="1" green="0.98863636359999996" blue="0.98863636359999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="highlighted">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="filterItem:" destination="tSa-hA-s91" eventType="touchUpInside" id="anq-G6-15M"/>
+                            </connections>
+                        </button>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="celebrityButton" destination="PqA-1N-MI8" id="tMe-3I-gSb"/>
+                        <outlet property="contentTableView" destination="8LJ-q2-rY6" id="NUp-Eh-Zu9"/>
+                        <outlet property="filterView" destination="yO2-uB-AH4" id="2j4-TQ-10s"/>
+                        <outlet property="recommendButton" destination="wfv-wZ-vsN" id="spF-lj-8RH"/>
+                        <outlet property="schoolInfoButton" destination="DFC-gM-0oj" id="VJw-Mu-1nF"/>
+                        <outlet property="titleButton" destination="dye-an-oEl" id="mOs-0n-TBd"/>
+                        <segue destination="D5h-rN-X3u" kind="push" identifier="kMyFavoriteNewsViewController" id="6k4-ha-E9F"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="-381" y="-669"/>
+        </scene>
+        <!--School News View Controller-->
+        <scene sceneID="ZgL-Nw-S0u">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eCc-eg-5bi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="D5h-rN-X3u" customClass="SchoolNewsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DIe-wx-Dre">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" id="DUX-SX-ypJ">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="154"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="同济大学物理科学与工程学院成立" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="474-LA-qRb">
+                                        <rect key="frame" x="6" y="50" width="240" height="21"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="来源：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="kg2-WT-mwv">
+                                        <rect key="frame" x="6" y="79" width="42" height="21"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="同济大学学生会" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="l6u-Cr-VZI">
+                                        <rect key="frame" x="56" y="79" width="98" height="21"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="22" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="lFb-d6-WEQ">
+                                        <rect key="frame" x="193" y="79" width="28" height="21"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="3 分钟前" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="Amt-yx-sqS">
+                                        <rect key="frame" x="267" y="51" width="53" height="21"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" red="0.99980893339999999" green="0.59158601450000003" blue="0.1061320951" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="highlightedColor" red="0.99980893339999999" green="0.59158601450000003" blue="0.1061320951" alpha="1" colorSpace="calibratedRGB"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="eye_icon.png" id="2O8-sQ-EEW">
+                                        <rect key="frame" x="169" y="85" width="16" height="10"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" id="XfG-mf-Gjm">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="42"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="AFF-he-P7D">
+                                                <rect key="frame" x="10" y="12" width="20" height="17"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <state key="normal" image="back_btn.png">
+                                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <state key="highlighted">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="goBack:" destination="D5h-rN-X3u" eventType="touchUpInside" id="nZd-2l-fcZ"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" id="2AC-O4-wJl">
+                                        <rect key="frame" x="116" y="108" width="89" height="36"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="fqF-kZ-Ld0">
+                                                <rect key="frame" x="11" y="13" width="14" height="11"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <state key="normal" image="like.png">
+                                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <state key="highlighted">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="22" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="vCK-gi-BAW">
+                                                <rect key="frame" x="32" y="7" width="23" height="21"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="喜欢" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="IaC-3u-wED">
+                                                <rect key="frame" x="53" y="6" width="25" height="21"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.8162069515" green="0.8162069515" blue="0.8162069515" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" id="mJz-DW-xfL">
+                                        <rect key="frame" x="6" y="108" width="85" height="36"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="sUa-GY-GQf">
+                                                <rect key="frame" x="9" y="12" width="12" height="12"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <state key="normal" image="favourite_us.png">
+                                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <state key="highlighted">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="22" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="Aci-ha-eMe">
+                                                <rect key="frame" x="28" y="7" width="28" height="21"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="收藏" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="aDQ-QK-4wO">
+                                                <rect key="frame" x="49" y="6" width="25" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.8162069515" green="0.8162069515" blue="0.8162069515" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.90492691530000002" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="vTb-LX-R8h">
+                                <rect key="frame" x="0.0" y="155" width="320" height="305"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.90492691530000002" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">如果只看防守，加内特依然是联盟顶级大个子。在上赛季，他甚至向我们证明自己依然可以扮演中锋角色，而且效率惊人。他的移动依然不错，尤其是在内线范围，他是联盟中最善于防守挡拆的大个子；对篮板的保护也非常出色，防守篮板率在联盟排在第12位；他还是凯尔特人的防守核心——有他没他，凯尔特人完全是两支球队，当加内特下场后，凯尔特人每100回合要多丢25.1分！从联盟防守质量最高的球队直接变成了鱼腩。
+
+　　然而，加内特毕竟是36岁的老将了。虽然和萨林杰等人相比，他依然是凯尔特人最好的防守型内线，也是凯尔特人的轴心，但如今他对内线的控制能力已经不那么足了，尤其是在面对热火这种冲击力很强的球队时，加内特更显得很乏力。这一情况直接映射在比分走势上。很明显，加内特已经不能用自己的力量帮助凯尔特人填坑了，他只能延缓挖坑的速度，但无法改变比赛的走势。</string>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.90492691530000002" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="o44-O2-Tf1"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="backButton" destination="AFF-he-P7D" id="dDw-uW-vx3"/>
+                        <outlet property="contentTextView" destination="vTb-LX-R8h" id="NoY-el-Nkx"/>
+                        <outlet property="favoriteButton" destination="sUa-GY-GQf" id="nVK-XA-wnF"/>
+                        <outlet property="favoriteNumber" destination="Aci-ha-eMe" id="lsb-Qi-nhR"/>
+                        <outlet property="likeButton" destination="fqF-kZ-Ld0" id="2aR-v2-6rm"/>
+                        <outlet property="likeNumber" destination="vCK-gi-BAW" id="l0E-XO-2rl"/>
+                        <outlet property="moveFavorView" destination="XfG-mf-Gjm" id="U6D-hW-Tvz"/>
+                        <outlet property="moveLikeView" destination="2AC-O4-wJl" id="zk9-CG-6kg"/>
+                        <outlet property="releaseTimeLabel" destination="Amt-yx-sqS" id="fZP-8H-DBV"/>
+                        <outlet property="seeNumber" destination="lFb-d6-WEQ" id="tNY-qj-wBE"/>
+                        <outlet property="sourceLabel" destination="l6u-Cr-VZI" id="oBE-mb-lla"/>
+                        <outlet property="titleLabel" destination="474-LA-qRb" id="ccH-RZ-Rl9"/>
+                        <outlet property="upperHiddenView" destination="DUX-SX-ypJ" id="dyH-Md-UvJ"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="-244" y="271"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="back_btn.png" width="20" height="17"/>
         <image name="block_unsl.png" width="80" height="41"/>
         <image name="campusBG.png" width="320" height="420"/>
-        <image name="reco.JPG" width="320" height="168"/>
+        <image name="eye_icon.png" width="16" height="10"/>
+        <image name="favourite_us.png" width="12" height="12"/>
+        <image name="like.png" width="14" height="11"/>
+        <image name="partition_line.png" width="170" height="2"/>
+        <image name="pop_window.png" width="183" height="138"/>
         <image name="today.png" width="80" height="24"/>
     </resources>
     <classes>
@@ -271,6 +701,15 @@
                 <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
             </relationships>
         </class>
+        <class className="EventInfoViewController" superclassName="MiddleAbstractViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/EventInfoViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="filterEvent:" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="eventTableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="filterButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="filterView" candidateClass="WUPopOverView"/>
+            </relationships>
+        </class>
         <class className="LeftMenuViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LeftMenuViewController.h"/>
             <relationships>
@@ -284,12 +723,37 @@
         <class className="PersonalWallViewController" superclassName="MiddleAbstractViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PersonalWallViewController.h"/>
             <relationships>
-                <relationship kind="outlet" name="reminderView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="scheduleTableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="SchoolNewsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SchoolNewsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="goBack:"/>
+                <relationship kind="outlet" name="backButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="contentTextView" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="favoriteButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="favoriteNumber" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="likeButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="likeNumber" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="moveFavorView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="moveLikeView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="releaseTimeLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="seeNumber" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="sourceLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="upperHiddenView" candidateClass="UIView"/>
             </relationships>
         </class>
         <class className="WUButton" superclassName="UIButton">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/WUButton.h"/>
+        </class>
+        <class className="WUPopOverView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WUPopOverView.h"/>
+            <relationships>
+                <relationship kind="action" name="itemTriggered:" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="delegate"/>
+            </relationships>
         </class>
         <class className="WUSlideViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/WUSlideViewController.h"/>
@@ -300,4 +764,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="6k4-ha-E9F"/>
+    </inferredMetricsTieBreakers>
 </document>

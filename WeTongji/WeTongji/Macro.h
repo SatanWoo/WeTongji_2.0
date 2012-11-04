@@ -13,6 +13,7 @@
 #define kPersonalViewController @"kPersonalViewController"
 #define kLeftMenuViewController @"kLeftMenuViewController"
 #define kCampusViewController @"kCampusViewController"
+#define kEventInfoViewController @"kEventInfoViewController"
 
 // TableViewCell
 #define kLeftMenuCell @"kLeftMenuCell"
@@ -21,6 +22,15 @@
 #define kFavoriteCell @"kFavoriteCell"
 #define kPersonalInfoCell @"kPersonalInfoCell"
 #define kScheduleCell @"kScheduleCell"
+#define kEventInfoCell @"kEventInfoCell"
+#define kSchoolInfoCell @"kSchoolInfoCell"
+#define kScheduleReminderCell @"kScheduleReminderCell"
+#define kGroupInfoCell @"kGroupInfoCell"
+
+// Segue
+#define kMyFavortieViewControllerSegue @"kMyFavortieViewController"
+#define kkSchoolNewsViewControllerSegue @"kSchoolNewsViewController"
+#define kMyFavoriteNewsViewControllerSegue @"kMyFavoriteNewsViewController"
 
 // Slide
 #define kMenuFullWidth 320.0f

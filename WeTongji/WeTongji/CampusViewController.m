@@ -10,9 +10,12 @@
 #import <QuartzCore/QuartzCore.h>
 #import "Macro.h"
 #import "RecommendCell.h"
+#import "SchoolNewsCell.h"
+#import "GroupInfoCell.h"
 
 #define kWidth self.scrollView.frame.size.width
 #define kHeight self.scrollView.frame.size.height
+#define kContentOffSet 41
 
 @interface CampusViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong) UIView *schoolInfoView;
@@ -20,7 +23,9 @@
 @property (nonatomic, strong) UIView *actionView;
 @property (nonatomic, strong) UIView *recommendView;
 
-@property (nonatomic ,strong) UITableView *recommendTableView;
+@property (nonatomic, strong) UITableView *schoolInfoTableView;
+@property (nonatomic, strong) UITableView *groupOInfoTableView;
+@property (nonatomic, strong) UITableView *recommendTableView;
 
 - (void)configureScrollView;
 - (void)pageChange:(UIButton *)clickButton;
@@ -42,6 +47,8 @@
 @synthesize actionView = _actionView;
 @synthesize recommendView = _recommendView;
 
+@synthesize schoolInfoTableView = _schoolInfoTableView;
+@synthesize groupOInfoTableView = _groupOInfoTableView;
 @synthesize recommendTableView = _recommendTableView;
 
 #pragma mark - Setter and Getter
@@ -52,16 +59,39 @@
         view.layer.shadowOpacity = 0.8f;
         view.layer.cornerRadius = 0.1f;
         view.layer.shadowRadius = 0.4f;
-        view.layer.shadowPath = [UIBezierPath bezierPathWithRect:view.bounds].CGPath;
     }
+}
+
+- (UITableView *)schoolInfoTableView
+{
+    if (_schoolInfoTableView == nil) {
+        _schoolInfoTableView = [[UITableView alloc] initWithFrame:self.schoolInfoView.bounds style:UITableViewStylePlain];
+        [_schoolInfoTableView registerNib:[UINib nibWithNibName:@"SchoolNewsCell" bundle:nil] forCellReuseIdentifier:kSchoolInfoCell];
+        _schoolInfoTableView.contentInset = UIEdgeInsetsMake(kContentOffSet, 0.0f, 0.0f, 0.0f);
+        _schoolInfoTableView.delegate = self;
+        _schoolInfoTableView.dataSource = self;
+    }
+    return _schoolInfoTableView;
+}
+
+- (UITableView *)groupOInfoTableView
+{
+    if (_groupOInfoTableView == nil) {
+        _groupOInfoTableView = [[UITableView alloc] initWithFrame:self.groupInfoView.bounds style:UITableViewStylePlain];
+        [_groupOInfoTableView registerNib:[UINib nibWithNibName:@"GroupInfoCell" bundle:nil] forCellReuseIdentifier:kGroupInfoCell];
+        _groupOInfoTableView.contentInset = UIEdgeInsetsMake(kContentOffSet, 0.0f, 0.0f, 0.0f);
+        _groupOInfoTableView.delegate = self;
+        _groupOInfoTableView.dataSource = self;
+    }
+    return _groupOInfoTableView;
 }
 
 - (UITableView *)recommendTableView
 {
     if (_recommendTableView == nil) {
-       _recommendTableView = [[UITableView alloc] initWithFrame:self.recommendView.bounds style:UITableViewStylePlain];
+        _recommendTableView = [[UITableView alloc] initWithFrame:self.recommendView.bounds style:UITableViewStylePlain];
         [_recommendTableView registerNib:[UINib nibWithNibName:@"RecommendCell" bundle:nil] forCellReuseIdentifier:KRecommendCell];
-        _recommendTableView.contentInset = UIEdgeInsetsMake(self.recommendButton.frame.size.height, 0.0f, 0.0f, 0.0f);
+        _recommendTableView.contentInset = UIEdgeInsetsMake(kContentOffSet, 0.0f, 0.0f, 0.0f);
         _recommendTableView.delegate = self;
         _recommendTableView.dataSource = self;
     }
@@ -111,7 +141,7 @@
     [self.recommendButton setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
     [self.recommendButton setTitleColor:[UIColor blueColor] forState:UIControlStateSelected];
     
-    [self renderShadow:self.schoolInfoButton];
+    //[self renderShadow:self.schoolInfoButton];
     [self renderShadow:self.groupInfoButton];
     [self renderShadow:self.actionButton];
     [self renderShadow:self.recommendButton];
@@ -119,21 +149,22 @@
 
 - (void)configureTableView
 {
-      [self.recommendView addSubview:self.recommendTableView];
+    [self.schoolInfoView addSubview:self.schoolInfoTableView];
+    [self.groupInfoView addSubview:self.groupOInfoTableView];
+    [self.recommendView addSubview:self.recommendTableView];
 }
 
 - (void)pageChange:(UIButton *)clickButton
 {
     __block int index = 0;
     NSArray *buttonArray = [NSArray arrayWithObjects:self.schoolInfoButton,
-                                                     self.groupInfoButton, self.actionButton, self.recommendButton, nil];
+                            self.groupInfoButton, self.actionButton, self.recommendButton, nil];
     [buttonArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         UIButton *btn = obj;
         if(btn == clickButton) {
             index = idx;
             [btn setSelected:YES];
-        }
-        else {
+        } else {
             [btn setSelected:NO];
         }
     }];
@@ -159,9 +190,11 @@
     self.scrollView = nil;
     
     self.schoolInfoButton = nil;
+    self.schoolInfoTableView = nil;
     self.schoolInfoView = nil;
-
+    
     self.groupInfoButton = nil;
+    self.groupOInfoTableView = nil;
     self.groupInfoView = nil;
     
     self.actionButton = nil;
@@ -188,10 +221,13 @@
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if (tableView == self.schoolInfoTableView) {
+        [self performSegueWithIdentifier:kkSchoolNewsViewControllerSegue sender:self];
+    }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
-#pragma mark - UITableViewDataSource 
+#pragma mark - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 1;
@@ -212,7 +248,22 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (tableView == self.recommendTableView) {
+    if (tableView == self.schoolInfoTableView) {
+        SchoolNewsCell *cell = [tableView dequeueReusableCellWithIdentifier:kSchoolInfoCell];
+        if (cell == nil) {
+            cell = [[SchoolNewsCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kSchoolInfoCell];
+        }
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        return cell;
+    } else if (tableView == self.groupOInfoTableView) {
+        GroupInfoCell *cell = [tableView dequeueReusableCellWithIdentifier:kGroupInfoCell];
+        if (cell == nil) {
+            cell = [[GroupInfoCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kGroupInfoCell];
+        }
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        return cell;
+        
+    } else if (tableView == self.recommendTableView) {
         RecommendCell *cell = [tableView dequeueReusableCellWithIdentifier:KRecommendCell];
         if (cell == nil) {
             cell = [[RecommendCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:KRecommendCell];

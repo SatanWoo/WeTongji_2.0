@@ -14,6 +14,14 @@
 		</dict>
 		<dict>
 			<key>kTableViewCellName</key>
+			<string>推荐活动</string>
+			<key>kViewControllerIdentifier</key>
+			<string>kEventInfoViewController</string>
+			<key>kNeedLogin</key>
+			<false/>
+		</dict>
+		<dict>
+			<key>kTableViewCellName</key>
 			<string>校园资讯</string>
 			<key>kViewControllerIdentifier</key>
 			<string>kCampusViewController</string>

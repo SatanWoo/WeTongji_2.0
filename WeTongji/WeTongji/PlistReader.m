@@ -16,7 +16,6 @@
 
 @interface PlistReader()
 @property (nonatomic, strong) NSDictionary *leftMenuDic;
-
 - (void)parsePlist;
 @end
 
