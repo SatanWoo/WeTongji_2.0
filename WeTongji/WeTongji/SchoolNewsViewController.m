@@ -97,19 +97,6 @@
 
 - (void)viewDidUnload
 {
-//    [self setUpperHiddenView:nil];
-//    [self setContentTextView:nil];
-//    [self setTitleLabel:nil];
-//    [self setSourceLabel:nil];
-//    [self setSeeNumber:nil];
-//    [self setReleaseTimeLabel:nil];
-//    [self setLikeNumber:nil];
-//    [self setFavoriteNumber:nil];
-//    [self setLikeButton:nil];
-//    [self setFavoriteButton:nil];
-//    [self setMoveFavorView:nil];
-//    [self setMoveLikeView:nil];
-
     [self setBackButton:nil];
     [self setNewsTableView:nil];
     [super viewDidUnload];

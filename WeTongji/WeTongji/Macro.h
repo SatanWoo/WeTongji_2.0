@@ -27,11 +27,13 @@
 #define kScheduleReminderCell @"kScheduleReminderCell"
 #define kGroupInfoCell @"kGroupInfoCell"
 #define kTextViewTableCell @"kTextViewTableCell"
+#define kArrangementCell @"kArrangementCell"
 
 // Segue
 #define kMyFavortieViewControllerSegue @"kMyFavortieViewController"
 #define kkSchoolNewsViewControllerSegue @"kSchoolNewsViewController"
 #define kMyFavoriteNewsViewControllerSegue @"kMyFavoriteNewsViewController"
+#define kArrangementViewControllerSegue @"kArrangementViewController"
 
 // Slide
 #define kMenuFullWidth 320.0f

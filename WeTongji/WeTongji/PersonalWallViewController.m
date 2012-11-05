@@ -144,8 +144,9 @@
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
-    if (indexPath.section == 1) {
+    if (indexPath.section == 0) {
+        [self performSegueWithIdentifier:kArrangementViewControllerSegue sender:self];
+    } else if (indexPath.section == 1) {
         [self performSegueWithIdentifier:kMyFavortieViewControllerSegue sender:self];
     }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
