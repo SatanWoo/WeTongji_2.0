@@ -133,7 +133,12 @@
 		E5FEF4771638418F00FB7A2A /* today@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5FEF4751638418F00FB7A2A /* today@2x.png */; };
 		E5FEF47B1638425600FB7A2A /* navbar.png in Resources */ = {isa = PBXBuildFile; fileRef = E5FEF4791638425600FB7A2A /* navbar.png */; };
 		E5FEF47C1638425600FB7A2A /* navbar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5FEF47A1638425600FB7A2A /* navbar@2x.png */; };
-		FF3645CF1647D51B00D3A439 /* WeTongjiSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF3645CE1647D51B00D3A439 /* WeTongjiSDK.framework */; };
+		FFBF9A1C1648439300E3D610 /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBF9A1B1648439300E3D610 /* libz.1.2.5.dylib */; };
+		FFBF9A1F1648439B00E3D610 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBF9A1E1648439B00E3D610 /* CFNetwork.framework */; };
+		FFBF9A21164843A100E3D610 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBF9A20164843A100E3D610 /* MobileCoreServices.framework */; };
+		FFBF9A23164843A600E3D610 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBF9A22164843A600E3D610 /* SystemConfiguration.framework */; };
+		FFBF9A25164843AD00E3D610 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBF9A24164843AD00E3D610 /* MapKit.framework */; };
+		FFBF9A4B16484BAB00E3D610 /* WeTongjiSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBF9A4A16484BAB00E3D610 /* WeTongjiSDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -300,7 +305,12 @@
 		E5FEF4751638418F00FB7A2A /* today@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "today@2x.png"; sourceTree = "<group>"; };
 		E5FEF4791638425600FB7A2A /* navbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navbar.png; sourceTree = "<group>"; };
 		E5FEF47A1638425600FB7A2A /* navbar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navbar@2x.png"; sourceTree = "<group>"; };
-		FF3645CE1647D51B00D3A439 /* WeTongjiSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WeTongjiSDK.framework; path = ../WeTongjiSDK/frameworks/WeTongjiSDK.framework; sourceTree = "<group>"; };
+		FFBF9A1B1648439300E3D610 /* libz.1.2.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.5.dylib; path = usr/lib/libz.1.2.5.dylib; sourceTree = SDKROOT; };
+		FFBF9A1E1648439B00E3D610 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		FFBF9A20164843A100E3D610 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		FFBF9A22164843A600E3D610 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		FFBF9A24164843AD00E3D610 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		FFBF9A4A16484BAB00E3D610 /* WeTongjiSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WeTongjiSDK.framework; path = ../WeTongjiSDK/Frameworks/WeTongjiSDK.framework; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -308,7 +318,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF3645CF1647D51B00D3A439 /* WeTongjiSDK.framework in Frameworks */,
+				FFBF9A4B16484BAB00E3D610 /* WeTongjiSDK.framework in Frameworks */,
+				FFBF9A25164843AD00E3D610 /* MapKit.framework in Frameworks */,
+				FFBF9A23164843A600E3D610 /* SystemConfiguration.framework in Frameworks */,
+				FFBF9A21164843A100E3D610 /* MobileCoreServices.framework in Frameworks */,
+				FFBF9A1F1648439B00E3D610 /* CFNetwork.framework in Frameworks */,
+				FFBF9A1C1648439300E3D610 /* libz.1.2.5.dylib in Frameworks */,
 				B00D6942162CFDDE00592B1D /* QuartzCore.framework in Frameworks */,
 				B00D6921162CFCAC00592B1D /* UIKit.framework in Frameworks */,
 				B00D6923162CFCAC00592B1D /* Foundation.framework in Frameworks */,
@@ -335,7 +350,6 @@
 		B00D6911162CFCAC00592B1D = {
 			isa = PBXGroup;
 			children = (
-				FF3645CE1647D51B00D3A439 /* WeTongjiSDK.framework */,
 				E5482E4B1636EE040054C771 /* Default.png */,
 				E5482E491636EDEC0054C771 /* Default@2x.png */,
 				B00D6926162CFCAC00592B1D /* WeTongji */,
@@ -355,6 +369,12 @@
 		B00D691F162CFCAC00592B1D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FFBF9A4A16484BAB00E3D610 /* WeTongjiSDK.framework */,
+				FFBF9A24164843AD00E3D610 /* MapKit.framework */,
+				FFBF9A22164843A600E3D610 /* SystemConfiguration.framework */,
+				FFBF9A20164843A100E3D610 /* MobileCoreServices.framework */,
+				FFBF9A1E1648439B00E3D610 /* CFNetwork.framework */,
+				FFBF9A1B1648439300E3D610 /* libz.1.2.5.dylib */,
 				B00D6941162CFDDE00592B1D /* QuartzCore.framework */,
 				B00D6920162CFCAC00592B1D /* UIKit.framework */,
 				B00D6922162CFCAC00592B1D /* Foundation.framework */,
@@ -991,6 +1011,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WeTongji/WeTongji-Prefix.pch";
 				INFOPLIST_FILE = "WeTongji/WeTongji-Info.plist";
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1006,6 +1027,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WeTongji/WeTongji-Prefix.pch";
 				INFOPLIST_FILE = "WeTongji/WeTongji-Info.plist";
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

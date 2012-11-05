@@ -30,12 +30,12 @@ typedef void (^WTCompletionBlock)(WTClient *client);
 // NSDictionary or NSArray
 @property (nonatomic, retain) NSDictionary *responseData;
 
-+(void) test3;
-
 - (void)setCompletionBlock:(void (^)(WTClient* client))completionBlock;
 - (WTCompletionBlock)completionBlock;
 // return an autoreleased object, while gets released after one of following calls complete
 + (id)client;
++ (void) testtzx1;
+
 - (void)login:(NSString *)num password:(NSString *)password;
 
 @end

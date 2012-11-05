@@ -38,6 +38,9 @@ static NSString* const APIDomain = @"we.tongji.edu.cn";
 @synthesize sessionRequired = _sessionRequired;
 @synthesize currentUserIDRequired = _currentUserIDRequired;
 
++ (void) testtzx1
+{}
+
 - (void)setCompletionBlock:(void (^)(WTClient* client))completionBlock {
     [_completionBlock autorelease];
     _completionBlock = [completionBlock copy];

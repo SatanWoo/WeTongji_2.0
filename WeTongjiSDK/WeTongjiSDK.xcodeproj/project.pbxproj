@@ -57,6 +57,28 @@
 		FF3645F21647E73800D3A439 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FF3645F11647E73800D3A439 /* Default-568h@2x.png */; };
 		FF3645F51647E73800D3A439 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF3645F31647E73800D3A439 /* MainStoryboard.storyboard */; };
 		FF3645F81647E73800D3A439 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF3645F71647E73800D3A439 /* ViewController.m */; };
+		FF3646381647FF6B00D3A439 /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = E1B94B9B1635A94200D76123 /* NSString+URLEncoding.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FF3646391647FF6B00D3A439 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = E1B94B5D1635A75300D76123 /* ASIAuthenticationDialog.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FF36463A1647FF6B00D3A439 /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = E1B94B601635A75300D76123 /* ASIDataCompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FF36463B1647FF6B00D3A439 /* ASIDataDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = E1B94B621635A75300D76123 /* ASIDataDecompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FF36463C1647FF6B00D3A439 /* ASIDownloadCache.m in Sources */ = {isa = PBXBuildFile; fileRef = E1B94B641635A75300D76123 /* ASIDownloadCache.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FF36463D1647FF6B00D3A439 /* ASIFormDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E1B94B661635A75300D76123 /* ASIFormDataRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FF36463E1647FF6B00D3A439 /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E1B94B681635A75300D76123 /* ASIHTTPRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FF36463F1647FF6B00D3A439 /* ASIInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = E1B94B6C1635A75300D76123 /* ASIInputStream.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FF3646401647FF6B00D3A439 /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = E1B94B6E1635A75300D76123 /* ASINetworkQueue.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FF3646411647FF6B00D3A439 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = E1B94B711635A75300D76123 /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FF3646421647FF6B00D3A439 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = E1B94B751635A75300D76123 /* NSObject+SBJSON.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FF3646431647FF6B00D3A439 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = E1B94B771635A75300D76123 /* NSString+SBJSON.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FF3646441647FF6B00D3A439 /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = E1B94B791635A75300D76123 /* SBJSON.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FF3646451647FF6B00D3A439 /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = E1B94B7B1635A75300D76123 /* SBJsonBase.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FF3646461647FF6B00D3A439 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E1B94B7D1635A75300D76123 /* SBJsonParser.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FF3646471647FF6B00D3A439 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = E1B94B7F1635A75300D76123 /* SBJsonWriter.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FF3646491648013700D3A439 /* WTClient.m in Sources */ = {isa = PBXBuildFile; fileRef = E1B94B581635A62200D76123 /* WTClient.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FFBF99BB16482F1B00E3D610 /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBF99BA16482F1B00E3D610 /* libz.1.2.5.dylib */; };
+		FFBF99BE16482F2300E3D610 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBF99BD16482F2300E3D610 /* CFNetwork.framework */; };
+		FFBF99C016482F3A00E3D610 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBF99BF16482F3A00E3D610 /* MobileCoreServices.framework */; };
+		FFBF99C216482F6A00E3D610 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBF99C116482F6A00E3D610 /* SystemConfiguration.framework */; };
+		FFBF99C416482F7800E3D610 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBF99C316482F7800E3D610 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -118,6 +140,11 @@
 		FF3645F41647E73800D3A439 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		FF3645F61647E73800D3A439 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		FF3645F71647E73800D3A439 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		FFBF99BA16482F1B00E3D610 /* libz.1.2.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.5.dylib; path = usr/lib/libz.1.2.5.dylib; sourceTree = SDKROOT; };
+		FFBF99BD16482F2300E3D610 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		FFBF99BF16482F3A00E3D610 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		FFBF99C116482F6A00E3D610 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		FFBF99C316482F7800E3D610 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +159,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFBF99C416482F7800E3D610 /* MapKit.framework in Frameworks */,
+				FFBF99C216482F6A00E3D610 /* SystemConfiguration.framework in Frameworks */,
+				FFBF99C016482F3A00E3D610 /* MobileCoreServices.framework in Frameworks */,
+				FFBF99BE16482F2300E3D610 /* CFNetwork.framework in Frameworks */,
+				FFBF99BB16482F1B00E3D610 /* libz.1.2.5.dylib in Frameworks */,
 				FF3645DD1647E73700D3A439 /* UIKit.framework in Frameworks */,
 				FF3645DE1647E73700D3A439 /* Foundation.framework in Frameworks */,
 				FF3645E01647E73700D3A439 /* CoreGraphics.framework in Frameworks */,
@@ -171,6 +203,11 @@
 		E1B94B331635A22A00D76123 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FFBF99C316482F7800E3D610 /* MapKit.framework */,
+				FFBF99C116482F6A00E3D610 /* SystemConfiguration.framework */,
+				FFBF99BF16482F3A00E3D610 /* MobileCoreServices.framework */,
+				FFBF99BD16482F2300E3D610 /* CFNetwork.framework */,
+				FFBF99BA16482F1B00E3D610 /* libz.1.2.5.dylib */,
 				E1B94B341635A22A00D76123 /* Foundation.framework */,
 				FF3645DC1647E73700D3A439 /* UIKit.framework */,
 				FF3645DF1647E73700D3A439 /* CoreGraphics.framework */,
@@ -417,7 +454,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "FRAMEWORKS_DIR=\"../Frameworks\"\nmkdir -p $FRAMEWORKS_DIR\ncp -r \"${BUILT_PRODUCTS_DIR}/WeTongjiSDK.framework\" \"${FRAMEWORKS_DIR}/WeTongjiSDK.framework\"\n";
+			shellScript = "FRAMEWORKS_DIR=\"../WeTongjiSDK/Frameworks\"\nrm -r -f $FRAMEWORKS_DIR\nmkdir -p $FRAMEWORKS_DIR\ncp -r \"${BUILT_PRODUCTS_DIR}/WeTongjiSDK.framework\" \"${FRAMEWORKS_DIR}/WeTongjiSDK.framework\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -450,6 +487,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF3646491648013700D3A439 /* WTClient.m in Sources */,
+				FF3646381647FF6B00D3A439 /* NSString+URLEncoding.m in Sources */,
+				FF3646391647FF6B00D3A439 /* ASIAuthenticationDialog.m in Sources */,
+				FF36463A1647FF6B00D3A439 /* ASIDataCompressor.m in Sources */,
+				FF36463B1647FF6B00D3A439 /* ASIDataDecompressor.m in Sources */,
+				FF36463C1647FF6B00D3A439 /* ASIDownloadCache.m in Sources */,
+				FF36463D1647FF6B00D3A439 /* ASIFormDataRequest.m in Sources */,
+				FF36463E1647FF6B00D3A439 /* ASIHTTPRequest.m in Sources */,
+				FF36463F1647FF6B00D3A439 /* ASIInputStream.m in Sources */,
+				FF3646401647FF6B00D3A439 /* ASINetworkQueue.m in Sources */,
+				FF3646411647FF6B00D3A439 /* Reachability.m in Sources */,
+				FF3646421647FF6B00D3A439 /* NSObject+SBJSON.m in Sources */,
+				FF3646431647FF6B00D3A439 /* NSString+SBJSON.m in Sources */,
+				FF3646441647FF6B00D3A439 /* SBJSON.m in Sources */,
+				FF3646451647FF6B00D3A439 /* SBJsonBase.m in Sources */,
+				FF3646461647FF6B00D3A439 /* SBJsonParser.m in Sources */,
+				FF3646471647FF6B00D3A439 /* SBJsonWriter.m in Sources */,
 				FF3645E81647E73700D3A439 /* main.m in Sources */,
 				FF3645EC1647E73700D3A439 /* AppDelegate.m in Sources */,
 				FF3645F81647E73800D3A439 /* ViewController.m in Sources */,
@@ -482,6 +536,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_WARN_OBJCPP_ARC_ABI = NO;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEAD_CODE_STRIPPING = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
@@ -505,6 +560,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_WARN_OBJCPP_ARC_ABI = NO;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEAD_CODE_STRIPPING = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -579,6 +635,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Frameworks\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WeTongjiSDKtest/WeTongjiSDKtest-Prefix.pch";
 				INFOPLIST_FILE = "WeTongjiSDKtest/WeTongjiSDKtest-Info.plist";
@@ -592,6 +652,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Frameworks\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WeTongjiSDKtest/WeTongjiSDKtest-Prefix.pch";
 				INFOPLIST_FILE = "WeTongjiSDKtest/WeTongjiSDKtest-Info.plist";
@@ -629,6 +693,7 @@
 				FF3645FB1647E73800D3A439 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

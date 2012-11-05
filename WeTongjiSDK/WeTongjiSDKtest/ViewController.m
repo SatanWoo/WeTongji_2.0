@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "WeTongjiSDK.h"
 
 @interface ViewController ()
 
@@ -17,6 +18,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    WTClient *client = [WTClient client];
+    [client setCompletionBlock:^(WTClient *client){ NSLog(@"%@",client.responseData);}];
+    [client login:@"092814" password:@"123456"];
 	// Do any additional setup after loading the view, typically from a nib.
 }
 

@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E110DF2A16365B990087EA46"
-               BuildableName = "WeTongjiSDK.framework"
-               BlueprintName = "WeTongjiSDK"
+               BlueprintIdentifier = "FF3646291647FCCB00D3A439"
+               BuildableName = "libtest.a"
+               BlueprintName = "test"
                ReferencedContainer = "container:WeTongjiSDK.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -29,15 +29,6 @@
       buildConfiguration = "Debug">
       <Testables>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "FF3645D91647E73700D3A439"
-            BuildableName = "WeTongjiSDKtest.app"
-            BlueprintName = "WeTongjiSDKtest"
-            ReferencedContainer = "container:WeTongjiSDK.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </TestAction>
    <LaunchAction
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
@@ -48,15 +39,6 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "FF3645D91647E73700D3A439"
-            BuildableName = "WeTongjiSDKtest.app"
-            BlueprintName = "WeTongjiSDKtest"
-            ReferencedContainer = "container:WeTongjiSDK.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>

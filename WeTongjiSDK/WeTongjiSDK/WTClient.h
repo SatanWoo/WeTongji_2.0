@@ -34,6 +34,7 @@ typedef void (^WTCompletionBlock)(WTClient *client);
 - (WTCompletionBlock)completionBlock;
 // return an autoreleased object, while gets released after one of following calls complete
 + (id)client;
++ (void) testtzx1;
 
 - (void)login:(NSString *)num password:(NSString *)password;
 
