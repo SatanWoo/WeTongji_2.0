@@ -133,6 +133,7 @@
 		E5FEF4771638418F00FB7A2A /* today@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5FEF4751638418F00FB7A2A /* today@2x.png */; };
 		E5FEF47B1638425600FB7A2A /* navbar.png in Resources */ = {isa = PBXBuildFile; fileRef = E5FEF4791638425600FB7A2A /* navbar.png */; };
 		E5FEF47C1638425600FB7A2A /* navbar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5FEF47A1638425600FB7A2A /* navbar@2x.png */; };
+		FF3645CF1647D51B00D3A439 /* WeTongjiSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF3645CE1647D51B00D3A439 /* WeTongjiSDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -299,6 +300,7 @@
 		E5FEF4751638418F00FB7A2A /* today@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "today@2x.png"; sourceTree = "<group>"; };
 		E5FEF4791638425600FB7A2A /* navbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navbar.png; sourceTree = "<group>"; };
 		E5FEF47A1638425600FB7A2A /* navbar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navbar@2x.png"; sourceTree = "<group>"; };
+		FF3645CE1647D51B00D3A439 /* WeTongjiSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WeTongjiSDK.framework; path = ../WeTongjiSDK/frameworks/WeTongjiSDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -306,6 +308,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF3645CF1647D51B00D3A439 /* WeTongjiSDK.framework in Frameworks */,
 				B00D6942162CFDDE00592B1D /* QuartzCore.framework in Frameworks */,
 				B00D6921162CFCAC00592B1D /* UIKit.framework in Frameworks */,
 				B00D6923162CFCAC00592B1D /* Foundation.framework in Frameworks */,
@@ -332,6 +335,7 @@
 		B00D6911162CFCAC00592B1D = {
 			isa = PBXGroup;
 			children = (
+				FF3645CE1647D51B00D3A439 /* WeTongjiSDK.framework */,
 				E5482E4B1636EE040054C771 /* Default.png */,
 				E5482E491636EDEC0054C771 /* Default@2x.png */,
 				B00D6926162CFCAC00592B1D /* WeTongji */,
@@ -980,6 +984,10 @@
 		B00D693B162CFCAC00592B1D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../WeTongjiSDK/frameworks\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WeTongji/WeTongji-Prefix.pch";
 				INFOPLIST_FILE = "WeTongji/WeTongji-Info.plist";
@@ -991,6 +999,10 @@
 		B00D693C162CFCAC00592B1D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../WeTongjiSDK/frameworks\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WeTongji/WeTongji-Prefix.pch";
 				INFOPLIST_FILE = "WeTongji/WeTongji-Info.plist";
