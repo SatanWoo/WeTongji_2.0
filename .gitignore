@@ -4,3 +4,5 @@ WeTongji/WeTongji.xcodeproj/project.xcworkspace/xcuserdata/
 *.xcuserstate
 
 WeTongjiSDK/wetongji_ios_sdk
+
+.DS_Store
