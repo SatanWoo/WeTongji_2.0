@@ -81,6 +81,9 @@
 		FFD2A4301649578600FEAF2B /* NSDictionary+DefaultDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = FFD2A42F1649578600FEAF2B /* NSDictionary+DefaultDescription.m */; };
 		FFFF0F0B1649627E0049370C /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFFF0F091649627E0049370C /* MainStoryboard.storyboard */; };
 		FFFF0F0C1649627E0049370C /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFFF0F091649627E0049370C /* MainStoryboard.storyboard */; };
+		FFFF0F2716496B120049370C /* NSUserDefaults+Addition.h in Headers */ = {isa = PBXBuildFile; fileRef = FFFF0F2516496B110049370C /* NSUserDefaults+Addition.h */; };
+		FFFF0F2816496B120049370C /* NSUserDefaults+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = FFFF0F2616496B110049370C /* NSUserDefaults+Addition.m */; };
+		FFFF0F2916496B120049370C /* NSUserDefaults+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = FFFF0F2616496B110049370C /* NSUserDefaults+Addition.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -149,6 +152,8 @@
 		FFD2A42E1649578600FEAF2B /* NSDictionary+DefaultDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+DefaultDescription.h"; sourceTree = "<group>"; };
 		FFD2A42F1649578600FEAF2B /* NSDictionary+DefaultDescription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+DefaultDescription.m"; sourceTree = "<group>"; };
 		FFFF0F0A1649627E0049370C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		FFFF0F2516496B110049370C /* NSUserDefaults+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+Addition.h"; sourceTree = "<group>"; };
+		FFFF0F2616496B110049370C /* NSUserDefaults+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+Addition.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -293,6 +298,8 @@
 		E1B94B991635A91F00D76123 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				FFFF0F2516496B110049370C /* NSUserDefaults+Addition.h */,
+				FFFF0F2616496B110049370C /* NSUserDefaults+Addition.m */,
 				E1B94B9A1635A94200D76123 /* NSString+URLEncoding.h */,
 				E1B94B9B1635A94200D76123 /* NSString+URLEncoding.m */,
 			);
@@ -357,6 +364,7 @@
 				E110DF6516365E050087EA46 /* SBJsonBase.h in Headers */,
 				E110DF6616365E050087EA46 /* SBJsonParser.h in Headers */,
 				E110DF6716365E050087EA46 /* SBJsonWriter.h in Headers */,
+				FFFF0F2716496B120049370C /* NSUserDefaults+Addition.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,6 +478,7 @@
 				E110DF4616365D760087EA46 /* SBJsonParser.m in Sources */,
 				E110DF4716365D760087EA46 /* SBJsonWriter.m in Sources */,
 				E110DF4816365D760087EA46 /* WTClient.m in Sources */,
+				FFFF0F2816496B120049370C /* NSUserDefaults+Addition.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -498,6 +507,7 @@
 				FF3645EC1647E73700D3A439 /* AppDelegate.m in Sources */,
 				FF3645F81647E73800D3A439 /* ViewController.m in Sources */,
 				FFD2A4301649578600FEAF2B /* NSDictionary+DefaultDescription.m in Sources */,
+				FFFF0F2916496B120049370C /* NSUserDefaults+Addition.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

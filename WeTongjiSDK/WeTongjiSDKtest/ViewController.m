@@ -20,7 +20,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self login];
+    [self course];
 }
 
 #pragma - 
@@ -30,8 +30,20 @@
 {
     WTClient *client = [WTClient client];
     [client setCompletionBlock:^(WTClient *client){
-        [self.textView setText:[client.responseData description]];}];
+        [self.textView setText:[client.responseData description]];
+        NSDictionary * userInfo = [client.responseData objectForKey:@"User"];
+        [NSUserDefaults setCurrentUserID:[userInfo objectForKey:@"UID"] session:[client.responseData objectForKey:@"Session"]];
+    }];
     [client login:@"092814" password:@"123456"];
+}
+
+-(void) course
+{
+    WTClient *client = [WTClient client];
+    [client setCompletionBlock:^(WTClient *client){
+        [self.textView setText:[client.responseData description]];
+    }];
+    [client getCourses];
 }
 
 - (void)didReceiveMemoryWarning

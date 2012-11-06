@@ -14,11 +14,16 @@
 {
     NSArray *keys = [self allKeys];
     NSString * result = @"\n{\n";
+    id next;
     for ( NSString *tempString in keys )
     {
         result = [result stringByAppendingString:tempString];
         result = [result stringByAppendingString:@" = "];
-        result = [result stringByAppendingString:[[self objectForKey:tempString] description]];
+        next = [self objectForKey:tempString];
+        if ( [next isKindOfClass:[NSDictionary class]] )
+            result = [result stringByAppendingString:[next description]];
+        else
+            result = [result stringByAppendingString:[next description]];
         result = [result stringByAppendingString:@"\n"];
     }
     result = [result stringByAppendingString:@"}"];

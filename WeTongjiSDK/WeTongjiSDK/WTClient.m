@@ -199,12 +199,12 @@ report_completion:
         return;
     }
     
-//    if(self.isCurrentUserIDRequired && [NSUserDefaults getCurrentUserID])
-//        [self.params setObject:[NSUserDefaults getCurrentUserID] forKey:@"U"];
-//    
-//    if(self.isSessionRequired && [NSUserDefaults getCurrentUserSession]) {
-//        [self.params setObject:[NSUserDefaults getCurrentUserSession] forKey:@"S"];
-//    }
+    if(self.isCurrentUserIDRequired && [NSUserDefaults getCurrentUserID])
+        [self.params setObject:[NSUserDefaults getCurrentUserID] forKey:@"U"];
+    
+    if(self.isSessionRequired && [NSUserDefaults getCurrentUserSession]) {
+        [self.params setObject:[NSUserDefaults getCurrentUserSession] forKey:@"S"];
+    }
     
     [self buildURL];
     [self.request startAsynchronous];
