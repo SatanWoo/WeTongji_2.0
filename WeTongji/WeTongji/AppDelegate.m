@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import <WeTongjiSDK/WeTongjiSDK.h>
 
 @implementation AppDelegate
 
@@ -16,9 +15,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    WTClient * client = [WTClient client];
-    [client setCompletionBlock:^(WTClient *client){NSLog(@"%@",client.responseData);}];
-    [client login:@"092814" password:@"123456"];
+
     return YES;
 }
 							

@@ -34,8 +34,24 @@ typedef void (^WTCompletionBlock)(WTClient *client);
 - (WTCompletionBlock)completionBlock;
 // return an autoreleased object, while gets released after one of following calls complete
 + (id)client;
-+ (void) testtzx;
+
+#pragma mark -
+#pragma mark user API
 
 - (void)login:(NSString *)num password:(NSString *)password;
+- (void)logoff;
+- (void)activeUserWithNo:(NSString *) studentNumber
+                password:(NSString *) password
+                    name:(NSString *) name;
+
+#pragma mark -
+#pragma mark course API
+
+- (void)getCourses;
+
+#pragma mark -
+#pragma mark calender API
+
+- (void)getCalender;
 
 @end

@@ -55,7 +55,6 @@
 		FF3645EE1647E73700D3A439 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = FF3645ED1647E73700D3A439 /* Default.png */; };
 		FF3645F01647E73800D3A439 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FF3645EF1647E73800D3A439 /* Default@2x.png */; };
 		FF3645F21647E73800D3A439 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FF3645F11647E73800D3A439 /* Default-568h@2x.png */; };
-		FF3645F51647E73800D3A439 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF3645F31647E73800D3A439 /* MainStoryboard.storyboard */; };
 		FF3645F81647E73800D3A439 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF3645F71647E73800D3A439 /* ViewController.m */; };
 		FF3646381647FF6B00D3A439 /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = E1B94B9B1635A94200D76123 /* NSString+URLEncoding.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		FF3646391647FF6B00D3A439 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = E1B94B5D1635A75300D76123 /* ASIAuthenticationDialog.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -79,6 +78,9 @@
 		FFBF99C016482F3A00E3D610 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBF99BF16482F3A00E3D610 /* MobileCoreServices.framework */; };
 		FFBF99C216482F6A00E3D610 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBF99C116482F6A00E3D610 /* SystemConfiguration.framework */; };
 		FFBF99C416482F7800E3D610 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBF99C316482F7800E3D610 /* MapKit.framework */; };
+		FFD2A4301649578600FEAF2B /* NSDictionary+DefaultDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = FFD2A42F1649578600FEAF2B /* NSDictionary+DefaultDescription.m */; };
+		FFFF0F0B1649627E0049370C /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFFF0F091649627E0049370C /* MainStoryboard.storyboard */; };
+		FFFF0F0C1649627E0049370C /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFFF0F091649627E0049370C /* MainStoryboard.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -137,7 +139,6 @@
 		FF3645ED1647E73700D3A439 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		FF3645EF1647E73800D3A439 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		FF3645F11647E73800D3A439 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		FF3645F41647E73800D3A439 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		FF3645F61647E73800D3A439 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		FF3645F71647E73800D3A439 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		FFBF99BA16482F1B00E3D610 /* libz.1.2.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.5.dylib; path = usr/lib/libz.1.2.5.dylib; sourceTree = SDKROOT; };
@@ -145,6 +146,9 @@
 		FFBF99BF16482F3A00E3D610 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		FFBF99C116482F6A00E3D610 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		FFBF99C316482F7800E3D610 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		FFD2A42E1649578600FEAF2B /* NSDictionary+DefaultDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+DefaultDescription.h"; sourceTree = "<group>"; };
+		FFD2A42F1649578600FEAF2B /* NSDictionary+DefaultDescription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+DefaultDescription.m"; sourceTree = "<group>"; };
+		FFFF0F0A1649627E0049370C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -298,9 +302,11 @@
 		FF3645E11647E73700D3A439 /* WeTongjiSDKtest */ = {
 			isa = PBXGroup;
 			children = (
+				FFFF0F091649627E0049370C /* MainStoryboard.storyboard */,
 				FF3645EA1647E73700D3A439 /* AppDelegate.h */,
+				FFD2A42E1649578600FEAF2B /* NSDictionary+DefaultDescription.h */,
+				FFD2A42F1649578600FEAF2B /* NSDictionary+DefaultDescription.m */,
 				FF3645EB1647E73700D3A439 /* AppDelegate.m */,
-				FF3645F31647E73800D3A439 /* MainStoryboard.storyboard */,
 				FF3645F61647E73800D3A439 /* ViewController.h */,
 				FF3645F71647E73800D3A439 /* ViewController.m */,
 				FF3645E21647E73700D3A439 /* Supporting Files */,
@@ -365,7 +371,6 @@
 				E110DF2816365B990087EA46 /* Frameworks */,
 				E110DF2916365B990087EA46 /* Resources */,
 				E110DF5316365DE40087EA46 /* Headers */,
-				FF3645D51647E5F800D3A439 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -425,6 +430,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFFF0F0B1649627E0049370C /* MainStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,27 +442,11 @@
 				FF3645EE1647E73700D3A439 /* Default.png in Resources */,
 				FF3645F01647E73800D3A439 /* Default@2x.png in Resources */,
 				FF3645F21647E73800D3A439 /* Default-568h@2x.png in Resources */,
-				FF3645F51647E73800D3A439 /* MainStoryboard.storyboard in Resources */,
+				FFFF0F0C1649627E0049370C /* MainStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		FF3645D51647E5F800D3A439 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "FRAMEWORKS_DIR=\"../WeTongjiSDK/Frameworks\"\nrm -r -f $FRAMEWORKS_DIR\nmkdir -p $FRAMEWORKS_DIR\ncp -r \"${TARGET_BUILD_DIR}/WeTongjiSDK.framework\" \"${FRAMEWORKS_DIR}/WeTongjiSDK.framework\"\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E110DF2716365B990087EA46 /* Sources */ = {
@@ -507,6 +497,7 @@
 				FF3645E81647E73700D3A439 /* main.m in Sources */,
 				FF3645EC1647E73700D3A439 /* AppDelegate.m in Sources */,
 				FF3645F81647E73800D3A439 /* ViewController.m in Sources */,
+				FFD2A4301649578600FEAF2B /* NSDictionary+DefaultDescription.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -521,10 +512,10 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		FF3645F31647E73800D3A439 /* MainStoryboard.storyboard */ = {
+		FFFF0F091649627E0049370C /* MainStoryboard.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				FF3645F41647E73800D3A439 /* en */,
+				FFFF0F0A1649627E0049370C /* en */,
 			);
 			name = MainStoryboard.storyboard;
 			sourceTree = "<group>";

@@ -38,8 +38,6 @@ static NSString* const APIDomain = @"we.tongji.edu.cn";
 @synthesize sessionRequired = _sessionRequired;
 @synthesize currentUserIDRequired = _currentUserIDRequired;
 
-+ (void) testtzx
-{}
 
 - (void)setCompletionBlock:(void (^)(WTClient* client))completionBlock {
     [_completionBlock autorelease];
@@ -76,7 +74,7 @@ static NSString* const APIDomain = @"we.tongji.edu.cn";
         self.request.delegate = self;
         
         [self.params setObject:@"iPhone" forKey:@"D"];
-        [self.params setObject:@"1.0" forKey:@"V"];
+        [self.params setObject:@"1.2" forKey:@"V"];
     }
     return self;
 }
@@ -220,6 +218,36 @@ report_completion:
     [self.params setObject:num forKey:@"NO"];
     [self.params setObject:password forKey:@"Password"];
     [self sendRequest];
+}
+
+- (void)logoff{
+    [self.params setObject:@"User.LogOff" forKey:@"M"];
+    [self sendRequest];
+}
+
+- (void)activeUserWithNo:(NSString *) studentNumber
+                password:(NSString *) password
+                    name:(NSString *) name
+{
+    [self.params setObject:@"User.Active" forKey:@"M"];
+    [self.params setObject:studentNumber forKey:@"NO"];
+    [self.params setObject:password forKey:@"Password"];
+    [self.params setObject:name forKey:@"Name"];
+    [self sendRequest];
+}
+
+
+
+- (void)getCourses{
+    [self.params setObject:@"TimeTable.Get" forKey:@"M"];
+    [self setCurrentUserIDRequired:YES];
+    [self setSessionRequired:YES];
+    [self sendRequest];
+}
+
+- (void) getCalender
+{
+#warning lots of things to do
 }
 
 @end
