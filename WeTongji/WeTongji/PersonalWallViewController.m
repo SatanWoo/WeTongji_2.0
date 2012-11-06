@@ -21,12 +21,14 @@
 
 @interface PersonalWallViewController () <UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate>
 @property (nonatomic, strong) WUTapImageView *wuTapView;
+@property (nonatomic, assign) BOOL isAnimationFinished;
 - (void)configureTableView;
 - (void)didTap:(UITapGestureRecognizer *)recognizer;
 @end
 
 @implementation PersonalWallViewController
 @synthesize wuTapView = _wuTapView;
+@synthesize isAnimationFinished = _isAnimationFinished;
 
 #pragma mark - Private Method
 - (void)configureTableView
@@ -45,6 +47,7 @@
 #pragma mark - Tap
 - (void)didTap:(UITapGestureRecognizer *)recognizer
 {
+    self.isAnimationFinished = false;
     [UIView animateWithDuration:0.55f animations:^{
         self.scheduleTableView.frame = self.view.frame;
     } completion:^(BOOL finished) {
@@ -156,12 +159,10 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     static int velocity = 15;
     
-    static BOOL isFinished = false;
-    
     float rate = (scrollView.contentOffset.y + kContentOffSet) / -kRowHeight;
     
     if (rate > 2) {
-        isFinished = true;
+        self.isAnimationFinished = true;
         [UIView animateWithDuration:0.25f animations:^{
             self.scheduleTableView.frame = CGRectMake(0, self.view.frame.size.height, self.scheduleTableView.frame.size.width, self.scheduleTableView.frame.size.height);
             self.wuTapView.frame = CGRectMake(0,0, self.wuTapView.frame.size.width, self.wuTapView.frame.size.height);
@@ -169,7 +170,7 @@
             self.wuTapView.userInteractionEnabled = YES;
             self.scheduleTableView.userInteractionEnabled = NO;
         }];
-    } else if (isFinished == false) {
+    } else if (self.isAnimationFinished == false) {
         [UIView animateWithDuration:0.05f animations:^{
             self.wuTapView.frame = CGRectMake(0, kStateY + velocity * rate, self.wuTapView.frame.size.width, self.wuTapView.frame.size.height);
         } completion:^(BOOL finished) {
