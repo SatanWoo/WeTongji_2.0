@@ -454,7 +454,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "FRAMEWORKS_DIR=\"../WeTongjiSDK/Frameworks\"\nrm -r -f $FRAMEWORKS_DIR\nmkdir -p $FRAMEWORKS_DIR\ncp -r \"${BUILT_PRODUCTS_DIR}/WeTongjiSDK.framework\" \"${FRAMEWORKS_DIR}/WeTongjiSDK.framework\"\n";
+			shellScript = "FRAMEWORKS_DIR=\"../WeTongjiSDK/Frameworks\"\nrm -r -f $FRAMEWORKS_DIR\nmkdir -p $FRAMEWORKS_DIR\ncp -r \"${TARGET_BUILD_DIR}/WeTongjiSDK.framework\" \"${FRAMEWORKS_DIR}/WeTongjiSDK.framework\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -549,6 +549,7 @@
 				MACH_O_TYPE = mh_object;
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
@@ -574,6 +575,7 @@
 				MACH_O_TYPE = mh_object;
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
