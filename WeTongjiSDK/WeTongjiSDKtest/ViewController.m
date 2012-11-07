@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "WeTongjiSDK.h"
 #import "NSDictionary+DefaultDescription.h"
+#import "JSON.h"
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UITextView *textView;
@@ -28,20 +29,21 @@
 
 -(void) login
 {
-    WTClient *client = [WTClient client];
-    [client setCompletionBlock:^(WTClient *client){
-        [self.textView setText:[client.responseData description]];
-        NSDictionary * userInfo = [client.responseData objectForKey:@"User"];
-        [NSUserDefaults setCurrentUserID:[userInfo objectForKey:@"UID"] session:[client.responseData objectForKey:@"Session"]];
+    WTClient *client = [WTClient getClient];
+    [client setCompletionBlock:^(id responseData){
+        NSLog(@"%@",[responseData description]);
+        [self.textView setText:[responseData description]];
+        NSDictionary * userInfo = [responseData objectForKey:@"User"];
+        [NSUserDefaults setCurrentUserID:[userInfo objectForKey:@"UID"] session:[responseData objectForKey:@"Session"]];
     }];
     [client login:@"092814" password:@"123456"];
 }
 
 -(void) course
 {
-    WTClient *client = [WTClient client];
-    [client setCompletionBlock:^(WTClient *client){
-        [self.textView setText:[client.responseData description]];
+    WTClient *client = [WTClient getClient];
+    [client setCompletionBlock:^(id responseData){
+        [self.textView setText:[responseData description]];
     }];
     [client getCourses];
 }
