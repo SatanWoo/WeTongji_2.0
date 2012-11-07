@@ -54,7 +54,7 @@ static NSString * const pathString = @"/api/call";
     {
         _params = [[NSMutableDictionary alloc] init];
         [_params setObject:@"iPhone" forKey:@"D"];
-        [_params setObject:@"1.2" forKey:@"V"];
+        [_params setObject:@"2.0" forKey:@"V"];
     }
     return _params;
 }
