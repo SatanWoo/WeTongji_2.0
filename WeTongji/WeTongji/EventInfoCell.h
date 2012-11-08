@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Event.h"
+
 
 @interface EventInfoCell : UITableViewCell
+
+@property (nonatomic ,assign) Event *event;
 
 // Upper
 @property (nonatomic ,weak) IBOutlet UILabel *eventName;

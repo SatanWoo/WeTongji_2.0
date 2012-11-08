@@ -11,12 +11,27 @@
 #import "EventInfoCell.h"
 #import <QuartzCore/QuartzCore.h>
 #import "WUPopOverView.h"
+#import "Event+Addition.h"
+#import <WeTongjiSDK/WeTongjiSDK.h>
 
 @interface EventInfoViewController () <UITableViewDataSource, UITableViewDelegate, WUPopOverViewDelegate>
+
+@property (nonatomic,strong) NSMutableArray * eventList;
+
 - (void)configureTableView;
 @end
 
 @implementation EventInfoViewController
+
+@synthesize eventList = _eventList;
+
+-(NSMutableArray *) eventList
+{
+    if ( !_eventList )
+        _eventList = [[Event allEventsInManagedObjectContext:self.managedObjectContext] mutableCopy];
+    return _eventList;
+}
+
 #pragma mark - Private 
 - (void)configureTableView
 {
@@ -42,6 +57,24 @@
     [super viewDidUnload];
 }
 
+- (void) viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    WTClient * client = [WTClient getClient];
+    [client setCompletionBlock:^(id responseData)
+        {
+            NSLog(@"%@",responseData);
+            NSArray * tempEventList = [responseData objectForKey:@"Activities"];
+            for ( NSDictionary * dict in tempEventList )
+            {
+                [Event insertActivity:dict inManagedObjectContext:self.managedObjectContext];
+            }
+            self.eventList = nil;
+            [self.eventTableView reloadData];
+        }];
+    [client getActivitiesInChannel:nil inSort:nil Expired:NO];
+}
+
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
@@ -65,15 +98,18 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 5;
+    return [self.eventList count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     EventInfoCell *cell = [tableView dequeueReusableCellWithIdentifier:kEventInfoCell];
-    if (cell == nil) {
+    if (cell == nil)
+    {
         cell = [[EventInfoCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kEventInfoCell];
+
     }
+    [cell setEvent:[self.eventList objectAtIndex:indexPath.row]];
     return cell;
 }
 

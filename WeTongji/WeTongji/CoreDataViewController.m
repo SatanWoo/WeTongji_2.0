@@ -7,6 +7,7 @@
 //
 
 #import "CoreDataViewController.h"
+#import "AppDelegate.h"
 #import <CoreData/CoreData.h>
 
 @interface CoreDataViewController ()
@@ -20,10 +21,21 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
+    if (self)
+    {
+
     }
     return self;
+}
+
+-(NSManagedObjectContext *) managedObjectContext
+{
+    if ( !_managedObjectContext )
+    {
+        AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+        self.managedObjectContext = appDelegate.managedObjectContext;
+    }
+    return _managedObjectContext;
 }
 
 - (void)viewDidLoad

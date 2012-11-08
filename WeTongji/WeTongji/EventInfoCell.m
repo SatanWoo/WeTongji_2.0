@@ -7,8 +7,11 @@
 //
 
 #import "EventInfoCell.h"
+#import "NSString+Addition.h"
 
 @implementation EventInfoCell
+
+@synthesize event=_event;
 // Upper
 @synthesize eventName = _eventName;
 @synthesize location = _location;
@@ -25,6 +28,19 @@
 @synthesize lookButton = _lookButton;
 @synthesize lookLabel = _lookLabel;
 @synthesize organizationLabel = _organizationLabel;
+
+-(void) setEvent:(Event *)event
+{
+    if ( _event == event ) return;
+    _event = event;
+    self.eventName.text = self.event.title;
+    self.location.text = self.event.location;
+    self.eventTime.text = [NSString timeConvertFromBeginDate:self.event.beginTime endDate:self.event.endTime];
+    self.refreshTime.text = [NSString timeConvertFromDate:self.event.createAt];
+    self.favorLabel.text = [self.event.favorite stringValue];
+    self.likeLabel.text = [self.event.like stringValue];
+    self.organizationLabel.text = self.event.organizer;
+}
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
