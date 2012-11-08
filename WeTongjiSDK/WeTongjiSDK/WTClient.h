@@ -88,14 +88,8 @@ typedef void (^WTCompletionBlock)(id resposeObject);
 #pragma -
 #pragma - Star API
 
-- (void) getAStarWithId:(NSString *) starId;
+- (void) getLatestStar;
 - (void) getAllStars;
 
-#pragma -
-#pragma - Achievements API
-
-- (void) getAllAchievements;
-- (void) finishAchievementWithId:(NSString *) achievementId;
-- (void) unfinishAchievementWithId:(NSString *) achievementId;
 
 @end

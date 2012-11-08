@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CoreDataViewController.h"
 
-@interface MiddleAbstractViewController : UIViewController
+@interface MiddleAbstractViewController : CoreDataViewController
 
 @end

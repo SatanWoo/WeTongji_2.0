@@ -58,7 +58,7 @@ static NSString * const pathString = @"/api/call";
     {
         _params = [[NSMutableDictionary alloc] init];
         [_params setObject:@"iPhone" forKey:@"D"];
-        [_params setObject:@"2.0" forKey:@"V"];
+        [_params setObject:@"1.2" forKey:@"V"];
     }
     return _params;
 }
@@ -338,10 +338,9 @@ static NSString * const pathString = @"/api/call";
     [self sendRequest];
 }
 
-- (void) getAStarWithId:(NSString *)starId
+- (void) getLatestStar
 {
     [self.params setObject:@"Person.Get" forKey:@"M"];
-    [self.params setObject:starId forKey:@"Id"];
     [self sendRequest];
 }
 
@@ -350,30 +349,5 @@ static NSString * const pathString = @"/api/call";
     [self.params setObject:@"People.Get" forKey:@"M"];
     [self sendRequest];
 }
-
-- (void) getAllAchievements
-{
-    [self.params setObject:[NSUserDefaults getCurrentUserID] forKey:@"U"];
-    [self.params setObject:[NSUserDefaults getCurrentUserSession] forKey:@"S"];
-    [self.params setObject:@"Achievement.Get" forKey:@"M"];
-    [self sendRequest];
-}
-
-- (void) finishAchievementWithId:(NSString *) achievementId
-{
-    [self.params setObject:[NSUserDefaults getCurrentUserID] forKey:@"U"];
-    [self.params setObject:[NSUserDefaults getCurrentUserSession] forKey:@"S"];
-    [self.params setObject:@"Achievements.Record" forKey:@"M"];
-    [self.params setObject:achievementId forKey:@"Id"];
-    [self sendRequest];
-}
-- (void) unfinishAchievementWithId:(NSString *) achievementId
-{
-    [self.params setObject:[NSUserDefaults getCurrentUserID] forKey:@"U"];
-    [self.params setObject:[NSUserDefaults getCurrentUserSession] forKey:@"S"];
-    [self.params setObject:@"Achievement.UnRecord" forKey:@"M"];
-    [self.params setObject:achievementId forKey:@"Id"];
-}
-
 
 @end

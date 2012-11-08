@@ -133,6 +133,8 @@
 		E5FEF4771638418F00FB7A2A /* today@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5FEF4751638418F00FB7A2A /* today@2x.png */; };
 		E5FEF47B1638425600FB7A2A /* navbar.png in Resources */ = {isa = PBXBuildFile; fileRef = E5FEF4791638425600FB7A2A /* navbar.png */; };
 		E5FEF47C1638425600FB7A2A /* navbar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5FEF47A1638425600FB7A2A /* navbar@2x.png */; };
+		FFBEB29B164B6DA10004AF4C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBEB29A164B6DA10004AF4C /* CoreData.framework */; };
+		FFBEB29E164B6F1B0004AF4C /* CoreDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBEB29D164B6F1B0004AF4C /* CoreDataViewController.m */; };
 		FFBF9A1C1648439300E3D610 /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBF9A1B1648439300E3D610 /* libz.1.2.5.dylib */; };
 		FFBF9A1F1648439B00E3D610 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBF9A1E1648439B00E3D610 /* CFNetwork.framework */; };
 		FFBF9A21164843A100E3D610 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBF9A20164843A100E3D610 /* MobileCoreServices.framework */; };
@@ -328,6 +330,9 @@
 		E5FEF4751638418F00FB7A2A /* today@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "today@2x.png"; sourceTree = "<group>"; };
 		E5FEF4791638425600FB7A2A /* navbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navbar.png; sourceTree = "<group>"; };
 		E5FEF47A1638425600FB7A2A /* navbar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navbar@2x.png"; sourceTree = "<group>"; };
+		FFBEB29A164B6DA10004AF4C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		FFBEB29C164B6F1B0004AF4C /* CoreDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataViewController.h; sourceTree = "<group>"; };
+		FFBEB29D164B6F1B0004AF4C /* CoreDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataViewController.m; sourceTree = "<group>"; };
 		FFBEB4C91648DDCA00D8C856 /* WeTongjiSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = WeTongjiSDK.xcodeproj; path = ../WeTongjiSDK/WeTongjiSDK.xcodeproj; sourceTree = "<group>"; };
 		FFBF9A1B1648439300E3D610 /* libz.1.2.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.5.dylib; path = usr/lib/libz.1.2.5.dylib; sourceTree = SDKROOT; };
 		FFBF9A1E1648439B00E3D610 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -341,6 +346,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFBEB29B164B6DA10004AF4C /* CoreData.framework in Frameworks */,
 				FFBF9A25164843AD00E3D610 /* MapKit.framework in Frameworks */,
 				FFBF9A23164843A600E3D610 /* SystemConfiguration.framework in Frameworks */,
 				FFBF9A21164843A100E3D610 /* MobileCoreServices.framework in Frameworks */,
@@ -392,6 +398,7 @@
 		B00D691F162CFCAC00592B1D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FFBEB29A164B6DA10004AF4C /* CoreData.framework */,
 				FFBF9A24164843AD00E3D610 /* MapKit.framework */,
 				FFBF9A22164843A600E3D610 /* SystemConfiguration.framework */,
 				FFBF9A20164843A100E3D610 /* MobileCoreServices.framework */,
@@ -451,6 +458,8 @@
 			children = (
 				E52352CE1631917100DBFF7C /* LeftMenu */,
 				E52352C61631883800DBFF7C /* MiddleContent */,
+				FFBEB29C164B6F1B0004AF4C /* CoreDataViewController.h */,
+				FFBEB29D164B6F1B0004AF4C /* CoreDataViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -986,6 +995,7 @@
 				E5D2447C1647BF8900DA43DD /* ArrangementCell.m in Sources */,
 				E5D2448F1647C35E00DA43DD /* ArrangementViewController.m in Sources */,
 				E5D244921647C69700DA43DD /* WUArrangementSectionHeaderView.m in Sources */,
+				FFBEB29E164B6F1B0004AF4C /* CoreDataViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
