@@ -70,6 +70,9 @@
 		FF6C9493164A31BA00F94CB6 /* WTClient.h in Headers */ = {isa = PBXBuildFile; fileRef = FF6C9491164A31BA00F94CB6 /* WTClient.h */; };
 		FF6C9494164A31BA00F94CB6 /* WTClient.m in Sources */ = {isa = PBXBuildFile; fileRef = FF6C9492164A31BA00F94CB6 /* WTClient.m */; };
 		FF6C9495164A31BA00F94CB6 /* WTClient.m in Sources */ = {isa = PBXBuildFile; fileRef = FF6C9492164A31BA00F94CB6 /* WTClient.m */; };
+		FFBEB27F164B3F0F0004AF4C /* NSString+Addition.h in Headers */ = {isa = PBXBuildFile; fileRef = FFBEB27D164B3F0F0004AF4C /* NSString+Addition.h */; };
+		FFBEB280164B3F0F0004AF4C /* NSString+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBEB27E164B3F0F0004AF4C /* NSString+Addition.m */; };
+		FFBEB281164B3F0F0004AF4C /* NSString+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBEB27E164B3F0F0004AF4C /* NSString+Addition.m */; };
 		FFBF99BB16482F1B00E3D610 /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBF99BA16482F1B00E3D610 /* libz.1.2.5.dylib */; };
 		FFBF99BE16482F2300E3D610 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBF99BD16482F2300E3D610 /* CFNetwork.framework */; };
 		FFBF99C016482F3A00E3D610 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBF99BF16482F3A00E3D610 /* MobileCoreServices.framework */; };
@@ -138,6 +141,8 @@
 		FF6C9474164A319500F94CB6 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
 		FF6C9491164A31BA00F94CB6 /* WTClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTClient.h; sourceTree = "<group>"; };
 		FF6C9492164A31BA00F94CB6 /* WTClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTClient.m; sourceTree = "<group>"; };
+		FFBEB27D164B3F0F0004AF4C /* NSString+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Addition.h"; sourceTree = "<group>"; };
+		FFBEB27E164B3F0F0004AF4C /* NSString+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Addition.m"; sourceTree = "<group>"; };
 		FFBF99BA16482F1B00E3D610 /* libz.1.2.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.5.dylib; path = usr/lib/libz.1.2.5.dylib; sourceTree = SDKROOT; };
 		FFBF99BD16482F2300E3D610 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		FFBF99BF16482F3A00E3D610 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
@@ -267,6 +272,8 @@
 				FFFF0F2616496B110049370C /* NSUserDefaults+Addition.m */,
 				E1B94B9A1635A94200D76123 /* NSString+URLEncoding.h */,
 				E1B94B9B1635A94200D76123 /* NSString+URLEncoding.m */,
+				FFBEB27D164B3F0F0004AF4C /* NSString+Addition.h */,
+				FFBEB27E164B3F0F0004AF4C /* NSString+Addition.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -353,6 +360,7 @@
 				FF6C948B164A319500F94CB6 /* AFXMLRequestOperation.h in Headers */,
 				FF6C948E164A319500F94CB6 /* UIImageView+AFNetworking.h in Headers */,
 				FF6C9493164A31BA00F94CB6 /* WTClient.h in Headers */,
+				FFBEB27F164B3F0F0004AF4C /* NSString+Addition.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -467,6 +475,7 @@
 				FF6C948C164A319500F94CB6 /* AFXMLRequestOperation.m in Sources */,
 				FF6C948F164A319500F94CB6 /* UIImageView+AFNetworking.m in Sources */,
 				FF6C9494164A31BA00F94CB6 /* WTClient.m in Sources */,
+				FFBEB280164B3F0F0004AF4C /* NSString+Addition.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -496,6 +505,7 @@
 				FF6C948D164A319500F94CB6 /* AFXMLRequestOperation.m in Sources */,
 				FF6C9490164A319500F94CB6 /* UIImageView+AFNetworking.m in Sources */,
 				FF6C9495164A31BA00F94CB6 /* WTClient.m in Sources */,
+				FFBEB281164B3F0F0004AF4C /* NSString+Addition.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

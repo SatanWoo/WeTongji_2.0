@@ -21,8 +21,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self login];
-    [self course];
+    //[self login];
+    //[self course];
+    //[self update];
+    //[self channel];
+    //[self favorite];
+    //[self information];
+    //[self findUser];
+    [self achievements];
 }
 
 #pragma - 
@@ -47,6 +53,55 @@
         [self.textView setText:[responseData description]];
     }];
     [client getCourses];
+}
+
+-(void)update
+{
+    WTClient * client = [ WTClient getClient];
+    [client setCompletionBlock:^(id responseData) { NSLog(@"%@",responseData);}];
+    [client updateUserDisplayName:nil email:nil weiboName:@"ahah" phoneNum:nil qqAccount:nil];
+}
+
+-(void) channel
+{
+    WTClient * client = [ WTClient getClient];
+    [client setCompletionBlock:^(id responseData) { NSLog(@"%@",responseData);}];
+    [client getChannels];
+}
+
+- (void) activity
+{
+    WTClient * client = [ WTClient getClient];
+    [client setCompletionBlock:^(id responseData) { NSLog(@"%@",[responseData description]);}];
+    [client getActivitiesInChannel:nil inSort:nil Expired:NO];
+}
+
+- (void) favorite
+{
+    WTClient * client = [ WTClient getClient];
+    [client setCompletionBlock:^(id responseData) { NSLog(@"%@",[responseData description]);}];
+    [client getFavorites];
+}
+
+- (void) information
+{
+    WTClient * client = [ WTClient getClient];
+    [client setCompletionBlock:^(id responseData) { NSLog(@"%@",[responseData description]);}];
+    [client getAllInformationInSort:nil];
+}
+
+- (void) findUser
+{
+    WTClient * client = [ WTClient getClient];
+    [client setCompletionBlock:^(id responseData) { NSLog(@"%@",[responseData description]);}];
+    [client findUserWithNo:@"092814" name:@"汤之雄"];
+}
+
+- (void) achievements
+{
+    WTClient * client = [ WTClient getClient];
+    [client setCompletionBlock:^(id responseData) { NSLog(@"%@",[responseData description]);}];
+    [client getAllAchievements];
 }
 
 - (void)didReceiveMemoryWarning

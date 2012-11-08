@@ -29,6 +29,14 @@ typedef void (^WTCompletionBlock)(id resposeObject);
 - (void)activeUserWithNo:(NSString *) studentNumber
                 password:(NSString *) password
                     name:(NSString *) name;
+- (void)updateUserDisplayName:(NSString *)display_name
+                        email:(NSString *)email
+                    weiboName:(NSString *)weibo
+                     phoneNum:(NSString *)phone
+                    qqAccount:(NSString *)qq;
+- (void)updatePassword:(NSString *)new withOldPassword:(NSString *)old;
+- (void)updateUserAvatar:(UIImage *)image;
+- (void)findUserWithNo:(NSString *) studentNumber name:(NSString *) name;
 
 #pragma mark -
 #pragma mark course API
@@ -38,6 +46,56 @@ typedef void (^WTCompletionBlock)(id resposeObject);
 #pragma mark -
 #pragma mark calender API
 
-- (void)getCalender;
+- (void)getScheduleWithBeginDate:(NSDate *)begin endDate:(NSDate *)end;
+
+#pragma mark -
+#pragma mark channel API
+
+- (void) setChannelFavored:(NSString *) channelId;
+- (void) cancelChannelFavored:(NSString *) channelId;
+- (void) getChannels;
+
+#pragma mark -
+#pragma mark activity API
+
+- (void) getActivitiesInChannel:(NSString *) channelId
+                         inSort:(NSString *) sort
+                        Expired:(Boolean) isExpired;
+- (void) setLikeActivitiy:(NSString *) activityId;
+- (void) cancelLikeActivity:(NSString *) activityId;
+- (void) setActivityScheduled:(NSString *) activityId;
+- (void) deleteScheduledActivity:(NSString *) activityId;
+- (void) setActivityFavored:(NSString *) activityId;
+- (void) cancelActivityFavored:(NSString *) activityId;
+
+#pragma -
+#pragma - favorite API
+
+- (void) getFavorites;
+
+#pragma -
+#pragma - Information API
+
+- (void) getAllInformationInSort:(NSString *) sort;
+- (void) getDetailOfInformaion:(NSString *) informationId;
+- (void) readInformaion:(NSString *) informationId;
+
+#pragma -
+#pragma - Vision API
+
+- (void) getNewVersion;
+
+#pragma -
+#pragma - Star API
+
+- (void) getAStarWithId:(NSString *) starId;
+- (void) getAllStars;
+
+#pragma -
+#pragma - Achievements API
+
+- (void) getAllAchievements;
+- (void) finishAchievementWithId:(NSString *) achievementId;
+- (void) unfinishAchievementWithId:(NSString *) achievementId;
 
 @end
