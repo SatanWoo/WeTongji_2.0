@@ -36,7 +36,6 @@ typedef void (^WTCompletionBlock)(id resposeObject);
                     qqAccount:(NSString *)qq;
 - (void)updatePassword:(NSString *)new withOldPassword:(NSString *)old;
 - (void)updateUserAvatar:(UIImage *)image;
-- (void)findUserWithNo:(NSString *) studentNumber name:(NSString *) name;
 
 #pragma mark -
 #pragma mark course API
@@ -63,8 +62,6 @@ typedef void (^WTCompletionBlock)(id resposeObject);
                         Expired:(Boolean) isExpired;
 - (void) setLikeActivitiy:(NSString *) activityId;
 - (void) cancelLikeActivity:(NSString *) activityId;
-- (void) setActivityScheduled:(NSString *) activityId;
-- (void) deleteScheduledActivity:(NSString *) activityId;
 - (void) setActivityFavored:(NSString *) activityId;
 - (void) cancelActivityFavored:(NSString *) activityId;
 

@@ -58,7 +58,7 @@ static NSString * const pathString = @"/api/call";
     {
         _params = [[NSMutableDictionary alloc] init];
         [_params setObject:@"iPhone" forKey:@"D"];
-        [_params setObject:@"1.2" forKey:@"V"];
+        [_params setObject:@"2.0.0" forKey:@"V"];
     }
     return _params;
 }
@@ -193,15 +193,6 @@ static NSString * const pathString = @"/api/call";
 #warning lots of work to do 
 }
 
-- (void)findUserWithNo:(NSString *) studentNumber name:(NSString *) name
-{
-    //[self.params setObject:[NSUserDefaults getCurrentUserID] forKey:@"U"];
-    //[self.params setObject:[NSUserDefaults getCurrentUserSession] forKey:@"S"];
-    [self.params setObject:@"User.Find" forKey:@"M"];
-    [self.params setObject:studentNumber forKey:@"NO"];
-    [self.params setObject:name forKey:@"Name"];
-    [self sendRequest];
-}
 
 - (void)getScheduleWithBeginDate:(NSDate *)begin endDate:(NSDate *)end
 {
@@ -267,24 +258,6 @@ static NSString * const pathString = @"/api/call";
     [self sendRequest];
 }
 
-- (void) setActivityScheduled:(NSString *) activityId
-{
-    [self.params setObject:[NSUserDefaults getCurrentUserID] forKey:@"U"];
-    [self.params setObject:[NSUserDefaults getCurrentUserSession] forKey:@"S"];
-    [self.params setObject:@"Activity.Schedule" forKey:@"M"];
-    [self.params setObject:activityId forKey:@"Id"];
-    [self sendRequest];
-}
-
-- (void) deleteScheduledActivity:(NSString *) activityId
-{
-    [self.params setObject:[NSUserDefaults getCurrentUserID] forKey:@"U"];
-    [self.params setObject:[NSUserDefaults getCurrentUserSession] forKey:@"S"];
-    [self.params setObject:@"Activity.UnSchedule" forKey:@"M"];
-    [self.params setObject:activityId forKey:@"Id"];
-    [self sendRequest];
-}
-
 - (void) setActivityFavored:(NSString *) activityId
 {
     [self.params setObject:[NSUserDefaults getCurrentUserID] forKey:@"U"];
@@ -340,7 +313,7 @@ static NSString * const pathString = @"/api/call";
 
 - (void) getLatestStar
 {
-    [self.params setObject:@"Person.Get" forKey:@"M"];
+    [self.params setObject:@"Person.GetLatest" forKey:@"M"];
     [self sendRequest];
 }
 

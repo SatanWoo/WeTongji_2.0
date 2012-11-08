@@ -27,8 +27,8 @@
     //[self channel];
     //[self favorite];
     //[self information];
-    //[self findUser];
-    [self achievements];
+    [self star];
+    //[self activity];
 }
 
 #pragma - 
@@ -90,19 +90,13 @@
     [client getAllInformationInSort:nil];
 }
 
-- (void) findUser
+- (void) star
 {
     WTClient * client = [ WTClient getClient];
     [client setCompletionBlock:^(id responseData) { NSLog(@"%@",[responseData description]);}];
-    [client findUserWithNo:@"092814" name:@"汤之雄"];
+    [client getAllStars];
 }
 
-- (void) achievements
-{
-    WTClient * client = [ WTClient getClient];
-    [client setCompletionBlock:^(id responseData) { NSLog(@"%@",[responseData description]);}];
-    [client getAllAchievements];
-}
 
 - (void)didReceiveMemoryWarning
 {
