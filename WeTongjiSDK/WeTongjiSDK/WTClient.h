@@ -13,9 +13,6 @@
 typedef void (^WTCompletionBlock)(id resposeObject);
 
 @interface WTClient : AFHTTPClient
-{
-    WTCompletionBlock _completionBlock;
-}
 
 +(WTClient *)getClient;
 

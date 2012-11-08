@@ -15,18 +15,20 @@
 
 @interface WTClient()
 
-@property (nonatomic,retain) NSMutableDictionary * params;
+@property (nonatomic,strong) NSMutableDictionary * params;
+@property (nonatomic,strong) WTCompletionBlock completionBlock;
 
 @end
 
 @implementation WTClient
 
 @synthesize params=_params;
+@synthesize completionBlock=_completionBlock;
 
 static NSString * const baseURLString = @"http://we.tongji.edu.cn";
 static NSString * const pathString = @"/api/call";
 
-+ (WTClient *) getClient
++(WTClient *)getClient
 {
     static WTClient * _client = nil;
     static dispatch_once_t onceToken;

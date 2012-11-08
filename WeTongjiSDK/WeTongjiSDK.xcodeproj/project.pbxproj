@@ -21,7 +21,6 @@
 		E110DF6516365E050087EA46 /* SBJsonBase.h in Headers */ = {isa = PBXBuildFile; fileRef = E1B94B7A1635A75300D76123 /* SBJsonBase.h */; settings = {ATTRIBUTES = (); }; };
 		E110DF6616365E050087EA46 /* SBJsonParser.h in Headers */ = {isa = PBXBuildFile; fileRef = E1B94B7C1635A75300D76123 /* SBJsonParser.h */; settings = {ATTRIBUTES = (); }; };
 		E110DF6716365E050087EA46 /* SBJsonWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = E1B94B7E1635A75300D76123 /* SBJsonWriter.h */; settings = {ATTRIBUTES = (); }; };
-		E110DF6916365E2A0087EA46 /* WeTongjiSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = E1B94B391635A22A00D76123 /* WeTongjiSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FF3645DD1647E73700D3A439 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF3645DC1647E73700D3A439 /* UIKit.framework */; };
 		FF3645DE1647E73700D3A439 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1B94B341635A22A00D76123 /* Foundation.framework */; };
 		FF3645E01647E73700D3A439 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF3645DF1647E73700D3A439 /* CoreGraphics.framework */; };
@@ -39,7 +38,7 @@
 		FF3646451647FF6B00D3A439 /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = E1B94B7B1635A75300D76123 /* SBJsonBase.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		FF3646461647FF6B00D3A439 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E1B94B7D1635A75300D76123 /* SBJsonParser.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		FF3646471647FF6B00D3A439 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = E1B94B7F1635A75300D76123 /* SBJsonWriter.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		FF6C9475164A319500F94CB6 /* AFHTTPClient.h in Headers */ = {isa = PBXBuildFile; fileRef = FF6C9462164A319500F94CB6 /* AFHTTPClient.h */; };
+		FF6C9475164A319500F94CB6 /* AFHTTPClient.h in Headers */ = {isa = PBXBuildFile; fileRef = FF6C9462164A319500F94CB6 /* AFHTTPClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FF6C9476164A319500F94CB6 /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = FF6C9463164A319500F94CB6 /* AFHTTPClient.m */; };
 		FF6C9477164A319500F94CB6 /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = FF6C9463164A319500F94CB6 /* AFHTTPClient.m */; };
 		FF6C9478164A319500F94CB6 /* AFHTTPRequestOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = FF6C9464164A319500F94CB6 /* AFHTTPRequestOperation.h */; };
@@ -67,9 +66,11 @@
 		FF6C948E164A319500F94CB6 /* UIImageView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = FF6C9473164A319500F94CB6 /* UIImageView+AFNetworking.h */; };
 		FF6C948F164A319500F94CB6 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = FF6C9474164A319500F94CB6 /* UIImageView+AFNetworking.m */; };
 		FF6C9490164A319500F94CB6 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = FF6C9474164A319500F94CB6 /* UIImageView+AFNetworking.m */; };
-		FF6C9493164A31BA00F94CB6 /* WTClient.h in Headers */ = {isa = PBXBuildFile; fileRef = FF6C9491164A31BA00F94CB6 /* WTClient.h */; };
-		FF6C9494164A31BA00F94CB6 /* WTClient.m in Sources */ = {isa = PBXBuildFile; fileRef = FF6C9492164A31BA00F94CB6 /* WTClient.m */; };
 		FF6C9495164A31BA00F94CB6 /* WTClient.m in Sources */ = {isa = PBXBuildFile; fileRef = FF6C9492164A31BA00F94CB6 /* WTClient.m */; };
+		FF9DCF01164BF36400EA30E9 /* WTClient.m in Sources */ = {isa = PBXBuildFile; fileRef = FF6C9492164A31BA00F94CB6 /* WTClient.m */; };
+		FF9DCF02164BF38300EA30E9 /* WeTongjiSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = E1B94B391635A22A00D76123 /* WeTongjiSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FF9DCF03164BF38D00EA30E9 /* JSON.h in Headers */ = {isa = PBXBuildFile; fileRef = E1B94B731635A75300D76123 /* JSON.h */; };
+		FFB03729164BEF9D00157B7D /* WTClient.h in Headers */ = {isa = PBXBuildFile; fileRef = FF6C9491164A31BA00F94CB6 /* WTClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FFBEB27F164B3F0F0004AF4C /* NSString+Addition.h in Headers */ = {isa = PBXBuildFile; fileRef = FFBEB27D164B3F0F0004AF4C /* NSString+Addition.h */; };
 		FFBEB280164B3F0F0004AF4C /* NSString+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBEB27E164B3F0F0004AF4C /* NSString+Addition.m */; };
 		FFBEB281164B3F0F0004AF4C /* NSString+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBEB27E164B3F0F0004AF4C /* NSString+Addition.m */; };
@@ -81,10 +82,20 @@
 		FFD2A4301649578600FEAF2B /* NSDictionary+DefaultDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = FFD2A42F1649578600FEAF2B /* NSDictionary+DefaultDescription.m */; };
 		FFFF0F0B1649627E0049370C /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFFF0F091649627E0049370C /* MainStoryboard.storyboard */; };
 		FFFF0F0C1649627E0049370C /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFFF0F091649627E0049370C /* MainStoryboard.storyboard */; };
-		FFFF0F2716496B120049370C /* NSUserDefaults+Addition.h in Headers */ = {isa = PBXBuildFile; fileRef = FFFF0F2516496B110049370C /* NSUserDefaults+Addition.h */; };
+		FFFF0F2716496B120049370C /* NSUserDefaults+Addition.h in Headers */ = {isa = PBXBuildFile; fileRef = FFFF0F2516496B110049370C /* NSUserDefaults+Addition.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FFFF0F2816496B120049370C /* NSUserDefaults+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = FFFF0F2616496B110049370C /* NSUserDefaults+Addition.m */; };
 		FFFF0F2916496B120049370C /* NSUserDefaults+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = FFFF0F2616496B110049370C /* NSUserDefaults+Addition.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FFB0372E164BF22B00157B7D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E1B94B281635A22A00D76123 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E110DF2A16365B990087EA46;
+			remoteInfo = WeTongjiSDK;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		E110DF2B16365B990087EA46 /* WeTongjiSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeTongjiSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -340,7 +351,11 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E110DF6916365E2A0087EA46 /* WeTongjiSDK.h in Headers */,
+				FF9DCF02164BF38300EA30E9 /* WeTongjiSDK.h in Headers */,
+				FFB03729164BEF9D00157B7D /* WTClient.h in Headers */,
+				FFFF0F2716496B120049370C /* NSUserDefaults+Addition.h in Headers */,
+				FF6C9475164A319500F94CB6 /* AFHTTPClient.h in Headers */,
+				FF9DCF03164BF38D00EA30E9 /* JSON.h in Headers */,
 				E110DF5416365E050087EA46 /* NSString+URLEncoding.h in Headers */,
 				E110DF6216365E050087EA46 /* NSObject+SBJSON.h in Headers */,
 				E110DF6316365E050087EA46 /* NSString+SBJSON.h in Headers */,
@@ -348,8 +363,6 @@
 				E110DF6516365E050087EA46 /* SBJsonBase.h in Headers */,
 				E110DF6616365E050087EA46 /* SBJsonParser.h in Headers */,
 				E110DF6716365E050087EA46 /* SBJsonWriter.h in Headers */,
-				FFFF0F2716496B120049370C /* NSUserDefaults+Addition.h in Headers */,
-				FF6C9475164A319500F94CB6 /* AFHTTPClient.h in Headers */,
 				FF6C9478164A319500F94CB6 /* AFHTTPRequestOperation.h in Headers */,
 				FF6C947B164A319500F94CB6 /* AFImageRequestOperation.h in Headers */,
 				FF6C947E164A319500F94CB6 /* AFJSONRequestOperation.h in Headers */,
@@ -359,7 +372,6 @@
 				FF6C9488164A319500F94CB6 /* AFURLConnectionOperation.h in Headers */,
 				FF6C948B164A319500F94CB6 /* AFXMLRequestOperation.h in Headers */,
 				FF6C948E164A319500F94CB6 /* UIImageView+AFNetworking.h in Headers */,
-				FF6C9493164A31BA00F94CB6 /* WTClient.h in Headers */,
 				FFBEB27F164B3F0F0004AF4C /* NSString+Addition.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -396,6 +408,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				FFB0372F164BF22B00157B7D /* PBXTargetDependency */,
 			);
 			name = WeTongjiSDKtest;
 			productName = WeTongjiSDKtest;
@@ -457,6 +470,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF9DCF01164BF36400EA30E9 /* WTClient.m in Sources */,
 				E110DF3816365D760087EA46 /* NSString+URLEncoding.m in Sources */,
 				E110DF4216365D760087EA46 /* NSObject+SBJSON.m in Sources */,
 				E110DF4316365D760087EA46 /* NSString+SBJSON.m in Sources */,
@@ -474,7 +488,6 @@
 				FF6C9489164A319500F94CB6 /* AFURLConnectionOperation.m in Sources */,
 				FF6C948C164A319500F94CB6 /* AFXMLRequestOperation.m in Sources */,
 				FF6C948F164A319500F94CB6 /* UIImageView+AFNetworking.m in Sources */,
-				FF6C9494164A31BA00F94CB6 /* WTClient.m in Sources */,
 				FFBEB280164B3F0F0004AF4C /* NSString+Addition.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -510,6 +523,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FFB0372F164BF22B00157B7D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E110DF2A16365B990087EA46 /* WeTongjiSDK */;
+			targetProxy = FFB0372E164BF22B00157B7D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		FF3645E41647E73700D3A439 /* InfoPlist.strings */ = {
