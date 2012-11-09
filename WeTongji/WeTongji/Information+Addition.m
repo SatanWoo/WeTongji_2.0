@@ -26,7 +26,7 @@
     information.context = [NSString stringWithFormat:@"%@",[infoDict objectForKey:@"Context"]];
     information.createdAt = [[NSString stringWithFormat:@"%@",[infoDict objectForKey:@"CreatedAt"]] convertToDate];
     information.favorite = [NSNumber numberWithInt:[[infoDict objectForKey:@"Favorite"] intValue]];
-    information.id = [NSString stringWithFormat:@"%@",[infoDict objectForKey:@"Id"]];
+    information.informationId = [NSString stringWithFormat:@"%@",[infoDict objectForKey:@"Id"]];
     //information.images =
     NSLog(@"%@",[infoDict objectForKey:@"Images"]);
     information.like = [NSNumber numberWithInt:[[infoDict objectForKey:@"like"] intValue]];
@@ -53,7 +53,7 @@
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     
     [request setEntity:[NSEntityDescription entityForName:@"Information" inManagedObjectContext:context]];
-    [request setPredicate:[NSPredicate predicateWithFormat:@"id == %@", informaionId]];
+    [request setPredicate:[NSPredicate predicateWithFormat:@"informationId == %@", informaionId]];
     
     Information *result = [[context executeFetchRequest:request error:NULL] lastObject];
     

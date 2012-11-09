@@ -18,13 +18,13 @@
 @property (nonatomic, retain) NSString * context;
 @property (nonatomic, retain) NSDate * createdAt;
 @property (nonatomic, retain) NSNumber * favorite;
-@property (nonatomic, retain) NSString * id;
-@property (nonatomic, retain) NSArray * images;
+@property (nonatomic, retain) NSNumber * hiden;
+@property (nonatomic, retain) NSString * informationId;
+@property (nonatomic, retain) NSString * images;
 @property (nonatomic, retain) NSNumber * like;
 @property (nonatomic, retain) NSNumber * read;
 @property (nonatomic, retain) NSString * source;
 @property (nonatomic, retain) NSString * summary;
 @property (nonatomic, retain) NSString * title;
-@property (nonatomic, retain) NSNumber * hiden;
 
 @end

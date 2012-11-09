@@ -13,6 +13,7 @@
 #import "SchoolNewsCell.h"
 #import "GroupInfoCell.h"
 #import "Information+Addition.h"
+#import "Star+Addition.h"
 #import <WeTongjiSDK/WeTongjiSDK.h>
 
 #define kWidth self.scrollView.frame.size.width
@@ -195,12 +196,12 @@
         NSString * hasError = [responseData objectForKey:@"isFailed"];
         if( [hasError characterAtIndex:0] == 'N' )
         {
-            NSArray * dictArray = [responseData objectForKey:@"Information"];
+            NSArray * dictArray = [responseData objectForKey:@"People"];
             for ( NSDictionary * dict in dictArray )
-                [Information insertAnInformation:dict inManagedObjectContext:self.managedObjectContext];
+                [Star insertStarWithDict:dict inManagedObjectContext:self.managedObjectContext];
         }
     }];
-    [client getAllInformationInSort:nil nextPage:0];
+    [client getAllStarsWithNextPage:0];
 }
 
 - (void)viewDidUnload

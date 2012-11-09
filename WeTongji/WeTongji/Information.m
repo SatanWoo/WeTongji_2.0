@@ -17,13 +17,13 @@
 @dynamic context;
 @dynamic createdAt;
 @dynamic favorite;
-@dynamic id;
+@dynamic hiden;
+@dynamic informationId;
 @dynamic images;
 @dynamic like;
 @dynamic read;
 @dynamic source;
 @dynamic summary;
 @dynamic title;
-@dynamic hiden;
 
 @end

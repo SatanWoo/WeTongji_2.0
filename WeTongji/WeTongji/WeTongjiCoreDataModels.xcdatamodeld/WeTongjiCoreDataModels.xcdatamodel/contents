@@ -28,16 +28,33 @@
         <attribute name="createdAt" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="favorite" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="hiden" optional="YES" attributeType="Boolean" syncable="YES"/>
-        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="images" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="informationId" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="like" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="read" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="source" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="summary" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="Star" representedClassName="Star" syncable="YES">
+        <attribute name="avatarLink" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="canFavorite" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="canLike" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="detail" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="favorite" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="hiden" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="images" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="jobTitle" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="like" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="read" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="starId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="studentNumber" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="words" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <elements>
         <element name="Event" positionX="160" positionY="192" width="128" height="315"/>
         <element name="Information" positionX="160" positionY="192" width="128" height="255"/>
+        <element name="Star" positionX="160" positionY="192" width="128" height="255"/>
     </elements>
 </model>
