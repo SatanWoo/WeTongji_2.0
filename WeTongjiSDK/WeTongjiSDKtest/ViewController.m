@@ -26,9 +26,9 @@
     //[self update];
     //[self channel];
     //[self favorite];
-    //[self information];
+    [self information];
     //[self star];
-    [self activity];
+    //[self activity];
 }
 
 #pragma - 
@@ -73,7 +73,9 @@
 {
     WTClient * client = [ WTClient getClient];
     [client setCompletionBlock:^(id responseData) { NSLog(@"%@",[responseData description]);}];
-    [client getActivitiesInChannel:nil inSort:@"1" Expired:NO nextPage:0];
+    [client getActivitiesInChannel:nil inSort:@"1" Expired:YES nextPage:0];
+    [client getActivitiesInChannel:nil inSort:@"1" Expired:YES nextPage:1];
+    [client getActivitiesInChannel:nil inSort:@"1" Expired:YES nextPage:2];
 }
 
 - (void) favorite

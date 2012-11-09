@@ -69,8 +69,11 @@
 
 + (void) clearAllEventInManagedObjectContext:(NSManagedObjectContext *)context
 {
-    NSArray * eventList = [Event allEventsInManagedObjectContext:context];
-    for ( Event * event in eventList ) [context delete:event];
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    [fetchRequest setEntity:[NSEntityDescription entityForName:@"Event" inManagedObjectContext:context]];
+    NSArray *items = [context executeFetchRequest:fetchRequest error:NULL];
+    for (NSManagedObject *managedObject in items)
+        [context deleteObject:managedObject];
 }
 
 @end
