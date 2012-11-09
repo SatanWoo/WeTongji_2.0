@@ -10,9 +10,9 @@
 #import "AFHTTPClient.h"
 #import "NSUserDefaults+Addition.h"
 
-#define SortTypeLikeDesc 1;
-#define SortTypeFavoriteDesc 2;
-#define SortTypeLikeScheduleDesc 3;
+#define SortTypeLikeDesc @"1"
+#define SortTypeFavoriteDesc @"2"
+#define SortTypeLikeScheduleDesc @"3"
 
 typedef void (^WTCompletionBlock)(id resposeObject);
 
