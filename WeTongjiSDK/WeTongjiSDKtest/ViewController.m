@@ -27,8 +27,8 @@
     //[self channel];
     //[self favorite];
     //[self information];
-    [self star];
-    //[self activity];
+    //[self star];
+    [self activity];
 }
 
 #pragma - 
@@ -73,28 +73,28 @@
 {
     WTClient * client = [ WTClient getClient];
     [client setCompletionBlock:^(id responseData) { NSLog(@"%@",[responseData description]);}];
-    [client getActivitiesInChannel:nil inSort:nil Expired:NO];
+    [client getActivitiesInChannel:nil inSort:@"1" Expired:NO nextPage:0];
 }
 
 - (void) favorite
 {
     WTClient * client = [ WTClient getClient];
     [client setCompletionBlock:^(id responseData) { NSLog(@"%@",[responseData description]);}];
-    [client getFavorites];
+    [client getFavoritesWithNextPage:0];
 }
 
 - (void) information
 {
     WTClient * client = [ WTClient getClient];
     [client setCompletionBlock:^(id responseData) { NSLog(@"%@",[responseData description]);}];
-    [client getAllInformationInSort:nil];
+    [client getAllInformationInSort:nil nextPage:0];
 }
 
 - (void) star
 {
     WTClient * client = [ WTClient getClient];
     [client setCompletionBlock:^(id responseData) { NSLog(@"%@",[responseData description]);}];
-    [client getAllStars];
+    [client getAllStarsWithNextPage:0];
 }
 
 
