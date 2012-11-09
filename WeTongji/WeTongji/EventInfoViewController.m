@@ -18,7 +18,7 @@
 
 @interface EventInfoViewController () <UITableViewDataSource, UITableViewDelegate, WUPopOverViewDelegate,EGORefreshTableHeaderDelegate,EGORefreshTableFooterDelegate>
 
-@property (nonatomic,strong) NSMutableArray * eventList;
+@property (nonatomic,strong) NSArray * eventList;
 @property (nonatomic,strong) EGORefreshTableHeaderView * pullRefreshHeaderView;
 @property (nonatomic,strong) EGORefreshTableFooterView * pullRefreshFooterView;
 @property (assign) int nextPage;
@@ -66,15 +66,16 @@
     [self.pullRefreshFooterView setFrame:CGRectMake(0, height, 320, 200)];
 }
 
--(NSMutableArray *) eventList
+-(NSArray *) eventList
 {
     if ( !_eventList )
     {
         NSArray * tempList = [[Event allEventsInManagedObjectContext:self.managedObjectContext] mutableCopy];
-        _eventList = [[NSMutableArray alloc] init];
+        NSMutableArray * __eventList = [[NSMutableArray alloc] init];
         for ( Event * event in tempList )
             if ( ![event.hidden boolValue] )
-                [_eventList addObject:event];
+                [__eventList addObject:event];
+        _eventList = [NSArray arrayWithArray: __eventList];
     }
     return _eventList;
 }
