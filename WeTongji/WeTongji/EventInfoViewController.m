@@ -12,18 +12,34 @@
 #import <QuartzCore/QuartzCore.h>
 #import "WUPopOverView.h"
 #import "Event+Addition.h"
+#import "EGORefreshTableHeaderView.h"
 #import <WeTongjiSDK/WeTongjiSDK.h>
 
-@interface EventInfoViewController () <UITableViewDataSource, UITableViewDelegate, WUPopOverViewDelegate>
+@interface EventInfoViewController () <UITableViewDataSource, UITableViewDelegate, WUPopOverViewDelegate,EGORefreshTableHeaderDelegate>
 
 @property (nonatomic,strong) NSMutableArray * eventList;
+@property (nonatomic,strong) EGORefreshTableHeaderView * pullRefreshHeaderView;
+@property (assign) int nextPage;
 
 - (void)configureTableView;
 @end
 
 @implementation EventInfoViewController
 
+@synthesize nextPage;
 @synthesize eventList = _eventList;
+@synthesize pullRefreshHeaderView = _pullRefreshHeaderView;
+
+-(EGORefreshTableHeaderView *) pullRefreshHeaderView
+{
+    if ( !_pullRefreshHeaderView )
+    {
+        _pullRefreshHeaderView = [[EGORefreshTableHeaderView alloc] initWithFrame:CGRectMake(0, -200, 320, 200)];
+        [_pullRefreshHeaderView refreshLastUpdatedDate];
+        _pullRefreshHeaderView.delegate = self;
+    }
+    return _pullRefreshHeaderView;
+}
 
 -(NSMutableArray *) eventList
 {
@@ -36,6 +52,8 @@
 - (void)configureTableView
 {
     [self.eventTableView registerNib:[UINib nibWithNibName:@"EventInfoCell" bundle:nil] forCellReuseIdentifier:kEventInfoCell];
+    //[self.eventTableView setTableHeaderView:self.pullRefreshHeaderView];
+    [self.eventTableView addSubview:self.pullRefreshHeaderView];
 }
 
 #pragma mark - LifeCycle
@@ -60,19 +78,6 @@
 - (void) viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    WTClient * client = [WTClient getClient];
-    [client setCompletionBlock:^(id responseData)
-        {
-            NSLog(@"%@",responseData);
-            NSArray * tempEventList = [responseData objectForKey:@"Activities"];
-            for ( NSDictionary * dict in tempEventList )
-            {
-                [Event insertActivity:dict inManagedObjectContext:self.managedObjectContext];
-            }
-            self.eventList = nil;
-            [self.eventTableView reloadData];
-        }];
-    [client getActivitiesInChannel:nil inSort:nil Expired:NO];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -128,6 +133,96 @@
 - (void)selectItemInPopOverViewAtIndex:(UIButton *)index
 {
     
+}
+
+#pragma -
+#pragma - refresh method by tzx
+
+- (void)refresh
+{
+    self.nextPage = 0;
+    [self loadMoreData];
+}
+
+- (void)clearData
+{
+    NSArray *eventArray = [Event allEventsInManagedObjectContext:self.managedObjectContext];
+    for(Event *event in eventArray)
+    {
+        event.hidden = [NSNumber numberWithBool:YES];
+    }
+    
+}
+
+- (void)loadMoreData
+{
+    WTClient *client = [WTClient getClient];
+    [client setCompletionBlock:^(id responseData)
+    {
+        NSString * hasError = [responseData objectForKey:@"isFailed"];
+        if( [hasError characterAtIndex:0] == 'N' )
+        {
+            if(self.nextPage == 0)
+                [self clearData];
+            NSArray *array = [responseData objectForKey:@"Activities"];
+            for(NSDictionary *eventDict in array)
+            {
+                Event *event = [Event insertActivity:eventDict inManagedObjectContext:self.managedObjectContext]; 
+                event.hidden = [NSNumber numberWithBool:NO];
+            }
+            self.eventList = nil;
+            [self.eventTableView reloadData];
+            self.nextPage = [[NSString stringWithFormat:@"%@", [responseData objectForKey:@"NextPager"]] intValue];
+        }
+        [self doneLoadingTableViewData];
+    }];
+    [client getActivitiesInChannel:nil inSort:SortTypeScheduleDesc Expired:NO nextPage:self.nextPage];
+}
+
+#pragma mark -
+#pragma mark Data Source Loading / Reloading Methods
+
+- (void)reloadTableViewDataSource
+{
+	_reloading = YES;
+	
+}
+
+- (void)doneLoadingTableViewData
+{
+	_reloading = NO;
+    [self.pullRefreshHeaderView egoRefreshScrollViewDataSourceDidFinishedLoading:self.eventTableView];	
+}
+
+#pragma mark -
+#pragma mark UIScrollViewDelegate Methods
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+	[_pullRefreshHeaderView egoRefreshScrollViewDidScroll:scrollView];
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerat
+{
+	[_pullRefreshHeaderView egoRefreshScrollViewDidEndDragging:scrollView];
+}
+
+#pragma -
+#pragma - EGORefreshTableHeaderDelegate
+
+- (void)egoRefreshTableHeaderDidTriggerRefresh:(EGORefreshTableHeaderView*)view
+{
+    [self loadMoreData];
+}
+
+- (BOOL)egoRefreshTableHeaderDataSourceIsLoading:(EGORefreshTableHeaderView*)view
+{
+    return _reloading;
+}
+
+- (NSDate*)egoRefreshTableHeaderDataSourceLastUpdated:(EGORefreshTableHeaderView*)view
+{
+    return [NSDate date];
 }
 
 @end

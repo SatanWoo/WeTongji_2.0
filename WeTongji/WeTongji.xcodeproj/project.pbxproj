@@ -133,6 +133,15 @@
 		E5FEF4771638418F00FB7A2A /* today@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5FEF4751638418F00FB7A2A /* today@2x.png */; };
 		E5FEF47B1638425600FB7A2A /* navbar.png in Resources */ = {isa = PBXBuildFile; fileRef = E5FEF4791638425600FB7A2A /* navbar.png */; };
 		E5FEF47C1638425600FB7A2A /* navbar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5FEF47A1638425600FB7A2A /* navbar@2x.png */; };
+		FFB5AEC5164CDC0A00A232DF /* EGORefreshTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB5AEBB164CDC0A00A232DF /* EGORefreshTableHeaderView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FFB5AEC6164CDC0A00A232DF /* blackArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB5AEBD164CDC0A00A232DF /* blackArrow.png */; };
+		FFB5AEC7164CDC0A00A232DF /* blackArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB5AEBE164CDC0A00A232DF /* blackArrow@2x.png */; };
+		FFB5AEC8164CDC0A00A232DF /* blueArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB5AEBF164CDC0A00A232DF /* blueArrow.png */; };
+		FFB5AEC9164CDC0A00A232DF /* blueArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB5AEC0164CDC0A00A232DF /* blueArrow@2x.png */; };
+		FFB5AECA164CDC0A00A232DF /* grayArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB5AEC1164CDC0A00A232DF /* grayArrow.png */; };
+		FFB5AECB164CDC0A00A232DF /* grayArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB5AEC2164CDC0A00A232DF /* grayArrow@2x.png */; };
+		FFB5AECC164CDC0A00A232DF /* whiteArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB5AEC3164CDC0A00A232DF /* whiteArrow.png */; };
+		FFB5AECD164CDC0A00A232DF /* whiteArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB5AEC4164CDC0A00A232DF /* whiteArrow@2x.png */; };
 		FFBEB29B164B6DA10004AF4C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBEB29A164B6DA10004AF4C /* CoreData.framework */; };
 		FFBEB29E164B6F1B0004AF4C /* CoreDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBEB29D164B6F1B0004AF4C /* CoreDataViewController.m */; };
 		FFBEB2B6164B89090004AF4C /* WeTongjiCoreDataModels.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FFBEB2B4164B89090004AF4C /* WeTongjiCoreDataModels.xcdatamodeld */; };
@@ -338,6 +347,16 @@
 		FF9DCF2C164BF94C00EA30E9 /* NSUserDefaults+Addition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+Addition.h"; sourceTree = "<group>"; };
 		FF9DCF2D164BF94C00EA30E9 /* NSUserDefaults+Addition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+Addition.m"; sourceTree = "<group>"; };
 		FFB0370A164BEE5A00157B7D /* WeTongjiSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = WeTongjiSDK.xcodeproj; path = ../WeTongjiSDK/WeTongjiSDK.xcodeproj; sourceTree = "<group>"; };
+		FFB5AEBA164CDC0A00A232DF /* EGORefreshTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGORefreshTableHeaderView.h; sourceTree = "<group>"; };
+		FFB5AEBB164CDC0A00A232DF /* EGORefreshTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGORefreshTableHeaderView.m; sourceTree = "<group>"; };
+		FFB5AEBD164CDC0A00A232DF /* blackArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blackArrow.png; sourceTree = "<group>"; };
+		FFB5AEBE164CDC0A00A232DF /* blackArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blackArrow@2x.png"; sourceTree = "<group>"; };
+		FFB5AEBF164CDC0A00A232DF /* blueArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueArrow.png; sourceTree = "<group>"; };
+		FFB5AEC0164CDC0A00A232DF /* blueArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blueArrow@2x.png"; sourceTree = "<group>"; };
+		FFB5AEC1164CDC0A00A232DF /* grayArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grayArrow.png; sourceTree = "<group>"; };
+		FFB5AEC2164CDC0A00A232DF /* grayArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grayArrow@2x.png"; sourceTree = "<group>"; };
+		FFB5AEC3164CDC0A00A232DF /* whiteArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteArrow.png; sourceTree = "<group>"; };
+		FFB5AEC4164CDC0A00A232DF /* whiteArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "whiteArrow@2x.png"; sourceTree = "<group>"; };
 		FFBEB29A164B6DA10004AF4C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		FFBEB29C164B6F1B0004AF4C /* CoreDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataViewController.h; sourceTree = "<group>"; };
 		FFBEB29D164B6F1B0004AF4C /* CoreDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataViewController.m; sourceTree = "<group>"; };
@@ -431,6 +450,7 @@
 		B00D6926162CFCAC00592B1D /* WeTongji */ = {
 			isa = PBXGroup;
 			children = (
+				FFB5AEB7164CDC0A00A232DF /* EGOTableViewPullRefresh */,
 				FFBEB2AE164B88290004AF4C /* CoreData Models */,
 				B00D693D162CFCDF00592B1D /* Category */,
 				E5482E431636E6E80054C771 /* Model */,
@@ -812,6 +832,47 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		FFB5AEB7164CDC0A00A232DF /* EGOTableViewPullRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				FFB5AEB8164CDC0A00A232DF /* Classes */,
+				FFB5AEBC164CDC0A00A232DF /* Resources */,
+			);
+			path = EGOTableViewPullRefresh;
+			sourceTree = "<group>";
+		};
+		FFB5AEB8164CDC0A00A232DF /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				FFB5AEB9164CDC0A00A232DF /* View */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		FFB5AEB9164CDC0A00A232DF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FFB5AEBA164CDC0A00A232DF /* EGORefreshTableHeaderView.h */,
+				FFB5AEBB164CDC0A00A232DF /* EGORefreshTableHeaderView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FFB5AEBC164CDC0A00A232DF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FFB5AEBD164CDC0A00A232DF /* blackArrow.png */,
+				FFB5AEBE164CDC0A00A232DF /* blackArrow@2x.png */,
+				FFB5AEBF164CDC0A00A232DF /* blueArrow.png */,
+				FFB5AEC0164CDC0A00A232DF /* blueArrow@2x.png */,
+				FFB5AEC1164CDC0A00A232DF /* grayArrow.png */,
+				FFB5AEC2164CDC0A00A232DF /* grayArrow@2x.png */,
+				FFB5AEC3164CDC0A00A232DF /* whiteArrow.png */,
+				FFB5AEC4164CDC0A00A232DF /* whiteArrow@2x.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		FFBEB2AE164B88290004AF4C /* CoreData Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -1002,6 +1063,14 @@
 				E5D2449A1647CD2600DA43DD /* arrange_cell_bg@2x.png in Resources */,
 				E5D2449B1647CD2600DA43DD /* arrange_remind_bg.png in Resources */,
 				E5D2449C1647CD2600DA43DD /* arrange_remind_bg@2x.png in Resources */,
+				FFB5AEC6164CDC0A00A232DF /* blackArrow.png in Resources */,
+				FFB5AEC7164CDC0A00A232DF /* blackArrow@2x.png in Resources */,
+				FFB5AEC8164CDC0A00A232DF /* blueArrow.png in Resources */,
+				FFB5AEC9164CDC0A00A232DF /* blueArrow@2x.png in Resources */,
+				FFB5AECA164CDC0A00A232DF /* grayArrow.png in Resources */,
+				FFB5AECB164CDC0A00A232DF /* grayArrow@2x.png in Resources */,
+				FFB5AECC164CDC0A00A232DF /* whiteArrow.png in Resources */,
+				FFB5AECD164CDC0A00A232DF /* whiteArrow@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1052,6 +1121,7 @@
 				FFBEB2F5164B9CF70004AF4C /* NSString+Addition.m in Sources */,
 				FFBEB2F8164BA0760004AF4C /* NSArray+Addition.m in Sources */,
 				FFBEB31D164BBFA00004AF4C /* Event.m in Sources */,
+				FFB5AEC5164CDC0A00A232DF /* EGORefreshTableHeaderView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

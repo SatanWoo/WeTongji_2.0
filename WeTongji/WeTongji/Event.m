@@ -28,5 +28,6 @@
 @dynamic schedule;
 @dynamic status;
 @dynamic title;
+@dynamic hidden;
 
 @end

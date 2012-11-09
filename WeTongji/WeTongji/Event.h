@@ -29,5 +29,6 @@
 @property (nonatomic, retain) NSNumber * schedule;
 @property (nonatomic, retain) NSNumber * status;
 @property (nonatomic, retain) NSString * title;
+@property (nonatomic, retain) NSNumber * hidden;
 
 @end

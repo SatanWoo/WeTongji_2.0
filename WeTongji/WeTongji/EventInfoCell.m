@@ -8,6 +8,7 @@
 
 #import "EventInfoCell.h"
 #import "NSString+Addition.h"
+#import <WeTongjiSDK/WeTongjiSDK.h>
 
 @implementation EventInfoCell
 
@@ -40,6 +41,7 @@
     self.favorLabel.text = [self.event.favorite stringValue];
     self.likeLabel.text = [self.event.like stringValue];
     self.organizationLabel.text = self.event.organizer;
+    [self.avatar setImageWithURL:[NSURL URLWithString:self.event.orgranizerAvatarLink]];
 }
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
