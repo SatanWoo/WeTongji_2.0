@@ -30,6 +30,7 @@
 - (UIImage *)cachedImageForRequest:(NSURLRequest *)request;
 - (void)cacheImage:(UIImage *)image
         forRequest:(NSURLRequest *)request;
+- (void) clearCache;
 @end
 
 #pragma mark -
@@ -62,8 +63,8 @@ static char kAFImageRequestOperationObjectKey;
     dispatch_once(&onceToken, ^{
         _af_imageRequestOperationQueue = [[NSOperationQueue alloc] init];
         [_af_imageRequestOperationQueue setMaxConcurrentOperationCount:NSOperationQueueDefaultMaxConcurrentOperationCount];
+        [_af_imageRequestOperationQueue setMaxConcurrentOperationCount:2];
     });
-    
     return _af_imageRequestOperationQueue;
 }
 
@@ -170,9 +171,18 @@ static inline NSString * AFImageCacheKeyFromURLRequest(NSURLRequest *request) {
 - (void)cacheImage:(UIImage *)image
         forRequest:(NSURLRequest *)request
 {
-    if (image && request) {
+    if (image && request)
+    {
         [self setObject:image forKey:AFImageCacheKeyFromURLRequest(request)];
     }
+}
+
+#pragma mark -
+#pragma mark - clear cache
+
+- (void) clearCache
+{
+    [self removeAllObjects];
 }
 
 @end

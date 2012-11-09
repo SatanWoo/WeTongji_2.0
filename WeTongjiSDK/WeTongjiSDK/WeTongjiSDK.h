@@ -7,3 +7,4 @@
 //
 
 #import "WTClient.h"
+#import "UIImageView+AFNetworking.h"
