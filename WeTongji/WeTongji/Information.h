@@ -1,0 +1,30 @@
+//
+//  Information.h
+//  WeTongji
+//
+//  Created by tang zhixiong on 12-11-9.
+//
+//
+
+#import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
+
+
+@interface Information : NSManagedObject
+
+@property (nonatomic, retain) NSNumber * canFavorite;
+@property (nonatomic, retain) NSNumber * canLike;
+@property (nonatomic, retain) NSString * category;
+@property (nonatomic, retain) NSString * context;
+@property (nonatomic, retain) NSDate * createdAt;
+@property (nonatomic, retain) NSNumber * favorite;
+@property (nonatomic, retain) NSString * id;
+@property (nonatomic, retain) NSArray * images;
+@property (nonatomic, retain) NSNumber * like;
+@property (nonatomic, retain) NSNumber * read;
+@property (nonatomic, retain) NSString * source;
+@property (nonatomic, retain) NSString * summary;
+@property (nonatomic, retain) NSString * title;
+@property (nonatomic, retain) NSNumber * hiden;
+
+@end

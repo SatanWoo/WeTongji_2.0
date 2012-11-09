@@ -12,6 +12,8 @@
 #import "RecommendCell.h"
 #import "SchoolNewsCell.h"
 #import "GroupInfoCell.h"
+#import "Information+Addition.h"
+#import <WeTongjiSDK/WeTongjiSDK.h>
 
 #define kWidth self.scrollView.frame.size.width
 #define kHeight self.scrollView.frame.size.height
@@ -183,6 +185,22 @@
     [self configureTabBar];
     [self configureTableView];
 	// Do any additional setup after loading the view.
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    WTClient * client = [WTClient getClient];
+    [client  setCompletionBlock:^(id responseData)
+    {
+        NSString * hasError = [responseData objectForKey:@"isFailed"];
+        if( [hasError characterAtIndex:0] == 'N' )
+        {
+            NSArray * dictArray = [responseData objectForKey:@"Information"];
+            for ( NSDictionary * dict in dictArray )
+                [Information insertAnInformation:dict inManagedObjectContext:self.managedObjectContext];
+        }
+    }];
+    [client getAllInformationInSort:nil nextPage:0];
 }
 
 - (void)viewDidUnload

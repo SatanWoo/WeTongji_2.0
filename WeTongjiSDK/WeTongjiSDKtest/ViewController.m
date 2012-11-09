@@ -26,8 +26,8 @@
     //[self update];
     //[self channel];
     //[self favorite];
-    [self information];
-    //[self star];
+    //[self information];
+    [self star];
     //[self activity];
 }
 
