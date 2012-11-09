@@ -40,8 +40,12 @@
 {
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     [request setEntity:[NSEntityDescription entityForName:@"Information" inManagedObjectContext:context]];
-    NSArray *result = [context executeFetchRequest:request error:NULL];
-    return result;
+    NSArray *tempList = [context executeFetchRequest:request error:NULL];
+    NSMutableArray * result = [[NSMutableArray alloc] init];
+    for (Information * information in tempList)
+        if ([information.category isEqualToString:category])
+            [result addObject:information];
+    return [NSArray arrayWithArray:result];
 }
 
 +(Information *) getInformationWithId:(NSString*) informaionId inManagedObjectContext:(NSManagedObjectContext *) context
