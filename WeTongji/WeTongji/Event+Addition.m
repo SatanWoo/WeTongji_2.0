@@ -66,4 +66,10 @@
     return result;
 }
 
++ (void) clearAllEventInManagedObjectContext:(NSManagedObjectContext *)context
+{
+    NSArray * eventList = [Event allEventsInManagedObjectContext:context];
+    for ( Event * event in eventList ) [context delete:event];
+}
+
 @end

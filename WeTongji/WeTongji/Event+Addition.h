@@ -14,4 +14,6 @@
 + (Event *)EventWithID:(NSString *)activityId inManagedObjectContext:(NSManagedObjectContext *)context;
 + (NSArray *)allEventsInManagedObjectContext:(NSManagedObjectContext *)context;
 
++ (void) clearAllEventInManagedObjectContext:(NSManagedObjectContext *)context;
+
 @end
