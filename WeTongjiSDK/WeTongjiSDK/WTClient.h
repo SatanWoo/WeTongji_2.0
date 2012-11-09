@@ -12,7 +12,7 @@
 
 #define SortTypeLikeDesc @"1"
 #define SortTypeFavoriteDesc @"2"
-#define SortTypeLikeScheduleDesc @"3"
+#define SortTypeScheduleDesc @"3"
 
 typedef void (^WTCompletionBlock)(id resposeObject);
 
