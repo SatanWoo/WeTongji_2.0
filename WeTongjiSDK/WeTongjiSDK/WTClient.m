@@ -124,7 +124,7 @@ static NSString * const pathString = @"/api/call";
          NSLog(@"Request Failed");
          NSLog(@"%@", error);
      }];
-    
+    self.params = nil;
 }
 
 
@@ -234,11 +234,13 @@ static NSString * const pathString = @"/api/call";
 - (void) getActivitiesInChannel:(NSString *) channelId
                          inSort:(NSString *) sort
                         Expired:(Boolean) isExpired
+                       nextPage:(int) nextPage;
 {
     [self.params setObject:@"Activities.Get" forKey:@"M"];
     if (channelId) [self.params setObject:channelId forKey:@"Channel_Ids"];
     if (sort) [self.params setObject:sort forKey:@"Sort"];
     if (isExpired) [self.params setObject:[NSString stringWithFormat:@"%d", isExpired] forKey:@"Expire"];
+    [self.params setObject:[NSString stringWithFormat:@"%d",nextPage] forKey:@"P"];
     [self sendRequest];
 }
 
@@ -278,18 +280,21 @@ static NSString * const pathString = @"/api/call";
     [self sendRequest];
 }
 
-- (void) getFavorites
+- (void) getFavoritesWithNextPage:(int) nextPage
 {
     [self.params setObject:[NSUserDefaults getCurrentUserID] forKey:@"U"];
     [self.params setObject:[NSUserDefaults getCurrentUserSession] forKey:@"S"];
     [self.params setObject:@"Favorite.Get" forKey:@"M"];
+    [self.params setObject:[NSString stringWithFormat:@"%d",nextPage] forKey:@"P"];
     [self sendRequest];
 }
 
 - (void) getAllInformationInSort:(NSString *) sort
+                        nextPage:(int)nextPage;
 {
     [self.params setObject:@"Information.GetList" forKey:@"M"];
     if ( sort ) [self.params setObject:sort forKey:@"Sort"];
+    [self.params setObject:[NSString stringWithFormat:@"%d",nextPage] forKey:@"P"];
     [self sendRequest];
 }
 
@@ -319,9 +324,53 @@ static NSString * const pathString = @"/api/call";
     [self sendRequest];
 }
 
-- (void) getAllStars
+- (void) getAllStarsWithNextPage:(int)nextPage;
 {
     [self.params setObject:@"People.Get" forKey:@"M"];
+    [self.params setObject:[NSString stringWithFormat:@"%d",nextPage] forKey:@"P"];
+    [self sendRequest];
+}
+
+- (void) readStar:(int)starId
+{
+    [self.params setObject:@"Person.Read" forKey:@"M"];
+    [self.params setObject:@"Id" forKey:[NSString stringWithFormat:@"%d",starId]];
+    [self sendRequest];
+}
+
+- (void) setStarFavored:(int)starId
+{
+    [self.params setObject:[NSUserDefaults getCurrentUserID] forKey:@"U"];
+    [self.params setObject:[NSUserDefaults getCurrentUserSession] forKey:@"S"];
+    [self.params setObject:@"Person.Favorite" forKey:@"M"];
+    [self.params setObject:@"Id" forKey:[NSString stringWithFormat:@"%d",starId]];
+    [self sendRequest];
+}
+
+- (void) cancelStarFaved:(int)starId
+{
+    [self.params setObject:[NSUserDefaults getCurrentUserID] forKey:@"U"];
+    [self.params setObject:[NSUserDefaults getCurrentUserSession] forKey:@"S"];
+    [self.params setObject:@"Person.UnFavorite" forKey:@"M"];
+    [self.params setObject:@"Id" forKey:[NSString stringWithFormat:@"%d",starId]];
+    [self sendRequest];
+}
+
+- (void) likeStar:(int)starId
+{
+    [self.params setObject:[NSUserDefaults getCurrentUserID] forKey:@"U"];
+    [self.params setObject:[NSUserDefaults getCurrentUserSession] forKey:@"S"];
+    [self.params setObject:@"Person.Like" forKey:@"M"];
+    [self.params setObject:@"Id" forKey:[NSString stringWithFormat:@"%d",starId]];
+    [self sendRequest];
+}
+
+- (void) unlikeStar:(int)starId
+{
+    [self.params setObject:[NSUserDefaults getCurrentUserID] forKey:@"U"];
+    [self.params setObject:[NSUserDefaults getCurrentUserSession] forKey:@"S"];
+    [self.params setObject:@"Person.UnLike" forKey:@"M"];
+    [self.params setObject:@"Id" forKey:[NSString stringWithFormat:@"%d",starId]];
     [self sendRequest];
 }
 

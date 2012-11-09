@@ -56,7 +56,8 @@ typedef void (^WTCompletionBlock)(id resposeObject);
 
 - (void) getActivitiesInChannel:(NSString *) channelId
                          inSort:(NSString *) sort
-                        Expired:(Boolean) isExpired;
+                        Expired:(Boolean) isExpired
+                       nextPage:(int) nextPage;
 - (void) setLikeActivitiy:(NSString *) activityId;
 - (void) cancelLikeActivity:(NSString *) activityId;
 - (void) setActivityFavored:(NSString *) activityId;
@@ -65,12 +66,13 @@ typedef void (^WTCompletionBlock)(id resposeObject);
 #pragma -
 #pragma - favorite API
 
-- (void) getFavorites;
+- (void) getFavoritesWithNextPage:(int) nextPage;
 
 #pragma -
 #pragma - Information API
 
-- (void) getAllInformationInSort:(NSString *) sort;
+- (void) getAllInformationInSort:(NSString *) sort
+                        nextPage:(int) nextPage;
 - (void) getDetailOfInformaion:(NSString *) informationId;
 - (void) readInformaion:(NSString *) informationId;
 
@@ -83,7 +85,11 @@ typedef void (^WTCompletionBlock)(id resposeObject);
 #pragma - Star API
 
 - (void) getLatestStar;
-- (void) getAllStars;
-
+- (void) getAllStarsWithNextPage:(int)nextPage;
+- (void) readStar:(int)starId;
+- (void) setStarFavored:(int)starId;
+- (void) cancelStarFaved:(int)starId;
+- (void) likeStar:(int)starId;
+- (void) unlikeStar:(int)starId;
 
 @end
