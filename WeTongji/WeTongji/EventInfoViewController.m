@@ -13,12 +13,14 @@
 #import "WUPopOverView.h"
 #import "Event+Addition.h"
 #import "EGORefreshTableHeaderView.h"
+#import "EGORefreshTableFooterView.h"
 #import <WeTongjiSDK/WeTongjiSDK.h>
 
-@interface EventInfoViewController () <UITableViewDataSource, UITableViewDelegate, WUPopOverViewDelegate,EGORefreshTableHeaderDelegate>
+@interface EventInfoViewController () <UITableViewDataSource, UITableViewDelegate, WUPopOverViewDelegate,EGORefreshTableHeaderDelegate,EGORefreshTableFooterDelegate>
 
 @property (nonatomic,strong) NSMutableArray * eventList;
 @property (nonatomic,strong) EGORefreshTableHeaderView * pullRefreshHeaderView;
+@property (nonatomic,strong) EGORefreshTableFooterView * pullRefreshFooterView;
 @property (assign) int nextPage;
 
 - (void)configureTableView;
@@ -29,6 +31,7 @@
 @synthesize nextPage;
 @synthesize eventList = _eventList;
 @synthesize pullRefreshHeaderView = _pullRefreshHeaderView;
+@synthesize pullRefreshFooterView = _pullRefreshFooterView;
 
 -(EGORefreshTableHeaderView *) pullRefreshHeaderView
 {
@@ -41,10 +44,38 @@
     return _pullRefreshHeaderView;
 }
 
+
+-(EGORefreshTableFooterView *) pullRefreshFooterView
+{
+    if ( !_pullRefreshFooterView )
+    {
+        _pullRefreshFooterView = [[EGORefreshTableFooterView alloc] initWithFrame:CGRectMake(0,-200 , 320, 200)];
+        [self configureFooterView];
+        [_pullRefreshFooterView refreshLastUpdatedDate];
+        _pullRefreshFooterView.delegate = self;
+    }
+    return _pullRefreshFooterView;
+}
+
+-(void) configureFooterView
+{
+    float height;
+    if (self.eventTableView.contentSize.height>self.eventTableView.bounds.size.height)
+        height=self.eventTableView.contentSize.height;
+    else height=self.eventTableView.bounds.size.height;
+    [self.pullRefreshFooterView setFrame:CGRectMake(0, height, 320, 200)];
+}
+
 -(NSMutableArray *) eventList
 {
     if ( !_eventList )
-        _eventList = [[Event allEventsInManagedObjectContext:self.managedObjectContext] mutableCopy];
+    {
+        NSArray * tempList = [[Event allEventsInManagedObjectContext:self.managedObjectContext] mutableCopy];
+        _eventList = [[NSMutableArray alloc] init];
+        for ( Event * event in tempList )
+            if ( ![event.hidden boolValue] )
+                [_eventList addObject:event];
+    }
     return _eventList;
 }
 
@@ -52,8 +83,8 @@
 - (void)configureTableView
 {
     [self.eventTableView registerNib:[UINib nibWithNibName:@"EventInfoCell" bundle:nil] forCellReuseIdentifier:kEventInfoCell];
-    //[self.eventTableView setTableHeaderView:self.pullRefreshHeaderView];
     [self.eventTableView addSubview:self.pullRefreshHeaderView];
+    [self.eventTableView addSubview:self.pullRefreshFooterView];
 }
 
 #pragma mark - LifeCycle
@@ -65,6 +96,7 @@
     [super viewDidLoad];
     [self configureTableView];
     self.filterView.layer.opacity = 0;
+    [Event clearAllEventInManagedObjectContext:self.managedObjectContext];
 }
 
 - (void)viewDidUnload
@@ -73,6 +105,11 @@
     [self setEventTableView:nil];
     [self setFilterView:nil];
     [super viewDidUnload];
+}
+
+- (void) viewDidAppear:(BOOL)animated
+{
+    [self configureFooterView];
 }
 
 - (void) viewWillAppear:(BOOL)animated
@@ -170,13 +207,12 @@
                 Event *event = [Event insertActivity:eventDict inManagedObjectContext:self.managedObjectContext]; 
                 event.hidden = [NSNumber numberWithBool:NO];
             }
-            self.eventList = nil;
-            [self.eventTableView reloadData];
             self.nextPage = [[NSString stringWithFormat:@"%@", [responseData objectForKey:@"NextPager"]] intValue];
+            NSLog(@"%d",self.nextPage);
         }
         [self doneLoadingTableViewData];
     }];
-    [client getActivitiesInChannel:nil inSort:SortTypeScheduleDesc Expired:NO nextPage:self.nextPage];
+    [client getActivitiesInChannel:nil inSort:nil Expired:NO nextPage:self.nextPage];
 }
 
 #pragma mark -
@@ -191,7 +227,11 @@
 - (void)doneLoadingTableViewData
 {
 	_reloading = NO;
-    [self.pullRefreshHeaderView egoRefreshScrollViewDataSourceDidFinishedLoading:self.eventTableView];	
+    self.eventList = nil;
+    [self.eventTableView reloadData];
+    [self.pullRefreshHeaderView egoRefreshScrollViewDataSourceDidFinishedLoading:self.eventTableView];
+	[self.pullRefreshFooterView egoRefreshScrollViewDataSourceDidFinishedLoading:self.eventTableView];
+    [self configureFooterView];
 }
 
 #pragma mark -
@@ -200,11 +240,14 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
 	[_pullRefreshHeaderView egoRefreshScrollViewDidScroll:scrollView];
+    [_pullRefreshFooterView egoRefreshScrollViewDidScroll:scrollView];
 }
+
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerat
 {
 	[_pullRefreshHeaderView egoRefreshScrollViewDidEndDragging:scrollView];
+    [_pullRefreshFooterView egoRefreshScrollViewDidEndDragging:scrollView];
 }
 
 #pragma -
@@ -212,7 +255,7 @@
 
 - (void)egoRefreshTableHeaderDidTriggerRefresh:(EGORefreshTableHeaderView*)view
 {
-    [self loadMoreData];
+    [self refresh];
 }
 
 - (BOOL)egoRefreshTableHeaderDataSourceIsLoading:(EGORefreshTableHeaderView*)view
@@ -224,5 +267,19 @@
 {
     return [NSDate date];
 }
+
+#pragma -
+#pragma - EGORefreshTableHeaderDelegate
+
+- (void)egoRefreshTableFooterDidTriggerRefresh:(EGORefreshTableFooterView*)view
+{
+    [self loadMoreData];
+}
+
+- (BOOL)egoRefreshTableFooterDataSourceIsLoading:(EGORefreshTableFooterView*)view
+{
+    return _reloading;
+}
+
 
 @end
