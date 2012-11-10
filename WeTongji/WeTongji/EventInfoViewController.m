@@ -86,6 +86,7 @@
     [self.eventTableView registerNib:[UINib nibWithNibName:@"EventInfoCell" bundle:nil] forCellReuseIdentifier:kEventInfoCell];
     [self.eventTableView addSubview:self.pullRefreshHeaderView];
     [self.eventTableView addSubview:self.pullRefreshFooterView];
+    [self.eventTableView setContentInset:UIEdgeInsetsMake(0.0f, 0.0f, 40.0f, 0.0f)];
 }
 
 #pragma mark - LifeCycle
@@ -213,7 +214,7 @@
         }
         [self doneLoadingTableViewData];
     }];
-    [client getActivitiesInChannel:nil inSort:nil Expired:NO nextPage:self.nextPage];
+    [client getActivitiesInChannel:nil inSort:SortTypeFavoriteDesc Expired:YES nextPage:self.nextPage];
 }
 
 #pragma mark -
