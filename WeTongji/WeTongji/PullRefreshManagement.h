@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "EGORefreshTableHeaderView.h"
 #import "EGORefreshTableFooterView.h"
+#import "PullRefreshManagementDelegate.h"
 
 @interface PullRefreshManagement : NSObject
 {
@@ -17,5 +18,8 @@
 
 @property (nonatomic,strong) EGORefreshTableHeaderView * pullRefreshHeaderView;
 @property (nonatomic,strong) EGORefreshTableFooterView * pullRefreshFooterView;
+@property (nonatomic,weak) id<PullRefreshManagementDelegate> delegate;
+
+-(id) initWithScrollView:(UIScrollView *)scrollView;
 
 @end
