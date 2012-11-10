@@ -50,6 +50,7 @@
 - (void)egoRefreshScrollViewDidScroll:(UIScrollView *)scrollView;
 - (void)egoRefreshScrollViewDidEndDragging:(UIScrollView *)scrollView;
 - (void)egoRefreshScrollViewDataSourceDidFinishedLoading:(UIScrollView *)scrollView;
+- (void) setIsEndingAll:(BOOL) isEndingAll;
 
 @end
 @protocol EGORefreshTableFooterDelegate

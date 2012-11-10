@@ -180,6 +180,7 @@
 - (void)refresh
 {
     self.nextPage = 0;
+    [self.pullRefreshFooterView setIsEndingAll:NO];
     [self loadMoreData];
 }
 
@@ -211,6 +212,7 @@
             }
             self.nextPage = [[NSString stringWithFormat:@"%@", [responseData objectForKey:@"NextPager"]] intValue];
             NSLog(@"%d",self.nextPage);
+            if (self.nextPage == 0) [self.pullRefreshFooterView setIsEndingAll:YES];
         }
         [self doneLoadingTableViewData];
     }];

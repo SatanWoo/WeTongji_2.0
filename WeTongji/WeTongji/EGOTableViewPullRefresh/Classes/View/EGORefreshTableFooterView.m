@@ -171,6 +171,11 @@
 			[CATransaction commit];
 			
 			break;
+        case EGOODataFinished:
+            
+            _statusLabel.text = NSLocalizedString(@"已经没有了。", @"End Status");
+            
+            break;
 		default:
 			break;
 	}
@@ -184,6 +189,7 @@
 
 - (void)egoRefreshScrollViewDidScroll:(UIScrollView *)scrollView {	
 	
+    if (_state == EGOODataFinished ) return;
 	if (_state == EGOOPullRefreshLoading) {
 		
 		CGFloat offset = MAX(scrollView.contentOffset.y * -1, 0);
@@ -216,6 +222,7 @@
 
 - (void)egoRefreshScrollViewDidEndDragging:(UIScrollView *)scrollView {
 	
+    if (_state == EGOODataFinished) return;
 	BOOL _loading = NO;
 	if ([_delegate respondsToSelector:@selector(egoRefreshTableFooterDataSourceIsLoading:)]) {
 		_loading = [_delegate egoRefreshTableFooterDataSourceIsLoading:self];
@@ -237,15 +244,24 @@
 	
 }
 
-- (void)egoRefreshScrollViewDataSourceDidFinishedLoading:(UIScrollView *)scrollView {	
-	
+- (void)egoRefreshScrollViewDataSourceDidFinishedLoading:(UIScrollView *)scrollView {
 	[UIView beginAnimations:nil context:NULL];
 	[UIView setAnimationDuration:.3];
 	[scrollView setContentInset:UIEdgeInsetsMake(0.0f, 0.0f, 40.0f, 0.0f)];
 	[UIView commitAnimations];
-	
+	if (_state == EGOODataFinished)
+    {
+        [_activityView stopAnimating];
+        return;
+    }
 	[self setState:EGOOPullRefreshNormal];
 
+}
+
+- (void) setIsEndingAll:(BOOL) isEndingAll
+{
+    if ( isEndingAll ) [self setState:EGOODataFinished];
+    else [self setState:EGOOPullRefreshNormal];
 }
 
 
