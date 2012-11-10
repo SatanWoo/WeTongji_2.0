@@ -12,15 +12,13 @@
 #import <QuartzCore/QuartzCore.h>
 #import "WUPopOverView.h"
 #import "Event+Addition.h"
-#import "EGORefreshTableHeaderView.h"
-#import "EGORefreshTableFooterView.h"
+#import "PullRefreshManagement.h"
 #import <WeTongjiSDK/WeTongjiSDK.h>
 
-@interface EventInfoViewController () <UITableViewDataSource, UITableViewDelegate, WUPopOverViewDelegate,EGORefreshTableHeaderDelegate,EGORefreshTableFooterDelegate>
+@interface EventInfoViewController () <UITableViewDataSource, UITableViewDelegate, WUPopOverViewDelegate,PullRefreshManagementDelegate>
 
 @property (nonatomic,strong) NSArray * eventList;
-@property (nonatomic,strong) EGORefreshTableHeaderView * pullRefreshHeaderView;
-@property (nonatomic,strong) EGORefreshTableFooterView * pullRefreshFooterView;
+@property (nonatomic,strong) PullRefreshManagement * pullRefreshManagement;
 @property (assign) int nextPage;
 
 - (void)configureTableView;
@@ -30,40 +28,15 @@
 
 @synthesize nextPage;
 @synthesize eventList = _eventList;
-@synthesize pullRefreshHeaderView = _pullRefreshHeaderView;
-@synthesize pullRefreshFooterView = _pullRefreshFooterView;
+@synthesize pullRefreshManagement = _pullRefreshManagement;
 
--(EGORefreshTableHeaderView *) pullRefreshHeaderView
+-(PullRefreshManagement *) pullRefreshManagement
 {
-    if ( !_pullRefreshHeaderView )
+    if ( !_pullRefreshManagement )
     {
-        _pullRefreshHeaderView = [[EGORefreshTableHeaderView alloc] initWithFrame:CGRectMake(0, -200, 320, 200)];
-        [_pullRefreshHeaderView refreshLastUpdatedDate];
-        _pullRefreshHeaderView.delegate = self;
+        _pullRefreshManagement = [[PullRefreshManagement alloc] initWithScrollView:self.eventTableView];
     }
-    return _pullRefreshHeaderView;
-}
-
-
--(EGORefreshTableFooterView *) pullRefreshFooterView
-{
-    if ( !_pullRefreshFooterView )
-    {
-        _pullRefreshFooterView = [[EGORefreshTableFooterView alloc] initWithFrame:CGRectMake(0,-200 , 320, 200)];
-        [self configureFooterView];
-        [_pullRefreshFooterView refreshLastUpdatedDate];
-        _pullRefreshFooterView.delegate = self;
-    }
-    return _pullRefreshFooterView;
-}
-
--(void) configureFooterView
-{
-    float height;
-    if (self.eventTableView.contentSize.height>self.eventTableView.bounds.size.height)
-        height=self.eventTableView.contentSize.height;
-    else height=self.eventTableView.bounds.size.height;
-    [self.pullRefreshFooterView setFrame:CGRectMake(0, height, 320, 200)];
+    return _pullRefreshManagement;
 }
 
 -(NSArray *) eventList
@@ -84,9 +57,7 @@
 - (void)configureTableView
 {
     [self.eventTableView registerNib:[UINib nibWithNibName:@"EventInfoCell" bundle:nil] forCellReuseIdentifier:kEventInfoCell];
-    [self.eventTableView addSubview:self.pullRefreshHeaderView];
-    [self.eventTableView addSubview:self.pullRefreshFooterView];
-    [self.eventTableView setContentInset:UIEdgeInsetsMake(0.0f, 0.0f, 40.0f, 0.0f)];
+    self.pullRefreshManagement.delegate = self;
 }
 
 #pragma mark - LifeCycle
@@ -109,10 +80,6 @@
     [super viewDidUnload];
 }
 
-- (void) viewDidAppear:(BOOL)animated
-{
-    [self configureFooterView];
-}
 
 - (void) viewWillAppear:(BOOL)animated
 {
@@ -180,7 +147,6 @@
 - (void)refresh
 {
     self.nextPage = 0;
-    [self.pullRefreshFooterView setIsEndingAll:NO];
     [self loadMoreData];
 }
 
@@ -192,6 +158,13 @@
         event.hidden = [NSNumber numberWithBool:YES];
     }
     
+}
+
+- (void)endLoading
+{
+    self.eventList = nil;
+    [self.eventTableView reloadData];
+
 }
 
 - (void)loadMoreData
@@ -212,30 +185,11 @@
             }
             self.nextPage = [[NSString stringWithFormat:@"%@", [responseData objectForKey:@"NextPager"]] intValue];
             NSLog(@"%d",self.nextPage);
-            if (self.nextPage == 0) [self.pullRefreshFooterView setIsEndingAll:YES];
+            if (self.nextPage == 0) [self.pullRefreshManagement setNoMoreData:YES];
         }
-        [self doneLoadingTableViewData];
+        [self.pullRefreshManagement endLoading];
     }];
     [client getActivitiesInChannel:nil inSort:SortTypeFavoriteDesc Expired:YES nextPage:self.nextPage];
-}
-
-#pragma mark -
-#pragma mark Data Source Loading / Reloading Methods
-
-- (void)reloadTableViewDataSource
-{
-	_reloading = YES;
-	
-}
-
-- (void)doneLoadingTableViewData
-{
-	_reloading = NO;
-    self.eventList = nil;
-    [self.eventTableView reloadData];
-    [self.pullRefreshHeaderView egoRefreshScrollViewDataSourceDidFinishedLoading:self.eventTableView];
-	[self.pullRefreshFooterView egoRefreshScrollViewDataSourceDidFinishedLoading:self.eventTableView];
-    [self configureFooterView];
 }
 
 #pragma mark -
@@ -243,46 +197,13 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-	[_pullRefreshHeaderView egoRefreshScrollViewDidScroll:scrollView];
-    [_pullRefreshFooterView egoRefreshScrollViewDidScroll:scrollView];
+	[self.pullRefreshManagement scrollViewDidScroll:scrollView];
 }
 
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerat
 {
-	[_pullRefreshHeaderView egoRefreshScrollViewDidEndDragging:scrollView];
-    [_pullRefreshFooterView egoRefreshScrollViewDidEndDragging:scrollView];
-}
-
-#pragma -
-#pragma - EGORefreshTableHeaderDelegate
-
-- (void)egoRefreshTableHeaderDidTriggerRefresh:(EGORefreshTableHeaderView*)view
-{
-    [self refresh];
-}
-
-- (BOOL)egoRefreshTableHeaderDataSourceIsLoading:(EGORefreshTableHeaderView*)view
-{
-    return _reloading;
-}
-
-- (NSDate*)egoRefreshTableHeaderDataSourceLastUpdated:(EGORefreshTableHeaderView*)view
-{
-    return [NSDate date];
-}
-
-#pragma -
-#pragma - EGORefreshTableHeaderDelegate
-
-- (void)egoRefreshTableFooterDidTriggerRefresh:(EGORefreshTableFooterView*)view
-{
-    [self loadMoreData];
-}
-
-- (BOOL)egoRefreshTableFooterDataSourceIsLoading:(EGORefreshTableFooterView*)view
-{
-    return _reloading;
+    [self.pullRefreshManagement scrollViewDidEndDragging:scrollView willDecelerate:decelerat];
 }
 
 

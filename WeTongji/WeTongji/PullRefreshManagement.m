@@ -7,9 +7,13 @@
 //
 
 #import "PullRefreshManagement.h"
+#import "EGORefreshTableHeaderView.h"
+#import "EGORefreshTableFooterView.h"
 
 @interface PullRefreshManagement()<EGORefreshTableFooterDelegate,EGORefreshTableHeaderDelegate>
 
+@property (nonatomic,strong) EGORefreshTableHeaderView * pullRefreshHeaderView;
+@property (nonatomic,strong) EGORefreshTableFooterView * pullRefreshFooterView;
 @property (nonatomic,weak) UIScrollView * scrollView;
 
 @end
@@ -66,6 +70,11 @@
     [self.pullRefreshFooterView setFrame:CGRectMake(0, height, 320, 200)];
 }
 
+-(void) setNoMoreData:(BOOL)isNoMoreData
+{
+    [self.pullRefreshFooterView setIsEndingAll:isNoMoreData];
+}
+
 
 #pragma mark -
 #pragma mark Data Source Loading / Reloading Methods
@@ -76,10 +85,14 @@
 	
 }
 
-- (void)doneLoadingTableViewData
+- (void) endLoading
 {
 	_reloading = NO;
-    [self.delegate endLoading];
+        [self.delegate endLoading];
+    [self.pullRefreshHeaderView egoRefreshScrollViewDataSourceDidFinishedLoading:self.scrollView];
+	[self.pullRefreshFooterView egoRefreshScrollViewDataSourceDidFinishedLoading:self.scrollView];
+    [self configureFooterView];
+
 }
 
 #pragma mark -
@@ -104,6 +117,7 @@
 
 - (void)egoRefreshTableHeaderDidTriggerRefresh:(EGORefreshTableHeaderView*)view
 {
+    [self.pullRefreshFooterView setIsEndingAll:NO];
     [self.delegate refresh];
 }
 
