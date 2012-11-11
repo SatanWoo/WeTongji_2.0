@@ -8,29 +8,55 @@
 
 #import "WUPageControlViewController.h"
 
-@interface WUPageControlViewController ()
-
+@interface WUPageControlViewController () <UIScrollViewDelegate>
+- (void)configureScrollView;
+- (void)loadVisiblePages;
+@property (nonatomic ,assign) int pictureNumber;
 @end
 
 @implementation WUPageControlViewController
+@synthesize pagedScrollView;
+@synthesize pageControl;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+#pragma mark - Public
+- (void)addPicture:(UIImageView *)image
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
+    CGRect frame = self.pagedScrollView.bounds;
+    frame.origin.x = frame.size.width * self.pictureNumber;
+    frame.origin.y = 0.0f;
+    
+    image.frame = frame;
+    [self.pagedScrollView addSubview:image];
+    self.pictureNumber ++;
 }
 
+#pragma mark - Private Method
+- (void)configureScrollView
+{
+    self.pagedScrollView.delegate = self;
+    
+    CGSize pagesScrollViewSize = self.pagedScrollView.frame.size;
+    self.pagedScrollView.contentSize = CGSizeMake(pagesScrollViewSize.width * self.pageControl.numberOfPages , pagesScrollViewSize.height);
+}
+
+- (void)loadVisiblePages {
+    CGFloat pageWidth = self.pagedScrollView.frame.size.width;
+    NSInteger page = (NSInteger)floor((self.pagedScrollView.contentOffset.x * 2.0f + pageWidth) / (pageWidth * 2.0f));
+    
+    self.pageControl.currentPage = page;
+}
+
+#pragma mark - Life Cycle
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+	[self configureScrollView];
 }
 
 - (void)viewDidUnload
 {
+    [self setPagedScrollView:nil];
+    [self setPageControl:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -38,6 +64,13 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+#pragma mark - UIScrollViewDelegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    // Load the pages which are now on screen
+    [self loadVisiblePages];
 }
 
 @end

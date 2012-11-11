@@ -733,6 +733,8 @@
 		E52352C61631883800DBFF7C /* MiddleContent */ = {
 			isa = PBXGroup;
 			children = (
+				0315AC7C164FF621003DC899 /* WUPageControlViewController.h */,
+				0315AC7D164FF621003DC899 /* WUPageControlViewController.m */,
 				B00D6948162D03EA00592B1D /* WUSlideViewController.h */,
 				B00D6949162D03EA00592B1D /* WUSlideViewController.m */,
 				E52352C71631884000DBFF7C /* PersonWallViewController */,
@@ -740,8 +742,6 @@
 				E52353041631D25900DBFF7C /* Campus */,
 				E52352C8163188FE00DBFF7C /* MiddleAbstractViewController.h */,
 				E52352C9163188FE00DBFF7C /* MiddleAbstractViewController.m */,
-				0315AC7C164FF621003DC899 /* WUPageControlViewController.h */,
-				0315AC7D164FF621003DC899 /* WUPageControlViewController.m */,
 			);
 			name = MiddleContent;
 			sourceTree = "<group>";

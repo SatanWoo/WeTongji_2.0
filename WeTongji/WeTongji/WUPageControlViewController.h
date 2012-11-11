@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface WUPageControlViewController : UIViewController
-
+@property (weak, nonatomic) IBOutlet UIScrollView *pagedScrollView;
+@property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
+- (void)addPicture:(UIImageView *)image;
 @end

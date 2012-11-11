@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2549" systemVersion="11G63" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2">
     <dependencies>
-        <deployment defaultVersion="1536" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
+        <deployment defaultVersion="1296" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1498"/>
     </dependencies>
     <scenes>
         <!--Slide View Controller-->
@@ -318,6 +318,38 @@
             </objects>
             <point key="canvasLocation" x="-1190" y="947"/>
         </scene>
+        <!--Page Control View Controller-->
+        <scene sceneID="kw4-Jg-RRi">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pgV-4s-7P1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="kWUPageControlViewController" id="Luw-GI-iEd" customClass="WUPageControlViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hga-2K-g9T">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="6JC-Li-Qze">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" id="UNP-jE-JkN">
+                                        <rect key="frame" x="141" y="404" width="38" height="36"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" name="selectedTextBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    </pageControl>
+                                </subviews>
+                                <color key="backgroundColor" name="alternateSelectedControlColor" catalog="System" colorSpace="catalog"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="pageControl" destination="UNP-jE-JkN" id="8aa-ZB-xdq"/>
+                        <outlet property="pagedScrollView" destination="6JC-Li-Qze" id="Qk3-mK-zpf"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="-1192" y="1677"/>
+        </scene>
         <!--Event Info View Controller-->
         <scene sceneID="xMl-QL-XPZ">
             <objects>
@@ -545,6 +577,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/EventInfoViewController.h"/>
             <relationships>
                 <relationship kind="outlet" name="eventTableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="titleLabel" candidateClass="UIButton"/>
             </relationships>
         </class>
         <class className="LeftMenuViewController" superclassName="UIViewController">
@@ -588,6 +621,13 @@
         </class>
         <class className="WUButton" superclassName="UIButton">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/WUButton.h"/>
+        </class>
+        <class className="WUPageControlViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WUPageControlViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="pageControl" candidateClass="UIPageControl"/>
+                <relationship kind="outlet" name="pagedScrollView" candidateClass="UIScrollView"/>
+            </relationships>
         </class>
         <class className="WUSlideViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/WUSlideViewController.h"/>
