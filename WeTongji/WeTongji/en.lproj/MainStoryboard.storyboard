@@ -284,9 +284,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <toolbarItems>
-                        <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="aFp-oW-yfi"/>
-                    </toolbarItems>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" id="Fc4-JF-NGN">
                         <nil key="title"/>
                         <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="TMM-ux-EVt">
@@ -322,6 +320,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="eventTableView" destination="MJk-4K-Qoz" id="Cbr-Av-qlu"/>
+                        <outlet property="titleLabel" destination="TMM-ux-EVt" id="Jr6-5k-Oam"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kgg-5f-0Nh" userLabel="First Responder" sceneMemberID="firstResponder"/>
