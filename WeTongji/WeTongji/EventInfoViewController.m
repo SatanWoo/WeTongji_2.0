@@ -108,6 +108,7 @@
 - (void)configureTableView
 {
     [self.eventTableView registerNib:[UINib nibWithNibName:@"EventInfoCell" bundle:nil] forCellReuseIdentifier:kEventInfoCell];
+   // self.eventTableView.backgroundColor = [UIColor lightGrayColor];
     self.pullRefreshManagement.delegate = self;
 }
 
@@ -169,6 +170,7 @@
         cell = [[EventInfoCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kEventInfoCell];
 
     }
+    cell.disableView.userInteractionEnabled = NO;
     [cell setEvent:[self.eventList objectAtIndex:indexPath.row]];
     return cell;
 }
