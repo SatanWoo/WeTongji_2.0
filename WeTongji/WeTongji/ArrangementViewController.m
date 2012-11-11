@@ -18,6 +18,7 @@
 
 @implementation ArrangementViewController
 @synthesize arrangementTableView;
+@synthesize header = _header;
 
 #pragma mark - Private Method
 - (void)configureTableView
