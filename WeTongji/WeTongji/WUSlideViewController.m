@@ -138,8 +138,6 @@
     leftGesture.direction = UISwipeGestureRecognizerDirectionLeft;
     [_middelViewController.view addGestureRecognizer:leftGesture];
     
-    //UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:nil];
-    //[_middelViewController.view addGestureRecognizer:panGesture];
     [self configureNavButton];
 }
 
