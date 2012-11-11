@@ -24,9 +24,4 @@ enum eMoveDirection {
 
 @property (nonatomic ,strong) UIViewController *middelViewController;
 @property (nonatomic ,strong) LeftMenuViewController *leftViewController;
-
-//- (void)showMiddleViewController;
-//- (void)showLeftViewController;
-//- (void)updateMiddleViewController:(UIViewController *)viewController animated:(BOOL)animate;
-
 @end

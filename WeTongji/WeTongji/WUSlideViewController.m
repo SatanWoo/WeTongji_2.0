@@ -16,8 +16,8 @@
 @property (assign ,nonatomic) int currentStatus;
 
 - (void)renderShadow:(BOOL)rendered;
-- (void)revealLeftViewController;
-- (void)revealMiddleViewController;
+- (void)revealLeftViewController:(UIGestureRecognizer *)recognizer;
+- (void)revealMiddleViewController:(UIGestureRecognizer *)recognizer;
 - (void)pressNavButton;
 - (void)configureNavButton;
 - (UIViewController *)getContentViewController;
@@ -52,7 +52,7 @@
 }
 
 #pragma mark - Private Method
-- (void)revealMiddleViewController
+- (void)revealMiddleViewController:(UIGestureRecognizer *)recognizer
 {
     [UIView animateWithDuration:0.3f animations:^{
         CGRect newFrame = self.middelViewController.view.frame;
@@ -65,7 +65,7 @@
     }];
 }
 
-- (void)revealLeftViewController
+- (void)revealLeftViewController:(UIGestureRecognizer *)recognizer
 {
     [self getContentViewController].view.userInteractionEnabled = NO;
     [UIView animateWithDuration:0.3f animations:^{
@@ -82,9 +82,9 @@
 - (void)pressNavButton
 {
     if (self.currentStatus == eMIDDLE) {
-        [self revealLeftViewController];
+        [self revealLeftViewController:nil];
     } else {
-        [self revealMiddleViewController];
+        [self revealMiddleViewController:nil];
     }
 }
 
@@ -129,8 +129,17 @@
     } completion:^(BOOL finished) {
         self.currentStatus = eMIDDLE;
     }];
-    UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:nil];
-    [_middelViewController.view addGestureRecognizer:panGesture];
+    
+    UISwipeGestureRecognizer *rightGesturer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(revealLeftViewController:)];
+    rightGesturer.direction = UISwipeGestureRecognizerDirectionRight;
+    [_middelViewController.view addGestureRecognizer:rightGesturer];
+    
+    UISwipeGestureRecognizer *leftGesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(revealMiddleViewController:)];
+    leftGesture.direction = UISwipeGestureRecognizerDirectionLeft;
+    [_middelViewController.view addGestureRecognizer:leftGesture];
+    
+    //UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:nil];
+    //[_middelViewController.view addGestureRecognizer:panGesture];
     [self configureNavButton];
 }
 
