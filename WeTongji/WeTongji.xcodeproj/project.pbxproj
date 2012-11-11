@@ -177,6 +177,13 @@
 		FFBF9A21164843A100E3D610 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBF9A20164843A100E3D610 /* MobileCoreServices.framework */; };
 		FFBF9A23164843A600E3D610 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBF9A22164843A600E3D610 /* SystemConfiguration.framework */; };
 		FFBF9A25164843AD00E3D610 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBF9A24164843AD00E3D610 /* MapKit.framework */; };
+		FFC65D36164FE52200156F77 /* FilterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFC65D34164FE52200156F77 /* FilterTableViewCell.xib */; };
+		FFC65D37164FE52200156F77 /* FilterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFC65D35164FE52200156F77 /* FilterViewController.xib */; };
+		FFC65D3A164FE53000156F77 /* FilterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC65D38164FE53000156F77 /* FilterTableViewCell.m */; };
+		FFC65D3B164FE53000156F77 /* FilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC65D39164FE53000156F77 /* FilterViewController.m */; };
+		FFC65D3F164FE58500156F77 /* sort_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFC65D3D164FE58500156F77 /* sort_bg@2x.png */; };
+		FFC65D40164FE58500156F77 /* sort_cell@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFC65D3E164FE58500156F77 /* sort_cell@2x.png */; };
+		FFC65D42164FE59600156F77 /* check_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFC65D41164FE59600156F77 /* check_btn@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -428,6 +435,15 @@
 		FFBF9A20164843A100E3D610 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		FFBF9A22164843A600E3D610 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		FFBF9A24164843AD00E3D610 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		FFC65D32164FE50600156F77 /* FilterTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterTableViewCell.h; sourceTree = "<group>"; };
+		FFC65D33164FE50600156F77 /* FilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterViewController.h; sourceTree = "<group>"; };
+		FFC65D34164FE52200156F77 /* FilterTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilterTableViewCell.xib; sourceTree = "<group>"; };
+		FFC65D35164FE52200156F77 /* FilterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilterViewController.xib; sourceTree = "<group>"; };
+		FFC65D38164FE53000156F77 /* FilterTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterTableViewCell.m; sourceTree = "<group>"; };
+		FFC65D39164FE53000156F77 /* FilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterViewController.m; sourceTree = "<group>"; };
+		FFC65D3D164FE58500156F77 /* sort_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sort_bg@2x.png"; sourceTree = "<group>"; };
+		FFC65D3E164FE58500156F77 /* sort_cell@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sort_cell@2x.png"; sourceTree = "<group>"; };
+		FFC65D41164FE59600156F77 /* check_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "check_btn@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -620,6 +636,9 @@
 		E514585C1646458600533761 /* Event */ = {
 			isa = PBXGroup;
 			children = (
+				FFC65D41164FE59600156F77 /* check_btn@2x.png */,
+				FFC65D3D164FE58500156F77 /* sort_bg@2x.png */,
+				FFC65D3E164FE58500156F77 /* sort_cell@2x.png */,
 				E514585D1646459900533761 /* cell_bg.png */,
 				E514585E1646459900533761 /* cell_bg@2x.png */,
 				E514585F1646459900533761 /* favourite_hl.png */,
@@ -774,6 +793,7 @@
 		E52352D81631954A00DBFF7C /* Subclass */ = {
 			isa = PBXGroup;
 			children = (
+				FFC65D3C164FE53600156F77 /* UIViewController */,
 				E514583516463ED400533761 /* UIView */,
 				E514583416463EC600533761 /* UIButton */,
 				E52352D91631955C00DBFF7C /* UITableViewCell */,
@@ -784,6 +804,9 @@
 		E52352D91631955C00DBFF7C /* UITableViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				FFC65D32164FE50600156F77 /* FilterTableViewCell.h */,
+				FFC65D38164FE53000156F77 /* FilterTableViewCell.m */,
+				FFC65D34164FE52200156F77 /* FilterTableViewCell.xib */,
 				E52352DA1631958C00DBFF7C /* LeftMenuCell.h */,
 				E52352DB1631958C00DBFF7C /* LeftMenuCell.m */,
 				E52352DD163195B900DBFF7C /* LeftMenuCell.xib */,
@@ -986,6 +1009,16 @@
 			name = Categories;
 			sourceTree = "<group>";
 		};
+		FFC65D3C164FE53600156F77 /* UIViewController */ = {
+			isa = PBXGroup;
+			children = (
+				FFC65D33164FE50600156F77 /* FilterViewController.h */,
+				FFC65D39164FE53000156F77 /* FilterViewController.m */,
+				FFC65D35164FE52200156F77 /* FilterViewController.xib */,
+			);
+			name = UIViewController;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1172,6 +1205,11 @@
 				03BAB39A164FDB620049DA19 /* settings_btn_hl@2x.png in Resources */,
 				03BAB39B164FDB620049DA19 /* settings_btn.png in Resources */,
 				03BAB39C164FDB620049DA19 /* settings_btn@2x.png in Resources */,
+				FFC65D36164FE52200156F77 /* FilterTableViewCell.xib in Resources */,
+				FFC65D37164FE52200156F77 /* FilterViewController.xib in Resources */,
+				FFC65D3F164FE58500156F77 /* sort_bg@2x.png in Resources */,
+				FFC65D40164FE58500156F77 /* sort_cell@2x.png in Resources */,
+				FFC65D42164FE59600156F77 /* check_btn@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1230,6 +1268,8 @@
 				FF7109BA164D4667008F2A06 /* PullRefreshManagement.m in Sources */,
 				FFB46B2A164FCC2B00C32969 /* Course.m in Sources */,
 				FFB46B2D164FCC6D00C32969 /* Course+Addition.m in Sources */,
+				FFC65D3A164FE53000156F77 /* FilterTableViewCell.m in Sources */,
+				FFC65D3B164FE53000156F77 /* FilterViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

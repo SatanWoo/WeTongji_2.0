@@ -12,13 +12,18 @@
 #import <QuartzCore/QuartzCore.h>
 #import "Event+Addition.h"
 #import "PullRefreshManagement.h"
+#import "FilterViewController.h"
 #import <WeTongjiSDK/WeTongjiSDK.h>
 
-@interface EventInfoViewController () <UITableViewDataSource, UITableViewDelegate,PullRefreshManagementDelegate>
+@interface EventInfoViewController () <UITableViewDataSource, UITableViewDelegate,PullRefreshManagementDelegate,FilterViewControllerDelegate>
 
 @property (nonatomic,strong) NSArray * eventList;
 @property (nonatomic,strong) PullRefreshManagement * pullRefreshManagement;
 @property (assign) int nextPage;
+@property (strong,nonatomic) FilterViewController * filterViewController;
+@property (nonatomic,strong) NSDictionary * filterDict;
+@property (nonatomic,strong) NSString * filterString;
+@property (weak, nonatomic) IBOutlet UIButton *titleLabel;
 
 - (void)configureTableView;
 @end
@@ -28,6 +33,19 @@
 @synthesize nextPage;
 @synthesize eventList = _eventList;
 @synthesize pullRefreshManagement = _pullRefreshManagement;
+@synthesize filterViewController = _filterViewController;
+@synthesize filterDict = _filterDict;
+@synthesize filterString = _filterString;
+
+-(void) setFilterString:(NSString *)filterString
+{
+    if ( ![_filterString isEqualToString: filterString] )
+        {
+            _filterString = filterString;
+            [self refresh];
+        }
+}
+
 
 -(PullRefreshManagement *) pullRefreshManagement
 {
@@ -52,7 +70,41 @@
     return _eventList;
 }
 
-#pragma mark - Private 
+-(NSDictionary *) filterDict
+{
+    if ( !_filterDict )
+    {
+        NSMutableDictionary * dict = [[NSMutableDictionary alloc] init];
+        [dict setObject:GetActivitySortMethodCreateDesc forKey:@"最新活动"];
+        [dict setObject:GetActivitySortMethodLikeDesc forKey:@"最火活动"];
+        [dict setObject:GetActivitySortMethodBeginDesc forKey:@"最近活动"];
+        _filterDict = [[NSDictionary alloc] initWithDictionary:dict];
+    }
+    return _filterDict;
+}
+
+-(FilterViewController *) filterViewController
+{
+    if ( !_filterViewController )
+    {
+        _filterViewController = [[FilterViewController alloc] initWithFilterList:[self.filterDict allKeys] forContentView:self.navigationController.view];
+        [[self.navigationController.view superview] insertSubview:_filterViewController.view belowSubview:self.navigationController.view];
+        _filterViewController.delegate = self;
+        [_filterViewController.view setHidden:YES];
+    }
+    return _filterViewController;
+}
+
+-(void) setfilterViewController:(FilterViewController *)filterViewController
+{
+    if ( filterViewController == nil )
+    {
+        [filterViewController.view removeFromSuperview];
+    }
+    _filterViewController = filterViewController;
+}
+
+#pragma mark - Private
 - (void)configureTableView
 {
     [self.eventTableView registerNib:[UINib nibWithNibName:@"EventInfoCell" bundle:nil] forCellReuseIdentifier:kEventInfoCell];
@@ -65,13 +117,17 @@
 {
     [super viewDidLoad];
     [self configureTableView];
-    [Event clearAllEventInManagedObjectContext:self.managedObjectContext];
+    self.titleLabel.titleLabel.text = @"最新活动";
+    [self setFilterString:[self.filterDict objectForKey:@"最新活动"]];
+    [self.filterViewController selectRow:2];
 }
 
 - (void)viewDidUnload
 {
 
     [self setEventTableView:nil];
+    [self setTitleLabel:nil];
+    [self setTitleLabel:nil];
     [super viewDidUnload];
 }
 
@@ -89,9 +145,7 @@
 #pragma mark - IBAction 
 - (IBAction)filterEvent
 {
-    [UIView animateWithDuration:0.3f animations:^{
-    } completion:^(BOOL finished) {
-    }];
+    [self.filterViewController showFilterView];
 }
 
 
@@ -184,7 +238,7 @@
         }
         [self.pullRefreshManagement endLoading];
     }];
-    [client getActivitiesInChannel:nil inSort:SortTypeFavoriteDesc Expired:YES nextPage:self.nextPage];
+    [client getActivitiesInChannel:nil inSort:self.filterString Expired:YES nextPage:self.nextPage];
 }
 
 #pragma mark -
@@ -199,6 +253,16 @@
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerat
 {
     [self.pullRefreshManagement scrollViewDidEndDragging:scrollView willDecelerate:decelerat];
+}
+
+#pragma mark -
+#pragma mark FilterViewControllerDelegate Methods
+
+-(void) filterViewSelectedRow:(NSInteger)row
+{
+    self.titleLabel.titleLabel.text = [[self.filterDict allKeys] objectAtIndex:row];
+    [self setFilterString:[self.filterDict objectForKey:self.titleLabel.titleLabel.text]];
+    [self.filterViewController hideFilterView];
 }
 
 
