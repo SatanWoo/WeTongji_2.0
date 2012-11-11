@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "WUPopOverView.h"
 
 enum eFilterItem {
     eRECOMEND = 0,
@@ -17,7 +16,6 @@ enum eFilterItem {
 
 @interface MyFavortieViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITableView *contentTableView;
-@property (weak, nonatomic) IBOutlet WUPopOverView *filterView;
 @property (weak, nonatomic) IBOutlet UIButton *recommendButton;
 @property (weak, nonatomic) IBOutlet UIButton *schoolInfoButton;
 @property (weak, nonatomic) IBOutlet UIButton *celebrityButton;

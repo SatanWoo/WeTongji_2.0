@@ -37,6 +37,9 @@ typedef void (^WTCompletionBlock)(id resposeObject);
                     qqAccount:(NSString *)qq;
 - (void)updatePassword:(NSString *)new withOldPassword:(NSString *)old;
 - (void)updateUserAvatar:(UIImage *)image;
+- (void)getUserInformation;
+- (void)resetPasswordWithNO:(NSString *) studentNumber
+                       Name:(NSString*) name;
 
 #pragma mark -
 #pragma mark course API

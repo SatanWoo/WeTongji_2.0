@@ -71,6 +71,7 @@
 		FF9DCF02164BF38300EA30E9 /* WeTongjiSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = E1B94B391635A22A00D76123 /* WeTongjiSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FF9DCF03164BF38D00EA30E9 /* JSON.h in Headers */ = {isa = PBXBuildFile; fileRef = E1B94B731635A75300D76123 /* JSON.h */; };
 		FFB03729164BEF9D00157B7D /* WTClient.h in Headers */ = {isa = PBXBuildFile; fileRef = FF6C9491164A31BA00F94CB6 /* WTClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FFB27CCF164E7FA3007A51DE /* blackArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB27CCE164E7FA3007A51DE /* blackArrow.png */; };
 		FFBEB27F164B3F0F0004AF4C /* NSString+Addition.h in Headers */ = {isa = PBXBuildFile; fileRef = FFBEB27D164B3F0F0004AF4C /* NSString+Addition.h */; };
 		FFBEB280164B3F0F0004AF4C /* NSString+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBEB27E164B3F0F0004AF4C /* NSString+Addition.m */; };
 		FFBEB281164B3F0F0004AF4C /* NSString+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBEB27E164B3F0F0004AF4C /* NSString+Addition.m */; };
@@ -152,6 +153,7 @@
 		FF6C9474164A319500F94CB6 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
 		FF6C9491164A31BA00F94CB6 /* WTClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTClient.h; sourceTree = "<group>"; };
 		FF6C9492164A31BA00F94CB6 /* WTClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTClient.m; sourceTree = "<group>"; };
+		FFB27CCE164E7FA3007A51DE /* blackArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blackArrow.png; sourceTree = "<group>"; };
 		FFBEB27D164B3F0F0004AF4C /* NSString+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Addition.h"; sourceTree = "<group>"; };
 		FFBEB27E164B3F0F0004AF4C /* NSString+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Addition.m"; sourceTree = "<group>"; };
 		FFBF99BA16482F1B00E3D610 /* libz.1.2.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.5.dylib; path = usr/lib/libz.1.2.5.dylib; sourceTree = SDKROOT; };
@@ -292,6 +294,7 @@
 		FF3645E11647E73700D3A439 /* WeTongjiSDKtest */ = {
 			isa = PBXGroup;
 			children = (
+				FFB27CCE164E7FA3007A51DE /* blackArrow.png */,
 				FFFF0F091649627E0049370C /* MainStoryboard.storyboard */,
 				FF3645EA1647E73700D3A439 /* AppDelegate.h */,
 				FFD2A42E1649578600FEAF2B /* NSDictionary+DefaultDescription.h */,
@@ -460,6 +463,7 @@
 				FF3645F01647E73800D3A439 /* Default@2x.png in Resources */,
 				FF3645F21647E73800D3A439 /* Default-568h@2x.png in Resources */,
 				FFFF0F0C1649627E0049370C /* MainStoryboard.storyboard in Resources */,
+				FFB27CCF164E7FA3007A51DE /* blackArrow.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

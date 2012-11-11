@@ -27,23 +27,33 @@
     //[self channel];
     //[self favorite];
     //[self information];
-    [self star];
+    //[self star];
     //[self activity];
+    [self uploadavatar];
 }
 
 #pragma - 
 #pragma - method for test
 
--(void) login
+-(void) uploadavatar
 {
     WTClient *client = [WTClient getClient];
     [client setCompletionBlock:^(id responseData){
-        NSLog(@"%@",[responseData description]);
         [self.textView setText:[responseData description]];
-        NSDictionary * userInfo = [responseData objectForKey:@"User"];
-        [NSUserDefaults setCurrentUserID:[userInfo objectForKey:@"UID"] session:[responseData objectForKey:@"Session"]];
     }];
-    [client login:@"092814" password:@"123456"];
+    [client updateUserAvatar:[[UIImage alloc] initWithContentsOfFile:@"/Users/tangzhixiong/Desktop/wetongji2_ios_rain/WeTongjiSDK/WeTongjiSDKtest/blackArrow.png"]];
+}
+
+-(void) login
+{
+    WTClient *client = [WTClient getClient];
+    [client setCompletionBlock:^(id responseData)
+    {
+        NSString * hasError = [responseData objectForKey:@"isFailed"];
+        if( [hasError characterAtIndex:0] == 'N' )
+            NSLog(@"%@",responseData);
+    }];
+    [client login:@"000000" password:@"123456"];
 }
 
 -(void) course
@@ -59,7 +69,7 @@
 {
     WTClient * client = [ WTClient getClient];
     [client setCompletionBlock:^(id responseData) { NSLog(@"%@",responseData);}];
-    [client updateUserDisplayName:nil email:nil weiboName:@"ahah" phoneNum:nil qqAccount:nil];
+    [client updateUserDisplayName:nil email:nil weiboName:@"dre" phoneNum:nil qqAccount:nil];
 }
 
 -(void) channel

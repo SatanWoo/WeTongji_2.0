@@ -12,7 +12,7 @@
 #import "SchoolNewsCell.h"
 #import <QuartzCore/QuartzCore.h>
 
-@interface MyFavortieViewController () <WUPopOverViewDelegate, UITableViewDelegate, UITableViewDataSource>
+@interface MyFavortieViewController () < UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic , assign) int currentFilterItem;
 - (void)configureTableView;
 - (void)refreshTitle:(UIButton *)button;
@@ -20,7 +20,6 @@
 
 @implementation MyFavortieViewController
 @synthesize contentTableView;
-@synthesize filterView;
 @synthesize recommendButton;
 @synthesize schoolInfoButton;
 @synthesize celebrityButton;
@@ -38,7 +37,6 @@
 #pragma mark - Private Method
 - (void)configureTableView
 {
-    self.filterView.layer.opacity = 0;
     
     [self.contentTableView registerNib:[UINib nibWithNibName:@"EventInfoCell" bundle:nil] forCellReuseIdentifier:kEventInfoCell];
     [self.contentTableView registerNib:[UINib nibWithNibName:@"SchoolNewsCell" bundle:nil] forCellReuseIdentifier:kSchoolInfoCell];
@@ -60,7 +58,6 @@
 - (void)viewDidUnload
 {
     [self setContentTableView:nil];
-    [self setFilterView:nil];
     [self setRecommendButton:nil];
     [self setSchoolInfoButton:nil];
     [self setCelebrityButton:nil];
@@ -141,7 +138,6 @@
 - (IBAction)filterItem:(id)sender
 {
     [UIView animateWithDuration:0.3f animations:^{
-        self.filterView.layer.opacity = 1 - self.filterView.layer.opacity;
     } completion:^(BOOL finished) {
     }];
 }

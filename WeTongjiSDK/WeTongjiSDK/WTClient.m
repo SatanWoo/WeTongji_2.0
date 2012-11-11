@@ -13,10 +13,16 @@
 #import "NSString+Addition.h"
 #import "JSON.h"
 
+#define HttpMethodGET @"GET"
+#define HttpMethodPOST @"POST"
+#define HttpMethodCostomUpLoadAvatar @"UPLOADAVATAR"
+
 @interface WTClient()
 
 @property (nonatomic,strong) NSMutableDictionary * params;
 @property (nonatomic,strong) WTCompletionBlock completionBlock;
+@property (nonatomic,strong) NSMutableDictionary * postValue;
+@property (nonatomic,weak) UIImage * avatarImage;
 
 @end
 
@@ -24,6 +30,8 @@
 
 @synthesize params=_params;
 @synthesize completionBlock=_completionBlock;
+@synthesize postValue=_postValue;
+@synthesize avatarImage = _avatarImage;
 
 static NSString * const baseURLString = @"http://we.tongji.edu.cn";
 static NSString * const pathString = @"/api/call";
@@ -34,6 +42,8 @@ static NSString * const pathString = @"/api/call";
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         _client = [[WTClient alloc] initWithBaseURL:[NSURL URLWithString:baseURLString]];
+        _client.parameterEncoding = AFFormURLParameterEncoding;
+        //_client.stringEncoding = NSUnicodeStringEncoding;
     });
     
     return _client;
@@ -52,6 +62,15 @@ static NSString * const pathString = @"/api/call";
 	[self setDefaultHeader:@"Accept" value:@"application/json"];
     
     return self;
+}
+
+- (NSMutableDictionary *) postValue
+{
+    if ( !_postValue )
+    {
+        _postValue = [[NSMutableDictionary alloc] init];
+    }
+    return _postValue;
 }
 
 - (NSMutableDictionary *) params
@@ -92,14 +111,63 @@ static NSString * const pathString = @"/api/call";
     [self.params setObject:md5 forKey:@"H"];
 }
 
+- (NSString *)queryString
+{
+    NSArray *names = [self.params allKeys];
+    NSArray *sortedNames = [names sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        NSString *str1 = (NSString *)obj1;
+        NSString *str2 = (NSString *)obj2;
+        return [str1 compare:str2];
+    }];
+    
+    NSMutableString *result = [NSMutableString stringWithCapacity:10];
+    for (int i = 0; i < [sortedNames count]; i++) {
+        if (i > 0)
+            [result appendString:@"&"];
+        NSString *name = [sortedNames objectAtIndex:i];
+        NSString *parameter = [self.params objectForKey:name];
+        [result appendString:[NSString stringWithFormat:@"%@=%@", [name URLEncodedString],
+                              [parameter URLEncodedString]]];
+    }
+    
+    return result;
+}
+
 - (void)sendRequest
+{
+    [self sendRequestWithHttpMethod:HttpMethodGET];
+}
+
+- (void)sendRequestWithHttpMethod:(NSString *)httpMethod;
 {
     
     if ([self.params count])
     {
+        if ( ![self.params objectForKey:@"H"] )
         [self addHashParam];
     }
-    [self getPath:pathString parameters:self.params success:^( AFHTTPRequestOperation *operation , id resposeObject)
+    
+    NSMutableURLRequest * request;
+    if ( [httpMethod isEqualToString:HttpMethodPOST] )
+    {
+        request= [self requestWithMethod:httpMethod path:[NSString stringWithFormat:@"%@?%@",pathString,[self queryString]] parameters:self.postValue];
+    }
+    if ( [httpMethod isEqualToString:HttpMethodGET] )
+    {
+        request = [self requestWithMethod:httpMethod path:pathString parameters:self.params];
+    }
+    if ( [httpMethod isEqualToString:HttpMethodCostomUpLoadAvatar] )
+    {
+        NSData *imageData = UIImageJPEGRepresentation(self.avatarImage, 1.0);
+        request = [self multipartFormRequestWithMethod:HttpMethodPOST path:[NSString stringWithFormat:@"%@?%@",pathString,[self queryString]] parameters:nil constructingBodyWithBlock: ^(id <AFMultipartFormData> formData)
+                   {
+                       [formData appendPartWithFileData:imageData name:@"Image" fileName:@"avatar.jpg" mimeType:@"image/jpeg"];
+                   }];
+    }
+    
+    NSLog(@"%@",request);
+    NSLog(@"%@",[[NSString alloc]initWithData:[request HTTPBody] encoding:self.stringEncoding]);
+    AFHTTPRequestOperation * operation = [self HTTPRequestOperationWithRequest:request success:^( AFHTTPRequestOperation *operation , id resposeObject)
      {
          NSDictionary *status = [resposeObject objectForKey:@"Status"];
          NSString *statusId = [status objectForKey:@"Id"];
@@ -124,7 +192,10 @@ static NSString * const pathString = @"/api/call";
          NSLog(@"Request Failed");
          NSLog(@"%@", error);
      }];
+    [self enqueueHTTPRequestOperation:operation];
     self.params = nil;
+    self.postValue = nil;
+    self.avatarImage = nil;
 }
 
 
@@ -176,8 +247,9 @@ static NSString * const pathString = @"/api/call";
     NSDictionary *userDict = [NSDictionary dictionaryWithObject:itemDict forKey:@"User"];
     NSString *userJSONStr = [userDict JSONRepresentation];
     NSLog(@"userJSONStr %@", userJSONStr);
-    [self.params setObject:userJSONStr forKey:@"User"];
-    [self sendRequest];
+    [self addHashParam];
+    [self.postValue setObject:userJSONStr forKey:@"User"];
+    [self sendRequestWithHttpMethod:HttpMethodPOST];
 }
 
 - (void)updatePassword:(NSString *)new withOldPassword:(NSString *)old
@@ -190,9 +262,32 @@ static NSString * const pathString = @"/api/call";
     [self sendRequest];
 }
 
+- (void)resetPasswordWithNO:(NSString *) studentNumber
+                       Name:(NSString*) name
+{
+    [self.params setObject:@"User.Reset.Password" forKey:@"M"];
+    [self.params setObject:[NSUserDefaults getCurrentUserID] forKey:@"U"];
+    [self.params setObject:[NSUserDefaults getCurrentUserSession] forKey:@"S"];
+    [self.params setObject:studentNumber forKey:@"NO"];
+    [self.params setObject:name forKey:@"Name"];
+    [self sendRequest];
+}
+
+- (void)getUserInformation
+{
+    [self.params setObject:@"User.Get" forKey:@"M"];
+    [self.params setObject:[NSUserDefaults getCurrentUserID] forKey:@"U"];
+    [self.params setObject:[NSUserDefaults getCurrentUserSession] forKey:@"S"];
+    [self sendRequest];
+}
+
 - (void)updateUserAvatar:(UIImage *)image
 {
-#warning lots of work to do 
+    [self.params setObject:@"User.Update.Avatar" forKey:@"M"];
+    [self.params setObject:[NSUserDefaults getCurrentUserID] forKey:@"U"];
+    [self.params setObject:[NSUserDefaults getCurrentUserSession] forKey:@"S"];
+    self.avatarImage = image;
+    [self sendRequestWithHttpMethod:HttpMethodCostomUpLoadAvatar];
 }
 
 

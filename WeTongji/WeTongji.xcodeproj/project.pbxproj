@@ -20,7 +20,6 @@
 		B00D694A162D03EA00592B1D /* WUSlideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B00D6949162D03EA00592B1D /* WUSlideViewController.m */; };
 		E514583A16463F0100533761 /* WUScrollBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = E514583716463F0100533761 /* WUScrollBackgroundView.m */; };
 		E514583B16463F0100533761 /* WUTapImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = E514583916463F0100533761 /* WUTapImageView.m */; };
-		E514583F16463F1F00533761 /* WUPopOverView.m in Sources */ = {isa = PBXBuildFile; fileRef = E514583E16463F1F00533761 /* WUPopOverView.m */; };
 		E514584C16463F3F00533761 /* EventInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E514584116463F3F00533761 /* EventInfoCell.m */; };
 		E514584D16463F3F00533761 /* EventInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E514584216463F3F00533761 /* EventInfoCell.xib */; };
 		E514584E16463F3F00533761 /* GroupInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E514584416463F3F00533761 /* GroupInfoCell.m */; };
@@ -148,6 +147,7 @@
 		FFB5AECB164CDC0A00A232DF /* grayArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB5AEC2164CDC0A00A232DF /* grayArrow@2x.png */; };
 		FFB5AECC164CDC0A00A232DF /* whiteArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB5AEC3164CDC0A00A232DF /* whiteArrow.png */; };
 		FFB5AECD164CDC0A00A232DF /* whiteArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB5AEC4164CDC0A00A232DF /* whiteArrow@2x.png */; };
+		FFB7E19E164F3CD3006C9D7F /* navbar_sort_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB7E19D164F3CD3006C9D7F /* navbar_sort_btn@2x.png */; };
 		FFBEB29B164B6DA10004AF4C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBEB29A164B6DA10004AF4C /* CoreData.framework */; };
 		FFBEB29E164B6F1B0004AF4C /* CoreDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBEB29D164B6F1B0004AF4C /* CoreDataViewController.m */; };
 		FFBEB2B6164B89090004AF4C /* WeTongjiCoreDataModels.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FFBEB2B4164B89090004AF4C /* WeTongjiCoreDataModels.xcdatamodeld */; };
@@ -209,8 +209,6 @@
 		E514583716463F0100533761 /* WUScrollBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WUScrollBackgroundView.m; sourceTree = "<group>"; };
 		E514583816463F0100533761 /* WUTapImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WUTapImageView.h; sourceTree = "<group>"; };
 		E514583916463F0100533761 /* WUTapImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WUTapImageView.m; sourceTree = "<group>"; };
-		E514583D16463F1F00533761 /* WUPopOverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WUPopOverView.h; sourceTree = "<group>"; };
-		E514583E16463F1F00533761 /* WUPopOverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WUPopOverView.m; sourceTree = "<group>"; };
 		E514584016463F3F00533761 /* EventInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventInfoCell.h; sourceTree = "<group>"; };
 		E514584116463F3F00533761 /* EventInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventInfoCell.m; sourceTree = "<group>"; };
 		E514584216463F3F00533761 /* EventInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventInfoCell.xib; sourceTree = "<group>"; };
@@ -376,6 +374,7 @@
 		FFB5AEC2164CDC0A00A232DF /* grayArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grayArrow@2x.png"; sourceTree = "<group>"; };
 		FFB5AEC3164CDC0A00A232DF /* whiteArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteArrow.png; sourceTree = "<group>"; };
 		FFB5AEC4164CDC0A00A232DF /* whiteArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "whiteArrow@2x.png"; sourceTree = "<group>"; };
+		FFB7E19D164F3CD3006C9D7F /* navbar_sort_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navbar_sort_btn@2x.png"; sourceTree = "<group>"; };
 		FFBEB29A164B6DA10004AF4C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		FFBEB29C164B6F1B0004AF4C /* CoreDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataViewController.h; sourceTree = "<group>"; };
 		FFBEB29D164B6F1B0004AF4C /* CoreDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataViewController.m; sourceTree = "<group>"; };
@@ -469,7 +468,6 @@
 		B00D6926162CFCAC00592B1D /* WeTongji */ = {
 			isa = PBXGroup;
 			children = (
-				FFB5AEB7164CDC0A00A232DF /* EGOTableViewPullRefresh */,
 				FFBEB2AE164B88290004AF4C /* CoreData Models */,
 				B00D693D162CFCDF00592B1D /* Category */,
 				E5482E431636E6E80054C771 /* Model */,
@@ -552,15 +550,6 @@
 			name = UIView;
 			sourceTree = "<group>";
 		};
-		E514583C16463F0D00533761 /* Popover */ = {
-			isa = PBXGroup;
-			children = (
-				E514583D16463F1F00533761 /* WUPopOverView.h */,
-				E514583E16463F1F00533761 /* WUPopOverView.m */,
-			);
-			name = Popover;
-			sourceTree = "<group>";
-		};
 		E51458541646415C00533761 /* Event */ = {
 			isa = PBXGroup;
 			children = (
@@ -618,6 +607,7 @@
 				E5FEF47A1638425600FB7A2A /* navbar@2x.png */,
 				E523527F16317F4800DBFF7C /* nav_left.png */,
 				E523528016317F4800DBFF7C /* nav_left@2x.png */,
+				FFB7E19D164F3CD3006C9D7F /* navbar_sort_btn@2x.png */,
 			);
 			name = Navigation;
 			sourceTree = "<group>";
@@ -725,7 +715,6 @@
 		E52352D81631954A00DBFF7C /* Subclass */ = {
 			isa = PBXGroup;
 			children = (
-				E514583C16463F0D00533761 /* Popover */,
 				E514583516463ED400533761 /* UIView */,
 				E514583416463EC600533761 /* UIButton */,
 				E52352D91631955C00DBFF7C /* UITableViewCell */,
@@ -806,6 +795,7 @@
 		E5482E421636E5A90054C771 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				FFB5AEB7164CDC0A00A232DF /* EGOTableViewPullRefresh */,
 				E5482E3F1636E5A40054C771 /* PlistReader.h */,
 				E5482E401636E5A40054C771 /* PlistReader.m */,
 				FF7109B8164D4667008F2A06 /* PullRefreshManagement.h */,
@@ -1103,6 +1093,7 @@
 				FFB5AECB164CDC0A00A232DF /* grayArrow@2x.png in Resources */,
 				FFB5AECC164CDC0A00A232DF /* whiteArrow.png in Resources */,
 				FFB5AECD164CDC0A00A232DF /* whiteArrow@2x.png in Resources */,
+				FFB7E19E164F3CD3006C9D7F /* navbar_sort_btn@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1134,7 +1125,6 @@
 				E5897B12163D6F7600FE6017 /* ScheduleCell.m in Sources */,
 				E514583A16463F0100533761 /* WUScrollBackgroundView.m in Sources */,
 				E514583B16463F0100533761 /* WUTapImageView.m in Sources */,
-				E514583F16463F1F00533761 /* WUPopOverView.m in Sources */,
 				E514584C16463F3F00533761 /* EventInfoCell.m in Sources */,
 				E514584E16463F3F00533761 /* GroupInfoCell.m in Sources */,
 				E514585016463F3F00533761 /* ScheduleReminderCell.m in Sources */,

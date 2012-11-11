@@ -10,12 +10,11 @@
 #import "Macro.h"
 #import "EventInfoCell.h"
 #import <QuartzCore/QuartzCore.h>
-#import "WUPopOverView.h"
 #import "Event+Addition.h"
 #import "PullRefreshManagement.h"
 #import <WeTongjiSDK/WeTongjiSDK.h>
 
-@interface EventInfoViewController () <UITableViewDataSource, UITableViewDelegate, WUPopOverViewDelegate,PullRefreshManagementDelegate>
+@interface EventInfoViewController () <UITableViewDataSource, UITableViewDelegate,PullRefreshManagementDelegate>
 
 @property (nonatomic,strong) NSArray * eventList;
 @property (nonatomic,strong) PullRefreshManagement * pullRefreshManagement;
@@ -61,22 +60,18 @@
 }
 
 #pragma mark - LifeCycle
-@synthesize filterButton;
 @synthesize eventTableView;
-@synthesize filterView;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     [self configureTableView];
-    self.filterView.layer.opacity = 0;
     [Event clearAllEventInManagedObjectContext:self.managedObjectContext];
 }
 
 - (void)viewDidUnload
 {
-    [self setFilterButton:nil];
+
     [self setEventTableView:nil];
-    [self setFilterView:nil];
     [super viewDidUnload];
 }
 
@@ -92,13 +87,13 @@
 }
 
 #pragma mark - IBAction 
-- (IBAction)filterEvent:(UIButton *)sender
+- (IBAction)filterEvent
 {
     [UIView animateWithDuration:0.3f animations:^{
-        self.filterView.layer.opacity = 1 - self.filterView.layer.opacity;
     } completion:^(BOOL finished) {
     }];
 }
+
 
 #pragma mark - UITableViewDataSource
 

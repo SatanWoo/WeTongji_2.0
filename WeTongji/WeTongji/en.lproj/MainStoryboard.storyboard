@@ -269,11 +269,11 @@
             <objects>
                 <viewController id="TRQ-q9-Af8" customClass="EventInfoViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="z92-Rp-Ph6">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="372"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="MJk-4K-Qoz">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="372"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -281,99 +281,47 @@
                                     <outlet property="delegate" destination="TRQ-q9-Af8" id="HzH-Ef-3VT"/>
                                 </connections>
                             </tableView>
-                            <view contentMode="scaleToFill" id="8Rh-Fo-ogS" customClass="WUPopOverView">
-                                <rect key="frame" x="70" y="0.0" width="183" height="138"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="pop_window.png" id="z9g-Hi-kYO">
-                                        <rect key="frame" x="0.0" y="0.0" width="183" height="138"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                    </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="mKZ-Dg-Qac">
-                                        <rect key="frame" x="7" y="13" width="168" height="37"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                        <state key="normal" title="最新活动">
-                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <state key="highlighted">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="itemTriggered:" destination="8Rh-Fo-ogS" eventType="touchUpInside" id="36G-pw-c20"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="hXY-mR-Vvt">
-                                        <rect key="frame" x="7" y="54" width="168" height="37"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                        <state key="normal" title="最火活动">
-                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <state key="highlighted">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="itemTriggered:" destination="8Rh-Fo-ogS" eventType="touchUpInside" id="w6P-cb-uhN"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="kVM-EM-yrD">
-                                        <rect key="frame" x="7" y="95" width="168" height="37"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                        <state key="normal" title="最近活动">
-                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <state key="highlighted">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="itemTriggered:" destination="8Rh-Fo-ogS" eventType="touchUpInside" id="fOr-6d-9Ns"/>
-                                        </connections>
-                                    </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="partition_line.png" id="gCT-fZ-acn">
-                                        <rect key="frame" x="6" y="51" width="170" height="2"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="partition_line.png" id="E8D-0G-rGP">
-                                        <rect key="frame" x="6" y="92" width="170" height="2"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                    </imageView>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <outlet property="delegate" destination="TRQ-q9-Af8" id="nYp-l9-U2D"/>
-                                </connections>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="aFp-oW-yfi"/>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" id="Fc4-JF-NGN">
                         <nil key="title"/>
-                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="qi3-id-nXi">
-                            <rect key="frame" x="117" y="6" width="86" height="33"/>
-                            <autoresizingMask key="autoresizingMask"/>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                            <state key="normal" title="最新活动">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="TMM-ux-EVt">
+                            <rect key="frame" x="96" y="6" width="128" height="33"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                            <state key="normal" title="推荐活动">
+                                <color key="titleColor" red="1" green="0.98863636359999996" blue="0.98863636359999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <state key="highlighted">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
-                            <connections>
-                                <action selector="filterEvent:" destination="TRQ-q9-Af8" eventType="touchUpInside" id="kwQ-T9-4nb"/>
-                            </connections>
                         </button>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="bES-L9-nNu">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="jSH-zO-jZ0">
+                                <rect key="frame" x="244" y="0.0" width="71" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" image="navbar_sort_btn">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="filterEvent" destination="TRQ-q9-Af8" eventType="touchUpInside" id="CBf-wF-vl3"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="eventTableView" destination="MJk-4K-Qoz" id="Cbr-Av-qlu"/>
-                        <outlet property="filterButton" destination="qi3-id-nXi" id="U04-kE-kYr"/>
-                        <outlet property="filterView" destination="8Rh-Fo-ogS" id="sgJ-uW-Xcf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kgg-5f-0Nh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -431,74 +379,6 @@
                                     <outlet property="delegate" destination="tSa-hA-s91" id="ebQ-hw-Jci"/>
                                 </connections>
                             </tableView>
-                            <view contentMode="scaleToFill" id="yO2-uB-AH4" customClass="WUPopOverView">
-                                <rect key="frame" x="69" y="0.0" width="183" height="138"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="pop_window.png" id="iYG-Ib-RIz">
-                                        <rect key="frame" x="0.0" y="0.0" width="183" height="138"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                    </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="wfv-wZ-vsN">
-                                        <rect key="frame" x="7" y="13" width="168" height="37"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                        <state key="normal" title="推荐活动">
-                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <state key="highlighted">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="itemTriggered:" destination="yO2-uB-AH4" eventType="touchUpInside" id="1pH-rf-3yL"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="DFC-gM-0oj">
-                                        <rect key="frame" x="7" y="54" width="168" height="37"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                        <state key="normal" title="校园资讯">
-                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <state key="highlighted">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="itemTriggered:" destination="yO2-uB-AH4" eventType="touchUpInside" id="5TU-di-nfQ"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="PqA-1N-MI8">
-                                        <rect key="frame" x="7" y="95" width="168" height="37"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                        <state key="normal" title="每周人物">
-                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <state key="highlighted">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="itemTriggered:" destination="yO2-uB-AH4" eventType="touchUpInside" id="ZSb-PY-DnX"/>
-                                        </connections>
-                                    </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="partition_line.png" id="iDM-dn-nsX">
-                                        <rect key="frame" x="6" y="51" width="170" height="2"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="partition_line.png" id="g3h-Pg-gW8">
-                                        <rect key="frame" x="6" y="92" width="170" height="2"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                    </imageView>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <outlet property="delegate" destination="tSa-hA-s91" id="i6s-JL-njc"/>
-                                </connections>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -515,18 +395,10 @@
                             <state key="highlighted">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
-                            <connections>
-                                <action selector="filterItem:" destination="tSa-hA-s91" eventType="touchUpInside" id="anq-G6-15M"/>
-                            </connections>
                         </button>
                     </navigationItem>
                     <connections>
-                        <outlet property="celebrityButton" destination="PqA-1N-MI8" id="tMe-3I-gSb"/>
                         <outlet property="contentTableView" destination="8LJ-q2-rY6" id="NUp-Eh-Zu9"/>
-                        <outlet property="filterView" destination="yO2-uB-AH4" id="2j4-TQ-10s"/>
-                        <outlet property="recommendButton" destination="wfv-wZ-vsN" id="spF-lj-8RH"/>
-                        <outlet property="schoolInfoButton" destination="DFC-gM-0oj" id="VJw-Mu-1nF"/>
-                        <outlet property="titleButton" destination="dye-an-oEl" id="mOs-0n-TBd"/>
                         <segue destination="D5h-rN-X3u" kind="push" identifier="kMyFavoriteNewsViewController" id="6k4-ha-E9F"/>
                     </connections>
                 </viewController>
@@ -586,8 +458,7 @@
         <image name="back_btn.png" width="20" height="17"/>
         <image name="block_unsl.png" width="80" height="41"/>
         <image name="campusBG.png" width="320" height="420"/>
-        <image name="partition_line.png" width="170" height="2"/>
-        <image name="pop_window.png" width="183" height="138"/>
+        <image name="navbar_sort_btn" width="16" height="16"/>
         <image name="today.png" width="80" height="24"/>
     </resources>
     <classes>
@@ -615,10 +486,7 @@
         <class className="EventInfoViewController" superclassName="MiddleAbstractViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/EventInfoViewController.h"/>
             <relationships>
-                <relationship kind="action" name="filterEvent:" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="eventTableView" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="filterButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="filterView" candidateClass="WUPopOverView"/>
             </relationships>
         </class>
         <class className="LeftMenuViewController" superclassName="UIViewController">
@@ -637,7 +505,6 @@
                 <relationship kind="action" name="filterItem:"/>
                 <relationship kind="outlet" name="celebrityButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="contentTableView" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="filterView" candidateClass="WUPopOverView"/>
                 <relationship kind="outlet" name="recommendButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="schoolInfoButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="titleButton" candidateClass="UIButton"/>
@@ -660,13 +527,6 @@
         <class className="WUButton" superclassName="UIButton">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/WUButton.h"/>
         </class>
-        <class className="WUPopOverView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WUPopOverView.h"/>
-            <relationships>
-                <relationship kind="action" name="itemTriggered:" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="delegate"/>
-            </relationships>
-        </class>
         <class className="WUSlideViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/WUSlideViewController.h"/>
         </class>
@@ -677,6 +537,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="nGL-0f-2v0"/>
+        <segue reference="6k4-ha-E9F"/>
     </inferredMetricsTieBreakers>
 </document>

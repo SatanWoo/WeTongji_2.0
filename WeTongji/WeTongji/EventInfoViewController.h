@@ -8,14 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "MiddleAbstractViewController.h"
-#import "WUPopOverView.h"
 
 @interface EventInfoViewController : MiddleAbstractViewController
 {
     BOOL _reloading;
 }
-@property (weak, nonatomic) IBOutlet UIButton *filterButton;
 @property (weak, nonatomic) IBOutlet UITableView *eventTableView;
-@property (weak, nonatomic) IBOutlet WUPopOverView *filterView;
-- (IBAction)filterEvent:(UIButton *)sender;
 @end
