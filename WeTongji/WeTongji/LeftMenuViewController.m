@@ -18,6 +18,7 @@
 
 @property (nonatomic ,strong) NSArray *identifierArray;
 
+- (void)configureBottomBarButton;
 - (void)configureTableView;
 @end
 
@@ -25,8 +26,20 @@
 @synthesize menuTableView = _menuTableView;
 @synthesize isLogin = _isLogin;
 @synthesize delegate = _delegate;
+@synthesize settingButton = _settingButton;
+@synthesize infoButton = _infoButton;
 
 @synthesize identifierArray = _identifierArray;
+#pragma mark - IBAction
+- (IBAction)triggerInfo:(UIButton *)sender
+{
+    [sender setSelected:!sender.selected];
+}
+
+- (IBAction)triggerSetting:(UIButton *)sender
+{
+    [sender setSelected:!sender.selected];
+}
 
 #pragma mark - Private Method
 - (void)configureTableView
@@ -45,12 +58,17 @@
     [self.view addSubview:label];
 }
 
+- (void)configureBottomBarButton
+{
+    [self.settingButton setImage:[UIImage imageNamed:@"settings_btn_hl"] forState:UIControlStateSelected];
+    [self.infoButton setImage:[UIImage imageNamed:@"info_btn_hl.png"] forState:UIControlStateSelected];
+}
+
 #pragma mark - Getter & Setter
 - (NSArray *)identifierArray
 {
     if (_identifierArray == nil) {
         _identifierArray = [[[PlistReader alloc] init] getLeftMenuResult];
-        //NSLog(@"array is %@",_identifierArray);
     }
     return _identifierArray;
 }
@@ -66,11 +84,14 @@
 {
     [super viewDidLoad];
     [self configureTableView];
+    [self configureBottomBarButton];
 }
 
 - (void)viewDidUnload
 {
     [self setMenuTableView:nil];
+    [self setSettingButton:nil];
+    [self setInfoButton:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -112,7 +133,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     LeftMenuCell *cell = (LeftMenuCell *)[tableView cellForRowAtIndexPath:indexPath];
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    [cell setSelected:YES];
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
     UIViewController *controller = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:cell.identifer];
     [self.delegate changeMiddleContent:controller];
 }
