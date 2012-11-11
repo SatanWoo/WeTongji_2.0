@@ -127,27 +127,25 @@
 
 - (void)configureTabBar
 {
+    UIColor *hight = [[UIColor alloc] initWithCGColor:self.schoolInfoButton.titleLabel.textColor.CGColor];
+    
     [self.schoolInfoButton setBackgroundImage:[UIImage imageNamed:@"block_sl.png"] forState:UIControlStateSelected];
     [self.schoolInfoButton setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
-    [self.schoolInfoButton setTitleColor:[UIColor blueColor] forState:UIControlStateSelected];
+    [self.schoolInfoButton setTitleColor:hight forState:UIControlStateSelected];
     [self.schoolInfoButton setSelected:YES];
     
     [self.groupInfoButton setBackgroundImage:[UIImage imageNamed:@"block_sl.png"] forState:UIControlStateSelected];
     [self.groupInfoButton setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
-    [self.groupInfoButton setTitleColor:[UIColor blueColor] forState:UIControlStateSelected];
+    [self.groupInfoButton setTitleColor:hight forState:UIControlStateSelected];
     
     [self.actionButton setBackgroundImage:[UIImage imageNamed:@"block_sl.png"] forState:UIControlStateSelected];
     [self.actionButton setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
-    [self.actionButton setTitleColor:[UIColor blueColor] forState:UIControlStateSelected];
+    [self.actionButton setTitleColor:hight forState:UIControlStateSelected];
     
     [self.recommendButton setBackgroundImage:[UIImage imageNamed:@"block_sl.png"] forState:UIControlStateSelected];
     [self.recommendButton setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
-    [self.recommendButton setTitleColor:[UIColor blueColor] forState:UIControlStateSelected];
+    [self.recommendButton setTitleColor:hight forState:UIControlStateSelected];
     
-    //[self renderShadow:self.schoolInfoButton];
-    [self renderShadow:self.groupInfoButton];
-    [self renderShadow:self.actionButton];
-    [self renderShadow:self.recommendButton];
 }
 
 - (void)configureTableView
