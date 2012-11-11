@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1811" systemVersion="12C60" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Course" representedClassName="Course" syncable="YES">
+        <attribute name="begin_day" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="begin_section" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="begin_time" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="course_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="credit_hours" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="credit_point" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="end_section" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="end_time" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="require_type" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="teacher_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="week_day" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="week_type" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="what" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="where" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="Event" representedClassName="Event" syncable="YES">
         <attribute name="activityId" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="beginTime" optional="YES" attributeType="Date" syncable="YES"/>
@@ -56,5 +72,6 @@
         <element name="Event" positionX="160" positionY="192" width="128" height="315"/>
         <element name="Information" positionX="160" positionY="192" width="128" height="255"/>
         <element name="Star" positionX="160" positionY="192" width="128" height="255"/>
+        <element name="Course" positionX="160" positionY="192" width="128" height="255"/>
     </elements>
 </model>
