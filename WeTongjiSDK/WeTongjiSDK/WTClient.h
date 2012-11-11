@@ -12,7 +12,7 @@
 
 #define GetActivitySortMethodLikeDesc   @"`like` DESC"
 #define GetActivitySortMethodBeginDesc  @"`begin` DESC"
-#define GetActivitySortMethodCreateDesc @"`begin` DESC"
+#define GetActivitySortMethodCreateDesc @"defalut"
 
 typedef void (^WTCompletionBlock)(id resposeObject);
 

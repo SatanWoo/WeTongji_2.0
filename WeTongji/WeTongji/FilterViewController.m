@@ -156,7 +156,8 @@
 
 -(void)selectRow:(NSInteger) row
 {
-    [self.filterTableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:row inSection:1] animated:YES scrollPosition:UITableViewScrollPositionNone];
+    [self.filterTableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:row inSection:0] animated:YES scrollPosition:UITableViewScrollPositionNone];
+    [self.delegate filterViewSelectedRow:row];
 }
 
 

@@ -39,9 +39,12 @@
 
 -(void) setFilterString:(NSString *)filterString
 {
-    if ( ![_filterString isEqualToString: filterString] )
+    NSString * temp = filterString;
+    if ( [temp isEqualToString:GetActivitySortMethodCreateDesc] )
+        temp = nil;
+    if ( ![_filterString isEqualToString: temp] )
         {
-            _filterString = filterString;
+            _filterString = temp;
             [self refresh];
         }
 }
@@ -118,9 +121,7 @@
 {
     [super viewDidLoad];
     [self configureTableView];
-    self.titleLabel.titleLabel.text = @"最新活动";
-    [self setFilterString:[self.filterDict objectForKey:@"最新活动"]];
-    [self.filterViewController selectRow:2];
+    [self.filterViewController selectRow:1];
 }
 
 - (void)viewDidUnload
