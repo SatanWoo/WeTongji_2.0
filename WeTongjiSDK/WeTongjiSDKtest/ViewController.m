@@ -21,7 +21,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self login];
+    //[self login];
     //[self course];
     //[self update];
     //[self channel];
@@ -29,7 +29,7 @@
     //[self information];
     //[self star];
     //[self activity];
-    //[self uploadavatar];
+    [self uploadavatar];
 }
 
 #pragma - 
@@ -53,7 +53,7 @@
         if( [hasError characterAtIndex:0] == 'N' )
             NSLog(@"%@",responseData);
     }];
-    [client login:@"092983" password:@"123456"];
+    [client login:@"000000" password:@"123456"];
 }
 
 -(void) course

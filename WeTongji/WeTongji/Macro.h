@@ -28,7 +28,6 @@
 #define kGroupInfoCell @"kGroupInfoCell"
 #define kTextViewTableCell @"kTextViewTableCell"
 #define kArrangementCell @"kArrangementCell"
-#define kFilterTableViewCell @"kFilterTableViewCell"
 
 // Segue
 #define kMyFavortieViewControllerSegue @"kMyFavortieViewController"

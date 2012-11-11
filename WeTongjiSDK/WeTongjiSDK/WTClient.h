@@ -10,9 +10,9 @@
 #import "AFHTTPClient.h"
 #import "NSUserDefaults+Addition.h"
 
-#define GetActivitySortMethodLikeDesc   @"`like` DESC"
-#define GetActivitySortMethodBeginDesc  @"`begin` DESC"
-#define GetActivitySortMethodCreateDesc @"`begin` DESC"
+#define SortTypeLikeDesc @"1"
+#define SortTypeFavoriteDesc @"2"
+#define SortTypeScheduleDesc @"3"
 
 typedef void (^WTCompletionBlock)(id resposeObject);
 
