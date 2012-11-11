@@ -26,6 +26,7 @@
     frame.origin.y = 0.0f;
     
     image.frame = frame;
+    //image.contentMode = UIViewContentModeScaleAspectFit;
     [self.pagedScrollView addSubview:image];
     self.pictureNumber ++;
 }
@@ -37,6 +38,9 @@
     
     CGSize pagesScrollViewSize = self.pagedScrollView.frame.size;
     self.pagedScrollView.contentSize = CGSizeMake(pagesScrollViewSize.width * self.pageControl.numberOfPages , pagesScrollViewSize.height);
+    
+    self.pageControl.currentPage = 0;
+    self.pageControl.numberOfPages = 3;
 }
 
 - (void)loadVisiblePages {
@@ -58,7 +62,6 @@
     [self setPagedScrollView:nil];
     [self setPageControl:nil];
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

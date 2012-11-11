@@ -25,6 +25,7 @@
 @property (nonatomic, strong) WUPageControlViewController *pageViewController;
 - (void)configureTableView;
 - (void)didTap:(UITapGestureRecognizer *)recognizer;
+- (void)didSwipe:(UISwipeGestureRecognizer *)recognizer;
 @end
 
 @implementation PersonalWallViewController
@@ -62,12 +63,35 @@
     }];
 }
 
+- (void)didSwipe:(UISwipeGestureRecognizer *)recognizer
+{
+    NSLog(@"Test");
+    self.isAnimationFinished = false;
+    [UIView animateWithDuration:0.55f animations:^{
+        self.scheduleTableView.frame = self.view.frame;
+    } completion:^(BOOL finished) {
+        self.scheduleTableView.userInteractionEnabled = YES;
+    }];
+    
+    [UIView animateWithDuration:0.8f animations:^{
+        self.pageViewController.view.frame = CGRectMake(0, kStateY, self.pageViewController.view.frame.size.width, self.pageViewController.view.frame.size.height);
+    } completion:^(BOOL finished) {
+        self.pageViewController.view.userInteractionEnabled = NO;
+    }];
+
+}
+
 #pragma mark - Setter & Getter
 - (WUPageControlViewController *)pageViewController
 {
     if (_pageViewController == nil) {
         _pageViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:kWUPageControlViewController];
+        
         [_pageViewController.view addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTap:)]];
+        UISwipeGestureRecognizer *upSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(didSwipe:)];
+        upSwipe.direction = UISwipeGestureRecognizerDirectionUp;
+        [_pageViewController.view addGestureRecognizer:upSwipe];
+        
         [_pageViewController.view setFrame:CGRectMake(0, kStateY, 320 ,480)];
         _pageViewController.view.userInteractionEnabled = NO;
         [_pageViewController addPicture:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"scaleview.png"]]];
