@@ -28,6 +28,14 @@
 			<key>kNeedLogin</key>
 			<false/>
 		</dict>
+		<dict>
+			<key>kTableViewCellName</key>
+			<string>个人资料</string>
+			<key>kViewControllerIdentifier</key>
+			<string>kEditInfoViewController</string>
+			<key>kNeedLogin</key>
+			<false/>
+		</dict>
 	</array>
 </dict>
 </plist>
