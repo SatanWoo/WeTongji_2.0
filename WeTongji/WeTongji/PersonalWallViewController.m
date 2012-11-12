@@ -65,7 +65,6 @@
 
 - (void)didSwipe:(UISwipeGestureRecognizer *)recognizer
 {
-    NSLog(@"Test");
     self.isAnimationFinished = false;
     [UIView animateWithDuration:0.55f animations:^{
         self.scheduleTableView.frame = self.view.frame;
@@ -149,7 +148,6 @@
         if (cell == nil) {
             cell = [[ReminderCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kReminderCell];
         }
-        //cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         return cell;
     } else if (indexPath.section == 1) {
         FavoriteCell *cell = [tableView dequeueReusableCellWithIdentifier:kFavoriteCell];
