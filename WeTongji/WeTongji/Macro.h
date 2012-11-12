@@ -16,6 +16,7 @@
 #define kEventInfoViewController @"kEventInfoViewController"
 #define kWUPageControlViewController @"kWUPageControlViewController"
 #define kEditInfoViewController @"kEditInfoViewController"
+#define kLoginViewController @"kLoginViewController"
 
 // TableViewCell
 #define kLeftMenuCell @"kLeftMenuCell"
@@ -32,6 +33,8 @@
 #define kArrangementCell @"kArrangementCell"
 #define kFilterTableViewCell @"kFilterTableViewCell"
 #define kEditInfoCell @"kEditInfoCell"
+#define kRegInformationCell @"kRegInformationCell"
+#define kRegButtonCell @"kRegButtonCell"
 
 // Segue
 #define kMyFavortieViewControllerSegue @"kMyFavortieViewController"

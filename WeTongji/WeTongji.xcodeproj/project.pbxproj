@@ -197,6 +197,12 @@
 		FFBF9A21164843A100E3D610 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBF9A20164843A100E3D610 /* MobileCoreServices.framework */; };
 		FFBF9A23164843A600E3D610 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBF9A22164843A600E3D610 /* SystemConfiguration.framework */; };
 		FFBF9A25164843AD00E3D610 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBF9A24164843AD00E3D610 /* MapKit.framework */; };
+		FFC1203B165160AC003FF0E6 /* 注册登录.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FFC1203A165160AC003FF0E6 /* 注册登录.jpg */; };
+		FFC1203F1651639A003FF0E6 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC1203E1651639A003FF0E6 /* LoginViewController.m */; };
+		FFC1204116516C38003FF0E6 /* back_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFC1204016516C38003FF0E6 /* back_btn@2x.png */; };
+		FFC1204516517582003FF0E6 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC1204416517582003FF0E6 /* RegisterViewController.m */; };
+		FFC12047165179C1003FF0E6 /* 注册1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FFC12046165179C1003FF0E6 /* 注册1.jpg */; };
+		FFC1204A16517F50003FF0E6 /* RegInfomationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC1204916517F50003FF0E6 /* RegInfomationCell.m */; };
 		FFC65D36164FE52200156F77 /* FilterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFC65D34164FE52200156F77 /* FilterTableViewCell.xib */; };
 		FFC65D37164FE52200156F77 /* FilterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFC65D35164FE52200156F77 /* FilterViewController.xib */; };
 		FFC65D3A164FE53000156F77 /* FilterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC65D38164FE53000156F77 /* FilterTableViewCell.m */; };
@@ -478,6 +484,15 @@
 		FFBF9A20164843A100E3D610 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		FFBF9A22164843A600E3D610 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		FFBF9A24164843AD00E3D610 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		FFC1203A165160AC003FF0E6 /* 注册登录.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "注册登录.jpg"; sourceTree = "<group>"; };
+		FFC1203D1651639A003FF0E6 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		FFC1203E1651639A003FF0E6 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		FFC1204016516C38003FF0E6 /* back_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back_btn@2x.png"; sourceTree = "<group>"; };
+		FFC1204316517582003FF0E6 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		FFC1204416517582003FF0E6 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		FFC12046165179C1003FF0E6 /* 注册1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "注册1.jpg"; sourceTree = "<group>"; };
+		FFC1204816517F50003FF0E6 /* RegInfomationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegInfomationCell.h; sourceTree = "<group>"; };
+		FFC1204916517F50003FF0E6 /* RegInfomationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegInfomationCell.m; sourceTree = "<group>"; };
 		FFC65D32164FE50600156F77 /* FilterTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterTableViewCell.h; sourceTree = "<group>"; };
 		FFC65D33164FE50600156F77 /* FilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterViewController.h; sourceTree = "<group>"; };
 		FFC65D34164FE52200156F77 /* FilterTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilterTableViewCell.xib; sourceTree = "<group>"; };
@@ -556,6 +571,9 @@
 		B00B6391162FCDB300AD7712 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				FFC1203A165160AC003FF0E6 /* 注册登录.jpg */,
+				FFC12046165179C1003FF0E6 /* 注册1.jpg */,
+				FFC1203716515DD0003FF0E6 /* SignIn */,
 				03BAB359164FD0010049DA19 /* icon & Splash */,
 				E52352D31631922500DBFF7C /* MiddleContent */,
 				E52352D21631922000DBFF7C /* LeftMenu */,
@@ -813,6 +831,7 @@
 				E52352C71631884000DBFF7C /* PersonWallViewController */,
 				E51458541646415C00533761 /* Event */,
 				E52353041631D25900DBFF7C /* Campus */,
+				FFC1203C16516365003FF0E6 /* Login */,
 			);
 			name = MiddleContent;
 			sourceTree = "<group>";
@@ -861,6 +880,7 @@
 		E52352D31631922500DBFF7C /* MiddleContent */ = {
 			isa = PBXGroup;
 			children = (
+				FFC1204016516C38003FF0E6 /* back_btn@2x.png */,
 				03D540B71651335B0070F727 /* EditInfo */,
 				E514585C1646458600533761 /* Event */,
 				E52352F71631D23500DBFF7C /* campus */,
@@ -925,6 +945,8 @@
 				03D540D816513D920070F727 /* EditInfoCell.h */,
 				03D540D916513D920070F727 /* EditInfoCell.m */,
 				03D540DB16513DA20070F727 /* EditInfoCell.xib */,
+				FFC1204816517F50003FF0E6 /* RegInfomationCell.h */,
+				FFC1204916517F50003FF0E6 /* RegInfomationCell.m */,
 			);
 			name = UITableViewCell;
 			sourceTree = "<group>";
@@ -1089,6 +1111,32 @@
 				FFB46B2C164FCC6D00C32969 /* Course+Addition.m */,
 			);
 			name = Categories;
+			sourceTree = "<group>";
+		};
+		FFC1203716515DD0003FF0E6 /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = SignIn;
+			sourceTree = "<group>";
+		};
+		FFC1203C16516365003FF0E6 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				FFC1204216517562003FF0E6 /* Register */,
+				FFC1203D1651639A003FF0E6 /* LoginViewController.h */,
+				FFC1203E1651639A003FF0E6 /* LoginViewController.m */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		FFC1204216517562003FF0E6 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				FFC1204316517582003FF0E6 /* RegisterViewController.h */,
+				FFC1204416517582003FF0E6 /* RegisterViewController.m */,
+			);
+			name = Register;
 			sourceTree = "<group>";
 		};
 		FFC65D3C164FE53600156F77 /* UIViewController */ = {
@@ -1309,6 +1357,9 @@
 				03D540DC16513DA20070F727 /* EditInfoCell.xib in Resources */,
 				03D540E31651450F0070F727 /* left_arrow.png in Resources */,
 				03D540E41651450F0070F727 /* left_arrow@2x.png in Resources */,
+				FFC1203B165160AC003FF0E6 /* 注册登录.jpg in Resources */,
+				FFC1204116516C38003FF0E6 /* back_btn@2x.png in Resources */,
+				FFC12047165179C1003FF0E6 /* 注册1.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1372,6 +1423,9 @@
 				0315AC7E164FF621003DC899 /* WUPageControlViewController.m in Sources */,
 				03D540B616512FAA0070F727 /* EditInfoViewController.m in Sources */,
 				03D540DA16513D920070F727 /* EditInfoCell.m in Sources */,
+				FFC1203F1651639A003FF0E6 /* LoginViewController.m in Sources */,
+				FFC1204516517582003FF0E6 /* RegisterViewController.m in Sources */,
+				FFC1204A16517F50003FF0E6 /* RegInfomationCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

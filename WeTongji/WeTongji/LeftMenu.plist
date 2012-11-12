@@ -6,6 +6,14 @@
 	<array>
 		<dict>
 			<key>kTableViewCellName</key>
+			<string>登陆</string>
+			<key>kViewControllerIdentifier</key>
+			<string>kLoginViewController</string>
+			<key>kNeedLogin</key>
+			<false/>
+		</dict>
+		<dict>
+			<key>kTableViewCellName</key>
 			<string>个人</string>
 			<key>kViewControllerIdentifier</key>
 			<string>kPersonalViewController</string>
