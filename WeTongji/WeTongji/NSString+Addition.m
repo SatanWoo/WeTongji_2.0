@@ -10,6 +10,7 @@
 
 @implementation NSString (Addition)
 
+
 - (NSDate *)convertToDate {
     NSString *src = self;
     if([src characterAtIndex:src.length - 3] == ':') {
@@ -170,6 +171,23 @@
     NSArray* array = [self componentsSeparatedByString:@"@#Title#@"];
     NSString* returnString = [[NSString alloc] initWithFormat:@"%@%@%@",[array objectAtIndex:0], title, [array objectAtIndex:1]];
     return returnString;
+}
+
++ (NSString *) stringWithHowLongAgo:(NSDate *) date;
+{
+    NSString * result = @"";
+    NSTimeInterval interval = -[date timeIntervalSinceNow];
+    NSInteger minute = interval / (60);
+    NSInteger hour   = interval / (60 * 60);
+    NSInteger day    = interval / (60 * 60 * 24);
+    NSInteger mouth  = interval / (60 * 60 * 24 * 30);
+    NSInteger year   = interval / (60 * 60 * 24 * 30 * 12);
+    if ( year ) return [result stringByAppendingFormat:@"%d 年前",year];
+    if ( mouth ) return [result stringByAppendingFormat:@"%d 月前",mouth];
+    if ( day ) return [result stringByAppendingFormat:@"%d 天前",day];
+    if ( hour ) return [result stringByAppendingFormat:@"%d 小时前",hour];
+    if ( minute ) return [result stringByAppendingFormat:@"%d 分钟前",minute];
+    return @"刚刚更新";
 }
 
 @end

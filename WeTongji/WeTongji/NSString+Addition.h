@@ -29,4 +29,6 @@
 - (NSString*)setPublishTimeHTMLString:(NSDate *)date;
 - (NSString*)setTitleHTMLString:(NSString*)title;
 
++ (NSString *) stringWithHowLongAgo:(NSDate *) date;
+
 @end

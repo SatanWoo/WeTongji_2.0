@@ -26,18 +26,18 @@
 @synthesize favorLabel = _favorLabel;
 @synthesize likeButton = _likeButton;
 @synthesize likeLabel = _likeLabel;
-@synthesize lookButton = _lookButton;
-@synthesize lookLabel = _lookLabel;
 @synthesize organizationLabel = _organizationLabel;
 
 -(void) setEvent:(Event *)event
 {
+    self.refreshTime.text = [NSString stringWithHowLongAgo: event.createAt];
+    //NSLog(@"createAt : %@",self.event.createAt);
+    //NSLog(@"begintime: %@",self.event.beginTime);
     if ( _event == event ) return;
     _event = event;
     self.eventName.text = self.event.title;
     self.location.text = self.event.location;
     self.eventTime.text = [NSString timeConvertFromBeginDate:self.event.beginTime endDate:self.event.endTime];
-    self.refreshTime.text = [NSString timeConvertFromDate:self.event.createAt];
     self.favorLabel.text = [self.event.favorite stringValue];
     self.likeLabel.text = [self.event.like stringValue];
     self.organizationLabel.text = self.event.organizer;

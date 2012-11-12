@@ -27,8 +27,6 @@
 @property (nonatomic, weak) IBOutlet UILabel *favorLabel;
 @property (nonatomic, weak) IBOutlet UIButton *likeButton;
 @property (nonatomic, weak) IBOutlet UILabel *likeLabel;
-@property (nonatomic, weak) IBOutlet UIButton *lookButton;
-@property (nonatomic, weak) IBOutlet UILabel *lookLabel;
 @property (nonatomic, weak) IBOutlet UILabel *organizationLabel;
 
 @end

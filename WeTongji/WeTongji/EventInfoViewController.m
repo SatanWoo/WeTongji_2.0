@@ -68,7 +68,18 @@
         for ( Event * event in tempList )
             if ( ![event.hidden boolValue] )
                 [__eventList addObject:event];
-        _eventList = [NSArray arrayWithArray: __eventList];
+        NSArray *sortedNames = [__eventList sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+            Event *str1 = (Event *)obj1;
+            Event *str2 = (Event *)obj2;
+            if ( [self.filterString isEqualToString:GetActivitySortMethodBeginDesc] )
+                return [str2.beginTime compare:str1.beginTime];
+            if ( [self.filterString isEqualToString:GetActivitySortMethodLikeDesc] )
+                return [str2.like compare:str1.like];
+            if ( !self.filterString )
+                return [str2.createAt compare: str1.createAt];
+            return YES;
+        }];
+        _eventList = [NSArray arrayWithArray: sortedNames];
     }
     return _eventList;
 }
@@ -242,6 +253,7 @@
         [self.pullRefreshManagement endLoading];
     }];
     [client getActivitiesInChannel:nil inSort:self.filterString Expired:YES nextPage:self.nextPage];
+    NSLog(@"%@ : %d",self.filterString,self.nextPage);
 }
 
 #pragma mark -
