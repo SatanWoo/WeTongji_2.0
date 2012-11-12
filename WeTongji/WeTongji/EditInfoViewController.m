@@ -35,7 +35,6 @@
 {
     [super viewDidLoad];
     [self configureTableView];
-	// Do any additional setup after loading the view.
 }
 
 - (void)viewDidUnload
