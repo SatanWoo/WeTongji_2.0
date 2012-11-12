@@ -14,21 +14,23 @@
 #import "FavoriteCell.h"
 #import "WUTapImageView.h"
 #import "WUScrollBackgroundView.h"
+#import "WUPageControlViewController.h"
 
 #define kContentOffSet 168
 #define kRowHeight 44
 #define kStateY -150
 
 @interface PersonalWallViewController () <UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate>
-@property (nonatomic, strong) WUTapImageView *wuTapView;
 @property (nonatomic, assign) BOOL isAnimationFinished;
+@property (nonatomic, strong) WUPageControlViewController *pageViewController;
 - (void)configureTableView;
 - (void)didTap:(UITapGestureRecognizer *)recognizer;
+- (void)didSwipe:(UISwipeGestureRecognizer *)recognizer;
 @end
 
 @implementation PersonalWallViewController
-@synthesize wuTapView = _wuTapView;
 @synthesize isAnimationFinished = _isAnimationFinished;
+@synthesize pageViewController = _pageViewController;
 
 #pragma mark - Private Method
 - (void)configureTableView
@@ -41,7 +43,7 @@
     self.scheduleTableView.contentInset = UIEdgeInsetsMake(kContentOffSet, 0.0f, 0.0f, 0.0f);
     self.scheduleTableView.backgroundColor =[UIColor clearColor];
     
-    [self.view insertSubview:self.wuTapView belowSubview:self.scheduleTableView];
+    [self.view insertSubview:self.pageViewController.view belowSubview:self.scheduleTableView];
 }
 
 #pragma mark - Tap
@@ -55,22 +57,49 @@
     }];
     
     [UIView animateWithDuration:0.8f animations:^{
-        self.wuTapView.frame = CGRectMake(0, kStateY, self.wuTapView.frame.size.width, self.wuTapView.frame.size.height);
+        self.pageViewController.view.frame = CGRectMake(0, kStateY, self.pageViewController.view.frame.size.width, self.pageViewController.view.frame.size.height);
     } completion:^(BOOL finished) {
-        self.wuTapView.userInteractionEnabled = NO;
+        self.pageViewController.view.userInteractionEnabled = NO;
     }];
 }
 
-#pragma mark - Setter & Getter
-- (WUTapImageView *)wuTapView
+- (void)didSwipe:(UISwipeGestureRecognizer *)recognizer
 {
-    if (_wuTapView == nil) {
-        _wuTapView = [[WUTapImageView alloc] initWithImage:[UIImage imageNamed:@"scaleview.png"]];
-        [_wuTapView setFrame:CGRectMake(0, kStateY, 320 ,480)];
-        [_wuTapView setGestureSelector:@selector(didTap:) target:self];
-        _wuTapView.userInteractionEnabled = NO;
+    NSLog(@"Test");
+    self.isAnimationFinished = false;
+    [UIView animateWithDuration:0.55f animations:^{
+        self.scheduleTableView.frame = self.view.frame;
+    } completion:^(BOOL finished) {
+        self.scheduleTableView.userInteractionEnabled = YES;
+    }];
+    
+    [UIView animateWithDuration:0.8f animations:^{
+        self.pageViewController.view.frame = CGRectMake(0, kStateY, self.pageViewController.view.frame.size.width, self.pageViewController.view.frame.size.height);
+    } completion:^(BOOL finished) {
+        self.pageViewController.view.userInteractionEnabled = NO;
+    }];
+
+}
+
+#pragma mark - Setter & Getter
+- (WUPageControlViewController *)pageViewController
+{
+    if (_pageViewController == nil) {
+        _pageViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:kWUPageControlViewController];
+        
+        [_pageViewController.view addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTap:)]];
+        UISwipeGestureRecognizer *upSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(didSwipe:)];
+        upSwipe.direction = UISwipeGestureRecognizerDirectionUp;
+        [_pageViewController.view addGestureRecognizer:upSwipe];
+        
+        [_pageViewController.view setFrame:CGRectMake(0, kStateY, 320 ,480)];
+        _pageViewController.view.userInteractionEnabled = NO;
+        [_pageViewController addPicture:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"scaleview.png"]]];
+        [_pageViewController addPicture:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"scaleview.png"]]];
+        [_pageViewController addPicture:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"scaleview.png"]]];
     }
-    return _wuTapView;
+    
+    return _pageViewController;
 }
 
 #pragma mark - Pangesture
@@ -165,14 +194,14 @@
         self.isAnimationFinished = true;
         [UIView animateWithDuration:0.25f animations:^{
             self.scheduleTableView.frame = CGRectMake(0, self.view.frame.size.height, self.scheduleTableView.frame.size.width, self.scheduleTableView.frame.size.height);
-            self.wuTapView.frame = CGRectMake(0,0, self.wuTapView.frame.size.width, self.wuTapView.frame.size.height);
+            self.pageViewController.view.frame = CGRectMake(0,0, self.pageViewController.view.frame.size.width, self.pageViewController.view.frame.size.height);
         } completion:^(BOOL finished) {
-            self.wuTapView.userInteractionEnabled = YES;
+           self.pageViewController.view.userInteractionEnabled = YES;
             self.scheduleTableView.userInteractionEnabled = NO;
         }];
     } else if (self.isAnimationFinished == false) {
         [UIView animateWithDuration:0.05f animations:^{
-            self.wuTapView.frame = CGRectMake(0, kStateY + velocity * rate, self.wuTapView.frame.size.width, self.wuTapView.frame.size.height);
+            self.pageViewController.view.frame = CGRectMake(0, kStateY + velocity * rate, self.pageViewController.view.frame.size.width, self.pageViewController.view.frame.size.height);
         } completion:^(BOOL finished) {
             
         }];

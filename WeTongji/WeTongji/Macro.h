@@ -14,6 +14,7 @@
 #define kLeftMenuViewController @"kLeftMenuViewController"
 #define kCampusViewController @"kCampusViewController"
 #define kEventInfoViewController @"kEventInfoViewController"
+#define kWUPageControlViewController @"kWUPageControlViewController"
 
 // TableViewCell
 #define kLeftMenuCell @"kLeftMenuCell"

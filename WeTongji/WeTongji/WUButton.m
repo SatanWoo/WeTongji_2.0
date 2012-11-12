@@ -40,7 +40,6 @@
             self.frame = newFrame;
         }
     }
-    [self refreshShadow];
     [super setSelected:selected];
 }
 
