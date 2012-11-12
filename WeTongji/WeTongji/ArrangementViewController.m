@@ -24,7 +24,6 @@
 - (void)configureTableView
 {
     [self.arrangementTableView registerNib:[UINib nibWithNibName:@"ArrangementCell" bundle:nil] forCellReuseIdentifier:kArrangementCell];
-    //self.arrangementTableView.contentInset = UIEdgeInsetsMake(-100, 0, 0, 0);
     self.arrangementTableView.backgroundColor = [UIColor clearColor];
 }
 
@@ -89,7 +88,6 @@
     if (cell == nil) {
         cell = [[ArrangementCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kArrangementCell];
     }
-    cell.line = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"partition_line2"]];
     return cell;
 }
 

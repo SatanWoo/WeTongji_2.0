@@ -39,14 +39,20 @@
 
 -(void) setFilterString:(NSString *)filterString
 {
-    NSString * temp = filterString;
-    if ( [temp isEqualToString:GetActivitySortMethodCreateDesc] )
-        temp = nil;
-    if ( ![_filterString isEqualToString: temp] )
+    if ( ![_filterString isEqualToString: filterString] )
         {
-            _filterString = temp;
+            _filterString = filterString;
             [self refresh];
         }
+}
+
+-(NSString *)filterString
+{
+    if ( !_filterString )
+    {
+        _filterString = GetActivitySortMethodCreateDesc;
+    }
+    return _filterString;
 }
 
 
@@ -75,7 +81,7 @@
                 return [str2.beginTime compare:str1.beginTime];
             if ( [self.filterString isEqualToString:GetActivitySortMethodLikeDesc] )
                 return [str2.like compare:str1.like];
-            if ( !self.filterString )
+            if ( [self.filterString isEqualToString:GetActivitySortMethodCreateDesc] )
                 return [str2.createAt compare: str1.createAt];
             return YES;
         }];

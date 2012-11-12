@@ -26,7 +26,6 @@
     frame.origin.y = 0.0f;
     
     image.frame = frame;
-    //image.contentMode = UIViewContentModeScaleAspectFit;
     [self.pagedScrollView addSubview:image];
     self.pictureNumber ++;
 }

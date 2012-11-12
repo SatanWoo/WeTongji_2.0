@@ -12,25 +12,29 @@
 #import "TextViewTableCell.h"
 #import "WUTapImageView.h"
 #import "WUTableHeaderView.h"
+#import "WUPageControlViewController.h"
 
 #define kContentOffset 50
 #define kStateY -150
+#define kRowHeight 44
 
 @interface SchoolNewsViewController () <UIScrollViewDelegate, UITableViewDelegate, UITableViewDataSource>
 - (void)renderShadow:(UIView *)view;
 - (void)configureTableView;
 - (void)didTap:(UITapGestureRecognizer *)recognizer;
 
-@property (nonatomic, strong) WUTapImageView *wuTapView;
 @property (nonatomic, strong) WUTableHeaderView *headerView;
+@property (nonatomic, strong) WUPageControlViewController *pageViewController;
+@property (nonatomic, assign) BOOL isAnimationFinished;
 @end
 
 @implementation SchoolNewsViewController
 @synthesize newsTableView;
 @synthesize backButton;
 
-@synthesize wuTapView = _wuTapView;
+@synthesize pageViewController = _pageViewController;
 @synthesize headerView = _headerView;
+@synthesize isAnimationFinished = _isAnimationFinished;
 #pragma mark - Private Method
 - (void)renderShadow:(UIView *)view
 {
@@ -41,38 +45,49 @@
 - (void)configureTableView
 {
     [self.newsTableView registerNib:[UINib nibWithNibName:@"TextViewTableCell" bundle:nil] forCellReuseIdentifier:kTextViewTableCell];
+    
     self.newsTableView.contentInset = UIEdgeInsetsMake(kContentOffset, 0, 0, 0);
-    self.newsTableView.backgroundColor =[UIColor clearColor];
+    self.newsTableView.backgroundColor = [UIColor clearColor];
     self.newsTableView.tableHeaderView = self.headerView;
-    [self.view insertSubview:self.wuTapView belowSubview:self.newsTableView];
-    self.view.backgroundColor = self.headerView.backgroundColor;
+    [self.view insertSubview:self.pageViewController.view belowSubview:self.newsTableView];
+   
 }
 #pragma mark - Tap
 - (void)didTap:(UITapGestureRecognizer *)recognizer
 {
-//    [UIView animateWithDuration:0.55f animations:^{
-//        self.scheduleTableView.frame = self.view.frame;
-//    } completion:^(BOOL finished) {
-//        self.scheduleTableView.userInteractionEnabled = YES;
-//    }];
-//    
-//    [UIView animateWithDuration:0.8f animations:^{
-//        self.wuTapView.frame = CGRectMake(0, kStateY, self.wuTapView.frame.size.width, self.wuTapView.frame.size.height);
-//    } completion:^(BOOL finished) {
-//        self.wuTapView.userInteractionEnabled = NO;
-//    }];
+    self.isAnimationFinished = false;
+    [UIView animateWithDuration:0.55f animations:^{
+        self.newsTableView.frame = self.view.frame;
+    } completion:^(BOOL finished) {
+        self.newsTableView.userInteractionEnabled = YES;
+    }];
+    
+    [UIView animateWithDuration:0.8f animations:^{
+        self.pageViewController.view.frame = CGRectMake(0, kStateY, self.pageViewController.view.frame.size.width, self.pageViewController.view.frame.size.height);
+    } completion:^(BOOL finished) {
+        self.pageViewController.view.userInteractionEnabled = NO;
+    }];
 }
 
 #pragma mark - Setter & Getter
-- (WUTapImageView *)wuTapView
+- (WUPageControlViewController *)pageViewController
 {
-    if (_wuTapView == nil) {
-        _wuTapView = [[WUTapImageView alloc] initWithImage:[UIImage imageNamed:@"scaleview.png"]];
-        [_wuTapView setFrame:CGRectMake(0, kStateY, 320 ,480)];
-        [_wuTapView setGestureSelector:@selector(didTap:) target:self];
-        _wuTapView.userInteractionEnabled = NO;
+    if (_pageViewController == nil) {
+        _pageViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:kWUPageControlViewController];
+        
+        [_pageViewController.view addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTap:)]];
+//        UISwipeGestureRecognizer *upSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(didSwipe:)];
+//        upSwipe.direction = UISwipeGestureRecognizerDirectionUp;
+//        [_pageViewController.view addGestureRecognizer:upSwipe];
+        
+        [_pageViewController.view setFrame:CGRectMake(0, kStateY, 320 ,480)];
+        _pageViewController.view.userInteractionEnabled = NO;
+        [_pageViewController addPicture:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"scaleview.png"]]];
+        [_pageViewController addPicture:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"scaleview.png"]]];
+        [_pageViewController addPicture:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"scaleview.png"]]];
     }
-    return _wuTapView;
+    
+    return _pageViewController;
 }
 
 - (WUTableHeaderView *)headerView
@@ -89,10 +104,8 @@
 {
     [super viewDidLoad];
     [self.navigationController setNavigationBarHidden:YES];
-    
     [self configureTableView];
     //[self renderShadow:self.upperHiddenView];
-	// Do any additional setup after loading the view.
 }
 
 - (void)viewDidUnload
@@ -100,7 +113,6 @@
     [self setBackButton:nil];
     [self setNewsTableView:nil];
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -118,7 +130,26 @@
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    NSLog(@"ContentOffset is %g",scrollView.contentOffset.y);
+    static int velocity = 15;
+    
+    float rate = (scrollView.contentOffset.y + kContentOffset) / -kRowHeight;
+    
+    if (rate > 2) {
+        self.isAnimationFinished = true;
+        [UIView animateWithDuration:0.25f animations:^{
+            self.newsTableView.frame = CGRectMake(0, self.view.frame.size.height, self.newsTableView.frame.size.width, self.newsTableView.frame.size.height);
+            self.pageViewController.view.frame = CGRectMake(0,0, self.pageViewController.view.frame.size.width, self.pageViewController.view.frame.size.height);
+        } completion:^(BOOL finished) {
+            self.pageViewController.view.userInteractionEnabled = YES;
+            self.newsTableView.userInteractionEnabled = NO;
+        }];
+    } else if (self.isAnimationFinished == false) {
+        [UIView animateWithDuration:0.05f animations:^{
+            self.pageViewController.view.frame = CGRectMake(0, kStateY + velocity * rate, self.pageViewController.view.frame.size.width, self.pageViewController.view.frame.size.height);
+        } completion:^(BOOL finished) {
+            
+        }];
+    }
 }
 
 #pragma mark - UITableViewDataSource

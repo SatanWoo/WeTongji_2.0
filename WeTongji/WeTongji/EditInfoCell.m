@@ -1,15 +1,16 @@
 //
-//  TextViewTableCell.m
+//  EditInfoCell.m
 //  WeTongji
 //
-//  Created by Wu Ziqi on 12-11-4.
+//  Created by 吴 wuziqi on 12-11-12.
 //
 //
 
-#import "TextViewTableCell.h"
+#import "EditInfoCell.h"
 
-@implementation TextViewTableCell
-@synthesize textView = _textView;
+@implementation EditInfoCell
+@synthesize name;
+@synthesize field;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
