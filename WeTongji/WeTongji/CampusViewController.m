@@ -188,18 +188,18 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    WTClient * client = [WTClient getClient];
-    [client  setCompletionBlock:^(id responseData)
-    {
-        NSString * hasError = [responseData objectForKey:@"isFailed"];
-        if( [hasError characterAtIndex:0] == 'N' )
-        {
-            NSArray * dictArray = [responseData objectForKey:@"People"];
-            for ( NSDictionary * dict in dictArray )
-                [Star insertStarWithDict:dict inManagedObjectContext:self.managedObjectContext];
-        }
-    }];
-    [client getAllStarsWithNextPage:0];
+//    WTClient * client = [WTClient sharedClient];
+//    WTRequest * request = [WTClient requestWithSuccessBlock:^(id responseData)
+//    {
+//        NSString * hasError = [responseData objectForKey:@"isFailed"];
+//        if( [hasError characterAtIndex:0] == 'N' )
+//        {
+//            NSArray * dictArray = [responseData objectForKey:@"People"];
+//            for ( NSDictionary * dict in dictArray )
+//                [Star insertStarWithDict:dict inManagedObjectContext:self.managedObjectContext];
+//        }
+//    } failureBlock:nil];
+//    [client getAllStarsWithNextPage:0];
 }
 
 - (void)viewDidUnload

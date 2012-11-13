@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2">
     <dependencies>
-        <deployment defaultVersion="1536" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
     <scenes>
@@ -908,107 +907,6 @@
         <image name="注册1.jpg" width="640" height="960"/>
         <image name="注册登录.jpg" width="640" height="960"/>
     </resources>
-    <classes>
-        <class className="ArrangementViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ArrangementViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="arrangementTableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="CampusViewController" superclassName="MiddleAbstractViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CampusViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="buttonPressed:" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="actionButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="groupInfoButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="indicator" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="recommendButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="schoolInfoButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
-            </relationships>
-        </class>
-        <class className="CoreDataViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CoreDataViewController.h"/>
-        </class>
-        <class className="EditInfoViewController" superclassName="MiddleAbstractViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/EditInfoViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="infoTableView" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="name" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="profileAvatar" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="sex" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="upperView" candidateClass="UIView"/>
-            </relationships>
-        </class>
-        <class className="EventInfoViewController" superclassName="MiddleAbstractViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/EventInfoViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="eventTableView" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="titleLabel" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="LeftMenuViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LeftMenuViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="triggerInfo:" candidateClass="UIButton"/>
-                <relationship kind="action" name="triggerSetting:" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="delegate"/>
-                <relationship kind="outlet" name="infoButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="menuTableView" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="settingButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="LoginViewController" superclassName="MiddleAbstractViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginViewController.h"/>
-        </class>
-        <class className="MiddleAbstractViewController" superclassName="CoreDataViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MiddleAbstractViewController.h"/>
-        </class>
-        <class className="MyFavortieViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MyFavortieViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="filterItem:"/>
-                <relationship kind="outlet" name="celebrityButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="contentTableView" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="recommendButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="schoolInfoButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="titleButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="PersonalWallViewController" superclassName="MiddleAbstractViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PersonalWallViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="scheduleTableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="RegInfomationCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RegInfomationCell.h"/>
-        </class>
-        <class className="RegisterViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RegisterViewController.h"/>
-        </class>
-        <class className="SchoolNewsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SchoolNewsViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="goBack:"/>
-                <relationship kind="outlet" name="backButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="newsTableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="WUButton" superclassName="UIButton">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WUButton.h"/>
-        </class>
-        <class className="WUPageControlViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WUPageControlViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="pageControl" candidateClass="UIPageControl"/>
-                <relationship kind="outlet" name="pagedScrollView" candidateClass="UIScrollView"/>
-            </relationships>
-        </class>
-        <class className="WUSlideViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WUSlideViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

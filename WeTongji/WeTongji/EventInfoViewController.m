@@ -238,27 +238,28 @@
 
 - (void)loadMoreData
 {
-    WTClient *client = [WTClient getClient];
-    [client setCompletionBlock:^(id responseData)
-    {
-        NSString * hasError = [responseData objectForKey:@"isFailed"];
-        if( [hasError characterAtIndex:0] == 'N' )
+    WTClient *client = [WTClient sharedClient];
+    WTRequest * request = [WTRequest requestWithSuccessBlock:^(id responseData)
         {
             if(self.nextPage == 0)
-                [self clearData];
+            [self clearData];
             NSArray *array = [responseData objectForKey:@"Activities"];
             for(NSDictionary *eventDict in array)
             {
-                Event *event = [Event insertActivity:eventDict inManagedObjectContext:self.managedObjectContext]; 
+                Event *event = [Event insertActivity:eventDict inManagedObjectContext:self.managedObjectContext];
                 event.hidden = [NSNumber numberWithBool:NO];
             }
             self.nextPage = [[NSString stringWithFormat:@"%@", [responseData objectForKey:@"NextPager"]] intValue];
             NSLog(@"%d",self.nextPage);
             if (self.nextPage == 0) [self.pullRefreshManagement setNoMoreData:YES];
+            [self.pullRefreshManagement endLoading];
         }
-        [self.pullRefreshManagement endLoading];
-    }];
-    [client getActivitiesInChannel:nil inSort:self.filterString Expired:YES nextPage:self.nextPage];
+        failureBlock:^(NSError * error)
+        {
+            [self.pullRefreshManagement endLoading];
+        }];
+    [request getActivitiesInChannel:nil inSort:self.filterString Expired:YES nextPage:self.nextPage];
+    [client enqueueRequest:request];
     NSLog(@"%@ : %d",self.filterString,self.nextPage);
 }
 
