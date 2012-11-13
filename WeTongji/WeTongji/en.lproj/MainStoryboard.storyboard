@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2549" systemVersion="11G63" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
+        <deployment defaultVersion="1296" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1498"/>
     </dependencies>
     <scenes>
         <!--Slide View Controller-->
@@ -186,16 +187,12 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </scrollView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="tab_bg.png" id="PZg-SJ-i5T">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="41"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" id="qzw-X1-xCS" customClass="WUButton">
-                                <rect key="frame" x="0.0" y="0.0" width="80" height="41"/>
+                                <rect key="frame" x="0.0" y="0.0" width="80" height="40"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="18"/>
-                                <state key="normal" title="校园咨询">
+                                <state key="normal" backgroundImage="xiaowu_un.png">
                                     <color key="titleColor" name="selectedTextBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
@@ -207,11 +204,11 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" id="NyE-ts-7MZ" customClass="WUButton">
-                                <rect key="frame" x="80" y="0.0" width="80" height="41"/>
+                                <rect key="frame" x="80" y="0.0" width="80" height="40"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="18"/>
-                                <state key="normal" title="社团通告">
+                                <state key="normal" backgroundImage="tonggao_un.png">
                                     <color key="titleColor" white="0.69999999999999996" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
@@ -223,11 +220,11 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" id="I0W-dw-4yL" customClass="WUButton">
-                                <rect key="frame" x="160" y="0.0" width="80" height="41"/>
+                                <rect key="frame" x="160" y="0.0" width="80" height="40"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="18"/>
-                                <state key="normal" title="校园动态">
+                                <state key="normal" backgroundImage="dongtai_un.png">
                                     <color key="titleColor" white="0.69999999999999996" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
@@ -238,12 +235,12 @@
                                     <action selector="buttonPressed:" destination="k38-So-KfZ" eventType="touchUpInside" id="CVq-u8-A5f"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" id="gDn-Zt-he8" customClass="WUButton">
-                                <rect key="frame" x="240" y="0.0" width="80" height="41"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" id="s2o-iw-Fz1" customClass="WUButton">
+                                <rect key="frame" x="240" y="0.0" width="80" height="40"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="18"/>
-                                <state key="normal" title="周边推荐">
+                                <state key="normal" backgroundImage="tuijian_un.png">
                                     <color key="titleColor" white="0.69999999999999996" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
@@ -251,7 +248,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="buttonPressed:" destination="k38-So-KfZ" eventType="touchUpInside" id="Dre-CR-TlY"/>
+                                    <action selector="buttonPressed:" destination="k38-So-KfZ" eventType="touchUpInside" id="LY4-2k-YKw"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -261,7 +258,7 @@
                     <connections>
                         <outlet property="actionButton" destination="I0W-dw-4yL" id="rnM-zG-ivy"/>
                         <outlet property="groupInfoButton" destination="NyE-ts-7MZ" id="lkS-R3-kLO"/>
-                        <outlet property="recommendButton" destination="gDn-Zt-he8" id="zOJ-HJ-nFf"/>
+                        <outlet property="recommendButton" destination="s2o-iw-Fz1" id="lOq-cK-nFM"/>
                         <outlet property="schoolInfoButton" destination="qzw-X1-xCS" id="y1b-HC-rQD"/>
                         <outlet property="scrollView" destination="p80-JF-qth" id="jku-hS-ZPy"/>
                         <segue destination="D5h-rN-X3u" kind="push" identifier="kSchoolNewsViewController" id="nGL-0f-2v0"/>
@@ -690,7 +687,7 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" red="0.35838091550000001" green="0.67899404289999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                                    <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <state key="normal" title="注册">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -895,18 +892,122 @@
         <image name="back_btn.png" width="20" height="17"/>
         <image name="bottom_bar.png" width="275" height="54"/>
         <image name="campusBG.png" width="320" height="420"/>
+        <image name="dongtai_un.png" width="80" height="40"/>
         <image name="edit.png" width="14" height="15"/>
         <image name="info_avatar.png" width="73" height="73"/>
         <image name="info_btn.png" width="26" height="26"/>
         <image name="male.png" width="47" height="16"/>
         <image name="navbar_sort_btn" width="16" height="16"/>
         <image name="settings_btn.png" width="26" height="26"/>
-        <image name="tab_bg.png" width="320" height="41"/>
         <image name="table_first.png" width="301" height="45"/>
         <image name="today.png" width="80" height="24"/>
+        <image name="tonggao_un.png" width="80" height="40"/>
+        <image name="tuijian_un.png" width="80" height="40"/>
+        <image name="xiaowu_un.png" width="80" height="40"/>
         <image name="注册1.jpg" width="640" height="960"/>
         <image name="注册登录.jpg" width="640" height="960"/>
     </resources>
+    <classes>
+        <class className="ArrangementViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ArrangementViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="arrangementTableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="CampusViewController" superclassName="MiddleAbstractViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CampusViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="buttonPressed:" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="actionButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="groupInfoButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="indicator" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="recommendButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="schoolInfoButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+            </relationships>
+        </class>
+        <class className="CoreDataViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CoreDataViewController.h"/>
+        </class>
+        <class className="EditInfoViewController" superclassName="MiddleAbstractViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/EditInfoViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="infoTableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="name" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="profileAvatar" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="sex" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="upperView" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="EventInfoViewController" superclassName="MiddleAbstractViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/EventInfoViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="eventTableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="titleLabel" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="LeftMenuViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LeftMenuViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="triggerInfo:" candidateClass="UIButton"/>
+                <relationship kind="action" name="triggerSetting:" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="delegate"/>
+                <relationship kind="outlet" name="infoButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="menuTableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="settingButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="LoginViewController" superclassName="MiddleAbstractViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginViewController.h"/>
+        </class>
+        <class className="MiddleAbstractViewController" superclassName="CoreDataViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MiddleAbstractViewController.h"/>
+        </class>
+        <class className="MyFavortieViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MyFavortieViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="filterItem:"/>
+                <relationship kind="outlet" name="celebrityButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="contentTableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="recommendButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="schoolInfoButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="titleButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="PersonalWallViewController" superclassName="MiddleAbstractViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PersonalWallViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="scheduleTableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="RegInfomationCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RegInfomationCell.h"/>
+        </class>
+        <class className="RegisterViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RegisterViewController.h"/>
+        </class>
+        <class className="SchoolNewsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SchoolNewsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="goBack:"/>
+                <relationship kind="outlet" name="backButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="newsTableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="WUButton" superclassName="UIButton">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WUButton.h"/>
+        </class>
+        <class className="WUPageControlViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WUPageControlViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="pageControl" candidateClass="UIPageControl"/>
+                <relationship kind="outlet" name="pagedScrollView" candidateClass="UIScrollView"/>
+            </relationships>
+        </class>
+        <class className="WUSlideViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WUSlideViewController.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

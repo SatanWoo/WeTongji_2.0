@@ -127,25 +127,18 @@
 
 - (void)configureTabBar
 {
-    UIColor *hight = [[UIColor alloc] initWithCGColor:self.schoolInfoButton.titleLabel.textColor.CGColor];
-    
-    [self.schoolInfoButton setBackgroundImage:[UIImage imageNamed:@"block_sl.png"] forState:UIControlStateSelected];
-    [self.schoolInfoButton setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
-    [self.schoolInfoButton setTitleColor:hight forState:UIControlStateSelected];
+    [self.schoolInfoButton setBackgroundImage:[UIImage imageNamed:@"xiaowu_hl.png"] forState:UIControlStateHighlighted];
+    [self.schoolInfoButton setBackgroundImage:[UIImage imageNamed:@"xiaowu_sl.png"] forState:UIControlStateSelected];
     [self.schoolInfoButton setSelected:YES];
     
-    [self.groupInfoButton setBackgroundImage:[UIImage imageNamed:@"block_sl.png"] forState:UIControlStateSelected];
-    [self.groupInfoButton setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
-    [self.groupInfoButton setTitleColor:hight forState:UIControlStateSelected];
+    [self.groupInfoButton setBackgroundImage:[UIImage imageNamed:@"tonggao_hl.png"] forState:UIControlStateHighlighted];
+    [self.groupInfoButton setBackgroundImage:[UIImage imageNamed:@"tonggao_sl.png"] forState:UIControlStateSelected];
     
-    [self.actionButton setBackgroundImage:[UIImage imageNamed:@"block_sl.png"] forState:UIControlStateSelected];
-    [self.actionButton setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
-    [self.actionButton setTitleColor:hight forState:UIControlStateSelected];
+    [self.actionButton setBackgroundImage:[UIImage imageNamed:@"dongtai_hl.png"] forState:UIControlStateHighlighted];
+    [self.actionButton setBackgroundImage:[UIImage imageNamed:@"dongtai_sl.png"] forState:UIControlStateSelected];
     
-    [self.recommendButton setBackgroundImage:[UIImage imageNamed:@"block_sl.png"] forState:UIControlStateSelected];
-    [self.recommendButton setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
-    [self.recommendButton setTitleColor:hight forState:UIControlStateSelected];
-    
+    [self.recommendButton setBackgroundImage:[UIImage imageNamed:@"tuijian_hl.png"] forState:UIControlStateHighlighted];
+    [self.recommendButton setBackgroundImage:[UIImage imageNamed:@"tuijian_sl.png"] forState:UIControlStateSelected];
 }
 
 - (void)configureTableView

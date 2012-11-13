@@ -26,6 +26,7 @@
 @property (nonatomic, strong) WUTableHeaderView *headerView;
 @property (nonatomic, strong) WUPageControlViewController *pageViewController;
 @property (nonatomic, assign) BOOL isAnimationFinished;
+@property (nonatomic, weak) TextViewTableCell* currentCell;
 @end
 
 @implementation SchoolNewsViewController
@@ -35,6 +36,7 @@
 @synthesize pageViewController = _pageViewController;
 @synthesize headerView = _headerView;
 @synthesize isAnimationFinished = _isAnimationFinished;
+@synthesize currentCell = _currentCell;
 #pragma mark - Private Method
 - (void)renderShadow:(UIView *)view
 {
@@ -134,6 +136,10 @@
     
     float rate = (scrollView.contentOffset.y + kContentOffset) / -kRowHeight;
     
+    if (scrollView.contentOffset.y >= 150) {
+        self.currentCell.textView.scrollEnabled = YES;
+    } 
+    
     if (rate > 2) {
         self.isAnimationFinished = true;
         [UIView animateWithDuration:0.25f animations:^{
@@ -174,6 +180,7 @@
     if (cell == nil) {
         cell = [[TextViewTableCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kTextViewTableCell];
     }
+    self.currentCell = cell;
     return cell;
 }
 
