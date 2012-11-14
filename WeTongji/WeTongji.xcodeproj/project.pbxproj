@@ -206,6 +206,10 @@
 		FF7109BA164D4667008F2A06 /* PullRefreshManagement.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7109B9164D4667008F2A06 /* PullRefreshManagement.m */; };
 		FFB46B2A164FCC2B00C32969 /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB46B29164FCC2B00C32969 /* Course.m */; };
 		FFB46B2D164FCC6D00C32969 /* Course+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB46B2C164FCC6D00C32969 /* Course+Addition.m */; };
+		FFB4D67F1654729400D863FC /* cancel_edit_hl@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB4D67B1654729400D863FC /* cancel_edit_hl@2x.png */; };
+		FFB4D6801654729400D863FC /* cancel_edit_un@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB4D67C1654729400D863FC /* cancel_edit_un@2x.png */; };
+		FFB4D6811654729400D863FC /* finish_edit_hl@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB4D67D1654729400D863FC /* finish_edit_hl@2x.png */; };
+		FFB4D6821654729400D863FC /* finish_edit_un@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB4D67E1654729400D863FC /* finish_edit_un@2x.png */; };
 		FFB5AEC6164CDC0A00A232DF /* blackArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB5AEBD164CDC0A00A232DF /* blackArrow.png */; };
 		FFB5AEC7164CDC0A00A232DF /* blackArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB5AEBE164CDC0A00A232DF /* blackArrow@2x.png */; };
 		FFB5AEC8164CDC0A00A232DF /* blueArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB5AEBF164CDC0A00A232DF /* blueArrow.png */; };
@@ -521,6 +525,10 @@
 		FFB46B29164FCC2B00C32969 /* Course.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Course.m; sourceTree = "<group>"; };
 		FFB46B2B164FCC6D00C32969 /* Course+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Course+Addition.h"; sourceTree = "<group>"; };
 		FFB46B2C164FCC6D00C32969 /* Course+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Course+Addition.m"; sourceTree = "<group>"; };
+		FFB4D67B1654729400D863FC /* cancel_edit_hl@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cancel_edit_hl@2x.png"; sourceTree = "<group>"; };
+		FFB4D67C1654729400D863FC /* cancel_edit_un@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cancel_edit_un@2x.png"; sourceTree = "<group>"; };
+		FFB4D67D1654729400D863FC /* finish_edit_hl@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "finish_edit_hl@2x.png"; sourceTree = "<group>"; };
+		FFB4D67E1654729400D863FC /* finish_edit_un@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "finish_edit_un@2x.png"; sourceTree = "<group>"; };
 		FFB5AEBD164CDC0A00A232DF /* blackArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blackArrow.png; sourceTree = "<group>"; };
 		FFB5AEBE164CDC0A00A232DF /* blackArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blackArrow@2x.png"; sourceTree = "<group>"; };
 		FFB5AEBF164CDC0A00A232DF /* blueArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueArrow.png; sourceTree = "<group>"; };
@@ -613,6 +621,10 @@
 		03D540B71651335B0070F727 /* EditInfo */ = {
 			isa = PBXGroup;
 			children = (
+				FFB4D67B1654729400D863FC /* cancel_edit_hl@2x.png */,
+				FFB4D67C1654729400D863FC /* cancel_edit_un@2x.png */,
+				FFB4D67D1654729400D863FC /* finish_edit_hl@2x.png */,
+				FFB4D67E1654729400D863FC /* finish_edit_un@2x.png */,
 				03D540C8165137D60070F727 /* table_first.png */,
 				03D540C9165137D60070F727 /* table_first@2x.png */,
 				03D540CA165137D60070F727 /* table_last.png */,
@@ -1481,6 +1493,10 @@
 				035E34AC1653EFB8009AC6BF /* header_bg.png in Resources */,
 				035E34AD1653EFB8009AC6BF /* header_bg@2x.png in Resources */,
 				035E34B41653F068009AC6BF /* WUFolderView.xib in Resources */,
+				FFB4D67F1654729400D863FC /* cancel_edit_hl@2x.png in Resources */,
+				FFB4D6801654729400D863FC /* cancel_edit_un@2x.png in Resources */,
+				FFB4D6811654729400D863FC /* finish_edit_hl@2x.png in Resources */,
+				FFB4D6821654729400D863FC /* finish_edit_un@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

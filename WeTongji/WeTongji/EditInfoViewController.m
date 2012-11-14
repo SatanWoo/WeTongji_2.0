@@ -229,6 +229,10 @@ static id tempLeftBarItem;
     _isEditEnable = NO;
     self.infoList = nil;
     _isKeyBoardAppear = NO;
+    [UIView animateWithDuration:.3 animations:^{self.scrollView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);} completion:^(BOOL isFinished)
+     {
+         if (isFinished) _isKeyBoardAppear = NO;
+     }];
     NSString * email;
     NSString * weiboName;
     NSString * phone;
@@ -274,6 +278,10 @@ static id tempLeftBarItem;
     _isEditEnable = NO;
     self.infoList = nil;
     _isKeyBoardAppear = NO;
+    [UIView animateWithDuration:.3 animations:^{self.scrollView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);} completion:^(BOOL isFinished)
+     {
+         if (isFinished) _isKeyBoardAppear = NO;
+     }];
     [self.infoTableView reloadData];
 }
 

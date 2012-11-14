@@ -444,10 +444,10 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </imageView>
                                                 <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="iuU-6j-NZB">
-                                                    <rect key="frame" x="190" y="35" width="16" height="16"/>
+                                                    <rect key="frame" x="196" y="32" width="21" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                                    <state key="normal" backgroundImage="edit.png">
+                                                    <state key="normal" backgroundImage="edit">
                                                         <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
@@ -495,12 +495,12 @@
                         <color key="backgroundColor" red="0.95822010869565222" green="0.95822010869565222" blue="0.95822010869565222" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="个人资料" id="lFa-dC-Fyf">
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="pxC-mm-sQy">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="oRZ-95-rVC">
-                                <rect key="frame" x="5" y="0.0" width="55" height="44"/>
+                        <barButtonItem key="leftBarButtonItem" width="50" style="plain" id="pxC-mm-sQy">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="oRZ-95-rVC">
+                                <rect key="frame" x="5" y="0.0" width="50" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="取消">
+                                <state key="normal" image="cancel_edit_hl">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -515,12 +515,12 @@
                                 <action selector="cancelEditClicked:" destination="Hf1-lA-LKj" id="Mkr-r5-JOz"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="kda-ti-RF7">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="agv-WR-InQ">
-                                <rect key="frame" x="260" y="0.0" width="55" height="44"/>
+                        <barButtonItem key="rightBarButtonItem" width="50" style="plain" id="kda-ti-RF7">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="agv-WR-InQ">
+                                <rect key="frame" x="265" y="0.0" width="50" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="完成">
+                                <state key="normal" image="finish_edit_hl">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -970,9 +970,11 @@
         <image name="back_btn.png" width="20" height="17"/>
         <image name="bottom_bar.png" width="275" height="54"/>
         <image name="campusBG.png" width="320" height="420"/>
+        <image name="cancel_edit_hl" width="16" height="16"/>
         <image name="dongtai_un.png" width="80" height="40"/>
-        <image name="edit.png" width="14" height="15"/>
+        <image name="edit" width="16" height="16"/>
         <image name="female.png" width="47" height="16"/>
+        <image name="finish_edit_hl" width="16" height="16"/>
         <image name="info_avatar.png" width="73" height="73"/>
         <image name="info_btn.png" width="26" height="26"/>
         <image name="navbar_sort_btn" width="16" height="16"/>
