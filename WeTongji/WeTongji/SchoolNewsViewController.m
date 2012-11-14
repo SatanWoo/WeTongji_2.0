@@ -138,7 +138,13 @@
     
     if (scrollView.contentOffset.y >= 150) {
         self.currentCell.textView.scrollEnabled = YES;
-    } 
+    }
+    
+    if (rate <-2)
+    {
+        
+        return;
+    }
     
     if (rate > 2) {
         self.isAnimationFinished = true;

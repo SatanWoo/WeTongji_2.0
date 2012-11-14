@@ -178,6 +178,8 @@
         [self performSegueWithIdentifier:kArrangementViewControllerSegue sender:self];
     } else if (indexPath.section == 1) {
         [self performSegueWithIdentifier:kMyFavortieViewControllerSegue sender:self];
+    } else if (indexPath.section == 2) {
+        [self performSegueWithIdentifier:kEditInfoViewController sender:self];
     }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }

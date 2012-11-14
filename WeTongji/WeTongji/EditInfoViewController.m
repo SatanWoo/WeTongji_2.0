@@ -12,28 +12,30 @@
 #import <QuartzCore/QuartzCore.h>
 #import <WeTongjiSDK/WeTongjiSDK.h>
 #import "User+Addition.h"
+#import "EditInfoHeaderView.h"
 
 @interface EditInfoViewController ()<UITableViewDataSource, UITableViewDelegate>
 {
     BOOL _isEditEnable;
     BOOL _isKeyBoardAppear;
 }
+@property (weak, nonatomic) IBOutlet EditInfoHeaderView *headerView;
 @property (nonatomic,strong) User * user;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *cancelEditButton;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *ConfirmEditBarButton;
 @property (weak, nonatomic) IBOutlet UIButton *editButton;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (nonatomic,strong) NSArray * editableList;
+@property (nonatomic,strong) NSArray * staticList;
+@property (nonatomic,strong) NSArray * infoList;
 - (void)configureTableView;
 @end
 
 @implementation EditInfoViewController
-@synthesize profileAvatar;
-@synthesize name;
-@synthesize sex;
-@synthesize upperView;
 @synthesize infoTableView;
 @synthesize user = _user;
 
+#pragma mark - Setter & Getter
 -(User *) user
 {
     if ( !_user )
@@ -43,46 +45,70 @@
     return _user;
 }
 
+-(NSArray *) staticList
+{
+    if ( !_staticList )
+    {
+        _staticList = [NSArray arrayWithObjects:[NSNumber numberWithInteger:EditInfoCellTypeStudentNumber],[NSNumber numberWithInteger:EditInfoCellTypeDepartment],[NSNumber numberWithInteger:EditInfoCellTypeMajor],[NSNumber numberWithInteger:EditInfoCellTypeYear], nil];
+    }
+    return _staticList;
+}
+
+-(NSArray *) editableList
+{
+    if ( !_editableList )
+    {
+        _editableList = [NSArray arrayWithObjects:[NSNumber numberWithInteger:EditInfoCellTypePhone],[NSNumber numberWithInteger:EditInfoCellTypeQQ],[NSNumber numberWithInteger:EditInfoCellTypeEmail],[NSNumber numberWithInteger:EditInfoCellTypeWeibo], nil];
+    }
+    return _editableList;
+}
+
+-(NSArray *) infoList
+{
+    if ( !_infoList )
+    {
+        _infoList = [NSArray arrayWithObjects:self.staticList,self.editableList, nil];
+    }
+    return _infoList;
+}
+
+
 #pragma mark - Private
 - (void)configureTableView
 {
     [self.infoTableView registerNib:[UINib nibWithNibName:@"EditInfoCell" bundle:nil] forCellReuseIdentifier:kEditInfoCell];
-    self.infoTableView.contentInset = UIEdgeInsetsMake(self.upperView.frame.size.height, 0, 0, 0);
-    self.upperView.layer.shadowOpacity = 0.8;
-    self.upperView.layer.shadowColor = [UIColor blackColor].CGColor;
+    [self.infoTableView setBackgroundView:nil];
+    [self.infoTableView setBackgroundColor:self.headerView.backgroundColor];
+    self.infoTableView.tableHeaderView = self.headerView;
 }
 
-#pragma mark - Life Cycle
+#pragma mark - Life Cyclc
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     [self configureTableView];
     if ( self.user )
     {
-        [self.profileAvatar setImageWithURL:[NSURL URLWithString: self.user.avatarLink]];
-        self.name.text = self.user.displayname;
+        [self.headerView.avatar setImageWithURL:[NSURL URLWithString: self.user.avatarLink]];
+        self.headerView.nameLabel.text = self.user.displayname;
         if ( [self.user.gender isEqualToString:@"男"] )
         {
-            [self.sex setImage:[UIImage imageNamed:@"male.png"]];
+            [self.headerView.sex setImage:[UIImage imageNamed:@"male.png"]];
         }
         else
-            [self.sex setImage:[UIImage imageNamed:@"female.png"]];
-        self.ageLabel.text = [self.user.age stringValue];
+            [self.headerView.sex setImage:[UIImage imageNamed:@"female.png"]];
+        self.headerView.ageLabel.text = [self.user.age stringValue];
     }
     self.navigationItem.rightBarButtonItem = nil;
 }
 
 - (void)viewDidUnload
 {
-    [self setProfileAvatar:nil];
-    [self setName:nil];
-    [self setSex:nil];
-    [self setUpperView:nil];
     [self setInfoTableView:nil];
-    [self setAgeLabel:nil];
     [self setConfirmEditBarButton:nil];
     [self setEditButton:nil];
     [self setScrollView:nil];
+    [self setHeaderView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -95,17 +121,16 @@
 #pragma mark - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 2;
+    NSLog(@"%d",[self.infoList count]);
+    return [self.infoList count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if (section == 0) {
-        return 4;
-    } else {
-        return 4;
-    }
+    NSLog(@"%d",[[self.infoList objectAtIndex:section] count]);
+    return [[self.infoList objectAtIndex:section] count];
 }
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -114,49 +139,43 @@
     {
         cell = [[EditInfoCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kEditInfoCell];
     }
-    if ( indexPath.section == 0 )
-        switch (indexPath.row)
-        {
-            case 0:
-                [cell setType:EditInfoCellTypeStudentNumber];
-                cell.field.text = self.user.studentNumber;
-                break;
-            case 1:
-                [cell setType:EditInfoCellTypeDepartment];
-                cell.field.text = self.user.department;
-                break;
-            case 2:
-                [cell setType:EditInfoCellTypeMajor];
-                cell.field.text = self.user.major;
-                break;
-            case 3:
-                [cell setType:EditInfoCellTypeYear];
-                cell.field.text = self.user.year;
-                break;
-            default:
-                break;
-        }
-    if ( indexPath.section == 1 )
-        switch (indexPath.row)
-        {
-            case 0:
-                [cell setType:EditInfoCellTypePhone];
-                cell.field.text = self.user.phone;
-                break;
-            case 1:
-                [cell setType:EditInfoCellTypeQQ];
-                cell.field.text = self.user.qq;
-                break;
-            case 2:
-                [cell setType:EditInfoCellTypeEmail];
-                cell.field.text = self.user.email;
-                break;
-            case 3:
-                [cell setType:EditInfoCellTypeWeibo];
-                cell.field.text = self.user.sinaWeibo;
-                break;
-            default:
-                break;
+    EditInfoCellType type=[[[self.infoList objectAtIndex:indexPath.section] objectAtIndex:indexPath.row] intValue];
+    switch (type)
+    {
+        case EditInfoCellTypeStudentNumber:
+            [cell setType:EditInfoCellTypeStudentNumber];
+            cell.field.text = self.user.studentNumber;
+            break;
+        case EditInfoCellTypeDepartment:
+            [cell setType:EditInfoCellTypeDepartment];
+            cell.field.text = self.user.department;
+            break;
+        case EditInfoCellTypeMajor:
+            [cell setType:EditInfoCellTypeMajor];
+            cell.field.text = self.user.major;
+            break;
+        case EditInfoCellTypeYear:
+            [cell setType:EditInfoCellTypeYear];
+            cell.field.text = self.user.year;
+            break;
+        case EditInfoCellTypePhone:
+            [cell setType:EditInfoCellTypePhone];
+            cell.field.text = self.user.phone;
+            break;
+        case EditInfoCellTypeQQ:
+            [cell setType:EditInfoCellTypeQQ];
+            cell.field.text = self.user.qq;
+            break;
+        case EditInfoCellTypeEmail:
+            [cell setType:EditInfoCellTypeEmail];
+            cell.field.text = self.user.email;
+            break;
+        case EditInfoCellTypeWeibo:
+            [cell setType:EditInfoCellTypeWeibo];
+            cell.field.text = self.user.sinaWeibo;
+            break;
+        default:
+            break;
     }
     [cell setIsEditEnable:_isEditEnable];
     [cell.field addTarget:self action:@selector(didEndEdit:) forControlEvents:UIControlEventEditingDidEndOnExit];
@@ -176,7 +195,7 @@
     _isKeyBoardAppear = YES;
     [UIView beginAnimations:nil context:NULL];
 	[UIView setAnimationDuration:.3];
-    self.scrollView.contentInset = UIEdgeInsetsMake(-upperView.bounds.size.height, 0, 480 + self.upperView.bounds.size.height, 0);
+    self.scrollView.contentInset = UIEdgeInsetsMake(-self.infoTableView.tableHeaderView.frame.size.height, 0, 200, 0);
     [UIView commitAnimations];
 }
 
@@ -198,15 +217,8 @@ static id tempLeftBarItem;
     self.navigationItem.leftBarButtonItem = self.cancelEditButton;
     self.navigationItem.rightBarButtonItem = self.ConfirmEditBarButton;
     [self.editButton setHidden:YES];
-    [UIView beginAnimations:nil context:NULL];
-	[UIView setAnimationDuration:.3];
-    self.infoTableView.contentInset = UIEdgeInsetsMake(self.upperView.frame.size.height-190, 0, 0, 0);
-    [UIView commitAnimations];
-    self.scrollView.contentInset = UIEdgeInsetsMake(0, 0, 480, 0);
-    [self.infoTableView setScrollEnabled:NO];
-    [self.scrollView setScrollEnabled:YES];
+    self.infoList = [NSArray arrayWithObjects:self.editableList, nil];
     [self.infoTableView reloadData];
-
 }
 
 - (IBAction)confirmEditClicked:(id)sender
@@ -215,13 +227,7 @@ static id tempLeftBarItem;
     self.navigationItem.rightBarButtonItem = nil;
     [self.editButton setHidden:NO];
     _isEditEnable = NO;
-    [UIView beginAnimations:nil context:NULL];
-	[UIView setAnimationDuration:.3];
-    self.infoTableView.contentInset = UIEdgeInsetsMake(self.upperView.frame.size.height, 0, 0, 0);
-    self.scrollView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
-    [UIView commitAnimations];
-    [self.infoTableView setScrollEnabled:YES];
-    [self.scrollView setScrollEnabled:NO];
+    self.infoList = nil;
     _isKeyBoardAppear = NO;
     NSString * email;
     NSString * weiboName;
@@ -266,13 +272,7 @@ static id tempLeftBarItem;
     self.navigationItem.rightBarButtonItem = nil;
     [self.editButton setHidden:NO];
     _isEditEnable = NO;
-    [UIView beginAnimations:nil context:NULL];
-	[UIView setAnimationDuration:.3];
-    self.infoTableView.contentInset = UIEdgeInsetsMake(self.upperView.frame.size.height, 0, 0, 0);
-    self.scrollView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
-    [UIView commitAnimations];
-    [self.infoTableView setScrollEnabled:YES];
-    [self.scrollView setScrollEnabled:NO];
+    self.infoList = nil;
     _isKeyBoardAppear = NO;
     [self.infoTableView reloadData];
 }
