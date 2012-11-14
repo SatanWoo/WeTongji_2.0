@@ -176,7 +176,7 @@
     _isKeyBoardAppear = YES;
     [UIView beginAnimations:nil context:NULL];
 	[UIView setAnimationDuration:.3];
-    self.scrollView.contentInset = UIEdgeInsetsMake(-self.upperView.frame.size.height, 0, 200, 0);
+    self.scrollView.contentInset = UIEdgeInsetsMake(-upperView.bounds.size.height, 0, 480 + self.upperView.bounds.size.height, 0);
     [UIView commitAnimations];
 }
 
@@ -202,6 +202,7 @@ static id tempLeftBarItem;
 	[UIView setAnimationDuration:.3];
     self.infoTableView.contentInset = UIEdgeInsetsMake(self.upperView.frame.size.height-190, 0, 0, 0);
     [UIView commitAnimations];
+    self.scrollView.contentInset = UIEdgeInsetsMake(0, 0, 480, 0);
     [self.infoTableView setScrollEnabled:NO];
     [self.scrollView setScrollEnabled:YES];
     [self.infoTableView reloadData];
