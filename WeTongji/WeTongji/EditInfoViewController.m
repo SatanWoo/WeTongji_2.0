@@ -48,8 +48,6 @@
 {
     [self.infoTableView registerNib:[UINib nibWithNibName:@"EditInfoCell" bundle:nil] forCellReuseIdentifier:kEditInfoCell];
     self.infoTableView.contentInset = UIEdgeInsetsMake(self.upperView.frame.size.height, 0, 0, 0);
-    self.upperView.layer.shadowOpacity = 0.8;
-    self.upperView.layer.shadowColor = [UIColor blackColor].CGColor;
 }
 
 #pragma mark - Life Cycle
@@ -77,7 +75,6 @@
     [self setProfileAvatar:nil];
     [self setName:nil];
     [self setSex:nil];
-    [self setUpperView:nil];
     [self setInfoTableView:nil];
     [self setAgeLabel:nil];
     [self setConfirmEditBarButton:nil];
