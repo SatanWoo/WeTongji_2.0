@@ -8,3 +8,4 @@
 
 #import "WTClient.h"
 #import "UIImageView+AFNetworking.h"
+#import "NSUserDefaults+Addition.h"

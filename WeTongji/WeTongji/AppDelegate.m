@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "NSUserDefaults+Addition.h"
+#import <WeTongjiSDK/WetongjiSDk.h>
 #import "NSString+Addition.h"
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
