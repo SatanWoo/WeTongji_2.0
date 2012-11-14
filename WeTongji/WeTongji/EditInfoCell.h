@@ -16,12 +16,15 @@ typedef enum
     EditInfoCellTypeYear,
     EditInfoCellTypePhone,
     EditInfoCellTypeQQ,
-    EditInfoCellTypeEmail
+    EditInfoCellTypeEmail,
+    EditInfoCellTypeWeibo
 } EditInfoCellType;
 
 @interface EditInfoCell : UITableViewCell
 @property (nonatomic ,weak) IBOutlet UILabel *name;
 @property (nonatomic ,weak) IBOutlet UITextField *field;
 @property (nonatomic) EditInfoCellType type;
+
+- (void) setIsEditEnable:(BOOL)isEditEnable;
 
 @end

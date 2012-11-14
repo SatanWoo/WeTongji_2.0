@@ -22,6 +22,24 @@
     return self;
 }
 
+- (void) setIsEditEnable:(BOOL)isEditEnable
+{
+    if (( isEditEnable ) &&
+        ( self.type == EditInfoCellTypePhone ||
+          self.type == EditInfoCellTypeQQ ||
+          self.type == EditInfoCellTypeEmail ||
+          self.type == EditInfoCellTypeWeibo))
+    {
+        [self setBackgroundColor:[UIColor whiteColor]];
+        [self.field setEnabled:YES];
+    }
+    else
+    {
+        [self setBackgroundColor:[UIColor yellowColor]];
+        [self.field setEnabled:NO];
+    }
+}
+
 -(void) setType:(EditInfoCellType)type
 {
     switch (type) {
@@ -45,6 +63,9 @@
             break;
         case EditInfoCellTypeEmail:
             self.name.text = @"电子邮箱";
+            break;
+        case EditInfoCellTypeWeibo:
+            self.name.text = @"新浪微博";
             break;
         default:
             break;

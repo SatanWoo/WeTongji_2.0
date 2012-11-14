@@ -14,7 +14,15 @@
 #import "User+Addition.h"
 
 @interface EditInfoViewController ()<UITableViewDataSource, UITableViewDelegate>
+{
+    BOOL _isEditEnable;
+    BOOL _isKeyBoardAppear;
+}
 @property (nonatomic,strong) User * user;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *cancelEditButton;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *ConfirmEditBarButton;
+@property (weak, nonatomic) IBOutlet UIButton *editButton;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 - (void)configureTableView;
 @end
 
@@ -61,6 +69,7 @@
             [self.sex setImage:[UIImage imageNamed:@"female.png"]];
         self.ageLabel.text = [self.user.age stringValue];
     }
+    self.navigationItem.rightBarButtonItem = nil;
 }
 
 - (void)viewDidUnload
@@ -71,6 +80,9 @@
     [self setUpperView:nil];
     [self setInfoTableView:nil];
     [self setAgeLabel:nil];
+    [self setConfirmEditBarButton:nil];
+    [self setEditButton:nil];
+    [self setScrollView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -91,7 +103,7 @@
     if (section == 0) {
         return 4;
     } else {
-        return 3;
+        return 4;
     }
 }
 
@@ -139,9 +151,16 @@
                 [cell setType:EditInfoCellTypeEmail];
                 cell.field.text = self.user.email;
                 break;
+            case 3:
+                [cell setType:EditInfoCellTypeWeibo];
+                cell.field.text = self.user.sinaWeibo;
+                break;
             default:
                 break;
     }
+    [cell setIsEditEnable:_isEditEnable];
+    [cell.field addTarget:self action:@selector(didEndEdit:) forControlEvents:UIControlEventEditingDidEndOnExit];
+    [cell.field addTarget:self action:@selector(didBeginEdit:) forControlEvents:UIControlEventEditingDidBegin];
     return cell;
 }
 
@@ -150,5 +169,112 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
+
+- (void)didBeginEdit:(id)sender
+{
+    if ( _isKeyBoardAppear ) return;
+    _isKeyBoardAppear = YES;
+    [UIView beginAnimations:nil context:NULL];
+	[UIView setAnimationDuration:.3];
+    self.scrollView.contentInset = UIEdgeInsetsMake(-self.upperView.frame.size.height, 0, 200, 0);
+    [UIView commitAnimations];
+}
+
+- (void)didEndEdit:(id)sender
+{
+    [sender resignFirstResponder];
+    [UIView animateWithDuration:.3 animations:^{self.scrollView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);} completion:^(BOOL isFinished)
+     {
+         if (isFinished) _isKeyBoardAppear = NO;
+     }];
+}
+
+static id tempLeftBarItem;
+
+- (IBAction)editClcked:(id)sender
+{
+    _isEditEnable = YES;
+    tempLeftBarItem = self.navigationItem.leftBarButtonItem;
+    self.navigationItem.leftBarButtonItem = self.cancelEditButton;
+    self.navigationItem.rightBarButtonItem = self.ConfirmEditBarButton;
+    [self.editButton setHidden:YES];
+    [UIView beginAnimations:nil context:NULL];
+	[UIView setAnimationDuration:.3];
+    self.infoTableView.contentInset = UIEdgeInsetsMake(self.upperView.frame.size.height-190, 0, 0, 0);
+    [UIView commitAnimations];
+    [self.infoTableView setScrollEnabled:NO];
+    [self.scrollView setScrollEnabled:YES];
+    [self.infoTableView reloadData];
+
+}
+
+- (IBAction)confirmEditClicked:(id)sender
+{
+    self.navigationItem.leftBarButtonItem = tempLeftBarItem;
+    self.navigationItem.rightBarButtonItem = nil;
+    [self.editButton setHidden:NO];
+    _isEditEnable = NO;
+    [UIView beginAnimations:nil context:NULL];
+	[UIView setAnimationDuration:.3];
+    self.infoTableView.contentInset = UIEdgeInsetsMake(self.upperView.frame.size.height, 0, 0, 0);
+    self.scrollView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
+    [UIView commitAnimations];
+    [self.infoTableView setScrollEnabled:YES];
+    [self.scrollView setScrollEnabled:NO];
+    _isKeyBoardAppear = NO;
+    NSString * email;
+    NSString * weiboName;
+    NSString * phone;
+    NSString * qq;
+    EditInfoCell * cell;
+    for ( int i = 0 ; i<4 ; i++ )
+    {
+        cell = ( EditInfoCell *)[self.infoTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:1]];
+        [cell setIsEditEnable:NO];
+        switch (cell.type)
+        {
+            case EditInfoCellTypePhone:
+                phone = cell.field.text;
+                break;
+            case EditInfoCellTypeQQ:
+                qq = cell.field.text;
+                break;
+            case EditInfoCellTypeEmail:
+                email = cell.field.text;
+                break;
+            case EditInfoCellTypeWeibo:
+                weiboName = cell.field.text;
+                break;
+            default:
+                break;
+        }
+    }
+    WTClient * client = [WTClient getClient];
+    [client setCompletionBlock:^(id responseData)
+    {
+        [User updateUser:[responseData objectForKey:@"User"] inManagedObjectContext:self.managedObjectContext];
+        [self.infoTableView reloadData];
+        NSLog(@"%@",responseData);
+    }];
+    [client updateUserDisplayName:nil email:email weiboName:weiboName phoneNum:phone qqAccount:qq];
+}
+
+- (IBAction)cancelEditClicked:(id)sender
+{
+    self.navigationItem.leftBarButtonItem = tempLeftBarItem;
+    self.navigationItem.rightBarButtonItem = nil;
+    [self.editButton setHidden:NO];
+    _isEditEnable = NO;
+    [UIView beginAnimations:nil context:NULL];
+	[UIView setAnimationDuration:.3];
+    self.infoTableView.contentInset = UIEdgeInsetsMake(self.upperView.frame.size.height, 0, 0, 0);
+    self.scrollView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
+    [UIView commitAnimations];
+    [self.infoTableView setScrollEnabled:YES];
+    [self.scrollView setScrollEnabled:NO];
+    _isKeyBoardAppear = NO;
+    [self.infoTableView reloadData];
+}
+
 
 @end
