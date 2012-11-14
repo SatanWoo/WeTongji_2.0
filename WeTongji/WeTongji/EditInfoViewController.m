@@ -12,6 +12,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import <WeTongjiSDK/WeTongjiSDK.h>
 #import "User+Addition.h"
+#import "EditInfoHeaderView.h"
 
 @interface EditInfoViewController ()<UITableViewDataSource, UITableViewDelegate>
 {
@@ -23,33 +24,38 @@
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *ConfirmEditBarButton;
 @property (weak, nonatomic) IBOutlet UIButton *editButton;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (nonatomic ,strong) EditInfoHeaderView *header;
 - (void)configureTableView;
 @end
 
 @implementation EditInfoViewController
-@synthesize profileAvatar;
-@synthesize name;
-@synthesize sex;
-@synthesize upperView;
 @synthesize infoTableView;
 @synthesize user = _user;
+@synthesize header = _header;
 
+#pragma mark - Setter & Getter
 -(User *) user
 {
     if ( !_user )
     {
-        _user = [User userinManagedObjectContext:self.managedObjectContext];
+        //_user = [User userinManagedObjectContext:self.managedObjectContext];
     }
     return _user;
+}
+
+- (EditInfoHeaderView *)header
+{
+    if (_header == nil) {
+        _header = [[[NSBundle mainBundle] loadNibNamed:@"EditInfoHeaderView" owner:self options:nil] objectAtIndex:0];
+    }
+    return _header;
 }
 
 #pragma mark - Private
 - (void)configureTableView
 {
     [self.infoTableView registerNib:[UINib nibWithNibName:@"EditInfoCell" bundle:nil] forCellReuseIdentifier:kEditInfoCell];
-    self.infoTableView.contentInset = UIEdgeInsetsMake(self.upperView.frame.size.height, 0, 0, 0);
-    self.upperView.layer.shadowOpacity = 0.8;
-    self.upperView.layer.shadowColor = [UIColor blackColor].CGColor;
+    self.infoTableView.tableHeaderView = self.header;
 }
 
 #pragma mark - Life Cycle
@@ -57,26 +63,23 @@
 {
     [super viewDidLoad];
     [self configureTableView];
-    if ( self.user )
-    {
-        [self.profileAvatar setImageWithURL:[NSURL URLWithString: self.user.avatarLink]];
-        self.name.text = self.user.displayname;
-        if ( [self.user.gender isEqualToString:@"男"] )
-        {
-            [self.sex setImage:[UIImage imageNamed:@"male.png"]];
-        }
-        else
-            [self.sex setImage:[UIImage imageNamed:@"female.png"]];
-        self.ageLabel.text = [self.user.age stringValue];
-    }
+//    if ( self.user )
+//    {
+//        [self.profileAvatar setImageWithURL:[NSURL URLWithString: self.user.avatarLink]];
+//        self.name.text = self.user.displayname;
+//        if ( [self.user.gender isEqualToString:@"男"] )
+//        {
+//            [self.sex setImage:[UIImage imageNamed:@"male.png"]];
+//        }
+//        else
+//            [self.sex setImage:[UIImage imageNamed:@"female.png"]];
+//        self.ageLabel.text = [self.user.age stringValue];
+//    }
     self.navigationItem.rightBarButtonItem = nil;
 }
 
 - (void)viewDidUnload
 {
-    [self setProfileAvatar:nil];
-    [self setName:nil];
-    [self setSex:nil];
     [self setInfoTableView:nil];
     [self setAgeLabel:nil];
     [self setConfirmEditBarButton:nil];
@@ -175,7 +178,7 @@
     _isKeyBoardAppear = YES;
     [UIView beginAnimations:nil context:NULL];
 	[UIView setAnimationDuration:.3];
-    self.scrollView.contentInset = UIEdgeInsetsMake(-self.upperView.frame.size.height, 0, 200, 0);
+    self.scrollView.contentInset = UIEdgeInsetsMake(-self.header.frame.size.height, 0, 200, 0);
     [UIView commitAnimations];
 }
 
@@ -199,7 +202,7 @@ static id tempLeftBarItem;
     [self.editButton setHidden:YES];
     [UIView beginAnimations:nil context:NULL];
 	[UIView setAnimationDuration:.3];
-    self.infoTableView.contentInset = UIEdgeInsetsMake(self.upperView.frame.size.height-190, 0, 0, 0);
+    self.infoTableView.contentInset = UIEdgeInsetsMake(self.header.frame.size.height-190, 0, 0, 0);
     [UIView commitAnimations];
     [self.infoTableView setScrollEnabled:NO];
     [self.scrollView setScrollEnabled:YES];
@@ -215,7 +218,7 @@ static id tempLeftBarItem;
     _isEditEnable = NO;
     [UIView beginAnimations:nil context:NULL];
 	[UIView setAnimationDuration:.3];
-    self.infoTableView.contentInset = UIEdgeInsetsMake(self.upperView.frame.size.height, 0, 0, 0);
+    self.infoTableView.contentInset = UIEdgeInsetsMake(self.header.frame.size.height, 0, 0, 0);
     self.scrollView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
     [UIView commitAnimations];
     [self.infoTableView setScrollEnabled:YES];
@@ -266,7 +269,7 @@ static id tempLeftBarItem;
     _isEditEnable = NO;
     [UIView beginAnimations:nil context:NULL];
 	[UIView setAnimationDuration:.3];
-    self.infoTableView.contentInset = UIEdgeInsetsMake(self.upperView.frame.size.height, 0, 0, 0);
+    self.infoTableView.contentInset = UIEdgeInsetsMake(self.header.frame.size.height, 0, 0, 0);
     self.scrollView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
     [UIView commitAnimations];
     [self.infoTableView setScrollEnabled:YES];

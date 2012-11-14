@@ -10,10 +10,6 @@
 #import "MiddleAbstractViewController.h"
 
 @interface EditInfoViewController : MiddleAbstractViewController
-@property (weak, nonatomic) IBOutlet UIImageView *profileAvatar;
-@property (weak, nonatomic) IBOutlet UILabel *name;
-@property (weak, nonatomic) IBOutlet UIImageView *sex;
-@property (weak, nonatomic) IBOutlet UIView *upperView;
 @property (weak, nonatomic) IBOutlet UITableView *infoTableView;
 @property (weak, nonatomic) IBOutlet UILabel *ageLabel;
 
