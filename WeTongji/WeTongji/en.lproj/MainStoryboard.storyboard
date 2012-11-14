@@ -489,7 +489,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6TM-Gd-cK2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-21" y="-822"/>
+            <point key="canvasLocation" x="-5" y="-1154"/>
         </scene>
         <!--Login View Controller - 登陆-->
         <scene sceneID="hXS-hs-ya6">
@@ -836,7 +836,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FOX-Hq-xjC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-277" y="-355"/>
+            <point key="canvasLocation" x="-213" y="-391"/>
         </scene>
         <!--School News View Controller-->
         <scene sceneID="ZgL-Nw-S0u">
@@ -946,10 +946,9 @@
         <class className="CoreDataViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CoreDataViewController.h"/>
         </class>
-        <class className="EditInfoViewController" superclassName="MiddleAbstractViewController">
+        <class className="EditInfoViewController" superclassName="MiddleAbstractSecondViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/EditInfoViewController.h"/>
             <relationships>
-                <relationship kind="action" name="editClcked:"/>
                 <relationship kind="outlet" name="ConfirmEditBarButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="ageLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="cancelEditButton" candidateClass="UIBarButtonItem"/>
@@ -984,13 +983,15 @@
                 <relationship kind="outlet" name="scrollVIew" candidateClass="UIScrollView"/>
             </relationships>
         </class>
+        <class className="MiddleAbstractSecondViewController" superclassName="MiddleAbstractViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MiddleAbstractSecondViewController.h"/>
+        </class>
         <class className="MiddleAbstractViewController" superclassName="CoreDataViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MiddleAbstractViewController.h"/>
         </class>
         <class className="MyFavortieViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MyFavortieViewController.h"/>
             <relationships>
-                <relationship kind="action" name="filterItem:"/>
                 <relationship kind="outlet" name="celebrityButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="contentTableView" candidateClass="UITableView"/>
                 <relationship kind="outlet" name="recommendButton" candidateClass="UIButton"/>

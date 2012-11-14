@@ -11,11 +11,11 @@
 #import "EventInfoCell.h"
 #import "SchoolNewsCell.h"
 #import <QuartzCore/QuartzCore.h>
+#import "WUFolderView.h"
 
 @interface MyFavortieViewController () < UITableViewDelegate, UITableViewDataSource>
-@property (nonatomic , assign) int currentFilterItem;
 - (void)configureTableView;
-- (void)refreshTitle:(UIButton *)button;
+@property (nonatomic ,assign) int currentSelectSection;
 @end
 
 @implementation MyFavortieViewController
@@ -25,26 +25,33 @@
 @synthesize celebrityButton;
 @synthesize titleButton;
 
-@synthesize currentFilterItem  = _currentFilterItem;
+@synthesize currentSelectSection = _currentSelectSection;
 
 #pragma mark - Setter & Getter
-- (void)setCurrentFilterItem:(int)currentFilterItem
+
+- (void)setCurrentSelectSection:(int)currentSelectSection
 {
-    _currentFilterItem = currentFilterItem;
+    _currentSelectSection = currentSelectSection;
     [self.contentTableView reloadData];
 }
 
 #pragma mark - Private Method
 - (void)configureTableView
 {
-    
     [self.contentTableView registerNib:[UINib nibWithNibName:@"EventInfoCell" bundle:nil] forCellReuseIdentifier:kEventInfoCell];
     [self.contentTableView registerNib:[UINib nibWithNibName:@"SchoolNewsCell" bundle:nil] forCellReuseIdentifier:kSchoolInfoCell];
+    self.currentSelectSection = -1;
 }
 
-- (void)refreshTitle:(UIButton *)button
+-(void)headerClicked:(id)sender
 {
-    //self.titleButton.titleLabel.text = button.titleLabel.text;
+    int sectionIndex = ((UIButton*)sender).tag;
+    if (sectionIndex == self.currentSelectSection) {
+        self.currentSelectSection = -1;
+    } else {
+        self.currentSelectSection = sectionIndex;
+    }
+    [self.contentTableView reloadData];
 }
 
 #pragma mark - LifeCycle
@@ -71,58 +78,60 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-#pragma mark - WUPopOverDelegate
-- (void)selectItemInPopOverViewAtIndex:(UIView *)sender
-{
-    if (sender == self.recommendButton) {
-        self.currentFilterItem = eRECOMEND;
-    } else if (sender == self.schoolInfoButton) {
-        self.currentFilterItem = eSCHOOL;
-    } else {
-        self.currentFilterItem = eCELEBRITY;
-    }
-    [self refreshTitle:(UIButton *)sender];
-    [self filterItem:sender];
-}
-
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (self.currentFilterItem == eSCHOOL) {
-        [self performSegueWithIdentifier:kMyFavoriteNewsViewControllerSegue sender:self];
-    }
+//    if (self.currentFilterItem == eSCHOOL) {
+//        [self performSegueWithIdentifier:kMyFavoriteNewsViewControllerSegue sender:self];
+//    }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 #pragma mark - UITableViewDataSource
 - (float)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (self.currentFilterItem == eRECOMEND) {
-        return 122;
+    if (indexPath.section == self.currentSelectSection) {
+        if (self.currentSelectSection == eRECOMMEND) {
+            return 122;
+        }
     } else {
         return 44;
     }
+    return 44;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 10;
+    if (section == self.currentSelectSection) {
+        return 5;
+    } else {
+        return 0;
+    }
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    WUFolderView *abtn = [[[NSBundle mainBundle] loadNibNamed:@"WUFolderView" owner:self options:nil] objectAtIndex:0];
+    abtn.tapButton.tag = section;
+    abtn.tapButton.titleLabel.text = @"haha";
+    [ abtn.tapButton addTarget:self action:@selector(headerClicked:) forControlEvents:UIControlEventTouchUpInside];
+    return abtn;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (self.currentFilterItem == eRECOMEND) {
+    if (self.currentSelectSection == eRECOMMEND) {
         EventInfoCell *cell = [tableView dequeueReusableCellWithIdentifier:kEventInfoCell];
         if (cell == nil) {
             cell = [[EventInfoCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kEventInfoCell];
         }
         return cell;
-    } else if (self.currentFilterItem == eSCHOOL) {
+    } else if (self.currentSelectSection == eSCHOOL) {
         SchoolNewsCell *cell = [tableView dequeueReusableCellWithIdentifier:kSchoolInfoCell];
         if (cell == nil) {
             cell = [[SchoolNewsCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kSchoolInfoCell];
@@ -134,11 +143,20 @@
     }
 }
 
-#pragma mark - IBAction
-- (IBAction)filterItem:(id)sender
+-(CGFloat)tableView:(UITableView*)tableView heightForHeaderInSection:(NSInteger)section
 {
-    [UIView animateWithDuration:0.3f animations:^{
-    } completion:^(BOOL finished) {
-    }];
+    return 35.0;
 }
+
+
+-(CGFloat)tableView:(UITableView*)tableView heightForFooterInSection:(NSInteger)section
+{
+    return 15.0;
+}
+
+-(UIView*)tableView:(UITableView*)tableView viewForFooterInSection:(NSInteger)section
+{
+    return [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
+}
+#pragma mark - Private 
 @end
