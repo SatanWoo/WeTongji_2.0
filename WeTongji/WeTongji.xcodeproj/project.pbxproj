@@ -40,6 +40,8 @@
 		03551540165279190058EC06 /* xiaowu_sl@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 03551528165279190058EC06 /* xiaowu_sl@2x.png */; };
 		03551541165279190058EC06 /* xiaowu_un.png in Resources */ = {isa = PBXBuildFile; fileRef = 03551529165279190058EC06 /* xiaowu_un.png */; };
 		03551542165279190058EC06 /* xiaowu_un@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0355152A165279190058EC06 /* xiaowu_un@2x.png */; };
+		039D636A1653CC1000B2C183 /* EditInfoHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 039D63691653CC1000B2C183 /* EditInfoHeaderView.m */; };
+		039D636C1653CC2500B2C183 /* EditInfoHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 039D636B1653CC2500B2C183 /* EditInfoHeaderView.xib */; };
 		03BAB35E164FD01B0049DA19 /* Icon-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 03BAB35A164FD01B0049DA19 /* Icon-57.png */; };
 		03BAB35F164FD01B0049DA19 /* Icon-Small-58@2x.png.png in Resources */ = {isa = PBXBuildFile; fileRef = 03BAB35B164FD01B0049DA19 /* Icon-Small-58@2x.png.png */; };
 		03BAB360164FD01B0049DA19 /* Icon@2x.png.png in Resources */ = {isa = PBXBuildFile; fileRef = 03BAB35C164FD01B0049DA19 /* Icon@2x.png.png */; };
@@ -293,6 +295,9 @@
 		03551528165279190058EC06 /* xiaowu_sl@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "xiaowu_sl@2x.png"; sourceTree = "<group>"; };
 		03551529165279190058EC06 /* xiaowu_un.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xiaowu_un.png; sourceTree = "<group>"; };
 		0355152A165279190058EC06 /* xiaowu_un@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "xiaowu_un@2x.png"; sourceTree = "<group>"; };
+		039D63681653CC1000B2C183 /* EditInfoHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditInfoHeaderView.h; sourceTree = "<group>"; };
+		039D63691653CC1000B2C183 /* EditInfoHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditInfoHeaderView.m; sourceTree = "<group>"; };
+		039D636B1653CC2500B2C183 /* EditInfoHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditInfoHeaderView.xib; sourceTree = "<group>"; };
 		03BAB35A164FD01B0049DA19 /* Icon-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-57.png"; sourceTree = "<group>"; };
 		03BAB35B164FD01B0049DA19 /* Icon-Small-58@2x.png.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-58@2x.png.png"; sourceTree = "<group>"; };
 		03BAB35C164FD01B0049DA19 /* Icon@2x.png.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png.png"; sourceTree = "<group>"; };
@@ -744,6 +749,9 @@
 				E5D244901647C69700DA43DD /* WUArrangementSectionHeaderView.h */,
 				E5D244911647C69700DA43DD /* WUArrangementSectionHeaderView.m */,
 				E5D244931647C6B700DA43DD /* WUArrangementSectionHeaderView.xib */,
+				039D63681653CC1000B2C183 /* EditInfoHeaderView.h */,
+				039D63691653CC1000B2C183 /* EditInfoHeaderView.m */,
+				039D636B1653CC2500B2C183 /* EditInfoHeaderView.xib */,
 			);
 			name = UIView;
 			sourceTree = "<group>";
@@ -1446,6 +1454,7 @@
 				03551540165279190058EC06 /* xiaowu_sl@2x.png in Resources */,
 				03551541165279190058EC06 /* xiaowu_un.png in Resources */,
 				03551542165279190058EC06 /* xiaowu_un@2x.png in Resources */,
+				039D636C1653CC2500B2C183 /* EditInfoHeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1514,6 +1523,7 @@
 				FFC1204A16517F50003FF0E6 /* RegInfomationCell.m in Sources */,
 				FF6E952F16537E92002497FA /* User.m in Sources */,
 				FF6E953216537EB2002497FA /* User+Addition.m in Sources */,
+				039D636A1653CC1000B2C183 /* EditInfoHeaderView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

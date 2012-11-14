@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2549" systemVersion="11G63" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
+        <deployment defaultVersion="1296" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1498"/>
     </dependencies>
     <scenes>
         <!--Slide View Controller-->
@@ -432,6 +433,18 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+<<<<<<< HEAD
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="GYe-hF-7gI">
+                                <rect key="frame" x="1" y="0.0" width="319" height="416"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="0.0" colorSpace="calibratedRGB"/>
+                                <color key="separatorColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="0.0" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Hf1-lA-LKj" id="S19-Nz-v1i"/>
+                                    <outlet property="delegate" destination="Hf1-lA-LKj" id="y0T-l7-6cF"/>
+                                </connections>
+                            </tableView>
+=======
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" id="S2v-Ez-alx">
                                 <rect key="frame" x="-19" y="-20" width="359" height="456"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -497,6 +510,7 @@
                                     </view>
                                 </subviews>
                             </scrollView>
+>>>>>>> d437519098a5a38c5190d7499ba1066ffc05e01f
                         </subviews>
                         <color key="backgroundColor" red="0.95822010869565222" green="0.95822010869565222" blue="0.95822010869565222" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -543,6 +557,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+<<<<<<< HEAD
+                        <outlet property="infoTableView" destination="GYe-hF-7gI" id="n4h-lH-xIj"/>
+=======
                         <outlet property="ConfirmEditBarButton" destination="kda-ti-RF7" id="VV8-He-6DR"/>
                         <outlet property="EditButton" destination="Pcy-yO-SYD" id="Z2z-zf-bcW"/>
                         <outlet property="ageLabel" destination="kCX-LT-4Nf" id="Ykm-Bn-L4C"/>
@@ -554,6 +571,7 @@
                         <outlet property="scrollView" destination="S2v-Ez-alx" id="W0r-Z4-X6G"/>
                         <outlet property="sex" destination="3I0-4W-SEU" id="Dr2-rz-GBc"/>
                         <outlet property="upperView" destination="4dF-bK-4a1" id="FOg-ai-sv1"/>
+>>>>>>> d437519098a5a38c5190d7499ba1066ffc05e01f
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6TM-Gd-cK2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -982,9 +1000,6 @@
         <image name="bottom_bar.png" width="275" height="54"/>
         <image name="campusBG.png" width="320" height="420"/>
         <image name="dongtai_un.png" width="80" height="40"/>
-        <image name="edit.png" width="14" height="15"/>
-        <image name="female.png" width="47" height="16"/>
-        <image name="info_avatar.png" width="73" height="73"/>
         <image name="info_btn.png" width="26" height="26"/>
         <image name="navbar_sort_btn" width="16" height="16"/>
         <image name="settings_btn.png" width="26" height="26"/>
