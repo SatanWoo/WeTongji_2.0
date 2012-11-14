@@ -149,6 +149,7 @@
                         <outlet property="scheduleTableView" destination="3vv-82-r3C" id="RI0-Bq-BLB"/>
                         <segue destination="tSa-hA-s91" kind="push" identifier="kMyFavortieViewController" id="7aw-Dh-Mmo"/>
                         <segue destination="ZZo-M9-RZk" kind="push" identifier="kArrangementViewController" id="ORE-Sc-nU1"/>
+                        <segue destination="Hf1-lA-LKj" kind="push" identifier="kEditInfoViewController" id="Z7m-rj-mxe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SaJ-c4-Ze0" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -410,21 +411,6 @@
             </objects>
             <point key="canvasLocation" x="-800" y="947"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="eBB-Mb-dLh">
-            <objects>
-                <navigationController storyboardIdentifier="kEditInfoViewController" definesPresentationContext="YES" id="JYc-fA-e5I" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZwU-vu-3a8">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="Hf1-lA-LKj" kind="relationship" relationship="rootViewController" id="bpH-xC-KWk"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="yDC-oC-DTT" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1179" y="1597"/>
-        </scene>
         <!--Edit Info View Controller - 个人资料-->
         <scene sceneID="Nda-lO-kA8">
             <objects>
@@ -503,7 +489,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6TM-Gd-cK2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-785" y="1598"/>
+            <point key="canvasLocation" x="-21" y="-822"/>
         </scene>
         <!--Login View Controller - 登陆-->
         <scene sceneID="hXS-hs-ya6">
@@ -963,16 +949,13 @@
         <class className="EditInfoViewController" superclassName="MiddleAbstractViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/EditInfoViewController.h"/>
             <relationships>
+                <relationship kind="action" name="editClcked:"/>
                 <relationship kind="outlet" name="ConfirmEditBarButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="ageLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="cancelEditButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="editButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="infoTableView" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="name" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="profileAvatar" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
-                <relationship kind="outlet" name="sex" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="upperView" candidateClass="UIView"/>
             </relationships>
         </class>
         <class className="EventInfoViewController" superclassName="MiddleAbstractViewController">
