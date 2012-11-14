@@ -98,8 +98,49 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     EditInfoCell *cell = [tableView dequeueReusableCellWithIdentifier:kEditInfoCell];
-    if (cell == nil) {
+    if (cell == nil)
+    {
         cell = [[EditInfoCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kEditInfoCell];
+    }
+    if ( indexPath.section == 0 )
+        switch (indexPath.row)
+        {
+            case 0:
+                [cell setType:EditInfoCellTypeStudentNumber];
+                cell.field.text = self.user.studentNumber;
+                break;
+            case 1:
+                [cell setType:EditInfoCellTypeDepartment];
+                cell.field.text = self.user.department;
+                break;
+            case 2:
+                [cell setType:EditInfoCellTypeMajor];
+                cell.field.text = self.user.major;
+                break;
+            case 3:
+                [cell setType:EditInfoCellTypeYear];
+                cell.field.text = self.user.year;
+                break;
+            default:
+                break;
+        }
+    if ( indexPath.section == 1 )
+        switch (indexPath.row)
+        {
+            case 0:
+                [cell setType:EditInfoCellTypePhone];
+                cell.field.text = self.user.phone;
+                break;
+            case 1:
+                [cell setType:EditInfoCellTypeQQ];
+                cell.field.text = self.user.qq;
+                break;
+            case 2:
+                [cell setType:EditInfoCellTypeEmail];
+                cell.field.text = self.user.email;
+                break;
+            default:
+                break;
     }
     return cell;
 }
