@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MiddleAbstractViewController.h"
+#import "MiddleAbstractSecondViewController.h"
 
-@interface EditInfoViewController : MiddleAbstractViewController
+@interface EditInfoViewController : MiddleAbstractSecondViewController
 @property (weak, nonatomic) IBOutlet UITableView *infoTableView;
 @property (weak, nonatomic) IBOutlet UILabel *ageLabel;
 

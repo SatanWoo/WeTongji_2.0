@@ -44,6 +44,7 @@
 		035E34941653E210009AC6BF /* EditInfoHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 035E34931653E210009AC6BF /* EditInfoHeaderView.xib */; };
 		035E34971653E6AE009AC6BF /* navbar.png in Resources */ = {isa = PBXBuildFile; fileRef = 035E34951653E6AE009AC6BF /* navbar.png */; };
 		035E34981653E6AE009AC6BF /* navbar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 035E34961653E6AE009AC6BF /* navbar@2x.png */; };
+		035E349E1653E7C8009AC6BF /* MiddleAbstractSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 035E349D1653E7C7009AC6BF /* MiddleAbstractSecondViewController.m */; };
 		03BAB35E164FD01B0049DA19 /* Icon-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 03BAB35A164FD01B0049DA19 /* Icon-57.png */; };
 		03BAB35F164FD01B0049DA19 /* Icon-Small-58@2x.png.png in Resources */ = {isa = PBXBuildFile; fileRef = 03BAB35B164FD01B0049DA19 /* Icon-Small-58@2x.png.png */; };
 		03BAB360164FD01B0049DA19 /* Icon@2x.png.png in Resources */ = {isa = PBXBuildFile; fileRef = 03BAB35C164FD01B0049DA19 /* Icon@2x.png.png */; };
@@ -300,6 +301,8 @@
 		035E34931653E210009AC6BF /* EditInfoHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditInfoHeaderView.xib; sourceTree = "<group>"; };
 		035E34951653E6AE009AC6BF /* navbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navbar.png; sourceTree = "<group>"; };
 		035E34961653E6AE009AC6BF /* navbar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navbar@2x.png"; sourceTree = "<group>"; };
+		035E349C1653E7C7009AC6BF /* MiddleAbstractSecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiddleAbstractSecondViewController.h; sourceTree = "<group>"; };
+		035E349D1653E7C7009AC6BF /* MiddleAbstractSecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MiddleAbstractSecondViewController.m; sourceTree = "<group>"; };
 		03BAB35A164FD01B0049DA19 /* Icon-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-57.png"; sourceTree = "<group>"; };
 		03BAB35B164FD01B0049DA19 /* Icon-Small-58@2x.png.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-58@2x.png.png"; sourceTree = "<group>"; };
 		03BAB35C164FD01B0049DA19 /* Icon@2x.png.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png.png"; sourceTree = "<group>"; };
@@ -871,6 +874,8 @@
 		E52352C61631883800DBFF7C /* MiddleContent */ = {
 			isa = PBXGroup;
 			children = (
+				035E349C1653E7C7009AC6BF /* MiddleAbstractSecondViewController.h */,
+				035E349D1653E7C7009AC6BF /* MiddleAbstractSecondViewController.m */,
 				E52352C8163188FE00DBFF7C /* MiddleAbstractViewController.h */,
 				E52352C9163188FE00DBFF7C /* MiddleAbstractViewController.m */,
 				0315AC7C164FF621003DC899 /* WUPageControlViewController.h */,
@@ -1524,6 +1529,7 @@
 				FF6E952F16537E92002497FA /* User.m in Sources */,
 				FF6E953216537EB2002497FA /* User+Addition.m in Sources */,
 				035E34921653E1F7009AC6BF /* EditInfoHeaderView.m in Sources */,
+				035E349E1653E7C8009AC6BF /* MiddleAbstractSecondViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
