@@ -187,6 +187,8 @@
 		E5FEF4771638418F00FB7A2A /* today@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5FEF4751638418F00FB7A2A /* today@2x.png */; };
 		E5FEF47B1638425600FB7A2A /* navbar.png in Resources */ = {isa = PBXBuildFile; fileRef = E5FEF4791638425600FB7A2A /* navbar.png */; };
 		E5FEF47C1638425600FB7A2A /* navbar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5FEF47A1638425600FB7A2A /* navbar@2x.png */; };
+		FF6E952F16537E92002497FA /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = FF6E952E16537E92002497FA /* User.m */; };
+		FF6E953216537EB2002497FA /* User+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = FF6E953116537EB2002497FA /* User+Addition.m */; };
 		FF710971164CFBE5008F2A06 /* EGORefreshTableFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = FF71096F164CFBE5008F2A06 /* EGORefreshTableFooterView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		FF710978164D0A77008F2A06 /* EGORefreshTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = FF710977164D0A77008F2A06 /* EGORefreshTableHeaderView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		FF710995164D1EB0008F2A06 /* Information+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = FF710994164D1EB0008F2A06 /* Information+Addition.m */; };
@@ -476,6 +478,10 @@
 		E5FEF4751638418F00FB7A2A /* today@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "today@2x.png"; sourceTree = "<group>"; };
 		E5FEF4791638425600FB7A2A /* navbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navbar.png; sourceTree = "<group>"; };
 		E5FEF47A1638425600FB7A2A /* navbar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navbar@2x.png"; sourceTree = "<group>"; };
+		FF6E952D16537E92002497FA /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		FF6E952E16537E92002497FA /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		FF6E953016537EB2002497FA /* User+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "User+Addition.h"; sourceTree = "<group>"; };
+		FF6E953116537EB2002497FA /* User+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "User+Addition.m"; sourceTree = "<group>"; };
 		FF71096F164CFBE5008F2A06 /* EGORefreshTableFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGORefreshTableFooterView.m; sourceTree = "<group>"; };
 		FF710970164CFBE5008F2A06 /* EGORefreshTableFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGORefreshTableFooterView.h; sourceTree = "<group>"; };
 		FF710976164D0A77008F2A06 /* EGORefreshTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGORefreshTableHeaderView.h; sourceTree = "<group>"; };
@@ -1150,6 +1156,8 @@
 				FF7109AD164D382D008F2A06 /* Star.m */,
 				FFB46B28164FCC2B00C32969 /* Course.h */,
 				FFB46B29164FCC2B00C32969 /* Course.m */,
+				FF6E952D16537E92002497FA /* User.h */,
+				FF6E952E16537E92002497FA /* User.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -1165,6 +1173,8 @@
 				FF7109B3164D3AFC008F2A06 /* Star+Addition.m */,
 				FFB46B2B164FCC6D00C32969 /* Course+Addition.h */,
 				FFB46B2C164FCC6D00C32969 /* Course+Addition.m */,
+				FF6E953016537EB2002497FA /* User+Addition.h */,
+				FF6E953116537EB2002497FA /* User+Addition.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -1502,6 +1512,8 @@
 				FFC1203F1651639A003FF0E6 /* LoginViewController.m in Sources */,
 				FFC1204516517582003FF0E6 /* RegisterViewController.m in Sources */,
 				FFC1204A16517F50003FF0E6 /* RegInfomationCell.m in Sources */,
+				FF6E952F16537E92002497FA /* User.m in Sources */,
+				FF6E953216537EB2002497FA /* User+Addition.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

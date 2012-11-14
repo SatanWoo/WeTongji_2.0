@@ -8,6 +8,7 @@
 
 #import "LoginViewController.h"
 #import <WeTongjiSDK/WeTongjiSDK.h>
+#import "User+Addition.h"
 
 @interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollVIew;
@@ -31,14 +32,8 @@
 {
     [super viewDidLoad];
     [self.navigationItem setHidesBackButton:YES];
-	UITapGestureRecognizer * gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapped:)];
-    [self.navigationController.view addGestureRecognizer:gesture];
 }
 
-- (void)tapped:(UITapGestureRecognizer *) g;
-{
-    [self resignAllFirstResponder];
-}
 
 - (void)viewDidUnload {
     [self setScrollVIew:nil];
@@ -83,6 +78,7 @@
     [client setCompletionBlock:^(id responseData)
     {
         [NSUserDefaults setCurrentUserID:[[responseData objectForKey:@"User"] objectForKey:@"UID"] session:[responseData objectForKey:@"Session"]];
+        [User updateUser:[responseData objectForKey:@"User"] inManagedObjectContext:self.managedObjectContext];
         NSLog(@"%@",responseData);
     }];
     [client login:self.NOTextField.text password:self.passwordTextField.text];
