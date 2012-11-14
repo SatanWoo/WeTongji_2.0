@@ -12,7 +12,6 @@
 #import <QuartzCore/QuartzCore.h>
 #import <WeTongjiSDK/WeTongjiSDK.h>
 #import "User+Addition.h"
-#import "EditInfoHeaderView.h"
 
 @interface EditInfoViewController ()<UITableViewDataSource, UITableViewDelegate>
 {
@@ -24,7 +23,6 @@
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *ConfirmEditBarButton;
 @property (weak, nonatomic) IBOutlet UIButton *editButton;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
-@property (nonatomic, strong) EditInfoHeaderView *headeView;
 - (void)configureTableView;
 @end
 
@@ -32,9 +30,9 @@
 @synthesize profileAvatar;
 @synthesize name;
 @synthesize sex;
+@synthesize upperView;
 @synthesize infoTableView;
 @synthesize user = _user;
-@synthesize headeView = _headeView;
 
 -(User *) user
 {
@@ -45,20 +43,13 @@
     return _user;
 }
 
-- (EditInfoHeaderView *)headeView
-{
-    if (_headeView == nil) {
-        _headeView = [[[NSBundle mainBundle] loadNibNamed:@"EditInfoHeaderView" owner:self options:nil] objectAtIndex:0];
-
-    }
-    return _headeView
-}
-
 #pragma mark - Private
 - (void)configureTableView
 {
     [self.infoTableView registerNib:[UINib nibWithNibName:@"EditInfoCell" bundle:nil] forCellReuseIdentifier:kEditInfoCell];
     self.infoTableView.contentInset = UIEdgeInsetsMake(self.upperView.frame.size.height, 0, 0, 0);
+    self.upperView.layer.shadowOpacity = 0.8;
+    self.upperView.layer.shadowColor = [UIColor blackColor].CGColor;
 }
 
 #pragma mark - Life Cycle
