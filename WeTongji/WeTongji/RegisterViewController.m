@@ -11,6 +11,7 @@
 #import "Macro.h"
 
 @interface RegisterViewController ()
+@property (weak, nonatomic) IBOutlet UITableView *regTabelVIew;
 
 @end
 
@@ -30,6 +31,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.regTabelVIew.contentInset =  UIEdgeInsetsMake(60, 0.0f, 0.0f, 0.0f);
 	// Do any additional setup after loading the view.
 }
 
@@ -90,4 +92,8 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+- (void)viewDidUnload {
+    [self setRegTabelVIew:nil];
+    [super viewDidUnload];
+}
 @end

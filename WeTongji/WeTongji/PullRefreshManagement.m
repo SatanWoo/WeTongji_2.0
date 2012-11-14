@@ -14,7 +14,7 @@
 
 @property (nonatomic,strong) EGORefreshTableHeaderView * pullRefreshHeaderView;
 @property (nonatomic,strong) EGORefreshTableFooterView * pullRefreshFooterView;
-@property (nonatomic,weak) UIScrollView * scrollView;
+@property (nonatomic,weak) UITableView * scrollView;
 
 @end
 
@@ -24,7 +24,7 @@
 @synthesize pullRefreshHeaderView=_pullRefreshHeaderView;
 @synthesize scrollView=_scrollView;
 
--(id) initWithScrollView:(UIScrollView *)scrollView;
+-(id) initWithScrollView:(UITableView *)scrollView;
 {
     self = [super init];
     if ( self )
@@ -32,6 +32,7 @@
         self.scrollView = scrollView;
         [self.scrollView addSubview:self.pullRefreshHeaderView];
         [self.scrollView addSubview:self.pullRefreshFooterView];
+        self.scrollView.tableFooterView=self.pullRefreshFooterView;
         [self.scrollView setContentInset:UIEdgeInsetsMake(0.0f, 0.0f, 40.0f, 0.0f)];
     }
     return self;
@@ -53,8 +54,7 @@
 {
     if ( !_pullRefreshFooterView )
     {
-        _pullRefreshFooterView = [[EGORefreshTableFooterView alloc] initWithFrame:CGRectMake(0,-200 , 320, 200)];
-        [self configureFooterView];
+        _pullRefreshFooterView = [[EGORefreshTableFooterView alloc] initWithFrame:CGRectMake(0,0 , 320, 0)];
         [_pullRefreshFooterView refreshLastUpdatedDate];
         _pullRefreshFooterView.delegate = self;
     }
@@ -91,8 +91,8 @@
         [self.delegate endLoading];
     [self.pullRefreshHeaderView egoRefreshScrollViewDataSourceDidFinishedLoading:self.scrollView];
 	[self.pullRefreshFooterView egoRefreshScrollViewDataSourceDidFinishedLoading:self.scrollView];
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
     [self configureFooterView];
-
 }
 
 #pragma mark -
@@ -118,6 +118,7 @@
 - (void)egoRefreshTableHeaderDidTriggerRefresh:(EGORefreshTableHeaderView*)view
 {
     [self.pullRefreshFooterView setIsEndingAll:NO];
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
     [self.delegate refresh];
 }
 
@@ -132,10 +133,11 @@
 }
 
 #pragma -
-#pragma - EGORefreshTableHeaderDelegate
+#pragma - EGORefreshTableFooterDelegate
 
 - (void)egoRefreshTableFooterDidTriggerRefresh:(EGORefreshTableFooterView*)view
 {
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
     [self.delegate loadMoreData];
 }
 
