@@ -196,7 +196,7 @@
             self.scheduleTableView.frame = CGRectMake(0, self.view.frame.size.height, self.scheduleTableView.frame.size.width, self.scheduleTableView.frame.size.height);
             self.pageViewController.view.frame = CGRectMake(0,0, self.pageViewController.view.frame.size.width, self.pageViewController.view.frame.size.height);
         } completion:^(BOOL finished) {
-           self.pageViewController.view.userInteractionEnabled = YES;
+            self.pageViewController.view.userInteractionEnabled = YES;
             self.scheduleTableView.userInteractionEnabled = NO;
         }];
     } else if (self.isAnimationFinished == false) {
