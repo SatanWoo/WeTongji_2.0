@@ -117,6 +117,12 @@
     [super viewDidUnload];
 }
 
+- (void) viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+}
+
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
@@ -125,7 +131,6 @@
 #pragma mark - IBAction
 - (IBAction)goBack:(id)sender
 {
-    [self.navigationController setNavigationBarHidden:NO animated:NO];
     [self.navigationController popViewControllerAnimated:YES];
 }
 
