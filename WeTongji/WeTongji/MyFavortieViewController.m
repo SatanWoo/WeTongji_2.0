@@ -118,8 +118,8 @@
 {
     WUFolderView *abtn = [[[NSBundle mainBundle] loadNibNamed:@"WUFolderView" owner:self options:nil] objectAtIndex:0];
     abtn.tapButton.tag = section;
-    abtn.tapButton.titleLabel.text = @"haha";
-    [ abtn.tapButton addTarget:self action:@selector(headerClicked:) forControlEvents:UIControlEventTouchUpInside];
+    abtn.tapButton.titleLabel.text = @"校园咨询";
+    [abtn.tapButton addTarget:self action:@selector(headerClicked:) forControlEvents:UIControlEventTouchUpInside];
     return abtn;
 }
 

@@ -11,6 +11,7 @@
 @interface WUFolderView : UIView
 
 @property (nonatomic ,weak) IBOutlet UIButton *tapButton;
+@property (nonatomic ,weak) IBOutlet UILabel *count;
 
 
 @end
