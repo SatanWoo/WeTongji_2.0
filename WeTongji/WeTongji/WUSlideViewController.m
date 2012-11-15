@@ -120,16 +120,20 @@
         return ;
     if (_middelViewController) {
         [_middelViewController.view removeFromSuperview];
-    }
-    _middelViewController = middelViewController;
-    _middelViewController.view.frame = oldFrame;
-    [self.view addSubview:_middelViewController.view];
-    [UIView animateWithDuration:0.3f animations:^{
+        _middelViewController = middelViewController;
+        _middelViewController.view.frame = oldFrame;
+        [self.view addSubview:_middelViewController.view];
+        [UIView animateWithDuration:0.3f animations:^{
+            _middelViewController.view.frame = self.view.bounds;
+        } completion:^(BOOL finished) {
+            self.currentStatus = eMIDDLE;
+        }];
+    }  else {
+        _middelViewController = middelViewController;
         _middelViewController.view.frame = self.view.bounds;
-    } completion:^(BOOL finished) {
-        self.currentStatus = eMIDDLE;
-    }];
-    
+        [self.view addSubview:_middelViewController.view];
+    }
+
     UISwipeGestureRecognizer *rightGesturer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(revealLeftViewController:)];
     rightGesturer.direction = UISwipeGestureRecognizerDirectionRight;
     [_middelViewController.view addGestureRecognizer:rightGesturer];

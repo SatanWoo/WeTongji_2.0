@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2549" systemVersion="11G63" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
-
+        <deployment defaultVersion="1296" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1498"/>
     </dependencies>
     <scenes>
         <!--Slide View Controller-->
@@ -905,7 +905,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="C4a-xk-m7J">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="510"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -913,12 +913,8 @@
                                     <outlet property="delegate" destination="D5h-rN-X3u" id="Oen-zw-Vew"/>
                                 </connections>
                             </tableView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="back_bg" id="XzR-8D-C5a">
-                                <rect key="frame" x="0.0" y="0.0" width="55" height="52"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="RMH-9f-Kta">
-                                <rect key="frame" x="0.0" y="11" width="45" height="33"/>
+                                <rect key="frame" x="10" y="10" width="20" height="17"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" image="back_btn.png">
@@ -938,7 +934,6 @@
                     <navigationItem key="navigationItem" id="o44-O2-Tf1"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
-                        <outlet property="buttonBackImageView" destination="XzR-8D-C5a" id="qAG-Z6-cSd"/>
                         <outlet property="newsTableView" destination="C4a-xk-m7J" id="LhP-AL-5tP"/>
                     </connections>
                 </viewController>
@@ -971,7 +966,6 @@
     </scenes>
     <resources>
         <image name="arrange_remind_bg@2x.png" width="640" height="840"/>
-        <image name="back_bg" width="16" height="16"/>
         <image name="back_btn" width="16" height="16"/>
         <image name="back_btn.png" width="20" height="17"/>
         <image name="bottom_bar.png" width="275" height="54"/>
@@ -1098,7 +1092,6 @@
             <relationships>
                 <relationship kind="action" name="goBack:"/>
                 <relationship kind="outlet" name="backButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="buttonBackImageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="newsTableView" candidateClass="UITableView"/>
             </relationships>
         </class>

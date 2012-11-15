@@ -40,10 +40,10 @@
     [self.scheduleTableView registerNib:[UINib nibWithNibName:@"PersonalInfoCell" bundle:nil] forCellReuseIdentifier:kPersonalInfoCell];
     [self.scheduleTableView registerNib:[UINib nibWithNibName:@"ScheduleCell" bundle:nil] forCellReuseIdentifier:kScheduleCell];
     
+    [self.view insertSubview:self.pageViewController.view belowSubview:self.scheduleTableView];
     self.scheduleTableView.contentInset = UIEdgeInsetsMake(kContentOffSet, 0.0f, 0.0f, 0.0f);
     self.scheduleTableView.backgroundColor =[UIColor clearColor];
-    
-    [self.view insertSubview:self.pageViewController.view belowSubview:self.scheduleTableView];
+
 }
 
 #pragma mark - Tap
