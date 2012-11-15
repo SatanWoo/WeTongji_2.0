@@ -247,6 +247,8 @@
 {
     if (tableView == self.recommendTableView) {
         return 70;
+    } else if (tableView == self.schoolInfoTableView) {
+        return 70;
     }
     return 44;
 }
