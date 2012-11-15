@@ -912,8 +912,12 @@
                                     <outlet property="delegate" destination="D5h-rN-X3u" id="Oen-zw-Vew"/>
                                 </connections>
                             </tableView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="back_bg" id="XzR-8D-C5a">
+                                <rect key="frame" x="0.0" y="0.0" width="41" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="RMH-9f-Kta">
-                                <rect key="frame" x="10" y="10" width="20" height="17"/>
+                                <rect key="frame" x="8" y="9" width="20" height="17"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" image="back_btn.png">
@@ -965,6 +969,7 @@
     </scenes>
     <resources>
         <image name="arrange_remind_bg@2x.png" width="640" height="840"/>
+        <image name="back_bg" width="16" height="16"/>
         <image name="back_btn" width="16" height="16"/>
         <image name="back_btn.png" width="20" height="17"/>
         <image name="bottom_bar.png" width="275" height="54"/>

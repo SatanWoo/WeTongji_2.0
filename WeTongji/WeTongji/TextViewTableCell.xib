@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <archive type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="8.00">
 	<data>
-		<int key="IBDocument.SystemTarget">1296</int>
-		<string key="IBDocument.SystemVersion">11G63</string>
-		<string key="IBDocument.InterfaceBuilderVersion">2549</string>
-		<string key="IBDocument.AppKitVersion">1138.51</string>
-		<string key="IBDocument.HIToolboxVersion">569.00</string>
+		<int key="IBDocument.SystemTarget">1536</int>
+		<string key="IBDocument.SystemVersion">12C60</string>
+		<string key="IBDocument.InterfaceBuilderVersion">2844</string>
+		<string key="IBDocument.AppKitVersion">1187.34</string>
+		<string key="IBDocument.HIToolboxVersion">625.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-			<string key="NS.object.0">1498</string>
+			<string key="NS.object.0">1930</string>
 		</object>
 		<array key="IBDocument.IntegratedClassDependencies">
 			<string>IBProxyObject</string>
@@ -57,8 +57,7 @@
 								<bool key="IBUIShowsHorizontalScrollIndicator">NO</bool>
 								<bool key="IBUIShowsVerticalScrollIndicator">NO</bool>
 								<bool key="IBUIEditable">NO</bool>
-								<object class="NSMutableString" key="IBUIText">
-									<bytes key="NS.bytes">5aaC5p6c5Y+q55yL6Ziy5a6I77yM5Yqg5YaF54m55L6d54S25piv6IGU55uf6aG257qn5aSn5Liq5a2Q
+								<string type="base64-UTF8" key="IBUIText">5aaC5p6c5Y+q55yL6Ziy5a6I77yM5Yqg5YaF54m55L6d54S25piv6IGU55uf6aG257qn5aSn5Liq5a2Q
 44CC5Zyo5LiK6LWb5a2j77yM5LuW55Sa6Iez5ZCR5oiR5Lus6K+B5piO6Ieq5bex5L6d54S25Y+v5Lul
 5omu5ryU5Lit6ZSL6KeS6Imy77yM6ICM5LiU5pWI546H5oOK5Lq644CC5LuW55qE56e75Yqo5L6d54S2
 5LiN6ZSZ77yM5bCk5YW25piv5Zyo5YaF57q/6IyD5Zu077yM5LuW5piv6IGU55uf5Lit5pyA5ZaE5LqO
@@ -148,8 +147,7 @@ hui1sOWKv+S4iuOAguW+iOaYjuaYvu+8jOeEtuiAjO+8jOWKoOWGheeJueavleern+aYrzM25bKB55qE
 5b+D77yM5L2G5aaC5LuK5LuW5a+55YaF57q/55qE5o6n5Yi26IO95Yqb5bey57uP5LiN6YKj5LmI6Laz
 5LqG77yM5bCk5YW25piv5Zyo6Z2i5a+554Ot54Gr6L+Z56eN5Yay5Ye75Yqb5b6I5by655qE55CD6Zif
 5pe277yM5Yqg5YaF54m55pu05pi+5b6X5b6I5LmP5Yqb44CC6L+Z5LiA5oOF5Ya155u05o6l5pig5bCE
-5Zyo5q+U5YiG6LWw5Yq/5LiK44CC5b6I5piO5pi+77yMA</bytes>
-								</object>
+5Zyo5q+U5YiG6LWw5Yq/5LiK44CC5b6I5piO5pi+77yMA</string>
 								<object class="IBUITextInputTraits" key="IBUITextInputTraits">
 									<int key="IBUIAutocapitalizationType">2</int>
 									<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -168,7 +166,7 @@ hui1sOWKv+S4iuOAguW+iOaYjuaYvu+8jOeEtuiAjO+8jOWKoOWGheeJueavleern+aYrzM25bKB55qE
 						<string key="NSFrameSize">{320, 304}</string>
 						<reference key="NSSuperview" ref="542100224"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="949244581"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:11</string>
 						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">3</int>
@@ -251,7 +249,7 @@ hui1sOWKv+S4iuOAguW+iOaYjuaYvu+8jOeEtuiAjO+8jOWKoOWGheeJueavleern+aYrzM25bKB55qE
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">5</int>
+			<int key="maxID">10</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -260,13 +258,13 @@ hui1sOWKv+S4iuOAguW+iOaYjuaYvu+8jOeEtuiAjO+8jOWKoOWGheeJueavleern+aYrzM25bKB55qE
 					<string key="superclassName">UITableViewCell</string>
 					<object class="NSMutableDictionary" key="outlets">
 						<string key="NS.key.0">textView</string>
-						<string key="NS.object.0">UITextView</string>
+						<string key="NS.object.0">UILabel</string>
 					</object>
 					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
 						<string key="NS.key.0">textView</string>
 						<object class="IBToOneOutletInfo" key="NS.object.0">
 							<string key="name">textView</string>
-							<string key="candidateClassName">UITextView</string>
+							<string key="candidateClassName">UILabel</string>
 						</object>
 					</object>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
@@ -280,10 +278,10 @@ hui1sOWKv+S4iuOAguW+iOaYjuaYvu+8jOeEtuiAjO+8jOWKoOWGheeJueavleern+aYrzM25bKB55qE
 		<string key="IBDocument.TargetRuntimeIdentifier">IBCocoaTouchFramework</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginDeclaredDependencyDefaults">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaTouchPlugin.iPhoneOS</string>
-			<real value="1296" key="NS.object.0"/>
+			<real value="1536" key="NS.object.0"/>
 		</object>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
-		<string key="IBCocoaTouchPluginVersion">1498</string>
+		<string key="IBCocoaTouchPluginVersion">1930</string>
 	</data>
 </archive>

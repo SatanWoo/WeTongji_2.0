@@ -199,7 +199,7 @@
 								<reference key="NSNextResponder" ref="829231781"/>
 								<int key="NSvFlags">1280</int>
 								<object class="NSPSMatrix" key="NSFrameMatrix"/>
-								<string key="NSFrame">{{11, 13}, {14, 11}}</string>
+								<string key="NSFrame">{{10, 12}, {14, 11}}</string>
 								<reference key="NSSuperview" ref="829231781"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="506679636"/>
@@ -219,9 +219,9 @@
 									<int key="NSColorSpace">3</int>
 									<bytes key="NSWhite">MC41AA</bytes>
 								</object>
-								<object class="NSCustomResource" key="IBUINormalImage" id="312958389">
+								<object class="NSCustomResource" key="IBUINormalImage">
 									<string key="NSClassName">NSImage</string>
-									<string key="NSResourceName">like.png</string>
+									<string key="NSResourceName">like</string>
 								</object>
 								<object class="IBUIFontDescription" key="IBUIFontDescription" id="170289038">
 									<int key="type">2</int>
@@ -311,7 +311,7 @@
 								<reference key="IBUINormalTitleShadowColor" ref="589406594"/>
 								<object class="NSCustomResource" key="IBUINormalImage">
 									<string key="NSClassName">NSImage</string>
-									<string key="NSResourceName">favourite_us.png</string>
+									<string key="NSResourceName">favourite_us</string>
 								</object>
 								<reference key="IBUIFontDescription" ref="170289038"/>
 								<reference key="IBUIFont" ref="770941693"/>
@@ -392,7 +392,10 @@
 									<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
 								</object>
 								<reference key="IBUINormalTitleShadowColor" ref="589406594"/>
-								<reference key="IBUINormalImage" ref="312958389"/>
+								<object class="NSCustomResource" key="IBUINormalImage">
+									<string key="NSClassName">NSImage</string>
+									<string key="NSResourceName">add_to_schedule</string>
+								</object>
 								<reference key="IBUIFontDescription" ref="170289038"/>
 								<reference key="IBUIFont" ref="770941693"/>
 							</object>
@@ -807,9 +810,10 @@
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
+			<string key="add_to_schedule">{16, 16}</string>
 			<string key="eye_icon.png">{16, 10}</string>
-			<string key="favourite_us.png">{12, 12}</string>
-			<string key="like.png">{14, 11}</string>
+			<string key="favourite_us">{16, 16}</string>
+			<string key="like">{16, 16}</string>
 		</dictionary>
 		<string key="IBCocoaTouchPluginVersion">1930</string>
 	</data>

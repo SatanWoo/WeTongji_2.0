@@ -141,7 +141,6 @@
 		E5145896164645FF00533761 /* scaleview.png in Resources */ = {isa = PBXBuildFile; fileRef = E514588B164645FF00533761 /* scaleview.png */; };
 		E514589A1646478600533761 /* MyFavortieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E51458991646478600533761 /* MyFavortieViewController.m */; };
 		E51458A11646508500533761 /* TextViewTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E51458A01646508500533761 /* TextViewTableCell.m */; };
-		E51458A31646509C00533761 /* TextViewTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E51458A21646509C00533761 /* TextViewTableCell.xib */; };
 		E51458A6164655B000533761 /* WUTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = E51458A5164655B000533761 /* WUTableHeaderView.m */; };
 		E51458A8164655C700533761 /* WUTableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E51458A7164655C600533761 /* WUTableHeaderView.xib */; };
 		E523528316317F4800DBFF7C /* nav_left.png in Resources */ = {isa = PBXBuildFile; fileRef = E523527F16317F4800DBFF7C /* nav_left.png */; };
@@ -219,6 +218,9 @@
 		FFB5AECC164CDC0A00A232DF /* whiteArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB5AEC3164CDC0A00A232DF /* whiteArrow.png */; };
 		FFB5AECD164CDC0A00A232DF /* whiteArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB5AEC4164CDC0A00A232DF /* whiteArrow@2x.png */; };
 		FFB7E19E164F3CD3006C9D7F /* navbar_sort_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB7E19D164F3CD3006C9D7F /* navbar_sort_btn@2x.png */; };
+		FFBE6CCB16548B4F0098DC79 /* back_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFBE6CCA16548B4F0098DC79 /* back_bg@2x.png */; };
+		FFBE6CCD16548B8C0098DC79 /* add_to_schedule@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFBE6CCC16548B8C0098DC79 /* add_to_schedule@2x.png */; };
+		FFBE6CCF1654A45E0098DC79 /* TextViewTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFBE6CCE1654A45E0098DC79 /* TextViewTableCell.xib */; };
 		FFBEB29B164B6DA10004AF4C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBEB29A164B6DA10004AF4C /* CoreData.framework */; };
 		FFBEB29E164B6F1B0004AF4C /* CoreDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBEB29D164B6F1B0004AF4C /* CoreDataViewController.m */; };
 		FFBEB2B6164B89090004AF4C /* WeTongjiCoreDataModels.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FFBEB2B4164B89090004AF4C /* WeTongjiCoreDataModels.xcdatamodeld */; };
@@ -428,7 +430,6 @@
 		E51458991646478600533761 /* MyFavortieViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyFavortieViewController.m; sourceTree = "<group>"; };
 		E514589F1646508500533761 /* TextViewTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextViewTableCell.h; sourceTree = "<group>"; };
 		E51458A01646508500533761 /* TextViewTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextViewTableCell.m; sourceTree = "<group>"; };
-		E51458A21646509C00533761 /* TextViewTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextViewTableCell.xib; sourceTree = "<group>"; };
 		E51458A4164655B000533761 /* WUTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WUTableHeaderView.h; sourceTree = "<group>"; };
 		E51458A5164655B000533761 /* WUTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WUTableHeaderView.m; sourceTree = "<group>"; };
 		E51458A7164655C600533761 /* WUTableHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WUTableHeaderView.xib; sourceTree = "<group>"; };
@@ -538,6 +539,9 @@
 		FFB5AEC3164CDC0A00A232DF /* whiteArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteArrow.png; sourceTree = "<group>"; };
 		FFB5AEC4164CDC0A00A232DF /* whiteArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "whiteArrow@2x.png"; sourceTree = "<group>"; };
 		FFB7E19D164F3CD3006C9D7F /* navbar_sort_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navbar_sort_btn@2x.png"; sourceTree = "<group>"; };
+		FFBE6CCA16548B4F0098DC79 /* back_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back_bg@2x.png"; sourceTree = "<group>"; };
+		FFBE6CCC16548B8C0098DC79 /* add_to_schedule@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "add_to_schedule@2x.png"; sourceTree = "<group>"; };
+		FFBE6CCE1654A45E0098DC79 /* TextViewTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextViewTableCell.xib; sourceTree = "<group>"; };
 		FFBEB29A164B6DA10004AF4C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		FFBEB29C164B6F1B0004AF4C /* CoreDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataViewController.h; sourceTree = "<group>"; };
 		FFBEB29D164B6F1B0004AF4C /* CoreDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataViewController.m; sourceTree = "<group>"; };
@@ -805,6 +809,8 @@
 		E514585C1646458600533761 /* Event */ = {
 			isa = PBXGroup;
 			children = (
+				FFBE6CCC16548B8C0098DC79 /* add_to_schedule@2x.png */,
+				FFBE6CCA16548B4F0098DC79 /* back_bg@2x.png */,
 				FFC65D41164FE59600156F77 /* check_btn@2x.png */,
 				FFC65D3D164FE58500156F77 /* sort_bg@2x.png */,
 				FFC65D3E164FE58500156F77 /* sort_cell@2x.png */,
@@ -1022,7 +1028,7 @@
 				E514584B16463F3F00533761 /* SchoolNewsCell.xib */,
 				E514589F1646508500533761 /* TextViewTableCell.h */,
 				E51458A01646508500533761 /* TextViewTableCell.m */,
-				E51458A21646509C00533761 /* TextViewTableCell.xib */,
+				FFBE6CCE1654A45E0098DC79 /* TextViewTableCell.xib */,
 				E5D2447A1647BF8900DA43DD /* ArrangementCell.h */,
 				E5D2447B1647BF8900DA43DD /* ArrangementCell.m */,
 				E5D2447E1647BFA900DA43DD /* ArrangementCell.xib */,
@@ -1394,7 +1400,6 @@
 				E5145894164645FF00533761 /* partition_line2.png in Resources */,
 				E5145895164645FF00533761 /* partition_line2@2x.png in Resources */,
 				E5145896164645FF00533761 /* scaleview.png in Resources */,
-				E51458A31646509C00533761 /* TextViewTableCell.xib in Resources */,
 				E51458A8164655C700533761 /* WUTableHeaderView.xib in Resources */,
 				E5D2447F1647BFA900DA43DD /* ArrangementCell.xib in Resources */,
 				E5D244941647C6B700DA43DD /* WUArrangementSectionHeaderView.xib in Resources */,
@@ -1497,6 +1502,9 @@
 				FFB4D6801654729400D863FC /* cancel_edit_un@2x.png in Resources */,
 				FFB4D6811654729400D863FC /* finish_edit_hl@2x.png in Resources */,
 				FFB4D6821654729400D863FC /* finish_edit_un@2x.png in Resources */,
+				FFBE6CCB16548B4F0098DC79 /* back_bg@2x.png in Resources */,
+				FFBE6CCD16548B8C0098DC79 /* add_to_schedule@2x.png in Resources */,
+				FFBE6CCF1654A45E0098DC79 /* TextViewTableCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -26,7 +26,7 @@
 @property (nonatomic, strong) WUTableHeaderView *headerView;
 @property (nonatomic, strong) WUPageControlViewController *pageViewController;
 @property (nonatomic, assign) BOOL isAnimationFinished;
-@property (nonatomic, weak) TextViewTableCell* currentCell;
+@property (nonatomic, strong) TextViewTableCell* currentCell;
 @end
 
 @implementation SchoolNewsViewController
@@ -47,10 +47,9 @@
 - (void)configureTableView
 {
     [self.newsTableView registerNib:[UINib nibWithNibName:@"TextViewTableCell" bundle:nil] forCellReuseIdentifier:kTextViewTableCell];
-    
-    self.newsTableView.contentInset = UIEdgeInsetsMake(kContentOffset, 0, 0, 0);
+    //self.newsTableView.contentInset = UIEdgeInsetsMake(kContentOffset, 0, 200, 0);
     self.newsTableView.backgroundColor = [UIColor clearColor];
-    self.newsTableView.tableHeaderView = self.headerView;
+    //self.newsTableView.tableHeaderView = self.headerView;
     [self.view insertSubview:self.pageViewController.view belowSubview:self.newsTableView];
    
 }
@@ -92,6 +91,23 @@
     return _pageViewController;
 }
 
+-(TextViewTableCell *) currentCell
+{
+    if (_currentCell == nil)
+    {
+        _currentCell = [self.newsTableView dequeueReusableCellWithIdentifier:kTextViewTableCell];
+        if ( _currentCell == nil )
+        _currentCell = [[TextViewTableCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kTextViewTableCell];
+        [_currentCell setFrame:CGRectMake(0, 0,_currentCell.frame.size.width, _currentCell.textView.contentSize.height)];
+        CGRect frame = _currentCell.textView.frame;
+        frame.size.height = _currentCell.frame.size.height;
+        _currentCell.textView.frame = frame;
+        [_currentCell.textView sizeToFit];
+        NSLog(@"%f : %f",_currentCell.frame.size.height,_currentCell.textView.frame.size.height);
+    }
+    return _currentCell;
+}
+
 - (WUTableHeaderView *)headerView
 {
     if (_headerView == nil) {
@@ -115,6 +131,11 @@
     [self setBackButton:nil];
     [self setNewsTableView:nil];
     [super viewDidUnload];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    
 }
 
 - (void) viewWillDisappear:(BOOL)animated
@@ -142,7 +163,7 @@
     float rate = (scrollView.contentOffset.y + kContentOffset) / -kRowHeight;
     
     if (scrollView.contentOffset.y >= 150) {
-        self.currentCell.textView.scrollEnabled = YES;
+        //self.currentCell.textView.scrollEnabled = YES;
     }
     
     if (rate <-2)
@@ -160,7 +181,10 @@
             self.pageViewController.view.userInteractionEnabled = YES;
             self.newsTableView.userInteractionEnabled = NO;
         }];
-    } else if (self.isAnimationFinished == false) {
+    }
+    else
+    if (self.isAnimationFinished == false)
+    {
         [UIView animateWithDuration:0.05f animations:^{
             self.pageViewController.view.frame = CGRectMake(0, kStateY + velocity * rate, self.pageViewController.view.frame.size.width, self.pageViewController.view.frame.size.height);
         } completion:^(BOOL finished) {
@@ -170,29 +194,46 @@
 }
 
 #pragma mark - UITableViewDataSource
+
+- (float)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    if ( section == 1 ) return self.headerView.bounds.size.height;
+    if ( section == 0 ) return kContentOffset;
+    return 0;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    if ( section == 1 ) return self.headerView;
+    if ( section == 0 )
+    {
+        UIView * view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.newsTableView.bounds.size.width, kContentOffset)];
+        [view setAlpha:0];
+        return view;
+    }
+    return nil;
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 1;
+    if (section == 1 ) return 1;
+    return 0;
 }
 
 - (float)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 355;
+    if ( indexPath.section == 1 )return self.currentCell.bounds.size.height;
+    return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    TextViewTableCell *cell = [tableView dequeueReusableCellWithIdentifier:kTextViewTableCell];
-    if (cell == nil) {
-        cell = [[TextViewTableCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kTextViewTableCell];
-    }
-    self.currentCell = cell;
-    return cell;
+    return self.currentCell;
 }
 
 @end
