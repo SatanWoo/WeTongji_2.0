@@ -13,6 +13,7 @@
 #import "WUTapImageView.h"
 #import "WUTableHeaderView.h"
 #import "WUPageControlViewController.h"
+#import "TransparentTableHeaderView.h"
 
 #define kContentOffset 50
 #define kStateY -150
@@ -21,6 +22,8 @@
 @interface SchoolNewsViewController () <UIScrollViewDelegate, UITableViewDelegate, UITableViewDataSource>
 {
     BOOL _isBackGroundHide;
+    CGPoint originNewsTableViewCenter;
+    CGPoint originPageViewCenter;
 }
 - (void)renderShadow:(UIView *)view;
 - (void)configureTableView;
@@ -31,6 +34,7 @@
 @property (nonatomic, strong) WUPageControlViewController *pageViewController;
 @property (nonatomic, assign) BOOL isAnimationFinished;
 @property (nonatomic, strong) TextViewTableCell* currentCell;
+@property (nonatomic, strong) TransparentTableHeaderView * transparentHeaderView;
 @end
 
 @implementation SchoolNewsViewController
@@ -41,6 +45,7 @@
 @synthesize headerView = _headerView;
 @synthesize isAnimationFinished = _isAnimationFinished;
 @synthesize currentCell = _currentCell;
+@synthesize transparentHeaderView = _transparentHeaderView;
 #pragma mark - Private Method
 - (void)renderShadow:(UIView *)view
 {
@@ -51,27 +56,23 @@
 - (void)configureTableView
 {
     [self.newsTableView registerNib:[UINib nibWithNibName:@"TextViewTableCell" bundle:nil] forCellReuseIdentifier:kTextViewTableCell];
-    //self.newsTableView.contentInset = UIEdgeInsetsMake(kContentOffset, 0, 200, 0);
     self.newsTableView.backgroundColor = [UIColor clearColor];
-    //self.newsTableView.tableHeaderView = self.headerView;
     [self.view insertSubview:self.pageViewController.view belowSubview:self.newsTableView];
+    originNewsTableViewCenter = [self.newsTableView center];
    
 }
 #pragma mark - Tap
 - (void)didTap:(UITapGestureRecognizer *)recognizer
 {
     self.isAnimationFinished = false;
+    self.pageViewController.view.userInteractionEnabled = NO;
     [UIView animateWithDuration:0.55f animations:^{
-        self.newsTableView.frame = self.view.frame;
-    } completion:^(BOOL finished) {
-        self.newsTableView.userInteractionEnabled = YES;
-    }];
+        [self.newsTableView setCenter:originNewsTableViewCenter];
+    } completion:^(BOOL finished) {}];
     
     [UIView animateWithDuration:0.8f animations:^{
-        self.pageViewController.view.frame = CGRectMake(0, kStateY, self.pageViewController.view.frame.size.width, self.pageViewController.view.frame.size.height);
-    } completion:^(BOOL finished) {
-        self.pageViewController.view.userInteractionEnabled = NO;
-    }];
+        [self.pageViewController.view setCenter:originPageViewCenter];
+    } completion:^(BOOL finished) {}];
 }
 
 #pragma mark - Setter & Getter
@@ -79,17 +80,13 @@
 {
     if (_pageViewController == nil) {
         _pageViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:kWUPageControlViewController];
-        
         [_pageViewController.view addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTap:)]];
-//        UISwipeGestureRecognizer *upSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(didSwipe:)];
-//        upSwipe.direction = UISwipeGestureRecognizerDirectionUp;
-//        [_pageViewController.view addGestureRecognizer:upSwipe];
-        
         [_pageViewController.view setFrame:CGRectMake(0, kStateY, 320 ,480)];
         _pageViewController.view.userInteractionEnabled = NO;
         [_pageViewController addPicture:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"scaleview.png"]]];
         [_pageViewController addPicture:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"scaleview.png"]]];
         [_pageViewController addPicture:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"scaleview.png"]]];
+        originPageViewCenter = [_pageViewController.view center];
     }
     
     return _pageViewController;
@@ -120,13 +117,21 @@
     return _headerView;
 }
 
+- (TransparentTableHeaderView *) transparentHeaderView
+{
+    if ( !_transparentHeaderView )
+    {
+        _transparentHeaderView = [[[NSBundle mainBundle] loadNibNamed:@"TransparentTableHeaderView" owner:self options:nil] objectAtIndex:0];  
+    }
+    return  _transparentHeaderView;
+}
+
 #pragma mark - LifeCycle
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     [self.navigationController setNavigationBarHidden:YES];
     [self configureTableView];
-    //[self renderShadow:self.upperHiddenView];
 }
 
 - (void)viewDidUnload
@@ -166,7 +171,7 @@
     
     float rate = (scrollView.contentOffset.y + kContentOffset) / -kRowHeight;
     
-    if ( rate < -2 && !_isBackGroundHide )
+    if ( rate < -3 && !_isBackGroundHide )
     {
         _isBackGroundHide = YES;
         [UIView animateWithDuration:0.5f animations:^
@@ -181,7 +186,7 @@
         
         return ;
     }
-    if ( rate > -2 && rate < 1 && _isBackGroundHide )
+    if ( rate > -3 && rate < 1 && _isBackGroundHide )
     {
         _isBackGroundHide = NO;
         [UIView animateWithDuration:0.5f animations:^
@@ -201,17 +206,12 @@
             self.pageViewController.view.frame = CGRectMake(0,0, self.pageViewController.view.frame.size.width, self.pageViewController.view.frame.size.height);
         } completion:^(BOOL finished) {
             self.pageViewController.view.userInteractionEnabled = YES;
-            self.newsTableView.userInteractionEnabled = NO;
         }];
     }
     else
     if (self.isAnimationFinished == false)
     {
-        [UIView animateWithDuration:0.05f animations:^{
-            self.pageViewController.view.frame = CGRectMake(0, kStateY + velocity * rate, self.pageViewController.view.frame.size.width, self.pageViewController.view.frame.size.height);
-        } completion:^(BOOL finished) {
-            
-        }];
+        self.pageViewController.view.frame = CGRectMake(0, kStateY + velocity * rate, self.pageViewController.view.frame.size.width, self.pageViewController.view.frame.size.height);
     }
 }
 
@@ -222,19 +222,14 @@
 - (float)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
     if ( section == 1 ) return self.headerView.bounds.size.height;
-    if ( section == 0 ) return kContentOffset;
+    if ( section == 0 ) return self.transparentHeaderView.bounds.size.height;
     return 0;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     if ( section == 1 ) return self.headerView;
-    if ( section == 0 )
-    {
-        UIView * view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.newsTableView.bounds.size.width, kContentOffset)];
-        [view setAlpha:0];
-        return view;
-    }
+    if ( section == 0 ) return self.transparentHeaderView;
     return nil;
 }
 

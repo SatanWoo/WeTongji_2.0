@@ -13,7 +13,6 @@
     BOOL _isButtonBoardLeft;
 }
 @property (weak, nonatomic) IBOutlet UIView *buttonBoard;
-@property (weak, nonatomic) IBOutlet UIView *stateBoard;
 
 @end
 
