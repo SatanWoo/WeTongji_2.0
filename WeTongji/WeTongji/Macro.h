@@ -17,6 +17,7 @@
 #define kWUPageControlViewController @"kWUPageControlViewController"
 #define kEditInfoViewController @"kEditInfoViewController"
 #define kLoginViewController @"kLoginViewController"
+#define kWeeklyPersonViewController @"kWeeklyPersonViewController"
 
 // TableViewCell
 #define kLeftMenuCell @"kLeftMenuCell"
@@ -44,6 +45,6 @@
 
 // Slide
 #define kMenuFullWidth 320.0f
-#define kMenuDisplayedWidth 280.0f
+#define kMenuDisplayedWidth 268.0f
 
 #endif

@@ -36,6 +36,14 @@
 			<key>kNeedLogin</key>
 			<false/>
 		</dict>
+		<dict>
+			<key>kTableViewCellName</key>
+			<string>每周人物</string>
+			<key>kViewControllerIdentifier</key>
+			<string>kWeeklyPersonViewController</string>
+			<key>kNeedLogin</key>
+			<false/>
+		</dict>
 	</array>
 </dict>
 </plist>

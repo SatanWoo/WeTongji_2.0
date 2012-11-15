@@ -97,6 +97,7 @@
 		03E6FBAE16552BB600A3E60C /* favourite@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 03E6FBAA16552BB600A3E60C /* favourite@2x.png */; };
 		03E6FBB21655339F00A3E60C /* transparentTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03E6FBB01655339F00A3E60C /* transparentTableHeaderView.m */; };
 		03E6FBB31655339F00A3E60C /* TransparentTableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03E6FBB11655339F00A3E60C /* TransparentTableHeaderView.xib */; };
+		03E6FBB71655372D00A3E60C /* WeeklyPersonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03E6FBB61655372D00A3E60C /* WeeklyPersonViewController.m */; };
 		B00D6921162CFCAC00592B1D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B00D6920162CFCAC00592B1D /* UIKit.framework */; };
 		B00D6923162CFCAC00592B1D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B00D6922162CFCAC00592B1D /* Foundation.framework */; };
 		B00D6925162CFCAC00592B1D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B00D6924162CFCAC00592B1D /* CoreGraphics.framework */; };
@@ -370,6 +371,8 @@
 		03E6FBAF1655339E00A3E60C /* transparentTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = transparentTableHeaderView.h; sourceTree = "<group>"; };
 		03E6FBB01655339F00A3E60C /* transparentTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = transparentTableHeaderView.m; sourceTree = "<group>"; };
 		03E6FBB11655339F00A3E60C /* TransparentTableHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TransparentTableHeaderView.xib; sourceTree = "<group>"; };
+		03E6FBB51655372D00A3E60C /* WeeklyPersonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeeklyPersonViewController.h; sourceTree = "<group>"; };
+		03E6FBB61655372D00A3E60C /* WeeklyPersonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeeklyPersonViewController.m; sourceTree = "<group>"; };
 		B00D691C162CFCAC00592B1D /* WeTongji.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeTongji.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B00D6920162CFCAC00592B1D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B00D6922162CFCAC00592B1D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -648,6 +651,15 @@
 			name = EditInfo;
 			sourceTree = "<group>";
 		};
+		03E6FBB4165536FF00A3E60C /* WeeklyPersonViewController */ = {
+			isa = PBXGroup;
+			children = (
+				03E6FBB51655372D00A3E60C /* WeeklyPersonViewController.h */,
+				03E6FBB61655372D00A3E60C /* WeeklyPersonViewController.m */,
+			);
+			name = WeeklyPersonViewController;
+			sourceTree = "<group>";
+		};
 		B00B6391162FCDB300AD7712 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
@@ -919,7 +931,7 @@
 				0315AC7D164FF621003DC899 /* WUPageControlViewController.m */,
 				B00D6948162D03EA00592B1D /* WUSlideViewController.h */,
 				B00D6949162D03EA00592B1D /* WUSlideViewController.m */,
-				03D540B316512F8D0070F727 /* PersonalInfoViewController */,
+				03E6FBB4165536FF00A3E60C /* WeeklyPersonViewController */,
 				E52352C71631884000DBFF7C /* PersonWallViewController */,
 				E51458541646415C00533761 /* Event */,
 				E52353041631D25900DBFF7C /* Campus */,
@@ -931,6 +943,7 @@
 		E52352C71631884000DBFF7C /* PersonWallViewController */ = {
 			isa = PBXGroup;
 			children = (
+				03D540B316512F8D0070F727 /* PersonalInfoViewController */,
 				E5D2448C1647C34400DA43DD /* Arrangement */,
 				E51458971646476C00533761 /* Myfavorite */,
 				E52352981631808000DBFF7C /* PersonalWallViewController.h */,
@@ -1578,6 +1591,7 @@
 				035E349E1653E7C8009AC6BF /* MiddleAbstractSecondViewController.m in Sources */,
 				035E34B21653F040009AC6BF /* WUFolderView.m in Sources */,
 				03E6FBB21655339F00A3E60C /* transparentTableHeaderView.m in Sources */,
+				03E6FBB71655372D00A3E60C /* WeeklyPersonViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
