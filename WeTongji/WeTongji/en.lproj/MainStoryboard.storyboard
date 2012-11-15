@@ -573,17 +573,17 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="8EU-L3-4HZ">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="8EU-L3-4HZ">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" red="0.83704144020000004" green="0.83704144020000004" blue="0.83704144020000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.92357336960000003" green="0.92357336960000003" blue="0.92357336960000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="dataSource" destination="kjT-GT-zuS" id="MzT-r7-bg0"/>
                                     <outlet property="delegate" destination="kjT-GT-zuS" id="X8f-h3-T7e"/>
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.92357336960000003" green="0.92357336960000003" blue="0.92357336960000003" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="每周人物" id="3EG-aU-pN0"/>
                     <connections>
@@ -1161,6 +1161,9 @@
         </class>
         <class className="WeeklyPersonViewController" superclassName="MiddleAbstractViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/WeeklyPersonViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="personTableView" candidateClass="UITableView"/>
+            </relationships>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

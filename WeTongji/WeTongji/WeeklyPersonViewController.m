@@ -8,6 +8,8 @@
 
 #import "WeeklyPersonViewController.h"
 #import "WeeklyPersonHeaderView.h"
+#import "Macro.h"
+#import "WeeklyPersonCell.h"
 
 @interface WeeklyPersonViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic ,strong) WeeklyPersonHeaderView *headerView;
@@ -19,13 +21,14 @@
 - (WeeklyPersonHeaderView *)headerView
 {
     if (_headerView == nil) {
-        _headerView = [[[NSBundle mainBundle] loadNibNamed:@"WeeklyPersonHeaderView.h" owner:self options:nil] objectAtIndex:0];
+        _headerView = [[[NSBundle mainBundle] loadNibNamed:@"WeeklyPersonHeaderView" owner:self options:nil] objectAtIndex:0];
     }
     return _headerView;
 }
 #pragma mark - Private 
 - (void)configureTableView
 {
+    [self.personTableView registerNib:[UINib nibWithNibName:@"WeeklyPersonCell" bundle:nil] forCellReuseIdentifier:kWeeklyPersonCell];
     self.personTableView.tableHeaderView = self.headerView;
 }
 
@@ -57,6 +60,20 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return 2;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    WeeklyPersonCell *cell = [tableView dequeueReusableCellWithIdentifier:kWeeklyPersonCell];
+    if (cell == nil) {
+        cell = [[WeeklyPersonCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kWeeklyPersonCell];
+    }
+    return cell;
+}
+
+- (float)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 75;
 }
 
 #pragma mark - UITableViewDelegate
