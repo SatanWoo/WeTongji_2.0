@@ -8,6 +8,15 @@
 
 #import "WUTableHeaderView.h"
 
+@interface WUTableHeaderView()
+{
+    BOOL _isButtonBoardLeft;
+}
+@property (weak, nonatomic) IBOutlet UIView *buttonBoard;
+@property (weak, nonatomic) IBOutlet UIView *stateBoard;
+
+@end
+
 @implementation WUTableHeaderView
 @synthesize upperHiddenView;
 @synthesize titleLabel;
@@ -20,6 +29,25 @@
 @synthesize favoriteButton;
 @synthesize moveFavorView;
 @synthesize moveLikeView;
+@synthesize buttonBoard;
+
+-(void) changeButtonPositionToLeft
+{
+    if ( _isButtonBoardLeft ) return;
+    CGPoint center = [self.buttonBoard center];
+    center.x = center.x + 54;
+    [self.buttonBoard setCenter:center];
+    _isButtonBoardLeft = YES;
+}
+
+-(void) resetButtonPosition
+{
+    if ( !_isButtonBoardLeft ) return;
+    CGPoint center = [self.buttonBoard center];
+    center.x = center.x - 54;
+    [self.buttonBoard setCenter:center];
+    _isButtonBoardLeft = NO;
+}
 
 - (id)initWithFrame:(CGRect)frame
 {

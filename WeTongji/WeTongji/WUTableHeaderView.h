@@ -22,4 +22,7 @@
 @property (weak, nonatomic) IBOutlet UIView *moveFavorView;
 @property (weak, nonatomic) IBOutlet UIView *moveLikeView;
 
+-(void) changeButtonPositionToLeft;
+-(void) resetButtonPosition;
+
 @end

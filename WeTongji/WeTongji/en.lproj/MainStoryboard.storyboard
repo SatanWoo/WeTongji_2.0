@@ -904,7 +904,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="C4a-xk-m7J">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="510"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -913,11 +913,11 @@
                                 </connections>
                             </tableView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="back_bg" id="XzR-8D-C5a">
-                                <rect key="frame" x="0.0" y="0.0" width="41" height="35"/>
+                                <rect key="frame" x="0.0" y="0.0" width="55" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="RMH-9f-Kta">
-                                <rect key="frame" x="8" y="9" width="20" height="17"/>
+                                <rect key="frame" x="0.0" y="11" width="45" height="33"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" image="back_btn.png">
@@ -937,6 +937,7 @@
                     <navigationItem key="navigationItem" id="o44-O2-Tf1"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="buttonBackImageView" destination="XzR-8D-C5a" id="qAG-Z6-cSd"/>
                         <outlet property="newsTableView" destination="C4a-xk-m7J" id="LhP-AL-5tP"/>
                     </connections>
                 </viewController>
@@ -1096,6 +1097,7 @@
             <relationships>
                 <relationship kind="action" name="goBack:"/>
                 <relationship kind="outlet" name="backButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonBackImageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="newsTableView" candidateClass="UITableView"/>
             </relationships>
         </class>

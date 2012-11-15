@@ -19,9 +19,13 @@
 #define kRowHeight 44
 
 @interface SchoolNewsViewController () <UIScrollViewDelegate, UITableViewDelegate, UITableViewDataSource>
+{
+    BOOL _isBackGroundHide;
+}
 - (void)renderShadow:(UIView *)view;
 - (void)configureTableView;
 - (void)didTap:(UITapGestureRecognizer *)recognizer;
+@property (weak, nonatomic) IBOutlet UIImageView *buttonBackImageView;
 
 @property (nonatomic, strong) WUTableHeaderView *headerView;
 @property (nonatomic, strong) WUPageControlViewController *pageViewController;
@@ -103,7 +107,6 @@
         frame.size.height = _currentCell.frame.size.height;
         _currentCell.textView.frame = frame;
         [_currentCell.textView sizeToFit];
-        NSLog(@"%f : %f",_currentCell.frame.size.height,_currentCell.textView.frame.size.height);
     }
     return _currentCell;
 }
@@ -130,6 +133,7 @@
 {
     [self setBackButton:nil];
     [self setNewsTableView:nil];
+    [self setButtonBackImageView:nil];
     [super viewDidUnload];
 }
 
@@ -162,17 +166,35 @@
     
     float rate = (scrollView.contentOffset.y + kContentOffset) / -kRowHeight;
     
-    if (scrollView.contentOffset.y >= 150) {
-        //self.currentCell.textView.scrollEnabled = YES;
-    }
-    
-    if (rate <-2)
+    if ( rate < -2 && !_isBackGroundHide )
     {
+        _isBackGroundHide = YES;
+        [UIView animateWithDuration:0.5f animations:^
+        {
+            [self.buttonBackImageView setAlpha:0.0f];
+            CGPoint center = [self.newsTableView center];
+            center.y = center.y - kContentOffset;
+            [self.newsTableView setCenter:center];
+            [self.headerView changeButtonPositionToLeft];
+        }
+        completion:^(BOOL isFinished){}];
         
-        return;
+        return ;
     }
-    
-    if (rate > 2) {
+    if ( rate > -2 && rate < 1 && _isBackGroundHide )
+    {
+        _isBackGroundHide = NO;
+        [UIView animateWithDuration:0.5f animations:^
+        {
+            [self.buttonBackImageView setAlpha:1.0f];
+            CGPoint center = [self.newsTableView center];
+            center.y = center.y + kContentOffset;
+            [self.newsTableView setCenter:center];
+            [self.headerView resetButtonPosition];
+        }
+        completion:^(BOOL isFinished){}];
+    }
+    if (rate > 1) {
         self.isAnimationFinished = true;
         [UIView animateWithDuration:0.25f animations:^{
             self.newsTableView.frame = CGRectMake(0, self.view.frame.size.height, self.newsTableView.frame.size.width, self.newsTableView.frame.size.height);
@@ -192,6 +214,8 @@
         }];
     }
 }
+
+
 
 #pragma mark - UITableViewDataSource
 
