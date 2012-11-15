@@ -10,5 +10,6 @@
 #import "MiddleAbstractViewController.h"
 
 @interface WeeklyPersonViewController : MiddleAbstractViewController
+@property (weak, nonatomic) IBOutlet UITableView *personTableView;
 
 @end
