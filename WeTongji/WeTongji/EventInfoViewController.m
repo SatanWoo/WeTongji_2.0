@@ -128,6 +128,7 @@
 - (void)configureTableView
 {
     [self.eventTableView registerNib:[UINib nibWithNibName:@"EventInfoCell" bundle:nil] forCellReuseIdentifier:kEventInfoCell];
+   // self.eventTableView.backgroundColor = [UIColor lightGrayColor];
     self.pullRefreshManagement.delegate = self;
 }
 
@@ -187,13 +188,7 @@
         cell = [[EventInfoCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kEventInfoCell];
 
     }
-    [cell.favorButton setImage:[UIImage imageNamed:@"favourite_hl.png"] forState:UIControlStateHighlighted];
-    [cell.likeButton setImage:[UIImage imageNamed:@"like_hl.png"] forState:UIControlStateHighlighted];
-    for (UIView *subView in cell.disableView.subviews) {
-        subView.userInteractionEnabled = NO;
-    }
-    cell.favorButton.userInteractionEnabled = YES;
-    cell.likeButton.userInteractionEnabled = YES;
+    cell.disableView.userInteractionEnabled = NO;
     [cell setEvent:[self.eventList objectAtIndex:indexPath.row]];
     return cell;
 }
