@@ -12,13 +12,14 @@
 #import "PlistReader.h"
 #import "LeftMenuCellModel.h"
 #import "JBKenBurnsView.h"
+#import "WUKenBurnViewHeader.h"
 
 #define kLabelHeight 30
 
 @interface LeftMenuViewController () <UITableViewDataSource,UITableViewDelegate>
 
 @property (nonatomic ,strong) NSArray *identifierArray;
-@property (nonatomic ,strong) KenBurnsView *kenView;
+@property (nonatomic ,strong) WUKenBurnViewHeader *kenView;
 
 - (void)configureBottomBarButton;
 - (void)configureTableView;
@@ -73,11 +74,14 @@
     [self.menuTableView reloadData];
 }
 
-- (KenBurnsView *)kenView
+- (WUKenBurnViewHeader *)kenView
 {
     if (_kenView == nil) {
-        _kenView.layer.borderWidth = 1;
-        _kenView.layer.borderColor = [UIColor blackColor].CGColor;
+        
+        _kenView = [[[NSBundle mainBundle] loadNibNamed:@"WUKenBurnViewHeader" owner:self options:nil] objectAtIndex:0];
+
+        _kenView.kenView.layer.borderWidth = 1;
+        _kenView.kenView.layer.borderColor = [UIColor blackColor].CGColor;
         
         NSArray *myImages = [NSArray arrayWithObjects:
                              [UIImage imageNamed:@"l1.png"],
@@ -85,7 +89,7 @@
                              [UIImage imageNamed:@"l3.png"],
                               nil];
         
-        [_kenView animateWithImages:myImages
+        [_kenView.kenView animateWithImages:myImages
                      transitionDuration:15
                                    loop:YES
                             isLandscape:YES];

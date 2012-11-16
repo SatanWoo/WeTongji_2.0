@@ -21,6 +21,8 @@
 		03326A6A165691BA005E8A16 /* l2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 03326A64165691BA005E8A16 /* l2@2x.png */; };
 		03326A6B165691BA005E8A16 /* l3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 03326A65165691BA005E8A16 /* l3@2x.png */; };
 		03326A6C165691BA005E8A16 /* l3.png in Resources */ = {isa = PBXBuildFile; fileRef = 03326A66165691BA005E8A16 /* l3.png */; };
+		03326A7316569430005E8A16 /* WUKenBurnViewHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 03326A7216569430005E8A16 /* WUKenBurnViewHeader.m */; };
+		03326A751656949C005E8A16 /* WUKenBurnViewHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03326A741656949C005E8A16 /* WUKenBurnViewHeader.xib */; };
 		0355150B1652771F0058EC06 /* favorite.png in Resources */ = {isa = PBXBuildFile; fileRef = 035515031652771F0058EC06 /* favorite.png */; };
 		0355150C1652771F0058EC06 /* favorite@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 035515041652771F0058EC06 /* favorite@2x.png */; };
 		0355150D1652771F0058EC06 /* info.png in Resources */ = {isa = PBXBuildFile; fileRef = 035515051652771F0058EC06 /* info.png */; };
@@ -390,6 +392,9 @@
 		03326A64165691BA005E8A16 /* l2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "l2@2x.png"; sourceTree = "<group>"; };
 		03326A65165691BA005E8A16 /* l3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "l3@2x.png"; sourceTree = "<group>"; };
 		03326A66165691BA005E8A16 /* l3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = l3.png; sourceTree = "<group>"; };
+		03326A7116569430005E8A16 /* WUKenBurnViewHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WUKenBurnViewHeader.h; sourceTree = "<group>"; };
+		03326A7216569430005E8A16 /* WUKenBurnViewHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WUKenBurnViewHeader.m; sourceTree = "<group>"; };
+		03326A741656949C005E8A16 /* WUKenBurnViewHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WUKenBurnViewHeader.xib; sourceTree = "<group>"; };
 		035515031652771F0058EC06 /* favorite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = favorite.png; sourceTree = "<group>"; };
 		035515041652771F0058EC06 /* favorite@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "favorite@2x.png"; sourceTree = "<group>"; };
 		035515051652771F0058EC06 /* info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info.png; sourceTree = "<group>"; };
@@ -1039,6 +1044,9 @@
 				03E6FBC91655398E00A3E60C /* WeeklyPersonHeaderView.h */,
 				03E6FBCA1655398E00A3E60C /* WeeklyPersonHeaderView.m */,
 				03E6FBCC165539A300A3E60C /* WeeklyPersonHeaderView.xib */,
+				03326A7116569430005E8A16 /* WUKenBurnViewHeader.h */,
+				03326A7216569430005E8A16 /* WUKenBurnViewHeader.m */,
+				03326A741656949C005E8A16 /* WUKenBurnViewHeader.xib */,
 			);
 			name = UIView;
 			sourceTree = "<group>";
@@ -1978,6 +1986,7 @@
 				03326A6A165691BA005E8A16 /* l2@2x.png in Resources */,
 				03326A6B165691BA005E8A16 /* l3@2x.png in Resources */,
 				03326A6C165691BA005E8A16 /* l3.png in Resources */,
+				03326A751656949C005E8A16 /* WUKenBurnViewHeader.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2070,6 +2079,7 @@
 				FFB210021655DA0900FCAF5F /* ScheduleWeekViewController.m in Sources */,
 				FFB210041655DA0900FCAF5F /* ScheduleWeekLeftTableView.m in Sources */,
 				03326A5C16568FA8005E8A16 /* JBKenBurnsView.m in Sources */,
+				03326A7316569430005E8A16 /* WUKenBurnViewHeader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
