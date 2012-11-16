@@ -43,8 +43,8 @@
 {
     [super viewDidLoad];
     [Course clearDataInManagedObjectContext:self.managedObjectContext];
-    WTClient * client = [WTClient getClient];
-    [client setCompletionBlock:^(id responseData)
+    WTClient * client = [WTClient sharedClient];
+    WTRequest * request = [WTRequest  requestWithSuccessBlock:^(id responseData)
     {
         NSLog(@"%@",responseData);
         NSString *semesterBeginString = [NSString stringWithFormat:@"%@", [responseData objectForKey:@"SchoolYearStartAt"]];
@@ -59,8 +59,9 @@
         NSDate *semesterEndDate = [semesterBeginDate dateByAddingTimeInterval:60 * 60 * 24 * 7 * semesterWeekCount];
         [NSUserDefaults setCurrentSemesterBeginTime:semesterBeginDate endTime:semesterEndDate];
         [self.view addSubview:self.scheduleWeekViewController.view];
-    }];
-    [client getCourses];
+    }failureBlock:^(NSError *error){}];
+    [request getCourses];
+    [client enqueueRequest:request];
 }
 
 - (void)didReceiveMemoryWarning

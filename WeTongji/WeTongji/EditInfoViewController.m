@@ -260,14 +260,15 @@ static id tempLeftBarItem;
                 break;
         }
     }
-    WTClient * client = [WTClient getClient];
-    [client setCompletionBlock:^(id responseData)
+    WTClient * client = [WTClient sharedClient];
+    WTRequest * request = [WTRequest requestWithSuccessBlock:^(id responseData) 
     {
         [User updateUser:[responseData objectForKey:@"User"] inManagedObjectContext:self.managedObjectContext];
         [self.infoTableView reloadData];
         NSLog(@"%@",responseData);
-    }];
-    [client updateUserDisplayName:nil email:email weiboName:weiboName phoneNum:phone qqAccount:qq];
+    } failureBlock:^(NSError * error){}];
+    [request updateUserDisplayName:nil email:email weiboName:weiboName phoneNum:phone qqAccount:qq];
+    [client enqueueRequest:request];
 }
 
 - (IBAction)cancelEditClicked:(id)sender

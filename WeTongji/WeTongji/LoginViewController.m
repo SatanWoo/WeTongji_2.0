@@ -74,14 +74,15 @@
 - (IBAction)logInClick:(id)sender
 {
     [self resignAllFirstResponder];
-    WTClient * client = [WTClient getClient];
-    [client setCompletionBlock:^(id responseData)
+    WTClient * client = [WTClient sharedClient];
+    WTRequest * request = [WTRequest requestWithSuccessBlock: ^(id responseData)
     {
         [NSUserDefaults setCurrentUserID:[[responseData objectForKey:@"User"] objectForKey:@"UID"] session:[responseData objectForKey:@"Session"]];
         [User updateUser:[responseData objectForKey:@"User"] inManagedObjectContext:self.managedObjectContext];
         NSLog(@"%@",responseData);
-    }];
-    [client login:self.NOTextField.text password:self.passwordTextField.text];
+    }failureBlock:^(NSError * error){}];
+    [request login:self.NOTextField.text password:self.passwordTextField.text];
+    [client enqueueRequest:request];
 }
 
 

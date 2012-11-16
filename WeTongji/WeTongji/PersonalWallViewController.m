@@ -117,12 +117,6 @@
 {
     [super viewDidLoad];
     [self configureTableView];
-    WTClient * client = [WTClient  getClient];
-    [client setCompletionBlock:^(id responseData)
-    {
-        NSLog(@"%@",responseData);
-    }];
-    [client getScheduleWithBeginDate:[NSDate dateWithTimeIntervalSince1970:0]  endDate:[NSDate dateWithTimeIntervalSinceNow:100000000]];
 }
 
 - (void)viewDidUnload
