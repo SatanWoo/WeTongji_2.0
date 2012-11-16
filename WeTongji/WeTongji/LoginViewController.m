@@ -7,8 +7,13 @@
 //
 
 #import "LoginViewController.h"
+#import <WeTongjiSDK/WeTongjiSDK.h>
+#import "User+Addition.h"
 
 @interface LoginViewController ()
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollVIew;
+@property (weak, nonatomic) IBOutlet UITextField *NOTextField;
+@property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 
 @end
 
@@ -27,7 +32,14 @@
 {
     [super viewDidLoad];
     [self.navigationItem setHidesBackButton:YES];
-	// Do any additional setup after loading the view.
+}
+
+
+- (void)viewDidUnload {
+    [self setScrollVIew:nil];
+    [self setNOTextField:nil];
+    [self setPasswordTextField:nil];
+    [super viewDidUnload];
 }
 
 - (void)didReceiveMemoryWarning
@@ -35,5 +47,42 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (void)resignAllFirstResponder
+{
+    [self.NOTextField resignFirstResponder];
+    [self.passwordTextField resignFirstResponder];
+    [UIView beginAnimations:nil context:NULL];
+	[UIView setAnimationDuration:.3];
+    self.scrollVIew.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
+    [UIView commitAnimations];
+}
+
+- (IBAction)textEditDidBegin:(id)sender
+{
+    [UIView beginAnimations:nil context:NULL];
+	[UIView setAnimationDuration:.3];
+    self.scrollVIew.contentInset = UIEdgeInsetsMake(-60, 0, 580, 0);
+    [UIView commitAnimations];
+}
+
+- (IBAction)textDidEndEdit:(id)sender
+{
+    [self resignAllFirstResponder];
+}
+
+- (IBAction)logInClick:(id)sender
+{
+    [self resignAllFirstResponder];
+    WTClient * client = [WTClient getClient];
+    [client setCompletionBlock:^(id responseData)
+    {
+        [NSUserDefaults setCurrentUserID:[[responseData objectForKey:@"User"] objectForKey:@"UID"] session:[responseData objectForKey:@"Session"]];
+        [User updateUser:[responseData objectForKey:@"User"] inManagedObjectContext:self.managedObjectContext];
+        NSLog(@"%@",responseData);
+    }];
+    [client login:self.NOTextField.text password:self.passwordTextField.text];
+}
+
 
 @end

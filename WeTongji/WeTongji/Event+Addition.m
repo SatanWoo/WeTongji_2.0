@@ -43,7 +43,10 @@
     result.schedule = [NSNumber numberWithInt:[[dict objectForKey:@"Schedule"] intValue]];
     result.canFavorite = [NSNumber numberWithInt:[[dict objectForKey:@"CanFavorite"] intValue]];
     result.canLike = [NSNumber numberWithInt:[[dict objectForKey:@"CanLike"] intValue]];
-    
+    result.begin_time = result.beginTime;
+    result.end_time = result.end_time;
+    result.what = result.title;
+    result.where =result.location;
     return result;
 }
 

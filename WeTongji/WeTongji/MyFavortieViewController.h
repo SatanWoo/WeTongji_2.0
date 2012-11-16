@@ -7,20 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MiddleAbstractSecondViewController.h"
 
-enum eFilterItem {
-    eRECOMEND = 0,
+enum sectionName {
+    eRECOMMEND = 0,
     eSCHOOL = 1,
-    eCELEBRITY = 2
+    ePERSON = 2
 };
 
-@interface MyFavortieViewController : UIViewController
+@interface MyFavortieViewController : MiddleAbstractSecondViewController
 @property (weak, nonatomic) IBOutlet UITableView *contentTableView;
 @property (weak, nonatomic) IBOutlet UIButton *recommendButton;
 @property (weak, nonatomic) IBOutlet UIButton *schoolInfoButton;
 @property (weak, nonatomic) IBOutlet UIButton *celebrityButton;
 @property (weak, nonatomic) IBOutlet UIButton *titleButton;
-
-- (IBAction)filterItem:(id)sender;
 
 @end

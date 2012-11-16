@@ -17,6 +17,8 @@
 #define kWUPageControlViewController @"kWUPageControlViewController"
 #define kEditInfoViewController @"kEditInfoViewController"
 #define kLoginViewController @"kLoginViewController"
+#define kWeeklyPersonViewController @"kWeeklyPersonViewController"
+#define kSchedueViewController @"kSchedueViewController"
 
 // TableViewCell
 #define kLeftMenuCell @"kLeftMenuCell"
@@ -35,6 +37,7 @@
 #define kEditInfoCell @"kEditInfoCell"
 #define kRegInformationCell @"kRegInformationCell"
 #define kRegButtonCell @"kRegButtonCell"
+#define kWeeklyPersonCell @"kWeeklyPersonCell"
 
 // Segue
 #define kMyFavortieViewControllerSegue @"kMyFavortieViewController"
@@ -44,6 +47,6 @@
 
 // Slide
 #define kMenuFullWidth 320.0f
-#define kMenuDisplayedWidth 280.0f
+#define kMenuDisplayedWidth 268.0f
 
 #endif

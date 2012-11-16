@@ -7,13 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MiddleAbstractViewController.h"
+#import "MiddleAbstractSecondViewController.h"
 
-@interface EditInfoViewController : MiddleAbstractViewController
-@property (weak, nonatomic) IBOutlet UIImageView *profileAvatar;
-@property (weak, nonatomic) IBOutlet UILabel *name;
-@property (weak, nonatomic) IBOutlet UIImageView *sex;
-@property (weak, nonatomic) IBOutlet UIView *upperView;
+@interface EditInfoViewController : MiddleAbstractSecondViewController
 @property (weak, nonatomic) IBOutlet UITableView *infoTableView;
 
 @end

@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MiddleAbstractSecondViewController.h"
 
-@interface ArrangementViewController : UIViewController
+@interface ArrangementViewController : MiddleAbstractSecondViewController
 @property (weak, nonatomic) IBOutlet UITableView *arrangementTableView;
 
 @end

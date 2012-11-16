@@ -8,8 +8,23 @@
 
 #import <UIKit/UIKit.h>
 
+typedef enum
+{
+    EditInfoCellTypeStudentNumber = 0,
+    EditInfoCellTypeDepartment,
+    EditInfoCellTypeMajor,
+    EditInfoCellTypeYear,
+    EditInfoCellTypePhone,
+    EditInfoCellTypeQQ,
+    EditInfoCellTypeEmail,
+    EditInfoCellTypeWeibo
+} EditInfoCellType;
+
 @interface EditInfoCell : UITableViewCell
 @property (nonatomic ,weak) IBOutlet UILabel *name;
 @property (nonatomic ,weak) IBOutlet UITextField *field;
+@property (nonatomic) EditInfoCellType type;
+
+- (void) setIsEditEnable:(BOOL)isEditEnable;
 
 @end

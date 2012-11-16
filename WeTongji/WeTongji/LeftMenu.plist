@@ -38,9 +38,9 @@
 		</dict>
 		<dict>
 			<key>kTableViewCellName</key>
-			<string>个人资料</string>
+			<string>每周人物</string>
 			<key>kViewControllerIdentifier</key>
-			<string>kEditInfoViewController</string>
+			<string>kWeeklyPersonViewController</string>
 			<key>kNeedLogin</key>
 			<false/>
 		</dict>

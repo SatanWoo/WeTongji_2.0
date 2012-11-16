@@ -2,7 +2,7 @@
 //  Course.m
 //  WeTongji
 //
-//  Created by tang zhixiong on 12-11-11.
+//  Created by tang zhixiong on 12-11-16.
 //
 //
 
@@ -11,6 +11,7 @@
 
 @implementation Course
 
+@dynamic begin_day;
 @dynamic begin_section;
 @dynamic course_id;
 @dynamic credit_hours;
@@ -20,10 +21,5 @@
 @dynamic teacher_name;
 @dynamic week_day;
 @dynamic week_type;
-@dynamic begin_day;
-@dynamic begin_time;
-@dynamic end_time;
-@dynamic what;
-@dynamic where;
 
 @end

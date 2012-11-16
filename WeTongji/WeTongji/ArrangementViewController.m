@@ -13,27 +13,16 @@
 
 @interface ArrangementViewController () <UITableViewDataSource, UITableViewDelegate>
 - (void)configureTableView;
-@property (nonatomic ,strong) WUArrangementSectionHeaderView *header;
 @end
 
 @implementation ArrangementViewController
 @synthesize arrangementTableView;
-@synthesize header = _header;
 
 #pragma mark - Private Method
 - (void)configureTableView
 {
     [self.arrangementTableView registerNib:[UINib nibWithNibName:@"ArrangementCell" bundle:nil] forCellReuseIdentifier:kArrangementCell];
     self.arrangementTableView.backgroundColor = [UIColor clearColor];
-}
-
-#pragma mark - Setter & Getter
-- (WUArrangementSectionHeaderView *)header
-{
-    if (_header == nil) {
-        _header = [[[NSBundle mainBundle] loadNibNamed:@"WUArrangementSectionHeaderView" owner:self options:nil] objectAtIndex:0];
-    }
-    return _header;
 }
 
 #pragma mark - Life Cycle
@@ -74,12 +63,18 @@
 
 - (float)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return 100;
+    return 5;
+}
+
+-(CGFloat)tableView:(UITableView*)tableView heightForFooterInSection:(NSInteger)section
+{
+    return 15.0;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    return self.header;
+    WUArrangementSectionHeaderView *headerView = [[[NSBundle mainBundle] loadNibNamed:@"WUArrangementSectionHeaderView" owner:self options:nil] objectAtIndex:0];
+    return headerView;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -91,4 +86,8 @@
     return cell;
 }
 
+-(UIView*)tableView:(UITableView*)tableView viewForFooterInSection:(NSInteger)section
+{
+    return [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
+}
 @end

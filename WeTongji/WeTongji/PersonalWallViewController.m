@@ -15,13 +15,19 @@
 #import "WUTapImageView.h"
 #import "WUScrollBackgroundView.h"
 #import "WUPageControlViewController.h"
+#import <WeTongjiSDK/WeTongjiSDK.h>
 
 #define kContentOffSet 168
 #define kRowHeight 44
 #define kStateY -150
 
 @interface PersonalWallViewController () <UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate>
+{
+    CGPoint originPageControlViewCenter;
+    CGPoint originScheduleTableViewCenter;
+}
 @property (nonatomic, assign) BOOL isAnimationFinished;
+@property (weak, nonatomic) IBOutlet UIView *headerBoard;
 @property (nonatomic, strong) WUPageControlViewController *pageViewController;
 - (void)configureTableView;
 - (void)didTap:(UITapGestureRecognizer *)recognizer;
@@ -39,11 +45,12 @@
     [self.scheduleTableView registerNib:[UINib nibWithNibName:@"FavoriteCell" bundle:nil] forCellReuseIdentifier:kFavoriteCell];
     [self.scheduleTableView registerNib:[UINib nibWithNibName:@"PersonalInfoCell" bundle:nil] forCellReuseIdentifier:kPersonalInfoCell];
     [self.scheduleTableView registerNib:[UINib nibWithNibName:@"ScheduleCell" bundle:nil] forCellReuseIdentifier:kScheduleCell];
-    
+    originScheduleTableViewCenter = self.scheduleTableView.center;
+    [self.view insertSubview:self.pageViewController.view belowSubview:self.headerBoard];
     self.scheduleTableView.contentInset = UIEdgeInsetsMake(kContentOffSet, 0.0f, 0.0f, 0.0f);
     self.scheduleTableView.backgroundColor =[UIColor clearColor];
-    
-    [self.view insertSubview:self.pageViewController.view belowSubview:self.scheduleTableView];
+    CGPoint center = CGPointMake(self.headerBoard.center.x, (-self.scheduleTableView.contentOffset.y)/2);
+    [self.headerBoard setCenter:center];
 }
 
 #pragma mark - Tap
@@ -51,13 +58,15 @@
 {
     self.isAnimationFinished = false;
     [UIView animateWithDuration:0.55f animations:^{
-        self.scheduleTableView.frame = self.view.frame;
+        [self.scheduleTableView setCenter:originScheduleTableViewCenter];
     } completion:^(BOOL finished) {
         self.scheduleTableView.userInteractionEnabled = YES;
     }];
     
     [UIView animateWithDuration:0.8f animations:^{
-        self.pageViewController.view.frame = CGRectMake(0, kStateY, self.pageViewController.view.frame.size.width, self.pageViewController.view.frame.size.height);
+        [self.pageViewController.view setCenter:originPageControlViewCenter];
+        CGPoint center = CGPointMake(self.headerBoard.center.x, (-self.scheduleTableView.contentOffset.y)/2);
+        [self.headerBoard setCenter:center];
     } completion:^(BOOL finished) {
         self.pageViewController.view.userInteractionEnabled = NO;
     }];
@@ -71,7 +80,6 @@
     } completion:^(BOOL finished) {
         self.scheduleTableView.userInteractionEnabled = YES;
     }];
-    
     [UIView animateWithDuration:0.8f animations:^{
         self.pageViewController.view.frame = CGRectMake(0, kStateY, self.pageViewController.view.frame.size.width, self.pageViewController.view.frame.size.height);
     } completion:^(BOOL finished) {
@@ -96,6 +104,7 @@
         [_pageViewController addPicture:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"scaleview.png"]]];
         [_pageViewController addPicture:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"scaleview.png"]]];
         [_pageViewController addPicture:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"scaleview.png"]]];
+        originPageControlViewCenter = _pageViewController.view.center;
     }
     
     return _pageViewController;
@@ -108,11 +117,17 @@
 {
     [super viewDidLoad];
     [self configureTableView];
-	// Do any additional setup after loading the view.
+    WTClient * client = [WTClient  getClient];
+    [client setCompletionBlock:^(id responseData)
+    {
+        NSLog(@"%@",responseData);
+    }];
+    [client getScheduleWithBeginDate:[NSDate dateWithTimeIntervalSince1970:0]  endDate:[NSDate dateWithTimeIntervalSinceNow:100000000]];
 }
 
 - (void)viewDidUnload
 {
+    [self setHeaderBoard:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -178,6 +193,10 @@
         [self performSegueWithIdentifier:kArrangementViewControllerSegue sender:self];
     } else if (indexPath.section == 1) {
         [self performSegueWithIdentifier:kMyFavortieViewControllerSegue sender:self];
+    } else if (indexPath.section == 2) {
+        [self performSegueWithIdentifier:kEditInfoViewController sender:self];
+    } else if (indexPath.section == 3) {
+        [self performSegueWithIdentifier:kSchedueViewController sender:self];
     }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
@@ -188,22 +207,25 @@
     
     float rate = (scrollView.contentOffset.y + kContentOffSet) / -kRowHeight;
     
-    if (rate > 2) {
+    if (rate > 2)
+    {
         self.isAnimationFinished = true;
         [UIView animateWithDuration:0.25f animations:^{
             self.scheduleTableView.frame = CGRectMake(0, self.view.frame.size.height, self.scheduleTableView.frame.size.width, self.scheduleTableView.frame.size.height);
             self.pageViewController.view.frame = CGRectMake(0,0, self.pageViewController.view.frame.size.width, self.pageViewController.view.frame.size.height);
+            CGPoint center = CGPointMake(self.headerBoard.center.x, (self.pageViewController.view.frame.size.height)/2);
+            [self.headerBoard setCenter:center];
         } completion:^(BOOL finished) {
-           self.pageViewController.view.userInteractionEnabled = YES;
+            self.pageViewController.view.userInteractionEnabled = YES;
             self.scheduleTableView.userInteractionEnabled = NO;
         }];
-    } else if (self.isAnimationFinished == false) {
-        [UIView animateWithDuration:0.05f animations:^{
+    } else
+        if (self.isAnimationFinished == false)
+        {
             self.pageViewController.view.frame = CGRectMake(0, kStateY + velocity * rate, self.pageViewController.view.frame.size.width, self.pageViewController.view.frame.size.height);
-        } completion:^(BOOL finished) {
-            
-        }];
-    }
+            CGPoint center = CGPointMake(self.headerBoard.center.x, (-scrollView.contentOffset.y)/2);
+            [self.headerBoard setCenter:center];
+        }
 }
 
 @end
