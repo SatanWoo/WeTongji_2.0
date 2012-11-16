@@ -19,6 +19,7 @@
 #define kLoginViewController @"kLoginViewController"
 #define kWeeklyPersonViewController @"kWeeklyPersonViewController"
 #define kSchedueViewController @"kSchedueViewController"
+#define kWUKenBurnsViewController @"kWUKenBurnsViewController"
 
 // TableViewCell
 #define kLeftMenuCell @"kLeftMenuCell"

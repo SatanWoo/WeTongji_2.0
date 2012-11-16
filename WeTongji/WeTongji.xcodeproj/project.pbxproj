@@ -14,6 +14,8 @@
 		03326A4E16567FE3005E8A16 /* default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 03326A4C16567FE3005E8A16 /* default@2x.png */; };
 		03326A5116568507005E8A16 /* partition_line_new.png in Resources */ = {isa = PBXBuildFile; fileRef = 03326A4F16568507005E8A16 /* partition_line_new.png */; };
 		03326A5216568507005E8A16 /* partition_line_new@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 03326A5016568507005E8A16 /* partition_line_new@2x.png */; };
+		03326A55165689AD005E8A16 /* WUKenBurnsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03326A54165689AD005E8A16 /* WUKenBurnsViewController.m */; };
+		03326A5C16568FA8005E8A16 /* JBKenBurnsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03326A5B16568FA8005E8A16 /* JBKenBurnsView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		0355150B1652771F0058EC06 /* favorite.png in Resources */ = {isa = PBXBuildFile; fileRef = 035515031652771F0058EC06 /* favorite.png */; };
 		0355150C1652771F0058EC06 /* favorite@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 035515041652771F0058EC06 /* favorite@2x.png */; };
 		0355150D1652771F0058EC06 /* info.png in Resources */ = {isa = PBXBuildFile; fileRef = 035515051652771F0058EC06 /* info.png */; };
@@ -375,6 +377,10 @@
 		03326A4C16567FE3005E8A16 /* default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default@2x.png"; sourceTree = "<group>"; };
 		03326A4F16568507005E8A16 /* partition_line_new.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = partition_line_new.png; sourceTree = "<group>"; };
 		03326A5016568507005E8A16 /* partition_line_new@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "partition_line_new@2x.png"; sourceTree = "<group>"; };
+		03326A53165689AD005E8A16 /* WUKenBurnsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WUKenBurnsViewController.h; sourceTree = "<group>"; };
+		03326A54165689AD005E8A16 /* WUKenBurnsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WUKenBurnsViewController.m; sourceTree = "<group>"; };
+		03326A5A16568FA8005E8A16 /* JBKenBurnsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBKenBurnsView.h; sourceTree = "<group>"; };
+		03326A5B16568FA8005E8A16 /* JBKenBurnsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBKenBurnsView.m; sourceTree = "<group>"; };
 		035515031652771F0058EC06 /* favorite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = favorite.png; sourceTree = "<group>"; };
 		035515041652771F0058EC06 /* favorite@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "favorite@2x.png"; sourceTree = "<group>"; };
 		035515051652771F0058EC06 /* info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info.png; sourceTree = "<group>"; };
@@ -1001,6 +1007,8 @@
 		E514583516463ED400533761 /* UIView */ = {
 			isa = PBXGroup;
 			children = (
+				03326A5A16568FA8005E8A16 /* JBKenBurnsView.h */,
+				03326A5B16568FA8005E8A16 /* JBKenBurnsView.m */,
 				03E6FBAF1655339E00A3E60C /* TransparentTableHeaderView.h */,
 				03E6FBB01655339F00A3E60C /* TransparentTableHeaderView.m */,
 				03E6FBB11655339F00A3E60C /* TransparentTableHeaderView.xib */,
@@ -1182,6 +1190,8 @@
 			children = (
 				E52352CF1631918C00DBFF7C /* LeftMenuViewController.h */,
 				E52352D01631918C00DBFF7C /* LeftMenuViewController.m */,
+				03326A53165689AD005E8A16 /* WUKenBurnsViewController.h */,
+				03326A54165689AD005E8A16 /* WUKenBurnsViewController.m */,
 			);
 			name = LeftMenu;
 			sourceTree = "<group>";
@@ -2040,6 +2050,8 @@
 				FFB210011655DA0900FCAF5F /* ScheduleWeekRightTableViewCellContentView.m in Sources */,
 				FFB210021655DA0900FCAF5F /* ScheduleWeekViewController.m in Sources */,
 				FFB210041655DA0900FCAF5F /* ScheduleWeekLeftTableView.m in Sources */,
+				03326A55165689AD005E8A16 /* WUKenBurnsViewController.m in Sources */,
+				03326A5C16568FA8005E8A16 /* JBKenBurnsView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
