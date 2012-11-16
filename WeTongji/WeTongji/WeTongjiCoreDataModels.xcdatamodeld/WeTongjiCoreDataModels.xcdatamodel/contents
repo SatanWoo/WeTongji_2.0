@@ -23,6 +23,7 @@
         <attribute name="beginTime" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="canFavorite" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="canLike" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="canSchedule" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="channelId" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="createAt" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="detail" optional="YES" attributeType="String" syncable="YES"/>
@@ -38,7 +39,7 @@
         <attribute name="status" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
-    <entity name="Exam" syncable="YES">
+    <entity name="Exam" representedClassName="Exam" parentEntity="AbstractActivity" syncable="YES">
         <attribute name="begin" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="end" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="hours" optional="YES" attributeType="String" syncable="YES"/>
@@ -103,7 +104,7 @@
     <elements>
         <element name="AbstractActivity" positionX="160" positionY="192" width="128" height="105"/>
         <element name="Course" positionX="160" positionY="192" width="128" height="195"/>
-        <element name="Event" positionX="160" positionY="192" width="128" height="315"/>
+        <element name="Event" positionX="160" positionY="192" width="128" height="330"/>
         <element name="Exam" positionX="160" positionY="192" width="128" height="180"/>
         <element name="Information" positionX="160" positionY="192" width="128" height="255"/>
         <element name="Star" positionX="160" positionY="192" width="128" height="255"/>

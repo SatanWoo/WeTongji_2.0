@@ -220,6 +220,8 @@
 		FFB1387F165681B000D73C71 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB1387E165681B000D73C71 /* Default@2x.png */; };
 		FFB138821656820200D73C71 /* default.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB138801656820200D73C71 /* default.png */; };
 		FFB138831656820200D73C71 /* default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB138811656820200D73C71 /* default@2x.png */; };
+		FFB138A0165691F400D73C71 /* Exam.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB1389F165691F400D73C71 /* Exam.m */; };
+		FFB138A316569D3B00D73C71 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB138A216569D3B00D73C71 /* Event.m */; };
 		FFB20FD21655D64A00FCAF5F /* NSDate+TKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB20FBF1655D64A00FCAF5F /* NSDate+TKCategory.m */; };
 		FFB20FD31655D64A00FCAF5F /* TapDetectingView.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB20FC11655D64A00FCAF5F /* TapDetectingView.m */; };
 		FFB20FD41655D64A00FCAF5F /* TKCalendarDayEventView.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB20FC31655D64A00FCAF5F /* TKCalendarDayEventView.m */; };
@@ -319,7 +321,6 @@
 		FFBEB2CB164B943A0004AF4C /* Event+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBEB2CA164B943A0004AF4C /* Event+Addition.m */; };
 		FFBEB2F5164B9CF70004AF4C /* NSString+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBEB2F4164B9CF70004AF4C /* NSString+Addition.m */; };
 		FFBEB2F8164BA0760004AF4C /* NSArray+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBEB2F7164BA0760004AF4C /* NSArray+Addition.m */; };
-		FFBEB31D164BBFA00004AF4C /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBEB31C164BBFA00004AF4C /* Event.m */; };
 		FFBF9A1C1648439300E3D610 /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBF9A1B1648439300E3D610 /* libz.1.2.5.dylib */; };
 		FFBF9A1F1648439B00E3D610 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBF9A1E1648439B00E3D610 /* CFNetwork.framework */; };
 		FFBF9A21164843A100E3D610 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBF9A20164843A100E3D610 /* MobileCoreServices.framework */; };
@@ -627,6 +628,10 @@
 		FFB138801656820200D73C71 /* default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default.png; sourceTree = "<group>"; };
 		FFB138811656820200D73C71 /* default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default@2x.png"; sourceTree = "<group>"; };
 		FFB1388A1656871F00D73C71 /* WeTongjiSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = WeTongjiSDK.xcodeproj; path = ../../../wetongji_ios_sdk/WeTongjiSDK.xcodeproj; sourceTree = "<group>"; };
+		FFB1389E165691F400D73C71 /* Exam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exam.h; sourceTree = "<group>"; };
+		FFB1389F165691F400D73C71 /* Exam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Exam.m; sourceTree = "<group>"; };
+		FFB138A116569D3B00D73C71 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
+		FFB138A216569D3B00D73C71 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
 		FFB20FBE1655D64A00FCAF5F /* NSDate+TKCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+TKCategory.h"; sourceTree = "<group>"; };
 		FFB20FBF1655D64A00FCAF5F /* NSDate+TKCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+TKCategory.m"; sourceTree = "<group>"; };
 		FFB20FC01655D64A00FCAF5F /* TapDetectingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TapDetectingView.h; sourceTree = "<group>"; };
@@ -750,8 +755,6 @@
 		FFBEB2F4164B9CF70004AF4C /* NSString+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Addition.m"; sourceTree = "<group>"; };
 		FFBEB2F6164BA0760004AF4C /* NSArray+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Addition.h"; sourceTree = "<group>"; };
 		FFBEB2F7164BA0760004AF4C /* NSArray+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Addition.m"; sourceTree = "<group>"; };
-		FFBEB31B164BBFA00004AF4C /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
-		FFBEB31C164BBFA00004AF4C /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
 		FFBF9A1B1648439300E3D610 /* libz.1.2.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.5.dylib; path = usr/lib/libz.1.2.5.dylib; sourceTree = SDKROOT; };
 		FFBF9A1E1648439B00E3D610 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		FFBF9A20164843A100E3D610 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
@@ -1552,8 +1555,8 @@
 		FFBEB2AF164B88450004AF4C /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				FFBEB31B164BBFA00004AF4C /* Event.h */,
-				FFBEB31C164BBFA00004AF4C /* Event.m */,
+				FFB138A116569D3B00D73C71 /* Event.h */,
+				FFB138A216569D3B00D73C71 /* Event.m */,
 				FF7109AF164D39BB008F2A06 /* Information.h */,
 				FF7109B0164D39BB008F2A06 /* Information.m */,
 				FF7109AC164D382D008F2A06 /* Star.h */,
@@ -1564,6 +1567,8 @@
 				FF6E952E16537E92002497FA /* User.m */,
 				FFB2108B16565EA900FCAF5F /* AbstractActivity.h */,
 				FFB2108C16565EAB00FCAF5F /* AbstractActivity.m */,
+				FFB1389E165691F400D73C71 /* Exam.h */,
+				FFB1389F165691F400D73C71 /* Exam.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -1975,7 +1980,6 @@
 				FFBEB2CB164B943A0004AF4C /* Event+Addition.m in Sources */,
 				FFBEB2F5164B9CF70004AF4C /* NSString+Addition.m in Sources */,
 				FFBEB2F8164BA0760004AF4C /* NSArray+Addition.m in Sources */,
-				FFBEB31D164BBFA00004AF4C /* Event.m in Sources */,
 				FF710971164CFBE5008F2A06 /* EGORefreshTableFooterView.m in Sources */,
 				FF710978164D0A77008F2A06 /* EGORefreshTableHeaderView.m in Sources */,
 				FF710995164D1EB0008F2A06 /* Information+Addition.m in Sources */,
@@ -2019,6 +2023,8 @@
 				FFB2108116565BA500FCAF5F /* ScheduleWeekRightTableViewCellContentView.m in Sources */,
 				FFB2108716565DE800FCAF5F /* Course.m in Sources */,
 				FFB2108D16565EB000FCAF5F /* AbstractActivity.m in Sources */,
+				FFB138A0165691F400D73C71 /* Exam.m in Sources */,
+				FFB138A316569D3B00D73C71 /* Event.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

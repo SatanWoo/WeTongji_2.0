@@ -43,8 +43,9 @@
     result.schedule = [NSNumber numberWithInt:[[dict objectForKey:@"Schedule"] intValue]];
     result.canFavorite = [NSNumber numberWithInt:[[dict objectForKey:@"CanFavorite"] intValue]];
     result.canLike = [NSNumber numberWithInt:[[dict objectForKey:@"CanLike"] intValue]];
+    result.canSchedule = [NSNumber numberWithInt:[[dict objectForKey:@"CanSchedule"] intValue]];
     result.begin_time = result.beginTime;
-    result.end_time = result.end_time;
+    result.end_time = result.endTime;
     result.what = result.title;
     result.where =result.location;
     return result;
@@ -75,6 +76,27 @@
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     [fetchRequest setEntity:[NSEntityDescription entityForName:@"Event" inManagedObjectContext:context]];
     NSArray *items = [context executeFetchRequest:fetchRequest error:NULL];
+    for (NSManagedObject *managedObject in items)
+        [context deleteObject:managedObject];
+}
+
++ (NSArray *)allScheduledEventsInManagedObjectContext:(NSManagedObjectContext *)context
+{
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    
+    [request setEntity:[NSEntityDescription entityForName:@"Event" inManagedObjectContext:context]];
+    [request setPredicate:[NSPredicate predicateWithFormat:@"canSchedule == 0"]];
+    
+    NSArray *result = [context executeFetchRequest:request error:NULL];
+    return result;
+}
++ (void) clearAllScheduledEventInManagedObjectContext:(NSManagedObjectContext *)context
+{
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    
+    [request setEntity:[NSEntityDescription entityForName:@"Event" inManagedObjectContext:context]];
+    [request setPredicate:[NSPredicate predicateWithFormat:@"canSchedule == 0"]];
+    NSArray *items = [context executeFetchRequest:request error:NULL];
     for (NSManagedObject *managedObject in items)
         [context deleteObject:managedObject];
 }

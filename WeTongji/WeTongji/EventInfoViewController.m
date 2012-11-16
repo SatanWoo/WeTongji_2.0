@@ -256,9 +256,12 @@
                 event.hidden = [NSNumber numberWithBool:NO];
             }
             self.nextPage = [[NSString stringWithFormat:@"%@", [responseData objectForKey:@"NextPager"]] intValue];
-            NSLog(@"%d",self.nextPage);
             if (self.nextPage == 0) [self.pullRefreshManagement setNoMoreData:YES];
             [self.pullRefreshManagement endLoading];
+            for ( Event * event in [Event allEventsInManagedObjectContext:self.managedObjectContext])
+            {
+                NSLog(@"%@ : %@",event.canSchedule,event.title);
+            }
         }
         failureBlock:^(NSError * error)
         {

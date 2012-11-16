@@ -11,6 +11,7 @@
 #import <WeTongjiSDK/WeTongjiSDK.h>
 #import "NSString+Addition.h"
 #import "Course+Addition.h"
+#import "Event+Addition.h"
 
 @interface ScheduleViewController ()
 
@@ -58,9 +59,26 @@
         }
         NSDate *semesterEndDate = [semesterBeginDate dateByAddingTimeInterval:60 * 60 * 24 * 7 * semesterWeekCount];
         [NSUserDefaults setCurrentSemesterBeginTime:semesterBeginDate endTime:semesterEndDate];
-        [self.view addSubview:self.scheduleWeekViewController.view];
+        [self loadScheduleActivity];
     }failureBlock:^(NSError *error){}];
     [request getCourses];
+    [client enqueueRequest:request];
+}
+
+- (void)loadScheduleActivity
+{
+    WTClient * client = [WTClient sharedClient];
+    WTRequest * request = [WTRequest  requestWithSuccessBlock:^(id responseData)
+    {
+        NSLog(@"%@",responseData);
+        NSArray * events = [responseData objectForKey:@"Activities"];
+        for ( NSDictionary * dict in events )
+        {
+            [Event insertActivity:dict inManagedObjectContext:self.managedObjectContext];
+        }
+        [self.view addSubview:self.scheduleWeekViewController.view];
+    }failureBlock:^(NSError *error){}];
+    [request getScheduleWithBeginDate:[NSUserDefaults getCurrentSemesterBeginDate] endDate:[NSUserDefaults getCurrentSemesterEndDate]];
     [client enqueueRequest:request];
 }
 

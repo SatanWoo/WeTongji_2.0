@@ -86,9 +86,14 @@
     NSPredicate *beginPredicate = [NSPredicate predicateWithFormat:@"begin_time >= %@", [semesterBegin dateByAddingTimeInterval:timeInterval]];
     NSPredicate *endPredicate = [NSPredicate predicateWithFormat:@"begin_time < %@", [semesterBegin dateByAddingTimeInterval:timeInterval + DAY_TIME_INTERVAL]];
     [request setPredicate:[NSCompoundPredicate andPredicateWithSubpredicates:[NSArray arrayWithObjects: beginPredicate, endPredicate, nil]]];
-        
     NSArray *result = [self.managedObjectContext executeFetchRequest:request error:NULL];
-    return result;
+    
+    NSFetchRequest *requestEvent = [[NSFetchRequest alloc] init];
+    [requestEvent setEntity:[NSEntityDescription entityForName:@"Event" inManagedObjectContext:self.managedObjectContext]];
+    NSPredicate * schedule = [NSPredicate predicateWithFormat:@"canSchedule == %@",[NSNumber numberWithBool:NO]];
+    [requestEvent setPredicate:[NSCompoundPredicate andPredicateWithSubpredicates:[NSArray arrayWithObjects: beginPredicate, endPredicate,schedule,nil]]];
+    NSArray *resultEvent = [self.managedObjectContext executeFetchRequest:requestEvent error:NULL];
+    return [result arrayByAddingObjectsFromArray:resultEvent];
 }
 
 #pragma mark -
