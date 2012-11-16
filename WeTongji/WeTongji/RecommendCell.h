@@ -14,5 +14,6 @@
 @property (nonatomic ,weak) IBOutlet UILabel *source;
 @property (nonatomic ,weak) IBOutlet UIImageView *icon;
 @property (nonatomic ,weak) IBOutlet UILabel *count;
+@property (nonatomic ,weak) IBOutlet UIImageView *preview;
 
 @end
