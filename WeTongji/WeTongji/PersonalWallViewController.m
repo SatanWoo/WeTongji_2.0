@@ -21,6 +21,10 @@
 #define kStateY -150
 
 @interface PersonalWallViewController () <UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate>
+{
+    CGPoint originPageControlViewCenter;
+    CGPoint originScheduleTableViewCenter;
+}
 @property (nonatomic, assign) BOOL isAnimationFinished;
 @property (nonatomic, strong) WUPageControlViewController *pageViewController;
 - (void)configureTableView;
@@ -39,7 +43,7 @@
     [self.scheduleTableView registerNib:[UINib nibWithNibName:@"FavoriteCell" bundle:nil] forCellReuseIdentifier:kFavoriteCell];
     [self.scheduleTableView registerNib:[UINib nibWithNibName:@"PersonalInfoCell" bundle:nil] forCellReuseIdentifier:kPersonalInfoCell];
     [self.scheduleTableView registerNib:[UINib nibWithNibName:@"ScheduleCell" bundle:nil] forCellReuseIdentifier:kScheduleCell];
-    
+    originScheduleTableViewCenter = self.scheduleTableView.center;
     [self.view insertSubview:self.pageViewController.view belowSubview:self.scheduleTableView];
     self.scheduleTableView.contentInset = UIEdgeInsetsMake(kContentOffSet, 0.0f, 0.0f, 0.0f);
     self.scheduleTableView.backgroundColor =[UIColor clearColor];
@@ -51,13 +55,13 @@
 {
     self.isAnimationFinished = false;
     [UIView animateWithDuration:0.55f animations:^{
-        self.scheduleTableView.frame = self.view.frame;
+        [self.scheduleTableView setCenter:originScheduleTableViewCenter];
     } completion:^(BOOL finished) {
         self.scheduleTableView.userInteractionEnabled = YES;
     }];
     
     [UIView animateWithDuration:0.8f animations:^{
-        self.pageViewController.view.frame = CGRectMake(0, kStateY, self.pageViewController.view.frame.size.width, self.pageViewController.view.frame.size.height);
+        [self.pageViewController.view setCenter:originPageControlViewCenter];
     } completion:^(BOOL finished) {
         self.pageViewController.view.userInteractionEnabled = NO;
     }];
@@ -71,7 +75,6 @@
     } completion:^(BOOL finished) {
         self.scheduleTableView.userInteractionEnabled = YES;
     }];
-    
     [UIView animateWithDuration:0.8f animations:^{
         self.pageViewController.view.frame = CGRectMake(0, kStateY, self.pageViewController.view.frame.size.width, self.pageViewController.view.frame.size.height);
     } completion:^(BOOL finished) {
@@ -96,6 +99,7 @@
         [_pageViewController addPicture:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"scaleview.png"]]];
         [_pageViewController addPicture:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"scaleview.png"]]];
         [_pageViewController addPicture:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"scaleview.png"]]];
+        originPageControlViewCenter = _pageViewController.view.center;
     }
     
     return _pageViewController;
@@ -190,7 +194,8 @@
     
     float rate = (scrollView.contentOffset.y + kContentOffSet) / -kRowHeight;
     
-    if (rate > 2) {
+    if (rate > 2)
+    {
         self.isAnimationFinished = true;
         [UIView animateWithDuration:0.25f animations:^{
             self.scheduleTableView.frame = CGRectMake(0, self.view.frame.size.height, self.scheduleTableView.frame.size.width, self.scheduleTableView.frame.size.height);
@@ -199,13 +204,11 @@
             self.pageViewController.view.userInteractionEnabled = YES;
             self.scheduleTableView.userInteractionEnabled = NO;
         }];
-    } else if (self.isAnimationFinished == false) {
-        [UIView animateWithDuration:0.05f animations:^{
+    } else
+        if (self.isAnimationFinished == false)
+        {
             self.pageViewController.view.frame = CGRectMake(0, kStateY + velocity * rate, self.pageViewController.view.frame.size.width, self.pageViewController.view.frame.size.height);
-        } completion:^(BOOL finished) {
-            
-        }];
-    }
+        }
 }
 
 @end
