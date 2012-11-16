@@ -29,7 +29,6 @@
 - (void)configureTableView;
 - (void)didTap:(UITapGestureRecognizer *)recognizer;
 @property (weak, nonatomic) IBOutlet UIImageView *buttonBackImageView;
-
 @property (nonatomic, strong) WUTableHeaderView *headerView;
 @property (nonatomic, strong) WUPageControlViewController *pageViewController;
 @property (nonatomic, assign) BOOL isAnimationFinished;
