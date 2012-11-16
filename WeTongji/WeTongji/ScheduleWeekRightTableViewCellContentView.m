@@ -9,6 +9,8 @@
 #import "ScheduleWeekRightTableViewCellContentView.h"
 #import "ScheduleWeekViewController.h"
 #import "Course+Addition.h"
+#import "Event+Addition.h"
+#import "AbstractActivity.h"
 
 #define MINUTE_TO_HEIGHT_RATIO (LEFT_CELL_HEIGHT / 60.)
 #define VERTICAL_OFFSET (self.frame.size.height / 4)
@@ -70,7 +72,7 @@
     //draw events rect
     CGContextSetLineWidth(context, 1.0f);
     CGFloat alpha = 0.6f;
-    for(Course * event in self.dataArray) {
+    for(AbstractActivity * event in self.dataArray) {
         UIColor *strokeColor = nil;
         if([event isMemberOfClass:[Course class]]) {
             Course *course = (Course *)event;
@@ -81,6 +83,9 @@
                 strokeColor = [UIColor colorWithRed:79 / 255. green:178 / 255. blue:43 / 255. alpha:1];
                 CGContextSetRGBFillColor(context, 135 / 255., 200 / 255., 76 / 255., alpha);
             }
+        } else if([event isMemberOfClass:[Event class]]) {
+            strokeColor = [UIColor colorWithRed:253 / 255. green:186 / 255. blue:81 / 255. alpha:1];
+            CGContextSetRGBFillColor(context, 255 / 255., 208 / 255., 52 / 255., alpha);
         } else
             continue;
         

@@ -15,6 +15,7 @@
 #import "WUTapImageView.h"
 #import "WUScrollBackgroundView.h"
 #import "WUPageControlViewController.h"
+#import <WeTongjiSDK/WeTongjiSDK.h>
 
 #define kContentOffSet 168
 #define kRowHeight 44
@@ -116,7 +117,12 @@
 {
     [super viewDidLoad];
     [self configureTableView];
-	// Do any additional setup after loading the view.
+    WTClient * client = [WTClient  getClient];
+    [client setCompletionBlock:^(id responseData)
+    {
+        NSLog(@"%@",responseData);
+    }];
+    [client getScheduleWithBeginDate:[NSDate dateWithTimeIntervalSince1970:0]  endDate:[NSDate dateWithTimeIntervalSinceNow:100000000]];
 }
 
 - (void)viewDidUnload

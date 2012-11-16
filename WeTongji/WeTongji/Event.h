@@ -8,9 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import "AbstractActivity.h"
 
 
-@interface Event : NSManagedObject
+@interface Event : AbstractActivity
 
 @property (nonatomic, retain) NSString * activityId;
 @property (nonatomic, retain) NSDate * beginTime;

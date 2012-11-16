@@ -54,8 +54,6 @@
 		03BAB35F164FD01B0049DA19 /* Icon-Small-58@2x.png.png in Resources */ = {isa = PBXBuildFile; fileRef = 03BAB35B164FD01B0049DA19 /* Icon-Small-58@2x.png.png */; };
 		03BAB360164FD01B0049DA19 /* Icon@2x.png.png in Resources */ = {isa = PBXBuildFile; fileRef = 03BAB35C164FD01B0049DA19 /* Icon@2x.png.png */; };
 		03BAB361164FD01B0049DA19 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = 03BAB35D164FD01B0049DA19 /* iTunesArtwork.png */; };
-		03BAB364164FD0530049DA19 /* default.png in Resources */ = {isa = PBXBuildFile; fileRef = 03BAB362164FD0530049DA19 /* default.png */; };
-		03BAB365164FD0530049DA19 /* default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 03BAB363164FD0530049DA19 /* default@2x.png */; };
 		03BAB367164FD06B0049DA19 /* Icon-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 03BAB366164FD06B0049DA19 /* Icon-57.png */; };
 		03BAB369164FD0720049DA19 /* Icon@2x.png.png in Resources */ = {isa = PBXBuildFile; fileRef = 03BAB368164FD0720049DA19 /* Icon@2x.png.png */; };
 		03BAB393164FDB620049DA19 /* bottom_bar.png in Resources */ = {isa = PBXBuildFile; fileRef = 03BAB389164FDB620049DA19 /* bottom_bar.png */; };
@@ -219,6 +217,9 @@
 		FF7109B1164D39BC008F2A06 /* Information.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7109B0164D39BB008F2A06 /* Information.m */; };
 		FF7109B4164D3AFD008F2A06 /* Star+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7109B3164D3AFC008F2A06 /* Star+Addition.m */; };
 		FF7109BA164D4667008F2A06 /* PullRefreshManagement.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7109B9164D4667008F2A06 /* PullRefreshManagement.m */; };
+		FFB1387F165681B000D73C71 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB1387E165681B000D73C71 /* Default@2x.png */; };
+		FFB138821656820200D73C71 /* default.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB138801656820200D73C71 /* default.png */; };
+		FFB138831656820200D73C71 /* default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB138811656820200D73C71 /* default@2x.png */; };
 		FFB20FD21655D64A00FCAF5F /* NSDate+TKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB20FBF1655D64A00FCAF5F /* NSDate+TKCategory.m */; };
 		FFB20FD31655D64A00FCAF5F /* TapDetectingView.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB20FC11655D64A00FCAF5F /* TapDetectingView.m */; };
 		FFB20FD41655D64A00FCAF5F /* TKCalendarDayEventView.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB20FC31655D64A00FCAF5F /* TKCalendarDayEventView.m */; };
@@ -234,7 +235,6 @@
 		FFB20FFE1655DA0900FCAF5F /* ScheduleWeekLeftTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFB20FF21655DA0900FCAF5F /* ScheduleWeekLeftTableViewCell.xib */; };
 		FFB20FFF1655DA0900FCAF5F /* ScheduleWeekRightTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB20FF41655DA0900FCAF5F /* ScheduleWeekRightTableViewCell.m */; };
 		FFB210001655DA0900FCAF5F /* ScheduleWeekRightTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFB20FF51655DA0900FCAF5F /* ScheduleWeekRightTableViewCell.xib */; };
-		FFB210011655DA0900FCAF5F /* ScheduleWeekRightTableViewCellContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB20FF71655DA0900FCAF5F /* ScheduleWeekRightTableViewCellContentView.m */; };
 		FFB210021655DA0900FCAF5F /* ScheduleWeekViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB20FF91655DA0900FCAF5F /* ScheduleWeekViewController.m */; };
 		FFB210031655DA0900FCAF5F /* ScheduleWeekViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFB20FFA1655DA0900FCAF5F /* ScheduleWeekViewController.xib */; };
 		FFB210041655DA0900FCAF5F /* ScheduleWeekLeftTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB20FFC1655DA0900FCAF5F /* ScheduleWeekLeftTableView.m */; };
@@ -296,7 +296,9 @@
 		FFB210771656130F00FCAF5F /* to_do_list_point_green@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB2103D1656130F00FCAF5F /* to_do_list_point_green@2x.png */; };
 		FFB210781656130F00FCAF5F /* to_do_list_point_yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB2103E1656130F00FCAF5F /* to_do_list_point_yellow.png */; };
 		FFB210791656130F00FCAF5F /* to_do_list_point_yellow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB2103F1656130F00FCAF5F /* to_do_list_point_yellow@2x.png */; };
-		FFB46B2A164FCC2B00C32969 /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB46B29164FCC2B00C32969 /* Course.m */; };
+		FFB2108116565BA500FCAF5F /* ScheduleWeekRightTableViewCellContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB2108016565BA300FCAF5F /* ScheduleWeekRightTableViewCellContentView.m */; };
+		FFB2108716565DE800FCAF5F /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB2108616565DE300FCAF5F /* Course.m */; };
+		FFB2108D16565EB000FCAF5F /* AbstractActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB2108C16565EAB00FCAF5F /* AbstractActivity.m */; };
 		FFB46B2D164FCC6D00C32969 /* Course+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB46B2C164FCC6D00C32969 /* Course+Addition.m */; };
 		FFB4D67F1654729400D863FC /* cancel_edit_hl@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB4D67B1654729400D863FC /* cancel_edit_hl@2x.png */; };
 		FFB4D6801654729400D863FC /* cancel_edit_un@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB4D67C1654729400D863FC /* cancel_edit_un@2x.png */; };
@@ -414,8 +416,6 @@
 		03BAB35B164FD01B0049DA19 /* Icon-Small-58@2x.png.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-58@2x.png.png"; sourceTree = "<group>"; };
 		03BAB35C164FD01B0049DA19 /* Icon@2x.png.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png.png"; sourceTree = "<group>"; };
 		03BAB35D164FD01B0049DA19 /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
-		03BAB362164FD0530049DA19 /* default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default.png; sourceTree = "<group>"; };
-		03BAB363164FD0530049DA19 /* default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default@2x.png"; sourceTree = "<group>"; };
 		03BAB366164FD06B0049DA19 /* Icon-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-57.png"; sourceTree = "<group>"; };
 		03BAB368164FD0720049DA19 /* Icon@2x.png.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png.png"; sourceTree = "<group>"; };
 		03BAB389164FDB620049DA19 /* bottom_bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bottom_bar.png; sourceTree = "<group>"; };
@@ -631,6 +631,9 @@
 		FF7109B8164D4667008F2A06 /* PullRefreshManagement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PullRefreshManagement.h; sourceTree = "<group>"; };
 		FF7109B9164D4667008F2A06 /* PullRefreshManagement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PullRefreshManagement.m; sourceTree = "<group>"; };
 		FFB0370A164BEE5A00157B7D /* WeTongjiSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = WeTongjiSDK.xcodeproj; path = ../WeTongjiSDK/WeTongjiSDK.xcodeproj; sourceTree = "<group>"; };
+		FFB1387E165681B000D73C71 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		FFB138801656820200D73C71 /* default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default.png; sourceTree = "<group>"; };
+		FFB138811656820200D73C71 /* default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default@2x.png"; sourceTree = "<group>"; };
 		FFB20FBE1655D64A00FCAF5F /* NSDate+TKCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+TKCategory.h"; sourceTree = "<group>"; };
 		FFB20FBF1655D64A00FCAF5F /* NSDate+TKCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+TKCategory.m"; sourceTree = "<group>"; };
 		FFB20FC01655D64A00FCAF5F /* TapDetectingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TapDetectingView.h; sourceTree = "<group>"; };
@@ -660,7 +663,6 @@
 		FFB20FF41655DA0900FCAF5F /* ScheduleWeekRightTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScheduleWeekRightTableViewCell.m; sourceTree = "<group>"; };
 		FFB20FF51655DA0900FCAF5F /* ScheduleWeekRightTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScheduleWeekRightTableViewCell.xib; sourceTree = "<group>"; };
 		FFB20FF61655DA0900FCAF5F /* ScheduleWeekRightTableViewCellContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScheduleWeekRightTableViewCellContentView.h; sourceTree = "<group>"; };
-		FFB20FF71655DA0900FCAF5F /* ScheduleWeekRightTableViewCellContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScheduleWeekRightTableViewCellContentView.m; sourceTree = "<group>"; };
 		FFB20FF81655DA0900FCAF5F /* ScheduleWeekViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScheduleWeekViewController.h; sourceTree = "<group>"; };
 		FFB20FF91655DA0900FCAF5F /* ScheduleWeekViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScheduleWeekViewController.m; sourceTree = "<group>"; };
 		FFB20FFA1655DA0900FCAF5F /* ScheduleWeekViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScheduleWeekViewController.xib; sourceTree = "<group>"; };
@@ -724,9 +726,12 @@
 		FFB2103D1656130F00FCAF5F /* to_do_list_point_green@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "to_do_list_point_green@2x.png"; sourceTree = "<group>"; };
 		FFB2103E1656130F00FCAF5F /* to_do_list_point_yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = to_do_list_point_yellow.png; sourceTree = "<group>"; };
 		FFB2103F1656130F00FCAF5F /* to_do_list_point_yellow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "to_do_list_point_yellow@2x.png"; sourceTree = "<group>"; };
+		FFB2108016565BA300FCAF5F /* ScheduleWeekRightTableViewCellContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScheduleWeekRightTableViewCellContentView.m; sourceTree = "<group>"; };
+		FFB2108516565DE100FCAF5F /* Course.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Course.h; sourceTree = "<group>"; };
+		FFB2108616565DE300FCAF5F /* Course.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Course.m; sourceTree = "<group>"; };
+		FFB2108B16565EA900FCAF5F /* AbstractActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractActivity.h; sourceTree = "<group>"; };
+		FFB2108C16565EAB00FCAF5F /* AbstractActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbstractActivity.m; sourceTree = "<group>"; };
 		FFB27CC9164E0E32007A51DE /* PullRefreshManagementDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PullRefreshManagementDelegate.h; sourceTree = "<group>"; };
-		FFB46B28164FCC2B00C32969 /* Course.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Course.h; sourceTree = "<group>"; };
-		FFB46B29164FCC2B00C32969 /* Course.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Course.m; sourceTree = "<group>"; };
 		FFB46B2B164FCC6D00C32969 /* Course+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Course+Addition.h"; sourceTree = "<group>"; };
 		FFB46B2C164FCC6D00C32969 /* Course+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Course+Addition.m"; sourceTree = "<group>"; };
 		FFB4D67B1654729400D863FC /* cancel_edit_hl@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cancel_edit_hl@2x.png"; sourceTree = "<group>"; };
@@ -803,8 +808,8 @@
 		03BAB359164FD0010049DA19 /* icon & Splash */ = {
 			isa = PBXGroup;
 			children = (
-				03BAB362164FD0530049DA19 /* default.png */,
-				03BAB363164FD0530049DA19 /* default@2x.png */,
+				FFB138801656820200D73C71 /* default.png */,
+				FFB138811656820200D73C71 /* default@2x.png */,
 				03BAB35A164FD01B0049DA19 /* Icon-57.png */,
 				03BAB35B164FD01B0049DA19 /* Icon-Small-58@2x.png.png */,
 				03BAB35C164FD01B0049DA19 /* Icon@2x.png.png */,
@@ -890,6 +895,7 @@
 		B00D6911162CFCAC00592B1D = {
 			isa = PBXGroup;
 			children = (
+				FFB1387E165681B000D73C71 /* Default@2x.png */,
 				03BAB368164FD0720049DA19 /* Icon@2x.png.png */,
 				03BAB366164FD06B0049DA19 /* Icon-57.png */,
 				FFB0370A164BEE5A00157B7D /* WeTongjiSDK.xcodeproj */,
@@ -1423,7 +1429,7 @@
 				FFB20FF41655DA0900FCAF5F /* ScheduleWeekRightTableViewCell.m */,
 				FFB20FF51655DA0900FCAF5F /* ScheduleWeekRightTableViewCell.xib */,
 				FFB20FF61655DA0900FCAF5F /* ScheduleWeekRightTableViewCellContentView.h */,
-				FFB20FF71655DA0900FCAF5F /* ScheduleWeekRightTableViewCellContentView.m */,
+				FFB2108016565BA300FCAF5F /* ScheduleWeekRightTableViewCellContentView.m */,
 				FFB20FF81655DA0900FCAF5F /* ScheduleWeekViewController.h */,
 				FFB20FF91655DA0900FCAF5F /* ScheduleWeekViewController.m */,
 				FFB20FFA1655DA0900FCAF5F /* ScheduleWeekViewController.xib */,
@@ -1560,10 +1566,12 @@
 				FF7109B0164D39BB008F2A06 /* Information.m */,
 				FF7109AC164D382D008F2A06 /* Star.h */,
 				FF7109AD164D382D008F2A06 /* Star.m */,
-				FFB46B28164FCC2B00C32969 /* Course.h */,
-				FFB46B29164FCC2B00C32969 /* Course.m */,
+				FFB2108516565DE100FCAF5F /* Course.h */,
+				FFB2108616565DE300FCAF5F /* Course.m */,
 				FF6E952D16537E92002497FA /* User.h */,
 				FF6E952E16537E92002497FA /* User.m */,
+				FFB2108B16565EA900FCAF5F /* AbstractActivity.h */,
+				FFB2108C16565EAB00FCAF5F /* AbstractActivity.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -1771,8 +1779,6 @@
 				03BAB35F164FD01B0049DA19 /* Icon-Small-58@2x.png.png in Resources */,
 				03BAB360164FD01B0049DA19 /* Icon@2x.png.png in Resources */,
 				03BAB361164FD01B0049DA19 /* iTunesArtwork.png in Resources */,
-				03BAB364164FD0530049DA19 /* default.png in Resources */,
-				03BAB365164FD0530049DA19 /* default@2x.png in Resources */,
 				03BAB367164FD06B0049DA19 /* Icon-57.png in Resources */,
 				03BAB369164FD0720049DA19 /* Icon@2x.png.png in Resources */,
 				03BAB393164FDB620049DA19 /* bottom_bar.png in Resources */,
@@ -1933,6 +1939,9 @@
 				FFB210771656130F00FCAF5F /* to_do_list_point_green@2x.png in Resources */,
 				FFB210781656130F00FCAF5F /* to_do_list_point_yellow.png in Resources */,
 				FFB210791656130F00FCAF5F /* to_do_list_point_yellow@2x.png in Resources */,
+				FFB1387F165681B000D73C71 /* Default@2x.png in Resources */,
+				FFB138821656820200D73C71 /* default.png in Resources */,
+				FFB138831656820200D73C71 /* default@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1989,7 +1998,6 @@
 				FF7109B1164D39BC008F2A06 /* Information.m in Sources */,
 				FF7109B4164D3AFD008F2A06 /* Star+Addition.m in Sources */,
 				FF7109BA164D4667008F2A06 /* PullRefreshManagement.m in Sources */,
-				FFB46B2A164FCC2B00C32969 /* Course.m in Sources */,
 				FFB46B2D164FCC6D00C32969 /* Course+Addition.m in Sources */,
 				FFC65D3A164FE53000156F77 /* FilterTableViewCell.m in Sources */,
 				FFC65D3B164FE53000156F77 /* FilterViewController.m in Sources */,
@@ -2021,9 +2029,11 @@
 				FFB20FEF1655D72F00FCAF5F /* ScheduleViewController.m in Sources */,
 				FFB20FFD1655DA0900FCAF5F /* ScheduleWeekLeftTableViewCell.m in Sources */,
 				FFB20FFF1655DA0900FCAF5F /* ScheduleWeekRightTableViewCell.m in Sources */,
-				FFB210011655DA0900FCAF5F /* ScheduleWeekRightTableViewCellContentView.m in Sources */,
 				FFB210021655DA0900FCAF5F /* ScheduleWeekViewController.m in Sources */,
 				FFB210041655DA0900FCAF5F /* ScheduleWeekLeftTableView.m in Sources */,
+				FFB2108116565BA500FCAF5F /* ScheduleWeekRightTableViewCellContentView.m in Sources */,
+				FFB2108716565DE800FCAF5F /* Course.m in Sources */,
+				FFB2108D16565EB000FCAF5F /* AbstractActivity.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
