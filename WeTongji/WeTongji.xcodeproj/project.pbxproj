@@ -95,7 +95,7 @@
 		03E6FBAC16552BB600A3E60C /* favourite_hl@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 03E6FBA816552BB600A3E60C /* favourite_hl@2x.png */; };
 		03E6FBAD16552BB600A3E60C /* favourite.png in Resources */ = {isa = PBXBuildFile; fileRef = 03E6FBA916552BB600A3E60C /* favourite.png */; };
 		03E6FBAE16552BB600A3E60C /* favourite@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 03E6FBAA16552BB600A3E60C /* favourite@2x.png */; };
-		03E6FBB21655339F00A3E60C /* transparentTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03E6FBB01655339F00A3E60C /* transparentTableHeaderView.m */; };
+		03E6FBB21655339F00A3E60C /* TransparentTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03E6FBB01655339F00A3E60C /* TransparentTableHeaderView.m */; };
 		03E6FBB31655339F00A3E60C /* TransparentTableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03E6FBB11655339F00A3E60C /* TransparentTableHeaderView.xib */; };
 		03E6FBB71655372D00A3E60C /* WeeklyPersonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03E6FBB61655372D00A3E60C /* WeeklyPersonViewController.m */; };
 		03E6FBC11655391500A3E60C /* celebrity_avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = 03E6FBB91655391500A3E60C /* celebrity_avatar.png */; };
@@ -380,8 +380,8 @@
 		03E6FBA816552BB600A3E60C /* favourite_hl@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "favourite_hl@2x.png"; sourceTree = "<group>"; };
 		03E6FBA916552BB600A3E60C /* favourite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = favourite.png; sourceTree = "<group>"; };
 		03E6FBAA16552BB600A3E60C /* favourite@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "favourite@2x.png"; sourceTree = "<group>"; };
-		03E6FBAF1655339E00A3E60C /* transparentTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = transparentTableHeaderView.h; sourceTree = "<group>"; };
-		03E6FBB01655339F00A3E60C /* transparentTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = transparentTableHeaderView.m; sourceTree = "<group>"; };
+		03E6FBAF1655339E00A3E60C /* TransparentTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransparentTableHeaderView.h; sourceTree = "<group>"; };
+		03E6FBB01655339F00A3E60C /* TransparentTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransparentTableHeaderView.m; sourceTree = "<group>"; };
 		03E6FBB11655339F00A3E60C /* TransparentTableHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TransparentTableHeaderView.xib; sourceTree = "<group>"; };
 		03E6FBB51655372D00A3E60C /* WeeklyPersonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeeklyPersonViewController.h; sourceTree = "<group>"; };
 		03E6FBB61655372D00A3E60C /* WeeklyPersonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeeklyPersonViewController.m; sourceTree = "<group>"; };
@@ -823,8 +823,8 @@
 		E514583516463ED400533761 /* UIView */ = {
 			isa = PBXGroup;
 			children = (
-				03E6FBAF1655339E00A3E60C /* transparentTableHeaderView.h */,
-				03E6FBB01655339F00A3E60C /* transparentTableHeaderView.m */,
+				03E6FBAF1655339E00A3E60C /* TransparentTableHeaderView.h */,
+				03E6FBB01655339F00A3E60C /* TransparentTableHeaderView.m */,
 				03E6FBB11655339F00A3E60C /* TransparentTableHeaderView.xib */,
 				E514583616463F0100533761 /* WUScrollBackgroundView.h */,
 				E514583716463F0100533761 /* WUScrollBackgroundView.m */,
@@ -1648,7 +1648,7 @@
 				035E34921653E1F7009AC6BF /* EditInfoHeaderView.m in Sources */,
 				035E349E1653E7C8009AC6BF /* MiddleAbstractSecondViewController.m in Sources */,
 				035E34B21653F040009AC6BF /* WUFolderView.m in Sources */,
-				03E6FBB21655339F00A3E60C /* transparentTableHeaderView.m in Sources */,
+				03E6FBB21655339F00A3E60C /* TransparentTableHeaderView.m in Sources */,
 				03E6FBB71655372D00A3E60C /* WeeklyPersonViewController.m in Sources */,
 				03E6FBCB1655398E00A3E60C /* WeeklyPersonHeaderView.m in Sources */,
 				03E6FBD016553CFF00A3E60C /* WeeklyPersonCell.m in Sources */,

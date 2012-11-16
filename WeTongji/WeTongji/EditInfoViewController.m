@@ -240,7 +240,7 @@ static id tempLeftBarItem;
     EditInfoCell * cell;
     for ( int i = 0 ; i<4 ; i++ )
     {
-        cell = ( EditInfoCell *)[self.infoTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:1]];
+        cell = ( EditInfoCell *)[self.infoTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
         [cell setIsEditEnable:NO];
         switch (cell.type)
         {
