@@ -2,7 +2,7 @@
 //  Event.h
 //  WeTongji
 //
-//  Created by tang zhixiong on 12-11-8.
+//  Created by tang zhixiong on 12-11-17.
 //
 //
 
@@ -22,7 +22,8 @@
 @property (nonatomic, retain) NSString * detail;
 @property (nonatomic, retain) NSDate * endTime;
 @property (nonatomic, retain) NSNumber * favorite;
-@property (nonatomic, retain) NSArray * imageLinkArray;
+@property (nonatomic, retain) NSNumber * hidden;
+@property (nonatomic, retain) NSString * imageLink;
 @property (nonatomic, retain) NSNumber * like;
 @property (nonatomic, retain) NSString * location;
 @property (nonatomic, retain) NSString * organizer;
@@ -30,6 +31,6 @@
 @property (nonatomic, retain) NSNumber * schedule;
 @property (nonatomic, retain) NSNumber * status;
 @property (nonatomic, retain) NSString * title;
-@property (nonatomic, retain) NSNumber * hidden;
+@property (nonatomic, retain) NSNumber * canSchedule;
 
 @end

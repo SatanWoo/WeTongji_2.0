@@ -2,7 +2,7 @@
 //  Event.m
 //  WeTongji
 //
-//  Created by tang zhixiong on 12-11-8.
+//  Created by tang zhixiong on 12-11-17.
 //
 //
 
@@ -20,7 +20,8 @@
 @dynamic detail;
 @dynamic endTime;
 @dynamic favorite;
-@dynamic imageLinkArray;
+@dynamic hidden;
+@dynamic imageLink;
 @dynamic like;
 @dynamic location;
 @dynamic organizer;
@@ -28,6 +29,6 @@
 @dynamic schedule;
 @dynamic status;
 @dynamic title;
-@dynamic hidden;
+@dynamic canSchedule;
 
 @end
