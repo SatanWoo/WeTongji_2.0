@@ -10,7 +10,6 @@
 #import "UIBarButtonItem+CustomButton.h"
 
 @interface MiddleAbstractSecondViewController ()
-
 @end
 
 @implementation MiddleAbstractSecondViewController
@@ -25,6 +24,10 @@
     [super viewDidLoad];
     UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithImage:@"back_btn.png" selector:@selector(pressNavButton) target:self];
     self.navigationItem.leftBarButtonItem = button;
+    
+    UISwipeGestureRecognizer *leftGesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(pressNavButton)];
+    leftGesture.direction = UISwipeGestureRecognizerDirectionRight;
+    [self.view addGestureRecognizer:leftGesture];
 }
 
 - (void)viewDidUnload

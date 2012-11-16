@@ -11,8 +11,7 @@
 
 enum eStatus {
     eMIDDLE = 0,
-    eLEFT = 1,
-    
+    eLEFT = 1
 };
 
 enum eMoveDirection {

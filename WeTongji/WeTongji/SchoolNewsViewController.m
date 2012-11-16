@@ -29,7 +29,6 @@
 - (void)configureTableView;
 - (void)didTap:(UITapGestureRecognizer *)recognizer;
 @property (weak, nonatomic) IBOutlet UIImageView *buttonBackImageView;
-
 @property (nonatomic, strong) WUTableHeaderView *headerView;
 @property (nonatomic, strong) WUPageControlViewController *pageViewController;
 @property (nonatomic, assign) BOOL isAnimationFinished;
@@ -132,6 +131,10 @@
     [super viewDidLoad];
     [self.navigationController setNavigationBarHidden:YES];
     [self configureTableView];
+    
+    UISwipeGestureRecognizer *leftGesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(goBack:)];
+    leftGesture.direction = UISwipeGestureRecognizerDirectionRight;
+    [self.view addGestureRecognizer:leftGesture];
 }
 
 - (void)viewDidUnload

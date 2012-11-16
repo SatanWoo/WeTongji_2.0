@@ -61,7 +61,7 @@
 								<string key="NSFrame">{{231, 7}, {27, 21}}</string>
 								<reference key="NSSuperview" ref="39601368"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView"/>
+								<reference key="NSNextKeyView" ref="304467075"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
@@ -91,11 +91,11 @@
 							</object>
 							<object class="IBUILabel" id="95345200">
 								<reference key="NSNextResponder" ref="39601368"/>
-								<int key="NSvFlags">292</int>
+								<int key="NSvFlags">256</int>
 								<string key="NSFrame">{{7, 4}, {241, 26}}</string>
 								<reference key="NSSuperview" ref="39601368"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView" ref="304467075"/>
+								<reference key="NSNextKeyView" ref="874113404"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
@@ -119,6 +119,7 @@
 									<double key="NSSize">17</double>
 									<int key="NSfFlags">16</int>
 								</object>
+								<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
 							</object>
 							<object class="IBUILabel" id="304467075">
 								<reference key="NSNextResponder" ref="39601368"/>
@@ -126,7 +127,7 @@
 								<string key="NSFrame">{{7, 38}, {243, 21}}</string>
 								<reference key="NSSuperview" ref="39601368"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView" ref="874113404"/>
+								<reference key="NSNextKeyView"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
@@ -151,6 +152,7 @@
 									<double key="NSSize">13</double>
 									<int key="NSfFlags">16</int>
 								</object>
+								<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
 							</object>
 						</array>
 						<string key="NSFrameSize">{320, 69}</string>

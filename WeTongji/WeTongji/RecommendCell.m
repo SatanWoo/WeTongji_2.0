@@ -13,6 +13,7 @@
 @synthesize source = _source;
 @synthesize icon = _icon;
 @synthesize count = _count;
+@synthesize preview = _preview;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {

@@ -11,12 +11,15 @@
 #import "LeftMenuCell.h"
 #import "PlistReader.h"
 #import "LeftMenuCellModel.h"
+#import "JBKenBurnsView.h"
+#import "WUKenBurnViewHeader.h"
 
 #define kLabelHeight 30
 
 @interface LeftMenuViewController () <UITableViewDataSource,UITableViewDelegate>
 
 @property (nonatomic ,strong) NSArray *identifierArray;
+@property (nonatomic ,strong) WUKenBurnViewHeader *kenView;
 
 - (void)configureBottomBarButton;
 - (void)configureTableView;
@@ -30,6 +33,7 @@
 @synthesize infoButton = _infoButton;
 
 @synthesize identifierArray = _identifierArray;
+@synthesize kenView = _kenView;
 #pragma mark - IBAction
 - (IBAction)triggerInfo:(UIButton *)sender
 {
@@ -46,22 +50,13 @@
 {
     self.menuTableView.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"leftMenuBg.png"]];
     [self.menuTableView registerNib:[UINib nibWithNibName:@"LeftMenuCell" bundle:nil] forCellReuseIdentifier:kLeftMenuCell];
-    
-    //TableViewHeader
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, kMenuDisplayedWidth, kLabelHeight)];
-    label.textColor = [UIColor whiteColor];
-    label.backgroundColor = [UIColor clearColor];
-    label.text = @"We";
-    label.font = [UIFont boldSystemFontOfSize:20.f];
-    label.textAlignment = UITextAlignmentCenter;
-    self.menuTableView.contentInset = UIEdgeInsetsMake(label.frame.size.height, 0.0f, 0.0f, 0.0f);
-    [self.view addSubview:label];
+    self.menuTableView.tableHeaderView = self.kenView;
 }
 
 - (void)configureBottomBarButton
 {
-    [self.settingButton setImage:[UIImage imageNamed:@"settings_btn_hl"] forState:UIControlStateSelected];
-    [self.infoButton setImage:[UIImage imageNamed:@"info_btn_hl.png"] forState:UIControlStateSelected];
+    [self.settingButton setImage:[UIImage imageNamed:@"settings_btn_hl"] forState:UIControlStateHighlighted];
+    [self.infoButton setImage:[UIImage imageNamed:@"info_btn_hl.png"] forState:UIControlStateHighlighted];
 }
 
 #pragma mark - Getter & Setter
@@ -77,6 +72,29 @@
 {
     _isLogin = isLogin;
     [self.menuTableView reloadData];
+}
+
+- (WUKenBurnViewHeader *)kenView
+{
+    if (_kenView == nil) {
+        
+        _kenView = [[[NSBundle mainBundle] loadNibNamed:@"WUKenBurnViewHeader" owner:self options:nil] objectAtIndex:0];
+
+        _kenView.kenView.layer.borderWidth = 1;
+        _kenView.kenView.layer.borderColor = [UIColor blackColor].CGColor;
+        
+        NSArray *myImages = [NSArray arrayWithObjects:
+                             [UIImage imageNamed:@"l1.png"],
+                             [UIImage imageNamed:@"l2.png"],
+                             [UIImage imageNamed:@"l3.png"],
+                              nil];
+        
+        [_kenView.kenView animateWithImages:myImages
+                     transitionDuration:15
+                                   loop:YES
+                            isLandscape:YES];
+    }
+    return _kenView;
 }
 
 #pragma mark - Lifecycle
@@ -134,7 +152,6 @@
 {
     LeftMenuCell *cell = (LeftMenuCell *)[tableView cellForRowAtIndexPath:indexPath];
     [cell setSelected:YES];
-    //[tableView deselectRowAtIndexPath:indexPath animated:NO];
     UIViewController *controller = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:cell.identifer];
     [self.delegate changeMiddleContent:controller];
 }

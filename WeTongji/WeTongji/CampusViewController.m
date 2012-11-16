@@ -29,6 +29,7 @@
 @property (nonatomic, strong) UITableView *schoolInfoTableView;
 @property (nonatomic, strong) UITableView *groupOInfoTableView;
 @property (nonatomic, strong) UITableView *recommendTableView;
+@property (nonatomic, strong) UITableView *actionTableView;
 
 - (void)configureScrollView;
 - (void)pageChange:(UIButton *)clickButton;
@@ -53,6 +54,7 @@
 @synthesize schoolInfoTableView = _schoolInfoTableView;
 @synthesize groupOInfoTableView = _groupOInfoTableView;
 @synthesize recommendTableView = _recommendTableView;
+@synthesize actionTableView = _actionTableView;
 
 #pragma mark - Setter and Getter
 
@@ -101,6 +103,18 @@
     return _recommendTableView;
 }
 
+- (UITableView *)actionTableView
+{
+    if (_actionTableView == nil) {
+        _actionTableView = [[UITableView alloc] initWithFrame:self.actionView.bounds style:UITableViewStylePlain];
+        [_actionTableView registerNib:[UINib nibWithNibName:@"SchoolNewsCell" bundle:nil] forCellReuseIdentifier:kSchoolInfoCell];
+        _actionTableView.contentInset = UIEdgeInsetsMake(kContentOffSet, 0.0f, 0.0f, 0.0f);
+        _actionTableView.delegate = self;
+        _actionTableView.dataSource = self;
+    }
+    return _actionTableView;
+}
+
 #pragma mark - Private Method
 - (void)configureScrollView
 {
@@ -146,6 +160,7 @@
     [self.schoolInfoView addSubview:self.schoolInfoTableView];
     [self.groupInfoView addSubview:self.groupOInfoTableView];
     [self.recommendView addSubview:self.recommendTableView];
+    [self.actionView addSubview:self.actionTableView];
 }
 
 - (void)pageChange:(UIButton *)clickButton
@@ -231,9 +246,7 @@
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (tableView == self.schoolInfoTableView) {
-        [self performSegueWithIdentifier:kkSchoolNewsViewControllerSegue sender:self];
-    }
+    [self performSegueWithIdentifier:kkSchoolNewsViewControllerSegue sender:self];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
@@ -245,12 +258,7 @@
 
 - (float)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (tableView == self.recommendTableView) {
-        return 70;
-    } else if (tableView == self.schoolInfoTableView) {
-        return 70;
-    }
-    return 44;
+    return 70;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -283,7 +291,12 @@
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         return cell;
     } else {
-        return nil;
+        SchoolNewsCell *cell = [tableView dequeueReusableCellWithIdentifier:kSchoolInfoCell];
+        if (cell == nil) {
+            cell = [[SchoolNewsCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kSchoolInfoCell];
+        }
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        return cell;
     }
 }
 

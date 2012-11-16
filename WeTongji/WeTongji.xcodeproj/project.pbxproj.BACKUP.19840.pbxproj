@@ -232,10 +232,11 @@
 		FF7109B1164D39BC008F2A06 /* Information.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7109B0164D39BB008F2A06 /* Information.m */; };
 		FF7109B4164D3AFD008F2A06 /* Star+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7109B3164D3AFC008F2A06 /* Star+Addition.m */; };
 		FF7109BA164D4667008F2A06 /* PullRefreshManagement.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7109B9164D4667008F2A06 /* PullRefreshManagement.m */; };
-		FFB138D71656B24600D73C71 /* ScheduleWeekRightTableViewCellContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB2108016565BA300FCAF5F /* ScheduleWeekRightTableViewCellContentView.m */; };
-		FFB138D81656B26B00D73C71 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB138A216569D3B00D73C71 /* Event.m */; };
-		FFB138D91656B26B00D73C71 /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB2108616565DE300FCAF5F /* Course.m */; };
-		FFB138DA1656B26B00D73C71 /* AbstractActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB2108C16565EAB00FCAF5F /* AbstractActivity.m */; };
+		FFB1387F165681B000D73C71 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB1387E165681B000D73C71 /* Default@2x.png */; };
+		FFB138821656820200D73C71 /* default.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB138801656820200D73C71 /* default.png */; };
+		FFB138831656820200D73C71 /* default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB138811656820200D73C71 /* default@2x.png */; };
+		FFB138A0165691F400D73C71 /* Exam.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB1389F165691F400D73C71 /* Exam.m */; };
+		FFB138A316569D3B00D73C71 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB138A216569D3B00D73C71 /* Event.m */; };
 		FFB20FD21655D64A00FCAF5F /* NSDate+TKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB20FBF1655D64A00FCAF5F /* NSDate+TKCategory.m */; };
 		FFB20FD31655D64A00FCAF5F /* TapDetectingView.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB20FC11655D64A00FCAF5F /* TapDetectingView.m */; };
 		FFB20FD41655D64A00FCAF5F /* TKCalendarDayEventView.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB20FC31655D64A00FCAF5F /* TKCalendarDayEventView.m */; };
@@ -312,6 +313,9 @@
 		FFB210771656130F00FCAF5F /* to_do_list_point_green@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB2103D1656130F00FCAF5F /* to_do_list_point_green@2x.png */; };
 		FFB210781656130F00FCAF5F /* to_do_list_point_yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB2103E1656130F00FCAF5F /* to_do_list_point_yellow.png */; };
 		FFB210791656130F00FCAF5F /* to_do_list_point_yellow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB2103F1656130F00FCAF5F /* to_do_list_point_yellow@2x.png */; };
+		FFB2108116565BA500FCAF5F /* ScheduleWeekRightTableViewCellContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB2108016565BA300FCAF5F /* ScheduleWeekRightTableViewCellContentView.m */; };
+		FFB2108716565DE800FCAF5F /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB2108616565DE300FCAF5F /* Course.m */; };
+		FFB2108D16565EB000FCAF5F /* AbstractActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB2108C16565EAB00FCAF5F /* AbstractActivity.m */; };
 		FFB46B2D164FCC6D00C32969 /* Course+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB46B2C164FCC6D00C32969 /* Course+Addition.m */; };
 		FFB4D67F1654729400D863FC /* cancel_edit_hl@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB4D67B1654729400D863FC /* cancel_edit_hl@2x.png */; };
 		FFB4D6801654729400D863FC /* cancel_edit_un@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB4D67C1654729400D863FC /* cancel_edit_un@2x.png */; };
@@ -353,16 +357,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		FFB138D31656B1A400D73C71 /* PBXContainerItemProxy */ = {
+		FFB138911656871F00D73C71 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = FFB138CC1656B1A400D73C71 /* WeTongjiSDK.xcodeproj */;
+			containerPortal = FFB1388A1656871F00D73C71 /* WeTongjiSDK.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = E110DF2B16365B990087EA46;
 			remoteInfo = WeTongjiSDK;
 		};
-		FFB138D51656B1DD00D73C71 /* PBXContainerItemProxy */ = {
+		FFB138931656872F00D73C71 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = FFB138CC1656B1A400D73C71 /* WeTongjiSDK.xcodeproj */;
+			containerPortal = FFB1388A1656871F00D73C71 /* WeTongjiSDK.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = E110DF2A16365B990087EA46;
 			remoteInfo = WeTongjiSDK;
@@ -652,11 +656,14 @@
 		FF7109B3164D3AFC008F2A06 /* Star+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Star+Addition.m"; sourceTree = "<group>"; };
 		FF7109B8164D4667008F2A06 /* PullRefreshManagement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PullRefreshManagement.h; sourceTree = "<group>"; };
 		FF7109B9164D4667008F2A06 /* PullRefreshManagement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PullRefreshManagement.m; sourceTree = "<group>"; };
+		FFB1387E165681B000D73C71 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		FFB138801656820200D73C71 /* default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default.png; sourceTree = "<group>"; };
+		FFB138811656820200D73C71 /* default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default@2x.png"; sourceTree = "<group>"; };
+		FFB1388A1656871F00D73C71 /* WeTongjiSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = WeTongjiSDK.xcodeproj; path = ../../../wetongji_ios_sdk/WeTongjiSDK.xcodeproj; sourceTree = "<group>"; };
 		FFB1389E165691F400D73C71 /* Exam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exam.h; sourceTree = "<group>"; };
 		FFB1389F165691F400D73C71 /* Exam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Exam.m; sourceTree = "<group>"; };
 		FFB138A116569D3B00D73C71 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
 		FFB138A216569D3B00D73C71 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
-		FFB138CC1656B1A400D73C71 /* WeTongjiSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = WeTongjiSDK.xcodeproj; path = ../../../wetongji_ios_sdk/WeTongjiSDK.xcodeproj; sourceTree = "<group>"; };
 		FFB20FBE1655D64A00FCAF5F /* NSDate+TKCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+TKCategory.h"; sourceTree = "<group>"; };
 		FFB20FBF1655D64A00FCAF5F /* NSDate+TKCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+TKCategory.m"; sourceTree = "<group>"; };
 		FFB20FC01655D64A00FCAF5F /* TapDetectingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TapDetectingView.h; sourceTree = "<group>"; };
@@ -829,6 +836,11 @@
 		03BAB359164FD0010049DA19 /* icon & Splash */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
+				FFB138801656820200D73C71 /* default.png */,
+				FFB138811656820200D73C71 /* default@2x.png */,
+=======
+>>>>>>> Ziqi
 				03BAB35A164FD01B0049DA19 /* Icon-57.png */,
 				03BAB35B164FD01B0049DA19 /* Icon-Small-58@2x.png.png */,
 				03BAB35C164FD01B0049DA19 /* Icon@2x.png.png */,
@@ -914,11 +926,15 @@
 		B00D6911162CFCAC00592B1D = {
 			isa = PBXGroup;
 			children = (
-				FFB138CC1656B1A400D73C71 /* WeTongjiSDK.xcodeproj */,
+<<<<<<< HEAD
+				FFB1387E165681B000D73C71 /* Default@2x.png */,
+=======
 				03326A4B16567FE3005E8A16 /* default.png */,
 				03326A4C16567FE3005E8A16 /* default@2x.png */,
+>>>>>>> Ziqi
 				03BAB368164FD0720049DA19 /* Icon@2x.png.png */,
 				03BAB366164FD06B0049DA19 /* Icon-57.png */,
+				FFB1388A1656871F00D73C71 /* WeTongjiSDK.xcodeproj */,
 				B00D6926162CFCAC00592B1D /* WeTongji */,
 				B00D691F162CFCAC00592B1D /* Frameworks */,
 				B00D691D162CFCAC00592B1D /* Products */,
@@ -1407,10 +1423,10 @@
 			name = Arrangement;
 			sourceTree = "<group>";
 		};
-		FFB138CD1656B1A400D73C71 /* Products */ = {
+		FFB1388B1656871F00D73C71 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FFB138D41656B1A400D73C71 /* WeTongjiSDK.framework */,
+				FFB138921656871F00D73C71 /* WeTongjiSDK.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1679,7 +1695,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				FFB138D61656B1DD00D73C71 /* PBXTargetDependency */,
+				FFB138941656872F00D73C71 /* PBXTargetDependency */,
 			);
 			name = WeTongji;
 			productName = WeTongji;
@@ -1706,8 +1722,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = FFB138CD1656B1A400D73C71 /* Products */;
-					ProjectRef = FFB138CC1656B1A400D73C71 /* WeTongjiSDK.xcodeproj */;
+					ProductGroup = FFB1388B1656871F00D73C71 /* Products */;
+					ProjectRef = FFB1388A1656871F00D73C71 /* WeTongjiSDK.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -1718,11 +1734,11 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		FFB138D41656B1A400D73C71 /* WeTongjiSDK.framework */ = {
+		FFB138921656871F00D73C71 /* WeTongjiSDK.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = WeTongjiSDK.framework;
-			remoteRef = FFB138D31656B1A400D73C71 /* PBXContainerItemProxy */;
+			remoteRef = FFB138911656871F00D73C71 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -1968,6 +1984,11 @@
 				FFB210771656130F00FCAF5F /* to_do_list_point_green@2x.png in Resources */,
 				FFB210781656130F00FCAF5F /* to_do_list_point_yellow.png in Resources */,
 				FFB210791656130F00FCAF5F /* to_do_list_point_yellow@2x.png in Resources */,
+<<<<<<< HEAD
+				FFB1387F165681B000D73C71 /* Default@2x.png in Resources */,
+				FFB138821656820200D73C71 /* default.png in Resources */,
+				FFB138831656820200D73C71 /* default@2x.png in Resources */,
+=======
 				03326A491656798A005E8A16 /* recommend_img.png in Resources */,
 				03326A4A1656798A005E8A16 /* recommend_img@2x.png in Resources */,
 				03326A4D16567FE3005E8A16 /* default.png in Resources */,
@@ -1981,6 +2002,7 @@
 				03326A6B165691BA005E8A16 /* l3@2x.png in Resources */,
 				03326A6C165691BA005E8A16 /* l3.png in Resources */,
 				03326A751656949C005E8A16 /* WUKenBurnViewHeader.xib in Resources */,
+>>>>>>> Ziqi
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1991,10 +2013,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FFB138D81656B26B00D73C71 /* Event.m in Sources */,
-				FFB138D91656B26B00D73C71 /* Course.m in Sources */,
-				FFB138DA1656B26B00D73C71 /* AbstractActivity.m in Sources */,
-				FFB138D71656B24600D73C71 /* ScheduleWeekRightTableViewCellContentView.m in Sources */,
 				B00D692D162CFCAC00592B1D /* main.m in Sources */,
 				B00D6931162CFCAC00592B1D /* AppDelegate.m in Sources */,
 				B00D6937162CFCAC00592B1D /* ViewController.m in Sources */,
@@ -2073,18 +2091,26 @@
 				FFB20FFF1655DA0900FCAF5F /* ScheduleWeekRightTableViewCell.m in Sources */,
 				FFB210021655DA0900FCAF5F /* ScheduleWeekViewController.m in Sources */,
 				FFB210041655DA0900FCAF5F /* ScheduleWeekLeftTableView.m in Sources */,
+<<<<<<< HEAD
+				FFB2108116565BA500FCAF5F /* ScheduleWeekRightTableViewCellContentView.m in Sources */,
+				FFB2108716565DE800FCAF5F /* Course.m in Sources */,
+				FFB2108D16565EB000FCAF5F /* AbstractActivity.m in Sources */,
+				FFB138A0165691F400D73C71 /* Exam.m in Sources */,
+				FFB138A316569D3B00D73C71 /* Event.m in Sources */,
+=======
 				03326A5C16568FA8005E8A16 /* JBKenBurnsView.m in Sources */,
 				03326A7316569430005E8A16 /* WUKenBurnViewHeader.m in Sources */,
+>>>>>>> Ziqi
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		FFB138D61656B1DD00D73C71 /* PBXTargetDependency */ = {
+		FFB138941656872F00D73C71 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = WeTongjiSDK;
-			targetProxy = FFB138D51656B1DD00D73C71 /* PBXContainerItemProxy */;
+			targetProxy = FFB138931656872F00D73C71 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
