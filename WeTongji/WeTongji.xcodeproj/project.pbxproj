@@ -236,16 +236,6 @@
 		FFB138D81656B26B00D73C71 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB138A216569D3B00D73C71 /* Event.m */; };
 		FFB138D91656B26B00D73C71 /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB2108616565DE300FCAF5F /* Course.m */; };
 		FFB138DA1656B26B00D73C71 /* AbstractActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB2108C16565EAB00FCAF5F /* AbstractActivity.m */; };
-		FFB20FD21655D64A00FCAF5F /* NSDate+TKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB20FBF1655D64A00FCAF5F /* NSDate+TKCategory.m */; };
-		FFB20FD31655D64A00FCAF5F /* TapDetectingView.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB20FC11655D64A00FCAF5F /* TapDetectingView.m */; };
-		FFB20FD41655D64A00FCAF5F /* TKCalendarDayEventView.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB20FC31655D64A00FCAF5F /* TKCalendarDayEventView.m */; };
-		FFB20FD51655D64A00FCAF5F /* TKCalendarDayTimelineView.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB20FC51655D64A00FCAF5F /* TKCalendarDayTimelineView.m */; };
-		FFB20FD61655D64A00FCAF5F /* TKCalendarDayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB20FC71655D64A00FCAF5F /* TKCalendarDayViewController.m */; };
-		FFB20FD71655D64A00FCAF5F /* TKCalendarMonthView.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB20FC91655D64A00FCAF5F /* TKCalendarMonthView.m */; };
-		FFB20FD81655D64A00FCAF5F /* TKCalendarMonthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB20FCB1655D64A00FCAF5F /* TKCalendarMonthViewController.m */; };
-		FFB20FD91655D64A00FCAF5F /* TKGlobal.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB20FCD1655D64A00FCAF5F /* TKGlobal.m */; };
-		FFB20FDA1655D64A00FCAF5F /* UIImage+TKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB20FCF1655D64A00FCAF5F /* UIImage+TKCategory.m */; };
-		FFB20FDB1655D64A00FCAF5F /* UIView+TKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB20FD11655D64A00FCAF5F /* UIView+TKCategory.m */; };
 		FFB20FEF1655D72F00FCAF5F /* ScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB20FEE1655D72F00FCAF5F /* ScheduleViewController.m */; };
 		FFB20FFD1655DA0900FCAF5F /* ScheduleWeekLeftTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB20FF11655DA0900FCAF5F /* ScheduleWeekLeftTableViewCell.m */; };
 		FFB20FFE1655DA0900FCAF5F /* ScheduleWeekLeftTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFB20FF21655DA0900FCAF5F /* ScheduleWeekLeftTableViewCell.xib */; };
@@ -657,26 +647,6 @@
 		FFB138A116569D3B00D73C71 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
 		FFB138A216569D3B00D73C71 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
 		FFB138CC1656B1A400D73C71 /* WeTongjiSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = WeTongjiSDK.xcodeproj; path = ../../../wetongji_ios_sdk/WeTongjiSDK.xcodeproj; sourceTree = "<group>"; };
-		FFB20FBE1655D64A00FCAF5F /* NSDate+TKCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+TKCategory.h"; sourceTree = "<group>"; };
-		FFB20FBF1655D64A00FCAF5F /* NSDate+TKCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+TKCategory.m"; sourceTree = "<group>"; };
-		FFB20FC01655D64A00FCAF5F /* TapDetectingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TapDetectingView.h; sourceTree = "<group>"; };
-		FFB20FC11655D64A00FCAF5F /* TapDetectingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TapDetectingView.m; sourceTree = "<group>"; };
-		FFB20FC21655D64A00FCAF5F /* TKCalendarDayEventView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKCalendarDayEventView.h; sourceTree = "<group>"; };
-		FFB20FC31655D64A00FCAF5F /* TKCalendarDayEventView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKCalendarDayEventView.m; sourceTree = "<group>"; };
-		FFB20FC41655D64A00FCAF5F /* TKCalendarDayTimelineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKCalendarDayTimelineView.h; sourceTree = "<group>"; };
-		FFB20FC51655D64A00FCAF5F /* TKCalendarDayTimelineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKCalendarDayTimelineView.m; sourceTree = "<group>"; };
-		FFB20FC61655D64A00FCAF5F /* TKCalendarDayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKCalendarDayViewController.h; sourceTree = "<group>"; };
-		FFB20FC71655D64A00FCAF5F /* TKCalendarDayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKCalendarDayViewController.m; sourceTree = "<group>"; };
-		FFB20FC81655D64A00FCAF5F /* TKCalendarMonthView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKCalendarMonthView.h; sourceTree = "<group>"; };
-		FFB20FC91655D64A00FCAF5F /* TKCalendarMonthView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKCalendarMonthView.m; sourceTree = "<group>"; };
-		FFB20FCA1655D64A00FCAF5F /* TKCalendarMonthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKCalendarMonthViewController.h; sourceTree = "<group>"; };
-		FFB20FCB1655D64A00FCAF5F /* TKCalendarMonthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKCalendarMonthViewController.m; sourceTree = "<group>"; };
-		FFB20FCC1655D64A00FCAF5F /* TKGlobal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKGlobal.h; sourceTree = "<group>"; };
-		FFB20FCD1655D64A00FCAF5F /* TKGlobal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKGlobal.m; sourceTree = "<group>"; };
-		FFB20FCE1655D64A00FCAF5F /* UIImage+TKCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+TKCategory.h"; sourceTree = "<group>"; };
-		FFB20FCF1655D64A00FCAF5F /* UIImage+TKCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+TKCategory.m"; sourceTree = "<group>"; };
-		FFB20FD01655D64A00FCAF5F /* UIView+TKCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+TKCategory.h"; sourceTree = "<group>"; };
-		FFB20FD11655D64A00FCAF5F /* UIView+TKCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+TKCategory.m"; sourceTree = "<group>"; };
 		FFB20FED1655D72F00FCAF5F /* ScheduleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScheduleViewController.h; sourceTree = "<group>"; };
 		FFB20FEE1655D72F00FCAF5F /* ScheduleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScheduleViewController.m; sourceTree = "<group>"; };
 		FFB20FF01655DA0900FCAF5F /* ScheduleWeekLeftTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScheduleWeekLeftTableViewCell.h; sourceTree = "<group>"; };
@@ -1418,39 +1388,11 @@
 		FFB20FBB1655D60E00FCAF5F /* Schedule */ = {
 			isa = PBXGroup;
 			children = (
-				FFB20FBD1655D63900FCAF5F /* TapkuLibrary */,
 				FFB20FDC1655D65200FCAF5F /* Week */,
 				FFB20FED1655D72F00FCAF5F /* ScheduleViewController.h */,
 				FFB20FEE1655D72F00FCAF5F /* ScheduleViewController.m */,
 			);
 			name = Schedule;
-			sourceTree = "<group>";
-		};
-		FFB20FBD1655D63900FCAF5F /* TapkuLibrary */ = {
-			isa = PBXGroup;
-			children = (
-				FFB20FBE1655D64A00FCAF5F /* NSDate+TKCategory.h */,
-				FFB20FBF1655D64A00FCAF5F /* NSDate+TKCategory.m */,
-				FFB20FC01655D64A00FCAF5F /* TapDetectingView.h */,
-				FFB20FC11655D64A00FCAF5F /* TapDetectingView.m */,
-				FFB20FC21655D64A00FCAF5F /* TKCalendarDayEventView.h */,
-				FFB20FC31655D64A00FCAF5F /* TKCalendarDayEventView.m */,
-				FFB20FC41655D64A00FCAF5F /* TKCalendarDayTimelineView.h */,
-				FFB20FC51655D64A00FCAF5F /* TKCalendarDayTimelineView.m */,
-				FFB20FC61655D64A00FCAF5F /* TKCalendarDayViewController.h */,
-				FFB20FC71655D64A00FCAF5F /* TKCalendarDayViewController.m */,
-				FFB20FC81655D64A00FCAF5F /* TKCalendarMonthView.h */,
-				FFB20FC91655D64A00FCAF5F /* TKCalendarMonthView.m */,
-				FFB20FCA1655D64A00FCAF5F /* TKCalendarMonthViewController.h */,
-				FFB20FCB1655D64A00FCAF5F /* TKCalendarMonthViewController.m */,
-				FFB20FCC1655D64A00FCAF5F /* TKGlobal.h */,
-				FFB20FCD1655D64A00FCAF5F /* TKGlobal.m */,
-				FFB20FCE1655D64A00FCAF5F /* UIImage+TKCategory.h */,
-				FFB20FCF1655D64A00FCAF5F /* UIImage+TKCategory.m */,
-				FFB20FD01655D64A00FCAF5F /* UIView+TKCategory.h */,
-				FFB20FD11655D64A00FCAF5F /* UIView+TKCategory.m */,
-			);
-			name = TapkuLibrary;
 			sourceTree = "<group>";
 		};
 		FFB20FDC1655D65200FCAF5F /* Week */ = {
@@ -2058,16 +2000,6 @@
 				03E6FBB71655372D00A3E60C /* WeeklyPersonViewController.m in Sources */,
 				03E6FBCB1655398E00A3E60C /* WeeklyPersonHeaderView.m in Sources */,
 				03E6FBD016553CFF00A3E60C /* WeeklyPersonCell.m in Sources */,
-				FFB20FD21655D64A00FCAF5F /* NSDate+TKCategory.m in Sources */,
-				FFB20FD31655D64A00FCAF5F /* TapDetectingView.m in Sources */,
-				FFB20FD41655D64A00FCAF5F /* TKCalendarDayEventView.m in Sources */,
-				FFB20FD51655D64A00FCAF5F /* TKCalendarDayTimelineView.m in Sources */,
-				FFB20FD61655D64A00FCAF5F /* TKCalendarDayViewController.m in Sources */,
-				FFB20FD71655D64A00FCAF5F /* TKCalendarMonthView.m in Sources */,
-				FFB20FD81655D64A00FCAF5F /* TKCalendarMonthViewController.m in Sources */,
-				FFB20FD91655D64A00FCAF5F /* TKGlobal.m in Sources */,
-				FFB20FDA1655D64A00FCAF5F /* UIImage+TKCategory.m in Sources */,
-				FFB20FDB1655D64A00FCAF5F /* UIView+TKCategory.m in Sources */,
 				FFB20FEF1655D72F00FCAF5F /* ScheduleViewController.m in Sources */,
 				FFB20FFD1655DA0900FCAF5F /* ScheduleWeekLeftTableViewCell.m in Sources */,
 				FFB20FFF1655DA0900FCAF5F /* ScheduleWeekRightTableViewCell.m in Sources */,
