@@ -132,6 +132,10 @@
     [super viewDidLoad];
     [self.navigationController setNavigationBarHidden:YES];
     [self configureTableView];
+    
+    UISwipeGestureRecognizer *leftGesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(goBack:)];
+    leftGesture.direction = UISwipeGestureRecognizerDirectionRight;
+    [self.view addGestureRecognizer:leftGesture];
 }
 
 - (void)viewDidUnload
