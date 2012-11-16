@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JBKenBurnsView.h"
 
 @interface WUKenBurnViewHeader : UIView
-
+@property (nonatomic ,weak) IBOutlet KenBurnsView *kenView;
 @end
