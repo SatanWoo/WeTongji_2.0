@@ -167,14 +167,15 @@
     return items;
 }
 
-+ (NSArray *) clearDatainManagedObjectContext:(NSManagedObjectContext *)context
++ (void) clearDataInManagedObjectContext:(NSManagedObjectContext *)context
 {
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     [request setEntity:[NSEntityDescription entityForName:@"Course" inManagedObjectContext:context]];
     [request setPredicate:[NSCompoundPredicate andPredicateWithSubpredicates:[NSArray arrayWithObjects:nil]]];
     
     NSArray *items = [context executeFetchRequest:request error:NULL];
-    return items;
+    for (NSManagedObject *managedObject in items)
+        [context deleteObject:managedObject];
 }
 
 @end

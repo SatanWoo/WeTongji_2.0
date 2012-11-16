@@ -219,6 +219,83 @@
 		FF7109B1164D39BC008F2A06 /* Information.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7109B0164D39BB008F2A06 /* Information.m */; };
 		FF7109B4164D3AFD008F2A06 /* Star+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7109B3164D3AFC008F2A06 /* Star+Addition.m */; };
 		FF7109BA164D4667008F2A06 /* PullRefreshManagement.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7109B9164D4667008F2A06 /* PullRefreshManagement.m */; };
+		FFB20FD21655D64A00FCAF5F /* NSDate+TKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB20FBF1655D64A00FCAF5F /* NSDate+TKCategory.m */; };
+		FFB20FD31655D64A00FCAF5F /* TapDetectingView.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB20FC11655D64A00FCAF5F /* TapDetectingView.m */; };
+		FFB20FD41655D64A00FCAF5F /* TKCalendarDayEventView.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB20FC31655D64A00FCAF5F /* TKCalendarDayEventView.m */; };
+		FFB20FD51655D64A00FCAF5F /* TKCalendarDayTimelineView.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB20FC51655D64A00FCAF5F /* TKCalendarDayTimelineView.m */; };
+		FFB20FD61655D64A00FCAF5F /* TKCalendarDayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB20FC71655D64A00FCAF5F /* TKCalendarDayViewController.m */; };
+		FFB20FD71655D64A00FCAF5F /* TKCalendarMonthView.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB20FC91655D64A00FCAF5F /* TKCalendarMonthView.m */; };
+		FFB20FD81655D64A00FCAF5F /* TKCalendarMonthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB20FCB1655D64A00FCAF5F /* TKCalendarMonthViewController.m */; };
+		FFB20FD91655D64A00FCAF5F /* TKGlobal.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB20FCD1655D64A00FCAF5F /* TKGlobal.m */; };
+		FFB20FDA1655D64A00FCAF5F /* UIImage+TKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB20FCF1655D64A00FCAF5F /* UIImage+TKCategory.m */; };
+		FFB20FDB1655D64A00FCAF5F /* UIView+TKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB20FD11655D64A00FCAF5F /* UIView+TKCategory.m */; };
+		FFB20FEF1655D72F00FCAF5F /* ScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB20FEE1655D72F00FCAF5F /* ScheduleViewController.m */; };
+		FFB20FFD1655DA0900FCAF5F /* ScheduleWeekLeftTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB20FF11655DA0900FCAF5F /* ScheduleWeekLeftTableViewCell.m */; };
+		FFB20FFE1655DA0900FCAF5F /* ScheduleWeekLeftTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFB20FF21655DA0900FCAF5F /* ScheduleWeekLeftTableViewCell.xib */; };
+		FFB20FFF1655DA0900FCAF5F /* ScheduleWeekRightTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB20FF41655DA0900FCAF5F /* ScheduleWeekRightTableViewCell.m */; };
+		FFB210001655DA0900FCAF5F /* ScheduleWeekRightTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFB20FF51655DA0900FCAF5F /* ScheduleWeekRightTableViewCell.xib */; };
+		FFB210011655DA0900FCAF5F /* ScheduleWeekRightTableViewCellContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB20FF71655DA0900FCAF5F /* ScheduleWeekRightTableViewCellContentView.m */; };
+		FFB210021655DA0900FCAF5F /* ScheduleWeekViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB20FF91655DA0900FCAF5F /* ScheduleWeekViewController.m */; };
+		FFB210031655DA0900FCAF5F /* ScheduleWeekViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFB20FFA1655DA0900FCAF5F /* ScheduleWeekViewController.xib */; };
+		FFB210041655DA0900FCAF5F /* ScheduleWeekLeftTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB20FFC1655DA0900FCAF5F /* ScheduleWeekLeftTableView.m */; };
+		FFB210401656130F00FCAF5F /* schedule_btn_day.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB210061656130F00FCAF5F /* schedule_btn_day.png */; };
+		FFB210411656130F00FCAF5F /* schedule_btn_day@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB210071656130F00FCAF5F /* schedule_btn_day@2x.png */; };
+		FFB210421656130F00FCAF5F /* schedule_btn_day_hl.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB210081656130F00FCAF5F /* schedule_btn_day_hl.png */; };
+		FFB210431656130F00FCAF5F /* schedule_btn_day_hl@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB210091656130F00FCAF5F /* schedule_btn_day_hl@2x.png */; };
+		FFB210441656130F00FCAF5F /* schedule_btn_day_white.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB2100A1656130F00FCAF5F /* schedule_btn_day_white.png */; };
+		FFB210451656130F00FCAF5F /* schedule_btn_day_white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB2100B1656130F00FCAF5F /* schedule_btn_day_white@2x.png */; };
+		FFB210461656130F00FCAF5F /* schedule_btn_month.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB2100C1656130F00FCAF5F /* schedule_btn_month.png */; };
+		FFB210471656130F00FCAF5F /* schedule_btn_month@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB2100D1656130F00FCAF5F /* schedule_btn_month@2x.png */; };
+		FFB210481656130F00FCAF5F /* schedule_btn_month_hl.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB2100E1656130F00FCAF5F /* schedule_btn_month_hl.png */; };
+		FFB210491656130F00FCAF5F /* schedule_btn_month_hl@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB2100F1656130F00FCAF5F /* schedule_btn_month_hl@2x.png */; };
+		FFB2104A1656130F00FCAF5F /* schedule_btn_month_white.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB210101656130F00FCAF5F /* schedule_btn_month_white.png */; };
+		FFB2104B1656130F00FCAF5F /* schedule_btn_month_white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB210111656130F00FCAF5F /* schedule_btn_month_white@2x.png */; };
+		FFB2104C1656130F00FCAF5F /* schedule_btn_today.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB210121656130F00FCAF5F /* schedule_btn_today.png */; };
+		FFB2104D1656130F00FCAF5F /* schedule_btn_today@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB210131656130F00FCAF5F /* schedule_btn_today@2x.png */; };
+		FFB2104E1656130F00FCAF5F /* schedule_btn_today_hl.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB210141656130F00FCAF5F /* schedule_btn_today_hl.png */; };
+		FFB2104F1656130F00FCAF5F /* schedule_btn_today_hl@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB210151656130F00FCAF5F /* schedule_btn_today_hl@2x.png */; };
+		FFB210501656130F00FCAF5F /* schedule_btn_today_white.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB210161656130F00FCAF5F /* schedule_btn_today_white.png */; };
+		FFB210511656130F00FCAF5F /* schedule_btn_today_white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB210171656130F00FCAF5F /* schedule_btn_today_white@2x.png */; };
+		FFB210521656130F00FCAF5F /* schedule_btn_week.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB210181656130F00FCAF5F /* schedule_btn_week.png */; };
+		FFB210531656130F00FCAF5F /* schedule_btn_week@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB210191656130F00FCAF5F /* schedule_btn_week@2x.png */; };
+		FFB210541656130F00FCAF5F /* schedule_btn_week_hl.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB2101A1656130F00FCAF5F /* schedule_btn_week_hl.png */; };
+		FFB210551656130F00FCAF5F /* schedule_btn_week_hl@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB2101B1656130F00FCAF5F /* schedule_btn_week_hl@2x.png */; };
+		FFB210561656130F00FCAF5F /* schedule_btn_week_white.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB2101C1656130F00FCAF5F /* schedule_btn_week_white.png */; };
+		FFB210571656130F00FCAF5F /* schedule_btn_week_white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB2101D1656130F00FCAF5F /* schedule_btn_week_white@2x.png */; };
+		FFB210581656130F00FCAF5F /* schedule_month_gray_tile.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB2101E1656130F00FCAF5F /* schedule_month_gray_tile.png */; };
+		FFB210591656130F00FCAF5F /* schedule_month_gray_tile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB2101F1656130F00FCAF5F /* schedule_month_gray_tile@2x.png */; };
+		FFB2105A1656130F00FCAF5F /* schedule_month_left_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB210201656130F00FCAF5F /* schedule_month_left_arrow.png */; };
+		FFB2105B1656130F00FCAF5F /* schedule_month_left_arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB210211656130F00FCAF5F /* schedule_month_left_arrow@2x.png */; };
+		FFB2105C1656130F00FCAF5F /* schedule_month_right_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB210221656130F00FCAF5F /* schedule_month_right_arrow.png */; };
+		FFB2105D1656130F00FCAF5F /* schedule_month_right_arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB210231656130F00FCAF5F /* schedule_month_right_arrow@2x.png */; };
+		FFB2105E1656130F00FCAF5F /* schedule_month_tile.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB210241656130F00FCAF5F /* schedule_month_tile.png */; };
+		FFB2105F1656130F00FCAF5F /* schedule_month_tile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB210251656130F00FCAF5F /* schedule_month_tile@2x.png */; };
+		FFB210601656130F00FCAF5F /* schedule_month_tile_hl.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB210261656130F00FCAF5F /* schedule_month_tile_hl.png */; };
+		FFB210611656130F00FCAF5F /* schedule_month_tile_hl@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB210271656130F00FCAF5F /* schedule_month_tile_hl@2x.png */; };
+		FFB210621656130F00FCAF5F /* schedule_month_today_tile.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB210281656130F00FCAF5F /* schedule_month_today_tile.png */; };
+		FFB210631656130F00FCAF5F /* schedule_month_today_tile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB210291656130F00FCAF5F /* schedule_month_today_tile@2x.png */; };
+		FFB210641656130F00FCAF5F /* schedule_month_today_tile_hl.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB2102A1656130F00FCAF5F /* schedule_month_today_tile_hl.png */; };
+		FFB210651656130F00FCAF5F /* schedule_month_today_tile_hl@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB2102B1656130F00FCAF5F /* schedule_month_today_tile_hl@2x.png */; };
+		FFB210661656130F00FCAF5F /* schedule_month_top_bar_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB2102C1656130F00FCAF5F /* schedule_month_top_bar_bg.png */; };
+		FFB210671656130F00FCAF5F /* schedule_month_top_bar_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB2102D1656130F00FCAF5F /* schedule_month_top_bar_bg@2x.png */; };
+		FFB210681656130F00FCAF5F /* schedule_month_view_shadow.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB2102E1656130F00FCAF5F /* schedule_month_view_shadow.png */; };
+		FFB210691656130F00FCAF5F /* schedule_month_view_shadow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB2102F1656130F00FCAF5F /* schedule_month_view_shadow@2x.png */; };
+		FFB2106A1656130F00FCAF5F /* schedule_week_left_bar_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB210301656130F00FCAF5F /* schedule_week_left_bar_bg.png */; };
+		FFB2106B1656130F00FCAF5F /* schedule_week_left_bar_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB210311656130F00FCAF5F /* schedule_week_left_bar_bg@2x.png */; };
+		FFB2106C1656130F00FCAF5F /* schedule_week_left_bar_shadow.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB210321656130F00FCAF5F /* schedule_week_left_bar_shadow.png */; };
+		FFB2106D1656130F00FCAF5F /* schedule_week_left_bar_shadow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB210331656130F00FCAF5F /* schedule_week_left_bar_shadow@2x.png */; };
+		FFB2106E1656130F00FCAF5F /* schedule_week_left_cell_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB210341656130F00FCAF5F /* schedule_week_left_cell_bg.png */; };
+		FFB2106F1656130F00FCAF5F /* schedule_week_left_cell_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB210351656130F00FCAF5F /* schedule_week_left_cell_bg@2x.png */; };
+		FFB210701656130F00FCAF5F /* schedule_week_top_bar_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB210361656130F00FCAF5F /* schedule_week_top_bar_bg.png */; };
+		FFB210711656130F00FCAF5F /* schedule_week_top_bar_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB210371656130F00FCAF5F /* schedule_week_top_bar_bg@2x.png */; };
+		FFB210721656130F00FCAF5F /* schedule_week_top_bar_shadow.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB210381656130F00FCAF5F /* schedule_week_top_bar_shadow.png */; };
+		FFB210731656130F00FCAF5F /* schedule_week_top_bar_shadow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB210391656130F00FCAF5F /* schedule_week_top_bar_shadow@2x.png */; };
+		FFB210741656130F00FCAF5F /* to_do_list_point_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB2103A1656130F00FCAF5F /* to_do_list_point_blue.png */; };
+		FFB210751656130F00FCAF5F /* to_do_list_point_blue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB2103B1656130F00FCAF5F /* to_do_list_point_blue@2x.png */; };
+		FFB210761656130F00FCAF5F /* to_do_list_point_green.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB2103C1656130F00FCAF5F /* to_do_list_point_green.png */; };
+		FFB210771656130F00FCAF5F /* to_do_list_point_green@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB2103D1656130F00FCAF5F /* to_do_list_point_green@2x.png */; };
+		FFB210781656130F00FCAF5F /* to_do_list_point_yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB2103E1656130F00FCAF5F /* to_do_list_point_yellow.png */; };
+		FFB210791656130F00FCAF5F /* to_do_list_point_yellow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB2103F1656130F00FCAF5F /* to_do_list_point_yellow@2x.png */; };
 		FFB46B2A164FCC2B00C32969 /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB46B29164FCC2B00C32969 /* Course.m */; };
 		FFB46B2D164FCC6D00C32969 /* Course+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB46B2C164FCC6D00C32969 /* Course+Addition.m */; };
 		FFB4D67F1654729400D863FC /* cancel_edit_hl@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB4D67B1654729400D863FC /* cancel_edit_hl@2x.png */; };
@@ -554,6 +631,99 @@
 		FF7109B8164D4667008F2A06 /* PullRefreshManagement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PullRefreshManagement.h; sourceTree = "<group>"; };
 		FF7109B9164D4667008F2A06 /* PullRefreshManagement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PullRefreshManagement.m; sourceTree = "<group>"; };
 		FFB0370A164BEE5A00157B7D /* WeTongjiSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = WeTongjiSDK.xcodeproj; path = ../WeTongjiSDK/WeTongjiSDK.xcodeproj; sourceTree = "<group>"; };
+		FFB20FBE1655D64A00FCAF5F /* NSDate+TKCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+TKCategory.h"; sourceTree = "<group>"; };
+		FFB20FBF1655D64A00FCAF5F /* NSDate+TKCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+TKCategory.m"; sourceTree = "<group>"; };
+		FFB20FC01655D64A00FCAF5F /* TapDetectingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TapDetectingView.h; sourceTree = "<group>"; };
+		FFB20FC11655D64A00FCAF5F /* TapDetectingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TapDetectingView.m; sourceTree = "<group>"; };
+		FFB20FC21655D64A00FCAF5F /* TKCalendarDayEventView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKCalendarDayEventView.h; sourceTree = "<group>"; };
+		FFB20FC31655D64A00FCAF5F /* TKCalendarDayEventView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKCalendarDayEventView.m; sourceTree = "<group>"; };
+		FFB20FC41655D64A00FCAF5F /* TKCalendarDayTimelineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKCalendarDayTimelineView.h; sourceTree = "<group>"; };
+		FFB20FC51655D64A00FCAF5F /* TKCalendarDayTimelineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKCalendarDayTimelineView.m; sourceTree = "<group>"; };
+		FFB20FC61655D64A00FCAF5F /* TKCalendarDayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKCalendarDayViewController.h; sourceTree = "<group>"; };
+		FFB20FC71655D64A00FCAF5F /* TKCalendarDayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKCalendarDayViewController.m; sourceTree = "<group>"; };
+		FFB20FC81655D64A00FCAF5F /* TKCalendarMonthView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKCalendarMonthView.h; sourceTree = "<group>"; };
+		FFB20FC91655D64A00FCAF5F /* TKCalendarMonthView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKCalendarMonthView.m; sourceTree = "<group>"; };
+		FFB20FCA1655D64A00FCAF5F /* TKCalendarMonthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKCalendarMonthViewController.h; sourceTree = "<group>"; };
+		FFB20FCB1655D64A00FCAF5F /* TKCalendarMonthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKCalendarMonthViewController.m; sourceTree = "<group>"; };
+		FFB20FCC1655D64A00FCAF5F /* TKGlobal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKGlobal.h; sourceTree = "<group>"; };
+		FFB20FCD1655D64A00FCAF5F /* TKGlobal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKGlobal.m; sourceTree = "<group>"; };
+		FFB20FCE1655D64A00FCAF5F /* UIImage+TKCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+TKCategory.h"; sourceTree = "<group>"; };
+		FFB20FCF1655D64A00FCAF5F /* UIImage+TKCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+TKCategory.m"; sourceTree = "<group>"; };
+		FFB20FD01655D64A00FCAF5F /* UIView+TKCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+TKCategory.h"; sourceTree = "<group>"; };
+		FFB20FD11655D64A00FCAF5F /* UIView+TKCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+TKCategory.m"; sourceTree = "<group>"; };
+		FFB20FED1655D72F00FCAF5F /* ScheduleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScheduleViewController.h; sourceTree = "<group>"; };
+		FFB20FEE1655D72F00FCAF5F /* ScheduleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScheduleViewController.m; sourceTree = "<group>"; };
+		FFB20FF01655DA0900FCAF5F /* ScheduleWeekLeftTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScheduleWeekLeftTableViewCell.h; sourceTree = "<group>"; };
+		FFB20FF11655DA0900FCAF5F /* ScheduleWeekLeftTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScheduleWeekLeftTableViewCell.m; sourceTree = "<group>"; };
+		FFB20FF21655DA0900FCAF5F /* ScheduleWeekLeftTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScheduleWeekLeftTableViewCell.xib; sourceTree = "<group>"; };
+		FFB20FF31655DA0900FCAF5F /* ScheduleWeekRightTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScheduleWeekRightTableViewCell.h; sourceTree = "<group>"; };
+		FFB20FF41655DA0900FCAF5F /* ScheduleWeekRightTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScheduleWeekRightTableViewCell.m; sourceTree = "<group>"; };
+		FFB20FF51655DA0900FCAF5F /* ScheduleWeekRightTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScheduleWeekRightTableViewCell.xib; sourceTree = "<group>"; };
+		FFB20FF61655DA0900FCAF5F /* ScheduleWeekRightTableViewCellContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScheduleWeekRightTableViewCellContentView.h; sourceTree = "<group>"; };
+		FFB20FF71655DA0900FCAF5F /* ScheduleWeekRightTableViewCellContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScheduleWeekRightTableViewCellContentView.m; sourceTree = "<group>"; };
+		FFB20FF81655DA0900FCAF5F /* ScheduleWeekViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScheduleWeekViewController.h; sourceTree = "<group>"; };
+		FFB20FF91655DA0900FCAF5F /* ScheduleWeekViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScheduleWeekViewController.m; sourceTree = "<group>"; };
+		FFB20FFA1655DA0900FCAF5F /* ScheduleWeekViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScheduleWeekViewController.xib; sourceTree = "<group>"; };
+		FFB20FFB1655DA0900FCAF5F /* ScheduleWeekLeftTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScheduleWeekLeftTableView.h; sourceTree = "<group>"; };
+		FFB20FFC1655DA0900FCAF5F /* ScheduleWeekLeftTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScheduleWeekLeftTableView.m; sourceTree = "<group>"; };
+		FFB210061656130F00FCAF5F /* schedule_btn_day.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = schedule_btn_day.png; sourceTree = "<group>"; };
+		FFB210071656130F00FCAF5F /* schedule_btn_day@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "schedule_btn_day@2x.png"; sourceTree = "<group>"; };
+		FFB210081656130F00FCAF5F /* schedule_btn_day_hl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = schedule_btn_day_hl.png; sourceTree = "<group>"; };
+		FFB210091656130F00FCAF5F /* schedule_btn_day_hl@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "schedule_btn_day_hl@2x.png"; sourceTree = "<group>"; };
+		FFB2100A1656130F00FCAF5F /* schedule_btn_day_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = schedule_btn_day_white.png; sourceTree = "<group>"; };
+		FFB2100B1656130F00FCAF5F /* schedule_btn_day_white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "schedule_btn_day_white@2x.png"; sourceTree = "<group>"; };
+		FFB2100C1656130F00FCAF5F /* schedule_btn_month.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = schedule_btn_month.png; sourceTree = "<group>"; };
+		FFB2100D1656130F00FCAF5F /* schedule_btn_month@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "schedule_btn_month@2x.png"; sourceTree = "<group>"; };
+		FFB2100E1656130F00FCAF5F /* schedule_btn_month_hl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = schedule_btn_month_hl.png; sourceTree = "<group>"; };
+		FFB2100F1656130F00FCAF5F /* schedule_btn_month_hl@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "schedule_btn_month_hl@2x.png"; sourceTree = "<group>"; };
+		FFB210101656130F00FCAF5F /* schedule_btn_month_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = schedule_btn_month_white.png; sourceTree = "<group>"; };
+		FFB210111656130F00FCAF5F /* schedule_btn_month_white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "schedule_btn_month_white@2x.png"; sourceTree = "<group>"; };
+		FFB210121656130F00FCAF5F /* schedule_btn_today.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = schedule_btn_today.png; sourceTree = "<group>"; };
+		FFB210131656130F00FCAF5F /* schedule_btn_today@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "schedule_btn_today@2x.png"; sourceTree = "<group>"; };
+		FFB210141656130F00FCAF5F /* schedule_btn_today_hl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = schedule_btn_today_hl.png; sourceTree = "<group>"; };
+		FFB210151656130F00FCAF5F /* schedule_btn_today_hl@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "schedule_btn_today_hl@2x.png"; sourceTree = "<group>"; };
+		FFB210161656130F00FCAF5F /* schedule_btn_today_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = schedule_btn_today_white.png; sourceTree = "<group>"; };
+		FFB210171656130F00FCAF5F /* schedule_btn_today_white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "schedule_btn_today_white@2x.png"; sourceTree = "<group>"; };
+		FFB210181656130F00FCAF5F /* schedule_btn_week.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = schedule_btn_week.png; sourceTree = "<group>"; };
+		FFB210191656130F00FCAF5F /* schedule_btn_week@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "schedule_btn_week@2x.png"; sourceTree = "<group>"; };
+		FFB2101A1656130F00FCAF5F /* schedule_btn_week_hl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = schedule_btn_week_hl.png; sourceTree = "<group>"; };
+		FFB2101B1656130F00FCAF5F /* schedule_btn_week_hl@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "schedule_btn_week_hl@2x.png"; sourceTree = "<group>"; };
+		FFB2101C1656130F00FCAF5F /* schedule_btn_week_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = schedule_btn_week_white.png; sourceTree = "<group>"; };
+		FFB2101D1656130F00FCAF5F /* schedule_btn_week_white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "schedule_btn_week_white@2x.png"; sourceTree = "<group>"; };
+		FFB2101E1656130F00FCAF5F /* schedule_month_gray_tile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = schedule_month_gray_tile.png; sourceTree = "<group>"; };
+		FFB2101F1656130F00FCAF5F /* schedule_month_gray_tile@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "schedule_month_gray_tile@2x.png"; sourceTree = "<group>"; };
+		FFB210201656130F00FCAF5F /* schedule_month_left_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = schedule_month_left_arrow.png; sourceTree = "<group>"; };
+		FFB210211656130F00FCAF5F /* schedule_month_left_arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "schedule_month_left_arrow@2x.png"; sourceTree = "<group>"; };
+		FFB210221656130F00FCAF5F /* schedule_month_right_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = schedule_month_right_arrow.png; sourceTree = "<group>"; };
+		FFB210231656130F00FCAF5F /* schedule_month_right_arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "schedule_month_right_arrow@2x.png"; sourceTree = "<group>"; };
+		FFB210241656130F00FCAF5F /* schedule_month_tile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = schedule_month_tile.png; sourceTree = "<group>"; };
+		FFB210251656130F00FCAF5F /* schedule_month_tile@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "schedule_month_tile@2x.png"; sourceTree = "<group>"; };
+		FFB210261656130F00FCAF5F /* schedule_month_tile_hl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = schedule_month_tile_hl.png; sourceTree = "<group>"; };
+		FFB210271656130F00FCAF5F /* schedule_month_tile_hl@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "schedule_month_tile_hl@2x.png"; sourceTree = "<group>"; };
+		FFB210281656130F00FCAF5F /* schedule_month_today_tile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = schedule_month_today_tile.png; sourceTree = "<group>"; };
+		FFB210291656130F00FCAF5F /* schedule_month_today_tile@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "schedule_month_today_tile@2x.png"; sourceTree = "<group>"; };
+		FFB2102A1656130F00FCAF5F /* schedule_month_today_tile_hl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = schedule_month_today_tile_hl.png; sourceTree = "<group>"; };
+		FFB2102B1656130F00FCAF5F /* schedule_month_today_tile_hl@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "schedule_month_today_tile_hl@2x.png"; sourceTree = "<group>"; };
+		FFB2102C1656130F00FCAF5F /* schedule_month_top_bar_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = schedule_month_top_bar_bg.png; sourceTree = "<group>"; };
+		FFB2102D1656130F00FCAF5F /* schedule_month_top_bar_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "schedule_month_top_bar_bg@2x.png"; sourceTree = "<group>"; };
+		FFB2102E1656130F00FCAF5F /* schedule_month_view_shadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = schedule_month_view_shadow.png; sourceTree = "<group>"; };
+		FFB2102F1656130F00FCAF5F /* schedule_month_view_shadow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "schedule_month_view_shadow@2x.png"; sourceTree = "<group>"; };
+		FFB210301656130F00FCAF5F /* schedule_week_left_bar_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = schedule_week_left_bar_bg.png; sourceTree = "<group>"; };
+		FFB210311656130F00FCAF5F /* schedule_week_left_bar_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "schedule_week_left_bar_bg@2x.png"; sourceTree = "<group>"; };
+		FFB210321656130F00FCAF5F /* schedule_week_left_bar_shadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = schedule_week_left_bar_shadow.png; sourceTree = "<group>"; };
+		FFB210331656130F00FCAF5F /* schedule_week_left_bar_shadow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "schedule_week_left_bar_shadow@2x.png"; sourceTree = "<group>"; };
+		FFB210341656130F00FCAF5F /* schedule_week_left_cell_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = schedule_week_left_cell_bg.png; sourceTree = "<group>"; };
+		FFB210351656130F00FCAF5F /* schedule_week_left_cell_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "schedule_week_left_cell_bg@2x.png"; sourceTree = "<group>"; };
+		FFB210361656130F00FCAF5F /* schedule_week_top_bar_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = schedule_week_top_bar_bg.png; sourceTree = "<group>"; };
+		FFB210371656130F00FCAF5F /* schedule_week_top_bar_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "schedule_week_top_bar_bg@2x.png"; sourceTree = "<group>"; };
+		FFB210381656130F00FCAF5F /* schedule_week_top_bar_shadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = schedule_week_top_bar_shadow.png; sourceTree = "<group>"; };
+		FFB210391656130F00FCAF5F /* schedule_week_top_bar_shadow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "schedule_week_top_bar_shadow@2x.png"; sourceTree = "<group>"; };
+		FFB2103A1656130F00FCAF5F /* to_do_list_point_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = to_do_list_point_blue.png; sourceTree = "<group>"; };
+		FFB2103B1656130F00FCAF5F /* to_do_list_point_blue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "to_do_list_point_blue@2x.png"; sourceTree = "<group>"; };
+		FFB2103C1656130F00FCAF5F /* to_do_list_point_green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = to_do_list_point_green.png; sourceTree = "<group>"; };
+		FFB2103D1656130F00FCAF5F /* to_do_list_point_green@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "to_do_list_point_green@2x.png"; sourceTree = "<group>"; };
+		FFB2103E1656130F00FCAF5F /* to_do_list_point_yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = to_do_list_point_yellow.png; sourceTree = "<group>"; };
+		FFB2103F1656130F00FCAF5F /* to_do_list_point_yellow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "to_do_list_point_yellow@2x.png"; sourceTree = "<group>"; };
 		FFB27CC9164E0E32007A51DE /* PullRefreshManagementDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PullRefreshManagementDelegate.h; sourceTree = "<group>"; };
 		FFB46B28164FCC2B00C32969 /* Course.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Course.h; sourceTree = "<group>"; };
 		FFB46B29164FCC2B00C32969 /* Course.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Course.m; sourceTree = "<group>"; };
@@ -987,6 +1157,7 @@
 		E52352C71631884000DBFF7C /* PersonWallViewController */ = {
 			isa = PBXGroup;
 			children = (
+				FFB20FBB1655D60E00FCAF5F /* Schedule */,
 				03D540B316512F8D0070F727 /* PersonalInfoViewController */,
 				E5D2448C1647C34400DA43DD /* Arrangement */,
 				E51458971646476C00533761 /* Myfavorite */,
@@ -1029,6 +1200,7 @@
 		E52352D31631922500DBFF7C /* MiddleContent */ = {
 			isa = PBXGroup;
 			children = (
+				FFB21005165612FB00FCAF5F /* Schedule */,
 				FFC1204016516C38003FF0E6 /* back_btn@2x.png */,
 				03E6FBB8165538FD00A3E60C /* WeeklyPerson */,
 				03D540B71651335B0070F727 /* EditInfo */,
@@ -1201,6 +1373,129 @@
 				FFB03716164BEE5A00157B7D /* WeTongjiSDKtest.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		FFB20FBB1655D60E00FCAF5F /* Schedule */ = {
+			isa = PBXGroup;
+			children = (
+				FFB20FBD1655D63900FCAF5F /* TapkuLibrary */,
+				FFB20FDC1655D65200FCAF5F /* Week */,
+				FFB20FED1655D72F00FCAF5F /* ScheduleViewController.h */,
+				FFB20FEE1655D72F00FCAF5F /* ScheduleViewController.m */,
+			);
+			name = Schedule;
+			sourceTree = "<group>";
+		};
+		FFB20FBD1655D63900FCAF5F /* TapkuLibrary */ = {
+			isa = PBXGroup;
+			children = (
+				FFB20FBE1655D64A00FCAF5F /* NSDate+TKCategory.h */,
+				FFB20FBF1655D64A00FCAF5F /* NSDate+TKCategory.m */,
+				FFB20FC01655D64A00FCAF5F /* TapDetectingView.h */,
+				FFB20FC11655D64A00FCAF5F /* TapDetectingView.m */,
+				FFB20FC21655D64A00FCAF5F /* TKCalendarDayEventView.h */,
+				FFB20FC31655D64A00FCAF5F /* TKCalendarDayEventView.m */,
+				FFB20FC41655D64A00FCAF5F /* TKCalendarDayTimelineView.h */,
+				FFB20FC51655D64A00FCAF5F /* TKCalendarDayTimelineView.m */,
+				FFB20FC61655D64A00FCAF5F /* TKCalendarDayViewController.h */,
+				FFB20FC71655D64A00FCAF5F /* TKCalendarDayViewController.m */,
+				FFB20FC81655D64A00FCAF5F /* TKCalendarMonthView.h */,
+				FFB20FC91655D64A00FCAF5F /* TKCalendarMonthView.m */,
+				FFB20FCA1655D64A00FCAF5F /* TKCalendarMonthViewController.h */,
+				FFB20FCB1655D64A00FCAF5F /* TKCalendarMonthViewController.m */,
+				FFB20FCC1655D64A00FCAF5F /* TKGlobal.h */,
+				FFB20FCD1655D64A00FCAF5F /* TKGlobal.m */,
+				FFB20FCE1655D64A00FCAF5F /* UIImage+TKCategory.h */,
+				FFB20FCF1655D64A00FCAF5F /* UIImage+TKCategory.m */,
+				FFB20FD01655D64A00FCAF5F /* UIView+TKCategory.h */,
+				FFB20FD11655D64A00FCAF5F /* UIView+TKCategory.m */,
+			);
+			name = TapkuLibrary;
+			sourceTree = "<group>";
+		};
+		FFB20FDC1655D65200FCAF5F /* Week */ = {
+			isa = PBXGroup;
+			children = (
+				FFB20FF01655DA0900FCAF5F /* ScheduleWeekLeftTableViewCell.h */,
+				FFB20FF11655DA0900FCAF5F /* ScheduleWeekLeftTableViewCell.m */,
+				FFB20FF21655DA0900FCAF5F /* ScheduleWeekLeftTableViewCell.xib */,
+				FFB20FF31655DA0900FCAF5F /* ScheduleWeekRightTableViewCell.h */,
+				FFB20FF41655DA0900FCAF5F /* ScheduleWeekRightTableViewCell.m */,
+				FFB20FF51655DA0900FCAF5F /* ScheduleWeekRightTableViewCell.xib */,
+				FFB20FF61655DA0900FCAF5F /* ScheduleWeekRightTableViewCellContentView.h */,
+				FFB20FF71655DA0900FCAF5F /* ScheduleWeekRightTableViewCellContentView.m */,
+				FFB20FF81655DA0900FCAF5F /* ScheduleWeekViewController.h */,
+				FFB20FF91655DA0900FCAF5F /* ScheduleWeekViewController.m */,
+				FFB20FFA1655DA0900FCAF5F /* ScheduleWeekViewController.xib */,
+				FFB20FFB1655DA0900FCAF5F /* ScheduleWeekLeftTableView.h */,
+				FFB20FFC1655DA0900FCAF5F /* ScheduleWeekLeftTableView.m */,
+			);
+			name = Week;
+			sourceTree = "<group>";
+		};
+		FFB21005165612FB00FCAF5F /* Schedule */ = {
+			isa = PBXGroup;
+			children = (
+				FFB210061656130F00FCAF5F /* schedule_btn_day.png */,
+				FFB210071656130F00FCAF5F /* schedule_btn_day@2x.png */,
+				FFB210081656130F00FCAF5F /* schedule_btn_day_hl.png */,
+				FFB210091656130F00FCAF5F /* schedule_btn_day_hl@2x.png */,
+				FFB2100A1656130F00FCAF5F /* schedule_btn_day_white.png */,
+				FFB2100B1656130F00FCAF5F /* schedule_btn_day_white@2x.png */,
+				FFB2100C1656130F00FCAF5F /* schedule_btn_month.png */,
+				FFB2100D1656130F00FCAF5F /* schedule_btn_month@2x.png */,
+				FFB2100E1656130F00FCAF5F /* schedule_btn_month_hl.png */,
+				FFB2100F1656130F00FCAF5F /* schedule_btn_month_hl@2x.png */,
+				FFB210101656130F00FCAF5F /* schedule_btn_month_white.png */,
+				FFB210111656130F00FCAF5F /* schedule_btn_month_white@2x.png */,
+				FFB210121656130F00FCAF5F /* schedule_btn_today.png */,
+				FFB210131656130F00FCAF5F /* schedule_btn_today@2x.png */,
+				FFB210141656130F00FCAF5F /* schedule_btn_today_hl.png */,
+				FFB210151656130F00FCAF5F /* schedule_btn_today_hl@2x.png */,
+				FFB210161656130F00FCAF5F /* schedule_btn_today_white.png */,
+				FFB210171656130F00FCAF5F /* schedule_btn_today_white@2x.png */,
+				FFB210181656130F00FCAF5F /* schedule_btn_week.png */,
+				FFB210191656130F00FCAF5F /* schedule_btn_week@2x.png */,
+				FFB2101A1656130F00FCAF5F /* schedule_btn_week_hl.png */,
+				FFB2101B1656130F00FCAF5F /* schedule_btn_week_hl@2x.png */,
+				FFB2101C1656130F00FCAF5F /* schedule_btn_week_white.png */,
+				FFB2101D1656130F00FCAF5F /* schedule_btn_week_white@2x.png */,
+				FFB2101E1656130F00FCAF5F /* schedule_month_gray_tile.png */,
+				FFB2101F1656130F00FCAF5F /* schedule_month_gray_tile@2x.png */,
+				FFB210201656130F00FCAF5F /* schedule_month_left_arrow.png */,
+				FFB210211656130F00FCAF5F /* schedule_month_left_arrow@2x.png */,
+				FFB210221656130F00FCAF5F /* schedule_month_right_arrow.png */,
+				FFB210231656130F00FCAF5F /* schedule_month_right_arrow@2x.png */,
+				FFB210241656130F00FCAF5F /* schedule_month_tile.png */,
+				FFB210251656130F00FCAF5F /* schedule_month_tile@2x.png */,
+				FFB210261656130F00FCAF5F /* schedule_month_tile_hl.png */,
+				FFB210271656130F00FCAF5F /* schedule_month_tile_hl@2x.png */,
+				FFB210281656130F00FCAF5F /* schedule_month_today_tile.png */,
+				FFB210291656130F00FCAF5F /* schedule_month_today_tile@2x.png */,
+				FFB2102A1656130F00FCAF5F /* schedule_month_today_tile_hl.png */,
+				FFB2102B1656130F00FCAF5F /* schedule_month_today_tile_hl@2x.png */,
+				FFB2102C1656130F00FCAF5F /* schedule_month_top_bar_bg.png */,
+				FFB2102D1656130F00FCAF5F /* schedule_month_top_bar_bg@2x.png */,
+				FFB2102E1656130F00FCAF5F /* schedule_month_view_shadow.png */,
+				FFB2102F1656130F00FCAF5F /* schedule_month_view_shadow@2x.png */,
+				FFB210301656130F00FCAF5F /* schedule_week_left_bar_bg.png */,
+				FFB210311656130F00FCAF5F /* schedule_week_left_bar_bg@2x.png */,
+				FFB210321656130F00FCAF5F /* schedule_week_left_bar_shadow.png */,
+				FFB210331656130F00FCAF5F /* schedule_week_left_bar_shadow@2x.png */,
+				FFB210341656130F00FCAF5F /* schedule_week_left_cell_bg.png */,
+				FFB210351656130F00FCAF5F /* schedule_week_left_cell_bg@2x.png */,
+				FFB210361656130F00FCAF5F /* schedule_week_top_bar_bg.png */,
+				FFB210371656130F00FCAF5F /* schedule_week_top_bar_bg@2x.png */,
+				FFB210381656130F00FCAF5F /* schedule_week_top_bar_shadow.png */,
+				FFB210391656130F00FCAF5F /* schedule_week_top_bar_shadow@2x.png */,
+				FFB2103A1656130F00FCAF5F /* to_do_list_point_blue.png */,
+				FFB2103B1656130F00FCAF5F /* to_do_list_point_blue@2x.png */,
+				FFB2103C1656130F00FCAF5F /* to_do_list_point_green.png */,
+				FFB2103D1656130F00FCAF5F /* to_do_list_point_green@2x.png */,
+				FFB2103E1656130F00FCAF5F /* to_do_list_point_yellow.png */,
+				FFB2103F1656130F00FCAF5F /* to_do_list_point_yellow@2x.png */,
+			);
+			name = Schedule;
 			sourceTree = "<group>";
 		};
 		FFB5AEB7164CDC0A00A232DF /* EGOTableViewPullRefresh */ = {
@@ -1577,6 +1872,67 @@
 				03E6FBC81655391500A3E60C /* pic_bg@2x.png in Resources */,
 				03E6FBCD165539A300A3E60C /* WeeklyPersonHeaderView.xib in Resources */,
 				03E6FBD216553D5100A3E60C /* WeeklyPersonCell.xib in Resources */,
+				FFB20FFE1655DA0900FCAF5F /* ScheduleWeekLeftTableViewCell.xib in Resources */,
+				FFB210001655DA0900FCAF5F /* ScheduleWeekRightTableViewCell.xib in Resources */,
+				FFB210031655DA0900FCAF5F /* ScheduleWeekViewController.xib in Resources */,
+				FFB210401656130F00FCAF5F /* schedule_btn_day.png in Resources */,
+				FFB210411656130F00FCAF5F /* schedule_btn_day@2x.png in Resources */,
+				FFB210421656130F00FCAF5F /* schedule_btn_day_hl.png in Resources */,
+				FFB210431656130F00FCAF5F /* schedule_btn_day_hl@2x.png in Resources */,
+				FFB210441656130F00FCAF5F /* schedule_btn_day_white.png in Resources */,
+				FFB210451656130F00FCAF5F /* schedule_btn_day_white@2x.png in Resources */,
+				FFB210461656130F00FCAF5F /* schedule_btn_month.png in Resources */,
+				FFB210471656130F00FCAF5F /* schedule_btn_month@2x.png in Resources */,
+				FFB210481656130F00FCAF5F /* schedule_btn_month_hl.png in Resources */,
+				FFB210491656130F00FCAF5F /* schedule_btn_month_hl@2x.png in Resources */,
+				FFB2104A1656130F00FCAF5F /* schedule_btn_month_white.png in Resources */,
+				FFB2104B1656130F00FCAF5F /* schedule_btn_month_white@2x.png in Resources */,
+				FFB2104C1656130F00FCAF5F /* schedule_btn_today.png in Resources */,
+				FFB2104D1656130F00FCAF5F /* schedule_btn_today@2x.png in Resources */,
+				FFB2104E1656130F00FCAF5F /* schedule_btn_today_hl.png in Resources */,
+				FFB2104F1656130F00FCAF5F /* schedule_btn_today_hl@2x.png in Resources */,
+				FFB210501656130F00FCAF5F /* schedule_btn_today_white.png in Resources */,
+				FFB210511656130F00FCAF5F /* schedule_btn_today_white@2x.png in Resources */,
+				FFB210521656130F00FCAF5F /* schedule_btn_week.png in Resources */,
+				FFB210531656130F00FCAF5F /* schedule_btn_week@2x.png in Resources */,
+				FFB210541656130F00FCAF5F /* schedule_btn_week_hl.png in Resources */,
+				FFB210551656130F00FCAF5F /* schedule_btn_week_hl@2x.png in Resources */,
+				FFB210561656130F00FCAF5F /* schedule_btn_week_white.png in Resources */,
+				FFB210571656130F00FCAF5F /* schedule_btn_week_white@2x.png in Resources */,
+				FFB210581656130F00FCAF5F /* schedule_month_gray_tile.png in Resources */,
+				FFB210591656130F00FCAF5F /* schedule_month_gray_tile@2x.png in Resources */,
+				FFB2105A1656130F00FCAF5F /* schedule_month_left_arrow.png in Resources */,
+				FFB2105B1656130F00FCAF5F /* schedule_month_left_arrow@2x.png in Resources */,
+				FFB2105C1656130F00FCAF5F /* schedule_month_right_arrow.png in Resources */,
+				FFB2105D1656130F00FCAF5F /* schedule_month_right_arrow@2x.png in Resources */,
+				FFB2105E1656130F00FCAF5F /* schedule_month_tile.png in Resources */,
+				FFB2105F1656130F00FCAF5F /* schedule_month_tile@2x.png in Resources */,
+				FFB210601656130F00FCAF5F /* schedule_month_tile_hl.png in Resources */,
+				FFB210611656130F00FCAF5F /* schedule_month_tile_hl@2x.png in Resources */,
+				FFB210621656130F00FCAF5F /* schedule_month_today_tile.png in Resources */,
+				FFB210631656130F00FCAF5F /* schedule_month_today_tile@2x.png in Resources */,
+				FFB210641656130F00FCAF5F /* schedule_month_today_tile_hl.png in Resources */,
+				FFB210651656130F00FCAF5F /* schedule_month_today_tile_hl@2x.png in Resources */,
+				FFB210661656130F00FCAF5F /* schedule_month_top_bar_bg.png in Resources */,
+				FFB210671656130F00FCAF5F /* schedule_month_top_bar_bg@2x.png in Resources */,
+				FFB210681656130F00FCAF5F /* schedule_month_view_shadow.png in Resources */,
+				FFB210691656130F00FCAF5F /* schedule_month_view_shadow@2x.png in Resources */,
+				FFB2106A1656130F00FCAF5F /* schedule_week_left_bar_bg.png in Resources */,
+				FFB2106B1656130F00FCAF5F /* schedule_week_left_bar_bg@2x.png in Resources */,
+				FFB2106C1656130F00FCAF5F /* schedule_week_left_bar_shadow.png in Resources */,
+				FFB2106D1656130F00FCAF5F /* schedule_week_left_bar_shadow@2x.png in Resources */,
+				FFB2106E1656130F00FCAF5F /* schedule_week_left_cell_bg.png in Resources */,
+				FFB2106F1656130F00FCAF5F /* schedule_week_left_cell_bg@2x.png in Resources */,
+				FFB210701656130F00FCAF5F /* schedule_week_top_bar_bg.png in Resources */,
+				FFB210711656130F00FCAF5F /* schedule_week_top_bar_bg@2x.png in Resources */,
+				FFB210721656130F00FCAF5F /* schedule_week_top_bar_shadow.png in Resources */,
+				FFB210731656130F00FCAF5F /* schedule_week_top_bar_shadow@2x.png in Resources */,
+				FFB210741656130F00FCAF5F /* to_do_list_point_blue.png in Resources */,
+				FFB210751656130F00FCAF5F /* to_do_list_point_blue@2x.png in Resources */,
+				FFB210761656130F00FCAF5F /* to_do_list_point_green.png in Resources */,
+				FFB210771656130F00FCAF5F /* to_do_list_point_green@2x.png in Resources */,
+				FFB210781656130F00FCAF5F /* to_do_list_point_yellow.png in Resources */,
+				FFB210791656130F00FCAF5F /* to_do_list_point_yellow@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1652,6 +2008,22 @@
 				03E6FBB71655372D00A3E60C /* WeeklyPersonViewController.m in Sources */,
 				03E6FBCB1655398E00A3E60C /* WeeklyPersonHeaderView.m in Sources */,
 				03E6FBD016553CFF00A3E60C /* WeeklyPersonCell.m in Sources */,
+				FFB20FD21655D64A00FCAF5F /* NSDate+TKCategory.m in Sources */,
+				FFB20FD31655D64A00FCAF5F /* TapDetectingView.m in Sources */,
+				FFB20FD41655D64A00FCAF5F /* TKCalendarDayEventView.m in Sources */,
+				FFB20FD51655D64A00FCAF5F /* TKCalendarDayTimelineView.m in Sources */,
+				FFB20FD61655D64A00FCAF5F /* TKCalendarDayViewController.m in Sources */,
+				FFB20FD71655D64A00FCAF5F /* TKCalendarMonthView.m in Sources */,
+				FFB20FD81655D64A00FCAF5F /* TKCalendarMonthViewController.m in Sources */,
+				FFB20FD91655D64A00FCAF5F /* TKGlobal.m in Sources */,
+				FFB20FDA1655D64A00FCAF5F /* UIImage+TKCategory.m in Sources */,
+				FFB20FDB1655D64A00FCAF5F /* UIView+TKCategory.m in Sources */,
+				FFB20FEF1655D72F00FCAF5F /* ScheduleViewController.m in Sources */,
+				FFB20FFD1655DA0900FCAF5F /* ScheduleWeekLeftTableViewCell.m in Sources */,
+				FFB20FFF1655DA0900FCAF5F /* ScheduleWeekRightTableViewCell.m in Sources */,
+				FFB210011655DA0900FCAF5F /* ScheduleWeekRightTableViewCellContentView.m in Sources */,
+				FFB210021655DA0900FCAF5F /* ScheduleWeekViewController.m in Sources */,
+				FFB210041655DA0900FCAF5F /* ScheduleWeekLeftTableView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

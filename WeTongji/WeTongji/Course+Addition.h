@@ -14,6 +14,6 @@
 + (Course *)insertExam:(NSDictionary *)dict inManagedObjectContext:(NSManagedObjectContext *)context;
 
 + (NSArray *) getAllCourseInManagedObjectContext:(NSManagedObjectContext *)context;
-+ (NSArray *) clearDataInManagedObjectContext:(NSManagedObjectContext *)context;
++ (void) clearDataInManagedObjectContext:(NSManagedObjectContext *)context;
 
 @end

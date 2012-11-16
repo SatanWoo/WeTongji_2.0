@@ -18,6 +18,7 @@
 #define kEditInfoViewController @"kEditInfoViewController"
 #define kLoginViewController @"kLoginViewController"
 #define kWeeklyPersonViewController @"kWeeklyPersonViewController"
+#define kSchedueViewController @"kSchedueViewController"
 
 // TableViewCell
 #define kLeftMenuCell @"kLeftMenuCell"

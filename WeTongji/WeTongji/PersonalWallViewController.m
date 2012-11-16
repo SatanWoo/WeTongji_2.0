@@ -26,6 +26,7 @@
     CGPoint originScheduleTableViewCenter;
 }
 @property (nonatomic, assign) BOOL isAnimationFinished;
+@property (weak, nonatomic) IBOutlet UIView *headerBoard;
 @property (nonatomic, strong) WUPageControlViewController *pageViewController;
 - (void)configureTableView;
 - (void)didTap:(UITapGestureRecognizer *)recognizer;
@@ -44,10 +45,11 @@
     [self.scheduleTableView registerNib:[UINib nibWithNibName:@"PersonalInfoCell" bundle:nil] forCellReuseIdentifier:kPersonalInfoCell];
     [self.scheduleTableView registerNib:[UINib nibWithNibName:@"ScheduleCell" bundle:nil] forCellReuseIdentifier:kScheduleCell];
     originScheduleTableViewCenter = self.scheduleTableView.center;
-    [self.view insertSubview:self.pageViewController.view belowSubview:self.scheduleTableView];
+    [self.view insertSubview:self.pageViewController.view belowSubview:self.headerBoard];
     self.scheduleTableView.contentInset = UIEdgeInsetsMake(kContentOffSet, 0.0f, 0.0f, 0.0f);
     self.scheduleTableView.backgroundColor =[UIColor clearColor];
-
+    CGPoint center = CGPointMake(self.headerBoard.center.x, (-self.scheduleTableView.contentOffset.y)/2);
+    [self.headerBoard setCenter:center];
 }
 
 #pragma mark - Tap
@@ -62,6 +64,8 @@
     
     [UIView animateWithDuration:0.8f animations:^{
         [self.pageViewController.view setCenter:originPageControlViewCenter];
+        CGPoint center = CGPointMake(self.headerBoard.center.x, (-self.scheduleTableView.contentOffset.y)/2);
+        [self.headerBoard setCenter:center];
     } completion:^(BOOL finished) {
         self.pageViewController.view.userInteractionEnabled = NO;
     }];
@@ -117,6 +121,7 @@
 
 - (void)viewDidUnload
 {
+    [self setHeaderBoard:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -184,6 +189,8 @@
         [self performSegueWithIdentifier:kMyFavortieViewControllerSegue sender:self];
     } else if (indexPath.section == 2) {
         [self performSegueWithIdentifier:kEditInfoViewController sender:self];
+    } else if (indexPath.section == 3) {
+        [self performSegueWithIdentifier:kSchedueViewController sender:self];
     }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
@@ -200,6 +207,8 @@
         [UIView animateWithDuration:0.25f animations:^{
             self.scheduleTableView.frame = CGRectMake(0, self.view.frame.size.height, self.scheduleTableView.frame.size.width, self.scheduleTableView.frame.size.height);
             self.pageViewController.view.frame = CGRectMake(0,0, self.pageViewController.view.frame.size.width, self.pageViewController.view.frame.size.height);
+            CGPoint center = CGPointMake(self.headerBoard.center.x, (self.pageViewController.view.frame.size.height)/2);
+            [self.headerBoard setCenter:center];
         } completion:^(BOOL finished) {
             self.pageViewController.view.userInteractionEnabled = YES;
             self.scheduleTableView.userInteractionEnabled = NO;
@@ -208,6 +217,8 @@
         if (self.isAnimationFinished == false)
         {
             self.pageViewController.view.frame = CGRectMake(0, kStateY + velocity * rate, self.pageViewController.view.frame.size.width, self.pageViewController.view.frame.size.height);
+            CGPoint center = CGPointMake(self.headerBoard.center.x, (-scrollView.contentOffset.y)/2);
+            [self.headerBoard setCenter:center];
         }
 }
 
