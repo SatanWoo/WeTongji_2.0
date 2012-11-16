@@ -20,6 +20,7 @@
 - (void)revealMiddleViewController:(UIGestureRecognizer *)recognizer;
 - (void)pressNavButton;
 - (void)configureNavButton;
+- (void)navBack;
 - (UIViewController *)getContentViewController;
 @end
 
@@ -81,7 +82,7 @@
 
 - (void)pressNavButton
 {
-    if (self.currentStatus == eMIDDLE) {
+    if (self.currentStatus == eMIDDLE ) {
         [self revealLeftViewController:nil];
     } else {
         [self revealMiddleViewController:nil];
@@ -110,6 +111,12 @@
     UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithImage:@"nav_left.png" selector:@selector(pressNavButton) target:self];
     UIViewController *rootViewController = [self getContentViewController];
     rootViewController.navigationItem.leftBarButtonItem = button;
+}
+
+- (void)navBack
+{
+    [self.navigationController popViewControllerAnimated:YES];
+    self.currentStatus = eMIDDLE;
 }
 
 #pragma mark - Setter * Getter
