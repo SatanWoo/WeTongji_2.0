@@ -11,6 +11,7 @@
 #import "Course+Addition.h"
 #import "Event+Addition.h"
 #import "AbstractActivity.h"
+#import "Exam+Addition.h"
 
 #define MINUTE_TO_HEIGHT_RATIO (LEFT_CELL_HEIGHT / 60.)
 #define VERTICAL_OFFSET (self.frame.size.height / 4)
@@ -86,6 +87,9 @@
         } else if([event isMemberOfClass:[Event class]]) {
             strokeColor = [UIColor colorWithRed:253 / 255. green:186 / 255. blue:81 / 255. alpha:1];
             CGContextSetRGBFillColor(context, 255 / 255., 208 / 255., 52 / 255., alpha);
+        } else if([event isMemberOfClass:[Exam class]]) {
+            strokeColor = [UIColor colorWithRed:253 / 255. green:10 / 255. blue:10 / 255. alpha:1];
+            CGContextSetRGBFillColor(context, 255 / 255., 128 / 255., 128 / 255., alpha);
         } else
             continue;
         

@@ -12,6 +12,7 @@
 #import "NSString+Addition.h"
 #import "Course+Addition.h"
 #import "Event+Addition.h"
+#import "Exam+Addition.h"
 
 @interface ScheduleViewController ()
 
@@ -75,6 +76,11 @@
         for ( NSDictionary * dict in events )
         {
             [Event insertActivity:dict inManagedObjectContext:self.managedObjectContext];
+        }
+        NSArray * exams = [responseData objectForKey:@"Exams"];
+        for ( NSDictionary * dict in exams )
+        {
+            [Exam insertAnExam:dict inManagedObjectContext:self.managedObjectContext];
         }
         [self.view addSubview:self.scheduleWeekViewController.view];
     }failureBlock:^(NSError *error){}];

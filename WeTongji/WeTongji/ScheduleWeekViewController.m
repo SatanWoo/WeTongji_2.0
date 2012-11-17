@@ -93,7 +93,13 @@
     NSPredicate * schedule = [NSPredicate predicateWithFormat:@"canSchedule == %@",[NSNumber numberWithBool:NO]];
     [requestEvent setPredicate:[NSCompoundPredicate andPredicateWithSubpredicates:[NSArray arrayWithObjects: beginPredicate, endPredicate,schedule,nil]]];
     NSArray *resultEvent = [self.managedObjectContext executeFetchRequest:requestEvent error:NULL];
-    return [result arrayByAddingObjectsFromArray:resultEvent];
+    
+    NSFetchRequest *requestExam = [[NSFetchRequest alloc] init];
+    [requestExam setEntity:[NSEntityDescription entityForName:@"Exam" inManagedObjectContext:self.managedObjectContext]];
+    [requestExam setPredicate:[NSCompoundPredicate andPredicateWithSubpredicates:[NSArray arrayWithObjects: beginPredicate, endPredicate,nil]]];
+    NSArray *resultExam = [self.managedObjectContext executeFetchRequest:requestExam error:NULL];
+    
+    return [[result arrayByAddingObjectsFromArray:resultEvent] arrayByAddingObjectsFromArray:resultExam];
 }
 
 #pragma mark -

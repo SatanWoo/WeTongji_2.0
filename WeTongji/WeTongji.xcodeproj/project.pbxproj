@@ -327,6 +327,8 @@
 		FFBF9A21164843A100E3D610 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBF9A20164843A100E3D610 /* MobileCoreServices.framework */; };
 		FFBF9A23164843A600E3D610 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBF9A22164843A600E3D610 /* SystemConfiguration.framework */; };
 		FFBF9A25164843AD00E3D610 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBF9A24164843AD00E3D610 /* MapKit.framework */; };
+		FFC07086165742BB00323E38 /* Exam+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC07085165742BB00323E38 /* Exam+Addition.m */; };
+		FFC070871657430400323E38 /* Exam.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB1389F165691F400D73C71 /* Exam.m */; };
 		FFC1203B165160AC003FF0E6 /* 注册登录.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FFC1203A165160AC003FF0E6 /* 注册登录.jpg */; };
 		FFC1203F1651639A003FF0E6 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC1203E1651639A003FF0E6 /* LoginViewController.m */; };
 		FFC1204116516C38003FF0E6 /* back_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFC1204016516C38003FF0E6 /* back_btn@2x.png */; };
@@ -755,6 +757,8 @@
 		FFBF9A20164843A100E3D610 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		FFBF9A22164843A600E3D610 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		FFBF9A24164843AD00E3D610 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		FFC07084165742BB00323E38 /* Exam+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Exam+Addition.h"; sourceTree = "<group>"; };
+		FFC07085165742BB00323E38 /* Exam+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Exam+Addition.m"; sourceTree = "<group>"; };
 		FFC1203A165160AC003FF0E6 /* 注册登录.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "注册登录.jpg"; sourceTree = "<group>"; };
 		FFC1203D1651639A003FF0E6 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		FFC1203E1651639A003FF0E6 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
@@ -1567,6 +1571,8 @@
 				FFB46B2C164FCC6D00C32969 /* Course+Addition.m */,
 				FF6E953016537EB2002497FA /* User+Addition.h */,
 				FF6E953116537EB2002497FA /* User+Addition.m */,
+				FFC07084165742BB00323E38 /* Exam+Addition.h */,
+				FFC07085165742BB00323E38 /* Exam+Addition.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -1933,6 +1939,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFC070871657430400323E38 /* Exam.m in Sources */,
 				FFB138D81656B26B00D73C71 /* Event.m in Sources */,
 				FFB138D91656B26B00D73C71 /* Course.m in Sources */,
 				FFB138DA1656B26B00D73C71 /* AbstractActivity.m in Sources */,
@@ -2007,6 +2014,7 @@
 				FFB210041655DA0900FCAF5F /* ScheduleWeekLeftTableView.m in Sources */,
 				03326A5C16568FA8005E8A16 /* JBKenBurnsView.m in Sources */,
 				03326A7316569430005E8A16 /* WUKenBurnViewHeader.m in Sources */,
+				FFC07086165742BB00323E38 /* Exam+Addition.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

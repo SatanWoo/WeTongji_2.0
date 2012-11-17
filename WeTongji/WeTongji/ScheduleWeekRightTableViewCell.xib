@@ -45,6 +45,7 @@
 								<int key="NSvFlags">293</int>
 								<string key="NSFrameSize">{85, 20}</string>
 								<reference key="NSSuperview" ref="615273713"/>
+								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="203553042"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
@@ -57,11 +58,11 @@
 									<int key="NSColorSpace">1</int>
 									<bytes key="NSRGB">MC4zMjk0MTE3NjQ3IDAuMzI5NDExNzY0NyAwLjMyOTQxMTc2NDcAA</bytes>
 								</object>
-								<object class="NSColor" key="IBUIHighlightedColor" id="428022899">
+								<object class="NSColor" key="IBUIHighlightedColor" id="549602046">
 									<int key="NSColorSpace">3</int>
 									<bytes key="NSWhite">MQA</bytes>
 								</object>
-								<reference key="IBUIShadowColor" ref="428022899"/>
+								<reference key="IBUIShadowColor" ref="549602046"/>
 								<string key="IBUIShadowOffset">{0, 1}</string>
 								<int key="IBUIBaselineAdjustment">0</int>
 								<float key="IBUIMinimumFontSize">14</float>
@@ -85,6 +86,8 @@
 										<int key="NSvFlags">292</int>
 										<string key="NSFrame">{{0, -240}, {85, 960}}</string>
 										<reference key="NSSuperview" ref="203553042"/>
+										<reference key="NSWindow"/>
+										<reference key="NSNextKeyView"/>
 										<string key="NSReuseIdentifierKey">_NS:9</string>
 										<bool key="IBUIOpaque">NO</bool>
 										<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -92,6 +95,7 @@
 								</array>
 								<string key="NSFrame">{{0, 20}, {85, 396}}</string>
 								<reference key="NSSuperview" ref="615273713"/>
+								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="94095140"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIClipsSubviews">YES</bool>
@@ -101,6 +105,7 @@
 						</array>
 						<string key="NSFrameSize">{85, 415}</string>
 						<reference key="NSSuperview" ref="122098843"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="148420707"/>
 						<string key="NSReuseIdentifierKey">_NS:11</string>
 						<object class="NSColor" key="IBUIBackgroundColor">
@@ -116,6 +121,7 @@
 				</array>
 				<string key="NSFrameSize">{85, 416}</string>
 				<reference key="NSSuperview"/>
+				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="615273713"/>
 				<string key="NSReuseIdentifierKey">_NS:9</string>
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -209,7 +215,40 @@
 			<nil key="sourceID"/>
 			<int key="maxID">36</int>
 		</object>
-		<object class="IBClassDescriber" key="IBDocument.Classes"/>
+		<object class="IBClassDescriber" key="IBDocument.Classes">
+			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
+				<object class="IBPartialClassDescription">
+					<string key="className">ScheduleWeekRightTableViewCell</string>
+					<string key="superclassName">UITableViewCell</string>
+					<dictionary class="NSMutableDictionary" key="outlets">
+						<string key="drawView">ScheduleWeekRightTableViewCellContentView</string>
+						<string key="weekDayLabel">UILabel</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<object class="IBToOneOutletInfo" key="drawView">
+							<string key="name">drawView</string>
+							<string key="candidateClassName">ScheduleWeekRightTableViewCellContentView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="weekDayLabel">
+							<string key="name">weekDayLabel</string>
+							<string key="candidateClassName">UILabel</string>
+						</object>
+					</dictionary>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/ScheduleWeekRightTableViewCell.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">ScheduleWeekRightTableViewCellContentView</string>
+					<string key="superclassName">UIView</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/ScheduleWeekRightTableViewCellContentView.h</string>
+					</object>
+				</object>
+			</array>
+		</object>
 		<int key="IBDocument.localizationMode">0</int>
 		<string key="IBDocument.TargetRuntimeIdentifier">IBCocoaTouchFramework</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginDeclaredDependencyDefaults">
