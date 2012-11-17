@@ -10,9 +10,9 @@
 
 @interface Information (Addition)
 
-+(void) insertAnInformation:(NSDictionary *) infoDict inCategory:(NSString *) category inManagedObjectContext:(NSManagedObjectContext *) context;
++(Information *) insertAnInformation:(NSDictionary *) infoDict inCategory:(NSString *) category inManagedObjectContext:(NSManagedObjectContext *) context;
 +(NSArray *) getAllInformationWithCategory:(NSString *) category inManagedObjectContext:(NSManagedObjectContext *) context;
-+(Information *) getInformationWithId:(NSString*) informaionId inManagedObjectContext:(NSManagedObjectContext *) context;
++(Information *) getInformationWithId:(NSString*) informaionId inCategory:(NSString *) category inManagedObjectContext:(NSManagedObjectContext *) context;
 +(void) clearDataInManagedObjectContext:(NSManagedObjectContext *) context;
 
 @end

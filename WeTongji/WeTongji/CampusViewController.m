@@ -15,12 +15,13 @@
 #import "Information+Addition.h"
 #import "Star+Addition.h"
 #import <WeTongjiSDK/WeTongjiSDK.h>
+#import "PullRefreshManagement.h"
 
 #define kWidth self.scrollView.frame.size.width
 #define kHeight self.scrollView.frame.size.height
 #define kContentOffSet 41
 
-@interface CampusViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface CampusViewController () <UITableViewDataSource, UITableViewDelegate,PullRefreshManagementDelegate>
 @property (nonatomic, strong) UIView *schoolInfoView;
 @property (nonatomic, strong) UIView *groupInfoView;
 @property (nonatomic, strong) UIView *actionView;
@@ -30,6 +31,22 @@
 @property (nonatomic, strong) UITableView *groupOInfoTableView;
 @property (nonatomic, strong) UITableView *recommendTableView;
 @property (nonatomic, strong) UITableView *actionTableView;
+@property (nonatomic, strong) PullRefreshManagement * schoolRefreshManagement;
+@property (nonatomic, strong) PullRefreshManagement * groupRefreshManagement;
+@property (nonatomic, strong) PullRefreshManagement * recommendRefreshManagement;
+@property (nonatomic, strong) PullRefreshManagement * actionRefreshManagement;
+@property (nonatomic, weak) PullRefreshManagement * currentRefreshManagememt;
+@property (nonatomic) NSInteger schoolNextPage;
+@property (nonatomic) NSInteger groupNextPage;
+@property (nonatomic) NSInteger recommendlNextPage;
+@property (nonatomic) NSInteger actionNextPage;
+@property (nonatomic) NSInteger currentNextPage;
+@property (nonatomic, strong) NSArray * schoolList;
+@property (nonatomic, strong) NSArray * groupList;
+@property (nonatomic, strong) NSArray * recommendlList;
+@property (nonatomic, strong) NSArray * actionList;
+@property (nonatomic, weak) NSArray * currentList;
+@property (nonatomic, strong) NSString * currentInformationType;
 
 - (void)configureScrollView;
 - (void)pageChange:(UIButton *)clickButton;
@@ -115,6 +132,129 @@
     return _actionTableView;
 }
 
+- (PullRefreshManagement *) schoolRefreshManagement
+{
+    if ( !_schoolRefreshManagement )
+    {
+        _schoolRefreshManagement = [[PullRefreshManagement alloc] initWithScrollView:self.schoolInfoTableView];
+    }
+    return _schoolRefreshManagement;
+}
+
+- (PullRefreshManagement *) groupRefreshManagement
+{
+    if ( !_groupRefreshManagement )
+    {
+        _groupRefreshManagement = [[PullRefreshManagement alloc] initWithScrollView:self.groupOInfoTableView];
+    }
+    return _groupRefreshManagement;
+}
+
+- (PullRefreshManagement *) recommendRefreshManagement
+{
+    if ( !_recommendRefreshManagement )
+    {
+        _recommendRefreshManagement = [[PullRefreshManagement alloc] initWithScrollView:self.recommendTableView];
+    }
+    return _recommendRefreshManagement;
+}
+
+- (PullRefreshManagement *) actionRefreshManagement
+{
+    if ( !_actionRefreshManagement )
+    {
+        _actionRefreshManagement = [[PullRefreshManagement alloc] initWithScrollView:self.actionTableView];
+    }
+    return _actionRefreshManagement;
+}
+
+-(void) setCurrentRefreshManagememt:(PullRefreshManagement *)currentRefreshManagememt
+{
+    if ( _currentRefreshManagememt != currentRefreshManagememt )
+    {
+        WTClient * client = [WTClient sharedClient];
+        [client cancelAllHTTPOperationsWithMethod:nil path:nil];
+    }
+    _currentRefreshManagememt = currentRefreshManagememt;
+}
+
+-(NSArray *) schoolList
+{
+    if ( !_schoolList )
+    {
+        _schoolList = [Information getAllInformationWithCategory:GetInformationTypeForStaff inManagedObjectContext:self.managedObjectContext];
+        NSMutableArray * tempList = [[NSMutableArray alloc] init];
+        for ( Information * information in _schoolList )
+            if ( ![information.hiden boolValue] )
+                [tempList addObject:information];
+        NSArray *sortedNames = [tempList sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+            Information *info1 = (Information *)obj1;
+            Information *info2 = (Information *)obj2;
+            return [info2.createdAt compare: info1.createdAt];
+        }];
+        _schoolList = sortedNames;
+    }
+    return _schoolList;
+}
+
+-(NSArray *) groupList
+{
+    if ( !_groupList )
+    {
+        _groupList = [Information getAllInformationWithCategory:GetInformationTypeClubNews inManagedObjectContext:self.managedObjectContext];
+        NSMutableArray * tempList = [[NSMutableArray alloc] init];
+        for ( Information * information in _groupList )
+            if ( ![information.hiden boolValue] )
+                [tempList addObject:information];
+        NSArray *sortedNames = [tempList sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+            Information *info1 = (Information *)obj1;
+            Information *info2 = (Information *)obj2;
+            return [info2.createdAt compare: info1.createdAt];
+        }];
+        _groupList = sortedNames;
+        
+    }
+    return _groupList;
+}
+
+-(NSArray *) recommendlList
+{
+    if ( !_recommendlList )
+    {
+        _recommendlList = [Information getAllInformationWithCategory:GetInformationTypeAround inManagedObjectContext:self.managedObjectContext];
+        NSMutableArray * tempList = [[NSMutableArray alloc] init];
+        for ( Information * information in _recommendlList )
+            if ( ![information.hiden boolValue] )
+                [tempList addObject:information];
+        NSArray *sortedNames = [tempList sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+            Information *info1 = (Information *)obj1;
+            Information *info2 = (Information *)obj2;
+            return [info2.createdAt compare: info1.createdAt];
+        }];
+        _recommendlList = sortedNames;
+    }
+    return _recommendlList;
+}
+
+-(NSArray *) actionList
+{
+    if ( !_actionList )
+    {
+        _actionList = [Information getAllInformationWithCategory:GetInformationTypeSchoolNews inManagedObjectContext:self.managedObjectContext];
+        NSMutableArray * tempList = [[NSMutableArray alloc] init];
+        for ( Information * information in _actionList )
+            if ( ![information.hiden boolValue] )
+                [tempList addObject:information];
+        NSArray *sortedNames = [tempList sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+            Information *info1 = (Information *)obj1;
+            Information *info2 = (Information *)obj2;
+            return [info2.createdAt compare: info1.createdAt];
+        }];
+        _actionList = sortedNames;
+    }
+    return _actionList;
+}
+
 #pragma mark - Private Method
 - (void)configureScrollView
 {
@@ -161,6 +301,10 @@
     [self.groupInfoView addSubview:self.groupOInfoTableView];
     [self.recommendView addSubview:self.recommendTableView];
     [self.actionView addSubview:self.actionTableView];
+    self.schoolRefreshManagement.delegate = self;
+    self.groupRefreshManagement.delegate = self;
+    self.recommendRefreshManagement.delegate = self;
+    self.actionRefreshManagement.delegate = self;
 }
 
 - (void)pageChange:(UIButton *)clickButton
@@ -178,6 +322,35 @@
         }
     }];
     
+    switch (index) {
+        case 0:
+            self.currentList = self.schoolList;
+            self.currentNextPage = self.schoolNextPage;
+            self.currentInformationType = GetInformationTypeForStaff;
+            self.currentRefreshManagememt = self.schoolRefreshManagement;
+            break;
+        case 1:
+            self.currentList = self.groupList;
+            self.currentNextPage = self.groupNextPage;
+            self.currentInformationType = GetInformationTypeClubNews;
+            self.currentRefreshManagememt = self.groupRefreshManagement;
+            break;
+        case 2:
+            self.currentList = self.actionList;
+            self.currentNextPage = self.actionNextPage;
+            self.currentInformationType = GetInformationTypeSchoolNews;
+            self.currentRefreshManagememt = self.actionRefreshManagement;
+            break;
+        case 3:
+            self.currentList = self.recommendlList;
+            self.currentNextPage = self.recommendlNextPage;
+            self.currentInformationType = GetInformationTypeAround;
+            self.currentRefreshManagememt = self.recommendRefreshManagement;
+            break;
+        default:
+            break;
+    }
+    
     [UIView animateWithDuration:0.3f animations:^{
         [self.scrollView setContentOffset:CGPointMake(index * kWidth, 0)];
     } completion:^(BOOL finished) {
@@ -191,26 +364,11 @@
     [self configureScrollView];
     [self configureTabBar];
     [self configureTableView];
-	// Do any additional setup after loading the view.
+    [self pageChange:self.schoolInfoButton];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    WTClient * client = [WTClient sharedClient];
-    WTRequest * request = [WTRequest requestWithSuccessBlock:^(id responseData)
-    {
-        NSLog(@"%@",responseData);
-        NSArray * dictList = [responseData objectForKey:@"SchoolNews"];
-        for ( NSDictionary * dict in dictList )
-        {
-            [Information insertAnInformation:dict inCategory:nil inManagedObjectContext:self.managedObjectContext];
-        }
-        NSArray * informations = [Information getAllInformationWithCategory:nil inManagedObjectContext:self.managedObjectContext];
-        for ( Information * information in informations )
-            NSLog(@"%@ : %@",information.informationId,information);
-    } failureBlock:nil];
-    [request getAllInformationInType:GetInformationTypeSchoolNews sort:GetActivitySortMethodCreateDesc nextPage:0];
-    [client enqueueRequest:request];
 }
 
 - (void)viewDidUnload
@@ -266,7 +424,16 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 10;
+    if ( tableView == self.schoolInfoTableView ) {
+        return [self.schoolList count];
+    } else if ( tableView == self.groupOInfoTableView ) {
+        return [self.groupList count];
+    } else if ( tableView == self.actionTableView ) {
+        return [self.actionList count];
+    } else if ( tableView == self.recommendTableView ) {
+        return [self.recommendlList count];
+    }
+    return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -277,6 +444,7 @@
             cell = [[SchoolNewsCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kSchoolInfoCell];
         }
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        [cell setInformation:self.schoolList[indexPath.row]];
         return cell;
     } else if (tableView == self.groupOInfoTableView) {
         GroupInfoCell *cell = [tableView dequeueReusableCellWithIdentifier:kGroupInfoCell];
@@ -284,6 +452,7 @@
             cell = [[GroupInfoCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kGroupInfoCell];
         }
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        [cell setInformation:self.groupList[indexPath.row]];
         return cell;
         
     } else if (tableView == self.recommendTableView) {
@@ -292,6 +461,7 @@
             cell = [[RecommendCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:KRecommendCell];
         }
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        [cell setInformation:self.recommendlList[indexPath.row]];
         return cell;
     } else {
         SchoolNewsCell *cell = [tableView dequeueReusableCellWithIdentifier:kSchoolInfoCell];
@@ -299,8 +469,97 @@
             cell = [[SchoolNewsCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kSchoolInfoCell];
         }
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        [cell setInformation:self.actionList[indexPath.row]];
         return cell;
     }
 }
+
+#pragma -
+#pragma - refresh method by tzx
+
+- (void)refresh
+{
+    self.currentNextPage = 0;
+    [self loadMoreData];
+}
+
+- (void)clearData
+{
+    NSArray *informations = [Information getAllInformationWithCategory:self.currentInformationType inManagedObjectContext:self.managedObjectContext];
+    for(Information * information in informations)
+    {
+        information.hiden = [NSNumber numberWithBool:YES];
+    }
+    
+}
+
+- (void)endLoading
+{
+    if ( self.currentList == self.schoolList ) {
+        self.schoolList = nil;
+        [self.schoolInfoTableView reloadData];
+        self.currentList = self.schoolList;
+    } else if ( self.currentList == self.groupList ) {
+        self.groupList = nil;
+        [self.groupOInfoTableView reloadData];
+        self.currentList = self.groupList;
+    } else if ( self.currentList == self.actionList ) {
+        self.actionList = nil;
+        [self.actionTableView reloadData];
+        self.currentList = self.actionList;
+    } else if ( self.currentList == self.recommendlList ) {
+        self.recommendlList = nil;
+        [self.recommendTableView reloadData];
+        self.currentList = self.recommendlList;
+    }
+}
+
+- (void)loadMoreData
+{
+    WTClient * client = [WTClient sharedClient];
+    WTRequest * request = [WTRequest requestWithSuccessBlock:^(id responseData)
+                           {
+                               if(self.currentNextPage == 0)
+                                   [self clearData];
+                               NSString * key;
+                               if ( [self.currentInformationType isEqualToString: GetInformationTypeAround] ||
+                                   [self.currentInformationType isEqualToString: GetInformationTypeForStaff] )
+                                   key = [self.currentInformationType stringByAppendingString:@"s"];
+                               else if ( [self.currentInformationType isEqualToString: GetInformationTypeClubNews] ||
+                                        [self.currentInformationType isEqualToString: GetInformationTypeSchoolNews])
+                                   key = self.currentInformationType;
+                               NSArray *array = [responseData objectForKey:key];
+                               for(NSDictionary *dict in array)
+                               {
+                                   Information *information = [Information insertAnInformation:dict inCategory:self.currentInformationType inManagedObjectContext:self.managedObjectContext];
+                                   information.hiden = [NSNumber numberWithBool:NO];
+                               }
+                               self.currentNextPage = [[NSString stringWithFormat:@"%@", [responseData objectForKey:@"NextPager"]] intValue];
+                               if (self.currentNextPage == 0) [self.currentRefreshManagememt setNoMoreData:YES];
+                               [self.currentRefreshManagememt endLoading];
+                           }
+                            failureBlock:^(NSError * error)
+                            {
+                                [self.currentRefreshManagememt endLoading];
+                            }];
+    [request getAllInformationInType:self.currentInformationType sort:GetActivitySortMethodCreateDesc nextPage:self.currentNextPage];
+    [client enqueueRequest:request];
+}
+
+#pragma mark -
+#pragma mark UIScrollViewDelegate Methods
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+	[self.currentRefreshManagememt scrollViewDidScroll:scrollView];
+}
+
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerat
+{
+    [self.currentRefreshManagememt scrollViewDidEndDragging:scrollView willDecelerate:decelerat];
+}
+
+
 
 @end

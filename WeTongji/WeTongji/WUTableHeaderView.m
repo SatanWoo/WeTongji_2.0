@@ -7,6 +7,7 @@
 //
 
 #import "WUTableHeaderView.h"
+#import "NSString+Addition.h"
 
 @interface WUTableHeaderView()
 {
@@ -46,6 +47,22 @@
     center.x = center.x - 54;
     [self.buttonBoard setCenter:center];
     _isButtonBoardLeft = NO;
+}
+
+-(void)setEvent:(Event *)event
+{
+    self.titleLabel.text = event.title;
+    self.releaseTimeLabel.text = [NSString stringWithHowLongAgo:event.createAt];
+    self.eventTime.text = [NSString timeConvertFromBeginDate:event.beginTime endDate:event.endTime];
+    self.location.text = event.location;
+    self.likeNumber.text = [event.like stringValue];
+    self.favoriteNumber.text = [event.favorite stringValue];
+    _event = event;
+}
+
+-(void)setInformation:(Information *)information
+{
+    _information = information;
 }
 
 - (id)initWithFrame:(CGRect)frame

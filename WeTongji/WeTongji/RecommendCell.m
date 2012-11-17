@@ -7,6 +7,7 @@
 //
 
 #import "RecommendCell.h"
+#import <WeTongjiSDK/WeTongjiSDK.h>
 
 @implementation RecommendCell
 @synthesize infoTitle = _infoTitle;
@@ -22,6 +23,15 @@
         // Initialization code
     }
     return self;
+}
+
+-(void) setInformation:(Information *)information
+{
+    self.infoTitle.text = information.title;
+    self.source.text = information.source;
+    self.count.text = [information.read stringValue];
+    [self.preview setImageWithURL:[NSURL URLWithString: information.image]];
+    _information = information;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated

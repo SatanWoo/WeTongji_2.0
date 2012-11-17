@@ -19,6 +19,15 @@
     return self;
 }
 
+-(void) setInformation:(Information *)information
+{
+    self.titleLabel.text = information.title;
+    self.lookLabel.text = [information.read stringValue];
+    self.descriptionLabel.text = information.summary;
+    NSLog(@"%@ : %@",information.title,information.read);
+    _information = information;
+}
+
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
     [super setSelected:selected animated:animated];

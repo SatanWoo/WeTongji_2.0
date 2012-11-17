@@ -31,7 +31,7 @@
     result.location = [NSString stringWithFormat:@"%@", [dict objectForKey:@"Location"]];
     result.orgranizerAvatarLink = [NSString stringWithFormat:@"%@", [dict objectForKey:@"OrganizerAvatar"]];
     result.createAt = [[NSString stringWithFormat:@"%@", [dict objectForKey:@"CreatedAt"]] convertToDate];
-    //result.imageLinkArray =
+    result.imageLink = [NSString stringWithFormat:@"%@",[dict objectForKey:@"Image"]];
     NSLog(@"%@",[dict objectForKey:@"Image"]);
     result.organizer = [NSString stringWithFormat:@"%@", [dict objectForKey:@"Organizer"]];
     //result.status =  [NSString stringWithFormat:@"%@", [dict objectForKey:@"Status"]];

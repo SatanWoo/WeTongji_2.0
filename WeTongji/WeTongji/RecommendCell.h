@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Information+Addition.h"
 
 @interface RecommendCell : UITableViewCell
 
@@ -15,5 +16,5 @@
 @property (nonatomic ,weak) IBOutlet UIImageView *icon;
 @property (nonatomic ,weak) IBOutlet UILabel *count;
 @property (nonatomic ,weak) IBOutlet UIImageView *preview;
-
+@property (nonatomic ,weak) Information * information;
 @end

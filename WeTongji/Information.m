@@ -2,7 +2,7 @@
 //  Information.m
 //  WeTongji
 //
-//  Created by tang zhixiong on 12-11-17.
+//  Created by tang zhixiong on 12-11-18.
 //
 //
 

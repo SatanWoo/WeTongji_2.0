@@ -14,6 +14,7 @@
 #import "WUTableHeaderView.h"
 #import "WUPageControlViewController.h"
 #import "TransparentTableHeaderView.h"
+#import <WeTongjiSDK/WeTongjiSDK.h>
 
 #define kContentOffset 50
 #define kStateY -150
@@ -34,6 +35,7 @@
 @property (nonatomic, assign) BOOL isAnimationFinished;
 @property (nonatomic, strong) TextViewTableCell* currentCell;
 @property (nonatomic, strong) TransparentTableHeaderView * transparentHeaderView;
+@property (nonatomic, strong) NSArray * imageList;
 @end
 
 @implementation SchoolNewsViewController
@@ -82,9 +84,12 @@
         [_pageViewController.view addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTap:)]];
         [_pageViewController.view setFrame:CGRectMake(0, kStateY, 320 ,480)];
         _pageViewController.view.userInteractionEnabled = NO;
-        [_pageViewController addPicture:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"scaleview.png"]]];
-        [_pageViewController addPicture:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"scaleview.png"]]];
-        [_pageViewController addPicture:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"scaleview.png"]]];
+        for ( NSString * link in self.imageList )
+        {
+            UIImageView * view = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"scaleview.png"]];
+            [view setImageWithURL:[NSURL URLWithString:link]];
+            [_pageViewController addPicture:view];
+        }
         originPageViewCenter = [_pageViewController.view center];
     }
     
@@ -98,11 +103,6 @@
         _currentCell = [self.newsTableView dequeueReusableCellWithIdentifier:kTextViewTableCell];
         if ( _currentCell == nil )
         _currentCell = [[TextViewTableCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kTextViewTableCell];
-        [_currentCell setFrame:CGRectMake(0, 0,_currentCell.frame.size.width, _currentCell.textView.contentSize.height)];
-        CGRect frame = _currentCell.textView.frame;
-        frame.size.height = _currentCell.frame.size.height;
-        _currentCell.textView.frame = frame;
-        [_currentCell.textView sizeToFit];
     }
     return _currentCell;
 }
@@ -110,8 +110,7 @@
 - (WUTableHeaderView *)headerView
 {
     if (_headerView == nil) {
-        _headerView =  [[[NSBundle mainBundle] loadNibNamed:@"WUTableHeaderView" owner:self options:nil] objectAtIndex:0];
-        [self renderShadow:_headerView];
+        
     }
     return _headerView;
 }
@@ -125,6 +124,30 @@
     return  _transparentHeaderView;
 }
 
+-(void) configureCurrentCell
+{
+    [self.currentCell setFrame:CGRectMake(0, 0,self.currentCell.frame.size.width,MAX(self.currentCell.textView.contentSize.height,0))];
+    CGRect frame = self.currentCell.textView.frame;
+    frame.size.height = self.currentCell.frame.size.height;
+    self.currentCell.textView.frame = frame;
+    [self.currentCell.textView sizeToFit];
+}
+
+-(void) setEvent:(Event *)event
+{
+    self.headerView =  [[[NSBundle mainBundle] loadNibNamed:@"WUTableHeaderView" owner:self options:nil] objectAtIndex:0];
+    [self renderShadow:self.headerView];
+    [self.headerView setEvent:event];
+    [self.transparentHeaderView setHideBoard:YES];
+    self.imageList = [NSArray arrayWithObject:event.imageLink];
+    _event = event;
+}
+
+-(void) setInformation:(Information *)information
+{
+    _information = information;
+}
+
 #pragma mark - LifeCycle
 - (void)viewDidLoad
 {
@@ -135,6 +158,10 @@
     UISwipeGestureRecognizer *leftGesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(goBack:)];
     leftGesture.direction = UISwipeGestureRecognizerDirectionRight;
     [self.view addGestureRecognizer:leftGesture];
+    if ( self.event ) {
+        self.currentCell.textView.text = self.event.detail;
+        [self configureCurrentCell];
+    }
 }
 
 - (void)viewDidUnload
@@ -177,7 +204,7 @@
     if ( rate < -3 && !_isBackGroundHide )
     {
         _isBackGroundHide = YES;
-        [UIView animateWithDuration:0.5f animations:^
+        [UIView animateWithDuration:0.25f animations:^
         {
             [self.buttonBackImageView setAlpha:0.0f];
             CGPoint center = [self.newsTableView center];
@@ -192,7 +219,7 @@
     if ( rate > -3 && rate < 1 && _isBackGroundHide )
     {
         _isBackGroundHide = NO;
-        [UIView animateWithDuration:0.5f animations:^
+        [UIView animateWithDuration:0.25f animations:^
         {
             [self.buttonBackImageView setAlpha:1.0f];
             CGPoint center = [self.newsTableView center];
@@ -255,6 +282,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+
     return self.currentCell;
 }
 

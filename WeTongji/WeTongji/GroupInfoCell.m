@@ -7,6 +7,7 @@
 //
 
 #import "GroupInfoCell.h"
+#import <WeTongjiSDK/WeTongjiSDK.h>
 
 @implementation GroupInfoCell
 @synthesize infoTitle;
@@ -20,6 +21,15 @@
         // Initialization code
     }
     return self;
+}
+
+-(void) setInformation:(Information *)information
+{
+    self.infoTitle.text = information.title;
+    self.groupName.text = information.organizer;
+    [self.organizerAvatar setImageWithURL:[NSURL URLWithString:information.organizerAvatar]];
+    self.seeNumber.text = [information.read stringValue];
+    _information = information;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated

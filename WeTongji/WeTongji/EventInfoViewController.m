@@ -14,6 +14,7 @@
 #import "PullRefreshManagement.h"
 #import "FilterViewController.h"
 #import <WeTongjiSDK/WeTongjiSDK.h>
+#import "SchoolNewsViewController.h"
 
 @interface EventInfoViewController () <UITableViewDataSource, UITableViewDelegate,PullRefreshManagementDelegate,FilterViewControllerDelegate>
 
@@ -205,9 +206,19 @@
 }
 
 #pragma mark - UITableViewDelegate
+
+static NSInteger tempRow;
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    SchoolNewsViewController *viewController = segue.destinationViewController;
+    [viewController setEvent:self.eventList[tempRow]];
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [self performSegueWithIdentifier:kEventInfoViewControllerSegue sender:self];
+    tempRow = indexPath.row;
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 

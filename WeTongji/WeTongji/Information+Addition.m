@@ -11,11 +11,11 @@
 
 @implementation Information (Addition)
 
-+(void) insertAnInformation:(NSDictionary *) infoDict inCategory:(NSString *) category inManagedObjectContext:(NSManagedObjectContext *) context
++(Information *) insertAnInformation:(NSDictionary *) infoDict inCategory:(NSString *) category inManagedObjectContext:(NSManagedObjectContext *) context
 {
     NSString * informationId = [NSString stringWithFormat:@"%@", [infoDict objectForKey:@"Id"]];
-    if ( !informationId || [informationId isEqualToString:@""]) return;
-    Information * information = [Information getInformationWithId:informationId inManagedObjectContext:context];
+    if ( !informationId || [informationId isEqualToString:@""]) return nil;
+    Information * information = [Information getInformationWithId:informationId inCategory:category inManagedObjectContext:context];
     if ( !information )
     {
         information = [NSEntityDescription insertNewObjectForEntityForName:@"Information" inManagedObjectContext:context];
@@ -35,11 +35,12 @@
     information.location = [NSString stringWithFormat:@"%@",[infoDict objectForKey:@"Location"]];
     information.organizer = [NSString stringWithFormat:@"%@",[infoDict objectForKey:@"Organizer"]];
     information.organizerAvatar = [NSString stringWithFormat:@"%@",[infoDict objectForKey:@"OrganizerAvatar"]];
-    information.read = [NSNumber numberWithInt:[[infoDict objectForKey:@"read"] intValue]];;
+    information.read = [NSNumber numberWithInt:[[infoDict objectForKey:@"Read"] intValue]];;
     information.source = [NSString stringWithFormat:@"%@",[infoDict objectForKey:@"Source"]];
     information.summary = [NSString stringWithFormat:@"%@",[infoDict objectForKey:@"Summary"]];
     information.ticketService = [NSString stringWithFormat:@"%@",[infoDict objectForKey:@"TicketService"]];
     information.title = [NSString stringWithFormat:@"%@",[infoDict objectForKey:@"Title"]];
+    return information;
 }
 
 +(NSArray *) getAllInformationWithCategory:(NSString *) category inManagedObjectContext:(NSManagedObjectContext *) context
@@ -47,18 +48,19 @@
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     [request setEntity:[NSEntityDescription entityForName:@"Information" inManagedObjectContext:context]];
     if ( category ) 
-    [request setPredicate:[NSPredicate predicateWithFormat:@"Category == %@", category]];
+        [request setPredicate:[NSPredicate predicateWithFormat:@"category == %@", category]];
     NSArray *result = [context executeFetchRequest:request error:NULL];
     return result;
 }
 
-+(Information *) getInformationWithId:(NSString*) informaionId inManagedObjectContext:(NSManagedObjectContext *) context
++(Information *) getInformationWithId:(NSString*) informaionId inCategory:(NSString *) category inManagedObjectContext:(NSManagedObjectContext *) context
 {
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     
     [request setEntity:[NSEntityDescription entityForName:@"Information" inManagedObjectContext:context]];
-    [request setPredicate:[NSPredicate predicateWithFormat:@"informationId == %@", informaionId]];
-    
+    NSPredicate *informationIdPredicate = [NSPredicate predicateWithFormat:@"informationId == %@", informaionId];
+    NSPredicate *informationCategoryPredicate = [NSPredicate predicateWithFormat:@"category == %@", category];
+    [request setPredicate:[NSCompoundPredicate andPredicateWithSubpredicates:[NSArray arrayWithObjects:informationIdPredicate, informationCategoryPredicate, nil]]];
     Information *result = [[context executeFetchRequest:request error:NULL] lastObject];
     
     return result;

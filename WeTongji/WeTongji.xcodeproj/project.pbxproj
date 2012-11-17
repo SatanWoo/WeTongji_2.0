@@ -329,7 +329,11 @@
 		FFBF4FF51657CC6D001690D2 /* Exam.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBF4FF41657CC6D001690D2 /* Exam.m */; };
 		FFBF4FFB1657CC6F001690D2 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBF4FFA1657CC6E001690D2 /* Event.m */; };
 		FFBF4FFE1657CC6F001690D2 /* Star.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBF4FFD1657CC6F001690D2 /* Star.m */; };
-		FFBF500D1657E238001690D2 /* Information.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBF500C1657E238001690D2 /* Information.m */; };
+		FFBF5010165814B6001690D2 /* Information.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBF500F165814B5001690D2 /* Information.m */; };
+		FFBF501216582970001690D2 /* SchoolNewsHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFBF501116582970001690D2 /* SchoolNewsHeaderView.xib */; };
+		FFBF5014165829B1001690D2 /* GroupNewsHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFBF5013165829B0001690D2 /* GroupNewsHeaderView.xib */; };
+		FFBF5016165829C2001690D2 /* ActionNewsHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFBF5015165829C1001690D2 /* ActionNewsHeaderView.xib */; };
+		FFBF5018165829F7001690D2 /* RecommendNewsHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFBF5017165829F6001690D2 /* RecommendNewsHeaderView.xib */; };
 		FFBF9A1C1648439300E3D610 /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBF9A1B1648439300E3D610 /* libz.1.2.5.dylib */; };
 		FFBF9A1F1648439B00E3D610 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBF9A1E1648439B00E3D610 /* CFNetwork.framework */; };
 		FFBF9A21164843A100E3D610 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBF9A20164843A100E3D610 /* MobileCoreServices.framework */; };
@@ -765,8 +769,12 @@
 		FFBF4FFA1657CC6E001690D2 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
 		FFBF4FFC1657CC6F001690D2 /* Star.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Star.h; sourceTree = "<group>"; };
 		FFBF4FFD1657CC6F001690D2 /* Star.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Star.m; sourceTree = "<group>"; };
-		FFBF500B1657E237001690D2 /* Information.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Information.h; sourceTree = "<group>"; };
-		FFBF500C1657E238001690D2 /* Information.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Information.m; sourceTree = "<group>"; };
+		FFBF500E165814B5001690D2 /* Information.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Information.h; path = ../Information.h; sourceTree = "<group>"; };
+		FFBF500F165814B5001690D2 /* Information.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Information.m; path = ../Information.m; sourceTree = "<group>"; };
+		FFBF501116582970001690D2 /* SchoolNewsHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SchoolNewsHeaderView.xib; sourceTree = "<group>"; };
+		FFBF5013165829B0001690D2 /* GroupNewsHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GroupNewsHeaderView.xib; sourceTree = "<group>"; };
+		FFBF5015165829C1001690D2 /* ActionNewsHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActionNewsHeaderView.xib; sourceTree = "<group>"; };
+		FFBF5017165829F6001690D2 /* RecommendNewsHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecommendNewsHeaderView.xib; sourceTree = "<group>"; };
 		FFBF9A1B1648439300E3D610 /* libz.1.2.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.5.dylib; path = usr/lib/libz.1.2.5.dylib; sourceTree = SDKROOT; };
 		FFBF9A1E1648439B00E3D610 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		FFBF9A20164843A100E3D610 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
@@ -1020,6 +1028,10 @@
 				E51458A4164655B000533761 /* WUTableHeaderView.h */,
 				E51458A5164655B000533761 /* WUTableHeaderView.m */,
 				E51458A7164655C600533761 /* WUTableHeaderView.xib */,
+				FFBF501116582970001690D2 /* SchoolNewsHeaderView.xib */,
+				FFBF5013165829B0001690D2 /* GroupNewsHeaderView.xib */,
+				FFBF5015165829C1001690D2 /* ActionNewsHeaderView.xib */,
+				FFBF5017165829F6001690D2 /* RecommendNewsHeaderView.xib */,
 				E5D244901647C69700DA43DD /* WUArrangementSectionHeaderView.h */,
 				E5D244911647C69700DA43DD /* WUArrangementSectionHeaderView.m */,
 				E5D244931647C6B700DA43DD /* WUArrangementSectionHeaderView.xib */,
@@ -1555,8 +1567,8 @@
 			children = (
 				FFBF4FF91657CC6E001690D2 /* Event.h */,
 				FFBF4FFA1657CC6E001690D2 /* Event.m */,
-				FFBF500B1657E237001690D2 /* Information.h */,
-				FFBF500C1657E238001690D2 /* Information.m */,
+				FFBF500E165814B5001690D2 /* Information.h */,
+				FFBF500F165814B5001690D2 /* Information.m */,
 				FFBF4FFC1657CC6F001690D2 /* Star.h */,
 				FFBF4FFD1657CC6F001690D2 /* Star.m */,
 				FFBF4FED1657CC6B001690D2 /* Course.h */,
@@ -1958,6 +1970,10 @@
 				E556616C16579DCD0045D813 /* settings_btn_hl@2x.png in Resources */,
 				E556616D16579DCD0045D813 /* settings_btn.png in Resources */,
 				E556616E16579DCD0045D813 /* settings_btn@2x.png in Resources */,
+				FFBF501216582970001690D2 /* SchoolNewsHeaderView.xib in Resources */,
+				FFBF5014165829B1001690D2 /* GroupNewsHeaderView.xib in Resources */,
+				FFBF5016165829C2001690D2 /* ActionNewsHeaderView.xib in Resources */,
+				FFBF5018165829F7001690D2 /* RecommendNewsHeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2044,7 +2060,7 @@
 				FFBF4FF51657CC6D001690D2 /* Exam.m in Sources */,
 				FFBF4FFB1657CC6F001690D2 /* Event.m in Sources */,
 				FFBF4FFE1657CC6F001690D2 /* Star.m in Sources */,
-				FFBF500D1657E238001690D2 /* Information.m in Sources */,
+				FFBF5010165814B6001690D2 /* Information.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

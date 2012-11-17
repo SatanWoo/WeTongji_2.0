@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Information+Addition.h"
+#import "Event+Addition.h"
 
 @interface WUTableHeaderView : UIView
 
@@ -21,6 +23,12 @@
 @property (weak, nonatomic) IBOutlet UIButton *favoriteButton;
 @property (weak, nonatomic) IBOutlet UIView *moveFavorView;
 @property (weak, nonatomic) IBOutlet UIView *moveLikeView;
+@property (weak, nonatomic) IBOutlet UILabel *location;
+@property (weak, nonatomic) IBOutlet UILabel *eventTime;
+@property (weak, nonatomic) IBOutlet UIImageView *recommendImage;
+@property (weak, nonatomic) Event * event;
+@property (weak, nonatomic) Information * information;
+
 
 -(void) changeButtonPositionToLeft;
 -(void) resetButtonPosition;

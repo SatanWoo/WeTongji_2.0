@@ -7,10 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Event+Addition.h"
+#import "Information+Addition.h"
+#import "Star+Addition.h"
 
 @interface SchoolNewsViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITableView *newsTableView;
 @property (weak, nonatomic) IBOutlet UIButton *backButton;
+@property (weak, nonatomic) Event * event;
+@property (weak, nonatomic) Information * information;
 
 
 - (IBAction)goBack:(id)sender;

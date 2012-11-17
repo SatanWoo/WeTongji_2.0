@@ -73,9 +73,9 @@
     [self.pullRefreshHeaderView setState:EGOOPullRefreshLoading];
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:0.2];
-    self.scrollView.contentInset = UIEdgeInsetsMake(60.0f, 0.0f, 0.0f, 0.0f);
+    self.scrollView.contentInset = UIEdgeInsetsMake(60.0f, 0.0f, self.scrollView.contentInset.bottom, 0.0f);
     [UIView commitAnimations];
-    [self.scrollView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:YES];
+    [self.scrollView scrollRectToVisible:CGRectMake(-120, 0, 320, 10) animated:YES];
     [self.delegate refresh];
 }
 
