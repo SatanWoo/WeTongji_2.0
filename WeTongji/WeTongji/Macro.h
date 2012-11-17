@@ -45,6 +45,8 @@
 #define kkSchoolNewsViewControllerSegue @"kSchoolNewsViewController"
 #define kMyFavoriteNewsViewControllerSegue @"kMyFavoriteNewsViewController"
 #define kArrangementViewControllerSegue @"kArrangementViewController"
+#define kWeeklyPersonViewControllerSegue @"kWeeklyPersonViewController"
+#define kEventInfoViewControllerSegue @"kEventInfoViewController"
 
 // Slide
 #define kMenuFullWidth 320.0f

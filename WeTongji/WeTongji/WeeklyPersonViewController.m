@@ -79,6 +79,7 @@
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [self performSegueWithIdentifier:kWeeklyPersonViewControllerSegue sender:self];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
