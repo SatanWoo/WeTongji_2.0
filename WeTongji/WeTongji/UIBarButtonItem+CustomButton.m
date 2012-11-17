@@ -14,12 +14,15 @@
 {
     self = [super init];
     if (self) {
+        NSString *highlightedName = [imageName stringByAppendingString:@"_hl"];
         UIImage *image = [UIImage imageNamed:imageName];
+        UIImage *high = [UIImage imageNamed:highlightedName];
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         [button addTarget:target action:selector forControlEvents:UIControlEventTouchUpInside];
         [button setImage:image forState:UIControlStateNormal];
+        [button setImage:high forState:UIControlStateHighlighted];
         [button setImage:image forState:UIControlStateSelected];
-        [button setBounds:[[UIImageView alloc] initWithImage:image].bounds];
+        [button setBounds:[[UIImageView alloc] initWithImage:high].bounds];
         self = [self initWithCustomView:button];
     }
     return self;

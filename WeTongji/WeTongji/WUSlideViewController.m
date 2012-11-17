@@ -108,7 +108,7 @@
 
 - (void)configureNavButton
 {
-    UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithImage:@"nav_left.png" selector:@selector(pressNavButton) target:self];
+    UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithImage:@"navbar_list_btn" selector:@selector(pressNavButton) target:self];
     UIViewController *rootViewController = [self getContentViewController];
     rootViewController.navigationItem.leftBarButtonItem = button;
 }

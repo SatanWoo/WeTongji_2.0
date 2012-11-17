@@ -81,9 +81,7 @@
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    if (self.currentFilterItem == eSCHOOL) {
-//        [self performSegueWithIdentifier:kMyFavoriteNewsViewControllerSegue sender:self];
-//    }
+    [self performSegueWithIdentifier:kMyFavoriteNewsViewControllerSegue sender:self];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
@@ -130,6 +128,13 @@
         if (cell == nil) {
             cell = [[EventInfoCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kEventInfoCell];
         }
+        for (UIView *sub in cell.disableView.subviews) {
+            sub.userInteractionEnabled = NO;
+        }
+        cell.favorButton.userInteractionEnabled = YES;
+        cell.likeButton.userInteractionEnabled = YES;
+        [cell.favorButton setImage:[UIImage imageNamed:@"favourite_hl.png"] forState:UIControlStateHighlighted];
+        [cell.likeButton setImage:[UIImage imageNamed:@"like_hl.png"] forState:UIControlStateHighlighted];
         return cell;
     } else if (self.currentSelectSection == eSCHOOL) {
         SchoolNewsCell *cell = [tableView dequeueReusableCellWithIdentifier:kSchoolInfoCell];

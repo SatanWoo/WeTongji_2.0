@@ -207,6 +207,7 @@
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [self performSegueWithIdentifier:kEventInfoViewControllerSegue sender:self];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 

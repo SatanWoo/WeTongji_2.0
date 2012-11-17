@@ -50,7 +50,9 @@
 {
     self.menuTableView.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"leftMenuBg.png"]];
     [self.menuTableView registerNib:[UINib nibWithNibName:@"LeftMenuCell" bundle:nil] forCellReuseIdentifier:kLeftMenuCell];
-    self.menuTableView.tableHeaderView = self.kenView;
+    
+    [self.view addSubview:self.kenView];
+    self.menuTableView.contentInset = UIEdgeInsetsMake(self.kenView.frame.size.height, 0, 0, 0);
 }
 
 - (void)configureBottomBarButton
