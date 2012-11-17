@@ -196,18 +196,13 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-//    WTClient * client = [WTClient sharedClient];
-//    WTRequest * request = [WTClient requestWithSuccessBlock:^(id responseData)
-//    {
-//        NSString * hasError = [responseData objectForKey:@"isFailed"];
-//        if( [hasError characterAtIndex:0] == 'N' )
-//        {
-//            NSArray * dictArray = [responseData objectForKey:@"People"];
-//            for ( NSDictionary * dict in dictArray )
-//                [Star insertStarWithDict:dict inManagedObjectContext:self.managedObjectContext];
-//        }
-//    } failureBlock:nil];
-//    [client getAllStarsWithNextPage:0];
+    WTClient * client = [WTClient sharedClient];
+    WTRequest * request = [WTRequest requestWithSuccessBlock:^(id responseData)
+    {
+        NSLog(@"%@",responseData);
+    } failureBlock:nil];
+    [request getAllInformationInSort:nil nextPage:0];
+    [client enqueueRequest:request];
 }
 
 - (void)viewDidUnload

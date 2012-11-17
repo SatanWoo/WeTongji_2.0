@@ -23,5 +23,6 @@
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerat;
 -(void) setNoMoreData:(BOOL)isNoMoreData;
 -(void) endLoading;
+-(void) firstTrigger;
 
 @end

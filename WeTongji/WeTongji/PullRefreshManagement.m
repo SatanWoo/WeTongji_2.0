@@ -31,7 +31,6 @@
     {
         self.scrollView = scrollView;
         [self.scrollView addSubview:self.pullRefreshHeaderView];
-        [self.scrollView addSubview:self.pullRefreshFooterView];
         self.scrollView.tableFooterView=self.pullRefreshFooterView;
         [self.scrollView setContentInset:UIEdgeInsetsMake(0.0f, 0.0f, 40.0f, 0.0f)];
     }
@@ -61,18 +60,23 @@
     return _pullRefreshFooterView;
 }
 
--(void) configureFooterView
-{
-    float height;
-    if (self.scrollView.contentSize.height > self.scrollView.bounds.size.height)
-        height=self.scrollView.contentSize.height;
-    else height=self.scrollView.bounds.size.height;
-    [self.pullRefreshFooterView setFrame:CGRectMake(0, height, 320, 200)];
-}
 
 -(void) setNoMoreData:(BOOL)isNoMoreData
 {
     [self.pullRefreshFooterView setIsEndingAll:isNoMoreData];
+}
+
+-(void) firstTrigger
+{
+    [self.pullRefreshFooterView setIsEndingAll:NO];
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+    [self.pullRefreshHeaderView setState:EGOOPullRefreshLoading];
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.2];
+    self.scrollView.contentInset = UIEdgeInsetsMake(60.0f, 0.0f, 0.0f, 0.0f);
+    [UIView commitAnimations];
+    [self.scrollView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:YES];
+    [self.delegate refresh];
 }
 
 
@@ -92,7 +96,6 @@
     [self.pullRefreshHeaderView egoRefreshScrollViewDataSourceDidFinishedLoading:self.scrollView];
 	[self.pullRefreshFooterView egoRefreshScrollViewDataSourceDidFinishedLoading:self.scrollView];
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
-    [self configureFooterView];
 }
 
 #pragma mark -

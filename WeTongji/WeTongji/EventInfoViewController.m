@@ -42,7 +42,7 @@
     if ( ![_filterString isEqualToString: filterString] )
         {
             _filterString = filterString;
-            [self refresh];
+            [self.pullRefreshManagement firstTrigger];
         }
 }
 
@@ -50,7 +50,7 @@
 {
     if ( !_filterString )
     {
-        _filterString = GetActivitySortMethodCreateDesc;
+        //_filterString = GetActivitySortMethodCreateDesc;
     }
     return _filterString;
 }
