@@ -191,7 +191,6 @@
     for (UIView *sub in cell.disableView.subviews) {
         sub.userInteractionEnabled = NO;
     }
-    cell.disableView.userInteractionEnabled = NO;
     cell.favorButton.userInteractionEnabled = YES;
     cell.likeButton.userInteractionEnabled = YES;
     [cell.favorButton setImage:[UIImage imageNamed:@"favourite_hl.png"] forState:UIControlStateHighlighted];
