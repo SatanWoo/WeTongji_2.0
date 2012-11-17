@@ -8,10 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
-#import "AbstractActivity.h"
+#import "AbstractCollection.h"
 
 
-@interface Information : AbstractActivity
+@interface Information : AbstractCollection
 
 @property (nonatomic, retain) NSNumber * canFavorite;
 @property (nonatomic, retain) NSNumber * canLike;
@@ -27,5 +27,11 @@
 @property (nonatomic, retain) NSString * source;
 @property (nonatomic, retain) NSString * summary;
 @property (nonatomic, retain) NSString * title;
+@property (nonatomic, retain) NSString * organizer;
+@property (nonatomic, retain) NSString * organizerAvatar;
+@property (nonatomic, retain) NSString * contact;
+@property (nonatomic, retain) NSString * image;
+@property (nonatomic, retain) NSString * location;
+@property (nonatomic, retain) NSString * ticketService;
 
 @end

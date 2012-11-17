@@ -327,9 +327,9 @@
 		FFBF4FEF1657CC6C001690D2 /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBF4FEE1657CC6B001690D2 /* Course.m */; };
 		FFBF4FF21657CC6D001690D2 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBF4FF11657CC6D001690D2 /* User.m */; };
 		FFBF4FF51657CC6D001690D2 /* Exam.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBF4FF41657CC6D001690D2 /* Exam.m */; };
-		FFBF4FF81657CC6E001690D2 /* Information.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBF4FF71657CC6E001690D2 /* Information.m */; };
 		FFBF4FFB1657CC6F001690D2 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBF4FFA1657CC6E001690D2 /* Event.m */; };
 		FFBF4FFE1657CC6F001690D2 /* Star.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBF4FFD1657CC6F001690D2 /* Star.m */; };
+		FFBF500D1657E238001690D2 /* Information.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBF500C1657E238001690D2 /* Information.m */; };
 		FFBF9A1C1648439300E3D610 /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBF9A1B1648439300E3D610 /* libz.1.2.5.dylib */; };
 		FFBF9A1F1648439B00E3D610 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBF9A1E1648439B00E3D610 /* CFNetwork.framework */; };
 		FFBF9A21164843A100E3D610 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBF9A20164843A100E3D610 /* MobileCoreServices.framework */; };
@@ -761,12 +761,12 @@
 		FFBF4FF11657CC6D001690D2 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		FFBF4FF31657CC6D001690D2 /* Exam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exam.h; sourceTree = "<group>"; };
 		FFBF4FF41657CC6D001690D2 /* Exam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Exam.m; sourceTree = "<group>"; };
-		FFBF4FF61657CC6E001690D2 /* Information.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Information.h; sourceTree = "<group>"; };
-		FFBF4FF71657CC6E001690D2 /* Information.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Information.m; sourceTree = "<group>"; };
 		FFBF4FF91657CC6E001690D2 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
 		FFBF4FFA1657CC6E001690D2 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
 		FFBF4FFC1657CC6F001690D2 /* Star.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Star.h; sourceTree = "<group>"; };
 		FFBF4FFD1657CC6F001690D2 /* Star.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Star.m; sourceTree = "<group>"; };
+		FFBF500B1657E237001690D2 /* Information.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Information.h; sourceTree = "<group>"; };
+		FFBF500C1657E238001690D2 /* Information.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Information.m; sourceTree = "<group>"; };
 		FFBF9A1B1648439300E3D610 /* libz.1.2.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.5.dylib; path = usr/lib/libz.1.2.5.dylib; sourceTree = SDKROOT; };
 		FFBF9A1E1648439B00E3D610 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		FFBF9A20164843A100E3D610 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
@@ -1555,8 +1555,8 @@
 			children = (
 				FFBF4FF91657CC6E001690D2 /* Event.h */,
 				FFBF4FFA1657CC6E001690D2 /* Event.m */,
-				FFBF4FF61657CC6E001690D2 /* Information.h */,
-				FFBF4FF71657CC6E001690D2 /* Information.m */,
+				FFBF500B1657E237001690D2 /* Information.h */,
+				FFBF500C1657E238001690D2 /* Information.m */,
 				FFBF4FFC1657CC6F001690D2 /* Star.h */,
 				FFBF4FFD1657CC6F001690D2 /* Star.m */,
 				FFBF4FED1657CC6B001690D2 /* Course.h */,
@@ -2042,9 +2042,9 @@
 				FFBF4FEF1657CC6C001690D2 /* Course.m in Sources */,
 				FFBF4FF21657CC6D001690D2 /* User.m in Sources */,
 				FFBF4FF51657CC6D001690D2 /* Exam.m in Sources */,
-				FFBF4FF81657CC6E001690D2 /* Information.m in Sources */,
 				FFBF4FFB1657CC6F001690D2 /* Event.m in Sources */,
 				FFBF4FFE1657CC6F001690D2 /* Star.m in Sources */,
+				FFBF500D1657E238001690D2 /* Information.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

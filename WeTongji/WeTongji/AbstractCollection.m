@@ -13,6 +13,6 @@
 
 @dynamic collectionTitle;
 @dynamic collectionImageLink;
-@dynamic source;
+@dynamic collectionSource;
 
 @end

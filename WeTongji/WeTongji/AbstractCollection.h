@@ -14,6 +14,6 @@
 
 @property (nonatomic, retain) NSString * collectionTitle;
 @property (nonatomic, retain) NSString * collectionImageLink;
-@property (nonatomic, retain) NSString * source;
+@property (nonatomic, retain) NSString * collectionSource;
 
 @end

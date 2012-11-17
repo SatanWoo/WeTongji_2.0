@@ -8,8 +8,8 @@
     </entity>
     <entity name="AbstractCollection" representedClassName="AbstractCollection" isAbstract="YES" syncable="YES">
         <attribute name="collectionImageLink" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="collectionSource" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="collectionTitle" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="source" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Course" representedClassName="Course" parentEntity="AbstractActivity" syncable="YES">
         <attribute name="begin_day" optional="YES" attributeType="String" syncable="YES"/>
@@ -55,20 +55,26 @@
         <attribute name="required" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="teacher" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
-    <entity name="Information" representedClassName="Information" parentEntity="AbstractActivity" syncable="YES">
+    <entity name="Information" representedClassName="Information" parentEntity="AbstractCollection" syncable="YES">
         <attribute name="canFavorite" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="canLike" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="category" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="contact" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="context" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="createdAt" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="favorite" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="hiden" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="image" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="images" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="informationId" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="like" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="organizer" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="organizerAvatar" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="read" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="source" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="summary" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ticketService" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Star" representedClassName="Star" parentEntity="AbstractCollection" syncable="YES">
@@ -108,12 +114,12 @@
     </entity>
     <elements>
         <element name="AbstractActivity" positionX="160" positionY="192" width="128" height="105"/>
+        <element name="AbstractCollection" positionX="160" positionY="192" width="128" height="90"/>
         <element name="Course" positionX="160" positionY="192" width="128" height="195"/>
         <element name="Event" positionX="160" positionY="192" width="128" height="330"/>
         <element name="Exam" positionX="160" positionY="192" width="128" height="180"/>
-        <element name="Information" positionX="160" positionY="192" width="128" height="255"/>
+        <element name="Information" positionX="160" positionY="192" width="128" height="345"/>
         <element name="Star" positionX="160" positionY="192" width="128" height="255"/>
         <element name="User" positionX="160" positionY="192" width="128" height="300"/>
-        <element name="AbstractCollection" positionX="160" positionY="192" width="128" height="90"/>
     </elements>
 </model>

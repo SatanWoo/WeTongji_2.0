@@ -11,7 +11,7 @@
 
 @implementation Information (Addition)
 
-+(void) insertAnInformation:(NSDictionary *) infoDict inManagedObjectContext:(NSManagedObjectContext *) context
++(void) insertAnInformation:(NSDictionary *) infoDict inCategory:(NSString *) category inManagedObjectContext:(NSManagedObjectContext *) context
 {
     NSString * informationId = [NSString stringWithFormat:@"%@", [infoDict objectForKey:@"Id"]];
     if ( !informationId || [informationId isEqualToString:@""]) return;
@@ -22,17 +22,23 @@
     }
     information.canFavorite = [NSNumber numberWithInt:[[infoDict objectForKey:@"CanFavorite"] intValue]];
     information.canLike = [NSNumber numberWithInt:[[infoDict objectForKey:@"CanLike"] intValue]];
-    information.category = [NSString stringWithFormat:@"%@",[infoDict objectForKey:@"Category"]];
+    information.category = [NSString stringWithFormat:@"%@",category];
+    information.contact = [NSString stringWithFormat:@"%@",[infoDict objectForKey:@"Contact"]];
     information.context = [NSString stringWithFormat:@"%@",[infoDict objectForKey:@"Context"]];
     information.createdAt = [[NSString stringWithFormat:@"%@",[infoDict objectForKey:@"CreatedAt"]] convertToDate];
     information.favorite = [NSNumber numberWithInt:[[infoDict objectForKey:@"Favorite"] intValue]];
     information.informationId = [NSString stringWithFormat:@"%@",[infoDict objectForKey:@"Id"]];
-    //information.images =
+    information.image = [NSString stringWithFormat:@"%@",[infoDict objectForKey:@"Image"]];
+    information.images = [NSString stringWithFormat:@"%@",[infoDict objectForKey:@"Images"]];
     NSLog(@"%@",[infoDict objectForKey:@"Images"]);
-    information.like = [NSNumber numberWithInt:[[infoDict objectForKey:@"like"] intValue]];
+    information.like = [NSNumber numberWithInt:[[infoDict objectForKey:@"Like"] intValue]];
+    information.location = [NSString stringWithFormat:@"%@",[infoDict objectForKey:@"Location"]];
+    information.organizer = [NSString stringWithFormat:@"%@",[infoDict objectForKey:@"Organizer"]];
+    information.organizerAvatar = [NSString stringWithFormat:@"%@",[infoDict objectForKey:@"OrganizerAvatar"]];
     information.read = [NSNumber numberWithInt:[[infoDict objectForKey:@"read"] intValue]];;
     information.source = [NSString stringWithFormat:@"%@",[infoDict objectForKey:@"Source"]];
     information.summary = [NSString stringWithFormat:@"%@",[infoDict objectForKey:@"Summary"]];
+    information.ticketService = [NSString stringWithFormat:@"%@",[infoDict objectForKey:@"TicketService"]];
     information.title = [NSString stringWithFormat:@"%@",[infoDict objectForKey:@"Title"]];
 }
 
@@ -40,12 +46,10 @@
 {
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     [request setEntity:[NSEntityDescription entityForName:@"Information" inManagedObjectContext:context]];
-    NSArray *tempList = [context executeFetchRequest:request error:NULL];
-    NSMutableArray * result = [[NSMutableArray alloc] init];
-    for (Information * information in tempList)
-        if ([information.category isEqualToString:category])
-            [result addObject:information];
-    return [NSArray arrayWithArray:result];
+    if ( category ) 
+    [request setPredicate:[NSPredicate predicateWithFormat:@"Category == %@", category]];
+    NSArray *result = [context executeFetchRequest:request error:NULL];
+    return result;
 }
 
 +(Information *) getInformationWithId:(NSString*) informaionId inManagedObjectContext:(NSManagedObjectContext *) context

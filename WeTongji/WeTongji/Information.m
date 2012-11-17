@@ -25,5 +25,11 @@
 @dynamic source;
 @dynamic summary;
 @dynamic title;
+@dynamic organizer;
+@dynamic organizerAvatar;
+@dynamic contact;
+@dynamic image;
+@dynamic location;
+@dynamic ticketService;
 
 @end

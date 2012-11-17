@@ -200,8 +200,16 @@
     WTRequest * request = [WTRequest requestWithSuccessBlock:^(id responseData)
     {
         NSLog(@"%@",responseData);
+        NSArray * dictList = [responseData objectForKey:@"SchoolNews"];
+        for ( NSDictionary * dict in dictList )
+        {
+            [Information insertAnInformation:dict inCategory:nil inManagedObjectContext:self.managedObjectContext];
+        }
+        NSArray * informations = [Information getAllInformationWithCategory:nil inManagedObjectContext:self.managedObjectContext];
+        for ( Information * information in informations )
+            NSLog(@"%@ : %@",information.informationId,information);
     } failureBlock:nil];
-    [request getAllInformationInSort:nil nextPage:0];
+    [request getAllInformationInType:GetInformationTypeSchoolNews sort:GetActivitySortMethodCreateDesc nextPage:0];
     [client enqueueRequest:request];
 }
 
