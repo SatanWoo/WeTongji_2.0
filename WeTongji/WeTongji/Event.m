@@ -15,6 +15,7 @@
 @dynamic beginTime;
 @dynamic canFavorite;
 @dynamic canLike;
+@dynamic canSchedule;
 @dynamic channelId;
 @dynamic createAt;
 @dynamic detail;
@@ -29,6 +30,5 @@
 @dynamic schedule;
 @dynamic status;
 @dynamic title;
-@dynamic canSchedule;
 
 @end

@@ -2,7 +2,7 @@
 //  AbstractActivity.m
 //  WeTongji
 //
-//  Created by tang zhixiong on 12-11-16.
+//  Created by tang zhixiong on 12-11-17.
 //
 //
 
@@ -13,7 +13,7 @@
 
 @dynamic begin_time;
 @dynamic end_time;
-@dynamic where;
 @dynamic what;
+@dynamic where;
 
 @end

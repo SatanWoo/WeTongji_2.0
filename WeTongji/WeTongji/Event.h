@@ -17,6 +17,7 @@
 @property (nonatomic, retain) NSDate * beginTime;
 @property (nonatomic, retain) NSNumber * canFavorite;
 @property (nonatomic, retain) NSNumber * canLike;
+@property (nonatomic, retain) NSNumber * canSchedule;
 @property (nonatomic, retain) NSString * channelId;
 @property (nonatomic, retain) NSDate * createAt;
 @property (nonatomic, retain) NSString * detail;
@@ -31,6 +32,5 @@
 @property (nonatomic, retain) NSNumber * schedule;
 @property (nonatomic, retain) NSNumber * status;
 @property (nonatomic, retain) NSString * title;
-@property (nonatomic, retain) NSNumber * canSchedule;
 
 @end

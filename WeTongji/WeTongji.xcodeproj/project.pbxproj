@@ -229,19 +229,13 @@
 		E5F2E34216579B4A00879222 /* navbar_list_btn_hl@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5F2E33C16579B4A00879222 /* navbar_list_btn_hl@2x.png */; };
 		E5FEF4761638418F00FB7A2A /* today.png in Resources */ = {isa = PBXBuildFile; fileRef = E5FEF4741638418F00FB7A2A /* today.png */; };
 		E5FEF4771638418F00FB7A2A /* today@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5FEF4751638418F00FB7A2A /* today@2x.png */; };
-		FF6E952F16537E92002497FA /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = FF6E952E16537E92002497FA /* User.m */; };
 		FF6E953216537EB2002497FA /* User+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = FF6E953116537EB2002497FA /* User+Addition.m */; };
 		FF710971164CFBE5008F2A06 /* EGORefreshTableFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = FF71096F164CFBE5008F2A06 /* EGORefreshTableFooterView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		FF710978164D0A77008F2A06 /* EGORefreshTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = FF710977164D0A77008F2A06 /* EGORefreshTableHeaderView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		FF710995164D1EB0008F2A06 /* Information+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = FF710994164D1EB0008F2A06 /* Information+Addition.m */; };
-		FF7109AE164D382D008F2A06 /* Star.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7109AD164D382D008F2A06 /* Star.m */; };
-		FF7109B1164D39BC008F2A06 /* Information.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7109B0164D39BB008F2A06 /* Information.m */; };
 		FF7109B4164D3AFD008F2A06 /* Star+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7109B3164D3AFC008F2A06 /* Star+Addition.m */; };
 		FF7109BA164D4667008F2A06 /* PullRefreshManagement.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7109B9164D4667008F2A06 /* PullRefreshManagement.m */; };
 		FFB138D71656B24600D73C71 /* ScheduleWeekRightTableViewCellContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB2108016565BA300FCAF5F /* ScheduleWeekRightTableViewCellContentView.m */; };
-		FFB138D81656B26B00D73C71 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB138A216569D3B00D73C71 /* Event.m */; };
-		FFB138D91656B26B00D73C71 /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB2108616565DE300FCAF5F /* Course.m */; };
-		FFB138DA1656B26B00D73C71 /* AbstractActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB2108C16565EAB00FCAF5F /* AbstractActivity.m */; };
 		FFB20FEF1655D72F00FCAF5F /* ScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB20FEE1655D72F00FCAF5F /* ScheduleViewController.m */; };
 		FFB20FFD1655DA0900FCAF5F /* ScheduleWeekLeftTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB20FF11655DA0900FCAF5F /* ScheduleWeekLeftTableViewCell.m */; };
 		FFB20FFE1655DA0900FCAF5F /* ScheduleWeekLeftTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFB20FF21655DA0900FCAF5F /* ScheduleWeekLeftTableViewCell.xib */; };
@@ -328,13 +322,20 @@
 		FFBEB2CB164B943A0004AF4C /* Event+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBEB2CA164B943A0004AF4C /* Event+Addition.m */; };
 		FFBEB2F5164B9CF70004AF4C /* NSString+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBEB2F4164B9CF70004AF4C /* NSString+Addition.m */; };
 		FFBEB2F8164BA0760004AF4C /* NSArray+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBEB2F7164BA0760004AF4C /* NSArray+Addition.m */; };
+		FFBF4FE91657CC43001690D2 /* AbstractCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBF4FE81657CC42001690D2 /* AbstractCollection.m */; };
+		FFBF4FEC1657CC5F001690D2 /* AbstractActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBF4FEB1657CC5E001690D2 /* AbstractActivity.m */; };
+		FFBF4FEF1657CC6C001690D2 /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBF4FEE1657CC6B001690D2 /* Course.m */; };
+		FFBF4FF21657CC6D001690D2 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBF4FF11657CC6D001690D2 /* User.m */; };
+		FFBF4FF51657CC6D001690D2 /* Exam.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBF4FF41657CC6D001690D2 /* Exam.m */; };
+		FFBF4FF81657CC6E001690D2 /* Information.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBF4FF71657CC6E001690D2 /* Information.m */; };
+		FFBF4FFB1657CC6F001690D2 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBF4FFA1657CC6E001690D2 /* Event.m */; };
+		FFBF4FFE1657CC6F001690D2 /* Star.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBF4FFD1657CC6F001690D2 /* Star.m */; };
 		FFBF9A1C1648439300E3D610 /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBF9A1B1648439300E3D610 /* libz.1.2.5.dylib */; };
 		FFBF9A1F1648439B00E3D610 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBF9A1E1648439B00E3D610 /* CFNetwork.framework */; };
 		FFBF9A21164843A100E3D610 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBF9A20164843A100E3D610 /* MobileCoreServices.framework */; };
 		FFBF9A23164843A600E3D610 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBF9A22164843A600E3D610 /* SystemConfiguration.framework */; };
 		FFBF9A25164843AD00E3D610 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBF9A24164843AD00E3D610 /* MapKit.framework */; };
 		FFC07086165742BB00323E38 /* Exam+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC07085165742BB00323E38 /* Exam+Addition.m */; };
-		FFC070871657430400323E38 /* Exam.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB1389F165691F400D73C71 /* Exam.m */; };
 		FFC1203B165160AC003FF0E6 /* 注册登录.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FFC1203A165160AC003FF0E6 /* 注册登录.jpg */; };
 		FFC1203F1651639A003FF0E6 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC1203E1651639A003FF0E6 /* LoginViewController.m */; };
 		FFC1204116516C38003FF0E6 /* back_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFC1204016516C38003FF0E6 /* back_btn@2x.png */; };
@@ -638,8 +639,6 @@
 		E5F2E33C16579B4A00879222 /* navbar_list_btn_hl@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navbar_list_btn_hl@2x.png"; sourceTree = "<group>"; };
 		E5FEF4741638418F00FB7A2A /* today.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = today.png; sourceTree = "<group>"; };
 		E5FEF4751638418F00FB7A2A /* today@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "today@2x.png"; sourceTree = "<group>"; };
-		FF6E952D16537E92002497FA /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
-		FF6E952E16537E92002497FA /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		FF6E953016537EB2002497FA /* User+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "User+Addition.h"; sourceTree = "<group>"; };
 		FF6E953116537EB2002497FA /* User+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "User+Addition.m"; sourceTree = "<group>"; };
 		FF71096F164CFBE5008F2A06 /* EGORefreshTableFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGORefreshTableFooterView.m; sourceTree = "<group>"; };
@@ -648,18 +647,10 @@
 		FF710977164D0A77008F2A06 /* EGORefreshTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGORefreshTableHeaderView.m; sourceTree = "<group>"; };
 		FF710993164D1EB0008F2A06 /* Information+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Information+Addition.h"; sourceTree = "<group>"; };
 		FF710994164D1EB0008F2A06 /* Information+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Information+Addition.m"; sourceTree = "<group>"; };
-		FF7109AC164D382D008F2A06 /* Star.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Star.h; sourceTree = "<group>"; };
-		FF7109AD164D382D008F2A06 /* Star.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Star.m; sourceTree = "<group>"; };
-		FF7109AF164D39BB008F2A06 /* Information.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Information.h; sourceTree = "<group>"; };
-		FF7109B0164D39BB008F2A06 /* Information.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Information.m; sourceTree = "<group>"; };
 		FF7109B2164D3AFC008F2A06 /* Star+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Star+Addition.h"; sourceTree = "<group>"; };
 		FF7109B3164D3AFC008F2A06 /* Star+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Star+Addition.m"; sourceTree = "<group>"; };
 		FF7109B8164D4667008F2A06 /* PullRefreshManagement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PullRefreshManagement.h; sourceTree = "<group>"; };
 		FF7109B9164D4667008F2A06 /* PullRefreshManagement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PullRefreshManagement.m; sourceTree = "<group>"; };
-		FFB1389E165691F400D73C71 /* Exam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exam.h; sourceTree = "<group>"; };
-		FFB1389F165691F400D73C71 /* Exam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Exam.m; sourceTree = "<group>"; };
-		FFB138A116569D3B00D73C71 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
-		FFB138A216569D3B00D73C71 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
 		FFB20FED1655D72F00FCAF5F /* ScheduleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScheduleViewController.h; sourceTree = "<group>"; };
 		FFB20FEE1655D72F00FCAF5F /* ScheduleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScheduleViewController.m; sourceTree = "<group>"; };
 		FFB20FF01655DA0900FCAF5F /* ScheduleWeekLeftTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScheduleWeekLeftTableViewCell.h; sourceTree = "<group>"; };
@@ -733,10 +724,6 @@
 		FFB2103E1656130F00FCAF5F /* to_do_list_point_yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = to_do_list_point_yellow.png; sourceTree = "<group>"; };
 		FFB2103F1656130F00FCAF5F /* to_do_list_point_yellow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "to_do_list_point_yellow@2x.png"; sourceTree = "<group>"; };
 		FFB2108016565BA300FCAF5F /* ScheduleWeekRightTableViewCellContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScheduleWeekRightTableViewCellContentView.m; sourceTree = "<group>"; };
-		FFB2108516565DE100FCAF5F /* Course.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Course.h; sourceTree = "<group>"; };
-		FFB2108616565DE300FCAF5F /* Course.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Course.m; sourceTree = "<group>"; };
-		FFB2108B16565EA900FCAF5F /* AbstractActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractActivity.h; sourceTree = "<group>"; };
-		FFB2108C16565EAB00FCAF5F /* AbstractActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbstractActivity.m; sourceTree = "<group>"; };
 		FFB27CC9164E0E32007A51DE /* PullRefreshManagementDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PullRefreshManagementDelegate.h; sourceTree = "<group>"; };
 		FFB46B2B164FCC6D00C32969 /* Course+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Course+Addition.h"; sourceTree = "<group>"; };
 		FFB46B2C164FCC6D00C32969 /* Course+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Course+Addition.m"; sourceTree = "<group>"; };
@@ -764,6 +751,22 @@
 		FFBEB2F6164BA0760004AF4C /* NSArray+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Addition.h"; sourceTree = "<group>"; };
 		FFBEB2F7164BA0760004AF4C /* NSArray+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Addition.m"; sourceTree = "<group>"; };
 		FFBF4FDC1657CA89001690D2 /* WeTongjiSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = WeTongjiSDK.xcodeproj; path = ../../../wetongji_ios_sdk/WeTongjiSDK.xcodeproj; sourceTree = "<group>"; };
+		FFBF4FE71657CC42001690D2 /* AbstractCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractCollection.h; sourceTree = "<group>"; };
+		FFBF4FE81657CC42001690D2 /* AbstractCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbstractCollection.m; sourceTree = "<group>"; };
+		FFBF4FEA1657CC5E001690D2 /* AbstractActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractActivity.h; sourceTree = "<group>"; };
+		FFBF4FEB1657CC5E001690D2 /* AbstractActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbstractActivity.m; sourceTree = "<group>"; };
+		FFBF4FED1657CC6B001690D2 /* Course.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Course.h; sourceTree = "<group>"; };
+		FFBF4FEE1657CC6B001690D2 /* Course.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Course.m; sourceTree = "<group>"; };
+		FFBF4FF01657CC6D001690D2 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		FFBF4FF11657CC6D001690D2 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		FFBF4FF31657CC6D001690D2 /* Exam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exam.h; sourceTree = "<group>"; };
+		FFBF4FF41657CC6D001690D2 /* Exam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Exam.m; sourceTree = "<group>"; };
+		FFBF4FF61657CC6E001690D2 /* Information.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Information.h; sourceTree = "<group>"; };
+		FFBF4FF71657CC6E001690D2 /* Information.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Information.m; sourceTree = "<group>"; };
+		FFBF4FF91657CC6E001690D2 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
+		FFBF4FFA1657CC6E001690D2 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
+		FFBF4FFC1657CC6F001690D2 /* Star.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Star.h; sourceTree = "<group>"; };
+		FFBF4FFD1657CC6F001690D2 /* Star.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Star.m; sourceTree = "<group>"; };
 		FFBF9A1B1648439300E3D610 /* libz.1.2.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.5.dylib; path = usr/lib/libz.1.2.5.dylib; sourceTree = SDKROOT; };
 		FFBF9A1E1648439B00E3D610 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		FFBF9A20164843A100E3D610 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
@@ -1550,20 +1553,22 @@
 		FFBEB2AF164B88450004AF4C /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				FFB138A116569D3B00D73C71 /* Event.h */,
-				FFB138A216569D3B00D73C71 /* Event.m */,
-				FF7109AF164D39BB008F2A06 /* Information.h */,
-				FF7109B0164D39BB008F2A06 /* Information.m */,
-				FF7109AC164D382D008F2A06 /* Star.h */,
-				FF7109AD164D382D008F2A06 /* Star.m */,
-				FFB2108516565DE100FCAF5F /* Course.h */,
-				FFB2108616565DE300FCAF5F /* Course.m */,
-				FF6E952D16537E92002497FA /* User.h */,
-				FF6E952E16537E92002497FA /* User.m */,
-				FFB2108B16565EA900FCAF5F /* AbstractActivity.h */,
-				FFB2108C16565EAB00FCAF5F /* AbstractActivity.m */,
-				FFB1389E165691F400D73C71 /* Exam.h */,
-				FFB1389F165691F400D73C71 /* Exam.m */,
+				FFBF4FF91657CC6E001690D2 /* Event.h */,
+				FFBF4FFA1657CC6E001690D2 /* Event.m */,
+				FFBF4FF61657CC6E001690D2 /* Information.h */,
+				FFBF4FF71657CC6E001690D2 /* Information.m */,
+				FFBF4FFC1657CC6F001690D2 /* Star.h */,
+				FFBF4FFD1657CC6F001690D2 /* Star.m */,
+				FFBF4FED1657CC6B001690D2 /* Course.h */,
+				FFBF4FEE1657CC6B001690D2 /* Course.m */,
+				FFBF4FF01657CC6D001690D2 /* User.h */,
+				FFBF4FF11657CC6D001690D2 /* User.m */,
+				FFBF4FF31657CC6D001690D2 /* Exam.h */,
+				FFBF4FF41657CC6D001690D2 /* Exam.m */,
+				FFBF4FEA1657CC5E001690D2 /* AbstractActivity.h */,
+				FFBF4FEB1657CC5E001690D2 /* AbstractActivity.m */,
+				FFBF4FE71657CC42001690D2 /* AbstractCollection.h */,
+				FFBF4FE81657CC42001690D2 /* AbstractCollection.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -1963,10 +1968,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FFC070871657430400323E38 /* Exam.m in Sources */,
-				FFB138D81656B26B00D73C71 /* Event.m in Sources */,
-				FFB138D91656B26B00D73C71 /* Course.m in Sources */,
-				FFB138DA1656B26B00D73C71 /* AbstractActivity.m in Sources */,
 				FFB138D71656B24600D73C71 /* ScheduleWeekRightTableViewCellContentView.m in Sources */,
 				B00D692D162CFCAC00592B1D /* main.m in Sources */,
 				B00D6931162CFCAC00592B1D /* AppDelegate.m in Sources */,
@@ -2009,8 +2010,6 @@
 				FF710971164CFBE5008F2A06 /* EGORefreshTableFooterView.m in Sources */,
 				FF710978164D0A77008F2A06 /* EGORefreshTableHeaderView.m in Sources */,
 				FF710995164D1EB0008F2A06 /* Information+Addition.m in Sources */,
-				FF7109AE164D382D008F2A06 /* Star.m in Sources */,
-				FF7109B1164D39BC008F2A06 /* Information.m in Sources */,
 				FF7109B4164D3AFD008F2A06 /* Star+Addition.m in Sources */,
 				FF7109BA164D4667008F2A06 /* PullRefreshManagement.m in Sources */,
 				FFB46B2D164FCC6D00C32969 /* Course+Addition.m in Sources */,
@@ -2022,7 +2021,6 @@
 				FFC1203F1651639A003FF0E6 /* LoginViewController.m in Sources */,
 				FFC1204516517582003FF0E6 /* RegisterViewController.m in Sources */,
 				FFC1204A16517F50003FF0E6 /* RegInfomationCell.m in Sources */,
-				FF6E952F16537E92002497FA /* User.m in Sources */,
 				FF6E953216537EB2002497FA /* User+Addition.m in Sources */,
 				035E34921653E1F7009AC6BF /* EditInfoHeaderView.m in Sources */,
 				035E349E1653E7C8009AC6BF /* MiddleAbstractSecondViewController.m in Sources */,
@@ -2039,6 +2037,14 @@
 				03326A5C16568FA8005E8A16 /* JBKenBurnsView.m in Sources */,
 				03326A7316569430005E8A16 /* WUKenBurnViewHeader.m in Sources */,
 				FFC07086165742BB00323E38 /* Exam+Addition.m in Sources */,
+				FFBF4FE91657CC43001690D2 /* AbstractCollection.m in Sources */,
+				FFBF4FEC1657CC5F001690D2 /* AbstractActivity.m in Sources */,
+				FFBF4FEF1657CC6C001690D2 /* Course.m in Sources */,
+				FFBF4FF21657CC6D001690D2 /* User.m in Sources */,
+				FFBF4FF51657CC6D001690D2 /* Exam.m in Sources */,
+				FFBF4FF81657CC6E001690D2 /* Information.m in Sources */,
+				FFBF4FFB1657CC6F001690D2 /* Event.m in Sources */,
+				FFBF4FFE1657CC6F001690D2 /* Star.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

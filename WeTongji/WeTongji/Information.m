@@ -2,7 +2,7 @@
 //  Information.m
 //  WeTongji
 //
-//  Created by tang zhixiong on 12-11-9.
+//  Created by tang zhixiong on 12-11-17.
 //
 //
 
@@ -18,8 +18,8 @@
 @dynamic createdAt;
 @dynamic favorite;
 @dynamic hiden;
-@dynamic informationId;
 @dynamic images;
+@dynamic informationId;
 @dynamic like;
 @dynamic read;
 @dynamic source;

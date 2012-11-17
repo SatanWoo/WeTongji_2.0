@@ -2,7 +2,7 @@
 //  User.m
 //  WeTongji
 //
-//  Created by tang zhixiong on 12-11-14.
+//  Created by tang zhixiong on 12-11-17.
 //
 //
 
@@ -11,22 +11,22 @@
 
 @implementation User
 
-@dynamic qq;
-@dynamic name;
-@dynamic degree;
-@dynamic year;
-@dynamic sinaWeibo;
+@dynamic age;
 @dynamic avatarLink;
-@dynamic major;
-@dynamic nativePlace;
-@dynamic email;
-@dynamic gender;
 @dynamic birthday;
+@dynamic degree;
 @dynamic department;
 @dynamic displayname;
+@dynamic email;
+@dynamic gender;
+@dynamic major;
+@dynamic name;
+@dynamic nativePlace;
 @dynamic phone;
 @dynamic plan;
+@dynamic qq;
+@dynamic sinaWeibo;
 @dynamic studentNumber;
-@dynamic age;
+@dynamic year;
 
 @end
