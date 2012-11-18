@@ -158,6 +158,10 @@
 		E5482E3D1636E4770054C771 /* LeftMenu.plist in Resources */ = {isa = PBXBuildFile; fileRef = E5482E3C1636E4770054C771 /* LeftMenu.plist */; };
 		E5482E411636E5A50054C771 /* PlistReader.m in Sources */ = {isa = PBXBuildFile; fileRef = E5482E401636E5A40054C771 /* PlistReader.m */; };
 		E5482E461636E6FE0054C771 /* LeftMenuCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E5482E451636E6FE0054C771 /* LeftMenuCellModel.m */; };
+		E56A79231658C45E0007FD97 /* cancel_edit_hl.png in Resources */ = {isa = PBXBuildFile; fileRef = E56A791F1658C45E0007FD97 /* cancel_edit_hl.png */; };
+		E56A79241658C45E0007FD97 /* cancel_edit_un.png in Resources */ = {isa = PBXBuildFile; fileRef = E56A79201658C45E0007FD97 /* cancel_edit_un.png */; };
+		E56A79251658C45E0007FD97 /* finish_edit_hl.png in Resources */ = {isa = PBXBuildFile; fileRef = E56A79211658C45E0007FD97 /* finish_edit_hl.png */; };
+		E56A79261658C45E0007FD97 /* finish_edit_un.png in Resources */ = {isa = PBXBuildFile; fileRef = E56A79221658C45E0007FD97 /* finish_edit_un.png */; };
 		E56CE2B7163AF76100467FD7 /* WUButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E56CE2B6163AF76100467FD7 /* WUButton.m */; };
 		E56CE2BA163AFF3E00467FD7 /* RecommendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E56CE2B9163AFF3E00467FD7 /* RecommendCell.m */; };
 		E56CE2BC163AFFD200467FD7 /* RecommendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E56CE2BB163AFFD200467FD7 /* RecommendCell.xib */; };
@@ -208,6 +212,7 @@
 		E5E22EB51658B1A900B0C9AC /* navbar_sort_btn_hl@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5E22EA91658B1A800B0C9AC /* navbar_sort_btn_hl@2x.png */; };
 		E5E22EB61658B1A900B0C9AC /* navbar_sort_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = E5E22EAA1658B1A800B0C9AC /* navbar_sort_btn.png */; };
 		E5E22EB71658B1A900B0C9AC /* navbar_sort_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5E22EAB1658B1A800B0C9AC /* navbar_sort_btn@2x.png */; };
+		E5E22EE31658BBB800B0C9AC /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5E22EE21658BBB800B0C9AC /* AboutViewController.m */; };
 		E5F2E31F16579A4600879222 /* dongtai_hl.png in Resources */ = {isa = PBXBuildFile; fileRef = E5F2E30716579A4500879222 /* dongtai_hl.png */; };
 		E5F2E32016579A4600879222 /* dongtai_hl@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5F2E30816579A4500879222 /* dongtai_hl@2x.png */; };
 		E5F2E32116579A4600879222 /* dongtai_sl.png in Resources */ = {isa = PBXBuildFile; fileRef = E5F2E30916579A4500879222 /* dongtai_sl.png */; };
@@ -366,18 +371,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		FFB14F191658B4F70035F888 /* PBXContainerItemProxy */ = {
+		E5E22ED41658B8EF00B0C9AC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = FFB14F121658B4F70035F888 /* WeTongjiSDK.xcodeproj */;
+			containerPortal = E5E22ECD1658B8EF00B0C9AC /* WeTongjiSDK.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = E110DF2B16365B990087EA46;
-			remoteInfo = WeTongjiSDK;
-		};
-		FFB14F1B1658B5050035F888 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FFB14F121658B4F70035F888 /* WeTongjiSDK.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = E110DF2A16365B990087EA46;
 			remoteInfo = WeTongjiSDK;
 		};
 /* End PBXContainerItemProxy section */
@@ -572,6 +570,10 @@
 		E5482E401636E5A40054C771 /* PlistReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlistReader.m; sourceTree = "<group>"; };
 		E5482E441636E6FE0054C771 /* LeftMenuCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftMenuCellModel.h; sourceTree = "<group>"; };
 		E5482E451636E6FE0054C771 /* LeftMenuCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftMenuCellModel.m; sourceTree = "<group>"; };
+		E56A791F1658C45E0007FD97 /* cancel_edit_hl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cancel_edit_hl.png; sourceTree = "<group>"; };
+		E56A79201658C45E0007FD97 /* cancel_edit_un.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cancel_edit_un.png; sourceTree = "<group>"; };
+		E56A79211658C45E0007FD97 /* finish_edit_hl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = finish_edit_hl.png; sourceTree = "<group>"; };
+		E56A79221658C45E0007FD97 /* finish_edit_un.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = finish_edit_un.png; sourceTree = "<group>"; };
 		E56CE2B5163AF76100467FD7 /* WUButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WUButton.h; sourceTree = "<group>"; };
 		E56CE2B6163AF76100467FD7 /* WUButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WUButton.m; sourceTree = "<group>"; };
 		E56CE2B8163AFF3E00467FD7 /* RecommendCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendCell.h; sourceTree = "<group>"; };
@@ -631,6 +633,9 @@
 		E5E22EA91658B1A800B0C9AC /* navbar_sort_btn_hl@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navbar_sort_btn_hl@2x.png"; sourceTree = "<group>"; };
 		E5E22EAA1658B1A800B0C9AC /* navbar_sort_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navbar_sort_btn.png; sourceTree = "<group>"; };
 		E5E22EAB1658B1A800B0C9AC /* navbar_sort_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navbar_sort_btn@2x.png"; sourceTree = "<group>"; };
+		E5E22ECD1658B8EF00B0C9AC /* WeTongjiSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = WeTongjiSDK.xcodeproj; path = ../../wetongji_ios_sdk/WeTongjiSDK.xcodeproj; sourceTree = "<group>"; };
+		E5E22EE11658BBB800B0C9AC /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		E5E22EE21658BBB800B0C9AC /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		E5F2E30716579A4500879222 /* dongtai_hl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dongtai_hl.png; sourceTree = "<group>"; };
 		E5F2E30816579A4500879222 /* dongtai_hl@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dongtai_hl@2x.png"; sourceTree = "<group>"; };
 		E5F2E30916579A4500879222 /* dongtai_sl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dongtai_sl.png; sourceTree = "<group>"; };
@@ -682,7 +687,6 @@
 		FFB14F0716588ED90035F888 /* WeeklyPersonHeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeeklyPersonHeaderCell.m; sourceTree = "<group>"; };
 		FFB14F091658AEDC0035F888 /* Star.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Star.h; sourceTree = "<group>"; };
 		FFB14F0A1658AEDC0035F888 /* Star.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Star.m; sourceTree = "<group>"; };
-		FFB14F121658B4F70035F888 /* WeTongjiSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = WeTongjiSDK.xcodeproj; path = ../../../wetongji_ios_sdk/WeTongjiSDK.xcodeproj; sourceTree = "<group>"; };
 		FFB20FED1655D72F00FCAF5F /* ScheduleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScheduleViewController.h; sourceTree = "<group>"; };
 		FFB20FEE1655D72F00FCAF5F /* ScheduleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScheduleViewController.m; sourceTree = "<group>"; };
 		FFB20FF01655DA0900FCAF5F /* ScheduleWeekLeftTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScheduleWeekLeftTableViewCell.h; sourceTree = "<group>"; };
@@ -870,6 +874,10 @@
 		03D540B71651335B0070F727 /* EditInfo */ = {
 			isa = PBXGroup;
 			children = (
+				E56A791F1658C45E0007FD97 /* cancel_edit_hl.png */,
+				E56A79201658C45E0007FD97 /* cancel_edit_un.png */,
+				E56A79211658C45E0007FD97 /* finish_edit_hl.png */,
+				E56A79221658C45E0007FD97 /* finish_edit_un.png */,
 				FFB4D67B1654729400D863FC /* cancel_edit_hl@2x.png */,
 				FFB4D67C1654729400D863FC /* cancel_edit_un@2x.png */,
 				FFB4D67D1654729400D863FC /* finish_edit_hl@2x.png */,
@@ -937,7 +945,7 @@
 		B00D6911162CFCAC00592B1D = {
 			isa = PBXGroup;
 			children = (
-				FFB14F121658B4F70035F888 /* WeTongjiSDK.xcodeproj */,
+				E5E22ECD1658B8EF00B0C9AC /* WeTongjiSDK.xcodeproj */,
 				03326A4B16567FE3005E8A16 /* default.png */,
 				03326A4C16567FE3005E8A16 /* default@2x.png */,
 				03BAB368164FD0720049DA19 /* Icon@2x.png.png */,
@@ -1237,6 +1245,7 @@
 		E52352CE1631917100DBFF7C /* LeftMenu */ = {
 			isa = PBXGroup;
 			children = (
+				E5E22EE01658BB9900B0C9AC /* AboutViewController */,
 				E52352CF1631918C00DBFF7C /* LeftMenuViewController.h */,
 				E52352D01631918C00DBFF7C /* LeftMenuViewController.m */,
 			);
@@ -1452,12 +1461,21 @@
 			name = Arrangement;
 			sourceTree = "<group>";
 		};
-		FFB14F131658B4F70035F888 /* Products */ = {
+		E5E22ECE1658B8EF00B0C9AC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FFB14F1A1658B4F70035F888 /* WeTongjiSDK.framework */,
+				E5E22ED51658B8EF00B0C9AC /* WeTongjiSDK.framework */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		E5E22EE01658BB9900B0C9AC /* AboutViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E5E22EE11658BBB800B0C9AC /* AboutViewController.h */,
+				E5E22EE21658BBB800B0C9AC /* AboutViewController.m */,
+			);
+			name = AboutViewController;
 			sourceTree = "<group>";
 		};
 		FFB20FBB1655D60E00FCAF5F /* Schedule */ = {
@@ -1700,7 +1718,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				FFB14F1C1658B5050035F888 /* PBXTargetDependency */,
 			);
 			name = WeTongji;
 			productName = WeTongji;
@@ -1727,8 +1744,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = FFB14F131658B4F70035F888 /* Products */;
-					ProjectRef = FFB14F121658B4F70035F888 /* WeTongjiSDK.xcodeproj */;
+					ProductGroup = E5E22ECE1658B8EF00B0C9AC /* Products */;
+					ProjectRef = E5E22ECD1658B8EF00B0C9AC /* WeTongjiSDK.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -1739,11 +1756,11 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		FFB14F1A1658B4F70035F888 /* WeTongjiSDK.framework */ = {
+		E5E22ED51658B8EF00B0C9AC /* WeTongjiSDK.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = WeTongjiSDK.framework;
-			remoteRef = FFB14F191658B4F70035F888 /* PBXContainerItemProxy */;
+			remoteRef = E5E22ED41658B8EF00B0C9AC /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -2018,6 +2035,10 @@
 				E5E22EB51658B1A900B0C9AC /* navbar_sort_btn_hl@2x.png in Resources */,
 				E5E22EB61658B1A900B0C9AC /* navbar_sort_btn.png in Resources */,
 				E5E22EB71658B1A900B0C9AC /* navbar_sort_btn@2x.png in Resources */,
+				E56A79231658C45E0007FD97 /* cancel_edit_hl.png in Resources */,
+				E56A79241658C45E0007FD97 /* cancel_edit_un.png in Resources */,
+				E56A79251658C45E0007FD97 /* finish_edit_hl.png in Resources */,
+				E56A79261658C45E0007FD97 /* finish_edit_un.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2109,18 +2130,11 @@
 				FFB14F0316587DD90035F888 /* SchoolNewsTicketCell.m in Sources */,
 				FFB14F0816588ED90035F888 /* WeeklyPersonHeaderCell.m in Sources */,
 				FFB14F0B1658AEDC0035F888 /* Star.m in Sources */,
+				E5E22EE31658BBB800B0C9AC /* AboutViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		FFB14F1C1658B5050035F888 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = WeTongjiSDK;
-			targetProxy = FFB14F1B1658B5050035F888 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		B00D6929162CFCAC00592B1D /* InfoPlist.strings */ = {
