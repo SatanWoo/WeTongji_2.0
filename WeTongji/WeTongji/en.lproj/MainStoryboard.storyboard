@@ -1260,12 +1260,6 @@
         <image name="注册登录.jpg" width="640" height="960"/>
     </resources>
     <classes>
-        <class className="AboutViewController" superclassName="MiddleAbstractViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AboutViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="aboutTableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
         <class className="ArrangementViewController" superclassName="MiddleAbstractSecondViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ArrangementViewController.h"/>
             <relationships>
