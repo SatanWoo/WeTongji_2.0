@@ -9,8 +9,15 @@
 #import "AboutViewController.h"
 #import "UIBarButtonItem+CustomButton.h"
 #import "AboutHeaderView.h"
+#import <MessageUI/MFMailComposeViewController.h>
 
-@interface AboutViewController () <UITableViewDataSource, UITableViewDelegate>
+#define WE_TONGJI_EMAIL             @"wetongji2012@gmail.com"
+#define WE_TONGJI_SINA_WEIBO_URL    @"http://www.weibo.com/wetongji"
+#define WE_TONGJI_APP_STORE_URL     @"http://itunes.apple.com/cn/app/id526260090?mt=8"
+#define WE_TONGJ_OFFICAL_WEBSITE    @"http://we.tongji.edu.cn"
+#define WE_TONGJI_RERREN            @"http://page.renren.com/601362138"
+
+@interface AboutViewController () <UITableViewDataSource, UITableViewDelegate, MFMailComposeViewControllerDelegate>
 - (void)configureNavBar;
 - (void)pressNavButton;
 @end
@@ -54,6 +61,11 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return 3;
+}
+
+- (float)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 45;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -112,6 +124,44 @@
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if (indexPath.section == 0 && indexPath.row == 0) {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:WE_TONGJI_APP_STORE_URL]];  
+    } else if (indexPath.section == 0 && indexPath.row == 1) {
+        MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
+        if (!picker) {
+            return;
+        }
+        picker.mailComposeDelegate = self;
+        [picker setSubject:@"微同济 2.0 用户反馈"];
+        [picker.navigationBar setBarStyle:UIBarStyleBlack];
+        
+        NSArray *toRecipients = [NSArray arrayWithObjects:WE_TONGJI_EMAIL, nil];
+        NSString *emailBody = @"您的宝贵建议会直接送达微同济开发团队。";
+        [picker setToRecipients:toRecipients];
+        [picker setMessageBody:emailBody isHTML:NO];
+        [self presentModalViewController:picker animated:YES];
+    } else if (indexPath.section == 0 && indexPath.row == 2) {
+        
+    } else if (indexPath.section == 1 && indexPath.row == 0) {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:WE_TONGJI_SINA_WEIBO_URL]];
+    } else if (indexPath.section == 1 && indexPath.row == 1) {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:WE_TONGJI_RERREN]];
+    } else if (indexPath.section == 1 && indexPath.row == 2) {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:WE_TONGJ_OFFICAL_WEBSITE]];
+    }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
+
+#pragma mark - MFMailComposeViewController delegate
+- (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error
+{
+    if(result == MFMailComposeResultSent) {
+        
+    }
+    else if(result == MFMailComposeResultFailed) {
+            
+    }
+	[self dismissModalViewControllerAnimated:YES];
+}
+
 @end

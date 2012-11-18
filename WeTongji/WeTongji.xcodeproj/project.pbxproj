@@ -195,6 +195,7 @@
 		E5D2449A1647CD2600DA43DD /* arrange_cell_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5D244961647CD2500DA43DD /* arrange_cell_bg@2x.png */; };
 		E5D2449B1647CD2600DA43DD /* arrange_remind_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = E5D244971647CD2500DA43DD /* arrange_remind_bg.png */; };
 		E5D2449C1647CD2600DA43DD /* arrange_remind_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5D244981647CD2600DA43DD /* arrange_remind_bg@2x.png */; };
+		E5D79F0B1658EC950031ABA4 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5D79F0A1658EC950031ABA4 /* MessageUI.framework */; };
 		E5E22E941658AAFA00B0C9AC /* info_btn_hl.png in Resources */ = {isa = PBXBuildFile; fileRef = E5E22E8C1658AAFA00B0C9AC /* info_btn_hl.png */; };
 		E5E22E951658AAFA00B0C9AC /* info_btn_hl@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5E22E8D1658AAFA00B0C9AC /* info_btn_hl@2x.png */; };
 		E5E22E961658AAFA00B0C9AC /* info_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = E5E22E8E1658AAFA00B0C9AC /* info_btn.png */; };
@@ -630,6 +631,7 @@
 		E5D244961647CD2500DA43DD /* arrange_cell_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrange_cell_bg@2x.png"; sourceTree = "<group>"; };
 		E5D244971647CD2500DA43DD /* arrange_remind_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrange_remind_bg.png; sourceTree = "<group>"; };
 		E5D244981647CD2600DA43DD /* arrange_remind_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrange_remind_bg@2x.png"; sourceTree = "<group>"; };
+		E5D79F0A1658EC950031ABA4 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		E5E22E8C1658AAFA00B0C9AC /* info_btn_hl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info_btn_hl.png; sourceTree = "<group>"; };
 		E5E22E8D1658AAFA00B0C9AC /* info_btn_hl@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "info_btn_hl@2x.png"; sourceTree = "<group>"; };
 		E5E22E8E1658AAFA00B0C9AC /* info_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info_btn.png; sourceTree = "<group>"; };
@@ -851,6 +853,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5D79F0B1658EC950031ABA4 /* MessageUI.framework in Frameworks */,
 				FFBEB29B164B6DA10004AF4C /* CoreData.framework in Frameworks */,
 				FFBF9A25164843AD00E3D610 /* MapKit.framework in Frameworks */,
 				FFBF9A23164843A600E3D610 /* SystemConfiguration.framework in Frameworks */,
@@ -957,6 +960,7 @@
 		B00D6911162CFCAC00592B1D = {
 			isa = PBXGroup;
 			children = (
+				E5D79F0A1658EC950031ABA4 /* MessageUI.framework */,
 				E56A79B01658E4330007FD97 /* WeTongjiSDK.xcodeproj */,
 				03326A4B16567FE3005E8A16 /* default.png */,
 				03326A4C16567FE3005E8A16 /* default@2x.png */,
