@@ -1183,16 +1183,30 @@
             </objects>
             <point key="canvasLocation" x="670" y="1165"/>
         </scene>
-        <!--About View Controller - 关于-->
+        <!--About View Controller - Info-->
         <scene sceneID="uv3-uC-wEG">
             <objects>
                 <viewController id="OrD-eY-YPk" customClass="AboutViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SLe-Hf-o38">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="45" sectionHeaderHeight="22" sectionFooterHeight="22" id="Vba-iT-jlW">
+                                <rect key="frame" x="10" y="0.0" width="301" height="504"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="OrD-eY-YPk" id="JpX-hc-hn1"/>
+                                    <outlet property="delegate" destination="OrD-eY-YPk" id="RSp-eH-Sr2"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.90492691530000002" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="关于" id="aoQ-33-WKv"/>
+                    <navigationItem key="navigationItem" title="Info" id="aoQ-33-WKv"/>
+                    <connections>
+                        <outlet property="aboutTableView" destination="Vba-iT-jlW" id="Tiy-XE-fHs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QYY-Su-XFb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1248,6 +1262,9 @@
     <classes>
         <class className="AboutViewController" superclassName="MiddleAbstractViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AboutViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="aboutTableView" candidateClass="UITableView"/>
+            </relationships>
         </class>
         <class className="ArrangementViewController" superclassName="MiddleAbstractSecondViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ArrangementViewController.h"/>

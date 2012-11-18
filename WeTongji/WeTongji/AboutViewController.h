@@ -10,5 +10,6 @@
 #import "MiddleAbstractViewController.h"
 
 @interface AboutViewController : MiddleAbstractViewController
+@property (weak, nonatomic) IBOutlet UITableView *aboutTableView;
 
 @end
