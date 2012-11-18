@@ -20,6 +20,7 @@
 #define kWeeklyPersonViewController @"kWeeklyPersonViewController"
 #define kSchedueViewController @"kSchedueViewController"
 #define kWUKenBurnsViewController @"kWUKenBurnsViewController"
+#define kProtocolViewController @"kProtocolViewController"
 
 // TableViewCell
 #define kLeftMenuCell @"kLeftMenuCell"
@@ -49,6 +50,7 @@
 #define kWeeklyPersonViewControllerSegue @"kWeeklyPersonViewController"
 #define kEventInfoViewControllerSegue @"kEventInfoViewController"
 #define kAboutViewControllerSegue @"kAboutViewController"
+#define kProtocolViewControllerSegue @"kProtocolViewController"
 
 // Slide
 #define kMenuFullWidth 320.0f

@@ -196,6 +196,7 @@
 		E5D2449B1647CD2600DA43DD /* arrange_remind_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = E5D244971647CD2500DA43DD /* arrange_remind_bg.png */; };
 		E5D2449C1647CD2600DA43DD /* arrange_remind_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5D244981647CD2600DA43DD /* arrange_remind_bg@2x.png */; };
 		E5D79F0B1658EC950031ABA4 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5D79F0A1658EC950031ABA4 /* MessageUI.framework */; };
+		E5D79F191658F0340031ABA4 /* ProtocolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D79F181658F0340031ABA4 /* ProtocolViewController.m */; };
 		E5E22E941658AAFA00B0C9AC /* info_btn_hl.png in Resources */ = {isa = PBXBuildFile; fileRef = E5E22E8C1658AAFA00B0C9AC /* info_btn_hl.png */; };
 		E5E22E951658AAFA00B0C9AC /* info_btn_hl@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5E22E8D1658AAFA00B0C9AC /* info_btn_hl@2x.png */; };
 		E5E22E961658AAFA00B0C9AC /* info_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = E5E22E8E1658AAFA00B0C9AC /* info_btn.png */; };
@@ -632,6 +633,8 @@
 		E5D244971647CD2500DA43DD /* arrange_remind_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrange_remind_bg.png; sourceTree = "<group>"; };
 		E5D244981647CD2600DA43DD /* arrange_remind_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrange_remind_bg@2x.png"; sourceTree = "<group>"; };
 		E5D79F0A1658EC950031ABA4 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		E5D79F171658F0340031ABA4 /* ProtocolViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProtocolViewController.h; sourceTree = "<group>"; };
+		E5D79F181658F0340031ABA4 /* ProtocolViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProtocolViewController.m; sourceTree = "<group>"; };
 		E5E22E8C1658AAFA00B0C9AC /* info_btn_hl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info_btn_hl.png; sourceTree = "<group>"; };
 		E5E22E8D1658AAFA00B0C9AC /* info_btn_hl@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "info_btn_hl@2x.png"; sourceTree = "<group>"; };
 		E5E22E8E1658AAFA00B0C9AC /* info_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info_btn.png; sourceTree = "<group>"; };
@@ -1264,6 +1267,7 @@
 		E52352CE1631917100DBFF7C /* LeftMenu */ = {
 			isa = PBXGroup;
 			children = (
+				E5D79F0C1658EEF30031ABA4 /* UserProtocol */,
 				E56A796F1658DFEC0007FD97 /* AboutViewController.h */,
 				E56A79701658DFEC0007FD97 /* AboutViewController.m */,
 				E52352CF1631918C00DBFF7C /* LeftMenuViewController.h */,
@@ -1493,6 +1497,15 @@
 				E5D2448E1647C35E00DA43DD /* ArrangementViewController.m */,
 			);
 			name = Arrangement;
+			sourceTree = "<group>";
+		};
+		E5D79F0C1658EEF30031ABA4 /* UserProtocol */ = {
+			isa = PBXGroup;
+			children = (
+				E5D79F171658F0340031ABA4 /* ProtocolViewController.h */,
+				E5D79F181658F0340031ABA4 /* ProtocolViewController.m */,
+			);
+			name = UserProtocol;
 			sourceTree = "<group>";
 		};
 		FFB20FBB1655D60E00FCAF5F /* Schedule */ = {
@@ -2153,6 +2166,7 @@
 				FFB14F0B1658AEDC0035F888 /* Star.m in Sources */,
 				E56A79711658DFEC0007FD97 /* AboutViewController.m in Sources */,
 				E56A798D1658E22E0007FD97 /* AboutHeaderView.m in Sources */,
+				E5D79F191658F0340031ABA4 /* ProtocolViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
