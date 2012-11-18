@@ -98,7 +98,7 @@
     if ([self.endDate timeIntervalSinceDate:[NSUserDefaults getCurrentSemesterEndDate]] >= 0 )
         _didReachSemeserEnd = YES;
     [self.sectionTableView reloadData];
-    self.sectionTableView insertRowsAtIndexPaths:<#(NSArray *)#> withRowAnimation:<#(UITableViewRowAnimation)#>
+    //self.sectionTableView insertRowsAtIndexPaths:(NSArray *) withRowAnimation:<#(UITableViewRowAnimation)#>
     [self.arrangementTableView reloadData];
 }
 
