@@ -12,6 +12,7 @@
 
 @property (nonatomic ,weak) IBOutlet UIButton *tapButton;
 @property (nonatomic ,weak) IBOutlet UILabel *count;
+@property (nonatomic ,weak) IBOutlet UILabel *name;
 
 
 @end
