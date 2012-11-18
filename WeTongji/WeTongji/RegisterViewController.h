@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MiddleAbstractSecondViewController.h"
 
-@interface RegisterViewController : UIViewController
+@interface RegisterViewController : MiddleAbstractSecondViewController
 
 @end
