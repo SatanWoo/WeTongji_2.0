@@ -26,6 +26,11 @@
 @property (weak, nonatomic) IBOutlet UILabel *location;
 @property (weak, nonatomic) IBOutlet UILabel *eventTime;
 @property (weak, nonatomic) IBOutlet UIImageView *recommendImage;
+@property (weak, nonatomic) IBOutlet UIImageView *starImage;
+@property (weak, nonatomic) IBOutlet UILabel *starNumber;
+@property (weak, nonatomic) IBOutlet UILabel *starName;
+@property (weak, nonatomic) IBOutlet UILabel *starTitle;
+@property (weak, nonatomic) IBOutlet UILabel *starSummary;
 @property (weak, nonatomic) Event * event;
 @property (weak, nonatomic) Information * information;
 

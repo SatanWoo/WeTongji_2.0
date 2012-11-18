@@ -87,8 +87,7 @@
 		03E6FBC61655391500A3E60C /* number_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 03E6FBBE1655391500A3E60C /* number_bg@2x.png */; };
 		03E6FBC71655391500A3E60C /* pic_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 03E6FBBF1655391500A3E60C /* pic_bg.png */; };
 		03E6FBC81655391500A3E60C /* pic_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 03E6FBC01655391500A3E60C /* pic_bg@2x.png */; };
-		03E6FBCB1655398E00A3E60C /* WeeklyPersonHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03E6FBCA1655398E00A3E60C /* WeeklyPersonHeaderView.m */; };
-		03E6FBCD165539A300A3E60C /* WeeklyPersonHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03E6FBCC165539A300A3E60C /* WeeklyPersonHeaderView.xib */; };
+		03E6FBCD165539A300A3E60C /* WeeklyPersonHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03E6FBCC165539A300A3E60C /* WeeklyPersonHeaderCell.xib */; };
 		03E6FBD016553CFF00A3E60C /* WeeklyPersonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 03E6FBCF16553CFF00A3E60C /* WeeklyPersonCell.m */; };
 		03E6FBD216553D5100A3E60C /* WeeklyPersonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03E6FBD116553D5100A3E60C /* WeeklyPersonCell.xib */; };
 		B00D6921162CFCAC00592B1D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B00D6920162CFCAC00592B1D /* UIKit.framework */; };
@@ -236,6 +235,12 @@
 		FF7109B4164D3AFD008F2A06 /* Star+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7109B3164D3AFC008F2A06 /* Star+Addition.m */; };
 		FF7109BA164D4667008F2A06 /* PullRefreshManagement.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7109B9164D4667008F2A06 /* PullRefreshManagement.m */; };
 		FFB138D71656B24600D73C71 /* ScheduleWeekRightTableViewCellContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB2108016565BA300FCAF5F /* ScheduleWeekRightTableViewCellContentView.m */; };
+		FFB14EFA16587B070035F888 /* EventOrganizerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB14EF916587B070035F888 /* EventOrganizerCell.m */; };
+		FFB14EFD16587DAD0035F888 /* SchoolNewsLocationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB14EFC16587DAD0035F888 /* SchoolNewsLocationCell.m */; };
+		FFB14F0016587DC50035F888 /* SchoolNewsContactCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB14EFF16587DC50035F888 /* SchoolNewsContactCell.m */; };
+		FFB14F0316587DD90035F888 /* SchoolNewsTicketCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB14F0216587DD90035F888 /* SchoolNewsTicketCell.m */; };
+		FFB14F0516588B160035F888 /* StarHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFB14F0416588B160035F888 /* StarHeaderView.xib */; };
+		FFB14F0816588ED90035F888 /* WeeklyPersonHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB14F0716588ED90035F888 /* WeeklyPersonHeaderCell.m */; };
 		FFB20FEF1655D72F00FCAF5F /* ScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB20FEE1655D72F00FCAF5F /* ScheduleViewController.m */; };
 		FFB20FFD1655DA0900FCAF5F /* ScheduleWeekLeftTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB20FF11655DA0900FCAF5F /* ScheduleWeekLeftTableViewCell.m */; };
 		FFB20FFE1655DA0900FCAF5F /* ScheduleWeekLeftTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFB20FF21655DA0900FCAF5F /* ScheduleWeekLeftTableViewCell.xib */; };
@@ -463,9 +468,7 @@
 		03E6FBBE1655391500A3E60C /* number_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "number_bg@2x.png"; sourceTree = "<group>"; };
 		03E6FBBF1655391500A3E60C /* pic_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pic_bg.png; sourceTree = "<group>"; };
 		03E6FBC01655391500A3E60C /* pic_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pic_bg@2x.png"; sourceTree = "<group>"; };
-		03E6FBC91655398E00A3E60C /* WeeklyPersonHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeeklyPersonHeaderView.h; sourceTree = "<group>"; };
-		03E6FBCA1655398E00A3E60C /* WeeklyPersonHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeeklyPersonHeaderView.m; sourceTree = "<group>"; };
-		03E6FBCC165539A300A3E60C /* WeeklyPersonHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeeklyPersonHeaderView.xib; sourceTree = "<group>"; };
+		03E6FBCC165539A300A3E60C /* WeeklyPersonHeaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeeklyPersonHeaderCell.xib; sourceTree = "<group>"; };
 		03E6FBCE16553CFF00A3E60C /* WeeklyPersonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeeklyPersonCell.h; sourceTree = "<group>"; };
 		03E6FBCF16553CFF00A3E60C /* WeeklyPersonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeeklyPersonCell.m; sourceTree = "<group>"; };
 		03E6FBD116553D5100A3E60C /* WeeklyPersonCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeeklyPersonCell.xib; sourceTree = "<group>"; };
@@ -655,6 +658,17 @@
 		FF7109B3164D3AFC008F2A06 /* Star+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Star+Addition.m"; sourceTree = "<group>"; };
 		FF7109B8164D4667008F2A06 /* PullRefreshManagement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PullRefreshManagement.h; sourceTree = "<group>"; };
 		FF7109B9164D4667008F2A06 /* PullRefreshManagement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PullRefreshManagement.m; sourceTree = "<group>"; };
+		FFB14EF816587B070035F888 /* EventOrganizerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventOrganizerCell.h; sourceTree = "<group>"; };
+		FFB14EF916587B070035F888 /* EventOrganizerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventOrganizerCell.m; sourceTree = "<group>"; };
+		FFB14EFB16587DAD0035F888 /* SchoolNewsLocationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SchoolNewsLocationCell.h; sourceTree = "<group>"; };
+		FFB14EFC16587DAD0035F888 /* SchoolNewsLocationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SchoolNewsLocationCell.m; sourceTree = "<group>"; };
+		FFB14EFE16587DC50035F888 /* SchoolNewsContactCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SchoolNewsContactCell.h; sourceTree = "<group>"; };
+		FFB14EFF16587DC50035F888 /* SchoolNewsContactCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SchoolNewsContactCell.m; sourceTree = "<group>"; };
+		FFB14F0116587DD80035F888 /* SchoolNewsTicketCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SchoolNewsTicketCell.h; sourceTree = "<group>"; };
+		FFB14F0216587DD90035F888 /* SchoolNewsTicketCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SchoolNewsTicketCell.m; sourceTree = "<group>"; };
+		FFB14F0416588B160035F888 /* StarHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StarHeaderView.xib; sourceTree = "<group>"; };
+		FFB14F0616588ED90035F888 /* WeeklyPersonHeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeeklyPersonHeaderCell.h; sourceTree = "<group>"; };
+		FFB14F0716588ED90035F888 /* WeeklyPersonHeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeeklyPersonHeaderCell.m; sourceTree = "<group>"; };
 		FFB20FED1655D72F00FCAF5F /* ScheduleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScheduleViewController.h; sourceTree = "<group>"; };
 		FFB20FEE1655D72F00FCAF5F /* ScheduleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScheduleViewController.m; sourceTree = "<group>"; };
 		FFB20FF01655DA0900FCAF5F /* ScheduleWeekLeftTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScheduleWeekLeftTableViewCell.h; sourceTree = "<group>"; };
@@ -1032,6 +1046,7 @@
 				FFBF5013165829B0001690D2 /* GroupNewsHeaderView.xib */,
 				FFBF5015165829C1001690D2 /* ActionNewsHeaderView.xib */,
 				FFBF5017165829F6001690D2 /* RecommendNewsHeaderView.xib */,
+				FFB14F0416588B160035F888 /* StarHeaderView.xib */,
 				E5D244901647C69700DA43DD /* WUArrangementSectionHeaderView.h */,
 				E5D244911647C69700DA43DD /* WUArrangementSectionHeaderView.m */,
 				E5D244931647C6B700DA43DD /* WUArrangementSectionHeaderView.xib */,
@@ -1040,9 +1055,6 @@
 				035E34B01653F03F009AC6BF /* WUFolderView.h */,
 				035E34B11653F040009AC6BF /* WUFolderView.m */,
 				035E34B31653F068009AC6BF /* WUFolderView.xib */,
-				03E6FBC91655398E00A3E60C /* WeeklyPersonHeaderView.h */,
-				03E6FBCA1655398E00A3E60C /* WeeklyPersonHeaderView.m */,
-				03E6FBCC165539A300A3E60C /* WeeklyPersonHeaderView.xib */,
 				03326A7116569430005E8A16 /* WUKenBurnViewHeader.h */,
 				03326A7216569430005E8A16 /* WUKenBurnViewHeader.m */,
 				03326A741656949C005E8A16 /* WUKenBurnViewHeader.xib */,
@@ -1271,6 +1283,9 @@
 		E52352D91631955C00DBFF7C /* UITableViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				FFB14F0616588ED90035F888 /* WeeklyPersonHeaderCell.h */,
+				FFB14F0716588ED90035F888 /* WeeklyPersonHeaderCell.m */,
+				03E6FBCC165539A300A3E60C /* WeeklyPersonHeaderCell.xib */,
 				FFC65D32164FE50600156F77 /* FilterTableViewCell.h */,
 				FFC65D38164FE53000156F77 /* FilterTableViewCell.m */,
 				FFC65D34164FE52200156F77 /* FilterTableViewCell.xib */,
@@ -1295,6 +1310,14 @@
 				E514584016463F3F00533761 /* EventInfoCell.h */,
 				E514584116463F3F00533761 /* EventInfoCell.m */,
 				E514584216463F3F00533761 /* EventInfoCell.xib */,
+				FFB14EF816587B070035F888 /* EventOrganizerCell.h */,
+				FFB14EF916587B070035F888 /* EventOrganizerCell.m */,
+				FFB14EFB16587DAD0035F888 /* SchoolNewsLocationCell.h */,
+				FFB14EFC16587DAD0035F888 /* SchoolNewsLocationCell.m */,
+				FFB14EFE16587DC50035F888 /* SchoolNewsContactCell.h */,
+				FFB14EFF16587DC50035F888 /* SchoolNewsContactCell.m */,
+				FFB14F0116587DD80035F888 /* SchoolNewsTicketCell.h */,
+				FFB14F0216587DD90035F888 /* SchoolNewsTicketCell.m */,
 				E514584316463F3F00533761 /* GroupInfoCell.h */,
 				E514584416463F3F00533761 /* GroupInfoCell.m */,
 				E514584516463F3F00533761 /* GroupInfoCell.xib */,
@@ -1856,7 +1879,7 @@
 				03E6FBC61655391500A3E60C /* number_bg@2x.png in Resources */,
 				03E6FBC71655391500A3E60C /* pic_bg.png in Resources */,
 				03E6FBC81655391500A3E60C /* pic_bg@2x.png in Resources */,
-				03E6FBCD165539A300A3E60C /* WeeklyPersonHeaderView.xib in Resources */,
+				03E6FBCD165539A300A3E60C /* WeeklyPersonHeaderCell.xib in Resources */,
 				03E6FBD216553D5100A3E60C /* WeeklyPersonCell.xib in Resources */,
 				FFB20FFE1655DA0900FCAF5F /* ScheduleWeekLeftTableViewCell.xib in Resources */,
 				FFB210001655DA0900FCAF5F /* ScheduleWeekRightTableViewCell.xib in Resources */,
@@ -1974,6 +1997,7 @@
 				FFBF5014165829B1001690D2 /* GroupNewsHeaderView.xib in Resources */,
 				FFBF5016165829C2001690D2 /* ActionNewsHeaderView.xib in Resources */,
 				FFBF5018165829F7001690D2 /* RecommendNewsHeaderView.xib in Resources */,
+				FFB14F0516588B160035F888 /* StarHeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2043,7 +2067,6 @@
 				035E34B21653F040009AC6BF /* WUFolderView.m in Sources */,
 				03E6FBB21655339F00A3E60C /* TransparentTableHeaderView.m in Sources */,
 				03E6FBB71655372D00A3E60C /* WeeklyPersonViewController.m in Sources */,
-				03E6FBCB1655398E00A3E60C /* WeeklyPersonHeaderView.m in Sources */,
 				03E6FBD016553CFF00A3E60C /* WeeklyPersonCell.m in Sources */,
 				FFB20FEF1655D72F00FCAF5F /* ScheduleViewController.m in Sources */,
 				FFB20FFD1655DA0900FCAF5F /* ScheduleWeekLeftTableViewCell.m in Sources */,
@@ -2061,6 +2084,11 @@
 				FFBF4FFB1657CC6F001690D2 /* Event.m in Sources */,
 				FFBF4FFE1657CC6F001690D2 /* Star.m in Sources */,
 				FFBF5010165814B6001690D2 /* Information.m in Sources */,
+				FFB14EFA16587B070035F888 /* EventOrganizerCell.m in Sources */,
+				FFB14EFD16587DAD0035F888 /* SchoolNewsLocationCell.m in Sources */,
+				FFB14F0016587DC50035F888 /* SchoolNewsContactCell.m in Sources */,
+				FFB14F0316587DD90035F888 /* SchoolNewsTicketCell.m in Sources */,
+				FFB14F0816588ED90035F888 /* WeeklyPersonHeaderCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,10 +10,10 @@
 
 @implementation Star (Addition)
 
-+ (void) insertStarWithDict:(NSDictionary *) dict inManagedObjectContext:(NSManagedObjectContext *)context
++ (Star *) insertStarWithDict:(NSDictionary *) dict inManagedObjectContext:(NSManagedObjectContext *)context
 {
     NSString * starId = [NSString stringWithFormat:@"%@",[dict objectForKey:@"Id"]];
-    if ( !starId || [starId isEqualToString:@""]) return;
+    if ( !starId || [starId isEqualToString:@""]) return nil;
     Star * result = [Star getStarWithId:starId inManagedObjectContext:context];
     if ( !result )
     {
@@ -31,7 +31,7 @@
     result.read = [NSNumber numberWithInt:[[dict objectForKey:@"Like"] intValue]];
     result.title = [NSString stringWithFormat:@"%@",[dict objectForKey:@"Title"]];
     result.words = [NSString stringWithFormat:@"%@",[dict objectForKey:@"Words"]];
-    
+    return result;
 }
 
 +(NSArray *) getAllStarsInManagedObjectContext:(NSManagedObjectContext *)context

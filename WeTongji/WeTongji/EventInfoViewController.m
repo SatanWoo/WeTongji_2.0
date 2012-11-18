@@ -217,8 +217,8 @@ static NSInteger tempRow;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self performSegueWithIdentifier:kEventInfoViewControllerSegue sender:self];
     tempRow = indexPath.row;
+    [self performSegueWithIdentifier:kEventInfoViewControllerSegue sender:self];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 

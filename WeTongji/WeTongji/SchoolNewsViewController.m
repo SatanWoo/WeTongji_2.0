@@ -14,6 +14,10 @@
 #import "WUTableHeaderView.h"
 #import "WUPageControlViewController.h"
 #import "TransparentTableHeaderView.h"
+#import "EventOrganizerCell.h"
+#import "SchoolNewsContactCell.h"
+#import "SchoolNewsLocationCell.h"
+#import "SchoolNewsTicketCell.h"
 #import <WeTongjiSDK/WeTongjiSDK.h>
 
 #define kContentOffset 50
@@ -126,11 +130,11 @@
 
 -(void) configureCurrentCell
 {
-    [self.currentCell setFrame:CGRectMake(0, 0,self.currentCell.frame.size.width,MAX(self.currentCell.textView.contentSize.height,0))];
+    [self.currentCell setFrame:CGRectMake(0, 0,self.currentCell.frame.size.width,MAX(self.currentCell.textView.contentSize.height,430))];
     CGRect frame = self.currentCell.textView.frame;
     frame.size.height = self.currentCell.frame.size.height;
     self.currentCell.textView.frame = frame;
-    [self.currentCell.textView sizeToFit];
+    //[self.currentCell.textView sizeToFit];
 }
 
 -(void) setEvent:(Event *)event
@@ -145,14 +149,40 @@
 
 -(void) setInformation:(Information *)information
 {
+    if ( [information.category isEqualToString:GetInformationTypeForStaff] ){
+        self.headerView =  [[[NSBundle mainBundle] loadNibNamed:@"SchoolNewsHeaderView" owner:self options:nil] objectAtIndex:0];
+        [self renderShadow:self.headerView];
+        [self.headerView  setInformation:information];
+        [self.transparentHeaderView setHideBoard:YES];
+    } else if ( [information.category isEqualToString:GetInformationTypeClubNews] ){
+        self.headerView =  [[[NSBundle mainBundle] loadNibNamed:@"GroupNewsHeaderView" owner:self options:nil] objectAtIndex:0];
+        [self renderShadow:self.headerView];
+        [self.headerView  setInformation:information];
+        [self.transparentHeaderView setHideBoard:NO];
+        [self.transparentHeaderView setInformation:information];
+    } else if ( [information.category isEqualToString:GetInformationTypeSchoolNews] ){
+        self.headerView =  [[[NSBundle mainBundle] loadNibNamed:@"ActionNewsHeaderView" owner:self options:nil] objectAtIndex:0];
+        [self renderShadow:self.headerView];
+        [self.headerView  setInformation:information];
+        [self.transparentHeaderView setHideBoard:YES];
+    } else if ( [information.category isEqualToString:GetInformationTypeAround] ){
+        self.headerView =  [[[NSBundle mainBundle] loadNibNamed:@"RecommendNewsHeaderView" owner:self options:nil] objectAtIndex:0];
+        [self renderShadow:self.headerView];
+        [self.headerView  setInformation:information];
+        [self.transparentHeaderView setHideBoard:YES];
+    }
     _information = information;
+}
+
+-(void) setStar:(Star *)star
+{
+    _star = star;
 }
 
 #pragma mark - LifeCycle
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self.navigationController setNavigationBarHidden:YES];
     [self configureTableView];
     
     UISwipeGestureRecognizer *leftGesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(goBack:)];
@@ -161,6 +191,19 @@
     if ( self.event ) {
         self.currentCell.textView.text = self.event.detail;
         [self configureCurrentCell];
+    } else if ( self.information ) {
+        self.currentCell.textView.text = self.information.summary;
+        [self configureCurrentCell];
+        WTClient * client = [WTClient sharedClient];
+        WTRequest *request = [WTRequest requestWithSuccessBlock:^(id responseData)
+                              {
+                                  NSLog(@"%@",responseData);
+                              }
+                                failureBlock:^(NSError *error)
+                                {
+                                }];
+        [request getDetailOfInformaion:self.information.informationId inType:self.information.category];
+        [client enqueueRequest:request];
     }
 }
 
@@ -172,9 +215,10 @@
     [super viewDidUnload];
 }
 
-- (void)viewDidAppear:(BOOL)animated
+- (void)viewWillAppear:(BOOL)animated
 {
-    
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
 }
 
 - (void) viewWillDisappear:(BOOL)animated
@@ -270,19 +314,64 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if (section == 1 ) return 1;
+    if (section == 1 )
+    {
+        if ( self.event ) return 2;
+        if ( self.information && [self.information.category isEqualToString:GetInformationTypeAround])
+            return 4;
+        return 1;
+    }
     return 0;
 }
 
 - (float)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if ( indexPath.section == 1 )return self.currentCell.bounds.size.height;
+    if ( indexPath.section == 1 )
+    {
+        if ( self.event  && indexPath.row == 0 ) return 76;
+        if ( self.information && indexPath.row < 3 ) return 56;
+        return self.currentCell.bounds.size.height;
+    }
     return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
+    if ( self.event && indexPath.section == 1 && indexPath.row == 0 )
+    {
+        EventOrganizerCell * cell;
+        cell = [tableView dequeueReusableCellWithIdentifier:@"EventOrganizerCell"];
+        if ( cell == nil )
+            cell = [[EventOrganizerCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"EventOrganizerCell"];
+        [cell setEvent:self.event];
+        return cell;
+    }
+    if ( self.information && [self.information.category isEqualToString:GetInformationTypeAround])
+        if ( indexPath.section == 1 && indexPath.row < 3 )
+        {
+            UITableViewCell * cell;
+            switch (indexPath.row) {
+                case 0:
+                    cell = [tableView dequeueReusableCellWithIdentifier:@"SchoolNewsLocationCell"];
+                    if ( cell == nil )
+                        cell = [[SchoolNewsLocationCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"SchoolNewsLocationCell"];
+                    break;
+                case 1:
+                    cell = [tableView dequeueReusableCellWithIdentifier:@"SchoolNewsContactCell"];
+                    if ( cell == nil )
+                        cell = [[SchoolNewsContactCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"SchoolNewsContactCell"];
+                    break;
+                case 2:
+                    cell = [tableView dequeueReusableCellWithIdentifier:@"SchoolNewsTicketCell"];
+                    if ( cell == nil )
+                        cell = [[SchoolNewsTicketCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"SchoolNewsTicketCell"];
+                    break;
+                    
+                default:
+                    break;
+            }
+            return cell;
+        }
     return self.currentCell;
 }
 

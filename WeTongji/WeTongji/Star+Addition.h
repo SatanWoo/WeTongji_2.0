@@ -10,7 +10,7 @@
 
 @interface Star (Addition)
 
-+ (void) insertStarWithDict:(NSDictionary *) dict inManagedObjectContext:(NSManagedObjectContext *)context;
++ (Star *) insertStarWithDict:(NSDictionary *) dict inManagedObjectContext:(NSManagedObjectContext *)context;
 +(NSArray *) getAllStarsInManagedObjectContext:(NSManagedObjectContext *)context;
 + (Star *) getStarWithId:(NSString *) starId inManagedObjectContext:(NSManagedObjectContext *)context;
 +(void)clearDataInManagedObjectContext:(NSManagedObjectContext *) context;

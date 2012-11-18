@@ -16,6 +16,7 @@
 #import "Star+Addition.h"
 #import <WeTongjiSDK/WeTongjiSDK.h>
 #import "PullRefreshManagement.h"
+#import "SchoolNewsViewController.h"
 
 #define kWidth self.scrollView.frame.size.width
 #define kHeight self.scrollView.frame.size.height
@@ -405,8 +406,18 @@
 }
 
 #pragma mark - UITableViewDelegate
+
+static NSInteger tempRow;
+
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    SchoolNewsViewController * controller = segue.destinationViewController;
+    [controller setInformation:self.currentList[tempRow]];
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    tempRow = indexPath.row;
     [self performSegueWithIdentifier:kkSchoolNewsViewControllerSegue sender:self];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }

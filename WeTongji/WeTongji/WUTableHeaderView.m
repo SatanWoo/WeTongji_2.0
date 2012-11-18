@@ -8,6 +8,7 @@
 
 #import "WUTableHeaderView.h"
 #import "NSString+Addition.h"
+#import <WeTongjiSDK/WeTongjiSDK.h>
 
 @interface WUTableHeaderView()
 {
@@ -62,6 +63,23 @@
 
 -(void)setInformation:(Information *)information
 {
+    self.titleLabel.text = information.title;
+    self.releaseTimeLabel.text = [NSString stringWithHowLongAgo:information.createdAt];
+    self.likeNumber.text = [information.like stringValue];
+    self.favoriteNumber.text = [information.favorite stringValue];
+    if ( [information.category isEqualToString:GetInformationTypeForStaff] ){
+        self.seeNumber.text = [information.read stringValue];
+        self.sourceLabel.text = information.source;
+    } else if ( [information.category isEqualToString:GetInformationTypeClubNews] ){
+        
+    } else if ( [information.category isEqualToString:GetInformationTypeSchoolNews] ){
+        self.seeNumber.text = [information.read stringValue];
+        self.sourceLabel.text = information.source;
+    } else if ( [information.category isEqualToString:GetInformationTypeAround] ){
+        self.location.text = information.location;
+        [self.recommendImage setImageWithURL:[NSURL URLWithString:information.image]];
+    }
+    self.seeNumber.text = [information.read stringValue];
     _information = information;
 }
 

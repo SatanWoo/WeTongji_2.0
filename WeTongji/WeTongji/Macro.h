@@ -39,6 +39,7 @@
 #define kRegInformationCell @"kRegInformationCell"
 #define kRegButtonCell @"kRegButtonCell"
 #define kWeeklyPersonCell @"kWeeklyPersonCell"
+#define kWeeklyPersonHeaderCell @"kWeeklyPersonHeaderCell"
 
 // Segue
 #define kMyFavortieViewControllerSegue @"kMyFavortieViewController"

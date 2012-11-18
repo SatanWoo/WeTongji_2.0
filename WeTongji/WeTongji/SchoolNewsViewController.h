@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *backButton;
 @property (weak, nonatomic) Event * event;
 @property (weak, nonatomic) Information * information;
+@property (weak, nonatomic) Star * star;
 
 
 - (IBAction)goBack:(id)sender;
