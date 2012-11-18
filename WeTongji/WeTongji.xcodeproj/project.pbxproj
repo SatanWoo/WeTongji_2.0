@@ -248,6 +248,19 @@
 		FFB14F0516588B160035F888 /* StarHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFB14F0416588B160035F888 /* StarHeaderView.xib */; };
 		FFB14F0816588ED90035F888 /* WeeklyPersonHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB14F0716588ED90035F888 /* WeeklyPersonHeaderCell.m */; };
 		FFB14F0B1658AEDC0035F888 /* Star.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB14F0A1658AEDC0035F888 /* Star.m */; };
+		FFB14F2B1658B85A0035F888 /* JSON.h in Resources */ = {isa = PBXBuildFile; fileRef = FFB14F1D1658B85A0035F888 /* JSON.h */; };
+		FFB14F2C1658B85A0035F888 /* NSObject+SBJSON.h in Resources */ = {isa = PBXBuildFile; fileRef = FFB14F1E1658B85A0035F888 /* NSObject+SBJSON.h */; };
+		FFB14F2D1658B85A0035F888 /* NSObject+SBJSON.m in Resources */ = {isa = PBXBuildFile; fileRef = FFB14F1F1658B85A0035F888 /* NSObject+SBJSON.m */; };
+		FFB14F2E1658B85A0035F888 /* NSString+SBJSON.h in Resources */ = {isa = PBXBuildFile; fileRef = FFB14F201658B85A0035F888 /* NSString+SBJSON.h */; };
+		FFB14F2F1658B85A0035F888 /* NSString+SBJSON.m in Resources */ = {isa = PBXBuildFile; fileRef = FFB14F211658B85A0035F888 /* NSString+SBJSON.m */; };
+		FFB14F301658B85A0035F888 /* SBJSON.h in Resources */ = {isa = PBXBuildFile; fileRef = FFB14F221658B85A0035F888 /* SBJSON.h */; };
+		FFB14F311658B85A0035F888 /* SBJSON.m in Resources */ = {isa = PBXBuildFile; fileRef = FFB14F231658B85A0035F888 /* SBJSON.m */; };
+		FFB14F321658B85A0035F888 /* SBJsonBase.h in Resources */ = {isa = PBXBuildFile; fileRef = FFB14F241658B85A0035F888 /* SBJsonBase.h */; };
+		FFB14F331658B85A0035F888 /* SBJsonBase.m in Resources */ = {isa = PBXBuildFile; fileRef = FFB14F251658B85A0035F888 /* SBJsonBase.m */; };
+		FFB14F341658B85A0035F888 /* SBJsonParser.h in Resources */ = {isa = PBXBuildFile; fileRef = FFB14F261658B85A0035F888 /* SBJsonParser.h */; };
+		FFB14F351658B85A0035F888 /* SBJsonParser.m in Resources */ = {isa = PBXBuildFile; fileRef = FFB14F271658B85A0035F888 /* SBJsonParser.m */; };
+		FFB14F361658B85A0035F888 /* SBJsonWriter.h in Resources */ = {isa = PBXBuildFile; fileRef = FFB14F281658B85A0035F888 /* SBJsonWriter.h */; };
+		FFB14F371658B85A0035F888 /* SBJsonWriter.m in Resources */ = {isa = PBXBuildFile; fileRef = FFB14F291658B85A0035F888 /* SBJsonWriter.m */; };
 		FFB20FEF1655D72F00FCAF5F /* ScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB20FEE1655D72F00FCAF5F /* ScheduleViewController.m */; };
 		FFB20FFD1655DA0900FCAF5F /* ScheduleWeekLeftTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB20FF11655DA0900FCAF5F /* ScheduleWeekLeftTableViewCell.m */; };
 		FFB20FFE1655DA0900FCAF5F /* ScheduleWeekLeftTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFB20FF21655DA0900FCAF5F /* ScheduleWeekLeftTableViewCell.xib */; };
@@ -683,6 +696,19 @@
 		FFB14F091658AEDC0035F888 /* Star.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Star.h; sourceTree = "<group>"; };
 		FFB14F0A1658AEDC0035F888 /* Star.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Star.m; sourceTree = "<group>"; };
 		FFB14F121658B4F70035F888 /* WeTongjiSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = WeTongjiSDK.xcodeproj; path = ../../../wetongji_ios_sdk/WeTongjiSDK.xcodeproj; sourceTree = "<group>"; };
+		FFB14F1D1658B85A0035F888 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file; path = JSON.h; sourceTree = "<group>"; };
+		FFB14F1E1658B85A0035F888 /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
+		FFB14F1F1658B85A0035F888 /* NSObject+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file; path = "NSObject+SBJSON.m"; sourceTree = "<group>"; };
+		FFB14F201658B85A0035F888 /* NSString+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file; path = "NSString+SBJSON.h"; sourceTree = "<group>"; };
+		FFB14F211658B85A0035F888 /* NSString+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file; path = "NSString+SBJSON.m"; sourceTree = "<group>"; };
+		FFB14F221658B85A0035F888 /* SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file; path = SBJSON.h; sourceTree = "<group>"; };
+		FFB14F231658B85A0035F888 /* SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file; path = SBJSON.m; sourceTree = "<group>"; };
+		FFB14F241658B85A0035F888 /* SBJsonBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file; path = SBJsonBase.h; sourceTree = "<group>"; };
+		FFB14F251658B85A0035F888 /* SBJsonBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file; path = SBJsonBase.m; sourceTree = "<group>"; };
+		FFB14F261658B85A0035F888 /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file; path = SBJsonParser.h; sourceTree = "<group>"; };
+		FFB14F271658B85A0035F888 /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file; path = SBJsonParser.m; sourceTree = "<group>"; };
+		FFB14F281658B85A0035F888 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file; path = SBJsonWriter.h; sourceTree = "<group>"; };
+		FFB14F291658B85A0035F888 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file; path = SBJsonWriter.m; sourceTree = "<group>"; };
 		FFB20FED1655D72F00FCAF5F /* ScheduleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScheduleViewController.h; sourceTree = "<group>"; };
 		FFB20FEE1655D72F00FCAF5F /* ScheduleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScheduleViewController.m; sourceTree = "<group>"; };
 		FFB20FF01655DA0900FCAF5F /* ScheduleWeekLeftTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScheduleWeekLeftTableViewCell.h; sourceTree = "<group>"; };
@@ -1412,6 +1438,7 @@
 		E5482E421636E5A90054C771 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				FFB14F2A1658B85A0035F888 /* SBJSON */,
 				FFB5AEB7164CDC0A00A232DF /* EGOTableViewPullRefresh */,
 				E5482E3F1636E5A40054C771 /* PlistReader.h */,
 				E5482E401636E5A40054C771 /* PlistReader.m */,
@@ -1458,6 +1485,27 @@
 				FFB14F1A1658B4F70035F888 /* WeTongjiSDK.framework */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		FFB14F2A1658B85A0035F888 /* SBJSON */ = {
+			isa = PBXGroup;
+			children = (
+				FFB14F1D1658B85A0035F888 /* JSON.h */,
+				FFB14F1E1658B85A0035F888 /* NSObject+SBJSON.h */,
+				FFB14F1F1658B85A0035F888 /* NSObject+SBJSON.m */,
+				FFB14F201658B85A0035F888 /* NSString+SBJSON.h */,
+				FFB14F211658B85A0035F888 /* NSString+SBJSON.m */,
+				FFB14F221658B85A0035F888 /* SBJSON.h */,
+				FFB14F231658B85A0035F888 /* SBJSON.m */,
+				FFB14F241658B85A0035F888 /* SBJsonBase.h */,
+				FFB14F251658B85A0035F888 /* SBJsonBase.m */,
+				FFB14F261658B85A0035F888 /* SBJsonParser.h */,
+				FFB14F271658B85A0035F888 /* SBJsonParser.m */,
+				FFB14F281658B85A0035F888 /* SBJsonWriter.h */,
+				FFB14F291658B85A0035F888 /* SBJsonWriter.m */,
+			);
+			name = SBJSON;
+			path = ../../../../wetongji_ios_sdk/WeTongjiSDK/SBJSON;
 			sourceTree = "<group>";
 		};
 		FFB20FBB1655D60E00FCAF5F /* Schedule */ = {
@@ -2018,6 +2066,19 @@
 				E5E22EB51658B1A900B0C9AC /* navbar_sort_btn_hl@2x.png in Resources */,
 				E5E22EB61658B1A900B0C9AC /* navbar_sort_btn.png in Resources */,
 				E5E22EB71658B1A900B0C9AC /* navbar_sort_btn@2x.png in Resources */,
+				FFB14F2B1658B85A0035F888 /* JSON.h in Resources */,
+				FFB14F2C1658B85A0035F888 /* NSObject+SBJSON.h in Resources */,
+				FFB14F2D1658B85A0035F888 /* NSObject+SBJSON.m in Resources */,
+				FFB14F2E1658B85A0035F888 /* NSString+SBJSON.h in Resources */,
+				FFB14F2F1658B85A0035F888 /* NSString+SBJSON.m in Resources */,
+				FFB14F301658B85A0035F888 /* SBJSON.h in Resources */,
+				FFB14F311658B85A0035F888 /* SBJSON.m in Resources */,
+				FFB14F321658B85A0035F888 /* SBJsonBase.h in Resources */,
+				FFB14F331658B85A0035F888 /* SBJsonBase.m in Resources */,
+				FFB14F341658B85A0035F888 /* SBJsonParser.h in Resources */,
+				FFB14F351658B85A0035F888 /* SBJsonParser.m in Resources */,
+				FFB14F361658B85A0035F888 /* SBJsonWriter.h in Resources */,
+				FFB14F371658B85A0035F888 /* SBJsonWriter.m in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
