@@ -18,6 +18,10 @@
 #define DAY_TIME_INTERVAL (60 * 60 * 24)
 
 @interface ArrangementViewController () <UITableViewDataSource, UITableViewDelegate>
+{
+    BOOL _didReachSemesterBegin;
+    BOOL _didReachSemeserEnd;
+}
 @property (weak, nonatomic) IBOutlet UITableView *sectionTableView;
 @property (strong, nonatomic) NSMutableArray * arrangeList;
 @property (strong, nonatomic) NSMutableArray * sectionList;
@@ -91,7 +95,10 @@
         if ( tempCount > 10 )
             break;
     }
+    if ([self.endDate timeIntervalSinceDate:[NSUserDefaults getCurrentSemesterEndDate]] >= 0 )
+        _didReachSemeserEnd = YES;
     [self.sectionTableView reloadData];
+    self.sectionTableView insertRowsAtIndexPaths:<#(NSArray *)#> withRowAnimation:<#(UITableViewRowAnimation)#>
     [self.arrangementTableView reloadData];
 }
 
@@ -114,6 +121,8 @@
         if ( tempCount > 10 )
             break;
     }
+    if ( [self.beginDate timeIntervalSinceDate:[NSUserDefaults getCurrentSemesterBeginDate]] <= 0)
+        _didReachSemesterBegin = YES;
     [self.sectionTableView reloadData];
     [self.arrangementTableView reloadData];
     tempOffset.y += self.arrangementTableView.contentSize.height - tempSize.height;
@@ -239,11 +248,11 @@
     {
         self.sectionTableView.contentOffset = self.arrangementTableView.contentOffset;
         NSLog(@"%f : %f",self.arrangementTableView.contentOffset.y,self.arrangementTableView.contentSize.height);
-        if ( self.arrangementTableView.contentOffset.y < 0 )
+        if ( self.arrangementTableView.contentOffset.y < 0 && !_didReachSemesterBegin )
         {
             [self loadMorePastData];
         }
-        else if (self.arrangementTableView.contentOffset.y + 600 > self.arrangementTableView.contentSize.height)
+        else if (self.arrangementTableView.contentOffset.y + 400 > self.arrangementTableView.contentSize.height && !_didReachSemeserEnd)
         {
             [self loadMoreFutureData];
         }
