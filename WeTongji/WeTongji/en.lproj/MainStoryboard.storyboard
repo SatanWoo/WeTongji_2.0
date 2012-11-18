@@ -912,7 +912,7 @@
                                     <outlet property="delegate" destination="ZZo-M9-RZk" id="O66-Vk-qnQ"/>
                                 </connections>
                             </tableView>
-                            <tableView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="80" sectionHeaderHeight="22" sectionFooterHeight="22" id="ylT-Bd-p45">
+                            <tableView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="80" sectionHeaderHeight="22" sectionFooterHeight="22" id="ylT-Bd-p45">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -1260,12 +1260,6 @@
         <image name="注册登录.jpg" width="640" height="960"/>
     </resources>
     <classes>
-        <class className="AboutViewController" superclassName="MiddleAbstractViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AboutViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="aboutTableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
         <class className="ArrangementViewController" superclassName="MiddleAbstractSecondViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ArrangementViewController.h"/>
             <relationships>

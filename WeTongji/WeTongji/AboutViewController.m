@@ -72,13 +72,13 @@
     } else if (indexPath.section == 0 && indexPath.row == 2) {
         cell.textLabel.text = @"用户协议";
     } else if (indexPath.section == 1 && indexPath.row == 0) {
-        cell.textLabel.text = @"  微同济官方微博";
+        cell.textLabel.text = @"微同济官方微博";
         cell.imageView.image = [UIImage imageNamed:@"weibo_logo"];
     } else if (indexPath.section == 1 && indexPath.row == 1) {
         cell.textLabel.text = @"微同济人人主页";
         cell.imageView.image = [UIImage imageNamed:@"renren_logo"];
     } else if (indexPath.section == 1 && indexPath.row == 2) {
-        cell.textLabel.text = @"  微同济官方主页";
+        cell.textLabel.text = @"微同济官方主页";
         cell.imageView.image = [UIImage imageNamed:@"we_logo"];
     }
     

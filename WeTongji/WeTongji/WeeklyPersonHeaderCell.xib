@@ -219,6 +219,7 @@
 										<int key="NSvFlags">256</int>
 										<string key="NSFrame">{{89, 119}, {154, 124}}</string>
 										<reference key="NSSuperview" ref="583994874"/>
+										<reference key="NSNextKeyView"/>
 										<string key="NSReuseIdentifierKey">_NS:9</string>
 										<bool key="IBUIUserInteractionEnabled">NO</bool>
 										<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -426,9 +427,9 @@
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="celebrity_avatar.png">{49, 49}</string>
-			<string key="msg_icon.png">{17, 15}</string>
-			<string key="pic_bg.png">{154, 124}</string>
+			<string key="celebrity_avatar.png">{16, 16}</string>
+			<string key="msg_icon.png">{16, 16}</string>
+			<string key="pic_bg.png">{16, 16}</string>
 		</dictionary>
 		<string key="IBCocoaTouchPluginVersion">1930</string>
 	</data>

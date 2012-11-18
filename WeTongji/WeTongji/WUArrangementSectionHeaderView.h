@@ -12,4 +12,5 @@
 
 @property (nonatomic ,weak) IBOutlet UILabel *day;
 @property (nonatomic ,weak) IBOutlet UILabel *month;
+-(void) setDate:(NSDate *) date;
 @end
