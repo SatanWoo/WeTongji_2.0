@@ -51,6 +51,8 @@
 #define kEventInfoViewControllerSegue @"kEventInfoViewController"
 #define kAboutViewControllerSegue @"kAboutViewController"
 #define kProtocolViewControllerSegue @"kProtocolViewController"
+#define kSeeUserProtocolSegue @"kSeeUserProtocol"
+#define kRegisterSecondViewControllerSegue @"kRegisterSecondViewController"
 
 // Slide
 #define kMenuFullWidth 320.0f
