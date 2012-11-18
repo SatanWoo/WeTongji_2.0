@@ -83,6 +83,18 @@
     _information = information;
 }
 
+-(void) setStar:(Star *)star
+{
+    [self.starImage setImageWithURL:[NSURL URLWithString:star.avatarLink]];
+    self.starName.text = star.title;
+    self.starTitle.text = star.jobTitle;
+    self.starSummary.text = star.words;
+    self.likeNumber.text = [star.like stringValue];
+    self.favoriteNumber.text = [star.favorite stringValue];
+    self.starNumber.text = star.count;
+    _star = star;
+}
+
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];

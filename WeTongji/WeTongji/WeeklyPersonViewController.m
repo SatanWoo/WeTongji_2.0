@@ -13,6 +13,7 @@
 #import <WeTongjiSDK/WeTongjiSDK.h>
 #import "PullRefreshManagement.h"
 #import "Star+Addition.h"
+#import "SchoolNewsViewController.h"
 
 @interface WeeklyPersonViewController () <UITableViewDataSource, UITableViewDelegate, PullRefreshManagementDelegate>
 @property (nonatomic ,strong) NSArray * starList;
@@ -35,7 +36,7 @@
 
 -(PullRefreshManagement *) pullRefreshManagement
 {
-    if ( _pullRefreshManagement )
+    if ( !_pullRefreshManagement )
     {
         _pullRefreshManagement = [[PullRefreshManagement alloc] initWithScrollView:self.personTableView];
     }
@@ -48,6 +49,7 @@
     [self.personTableView registerNib:[UINib nibWithNibName:@"WeeklyPersonCell" bundle:nil] forCellReuseIdentifier:kWeeklyPersonCell];
     [self.personTableView registerNib:[UINib nibWithNibName:@"WeeklyPersonHeaderCell" bundle:nil] forCellReuseIdentifier:kWeeklyPersonHeaderCell];
     self.pullRefreshManagement.delegate = self;
+    NSLog(@"%@",self.pullRefreshManagement);
 }
 
 #pragma mark - Life Cycle
@@ -90,6 +92,7 @@
         {
             cell = [[WeeklyPersonHeaderCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kWeeklyPersonHeaderCell];
         }
+        ((WeeklyPersonHeaderCell *)cell).star = self.starList[indexPath.row];
     }
     else
     {
@@ -98,6 +101,7 @@
         {
             cell = [[WeeklyPersonCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kWeeklyPersonCell];
         }
+        ((WeeklyPersonCell *)cell).star = self.starList[indexPath.row];
     }
     return cell;
 }
@@ -109,8 +113,16 @@
 }
 
 #pragma mark - UITableViewDelegate
+NSInteger tempRow;
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    SchoolNewsViewController * controller = segue.destinationViewController;
+    controller.star = self.starList[tempRow];
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    tempRow = indexPath.row;
     [self performSegueWithIdentifier:kWeeklyPersonViewControllerSegue sender:self];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }

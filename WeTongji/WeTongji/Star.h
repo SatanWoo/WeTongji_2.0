@@ -2,7 +2,7 @@
 //  Star.h
 //  WeTongji
 //
-//  Created by tang zhixiong on 12-11-17.
+//  Created by tang zhixiong on 12-11-18.
 //
 //
 
@@ -24,7 +24,7 @@
 @property (nonatomic, retain) NSNumber * like;
 @property (nonatomic, retain) NSNumber * read;
 @property (nonatomic, retain) NSString * starId;
-@property (nonatomic, retain) NSString * studentNumber;
+@property (nonatomic, retain) NSString * count;
 @property (nonatomic, retain) NSString * title;
 @property (nonatomic, retain) NSString * words;
 

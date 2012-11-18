@@ -2,7 +2,7 @@
 //  Star.m
 //  WeTongji
 //
-//  Created by tang zhixiong on 12-11-17.
+//  Created by tang zhixiong on 12-11-18.
 //
 //
 
@@ -22,7 +22,7 @@
 @dynamic like;
 @dynamic read;
 @dynamic starId;
-@dynamic studentNumber;
+@dynamic count;
 @dynamic title;
 @dynamic words;
 

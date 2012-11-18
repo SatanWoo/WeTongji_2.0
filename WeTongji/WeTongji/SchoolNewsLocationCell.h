@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface SchoolNewsLocationCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *location;
 
 @end

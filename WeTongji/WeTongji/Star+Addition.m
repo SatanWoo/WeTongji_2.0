@@ -22,12 +22,12 @@
     result.avatarLink = [NSString stringWithFormat:@"%@",[dict objectForKey:@"Avatar"]];
     result.canFavorite = [NSNumber numberWithInt:[[dict objectForKey:@"CanFavorite"] intValue]];
     result.canLike = [NSNumber numberWithInt:[[dict objectForKey:@"CanLike"] intValue]];
-    result.detail = [NSString stringWithFormat:@"%@",[dict objectForKey:@"Descritption"]];
+    result.detail = [NSString stringWithFormat:@"%@",[dict objectForKey:@"Description"]];
     result.starId = [NSString stringWithFormat:@"%@",[dict objectForKey:@"Id"]];
     result.images = [NSString stringWithFormat:@"%@",[dict objectForKey:@"Images"]];
     result.jobTitle = [NSString stringWithFormat:@"%@",[dict objectForKey:@"JobTitle"]];
     result.like = [NSNumber numberWithInt:[[dict objectForKey:@"Like"] intValue]];
-    result.studentNumber = [NSString stringWithFormat:@"%@",[dict objectForKey:@"NO"]];
+    result.count = [NSString stringWithFormat:@"%@",[dict objectForKey:@"NO"]];
     result.read = [NSNumber numberWithInt:[[dict objectForKey:@"Like"] intValue]];
     result.title = [NSString stringWithFormat:@"%@",[dict objectForKey:@"Title"]];
     result.words = [NSString stringWithFormat:@"%@",[dict objectForKey:@"Words"]];

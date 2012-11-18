@@ -19,6 +19,15 @@
     return self;
 }
 
+-(void) setStar:(Star *)star
+{
+    [self.avatar setImageWithURL:[NSURL URLWithString:star.avatarLink]];
+    self.name.text = star.title;
+    self.job.text = star.jobTitle;
+    self.count.text = star.count;
+    _star = star;
+}
+
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
     [super setSelected:selected animated:animated];

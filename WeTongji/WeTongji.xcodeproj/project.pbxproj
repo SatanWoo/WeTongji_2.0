@@ -241,6 +241,7 @@
 		FFB14F0316587DD90035F888 /* SchoolNewsTicketCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB14F0216587DD90035F888 /* SchoolNewsTicketCell.m */; };
 		FFB14F0516588B160035F888 /* StarHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFB14F0416588B160035F888 /* StarHeaderView.xib */; };
 		FFB14F0816588ED90035F888 /* WeeklyPersonHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB14F0716588ED90035F888 /* WeeklyPersonHeaderCell.m */; };
+		FFB14F0B1658AEDC0035F888 /* Star.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB14F0A1658AEDC0035F888 /* Star.m */; };
 		FFB20FEF1655D72F00FCAF5F /* ScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB20FEE1655D72F00FCAF5F /* ScheduleViewController.m */; };
 		FFB20FFD1655DA0900FCAF5F /* ScheduleWeekLeftTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB20FF11655DA0900FCAF5F /* ScheduleWeekLeftTableViewCell.m */; };
 		FFB20FFE1655DA0900FCAF5F /* ScheduleWeekLeftTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFB20FF21655DA0900FCAF5F /* ScheduleWeekLeftTableViewCell.xib */; };
@@ -333,7 +334,6 @@
 		FFBF4FF21657CC6D001690D2 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBF4FF11657CC6D001690D2 /* User.m */; };
 		FFBF4FF51657CC6D001690D2 /* Exam.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBF4FF41657CC6D001690D2 /* Exam.m */; };
 		FFBF4FFB1657CC6F001690D2 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBF4FFA1657CC6E001690D2 /* Event.m */; };
-		FFBF4FFE1657CC6F001690D2 /* Star.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBF4FFD1657CC6F001690D2 /* Star.m */; };
 		FFBF5010165814B6001690D2 /* Information.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBF500F165814B5001690D2 /* Information.m */; };
 		FFBF501216582970001690D2 /* SchoolNewsHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFBF501116582970001690D2 /* SchoolNewsHeaderView.xib */; };
 		FFBF5014165829B1001690D2 /* GroupNewsHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFBF5013165829B0001690D2 /* GroupNewsHeaderView.xib */; };
@@ -669,6 +669,8 @@
 		FFB14F0416588B160035F888 /* StarHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StarHeaderView.xib; sourceTree = "<group>"; };
 		FFB14F0616588ED90035F888 /* WeeklyPersonHeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeeklyPersonHeaderCell.h; sourceTree = "<group>"; };
 		FFB14F0716588ED90035F888 /* WeeklyPersonHeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeeklyPersonHeaderCell.m; sourceTree = "<group>"; };
+		FFB14F091658AEDC0035F888 /* Star.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Star.h; sourceTree = "<group>"; };
+		FFB14F0A1658AEDC0035F888 /* Star.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Star.m; sourceTree = "<group>"; };
 		FFB20FED1655D72F00FCAF5F /* ScheduleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScheduleViewController.h; sourceTree = "<group>"; };
 		FFB20FEE1655D72F00FCAF5F /* ScheduleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScheduleViewController.m; sourceTree = "<group>"; };
 		FFB20FF01655DA0900FCAF5F /* ScheduleWeekLeftTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScheduleWeekLeftTableViewCell.h; sourceTree = "<group>"; };
@@ -781,8 +783,6 @@
 		FFBF4FF41657CC6D001690D2 /* Exam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Exam.m; sourceTree = "<group>"; };
 		FFBF4FF91657CC6E001690D2 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
 		FFBF4FFA1657CC6E001690D2 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
-		FFBF4FFC1657CC6F001690D2 /* Star.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Star.h; sourceTree = "<group>"; };
-		FFBF4FFD1657CC6F001690D2 /* Star.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Star.m; sourceTree = "<group>"; };
 		FFBF500E165814B5001690D2 /* Information.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Information.h; path = ../Information.h; sourceTree = "<group>"; };
 		FFBF500F165814B5001690D2 /* Information.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Information.m; path = ../Information.m; sourceTree = "<group>"; };
 		FFBF501116582970001690D2 /* SchoolNewsHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SchoolNewsHeaderView.xib; sourceTree = "<group>"; };
@@ -1592,8 +1592,8 @@
 				FFBF4FFA1657CC6E001690D2 /* Event.m */,
 				FFBF500E165814B5001690D2 /* Information.h */,
 				FFBF500F165814B5001690D2 /* Information.m */,
-				FFBF4FFC1657CC6F001690D2 /* Star.h */,
-				FFBF4FFD1657CC6F001690D2 /* Star.m */,
+				FFB14F091658AEDC0035F888 /* Star.h */,
+				FFB14F0A1658AEDC0035F888 /* Star.m */,
 				FFBF4FED1657CC6B001690D2 /* Course.h */,
 				FFBF4FEE1657CC6B001690D2 /* Course.m */,
 				FFBF4FF01657CC6D001690D2 /* User.h */,
@@ -2082,13 +2082,13 @@
 				FFBF4FF21657CC6D001690D2 /* User.m in Sources */,
 				FFBF4FF51657CC6D001690D2 /* Exam.m in Sources */,
 				FFBF4FFB1657CC6F001690D2 /* Event.m in Sources */,
-				FFBF4FFE1657CC6F001690D2 /* Star.m in Sources */,
 				FFBF5010165814B6001690D2 /* Information.m in Sources */,
 				FFB14EFA16587B070035F888 /* EventOrganizerCell.m in Sources */,
 				FFB14EFD16587DAD0035F888 /* SchoolNewsLocationCell.m in Sources */,
 				FFB14F0016587DC50035F888 /* SchoolNewsContactCell.m in Sources */,
 				FFB14F0316587DD90035F888 /* SchoolNewsTicketCell.m in Sources */,
 				FFB14F0816588ED90035F888 /* WeeklyPersonHeaderCell.m in Sources */,
+				FFB14F0B1658AEDC0035F888 /* Star.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

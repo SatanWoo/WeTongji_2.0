@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface SchoolNewsTicketCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *ticket;
 
 @end

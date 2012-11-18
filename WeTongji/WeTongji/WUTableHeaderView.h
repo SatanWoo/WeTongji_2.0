@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Information+Addition.h"
 #import "Event+Addition.h"
+#import "Star+Addition.h"
 
 @interface WUTableHeaderView : UIView
 
@@ -33,7 +34,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *starSummary;
 @property (weak, nonatomic) Event * event;
 @property (weak, nonatomic) Information * information;
-
+@property (weak, nonatomic) Star * star;
 
 -(void) changeButtonPositionToLeft;
 -(void) resetButtonPosition;

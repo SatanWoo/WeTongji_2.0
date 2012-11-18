@@ -176,6 +176,11 @@
 
 -(void) setStar:(Star *)star
 {
+    self.headerView =  [[[NSBundle mainBundle] loadNibNamed:@"StarHeaderView" owner:self options:nil] objectAtIndex:0];
+    [self renderShadow:self.headerView];
+    [self.headerView setStar:star];
+    [self.transparentHeaderView setHideBoard:YES];
+    //self.imageList = [NSArray arrayWithObject:event.imageLink];
     _star = star;
 }
 
@@ -192,18 +197,11 @@
         self.currentCell.textView.text = self.event.detail;
         [self configureCurrentCell];
     } else if ( self.information ) {
-        self.currentCell.textView.text = self.information.summary;
+        self.currentCell.textView.text = self.information.context;
         [self configureCurrentCell];
-        WTClient * client = [WTClient sharedClient];
-        WTRequest *request = [WTRequest requestWithSuccessBlock:^(id responseData)
-                              {
-                                  NSLog(@"%@",responseData);
-                              }
-                                failureBlock:^(NSError *error)
-                                {
-                                }];
-        [request getDetailOfInformaion:self.information.informationId inType:self.information.category];
-        [client enqueueRequest:request];
+    } else if ( self.star ) {
+        self.currentCell.textView.text = self.star.detail;
+        [self configureCurrentCell];
     }
 }
 
@@ -355,16 +353,19 @@
                     cell = [tableView dequeueReusableCellWithIdentifier:@"SchoolNewsLocationCell"];
                     if ( cell == nil )
                         cell = [[SchoolNewsLocationCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"SchoolNewsLocationCell"];
+                    ((SchoolNewsLocationCell *)cell).location.text = self.information.location;
                     break;
                 case 1:
                     cell = [tableView dequeueReusableCellWithIdentifier:@"SchoolNewsContactCell"];
                     if ( cell == nil )
                         cell = [[SchoolNewsContactCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"SchoolNewsContactCell"];
+                    ((SchoolNewsContactCell *)cell).contact.text = self.information.contact;
                     break;
                 case 2:
                     cell = [tableView dequeueReusableCellWithIdentifier:@"SchoolNewsTicketCell"];
                     if ( cell == nil )
                         cell = [[SchoolNewsTicketCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"SchoolNewsTicketCell"];
+                    ((SchoolNewsTicketCell *)cell).ticket.text = self.information.ticketService;
                     break;
                     
                 default:
