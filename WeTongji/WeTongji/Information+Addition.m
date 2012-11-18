@@ -30,7 +30,7 @@
     information.favorite = [NSNumber numberWithInt:[[infoDict objectForKey:@"Favorite"] intValue]];
     information.informationId = [NSString stringWithFormat:@"%@",[infoDict objectForKey:@"Id"]];
     information.image = [NSString stringWithFormat:@"%@",[infoDict objectForKey:@"Image"]];
-    //information.images = [NSString stringWithFormat:@"%@",[[infoDict objectForKey:@"Images"] JSONRepresentation]];
+    information.images = [NSString stringWithFormat:@"%@",[[infoDict objectForKey:@"Images"] JSONRepresentation]];
     NSLog(@"%@",[infoDict objectForKey:@"Images"]);
     information.like = [NSNumber numberWithInt:[[infoDict objectForKey:@"Like"] intValue]];
     information.location = [NSString stringWithFormat:@"%@",[infoDict objectForKey:@"Location"]];

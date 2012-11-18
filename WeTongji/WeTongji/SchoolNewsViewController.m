@@ -171,8 +171,8 @@
         [self.headerView  setInformation:information];
         [self.transparentHeaderView setHideBoard:YES];
     }
-    //NSDictionary * imageDict = [information.images JSONFragmentValue];
-    //self.imageList = [imageDict allKeys];
+    NSDictionary * imageDict = [information.images JSONFragmentValue];
+    self.imageList = [imageDict allKeys];
     _information = information;
 }
 
@@ -182,8 +182,8 @@
     [self renderShadow:self.headerView];
     [self.headerView setStar:star];
     [self.transparentHeaderView setHideBoard:YES];
-    //NSDictionary * imageDict = [star.images JSONFragmentValue];
-    //self.imageList = [imageDict allKeys];
+    NSDictionary * imageDict = [star.images JSONFragmentValue];
+    self.imageList = [imageDict allKeys];
     _star = star;
 }
 

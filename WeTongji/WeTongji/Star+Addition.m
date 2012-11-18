@@ -25,7 +25,7 @@
     result.canLike = [NSNumber numberWithInt:[[dict objectForKey:@"CanLike"] intValue]];
     result.detail = [NSString stringWithFormat:@"%@",[dict objectForKey:@"Description"]];
     result.starId = [NSString stringWithFormat:@"%@",[dict objectForKey:@"Id"]];
-    //result.images = [NSString stringWithFormat:@"%@",[[dict objectForKey:@"Images"] JSONRepresentation]];
+    result.images = [NSString stringWithFormat:@"%@",[[dict objectForKey:@"Images"] JSONRepresentation]];
     result.jobTitle = [NSString stringWithFormat:@"%@",[dict objectForKey:@"JobTitle"]];
     result.like = [NSNumber numberWithInt:[[dict objectForKey:@"Like"] intValue]];
     result.count = [NSString stringWithFormat:@"%@",[dict objectForKey:@"NO"]];
