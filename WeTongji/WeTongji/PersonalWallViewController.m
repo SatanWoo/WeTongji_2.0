@@ -17,7 +17,7 @@
 #import "WUPageControlViewController.h"
 #import <WeTongjiSDK/WeTongjiSDK.h>
 
-#define kContentOffSet 168
+#define kContentOffSet 156
 #define kRowHeight 44
 #define kStateY -150
 
