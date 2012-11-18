@@ -13,6 +13,7 @@
 #import "LeftMenuCellModel.h"
 #import "JBKenBurnsView.h"
 #import "WUKenBurnViewHeader.h"
+#import "WUSlideViewController.h"
 
 #define kLabelHeight 30
 
@@ -31,18 +32,20 @@
 @synthesize delegate = _delegate;
 @synthesize settingButton = _settingButton;
 @synthesize infoButton = _infoButton;
+@synthesize slideViewController = _slideViewController;
 
 @synthesize identifierArray = _identifierArray;
 @synthesize kenView = _kenView;
 #pragma mark - IBAction
 - (IBAction)triggerInfo:(UIButton *)sender
 {
-    [sender setSelected:!sender.selected];
+    //[sender setSelected:!sender.selected];
+    [self.slideViewController performSegueWithIdentifier:kAboutViewControllerSegue sender:self];
 }
 
 - (IBAction)triggerSetting:(UIButton *)sender
 {
-    [sender setSelected:!sender.selected];
+    //[sender setSelected:!sender.selected];
 }
 
 #pragma mark - Private Method

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+@class WUSlideViewController;
 
 @protocol LeftMenuViewControllerDelegate <NSObject>
 - (void)changeMiddleContent:(UIViewController *)controller;
@@ -16,6 +17,7 @@
 @property (nonatomic, weak) IBOutlet UITableView *menuTableView;
 @property (nonatomic, assign) BOOL isLogin;
 @property (nonatomic, assign) IBOutlet id<LeftMenuViewControllerDelegate>delegate;
+@property (nonatomic, weak) WUSlideViewController *slideViewController;
 @property (weak, nonatomic) IBOutlet UIButton *settingButton;
 @property (weak, nonatomic) IBOutlet UIButton *infoButton;
 - (IBAction)triggerSetting:(UIButton *)sender;

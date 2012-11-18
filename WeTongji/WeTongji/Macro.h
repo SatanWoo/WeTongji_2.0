@@ -48,6 +48,7 @@
 #define kArrangementViewControllerSegue @"kArrangementViewController"
 #define kWeeklyPersonViewControllerSegue @"kWeeklyPersonViewController"
 #define kEventInfoViewControllerSegue @"kEventInfoViewController"
+#define kAboutViewControllerSegue @"kAboutViewController"
 
 // Slide
 #define kMenuFullWidth 320.0f

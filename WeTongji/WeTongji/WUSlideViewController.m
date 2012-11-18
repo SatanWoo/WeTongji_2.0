@@ -160,6 +160,7 @@
     leftViewFrame.size.width = kMenuFullWidth;
     leftViewController.view.frame = self.view.bounds;
     _leftViewController.view.frame = leftViewFrame;
+    _leftViewController.slideViewController = self;
     [self.view insertSubview:_leftViewController.view atIndex:0];
 }
 
