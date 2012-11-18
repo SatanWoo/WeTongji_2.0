@@ -55,7 +55,7 @@
     if ( !_endDate )
     {
         _endDate = [NSDate dateWithTimeIntervalSinceNow:0];
-        NSInteger interval = [_beginDate timeIntervalSince1970] / DAY_TIME_INTERVAL;
+        NSInteger interval = [_endDate timeIntervalSince1970] / DAY_TIME_INTERVAL;
         interval = interval * DAY_TIME_INTERVAL;
         _endDate = [NSDate dateWithTimeIntervalSince1970:interval];
     }
@@ -91,12 +91,16 @@
         if ( tempCount > 10 )
             break;
     }
+    [self.sectionTableView reloadData];
+    [self.arrangementTableView reloadData];
 }
 
 -(void) loadMorePastData
 {
     NSArray * tempRowList;
     NSInteger tempCount = 0;
+    CGPoint tempOffset = self.arrangementTableView.contentOffset;
+    CGSize tempSize = self.arrangementTableView.contentSize;
     while ( [self.beginDate timeIntervalSinceDate:[NSUserDefaults getCurrentSemesterBeginDate]] > 0)
     {
         tempRowList = [self getRightCellDataArrayAtdate:self.beginDate];
@@ -110,6 +114,11 @@
         if ( tempCount > 10 )
             break;
     }
+    [self.sectionTableView reloadData];
+    [self.arrangementTableView reloadData];
+    tempOffset.y += self.arrangementTableView.contentSize.height - tempSize.height;
+    [self.sectionTableView setContentOffset:tempOffset];
+    [self.arrangementTableView setContentOffset:tempOffset];
 }
 
 -(void) setBeginDate:(NSDate *)beginDate
@@ -233,14 +242,10 @@
         if ( self.arrangementTableView.contentOffset.y < 0 )
         {
             [self loadMorePastData];
-            [self.sectionTableView reloadData];
-            [self.arrangementTableView reloadData];
         }
-        else if (self.arrangementTableView.contentOffset.y + 416 > self.arrangementTableView.contentSize.height)
+        else if (self.arrangementTableView.contentOffset.y + 600 > self.arrangementTableView.contentSize.height)
         {
             [self loadMoreFutureData];
-            [self.sectionTableView reloadData];
-            [self.arrangementTableView reloadData];
         }
     }
 }
