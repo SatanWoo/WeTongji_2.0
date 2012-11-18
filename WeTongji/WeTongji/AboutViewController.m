@@ -8,6 +8,7 @@
 
 #import "AboutViewController.h"
 #import "UIBarButtonItem+CustomButton.h"
+#import "AboutHeaderView.h"
 
 @interface AboutViewController () <UITableViewDataSource, UITableViewDelegate>
 - (void)configureNavBar;
@@ -61,8 +62,26 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
-        cell.frame = CGRectMake(cell.frame.origin.x, cell.frame.origin.y, 301, 45);
+        cell.textLabel.font = [UIFont fontWithName:@"Heiti SC" size:16];
+        cell.backgroundColor = [UIColor whiteColor];
     }
+    if (indexPath.section == 0 && indexPath.row == 0) {
+        cell.textLabel.text = @"给WeTongji打分";
+    } else if (indexPath.section == 0 && indexPath.row == 1) {
+        cell.textLabel.text = @"提意见";
+    } else if (indexPath.section == 0 && indexPath.row == 2) {
+        cell.textLabel.text = @"用户协议";
+    } else if (indexPath.section == 1 && indexPath.row == 0) {
+        cell.textLabel.text = @"  微同济官方微博";
+        cell.imageView.image = [UIImage imageNamed:@"weibo_logo"];
+    } else if (indexPath.section == 1 && indexPath.row == 1) {
+        cell.textLabel.text = @"微同济人人主页";
+        cell.imageView.image = [UIImage imageNamed:@"renren_logo"];
+    } else if (indexPath.section == 1 && indexPath.row == 2) {
+        cell.textLabel.text = @"  微同济官方主页";
+        cell.imageView.image = [UIImage imageNamed:@"we_logo"];
+    }
+    
     if (indexPath.row == 0) {
         cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"table_first.png"]];
     } else if (indexPath.row == 2) {
@@ -71,17 +90,28 @@
         cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"table_middle.png"]];
     }
 
-    cell.textLabel.text = @"微同济官方网站";
     return cell;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    return [[[NSBundle mainBundle] loadNibNamed:@"AboutHeaderView" owner:self options:nil] objectAtIndex:0];
+    AboutHeaderView *headerView = [[[NSBundle mainBundle] loadNibNamed:@"AboutHeaderView" owner:self options:nil] objectAtIndex:0];
+    if (section == 0) {
+        headerView.name.text = @"应用信息";
+    } else {
+        headerView.name.text = @"团队";
+    }
+    return headerView;
 }
 
 - (float)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return 45;
+    return 40;
+}
+
+#pragma mark - UITableViewDelegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 @end
