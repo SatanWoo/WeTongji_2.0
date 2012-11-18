@@ -19,36 +19,117 @@
 
 @interface ArrangementViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *sectionTableView;
-@property (strong, nonatomic) NSArray * arrangeList;
-@property (strong, nonatomic) NSArray * sectionList;
+@property (strong, nonatomic) NSMutableArray * arrangeList;
+@property (strong, nonatomic) NSMutableArray * sectionList;
+@property (strong, nonatomic) NSDate * beginDate;
+@property (strong, nonatomic) NSDate * endDate;
 - (void)configureTableView;
 @end
 
 @implementation ArrangementViewController
 @synthesize arrangementTableView;
+@synthesize endDate=_endDate;
+@synthesize beginDate=_beginDate;
 
--(NSArray *) arrangeList
+-(NSMutableArray *) arrangeList
 {
     if ( !_arrangeList )
     {
-        NSMutableArray * tempList = [[NSMutableArray alloc] init];
-        NSMutableArray * tempSectionList = [[NSMutableArray alloc] init];
-        NSDate * date = [NSUserDefaults getCurrentSemesterBeginDate];
-        NSArray * tempRowList;
-        while ( [date timeIntervalSinceDate:[NSUserDefaults getCurrentSemesterEndDate]] < 0)
-        {
-            tempRowList = [self getRightCellDataArrayAtdate:date];
-            if ( [tempRowList count] )
-            {
-                [tempSectionList addObject:date];
-                [tempList addObject:tempRowList];
-            }
-            date = [NSDate dateWithTimeInterval:DAY_TIME_INTERVAL sinceDate:date];
-        }
-        self.sectionList = [NSArray arrayWithArray:tempSectionList];
-        _arrangeList = [[NSArray alloc] initWithArray:tempList];
+        _arrangeList = [[NSMutableArray alloc] init];
     }
     return _arrangeList;
+}
+
+-(NSMutableArray *) sectionList
+{
+    
+    if ( !_sectionList )
+    {
+        _sectionList = [[NSMutableArray alloc] init];
+    }
+    return _sectionList;
+}
+
+-(NSDate *) endDate
+{
+    if ( !_endDate )
+    {
+        _endDate = [NSDate dateWithTimeIntervalSinceNow:0];
+        NSInteger interval = [_beginDate timeIntervalSince1970] / DAY_TIME_INTERVAL;
+        interval = interval * DAY_TIME_INTERVAL;
+        _endDate = [NSDate dateWithTimeIntervalSince1970:interval];
+    }
+    return _endDate;
+}
+
+-(NSDate *) beginDate
+{
+    if ( !_beginDate )
+    {
+        _beginDate = [NSDate dateWithTimeIntervalSinceNow:0];
+        NSInteger interval = [_beginDate timeIntervalSince1970] / DAY_TIME_INTERVAL;
+        interval = interval * DAY_TIME_INTERVAL;
+        _beginDate = [NSDate dateWithTimeIntervalSince1970:interval];
+    }
+    return _beginDate;
+}
+
+-(void) loadMoreFutureData
+{
+    NSArray * tempRowList;
+    NSInteger tempCount = 0;
+    while ( [self.endDate timeIntervalSinceDate:[NSUserDefaults getCurrentSemesterEndDate]] < 0)
+    {
+        tempRowList = [self getRightCellDataArrayAtdate:self.endDate];
+        tempCount += tempRowList.count;
+        if ( [tempRowList count] )
+        {
+            [self.sectionList addObject:self.endDate];
+            [self.arrangeList addObject:tempRowList];
+        }
+        self.endDate = [NSDate dateWithTimeInterval:DAY_TIME_INTERVAL sinceDate:self.endDate];
+        if ( tempCount > 10 )
+            break;
+    }
+}
+
+-(void) loadMorePastData
+{
+    NSArray * tempRowList;
+    NSInteger tempCount = 0;
+    while ( [self.beginDate timeIntervalSinceDate:[NSUserDefaults getCurrentSemesterBeginDate]] > 0)
+    {
+        tempRowList = [self getRightCellDataArrayAtdate:self.beginDate];
+        tempCount += tempRowList.count;
+        if ( [tempRowList count] )
+        {
+            [self.sectionList insertObject:self.beginDate atIndex:0];
+            [self.arrangeList insertObject:tempRowList atIndex:0];
+        }
+        self.beginDate = [NSDate dateWithTimeInterval:-DAY_TIME_INTERVAL sinceDate:self.beginDate];
+        if ( tempCount > 10 )
+            break;
+    }
+}
+
+-(void) setBeginDate:(NSDate *)beginDate
+{
+    if ( [beginDate timeIntervalSinceDate:[NSUserDefaults getCurrentSemesterBeginDate]] < 0 )
+    {
+        _beginDate = [NSUserDefaults getCurrentSemesterBeginDate];
+        return;
+    }
+    _beginDate = beginDate;
+}
+
+-(void) setEndDate:(NSDate *)endDate
+{
+    if ( [endDate timeIntervalSinceDate:[NSUserDefaults getCurrentSemesterEndDate]] > 0 )
+    {
+        _endDate = [NSUserDefaults getCurrentSemesterEndDate];
+        return;
+    }
+    _endDate = endDate;
 }
 
 #pragma mark - Private Method
@@ -63,6 +144,8 @@
 {
     [super viewDidLoad];
     [self configureTableView];
+    [self loadMoreFutureData];
+    [self loadMorePastData];
 }
 
 - (void)viewDidUnload
@@ -145,7 +228,20 @@
 {
     if ( scrollView == self.arrangementTableView )
     {
-        [self.sectionTableView scrollRectToVisible:CGRectMake(self.arrangementTableView.contentOffset.x, self.arrangementTableView.contentOffset.y,self.arrangementTableView.bounds.size.width, self.arrangementTableView.bounds.size.height)  animated:NO];
+        self.sectionTableView.contentOffset = self.arrangementTableView.contentOffset;
+        NSLog(@"%f : %f",self.arrangementTableView.contentOffset.y,self.arrangementTableView.contentSize.height);
+        if ( self.arrangementTableView.contentOffset.y < 0 )
+        {
+            [self loadMorePastData];
+            [self.sectionTableView reloadData];
+            [self.arrangementTableView reloadData];
+        }
+        else if (self.arrangementTableView.contentOffset.y + 416 > self.arrangementTableView.contentSize.height)
+        {
+            [self loadMoreFutureData];
+            [self.sectionTableView reloadData];
+            [self.arrangementTableView reloadData];
+        }
     }
 }
 
