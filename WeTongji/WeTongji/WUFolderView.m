@@ -10,6 +10,7 @@
 
 @implementation WUFolderView
 @synthesize tapButton;
+@synthesize name;
 
 - (id)initWithFrame:(CGRect)frame
 {

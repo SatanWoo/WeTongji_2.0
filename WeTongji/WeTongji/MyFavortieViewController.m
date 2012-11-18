@@ -12,6 +12,7 @@
 #import "SchoolNewsCell.h"
 #import <QuartzCore/QuartzCore.h>
 #import "WUFolderView.h"
+#import "WeeklyPersonCell.h"
 
 @interface MyFavortieViewController () < UITableViewDelegate, UITableViewDataSource>
 - (void)configureTableView;
@@ -40,6 +41,7 @@
 {
     [self.contentTableView registerNib:[UINib nibWithNibName:@"EventInfoCell" bundle:nil] forCellReuseIdentifier:kEventInfoCell];
     [self.contentTableView registerNib:[UINib nibWithNibName:@"SchoolNewsCell" bundle:nil] forCellReuseIdentifier:kSchoolInfoCell];
+    [self.contentTableView registerNib:[UINib nibWithNibName:@"WeeklyPersonCell" bundle:nil] forCellReuseIdentifier:kWeeklyPersonCell];
     self.currentSelectSection = -1;
 }
 
@@ -91,11 +93,13 @@
     if (indexPath.section == self.currentSelectSection) {
         if (self.currentSelectSection == eRECOMMEND) {
             return 122;
+        } else if (self.currentSelectSection == eSCHOOL) {
+            return 70;
+        } else {
+            return 75;
         }
-    } else {
-        return 44;
     }
-    return 44;
+    return 0;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -116,7 +120,14 @@
 {
     WUFolderView *abtn = [[[NSBundle mainBundle] loadNibNamed:@"WUFolderView" owner:self options:nil] objectAtIndex:0];
     abtn.tapButton.tag = section;
-    abtn.tapButton.titleLabel.text = @"校园咨询";
+    if (section == 0) {
+        abtn.name.text = @"推荐活动";
+    } else if (section == 1) {
+        abtn.name.text = @"校园资讯";
+    } else {
+        abtn.name.text = @"每周人物";
+    }
+    
     [abtn.tapButton addTarget:self action:@selector(headerClicked:) forControlEvents:UIControlEventTouchUpInside];
     return abtn;
 }
@@ -144,7 +155,12 @@
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         return cell;
     } else {
-        return nil;
+        WeeklyPersonCell *cell = [tableView dequeueReusableCellWithIdentifier:kWeeklyPersonCell];
+        if (cell == nil) {
+            cell = [[WeeklyPersonCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kWeeklyPersonCell];
+        }
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        return cell;
     }
 }
 
