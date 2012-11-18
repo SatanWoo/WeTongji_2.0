@@ -7,7 +7,7 @@
 //
 
 #import "Star+Addition.h"
-#import "JSON.h"
+#import <WeTongjiSDK/WetongjiSDK.h>
 
 @implementation Star (Addition)
 

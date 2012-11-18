@@ -601,7 +601,7 @@
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="eye_icon.png">{16, 10}</string>
+			<string key="eye_icon.png">{16, 16}</string>
 			<string key="favourite_us">{16, 16}</string>
 			<string key="like">{16, 16}</string>
 		</dictionary>

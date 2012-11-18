@@ -19,7 +19,6 @@
 #import "SchoolNewsLocationCell.h"
 #import "SchoolNewsTicketCell.h"
 #import <WeTongjiSDK/WeTongjiSDK.h>
-#import "JSON.h"
 
 #define kContentOffset 50
 #define kStateY -150

@@ -8,7 +8,7 @@
 
 #import "Information+Addition.h"
 #import "NSString+Addition.h"
-#import "JSON.h"
+#import <WeTongjiSDK/WetongjiSDK.h>
 
 @implementation Information (Addition)
 
