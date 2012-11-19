@@ -30,6 +30,17 @@
     if ( !_starList )
     {
         _starList = [Star getAllStarsInManagedObjectContext:self.managedObjectContext];
+        NSArray * tempList = [_starList mutableCopy];
+        NSMutableArray * __starList = [[NSMutableArray alloc] init];
+        for ( Star * star in tempList )
+            if ( ![star.hiden boolValue] )
+                [__starList addObject:star];
+        NSArray *sortedNames = [__starList sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+            Star *str1 = (Star *)obj1;
+            Star *str2 = (Star *)obj2;
+            return [str2.starId compare: str1.starId];
+        }];
+        _starList = sortedNames;
     }
     return _starList;
 }
@@ -49,7 +60,7 @@
     [self.personTableView registerNib:[UINib nibWithNibName:@"WeeklyPersonCell" bundle:nil] forCellReuseIdentifier:kWeeklyPersonCell];
     [self.personTableView registerNib:[UINib nibWithNibName:@"WeeklyPersonHeaderCell" bundle:nil] forCellReuseIdentifier:kWeeklyPersonHeaderCell];
     self.pullRefreshManagement.delegate = self;
-    NSLog(@"%@",self.pullRefreshManagement);
+    [self.pullRefreshManagement firstTrigger];
 }
 
 #pragma mark - Life Cycle
@@ -158,6 +169,7 @@ NSInteger tempRow;
     WTClient *client = [WTClient sharedClient];
     WTRequest * request = [WTRequest requestWithSuccessBlock:^(id responseData)
                            {
+                               NSLog(@"%@",responseData);
                                if(self.nextPage == 0)
                                    [self clearData];
                                NSArray *array = [responseData objectForKey:@"People"];

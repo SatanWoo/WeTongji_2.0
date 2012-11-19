@@ -175,6 +175,7 @@
     {
         WTClient * client = [WTClient sharedClient];
         [client cancelAllHTTPOperationsWithMethod:nil path:nil];
+        [_currentRefreshManagememt firstTrigger];
     }
     _currentRefreshManagememt = currentRefreshManagememt;
 }

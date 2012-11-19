@@ -48,7 +48,7 @@
 {
     [self.avatarImageView setImageWithURL:[NSURL URLWithString:event.orgranizerAvatarLink]];
     self.publisherLabel.text = event.organizer;
-    //self.categoryLabel.text = event;
+    self.categoryLabel.text = event.channelId;
     _event = event;
 #ifdef DEBUG
     NSLog(@"Event (%@,%@) has been set in TransparentTableHeaderView",event.activityId,event.title);

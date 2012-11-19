@@ -33,6 +33,15 @@
         [self.scrollView addSubview:self.pullRefreshHeaderView];
         self.scrollView.tableFooterView=self.pullRefreshFooterView;
         [self.scrollView setContentInset:UIEdgeInsetsMake(0.0f, 0.0f, 40.0f, 0.0f)];
+        if ( self.scrollView.bounds.size.height < self.scrollView.contentSize.height )
+        {
+            [self.pullRefreshFooterView setHidden:NO];
+        }
+        else
+        {
+            [self.pullRefreshFooterView setHidden:YES];
+            [self.pullRefreshFooterView setIsEndingAll:YES];
+        }
     }
     return self;
 }
@@ -92,10 +101,19 @@
 - (void) endLoading
 {
 	_reloading = NO;
-        [self.delegate endLoading];
+    [self.delegate endLoading];
     [self.pullRefreshHeaderView egoRefreshScrollViewDataSourceDidFinishedLoading:self.scrollView];
 	[self.pullRefreshFooterView egoRefreshScrollViewDataSourceDidFinishedLoading:self.scrollView];
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+    if ( self.scrollView.bounds.size.height < self.scrollView.contentSize.height )
+    {
+        [self.pullRefreshFooterView setHidden:NO];
+    }
+    else
+    {
+        [self.pullRefreshFooterView setHidden:YES];
+        [self.pullRefreshFooterView setIsEndingAll:YES];
+    }
 }
 
 #pragma mark -
