@@ -74,6 +74,144 @@
     _isButtonBoardLeft = NO;
 }
 
+-(void) configButton
+{
+    [self.likeButton setImage:[UIImage imageNamed:@"like_hl"] forState:UIControlStateHighlighted];
+    [self.favoriteButton setImage:[UIImage imageNamed:@"favourite_hl"] forState:UIControlStateHighlighted];
+    [self.addScheduleButton setImage:[UIImage imageNamed:@"add_to_schedule_hl"] forState:UIControlStateHighlighted];
+#ifdef DEBUG
+    NSLog(@"event       : %@",self.event);
+    NSLog(@"information : %@",self.information);
+    NSLog(@"star        : %@",self.star);
+#endif
+    if ( [self.event.canLike boolValue] || [self.information.canLike boolValue] || [self.star.canLike boolValue] );else [self.likeButton setImage:[UIImage imageNamed:@"like_hl"] forState:UIControlStateNormal];
+    if ( [self.event.canFavorite boolValue] || [self.information.canFavorite boolValue] || [self.star.canFavorite boolValue] );else [self.favoriteButton setImage:[UIImage imageNamed:@"favourite_hl"] forState:UIControlStateNormal];
+    if ( [self.event.canSchedule boolValue] );else [self.addScheduleButton setImage:[UIImage imageNamed:@"add_to_schedule_hl"] forState:UIControlStateNormal];
+}
+- (IBAction)likeClicked:(id)sender
+{
+    NSString * purposeImage;
+    if ( [self.event.canLike boolValue] || [self.information.canLike boolValue] || [self.star.canLike boolValue] )
+        purposeImage = @"like_hl";
+    else purposeImage = @"like";
+    WTClient * client = [WTClient sharedClient];
+    WTRequest * request = [WTRequest requestWithSuccessBlock:^(id responseData)
+                           {
+                            #ifdef DEBUG
+                               if ( [purposeImage isEqualToString:@"like_hl"] )
+                                   NSLog(@"like operation succeed!");
+                               else NSLog(@"unlike operation succeed!");
+                            #endif
+                               self.event.canLike = [NSNumber numberWithBool:!self.event.canLike.boolValue];
+                               self.information.canLike = [NSNumber numberWithBool:!self.information.canLike.boolValue];
+                               self.star.canLike = [NSNumber numberWithBool:!self.star.canLike.boolValue];
+                               [self.likeButton setImage:[UIImage imageNamed:purposeImage] forState:UIControlStateNormal];
+                           }
+                            failureBlock:^(NSError * error)
+                           {
+                            #ifdef DEBUG
+                               if ( [purposeImage isEqualToString:@"like_hl"] )
+                                   NSLog(@"like operation failed!");
+                               else NSLog(@"unlike operation failed!");
+                            #endif
+                           }];
+    
+    if ( self.event )
+    {
+        if ( [self.event.canLike boolValue] )
+        {
+            [request setLikeActivitiy:self.event.activityId];
+        }
+        else
+        {
+            [request cancelLikeActivity:self.event.activityId];
+        }
+    }
+    [client enqueueRequest:request];
+}
+
+- (IBAction)favoriteClicked:(id)sender
+{
+    NSString * purposeImage;
+    if ( [self.event.canFavorite boolValue] || [self.information.canFavorite boolValue] || [self.star.canFavorite boolValue] )
+        purposeImage = @"favourite_hl";
+    else purposeImage = @"favourite";
+    WTClient * client = [WTClient sharedClient];
+    WTRequest * request = [WTRequest requestWithSuccessBlock:^(id responseData)
+                           {
+                            #ifdef DEBUG
+                               if ( [purposeImage isEqualToString:@"favourite_hl"] )
+                                   NSLog(@"favourite operation succeed!");
+                               else NSLog(@"unfavourite operation succeed!");
+                            #endif
+                               self.event.canFavorite = [NSNumber numberWithBool:!self.event.canFavorite.boolValue];
+                               self.information.canFavorite = [NSNumber numberWithBool:!self.information.canFavorite.boolValue];
+                               self.star.canFavorite = [NSNumber numberWithBool:!self.star.canFavorite.boolValue];
+                               [self.favoriteButton setImage:[UIImage imageNamed:purposeImage] forState:UIControlStateNormal];
+                           }
+                            failureBlock:^(NSError * error)
+                           {
+                            #ifdef DEBUG
+                               if ( [purposeImage isEqualToString:@"favourite_hl"] )
+                                   NSLog(@"favourite operation failed!");
+                               else NSLog(@"unfavourite operation failed!");
+                            #endif
+                           }];
+    
+    if ( self.event )
+    {
+        if ( [self.event.canFavorite boolValue] )
+        {
+            [request setActivityFavored:self.event.activityId];
+        }
+        else
+        {
+            [request cancelActivityFavored:self.event.activityId];
+        }
+    }
+    [client enqueueRequest:request];
+}
+
+- (IBAction)addScheduleClicked:(id)sender
+{
+    NSString * purposeImage;
+    if ( [self.event.canSchedule boolValue] )
+        purposeImage = @"add_to_schedule_hl";
+    else purposeImage = @"add_to_schedule";
+    WTClient * client = [WTClient sharedClient];
+    WTRequest * request = [WTRequest requestWithSuccessBlock:^(id responseData)
+                           {
+                            #ifdef DEBUG
+                               if ( [purposeImage isEqualToString:@"add_to_schedule_hl"] )
+                                   NSLog(@"schedule operation succeed!");
+                               else NSLog(@"unschedule operation succeed!");
+                            #endif
+                               self.event.canSchedule = [NSNumber numberWithBool:!self.event.canSchedule.boolValue];
+                               [self.addScheduleButton setImage:[UIImage imageNamed:purposeImage] forState:UIControlStateNormal];
+                           }
+                            failureBlock:^(NSError * error)
+                           {
+                            #ifdef DEBUG
+                               if ( [purposeImage isEqualToString:@"favourite_hl"] )
+                                   NSLog(@"schedule operation failed!");
+                               else NSLog(@"unschedule operation failed!");
+                            #endif
+                           }];
+    
+    if ( self.event )
+    {
+        if ( [self.event.canSchedule boolValue] )
+        {
+            [request setActivityScheduled:self.event.activityId];
+        }
+        else
+        {
+            [request cancelActivityScheduled:self.event.activityId];
+        }
+    }
+    [client enqueueRequest:request];
+}
+
 -(void)setEvent:(Event *)event
 {
     self.titleLabel.text = event.title;
@@ -83,6 +221,7 @@
     self.likeNumber.text = [event.like stringValue];
     self.favoriteNumber.text = [event.favorite stringValue];
     _event = event;
+    [self configButton];
 #ifdef DEBUG
     NSLog(@"Event (%@,%@) has been set in WUTableHeaderView",event.activityId,event.title);
 #endif
@@ -108,6 +247,7 @@
     }
     self.seeNumber.text = [information.read stringValue];
     _information = information;
+    [self configButton];
 #ifdef DEBUG
     NSLog(@"Information (%@,%@) has been set in WUTableHeaderView",information.informationId,information.title);
 #endif
@@ -123,6 +263,7 @@
     self.favoriteNumber.text = [star.favorite stringValue];
     self.starNumber.text = star.count;
     _star = star;
+    [self configButton];
 #ifdef DEBUG
     NSLog(@"Star (%@,%@) has been set in WUTableHeaderView",star.starId,star.title);
 #endif
@@ -132,7 +273,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        // Initialization code
+        
     }
     return self;
 }

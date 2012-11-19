@@ -33,6 +33,8 @@
     self.refreshTime.text = [NSString stringWithHowLongAgo: event.createAt];
     //NSLog(@"createAt : %@",self.event.createAt);
     //NSLog(@"begintime: %@",self.event.beginTime);
+#ifdef DEBUG
+#endif
     if ( _event == event ) return;
     _event = event;
     self.eventName.text = self.event.title;
@@ -42,6 +44,14 @@
     self.likeLabel.text = [self.event.like stringValue];
     self.organizationLabel.text = self.event.organizer;
     [self.avatar setImageWithURL:[NSURL URLWithString:self.event.orgranizerAvatarLink]];
+    if ( [event.canLike boolValue])
+        [self.likeButton setImage:[UIImage imageNamed:@"like"] forState:UIControlStateNormal];
+    else
+        [self.likeButton setImage:[UIImage imageNamed:@"like_hl"] forState:UIControlStateNormal];
+    if ( [event.canFavorite boolValue])
+        [self.favorButton setImage:[UIImage imageNamed:@"favourite"] forState:UIControlStateNormal];
+    else
+        [self.favorButton setImage:[UIImage imageNamed:@"favourite_hl"] forState:UIControlStateNormal];
 }
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier

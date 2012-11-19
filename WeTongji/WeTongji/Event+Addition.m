@@ -41,8 +41,11 @@
     result.like = [NSNumber numberWithInt:[[dict objectForKey:@"Like"] intValue]];
     result.favorite = [NSNumber numberWithInt:[[dict objectForKey:@"Favorite"] intValue]];
     result.schedule = [NSNumber numberWithInt:[[dict objectForKey:@"Schedule"] intValue]];
+    if ( [result.canFavorite boolValue] )
     result.canFavorite = [NSNumber numberWithInt:[[dict objectForKey:@"CanFavorite"] intValue]];
+    if ( [result.canLike boolValue] )
     result.canLike = [NSNumber numberWithInt:[[dict objectForKey:@"CanLike"] intValue]];
+    if ( [result.canSchedule boolValue] )
     result.canSchedule = [NSNumber numberWithInt:[[dict objectForKey:@"CanSchedule"] intValue]];
     result.begin_time = result.beginTime;
     result.end_time = result.endTime;
@@ -100,5 +103,6 @@
     for (NSManagedObject *managedObject in items)
         [context deleteObject:managedObject];
 }
+
 
 @end

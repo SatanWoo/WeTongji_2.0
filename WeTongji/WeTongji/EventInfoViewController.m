@@ -155,6 +155,7 @@
 - (void) viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    [self.eventTableView reloadData];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -194,8 +195,9 @@
     }
     cell.favorButton.userInteractionEnabled = YES;
     cell.likeButton.userInteractionEnabled = YES;
-    [cell.favorButton setImage:[UIImage imageNamed:@"favourite_hl.png"] forState:UIControlStateHighlighted];
-    [cell.likeButton setImage:[UIImage imageNamed:@"like_hl.png"] forState:UIControlStateHighlighted];
+    [cell.favorButton setImage:[UIImage imageNamed:@"favourite_hl"] forState:UIControlStateHighlighted];
+    [cell.likeButton setImage:[UIImage imageNamed:@"like_hl"] forState:UIControlStateHighlighted];
+    NSLog(@"%@",[self.eventList objectAtIndex:indexPath.row]);
     [cell setEvent:[self.eventList objectAtIndex:indexPath.row]];
     return cell;
 }
@@ -260,7 +262,7 @@ static NSInteger tempRow;
     WTRequest * request = [WTRequest requestWithSuccessBlock:^(id responseData)
         {
             if(self.nextPage == 0)
-            [self clearData];
+                [self clearData];
             NSArray *array = [responseData objectForKey:@"Activities"];
             for(NSDictionary *eventDict in array)
             {
@@ -272,7 +274,7 @@ static NSInteger tempRow;
             [self.pullRefreshManagement endLoading];
             for ( Event * event in [Event allEventsInManagedObjectContext:self.managedObjectContext])
             {
-                NSLog(@"%@ : %@",event.canSchedule,event.title);
+                NSLog(@"%@ : %@",event.canLike,event.title);
             }
         }
         failureBlock:^(NSError * error)

@@ -35,6 +35,7 @@
 @property (weak, nonatomic) Event * event;
 @property (weak, nonatomic) Information * information;
 @property (weak, nonatomic) Star * star;
+@property (weak, nonatomic) IBOutlet UIButton *addScheduleButton;
 
 -(void) changeButtonPositionToLeft;
 -(void) resetButtonPosition;
