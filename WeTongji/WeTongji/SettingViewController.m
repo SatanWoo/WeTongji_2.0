@@ -60,7 +60,7 @@
         
     }
     cell.textLabel.font = [UIFont fontWithName:@"Heiti SC" size:16];
-    if (indexPath.section == 1 && indexPath.row == 1) {
+    if (indexPath.section == 1 && indexPath.row == 0) {
         cell.swtich.hidden = NO;
     } else {
         cell.swtich.hidden = YES;
@@ -71,14 +71,17 @@
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     } else {
         if (indexPath.row == 0) {
-            cell.textLabel.text = @"仅在Wifi下加载图片";
+            cell.name.text = @"仅在Wifi下加载图片";
             cell.accessoryType = UITableViewCellAccessoryNone;
+            cell.back.image = [UIImage imageNamed:@"table_first"];
         } else if (indexPath.row == 1) {
-            cell.textLabel.text = @"检测新版本";
+            cell.name.text = @"检测新版本";
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+            cell.back.image = [UIImage imageNamed:@"table_middle"];
         } else {
-            cell.textLabel.text = @"清楚缓存";
+            cell.name.text = @"清楚缓存";
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+            cell.back.image = [UIImage imageNamed:@"table_last"];
         }
     }
     

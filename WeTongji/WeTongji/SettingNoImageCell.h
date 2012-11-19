@@ -11,5 +11,7 @@
 @interface SettingNoImageCell : UITableViewCell
 
 @property (nonatomic, weak) IBOutlet UISwitch *swtich;
+@property (nonatomic, weak) IBOutlet UIImageView *back;
+@property (nonatomic, weak) IBOutlet UILabel *name;
 
 @end

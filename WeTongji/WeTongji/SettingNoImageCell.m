@@ -10,6 +10,8 @@
 
 @implementation SettingNoImageCell
 @synthesize swtich = _swtich;
+@synthesize name = _name;
+@synthesize back = _back;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
