@@ -867,7 +867,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Fco-ZZ-gFh">
-                                        <rect key="frame" x="177" y="268" width="91" height="44"/>
+                                        <rect key="frame" x="172" y="267" width="91" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="《用户协议》">
@@ -882,6 +882,11 @@
                                             <segue destination="h4a-0W-IID" kind="push" identifier="kSeeUserProtocol" id="5c9-iE-HEP"/>
                                         </connections>
                                     </button>
+                                    <view contentMode="scaleToFill" id="wYK-Jr-8hf">
+                                        <rect key="frame" x="182" y="297" width="70" height="1"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <color key="backgroundColor" name="controlShadowColor" catalog="System" colorSpace="catalog"/>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </scrollView>
