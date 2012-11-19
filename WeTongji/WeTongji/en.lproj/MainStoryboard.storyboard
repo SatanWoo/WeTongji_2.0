@@ -15,6 +15,7 @@
                     </view>
                     <connections>
                         <segue destination="m9I-f2-XVK" kind="modal" identifier="kAboutViewController" id="MuJ-J9-rLo"/>
+                        <segue destination="Fyg-zu-9lV" kind="modal" id="b5V-m6-iHT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
@@ -166,6 +167,38 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SaJ-c4-Ze0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-780" y="-359"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="zIY-d1-NOl">
+            <objects>
+                <navigationController storyboardIdentifier="kSettingViewController" definesPresentationContext="YES" id="Fyg-zu-9lV" sceneMemberID="viewController">
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9Es-O0-5tk">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="7uy-OA-I5F" kind="relationship" relationship="rootViewController" id="c31-Na-0Qk"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aR6-7c-ouo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2461" y="315"/>
+        </scene>
+        <!--Setting View Controller-->
+        <scene sceneID="HBt-7T-hdn">
+            <objects>
+                <viewController id="7uy-OA-I5F" customClass="SettingViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wug-S0-ppD">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="AO7-T3-Uxk"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZS0-S8-VW9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1963" y="315"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="t8E-oY-g2Q">
@@ -1264,7 +1297,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0RZ-ib-FYK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="722" y="2333"/>
+            <point key="canvasLocation" x="706" y="2258"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ulm-yT-fMk">
@@ -1482,6 +1515,9 @@
                 <relationship kind="outlet" name="buttonBackImageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="newsTableView" candidateClass="UITableView"/>
             </relationships>
+        </class>
+        <class className="SettingViewController" superclassName="MiddleAbstractSecondViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingViewController.h"/>
         </class>
         <class className="WUButton" superclassName="UIButton">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/WUButton.h"/>

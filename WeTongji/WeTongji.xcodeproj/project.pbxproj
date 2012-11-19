@@ -84,6 +84,9 @@
 		03D1CD7F165A80CC00334F0D /* nav_register_hl@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 03D1CD7B165A80CC00334F0D /* nav_register_hl@2x.png */; };
 		03D1CD80165A80CC00334F0D /* nav_register.png in Resources */ = {isa = PBXBuildFile; fileRef = 03D1CD7C165A80CC00334F0D /* nav_register.png */; };
 		03D1CD81165A80CC00334F0D /* nav_register@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 03D1CD7D165A80CC00334F0D /* nav_register@2x.png */; };
+		03D1CD84165A835900334F0D /* SettingNoImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D1CD83165A835900334F0D /* SettingNoImageCell.m */; };
+		03D1CD86165A836D00334F0D /* SettingNoImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03D1CD85165A836D00334F0D /* SettingNoImageCell.xib */; };
+		03D1CD8A165A841700334F0D /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D1CD89165A841700334F0D /* SettingViewController.m */; };
 		03D540B616512FAA0070F727 /* EditInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D540B516512FAA0070F727 /* EditInfoViewController.m */; };
 		03D540C0165133D00070F727 /* edit.png in Resources */ = {isa = PBXBuildFile; fileRef = 03D540B8165133D00070F727 /* edit.png */; };
 		03D540C1165133D00070F727 /* edit@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 03D540B9165133D00070F727 /* edit@2x.png */; };
@@ -514,6 +517,11 @@
 		03D1CD7B165A80CC00334F0D /* nav_register_hl@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_register_hl@2x.png"; sourceTree = "<group>"; };
 		03D1CD7C165A80CC00334F0D /* nav_register.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nav_register.png; sourceTree = "<group>"; };
 		03D1CD7D165A80CC00334F0D /* nav_register@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_register@2x.png"; sourceTree = "<group>"; };
+		03D1CD82165A835900334F0D /* SettingNoImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingNoImageCell.h; sourceTree = "<group>"; };
+		03D1CD83165A835900334F0D /* SettingNoImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingNoImageCell.m; sourceTree = "<group>"; };
+		03D1CD85165A836D00334F0D /* SettingNoImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingNoImageCell.xib; sourceTree = "<group>"; };
+		03D1CD88165A841700334F0D /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
+		03D1CD89165A841700334F0D /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
 		03D540B416512FAA0070F727 /* EditInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditInfoViewController.h; sourceTree = "<group>"; };
 		03D540B516512FAA0070F727 /* EditInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditInfoViewController.m; sourceTree = "<group>"; };
 		03D540B8165133D00070F727 /* edit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = edit.png; sourceTree = "<group>"; };
@@ -1011,6 +1019,15 @@
 			name = "icon & Splash";
 			sourceTree = "<group>";
 		};
+		03D1CD87165A83FE00334F0D /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				03D1CD88165A841700334F0D /* SettingViewController.h */,
+				03D1CD89165A841700334F0D /* SettingViewController.m */,
+			);
+			name = Setting;
+			sourceTree = "<group>";
+		};
 		03D540B316512F8D0070F727 /* PersonalInfoViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -1394,6 +1411,7 @@
 		E52352CE1631917100DBFF7C /* LeftMenu */ = {
 			isa = PBXGroup;
 			children = (
+				03D1CD87165A83FE00334F0D /* Setting */,
 				E5D79F0C1658EEF30031ABA4 /* UserProtocol */,
 				E56A796F1658DFEC0007FD97 /* AboutViewController.h */,
 				E56A79701658DFEC0007FD97 /* AboutViewController.m */,
@@ -1524,6 +1542,9 @@
 				03E6FBCE16553CFF00A3E60C /* WeeklyPersonCell.h */,
 				03E6FBCF16553CFF00A3E60C /* WeeklyPersonCell.m */,
 				03E6FBD116553D5100A3E60C /* WeeklyPersonCell.xib */,
+				03D1CD82165A835900334F0D /* SettingNoImageCell.h */,
+				03D1CD83165A835900334F0D /* SettingNoImageCell.m */,
+				03D1CD85165A836D00334F0D /* SettingNoImageCell.xib */,
 			);
 			name = UITableViewCell;
 			sourceTree = "<group>";
@@ -2230,6 +2251,7 @@
 				03D1CD7F165A80CC00334F0D /* nav_register_hl@2x.png in Resources */,
 				03D1CD80165A80CC00334F0D /* nav_register.png in Resources */,
 				03D1CD81165A80CC00334F0D /* nav_register@2x.png in Resources */,
+				03D1CD86165A836D00334F0D /* SettingNoImageCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2325,6 +2347,8 @@
 				E56A798D1658E22E0007FD97 /* AboutHeaderView.m in Sources */,
 				E5D79F191658F0340031ABA4 /* ProtocolViewController.m in Sources */,
 				033DF63A165938A700C0441A /* RegisterSecondViewController.m in Sources */,
+				03D1CD84165A835900334F0D /* SettingNoImageCell.m in Sources */,
+				03D1CD8A165A841700334F0D /* SettingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
