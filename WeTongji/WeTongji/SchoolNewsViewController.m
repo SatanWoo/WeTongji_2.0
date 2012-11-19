@@ -19,6 +19,7 @@
 #import "SchoolNewsLocationCell.h"
 #import "SchoolNewsTicketCell.h"
 #import <WeTongjiSDK/WeTongjiSDK.h>
+#import "NSArray+Addition.h"
 
 #define kContentOffset 50
 #define kStateY -150
@@ -171,8 +172,7 @@
         [self.headerView  setInformation:information];
         [self.transparentHeaderView setHideBoard:YES];
     }
-    NSDictionary * imageDict = [information.images JSONFragmentValue];
-    self.imageList = [imageDict allKeys];
+    self.imageList = [NSArray getImageLinkListInJsonString:information.images];
     _information = information;
 }
 
@@ -182,8 +182,7 @@
     [self renderShadow:self.headerView];
     [self.headerView setStar:star];
     [self.transparentHeaderView setHideBoard:YES];
-    NSDictionary * imageDict = [star.images JSONFragmentValue];
-    self.imageList = [imageDict allKeys];
+    self.imageList = [NSArray getImageLinkListInJsonString:star.images];
     _star = star;
 }
 

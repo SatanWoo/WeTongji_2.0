@@ -2,18 +2,31 @@
 //  NSArray+Addition.m
 //  WeTongji
 //
-//  Created by tang zhixiong on 12-11-8.
+//  Created by tang zhixiong on 12-11-19.
 //
 //
 
 #import "NSArray+Addition.h"
+#import <WeTongjiSDK/WeTongjiSDK.h>
 
 @implementation NSArray (Addition)
 
--(id) initWithString:(NSString *) string
++(NSArray *) getImageLinkListInJsonString:(NSString *) jSonString
 {
-    return self;
-    //NSMutableArray * result = [[NSMutableArray alloc] ini
+    NSArray* result;
+    id dict = [jSonString JSONFragmentValue];
+    if ( [dict respondsToSelector:@selector(allKeys)] )
+    {
+        result = [dict allKeys];
+    }
+    else
+    {
+#ifdef DEBUG
+        NSLog(@"ImageLinkList is Empty :%@",jsonString);
+#endif
+        result = nil;
+    }
+    return result;
 }
 
 @end
