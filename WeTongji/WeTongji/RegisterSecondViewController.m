@@ -25,16 +25,12 @@
 #pragma mark - Life Cycle
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
-    
-    
-	// Do any additional setup after loading the view.
+    [super viewDidLoad];    
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (void)viewDidUnload {
@@ -46,8 +42,35 @@
     [super viewDidUnload];
 }
 
+- (void)resignAllFirstResponder
+{
+    [self.stuNumber resignFirstResponder];
+    [self.name resignFirstResponder];
+    [self.password resignFirstResponder];
+    [self.confirmPassword resignFirstResponder];
+}
+
+- (IBAction)touchOnTextFiled:(UITextField *)textField
+{
+    [UIView beginAnimations:nil context:NULL];
+	[UIView setAnimationDuration:.3];
+    self.scrollView.contentInset = UIEdgeInsetsMake(-80, 0, 580, 0);
+    [UIView commitAnimations];
+}
+
+- (IBAction)textDidEndEdit:(id)sender
+{
+    [self resignAllFirstResponder];
+    
+    [UIView beginAnimations:nil context:NULL];
+	[UIView setAnimationDuration:.3];
+    self.scrollView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
+    [UIView commitAnimations];
+}
+
+
 - (IBAction)showUserProtocol:(id)sender
 {
-    //[self performSegueWithIdentifier:kSeeUserProtocolSegue sender:self];
+   
 }
 @end
