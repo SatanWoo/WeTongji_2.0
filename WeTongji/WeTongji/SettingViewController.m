@@ -24,7 +24,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self configureTableView];
+    //[self configureTableView];
 }
 
 - (void)didReceiveMemoryWarning
@@ -56,10 +56,9 @@
 {
     SettingNoImageCell *cell = [tableView dequeueReusableCellWithIdentifier:kSettingNoImageCell];
     if (cell == nil) {
-        cell = [[SettingNoImageCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kSettingNoImageCell];
-        
+        cell =  [[[NSBundle mainBundle] loadNibNamed:@"SettingNoImageCell" owner:self options:nil] objectAtIndex:0];
+        cell.textLabel.font = [UIFont fontWithName:@"Heiti SC" size:16];
     }
-    cell.textLabel.font = [UIFont fontWithName:@"Heiti SC" size:16];
     if (indexPath.section == 1 && indexPath.row == 0) {
         cell.swtich.hidden = NO;
     } else {
@@ -98,7 +97,6 @@
     }
     return headerView;
 }
-
 
 - (float)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
