@@ -6,7 +6,7 @@
 	<array>
 		<dict>
 			<key>kTableViewCellName</key>
-			<string>登陆</string>
+			<string>登录</string>
 			<key>kViewControllerIdentifier</key>
 			<string>kLoginViewController</string>
 			<key>kNeedLogin</key>
