@@ -64,11 +64,6 @@
     return 3;
 }
 
--(float) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return 100;
-}
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *identifier = @"Cell";
@@ -77,10 +72,6 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
         cell.textLabel.font = [UIFont fontWithName:@"Heiti SC" size:16];
         cell.backgroundColor = [UIColor whiteColor];
-        cell.backgroundView.contentMode = UIViewContentModeTopLeft;
-        
-        
-
     }
     if (indexPath.section == 0 && indexPath.row == 0) {
         cell.textLabel.text = @"给WeTongji打分";
@@ -103,15 +94,13 @@
     }
     
     if (indexPath.row == 0) {
-        cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"table_first.png"]];
+        cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"table_first"]];
     } else if (indexPath.row == 2) {
-        //cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"table_last.png"]];
+        cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"table_last"]];
     } else {
-        //cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"table_middle.png"]];
+        cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"table_middle"]];
     }
     
-    
-
     return cell;
 }
 

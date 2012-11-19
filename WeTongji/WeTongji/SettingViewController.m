@@ -10,12 +10,25 @@
 #import "SettingNoImageCell.h"
 #import "Macro.h"
 #import "AboutHeaderView.h"
+#import "UIBarButtonItem+CustomButton.h"
 
 @interface SettingViewController ()<UITableViewDataSource, UITableViewDelegate>
 - (void)configureTableView;
 @end
 
 @implementation SettingViewController
+
+- (void)pressNavButton
+{
+    [self.parentViewController dismissModalViewControllerAnimated:YES];
+}
+
+- (void)configureNavBar
+{
+    UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithImage:@"nav_back_btn" selector:@selector(pressNavButton) target:self];
+    self.navigationItem.leftBarButtonItem = button;
+}
+
 - (void)configureTableView
 {
     [self.settingTableView registerNib:[UINib nibWithNibName:@"SettingNoImageCell" bundle:nil] forCellReuseIdentifier:kSettingNoImageCell];
@@ -24,6 +37,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self configureNavBar];
     //[self configureTableView];
 }
 
