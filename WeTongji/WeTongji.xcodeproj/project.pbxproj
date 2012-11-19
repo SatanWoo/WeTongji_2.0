@@ -289,7 +289,6 @@
 		FF710995164D1EB0008F2A06 /* Information+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = FF710994164D1EB0008F2A06 /* Information+Addition.m */; };
 		FF7109B4164D3AFD008F2A06 /* Star+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7109B3164D3AFC008F2A06 /* Star+Addition.m */; };
 		FF7109BA164D4667008F2A06 /* PullRefreshManagement.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7109B9164D4667008F2A06 /* PullRefreshManagement.m */; };
-		FFB14EFA16587B070035F888 /* EventOrganizerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB14EF916587B070035F888 /* EventOrganizerCell.m */; };
 		FFB14EFD16587DAD0035F888 /* SchoolNewsLocationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB14EFC16587DAD0035F888 /* SchoolNewsLocationCell.m */; };
 		FFB14F0016587DC50035F888 /* SchoolNewsContactCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB14EFF16587DC50035F888 /* SchoolNewsContactCell.m */; };
 		FFB14F0316587DD90035F888 /* SchoolNewsTicketCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB14F0216587DD90035F888 /* SchoolNewsTicketCell.m */; };
@@ -382,6 +381,8 @@
 		FFBEB2CB164B943A0004AF4C /* Event+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBEB2CA164B943A0004AF4C /* Event+Addition.m */; };
 		FFBEB2F5164B9CF70004AF4C /* NSString+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBEB2F4164B9CF70004AF4C /* NSString+Addition.m */; };
 		FFBEB2F8164BA0760004AF4C /* NSArray+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBEB2F7164BA0760004AF4C /* NSArray+Addition.m */; };
+		FFBF21DF165AA10D00F4657A /* bg_shadow.png in Resources */ = {isa = PBXBuildFile; fileRef = FFBF21DD165AA10D00F4657A /* bg_shadow.png */; };
+		FFBF21E0165AA10D00F4657A /* bg_shadow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFBF21DE165AA10D00F4657A /* bg_shadow@2x.png */; };
 		FFBF4FE91657CC43001690D2 /* AbstractCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBF4FE81657CC42001690D2 /* AbstractCollection.m */; };
 		FFBF4FEC1657CC5F001690D2 /* AbstractActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBF4FEB1657CC5E001690D2 /* AbstractActivity.m */; };
 		FFBF4FEF1657CC6C001690D2 /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBF4FEE1657CC6B001690D2 /* Course.m */; };
@@ -415,16 +416,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		033DF6021659307A00C0441A /* PBXContainerItemProxy */ = {
+		FFBF21D9165A9C7F00F4657A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 033DF5FB1659307A00C0441A /* WeTongjiSDK.xcodeproj */;
+			containerPortal = FFBF21D2165A9C7F00F4657A /* WeTongjiSDK.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = E110DF2B16365B990087EA46;
 			remoteInfo = WeTongjiSDK;
 		};
-		033DF6041659309500C0441A /* PBXContainerItemProxy */ = {
+		FFBF21DB165A9C9E00F4657A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 033DF5FB1659307A00C0441A /* WeTongjiSDK.xcodeproj */;
+			containerPortal = FFBF21D2165A9C7F00F4657A /* WeTongjiSDK.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = E110DF2A16365B990087EA46;
 			remoteInfo = WeTongjiSDK;
@@ -451,7 +452,6 @@
 		03326A7116569430005E8A16 /* WUKenBurnViewHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WUKenBurnViewHeader.h; sourceTree = "<group>"; };
 		03326A7216569430005E8A16 /* WUKenBurnViewHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WUKenBurnViewHeader.m; sourceTree = "<group>"; };
 		03326A741656949C005E8A16 /* WUKenBurnViewHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WUKenBurnViewHeader.xib; sourceTree = "<group>"; };
-		033DF5FB1659307A00C0441A /* WeTongjiSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = WeTongjiSDK.xcodeproj; path = ../../wetongji_ios_sdk/WeTongjiSDK.xcodeproj; sourceTree = "<group>"; };
 		033DF607165931CE00C0441A /* directly_enter_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = directly_enter_btn.png; sourceTree = "<group>"; };
 		033DF608165931CE00C0441A /* directly_enter_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "directly_enter_btn@2x.png"; sourceTree = "<group>"; };
 		033DF609165931CE00C0441A /* register_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = register_btn.png; sourceTree = "<group>"; };
@@ -774,8 +774,6 @@
 		FF7109B3164D3AFC008F2A06 /* Star+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Star+Addition.m"; sourceTree = "<group>"; };
 		FF7109B8164D4667008F2A06 /* PullRefreshManagement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PullRefreshManagement.h; sourceTree = "<group>"; };
 		FF7109B9164D4667008F2A06 /* PullRefreshManagement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PullRefreshManagement.m; sourceTree = "<group>"; };
-		FFB14EF816587B070035F888 /* EventOrganizerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventOrganizerCell.h; sourceTree = "<group>"; };
-		FFB14EF916587B070035F888 /* EventOrganizerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventOrganizerCell.m; sourceTree = "<group>"; };
 		FFB14EFB16587DAD0035F888 /* SchoolNewsLocationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SchoolNewsLocationCell.h; sourceTree = "<group>"; };
 		FFB14EFC16587DAD0035F888 /* SchoolNewsLocationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SchoolNewsLocationCell.m; sourceTree = "<group>"; };
 		FFB14EFE16587DC50035F888 /* SchoolNewsContactCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SchoolNewsContactCell.h; sourceTree = "<group>"; };
@@ -885,6 +883,9 @@
 		FFBEB2F4164B9CF70004AF4C /* NSString+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Addition.m"; sourceTree = "<group>"; };
 		FFBEB2F6164BA0760004AF4C /* NSArray+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Addition.h"; sourceTree = "<group>"; };
 		FFBEB2F7164BA0760004AF4C /* NSArray+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Addition.m"; sourceTree = "<group>"; };
+		FFBF21D2165A9C7F00F4657A /* WeTongjiSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = WeTongjiSDK.xcodeproj; path = ../../../wetongji_ios_sdk/WeTongjiSDK.xcodeproj; sourceTree = "<group>"; };
+		FFBF21DD165AA10D00F4657A /* bg_shadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_shadow.png; sourceTree = "<group>"; };
+		FFBF21DE165AA10D00F4657A /* bg_shadow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_shadow@2x.png"; sourceTree = "<group>"; };
 		FFBF4FE71657CC42001690D2 /* AbstractCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractCollection.h; sourceTree = "<group>"; };
 		FFBF4FE81657CC42001690D2 /* AbstractCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbstractCollection.m; sourceTree = "<group>"; };
 		FFBF4FEA1657CC5E001690D2 /* AbstractActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractActivity.h; sourceTree = "<group>"; };
@@ -952,14 +953,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		033DF5FC1659307A00C0441A /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				033DF6031659307A00C0441A /* WeTongjiSDK.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		033DF606165931B200C0441A /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -1107,8 +1100,7 @@
 		B00D6911162CFCAC00592B1D = {
 			isa = PBXGroup;
 			children = (
-				033DF5FB1659307A00C0441A /* WeTongjiSDK.xcodeproj */,
-				E5D79F0A1658EC950031ABA4 /* MessageUI.framework */,
+				FFBF21D2165A9C7F00F4657A /* WeTongjiSDK.xcodeproj */,
 				03326A4B16567FE3005E8A16 /* default.png */,
 				03326A4C16567FE3005E8A16 /* default@2x.png */,
 				03BAB368164FD0720049DA19 /* Icon@2x.png.png */,
@@ -1130,6 +1122,7 @@
 		B00D691F162CFCAC00592B1D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E5D79F0A1658EC950031ABA4 /* MessageUI.framework */,
 				FFBEB29A164B6DA10004AF4C /* CoreData.framework */,
 				FFBF9A24164843AD00E3D610 /* MapKit.framework */,
 				FFBF9A22164843A600E3D610 /* SystemConfiguration.framework */,
@@ -1269,6 +1262,8 @@
 		E514585C1646458600533761 /* Event */ = {
 			isa = PBXGroup;
 			children = (
+				FFBF21DD165AA10D00F4657A /* bg_shadow.png */,
+				FFBF21DE165AA10D00F4657A /* bg_shadow@2x.png */,
 				03E6FB9F16552B9800A3E60C /* like_hl.png */,
 				03E6FBA016552B9800A3E60C /* like_hl@2x.png */,
 				03E6FBA116552B9800A3E60C /* like.png */,
@@ -1511,8 +1506,6 @@
 				E514584016463F3F00533761 /* EventInfoCell.h */,
 				E514584116463F3F00533761 /* EventInfoCell.m */,
 				E514584216463F3F00533761 /* EventInfoCell.xib */,
-				FFB14EF816587B070035F888 /* EventOrganizerCell.h */,
-				FFB14EF916587B070035F888 /* EventOrganizerCell.m */,
 				FFB14EFB16587DAD0035F888 /* SchoolNewsLocationCell.h */,
 				FFB14EFC16587DAD0035F888 /* SchoolNewsLocationCell.m */,
 				FFB14EFE16587DC50035F888 /* SchoolNewsContactCell.h */,
@@ -1840,6 +1833,14 @@
 			name = Categories;
 			sourceTree = "<group>";
 		};
+		FFBF21D3165A9C7F00F4657A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FFBF21DA165A9C7F00F4657A /* WeTongjiSDK.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		FFC1203716515DD0003FF0E6 /* SignIn */ = {
 			isa = PBXGroup;
 			children = (
@@ -1892,7 +1893,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				033DF6051659309500C0441A /* PBXTargetDependency */,
+				FFBF21DC165A9C9E00F4657A /* PBXTargetDependency */,
 			);
 			name = WeTongji;
 			productName = WeTongji;
@@ -1919,8 +1920,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 033DF5FC1659307A00C0441A /* Products */;
-					ProjectRef = 033DF5FB1659307A00C0441A /* WeTongjiSDK.xcodeproj */;
+					ProductGroup = FFBF21D3165A9C7F00F4657A /* Products */;
+					ProjectRef = FFBF21D2165A9C7F00F4657A /* WeTongjiSDK.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -1931,11 +1932,11 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		033DF6031659307A00C0441A /* WeTongjiSDK.framework */ = {
+		FFBF21DA165A9C7F00F4657A /* WeTongjiSDK.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = WeTongjiSDK.framework;
-			remoteRef = 033DF6021659307A00C0441A /* PBXContainerItemProxy */;
+			remoteRef = FFBF21D9165A9C7F00F4657A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -2252,6 +2253,8 @@
 				03D1CD80165A80CC00334F0D /* nav_register.png in Resources */,
 				03D1CD81165A80CC00334F0D /* nav_register@2x.png in Resources */,
 				03D1CD86165A836D00334F0D /* SettingNoImageCell.xib in Resources */,
+				FFBF21DF165AA10D00F4657A /* bg_shadow.png in Resources */,
+				FFBF21E0165AA10D00F4657A /* bg_shadow@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2337,7 +2340,6 @@
 				FFBF4FF51657CC6D001690D2 /* Exam.m in Sources */,
 				FFBF4FFB1657CC6F001690D2 /* Event.m in Sources */,
 				FFBF5010165814B6001690D2 /* Information.m in Sources */,
-				FFB14EFA16587B070035F888 /* EventOrganizerCell.m in Sources */,
 				FFB14EFD16587DAD0035F888 /* SchoolNewsLocationCell.m in Sources */,
 				FFB14F0016587DC50035F888 /* SchoolNewsContactCell.m in Sources */,
 				FFB14F0316587DD90035F888 /* SchoolNewsTicketCell.m in Sources */,
@@ -2355,10 +2357,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		033DF6051659309500C0441A /* PBXTargetDependency */ = {
+		FFBF21DC165A9C9E00F4657A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = WeTongjiSDK;
-			targetProxy = 033DF6041659309500C0441A /* PBXContainerItemProxy */;
+			targetProxy = FFBF21DB165A9C9E00F4657A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

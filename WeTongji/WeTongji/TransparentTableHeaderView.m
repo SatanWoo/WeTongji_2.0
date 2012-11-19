@@ -39,6 +39,20 @@
     self.publisherLabel.text = information.organizer;
     self.categoryLabel.text = information.source;
     _information = information;
+#ifdef DEBUG
+    NSLog(@"Information (%@,%@) has been set in TransparentTableHeaderView",information.informationId,information.title);
+#endif
+}
+
+-(void) setEvent:(Event *)event
+{
+    [self.avatarImageView setImageWithURL:[NSURL URLWithString:event.orgranizerAvatarLink]];
+    self.publisherLabel.text = event.organizer;
+    //self.categoryLabel.text = event;
+    _event = event;
+#ifdef DEBUG
+    NSLog(@"Event (%@,%@) has been set in TransparentTableHeaderView",event.activityId,event.title);
+#endif
 }
 
 /*

@@ -14,7 +14,6 @@
 #import "WUTableHeaderView.h"
 #import "WUPageControlViewController.h"
 #import "TransparentTableHeaderView.h"
-#import "EventOrganizerCell.h"
 #import "SchoolNewsContactCell.h"
 #import "SchoolNewsLocationCell.h"
 #import "SchoolNewsTicketCell.h"
@@ -143,7 +142,8 @@
     self.headerView =  [[[NSBundle mainBundle] loadNibNamed:@"WUTableHeaderView" owner:self options:nil] objectAtIndex:0];
     [self renderShadow:self.headerView];
     [self.headerView setEvent:event];
-    [self.transparentHeaderView setHideBoard:YES];
+    [self.transparentHeaderView setHideBoard:NO];
+    [self.transparentHeaderView setEvent:event];
     self.imageList = [NSArray arrayWithObject:event.imageLink];
     _event = event;
 }
@@ -316,7 +316,6 @@
 {
     if (section == 1 )
     {
-        if ( self.event ) return 2;
         if ( self.information && [self.information.category isEqualToString:GetInformationTypeAround])
             return 4;
         return 1;
@@ -328,7 +327,6 @@
 {
     if ( indexPath.section == 1 )
     {
-        if ( self.event  && indexPath.row == 0 ) return 76;
         if ( self.information && indexPath.row < 3 ) return 56;
         return self.currentCell.bounds.size.height;
     }
@@ -337,15 +335,6 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if ( self.event && indexPath.section == 1 && indexPath.row == 0 )
-    {
-        EventOrganizerCell * cell;
-        cell = [tableView dequeueReusableCellWithIdentifier:@"EventOrganizerCell"];
-        if ( cell == nil )
-            cell = [[EventOrganizerCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"EventOrganizerCell"];
-        [cell setEvent:self.event];
-        return cell;
-    }
     if ( self.information && [self.information.category isEqualToString:GetInformationTypeAround])
         if ( indexPath.section == 1 && indexPath.row < 3 )
         {

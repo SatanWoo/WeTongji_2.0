@@ -19,10 +19,14 @@
     {
         result = [dict allKeys];
     }
+    else if ( [dict isKindOfClass:[NSArray class]] )
+    {
+        result = dict;
+    }
     else
     {
 #ifdef DEBUG
-        NSLog(@"ImageLinkList is Empty :%@",jsonString);
+        NSLog(@"ImageLinkList is Empty :%@",jSonString);
 #endif
         result = nil;
     }
