@@ -10,5 +10,6 @@
 #import "MiddleAbstractSecondViewController.h"
 
 @interface SettingViewController : MiddleAbstractSecondViewController
+@property (weak, nonatomic) IBOutlet UITableView *settingTableView;
 
 @end

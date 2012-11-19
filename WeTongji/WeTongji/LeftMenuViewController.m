@@ -45,6 +45,7 @@
 
 - (IBAction)triggerSetting:(UIButton *)sender
 {
+    [self.slideViewController performSegueWithIdentifier:kSettingViewControllerSegue sender:self];
     //[sender setSelected:!sender.selected];
 }
 

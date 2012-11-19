@@ -15,7 +15,7 @@
                     </view>
                     <connections>
                         <segue destination="m9I-f2-XVK" kind="modal" identifier="kAboutViewController" id="MuJ-J9-rLo"/>
-                        <segue destination="Fyg-zu-9lV" kind="modal" id="b5V-m6-iHT"/>
+                        <segue destination="Fyg-zu-9lV" kind="modal" identifier="kSettingViewController" id="b5V-m6-iHT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
@@ -182,7 +182,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aR6-7c-ouo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2461" y="315"/>
+            <point key="canvasLocation" x="-2409" y="423"/>
         </scene>
         <!--Setting View Controller-->
         <scene sceneID="HBt-7T-hdn">
@@ -191,10 +191,24 @@
                     <view key="view" contentMode="scaleToFill" id="wug-S0-ppD">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="EfF-kp-33Z">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="7uy-OA-I5F" id="mej-6z-QP9"/>
+                                    <outlet property="delegate" destination="7uy-OA-I5F" id="X67-jI-dta"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="AO7-T3-Uxk"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="settingTableView" destination="EfF-kp-33Z" id="5qu-gg-HXG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZS0-S8-VW9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1518,6 +1532,9 @@
         </class>
         <class className="SettingViewController" superclassName="MiddleAbstractSecondViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="settingTableView" candidateClass="UITableView"/>
+            </relationships>
         </class>
         <class className="WUButton" superclassName="UIButton">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/WUButton.h"/>
