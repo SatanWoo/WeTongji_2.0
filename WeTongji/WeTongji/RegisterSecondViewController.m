@@ -8,15 +8,26 @@
 
 #import "RegisterSecondViewController.h"
 #import "Macro.h"
+#import "UIBarButtonItem+CustomButton.h"
 
 @interface RegisterSecondViewController ()
-
+- (void)configureNavBar;
 @end
 
 @implementation RegisterSecondViewController
+#pragma mark - Private 
+- (void)configureNavBar
+{
+    UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithImage:@"nav_back_btn" selector:@selector(pressNavButton) target:self];
+    self.navigationItem.leftBarButtonItem = button;
+}
+
+#pragma mark - Life Cycle
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    
 	// Do any additional setup after loading the view.
 }
 

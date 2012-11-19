@@ -74,6 +74,12 @@
 		03BAB369164FD0720049DA19 /* Icon@2x.png.png in Resources */ = {isa = PBXBuildFile; fileRef = 03BAB368164FD0720049DA19 /* Icon@2x.png.png */; };
 		03BAB393164FDB620049DA19 /* bottom_bar.png in Resources */ = {isa = PBXBuildFile; fileRef = 03BAB389164FDB620049DA19 /* bottom_bar.png */; };
 		03BAB394164FDB620049DA19 /* bottom_bar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 03BAB38A164FDB620049DA19 /* bottom_bar@2x.png */; };
+		03D1CD74165A78F100334F0D /* close_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 03D1CD6E165A78F100334F0D /* close_btn.png */; };
+		03D1CD75165A78F100334F0D /* close_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 03D1CD6F165A78F100334F0D /* close_btn@2x.png */; };
+		03D1CD76165A78F100334F0D /* login_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 03D1CD70165A78F100334F0D /* login_btn.png */; };
+		03D1CD77165A78F100334F0D /* login_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 03D1CD71165A78F100334F0D /* login_btn@2x.png */; };
+		03D1CD78165A78F100334F0D /* password_forget.png in Resources */ = {isa = PBXBuildFile; fileRef = 03D1CD72165A78F100334F0D /* password_forget.png */; };
+		03D1CD79165A78F100334F0D /* password_forget@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 03D1CD73165A78F100334F0D /* password_forget@2x.png */; };
 		03D540B616512FAA0070F727 /* EditInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D540B516512FAA0070F727 /* EditInfoViewController.m */; };
 		03D540C0165133D00070F727 /* edit.png in Resources */ = {isa = PBXBuildFile; fileRef = 03D540B8165133D00070F727 /* edit.png */; };
 		03D540C1165133D00070F727 /* edit@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 03D540B9165133D00070F727 /* edit@2x.png */; };
@@ -494,6 +500,12 @@
 		03BAB368164FD0720049DA19 /* Icon@2x.png.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png.png"; sourceTree = "<group>"; };
 		03BAB389164FDB620049DA19 /* bottom_bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bottom_bar.png; sourceTree = "<group>"; };
 		03BAB38A164FDB620049DA19 /* bottom_bar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bottom_bar@2x.png"; sourceTree = "<group>"; };
+		03D1CD6E165A78F100334F0D /* close_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close_btn.png; sourceTree = "<group>"; };
+		03D1CD6F165A78F100334F0D /* close_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close_btn@2x.png"; sourceTree = "<group>"; };
+		03D1CD70165A78F100334F0D /* login_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_btn.png; sourceTree = "<group>"; };
+		03D1CD71165A78F100334F0D /* login_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login_btn@2x.png"; sourceTree = "<group>"; };
+		03D1CD72165A78F100334F0D /* password_forget.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = password_forget.png; sourceTree = "<group>"; };
+		03D1CD73165A78F100334F0D /* password_forget@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "password_forget@2x.png"; sourceTree = "<group>"; };
 		03D540B416512FAA0070F727 /* EditInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditInfoViewController.h; sourceTree = "<group>"; };
 		03D540B516512FAA0070F727 /* EditInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditInfoViewController.m; sourceTree = "<group>"; };
 		03D540B8165133D00070F727 /* edit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = edit.png; sourceTree = "<group>"; };
@@ -955,6 +967,12 @@
 			isa = PBXGroup;
 			children = (
 				033DF6201659370600C0441A /* bg_reg.png */,
+				03D1CD6E165A78F100334F0D /* close_btn.png */,
+				03D1CD6F165A78F100334F0D /* close_btn@2x.png */,
+				03D1CD70165A78F100334F0D /* login_btn.png */,
+				03D1CD71165A78F100334F0D /* login_btn@2x.png */,
+				03D1CD72165A78F100334F0D /* password_forget.png */,
+				03D1CD73165A78F100334F0D /* password_forget@2x.png */,
 				033DF6211659370600C0441A /* bg_reg@2x.png */,
 				033DF6221659370600C0441A /* email_register_btn.png */,
 				033DF6231659370600C0441A /* email_register_btn@2x.png */,
@@ -2190,6 +2208,12 @@
 				033DF6351659370600C0441A /* next_step_btn_un@2x.png in Resources */,
 				033DF6361659370600C0441A /* register_btn_big.png in Resources */,
 				033DF6371659370600C0441A /* register_btn_big@2x.png in Resources */,
+				03D1CD74165A78F100334F0D /* close_btn.png in Resources */,
+				03D1CD75165A78F100334F0D /* close_btn@2x.png in Resources */,
+				03D1CD76165A78F100334F0D /* login_btn.png in Resources */,
+				03D1CD77165A78F100334F0D /* login_btn@2x.png in Resources */,
+				03D1CD78165A78F100334F0D /* password_forget.png in Resources */,
+				03D1CD79165A78F100334F0D /* password_forget@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
