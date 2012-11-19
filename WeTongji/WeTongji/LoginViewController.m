@@ -14,13 +14,20 @@
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollVIew;
 @property (weak, nonatomic) IBOutlet UITextField *NOTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
-
+- (void)configureButton;
 @end
 
 @implementation LoginViewController
+- (void)configureButton
+{
+    self.closeBtn.hidden = YES;
+    self.passwordForgetBtn.hidden = YES;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self configureButton];
     [self.navigationItem setHidesBackButton:YES];
 }
 
@@ -29,6 +36,8 @@
     [self setScrollVIew:nil];
     [self setNOTextField:nil];
     [self setPasswordTextField:nil];
+    [self setCloseBtn:nil];
+    [self setPasswordForgetBtn:nil];
     [super viewDidUnload];
 }
 
@@ -50,15 +59,18 @@
 
 - (IBAction)textEditDidBegin:(id)sender
 {
+    self.passwordForgetBtn.hidden = NO;
+    self.closeBtn.hidden = NO;
     [UIView beginAnimations:nil context:NULL];
 	[UIView setAnimationDuration:.3];
-    self.scrollVIew.contentInset = UIEdgeInsetsMake(-60, 0, 580, 0);
+    self.scrollVIew.contentInset = UIEdgeInsetsMake(-90, 0, 580, 0);
     [UIView commitAnimations];
 }
 
 - (IBAction)textDidEndEdit:(id)sender
 {
     [self resignAllFirstResponder];
+    [self configureButton];
 }
 
 - (IBAction)logInClick:(id)sender

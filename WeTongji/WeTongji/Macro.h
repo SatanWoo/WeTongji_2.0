@@ -41,6 +41,7 @@
 #define kRegButtonCell @"kRegButtonCell"
 #define kWeeklyPersonCell @"kWeeklyPersonCell"
 #define kWeeklyPersonHeaderCell @"kWeeklyPersonHeaderCell"
+#define kSettingNoImageCell @"kSettingNoImageCell"
 
 // Segue
 #define kMyFavortieViewControllerSegue @"kMyFavortieViewController"
@@ -53,6 +54,7 @@
 #define kProtocolViewControllerSegue @"kProtocolViewController"
 #define kSeeUserProtocolSegue @"kSeeUserProtocol"
 #define kRegisterSecondViewControllerSegue @"kRegisterSecondViewController"
+#define kSettingViewControllerSegue @"kSettingViewController"
 
 // Slide
 #define kMenuFullWidth 320.0f
