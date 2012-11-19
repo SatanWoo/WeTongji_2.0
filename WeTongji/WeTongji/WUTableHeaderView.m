@@ -36,6 +36,18 @@
 {
     if ( _isButtonBoardLeft ) return;
     CGPoint center = [self.buttonBoard center];
+    if ( self.star ) {
+        center.x = center.x + 180;
+    } else if ( self.information && [self.information.category isEqualToString:GetInformationTypeClubNews] ) {
+        center.x = center.x + 180;
+    } else if ( self.information && [self.information.category isEqualToString:GetInformationTypeSchoolNews] ) {
+        center.x = center.x + 180;
+    } else if ( self.information && [self.information.category isEqualToString:GetInformationTypeForStaff] ) {
+        center.x = center.x + 180;
+    } else if ( self.information && [self.information.category isEqualToString:GetInformationTypeAround] ) {
+        center.x = center.x + 54;
+        [self.recommendImage setAlpha:0];
+    } else
     center.x = center.x + 54;
     [self.buttonBoard setCenter:center];
     _isButtonBoardLeft = YES;
@@ -45,6 +57,18 @@
 {
     if ( !_isButtonBoardLeft ) return;
     CGPoint center = [self.buttonBoard center];
+    if ( self.star ) {
+        center.x = center.x - 180;
+    } else if ( self.information && [self.information.category isEqualToString:GetInformationTypeClubNews] ) {
+        center.x = center.x - 180;
+    } else if ( self.information && [self.information.category isEqualToString:GetInformationTypeSchoolNews] ) {
+        center.x = center.x - 180;
+    } else if ( self.information && [self.information.category isEqualToString:GetInformationTypeForStaff] ) {
+        center.x = center.x - 180;
+    } if ( self.information && [self.information.category isEqualToString:GetInformationTypeAround] ) {
+        center.x = center.x - 54;
+        [self.recommendImage setAlpha:1];
+    } else
     center.x = center.x - 54;
     [self.buttonBoard setCenter:center];
     _isButtonBoardLeft = NO;
@@ -59,6 +83,9 @@
     self.likeNumber.text = [event.like stringValue];
     self.favoriteNumber.text = [event.favorite stringValue];
     _event = event;
+#ifdef DEBUG
+    NSLog(@"Event (%@,%@) has been set in WUTableHeaderView",event.activityId,event.title);
+#endif
 }
 
 -(void)setInformation:(Information *)information
@@ -81,6 +108,9 @@
     }
     self.seeNumber.text = [information.read stringValue];
     _information = information;
+#ifdef DEBUG
+    NSLog(@"Information (%@,%@) has been set in WUTableHeaderView",information.informationId,information.title);
+#endif
 }
 
 -(void) setStar:(Star *)star
@@ -93,6 +123,9 @@
     self.favoriteNumber.text = [star.favorite stringValue];
     self.starNumber.text = star.count;
     _star = star;
+#ifdef DEBUG
+    NSLog(@"Star (%@,%@) has been set in WUTableHeaderView",star.starId,star.title);
+#endif
 }
 
 - (id)initWithFrame:(CGRect)frame

@@ -75,7 +75,7 @@
 						<string key="NSFrame">{{267, 0}, {53, 21}}</string>
 						<reference key="NSSuperview" ref="16818318"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
+						<reference key="NSNextKeyView" ref="926562711"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<int key="IBUIContentMode">7</int>
@@ -181,7 +181,7 @@
 									</object>
 								</array>
 								<object class="NSPSMatrix" key="NSFrameMatrix"/>
-								<string key="NSFrame">{{137, 7}, {55, 36}}</string>
+								<string key="NSFrame">{{9, 7}, {55, 36}}</string>
 								<reference key="NSSuperview" ref="926562711"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="605283833"/>
@@ -227,6 +227,7 @@
 										<string key="NSFrame">{{28, 7}, {28, 21}}</string>
 										<reference key="NSSuperview" ref="593886187"/>
 										<reference key="NSWindow"/>
+										<reference key="NSNextKeyView"/>
 										<bool key="IBUIOpaque">NO</bool>
 										<bool key="IBUIClipsSubviews">YES</bool>
 										<int key="IBUIContentMode">7</int>
@@ -242,7 +243,7 @@
 									</object>
 								</array>
 								<object class="NSPSMatrix" key="NSFrameMatrix"/>
-								<string key="NSFrame">{{201, 7}, {56, 36}}</string>
+								<string key="NSFrame">{{73, 7}, {56, 36}}</string>
 								<reference key="NSSuperview" ref="926562711"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="288960233"/>
@@ -253,7 +254,7 @@
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 							</object>
 						</array>
-						<string key="NSFrame">{{0, 52}, {266, 50}}</string>
+						<string key="NSFrame">{{0, 52}, {140, 50}}</string>
 						<reference key="NSSuperview" ref="16818318"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="818130046"/>
@@ -391,8 +392,8 @@
 						<int key="objectID">96</int>
 						<reference key="object" ref="926562711"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="593886187"/>
 							<reference ref="818130046"/>
+							<reference ref="593886187"/>
 						</array>
 						<reference key="parent" ref="16818318"/>
 					</object>
@@ -493,9 +494,15 @@
 						<string key="location">UILabel</string>
 						<string key="moveFavorView">UIView</string>
 						<string key="moveLikeView">UIView</string>
+						<string key="recommendImage">UIImageView</string>
 						<string key="releaseTimeLabel">UILabel</string>
 						<string key="seeNumber">UILabel</string>
 						<string key="sourceLabel">UILabel</string>
+						<string key="starImage">UIImageView</string>
+						<string key="starName">UILabel</string>
+						<string key="starNumber">UILabel</string>
+						<string key="starSummary">UILabel</string>
+						<string key="starTitle">UILabel</string>
 						<string key="titleLabel">UILabel</string>
 						<string key="upperHiddenView">UIView</string>
 					</dictionary>
@@ -536,6 +543,10 @@
 							<string key="name">moveLikeView</string>
 							<string key="candidateClassName">UIView</string>
 						</object>
+						<object class="IBToOneOutletInfo" key="recommendImage">
+							<string key="name">recommendImage</string>
+							<string key="candidateClassName">UIImageView</string>
+						</object>
 						<object class="IBToOneOutletInfo" key="releaseTimeLabel">
 							<string key="name">releaseTimeLabel</string>
 							<string key="candidateClassName">UILabel</string>
@@ -546,6 +557,26 @@
 						</object>
 						<object class="IBToOneOutletInfo" key="sourceLabel">
 							<string key="name">sourceLabel</string>
+							<string key="candidateClassName">UILabel</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="starImage">
+							<string key="name">starImage</string>
+							<string key="candidateClassName">UIImageView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="starName">
+							<string key="name">starName</string>
+							<string key="candidateClassName">UILabel</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="starNumber">
+							<string key="name">starNumber</string>
+							<string key="candidateClassName">UILabel</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="starSummary">
+							<string key="name">starSummary</string>
+							<string key="candidateClassName">UILabel</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="starTitle">
+							<string key="name">starTitle</string>
 							<string key="candidateClassName">UILabel</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="titleLabel">
