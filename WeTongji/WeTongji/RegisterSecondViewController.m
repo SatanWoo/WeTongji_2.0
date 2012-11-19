@@ -18,14 +18,15 @@
 #pragma mark - Private 
 - (void)configureNavBar
 {
-    UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithImage:@"nav_back_btn" selector:@selector(pressNavButton) target:self];
-    self.navigationItem.leftBarButtonItem = button;
+    UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithImage:@"nav_register" selector:nil target:self];
+    self.navigationItem.rightBarButtonItem = button;
 }
 
 #pragma mark - Life Cycle
 - (void)viewDidLoad
 {
-    [super viewDidLoad];    
+    [super viewDidLoad];
+    [self configureNavBar];
 }
 
 - (void)didReceiveMemoryWarning
@@ -67,7 +68,6 @@
     self.scrollView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
     [UIView commitAnimations];
 }
-
 
 - (IBAction)showUserProtocol:(id)sender
 {
