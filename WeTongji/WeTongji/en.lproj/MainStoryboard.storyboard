@@ -863,6 +863,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="registerMail:" destination="MpH-hm-30q" eventType="touchUpInside" id="KcR-XS-vY6"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="oY3-Mc-Y4y">
                                 <rect key="frame" x="10" y="358" width="301" height="40"/>
@@ -1631,6 +1634,9 @@
         </class>
         <class className="RegisterViewController" superclassName="MiddleAbstractSecondViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/RegisterViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="registerMail:"/>
+            </relationships>
         </class>
         <class className="ScheduleViewController" superclassName="MiddleAbstractSecondViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ScheduleViewController.h"/>

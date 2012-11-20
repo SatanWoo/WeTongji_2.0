@@ -11,4 +11,6 @@
 
 @interface RegisterViewController : MiddleAbstractSecondViewController
 
+- (IBAction)registerMail:(id)sender;
+
 @end

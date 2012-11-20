@@ -9,6 +9,7 @@
 #import "RegisterViewController.h"
 #import "RegInfomationCell.h"
 #import "Macro.h"
+#define kMailURL @"mail.tongji.edu.cn"
 
 @interface RegisterViewController ()
 
@@ -30,5 +31,10 @@
 
 - (void)viewDidUnload {
     [super viewDidUnload];
+}
+
+- (IBAction)registerMail:(id)sender
+{
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:kMailURL]];
 }
 @end
