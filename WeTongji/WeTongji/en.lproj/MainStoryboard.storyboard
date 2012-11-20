@@ -883,44 +883,45 @@
                                         <rect key="frame" x="10" y="82" width="301" height="177"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" adjustsFontSizeToFit="NO" minimumFontSize="17" id="Ptn-Ls-rHO">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" id="Ptn-Ls-rHO">
                                         <rect key="frame" x="131" y="90" width="169" height="30"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                         <connections>
                                             <action selector="textDidEndEdit:" destination="Cv7-YQ-g1U" eventType="editingDidEndOnExit" id="gvk-Uc-ZuJ"/>
                                             <action selector="touchOnTextFiled:" destination="Cv7-YQ-g1U" eventType="editingDidBegin" id="7Nk-Ul-57O"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" adjustsFontSizeToFit="NO" minimumFontSize="17" id="Bg8-gX-efD">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" id="Bg8-gX-efD">
                                         <rect key="frame" x="131" y="134" width="169" height="30"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                         <connections>
                                             <action selector="textDidEndEdit:" destination="Cv7-YQ-g1U" eventType="editingDidEndOnExit" id="MTK-Wu-dMO"/>
                                             <action selector="touchOnTextFiled:" destination="Cv7-YQ-g1U" eventType="editingDidBegin" id="16p-Za-auY"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" adjustsFontSizeToFit="NO" minimumFontSize="17" id="uTM-5b-hfR">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" id="uTM-5b-hfR">
                                         <rect key="frame" x="131" y="178" width="173" height="30"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                         <connections>
                                             <action selector="textDidEndEdit:" destination="Cv7-YQ-g1U" eventType="editingDidEndOnExit" id="83F-kL-hl4"/>
                                             <action selector="touchOnTextFiled:" destination="Cv7-YQ-g1U" eventType="editingDidBegin" id="xWL-oU-1NM"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" adjustsFontSizeToFit="NO" minimumFontSize="17" id="7Cg-2e-8vZ">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" id="7Cg-2e-8vZ">
                                         <rect key="frame" x="131" y="223" width="174" height="30"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                         <connections>
                                             <action selector="textDidEndEdit:" destination="Cv7-YQ-g1U" eventType="editingDidEndOnExit" id="I1C-9q-Ny3"/>
                                             <action selector="touchOnTextFiled:" destination="Cv7-YQ-g1U" eventType="editingDidBegin" id="DaB-lk-yiG"/>
+                                            <outlet property="delegate" destination="Cv7-YQ-g1U" id="L3N-s6-QIC"/>
                                         </connections>
                                     </textField>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="点击注册代表您同意" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xft-ah-Shy">
@@ -1454,11 +1455,8 @@
         <class className="EditInfoViewController" superclassName="MiddleAbstractSecondViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/EditInfoViewController.h"/>
             <relationships>
-                <relationship kind="action" name="cancelEditClicked:"/>
-                <relationship kind="action" name="confirmEditClicked:"/>
-                <relationship kind="action" name="didClickAvatarButton:" candidateClass="UIButton"/>
-                <relationship kind="action" name="editClcked:"/>
                 <relationship kind="outlet" name="ConfirmEditBarButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="avatar" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="cancelEditButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="editButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="headerView" candidateClass="EditInfoHeaderView"/>
@@ -1528,6 +1526,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/RegisterSecondViewController.h"/>
             <relationships>
                 <relationship kind="action" name="showUserProtocol:"/>
+                <relationship kind="action" name="textDidEndEdit:"/>
                 <relationship kind="action" name="touchOnTextFiled:" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="confirmPassword" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="name" candidateClass="UITextField"/>
@@ -1610,7 +1609,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="5c9-iE-HEP"/>
         <segue reference="83Y-JL-KCk"/>
-        <segue reference="0wO-jl-pfe"/>
     </inferredMetricsTieBreakers>
 </document>

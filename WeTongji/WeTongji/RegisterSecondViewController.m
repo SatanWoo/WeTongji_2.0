@@ -51,12 +51,23 @@
     [self.confirmPassword resignFirstResponder];
 }
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    if(textField == self.stuNumber) {
+        [self.name becomeFirstResponder];
+    } else if(textField == self.name) {
+        [self.password becomeFirstResponder];
+    } else if(textField == self.password) {
+        [self.confirmPassword becomeFirstResponder];
+    } else {
+        [self.scrollView setContentOffset:CGPointMake(0, 0) animated:YES];
+        [self resignAllFirstResponder];
+    }
+    return NO;
+}
+
 - (IBAction)touchOnTextFiled:(UITextField *)textField
 {
-    [UIView beginAnimations:nil context:NULL];
-	[UIView setAnimationDuration:.3];
-    self.scrollView.contentInset = UIEdgeInsetsMake(-80, 0, 580, 0);
-    [UIView commitAnimations];
+    [self.scrollView setContentOffset:CGPointMake(0, textField.frame.origin.y / 3 * 2) animated:YES];
 }
 
 - (IBAction)textDidEndEdit:(id)sender
