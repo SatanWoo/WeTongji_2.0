@@ -25,7 +25,7 @@
 
 - (void)configureNavBar
 {
-    UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithImage:@"nav_back_btn" selector:@selector(pressNavButton) target:self];
+    UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithImage:@"nav_finish_btn" selector:@selector(pressNavButton) target:self];
     self.navigationItem.leftBarButtonItem = button;
 }
 
