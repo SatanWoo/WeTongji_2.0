@@ -7,8 +7,9 @@
 //
 
 #import "PasswordViewController.h"
+#import "MBProgressHUD.h"
 
-@interface PasswordViewController ()
+@interface PasswordViewController () <MBProgressHUDDelegate>
 
 @end
 
@@ -39,8 +40,25 @@
     [super viewDidUnload];
 }
 
+
+- (void)myTask {
+    sleep(3);
+}
+
 - (IBAction)findPassword:(id)sender
 {
-    [self.navigationController popViewControllerAnimated:YES];
+    [self.password resignFirstResponder];
+    
+    MBProgressHUD* HUD = [[MBProgressHUD alloc] initWithView:self.view];
+	[self.view addSubview:HUD];
+	
+    HUD.delegate = self;
+    HUD.labelText = @"发送至您的邮箱中";
+	
+    [HUD showWhileExecuting:@selector(myTask) onTarget:self withObject:nil animated:YES];
+}
+
+- (void)hudWasHidden:(MBProgressHUD *)hud {
+    [hud removeFromSuperview];
 }
 @end
