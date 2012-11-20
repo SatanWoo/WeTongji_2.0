@@ -124,7 +124,7 @@
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.section == 0 && indexPath.row == 0) {
+    if (indexPath.section == 0 && indexPath.row == 1) {
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:WE_TONGJI_APP_STORE_URL]];  
     } else if (indexPath.section == 0 && indexPath.row == 1) {
         [self triggerMail];
