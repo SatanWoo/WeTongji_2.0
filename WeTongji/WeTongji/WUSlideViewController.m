@@ -44,9 +44,8 @@
     
     [self configureNotification];
     
-//    [self.middelViewController.view removeFromSuperview];
-//    [self.view addSubview:self.introViewController.view];
-    
+    [self.middelViewController.view removeFromSuperview];
+    [self.view addSubview:self.introViewController.view];    
 }
 
 - (void)viewDidUnload
