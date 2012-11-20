@@ -145,8 +145,12 @@
 - (void)triggerMessage
 {
     MFMessageComposeViewController *picker = [[MFMessageComposeViewController alloc] init];
+    if (!picker) {
+        return ;
+    }
     picker.messageComposeDelegate = self;
     picker.body = @"我正在使用微同济-同济大学专属校园移动应用，帮助管理我的大学日程，推送校内校外的大小活动，不再错过任何一个精彩的活动，快点和我一起去下载(we.tongji.edu.cn)";
+    picker.recipients = [NSArray arrayWithObject:@"13"];
     [self presentModalViewController:picker animated:YES];
 }
 
