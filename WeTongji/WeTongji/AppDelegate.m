@@ -11,6 +11,10 @@
 #import "NSString+Addition.h"
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import "User+Addition.h"
+#import "Event+Addition.h"
+#import "Information+Addition.h"
+#import "Star+Addition.h"
 
 @implementation AppDelegate
 
@@ -23,6 +27,12 @@
 {
     // Override point for customization after application launch.
     [NSUserDefaults initialize];
+#ifdef DEBUG
+    [User userClearinManagedObjectContext:self.managedObjectContext];
+    [Event clearAllEventInManagedObjectContext:self.managedObjectContext];
+    [Information clearDataInManagedObjectContext:self.managedObjectContext];
+    [Star clearDataInManagedObjectContext:self.managedObjectContext];
+#endif
     return YES;
 }
 							

@@ -23,6 +23,7 @@
     if (!result)
     {
         result = [NSEntityDescription insertNewObjectForEntityForName:@"Event" inManagedObjectContext:context];
+        result.canSchedule = nil;
     }
     
     result.activityId = activityID;
@@ -40,11 +41,11 @@
     result.like = [NSNumber numberWithInt:[[dict objectForKey:@"Like"] intValue]];
     result.favorite = [NSNumber numberWithInt:[[dict objectForKey:@"Favorite"] intValue]];
     result.schedule = [NSNumber numberWithInt:[[dict objectForKey:@"Schedule"] intValue]];
-    if ( [result.canFavorite boolValue] )
+    if ( [result.canFavorite boolValue] || !result.canFavorite )
         result.canFavorite = [NSNumber numberWithInt:[[dict objectForKey:@"CanFavorite"] intValue]];
-    if ( [result.canLike boolValue] )
+    if ( [result.canLike boolValue] || !result.canLike  )
         result.canLike = [NSNumber numberWithInt:[[dict objectForKey:@"CanLike"] intValue]];
-    if ( [result.canSchedule boolValue] )
+    if ( [result.canSchedule boolValue] || !result.canSchedule  )
         result.canSchedule = [NSNumber numberWithInt:[[dict objectForKey:@"CanSchedule"] intValue]];
     NSLog(@"%@ : %@",result.canSchedule,result.beginTime);
     result.begin_time = result.beginTime;

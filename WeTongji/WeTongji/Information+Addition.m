@@ -21,9 +21,9 @@
     {
         information = [NSEntityDescription insertNewObjectForEntityForName:@"Information" inManagedObjectContext:context];
     }
-    if ( [information.canFavorite boolValue] )
+    if ( [information.canFavorite boolValue] || !information.canFavorite )
         information.canFavorite = [NSNumber numberWithInt:[[infoDict objectForKey:@"CanFavorite"] intValue]];
-    if ( [information.canLike boolValue] )
+    if ( [information.canLike boolValue] || !information.canLike )
         information.canLike = [NSNumber numberWithInt:[[infoDict objectForKey:@"CanLike"] intValue]];
     information.category = [NSString stringWithFormat:@"%@",category];
     information.contact = [NSString stringWithFormat:@"%@",[infoDict objectForKey:@"Contact"]];

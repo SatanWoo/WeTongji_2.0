@@ -44,6 +44,7 @@
     self.likeLabel.text = [self.event.like stringValue];
     self.organizationLabel.text = self.event.organizer;
     [self.avatar setImageWithURL:[NSURL URLWithString:self.event.orgranizerAvatarLink]];
+    NSLog(@"%@",event);
     if ( [event.canLike boolValue])
         [self.likeButton setImage:[UIImage imageNamed:@"like"] forState:UIControlStateNormal];
     else
