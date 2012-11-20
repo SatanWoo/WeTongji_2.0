@@ -1362,6 +1362,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="directLogin:" destination="u4s-KT-TW6" eventType="touchUpInside" id="zYd-fO-qRJ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -1526,7 +1529,6 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/RegisterSecondViewController.h"/>
             <relationships>
                 <relationship kind="action" name="showUserProtocol:"/>
-                <relationship kind="action" name="textDidEndEdit:"/>
                 <relationship kind="action" name="touchOnTextFiled:" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="confirmPassword" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="name" candidateClass="UITextField"/>
@@ -1577,6 +1579,7 @@
         <class className="UserIntroViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UserIntroViewController.h"/>
             <relationships>
+                <relationship kind="action" name="directLogin:"/>
                 <relationship kind="outlet" name="bottomBar" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="pageControl" candidateClass="UIPageControl"/>
                 <relationship kind="outlet" name="registerloginbtn" candidateClass="UIButton"/>

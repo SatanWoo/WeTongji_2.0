@@ -86,6 +86,11 @@
     [super viewDidUnload];
 }
 
+- (IBAction)directLogin:(id)sender
+{
+    [self.view removeFromSuperview];
+}
+
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     [self loadVisiblePages];
