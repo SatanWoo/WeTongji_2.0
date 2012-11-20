@@ -76,16 +76,16 @@
 - (IBAction)logInClick:(id)sender
 {
     [self resignAllFirstResponder];
-    [[NSNotificationCenter defaultCenter] postNotificationName:kLoginNotification object:self];
-//    WTClient * client = [WTClient sharedClient];
-//    WTRequest * request = [WTRequest requestWithSuccessBlock: ^(id responseData)
-//    {
-//        [NSUserDefaults setCurrentUserID:[[responseData objectForKey:@"User"] objectForKey:@"UID"] session:[responseData objectForKey:@"Session"]];
-//        [User updateUser:[responseData objectForKey:@"User"] inManagedObjectContext:self.managedObjectContext];
-//        NSLog(@"%@",responseData);
-//    }failureBlock:^(NSError * error){}];
-//    [request login:self.NOTextField.text password:self.passwordTextField.text];
-//    [client enqueueRequest:request];
+    WTClient * client = [WTClient sharedClient];
+    WTRequest * request = [WTRequest requestWithSuccessBlock: ^(id responseData)
+    {
+        [NSUserDefaults setCurrentUserID:[[responseData objectForKey:@"User"] objectForKey:@"UID"] session:[responseData objectForKey:@"Session"]];
+        [User updateUser:[responseData objectForKey:@"User"] inManagedObjectContext:self.managedObjectContext];
+        NSLog(@"%@",responseData);
+        [[NSNotificationCenter defaultCenter] postNotificationName:kLoginNotification object:self];
+    }failureBlock:^(NSError * error){}];
+    [request login:self.NOTextField.text password:self.passwordTextField.text];
+    [client enqueueRequest:request];
 }
 
 @end

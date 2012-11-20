@@ -143,7 +143,7 @@
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    [self todayClicked];
+    [self.arrangementTableView scrollToRowAtIndexPath:self.todayIndexPath atScrollPosition:UITableViewScrollPositionTop animated:NO];
 }
 
 - (void)viewDidUnload

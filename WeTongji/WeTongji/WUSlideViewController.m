@@ -11,6 +11,7 @@
 #import "Macro.h"
 #import "UIBarButtonItem+CustomButton.h"
 #import "UserIntroViewController.h"
+#import "LeftMenuCellModel.h"
 
 @interface WUSlideViewController ()
 @property (assign ,nonatomic) int currentStatus;
@@ -38,14 +39,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    self.middelViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:kLoginViewController];
     self.leftViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:kLeftMenuViewController];
-    
-    [self configureNotification];
-    
-//    [self.middelViewController.view removeFromSuperview];
-//    [self.view addSubview:self.introViewController.view];    
+    NSString * identifier;
+    LeftMenuCellModel * model = self.leftViewController.identifierArray[0];
+    identifier = model.identifier;
+    self.middelViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:identifier];
+    [self.leftViewController.menuTableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:NO scrollPosition:UITableViewRowAnimationNone];
+    [self configureNotification];    
 }
 
 - (void)viewDidUnload
@@ -65,7 +65,23 @@
 #pragma mark - Private Method
 - (void)login:(NSNotification *)notification
 {
-    self.middelViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:kPersonalViewController];
+    self.leftViewController.identifierArray = nil;
+    [self.leftViewController.menuTableView reloadData];
+    [self.leftViewController.menuTableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:NO scrollPosition:UITableViewRowAnimationNone];
+    CGRect frame = self.middelViewController.view.frame;
+    frame.origin.x = frame.size.width;
+    [UIView animateWithDuration:0.3f animations:^{
+        self.middelViewController.view.frame = frame;
+    } completion:^(BOOL finished)
+    {
+        self.middelViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:kPersonalViewController];
+        CGRect frame = self.middelViewController.view.frame;
+        frame.origin.x += frame.size.width;
+        [UIView animateWithDuration:0.3f animations:^{
+            CGRect newFrame = self.middelViewController.view.frame;
+            newFrame.origin.x = 0;
+            self.middelViewController.view.frame = newFrame;} completion:nil];
+    }];
 }
 
 - (void)configureNotification
