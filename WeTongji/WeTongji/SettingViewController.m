@@ -62,7 +62,7 @@
     if (section == 0) {
         return 1;
     } else {
-        return 3;
+        return 4;
     }
 }
 
@@ -80,7 +80,7 @@
     }
         
     if (indexPath.section == 0) {
-        cell.textLabel.text = @"更新密码";
+        cell.textLabel.text = @"更改密码";
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     } else {
         if (indexPath.row == 0) {
@@ -89,8 +89,11 @@
         } else if (indexPath.row == 1) {
             cell.name.text = @"检测新版本";
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        } else {
+        } else if (indexPath.row == 2){
             cell.name.text = @"清楚缓存";
+            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        } else {
+            cell.name.text = @"校园资讯默认界面";
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         }
     }
