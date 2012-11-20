@@ -184,7 +184,7 @@
             </objects>
             <point key="canvasLocation" x="-2409" y="423"/>
         </scene>
-        <!--Setting View Controller-->
+        <!--Setting View Controller - 设置-->
         <scene sceneID="HBt-7T-hdn">
             <objects>
                 <viewController id="7uy-OA-I5F" customClass="SettingViewController" sceneMemberID="viewController">
@@ -204,7 +204,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.92357336960000003" green="0.92357336960000003" blue="0.92357336960000003" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="AO7-T3-Uxk"/>
+                    <navigationItem key="navigationItem" title="设置" id="AO7-T3-Uxk"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="settingTableView" destination="EfF-kp-33Z" id="5qu-gg-HXG"/>
@@ -723,7 +723,7 @@
                                         <rect key="frame" x="30" y="219" width="301" height="89"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                     </imageView>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" id="6gs-nd-Asr">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" id="6gs-nd-Asr">
                                         <rect key="frame" x="105" y="226" width="209" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -805,7 +805,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="0Gr-x2-YeB">
-                                        <rect key="frame" x="285" y="272" width="22" height="23"/>
+                                        <rect key="frame" x="261" y="273" width="22" height="23"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="Button" backgroundImage="password_forget.png">
@@ -1708,7 +1708,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="83Y-JL-KCk"/>
+        <segue reference="nGL-0f-2v0"/>
         <segue reference="0wO-jl-pfe"/>
     </inferredMetricsTieBreakers>
 </document>
