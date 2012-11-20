@@ -29,16 +29,29 @@
     self.navigationItem.leftBarButtonItem = button;
 }
 
+- (void)logout
+{
+    
+}
+
 - (void)configureTableView
 {
-    [self.settingTableView registerNib:[UINib nibWithNibName:@"SettingNoImageCell" bundle:nil] forCellReuseIdentifier:kSettingNoImageCell];
+//    [self.settingTableView registerNib:[UINib nibWithNibName:@"SettingNoImageCell" bundle:nil] forCellReuseIdentifier:kSettingNoImageCell];
+    
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button addTarget:self action:@selector(logout) forControlEvents:UIControlEventTouchUpInside];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logout_btn"]];
+    [button setImage:imageView.image forState:UIControlStateNormal];
+    [button setFrame:CGRectMake(0, 0, imageView.bounds.size.width, imageView.bounds.size.height)];
+    
+    self.settingTableView.tableFooterView = button;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     [self configureNavBar];
-    //[self configureTableView];
+    [self configureTableView];
 }
 
 - (void)didReceiveMemoryWarning
