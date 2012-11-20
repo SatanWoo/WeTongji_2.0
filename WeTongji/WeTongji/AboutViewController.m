@@ -11,6 +11,7 @@
 #import "AboutHeaderView.h"
 #import "Macro.h"
 #import <MessageUI/MFMailComposeViewController.h>
+#import <MessageUI/MessageUI.h>
 
 #define WE_TONGJI_EMAIL             @"wetongji2012@gmail.com"
 #define WE_TONGJI_SINA_WEIBO_URL    @"http://www.weibo.com/wetongji"
@@ -18,7 +19,7 @@
 #define WE_TONGJ_OFFICAL_WEBSITE    @"http://we.tongji.edu.cn"
 #define WE_TONGJI_RERREN            @"http://page.renren.com/601362138"
 
-@interface AboutViewController () <UITableViewDataSource, UITableViewDelegate, MFMailComposeViewControllerDelegate>
+@interface AboutViewController () <UITableViewDataSource, UITableViewDelegate, MFMailComposeViewControllerDelegate, MFMessageComposeViewControllerDelegate>
 - (void)configureNavBar;
 - (void)pressNavButton;
 @end
@@ -32,7 +33,7 @@
 
 - (void)configureNavBar
 {
-    UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithImage:@"nav_back_btn" selector:@selector(pressNavButton) target:self];
+    UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithImage:@"nav_finish_btn" selector:@selector(pressNavButton) target:self];
     self.navigationItem.leftBarButtonItem = button;
 }
 
@@ -63,6 +64,9 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    if (section == 0) {
+        return 4;
+    }
     return 3;
 }
 
@@ -75,13 +79,13 @@
         cell.textLabel.font = [UIFont fontWithName:@"Heiti SC" size:16];
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
-    if (indexPath.section == 0 && indexPath.row == 0) {
+    if (indexPath.section == 0 && indexPath.row == 1) {
         cell.textLabel.text = @"给WeTongji打分";
         cell.imageView.image = nil;
-    } else if (indexPath.section == 0 && indexPath.row == 1) {
+    } else if (indexPath.section == 0 && indexPath.row == 2) {
         cell.textLabel.text = @"提意见";
         cell.imageView.image = nil;
-    } else if (indexPath.section == 0 && indexPath.row == 2) {
+    } else if (indexPath.section == 0 && indexPath.row == 3) {
         cell.textLabel.text = @"用户协议";
         cell.imageView.image = nil;
     } else if (indexPath.section == 1 && indexPath.row == 0) {
@@ -93,6 +97,9 @@
     } else if (indexPath.section == 1 && indexPath.row == 2) {
         cell.textLabel.text = @"微同济官方主页";
         cell.imageView.image = [UIImage imageNamed:@"we_logo"];
+    } else if (indexPath.section == 0 && indexPath.row == 0) {
+        cell.textLabel.text = @"分享给好友";
+        cell.imageView.image = nil;
     }
     return cell;
 }
@@ -117,22 +124,10 @@
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.section == 0 && indexPath.row == 0) {
+    if (indexPath.section == 0 && indexPath.row == 1) {
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:WE_TONGJI_APP_STORE_URL]];  
     } else if (indexPath.section == 0 && indexPath.row == 1) {
-        MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
-        if (!picker) {
-            return;
-        }
-        picker.mailComposeDelegate = self;
-        [picker setSubject:@"微同济 2.0 用户反馈"];
-        [picker.navigationBar setBarStyle:UIBarStyleBlack];
-        
-        NSArray *toRecipients = [NSArray arrayWithObjects:WE_TONGJI_EMAIL, nil];
-        NSString *emailBody = @"您的宝贵建议会直接送达微同济开发团队。";
-        [picker setToRecipients:toRecipients];
-        [picker setMessageBody:emailBody isHTML:NO];
-        [self presentModalViewController:picker animated:YES];
+        [self triggerMail];
     } else if (indexPath.section == 0 && indexPath.row == 2) {
         [self performSegueWithIdentifier:kProtocolViewControllerSegue sender:self];
     } else if (indexPath.section == 1 && indexPath.row == 0) {
@@ -141,8 +136,39 @@
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:WE_TONGJI_RERREN]];
     } else if (indexPath.section == 1 && indexPath.row == 2) {
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:WE_TONGJ_OFFICAL_WEBSITE]];
+    } else if (indexPath.section == 0 && indexPath.row == 0) {
+        [self triggerMessage];
     }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+- (void)triggerMessage
+{
+    MFMessageComposeViewController *picker = [[MFMessageComposeViewController alloc] init];
+    if (!picker) {
+        return ;
+    }
+    picker.messageComposeDelegate = self;
+    picker.body = @"我正在使用微同济-同济大学专属校园移动应用，帮助管理我的大学日程，推送校内校外的大小活动，不再错过任何一个精彩的活动，快点和我一起去下载(we.tongji.edu.cn)";
+    picker.recipients = [NSArray arrayWithObject:@"13"];
+    [self presentModalViewController:picker animated:YES];
+}
+
+- (void)triggerMail
+{
+    MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
+    if (!picker) {
+        return;
+    }
+    picker.mailComposeDelegate = self;
+    [picker setSubject:@"微同济 2.0 用户反馈"];
+    [picker.navigationBar setBarStyle:UIBarStyleBlack];
+    
+    NSArray *toRecipients = [NSArray arrayWithObjects:WE_TONGJI_EMAIL, nil];
+    NSString *emailBody = @"您的宝贵建议会直接送达微同济开发团队。";
+    [picker setToRecipients:toRecipients];
+    [picker setMessageBody:emailBody isHTML:NO];
+    [self presentModalViewController:picker animated:YES];
 }
 
 #pragma mark - MFMailComposeViewController delegate
@@ -153,6 +179,18 @@
     }
     else if(result == MFMailComposeResultFailed) {
             
+    }
+	[self dismissModalViewControllerAnimated:YES];
+}
+
+- (void)messageComposeViewController:(MFMessageComposeViewController *)controller
+                 didFinishWithResult:(MessageComposeResult)result
+{
+    if(result == MessageComposeResultSent) {
+        
+    }
+    else if(result == MessageComposeResultFailed) {
+        
     }
 	[self dismissModalViewControllerAnimated:YES];
 }

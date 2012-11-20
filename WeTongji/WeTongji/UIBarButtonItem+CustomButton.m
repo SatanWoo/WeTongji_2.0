@@ -18,11 +18,15 @@
         UIImage *image = [UIImage imageNamed:imageName];
         UIImage *high = [UIImage imageNamed:highlightedName];
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+        if (high) {
+            [button setBounds:[[UIImageView alloc] initWithImage:high].bounds];
+            [button setImage:high forState:UIControlStateHighlighted];
+        } else {
+            [button setBounds:[[UIImageView alloc] initWithImage:image].bounds];
+        }
         [button addTarget:target action:selector forControlEvents:UIControlEventTouchUpInside];
         [button setImage:image forState:UIControlStateNormal];
-        [button setImage:high forState:UIControlStateHighlighted];
         [button setImage:image forState:UIControlStateSelected];
-        [button setBounds:[[UIImageView alloc] initWithImage:high].bounds];
         self = [self initWithCustomView:button];
     }
     return self;
