@@ -14,13 +14,15 @@
 #import "JBKenBurnsView.h"
 #import "WUKenBurnViewHeader.h"
 #import "WUSlideViewController.h"
+#import "User+Addition.h"
 
 #define kLabelHeight 30
 
 @interface LeftMenuViewController () <UITableViewDataSource,UITableViewDelegate>
 
-@property (nonatomic ,strong) NSArray *identifierArray;
+
 @property (nonatomic ,strong) WUKenBurnViewHeader *kenView;
+@property (nonatomic ,readonly) BOOL isLogIn;
 
 - (void)configureBottomBarButton;
 - (void)configureTableView;
@@ -68,10 +70,31 @@
 #pragma mark - Getter & Setter
 - (NSArray *)identifierArray
 {
-    if (_identifierArray == nil) {
+    if (_identifierArray == nil)
+    {
+        NSMutableArray * tempList = [[NSMutableArray alloc] init];
         _identifierArray = [[[PlistReader alloc] init] getLeftMenuResult];
+        if ( !self.isLogIn )
+            for ( LeftMenuCellModel * model in _identifierArray )
+            {
+                if ( !model.needLogin )
+                    [tempList addObject:model];
+            }
+        else
+            for ( LeftMenuCellModel * model in _identifierArray )
+            {
+                if ( model != _identifierArray[0] )
+                    [tempList addObject:model];
+            }
+        _identifierArray = [NSArray arrayWithArray:tempList];
     }
     return _identifierArray;
+}
+
+-(BOOL) isLogIn
+{
+    if ( [User userinManagedObjectContext:self.managedObjectContext] ) return YES;
+    else return NO;
 }
 
 - (void)setIsLogin:(BOOL)isLogin
