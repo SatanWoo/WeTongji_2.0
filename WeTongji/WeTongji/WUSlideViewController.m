@@ -22,6 +22,9 @@
 - (void)pressNavButton;
 - (void)configureNavButton;
 - (void)navBack;
+- (void)configureNotification;
+- (void)login:(NSNotification *)notification;
+- (void)removeNotification;
 - (UIViewController *)getContentViewController;
 @end
 
@@ -39,6 +42,8 @@
     self.middelViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:kLoginViewController];
     self.leftViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:kLeftMenuViewController];
     
+    [self configureNotification];
+    
 //    [self.middelViewController.view removeFromSuperview];
 //    [self.view addSubview:self.introViewController.view];
     
@@ -48,6 +53,7 @@
 {
     self.middelViewController = nil;
     self.leftViewController = nil;
+    [self removeNotification];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -58,6 +64,21 @@
 }
 
 #pragma mark - Private Method
+- (void)login:(NSNotification *)notification
+{
+    self.middelViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:kPersonalViewController];
+}
+
+- (void)configureNotification
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(login:) name:kLoginNotification object:nil];
+}
+
+- (void)removeNotification
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 - (void)revealMiddleViewController:(UIGestureRecognizer *)recognizer
 {
     [UIView animateWithDuration:0.3f animations:^{
