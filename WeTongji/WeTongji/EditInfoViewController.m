@@ -14,7 +14,7 @@
 #import "User+Addition.h"
 #import "EditInfoHeaderView.h"
 
-@interface EditInfoViewController ()<UITableViewDataSource, UITableViewDelegate>
+@interface EditInfoViewController ()<UITableViewDataSource, UITableViewDelegate,UIActionSheetDelegate,UIImagePickerControllerDelegate>
 {
     BOOL _isEditEnable;
     BOOL _isKeyBoardAppear;
@@ -109,6 +109,7 @@
     [self setEditButton:nil];
     [self setScrollView:nil];
     [self setHeaderView:nil];
+    [self setAvatar:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -285,6 +286,44 @@ static id tempLeftBarItem;
      }];
     [self.infoTableView reloadData];
 }
+
+- (IBAction)didClickAvatarButton:(UIButton *)sender {
+    UIActionSheet *actionSheet = [[UIActionSheet alloc]
+                                  initWithTitle:nil
+                                  delegate:self
+                                  cancelButtonTitle:@"取消"
+                                  destructiveButtonTitle:nil
+                                  otherButtonTitles:@"相册", @"拍照", nil];
+    [actionSheet showInView:self.view];
+}
+
+#pragma mark - UIActionSheet delegate
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if(buttonIndex == 2)
+        return;
+    
+    UIImagePickerController *ipc = [[UIImagePickerController alloc] init];
+    ipc.delegate = self;
+    ipc.allowsEditing = NO;
+    
+    if(buttonIndex == 0) {
+        ipc.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    } else if(buttonIndex == 1) {
+        ipc.sourceType = UIImagePickerControllerSourceTypeCamera;
+    }
+    
+    [self presentModalViewController:ipc animated:YES];
+}
+
+#pragma mark - UIImagePickerController delegate
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    self.avatar.image = image;
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+
 
 
 @end

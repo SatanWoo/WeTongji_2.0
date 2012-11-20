@@ -39,8 +39,8 @@
     self.middelViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:kLoginViewController];
     self.leftViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:kLeftMenuViewController];
     
-    [self.middelViewController.view removeFromSuperview];
-    [self.view addSubview:self.introViewController.view];
+//    [self.middelViewController.view removeFromSuperview];
+//    [self.view addSubview:self.introViewController.view];
     
 }
 
