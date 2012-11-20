@@ -2,7 +2,7 @@
 //  Event.h
 //  WeTongji
 //
-//  Created by tang zhixiong on 12-11-17.
+//  Created by tang zhixiong on 12-11-20.
 //
 //
 
@@ -17,7 +17,6 @@
 @property (nonatomic, retain) NSDate * beginTime;
 @property (nonatomic, retain) NSNumber * canFavorite;
 @property (nonatomic, retain) NSNumber * canLike;
-@property (nonatomic, retain) NSNumber * canSchedule;
 @property (nonatomic, retain) NSString * channelId;
 @property (nonatomic, retain) NSDate * createAt;
 @property (nonatomic, retain) NSString * detail;

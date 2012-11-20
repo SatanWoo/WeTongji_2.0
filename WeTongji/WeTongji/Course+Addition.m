@@ -113,8 +113,6 @@
     NSLog(@"course week day:%@", [NSString stringWithFormat:@"%@", [dict objectForKey:@"WeekDay"]]);
     NSNumber *weekDay = [[NSString stringWithFormat:@"%@", [dict objectForKey:@"WeekDay"]] weekDayStringCovertToNumber];
     
-    [Course clearCoursesWithID:courseID beginSection:beginSection endSection:endSection weekDay:weekDay weekType:weekType inManagedObjectContext:context];
-    
     NSMutableSet *result = [NSMutableSet set];
     for(int i = 0; i < semesterWeekCount; i++) {
         if(i % 2 == 1 && [weekType isEqualToString:@"单"])
@@ -132,7 +130,7 @@
         course.course_id = courseID;
         course.week_day = weekDay;
         course.week_type = weekType;
-        
+        course.canSchedule = [NSNumber numberWithBool:NO];
         [course configureCourseInfo:dict];
         
         [result addObject:course];

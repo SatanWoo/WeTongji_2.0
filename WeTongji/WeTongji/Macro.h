@@ -36,6 +36,7 @@
 #define kGroupInfoCell @"kGroupInfoCell"
 #define kTextViewTableCell @"kTextViewTableCell"
 #define kArrangementCell @"kArrangementCell"
+#define kArrangementNothingCell @"kArrangementNothingCell"
 #define kFilterTableViewCell @"kFilterTableViewCell"
 #define kEditInfoCell @"kEditInfoCell"
 #define kRegInformationCell @"kRegInformationCell"

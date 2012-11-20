@@ -46,6 +46,7 @@
         result.canLike = [NSNumber numberWithInt:[[dict objectForKey:@"CanLike"] intValue]];
     if ( [result.canSchedule boolValue] )
         result.canSchedule = [NSNumber numberWithInt:[[dict objectForKey:@"CanSchedule"] intValue]];
+    NSLog(@"%@ : %@",result.canSchedule,result.beginTime);
     result.begin_time = result.beginTime;
     result.end_time = result.endTime;
     result.what = result.title;

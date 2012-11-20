@@ -2,7 +2,7 @@
 //  Event.m
 //  WeTongji
 //
-//  Created by tang zhixiong on 12-11-17.
+//  Created by tang zhixiong on 12-11-20.
 //
 //
 
@@ -15,7 +15,6 @@
 @dynamic beginTime;
 @dynamic canFavorite;
 @dynamic canLike;
-@dynamic canSchedule;
 @dynamic channelId;
 @dynamic createAt;
 @dynamic detail;
