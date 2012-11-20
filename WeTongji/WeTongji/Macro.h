@@ -63,4 +63,7 @@
 #define kMenuFullWidth 320.0f
 #define kMenuDisplayedWidth 268.0f
 
+// Notification
+#define kLoginNotification @"kLoginNotification"
+
 #endif

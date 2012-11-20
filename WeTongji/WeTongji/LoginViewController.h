@@ -11,5 +11,5 @@
 @interface LoginViewController : MiddleAbstractViewController
 @property (weak, nonatomic) IBOutlet UIButton *closeBtn;
 @property (weak, nonatomic) IBOutlet UIButton *passwordForgetBtn;
-
+- (IBAction)logInClick:(id)sender;
 @end

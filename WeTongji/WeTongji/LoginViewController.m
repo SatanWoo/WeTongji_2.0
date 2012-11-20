@@ -9,6 +9,7 @@
 #import "LoginViewController.h"
 #import <WeTongjiSDK/WeTongjiSDK.h>
 #import "User+Addition.h"
+#import "Macro.h"
 
 @interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollVIew;
@@ -75,15 +76,16 @@
 - (IBAction)logInClick:(id)sender
 {
     [self resignAllFirstResponder];
-    WTClient * client = [WTClient sharedClient];
-    WTRequest * request = [WTRequest requestWithSuccessBlock: ^(id responseData)
-    {
-        [NSUserDefaults setCurrentUserID:[[responseData objectForKey:@"User"] objectForKey:@"UID"] session:[responseData objectForKey:@"Session"]];
-        [User updateUser:[responseData objectForKey:@"User"] inManagedObjectContext:self.managedObjectContext];
-        NSLog(@"%@",responseData);
-    }failureBlock:^(NSError * error){}];
-    [request login:self.NOTextField.text password:self.passwordTextField.text];
-    [client enqueueRequest:request];
+    [[NSNotificationCenter defaultCenter] postNotificationName:kLoginNotification object:self];
+//    WTClient * client = [WTClient sharedClient];
+//    WTRequest * request = [WTRequest requestWithSuccessBlock: ^(id responseData)
+//    {
+//        [NSUserDefaults setCurrentUserID:[[responseData objectForKey:@"User"] objectForKey:@"UID"] session:[responseData objectForKey:@"Session"]];
+//        [User updateUser:[responseData objectForKey:@"User"] inManagedObjectContext:self.managedObjectContext];
+//        NSLog(@"%@",responseData);
+//    }failureBlock:^(NSError * error){}];
+//    [request login:self.NOTextField.text password:self.passwordTextField.text];
+//    [client enqueueRequest:request];
 }
 
 @end

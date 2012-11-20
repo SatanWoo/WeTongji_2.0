@@ -184,7 +184,7 @@
             </objects>
             <point key="canvasLocation" x="-2409" y="423"/>
         </scene>
-        <!--Setting View Controller-->
+        <!--Setting View Controller - 设置-->
         <scene sceneID="HBt-7T-hdn">
             <objects>
                 <viewController id="7uy-OA-I5F" customClass="SettingViewController" sceneMemberID="viewController">
@@ -204,7 +204,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.92357336960000003" green="0.92357336960000003" blue="0.92357336960000003" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="AO7-T3-Uxk"/>
+                    <navigationItem key="navigationItem" title="设置" id="AO7-T3-Uxk"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="settingTableView" destination="EfF-kp-33Z" id="5qu-gg-HXG"/>
@@ -723,7 +723,7 @@
                                         <rect key="frame" x="30" y="219" width="301" height="89"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                     </imageView>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" id="6gs-nd-Asr">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" id="6gs-nd-Asr">
                                         <rect key="frame" x="105" y="226" width="209" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -755,7 +755,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="logInClick:" destination="ft9-E4-WVk" eventType="touchUpInside" id="oR2-Ve-MFs"/>
+                                            <action selector="logInClick:" destination="ft9-E4-WVk" eventType="touchUpInside" id="Q9w-yv-RTT"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="FPh-TU-kko">
@@ -805,7 +805,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="0Gr-x2-YeB">
-                                        <rect key="frame" x="285" y="272" width="22" height="23"/>
+                                        <rect key="frame" x="261" y="273" width="22" height="23"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="Button" backgroundImage="password_forget.png">
@@ -914,6 +914,7 @@
                                         <connections>
                                             <action selector="textDidEndEdit:" destination="Cv7-YQ-g1U" eventType="editingDidEndOnExit" id="gvk-Uc-ZuJ"/>
                                             <action selector="touchOnTextFiled:" destination="Cv7-YQ-g1U" eventType="editingDidBegin" id="7Nk-Ul-57O"/>
+                                            <outlet property="delegate" destination="Cv7-YQ-g1U" id="Th9-Ic-dlx"/>
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="姓名" adjustsFontSizeToFit="NO" minimumFontSize="17" id="Bg8-gX-efD">
@@ -924,6 +925,7 @@
                                         <connections>
                                             <action selector="textDidEndEdit:" destination="Cv7-YQ-g1U" eventType="editingDidEndOnExit" id="MTK-Wu-dMO"/>
                                             <action selector="touchOnTextFiled:" destination="Cv7-YQ-g1U" eventType="editingDidBegin" id="16p-Za-auY"/>
+                                            <outlet property="delegate" destination="Cv7-YQ-g1U" id="2XR-nN-rdA"/>
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="密码" adjustsFontSizeToFit="NO" minimumFontSize="17" id="uTM-5b-hfR">
@@ -934,6 +936,7 @@
                                         <connections>
                                             <action selector="textDidEndEdit:" destination="Cv7-YQ-g1U" eventType="editingDidEndOnExit" id="83F-kL-hl4"/>
                                             <action selector="touchOnTextFiled:" destination="Cv7-YQ-g1U" eventType="editingDidBegin" id="xWL-oU-1NM"/>
+                                            <outlet property="delegate" destination="Cv7-YQ-g1U" id="5cQ-nq-9F3"/>
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请再次输入密码" adjustsFontSizeToFit="NO" minimumFontSize="17" id="7Cg-2e-8vZ">
@@ -944,7 +947,7 @@
                                         <connections>
                                             <action selector="textDidEndEdit:" destination="Cv7-YQ-g1U" eventType="editingDidEndOnExit" id="I1C-9q-Ny3"/>
                                             <action selector="touchOnTextFiled:" destination="Cv7-YQ-g1U" eventType="editingDidBegin" id="DaB-lk-yiG"/>
-                                            <outlet property="delegate" destination="Cv7-YQ-g1U" id="L3N-s6-QIC"/>
+                                            <outlet property="delegate" destination="Cv7-YQ-g1U" id="lus-fZ-Bu9"/>
                                         </connections>
                                     </textField>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="点击注册代表您同意" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xft-ah-Shy">
@@ -1573,6 +1576,7 @@
         <class className="LoginViewController" superclassName="MiddleAbstractViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginViewController.h"/>
             <relationships>
+                <relationship kind="action" name="logInClick:"/>
                 <relationship kind="outlet" name="NOTextField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="closeBtn" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="passwordForgetBtn" candidateClass="UIButton"/>
@@ -1707,7 +1711,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="83Y-JL-KCk"/>
-        <segue reference="0wO-jl-pfe"/>
+        <segue reference="nGL-0f-2v0"/>
+        <segue reference="5c9-iE-HEP"/>
     </inferredMetricsTieBreakers>
 </document>
