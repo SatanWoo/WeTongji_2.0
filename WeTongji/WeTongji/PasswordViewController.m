@@ -10,10 +10,11 @@
 #import "MBProgressHUD.h"
 
 @interface PasswordViewController () <MBProgressHUDDelegate>
-
+@property (nonatomic ,strong) MBProgressHUD *HUD;
 @end
 
 @implementation PasswordViewController
+@synthesize HUD = _HUD;
 - (void)configureScrollView {
     CGRect frame = self.scrollView.frame;
     frame.size.height += 1;
@@ -41,24 +42,29 @@
 }
 
 
-- (void)myTask {
+- (void)myTask
+{
     sleep(3);
+    self.HUD.mode = MBProgressHUDModeIndeterminate;
+    self.HUD.labelText = @"已发送至您的邮箱";
+    sleep(2);
 }
 
 - (IBAction)findPassword:(id)sender
 {
     [self.password resignFirstResponder];
     
-    MBProgressHUD* HUD = [[MBProgressHUD alloc] initWithView:self.view];
-	[self.view addSubview:HUD];
+    self.HUD = [[MBProgressHUD alloc] initWithView:self.view];
+	[self.view addSubview:self.HUD];
 	
-    HUD.delegate = self;
-    HUD.labelText = @"发送至您的邮箱中";
+    self.HUD.delegate = self;
+    self.HUD.labelText = @"发送至您的邮箱中";
 	
-    [HUD showWhileExecuting:@selector(myTask) onTarget:self withObject:nil animated:YES];
+    [self.HUD showWhileExecuting:@selector(myTask) onTarget:self withObject:nil animated:YES];
 }
 
 - (void)hudWasHidden:(MBProgressHUD *)hud {
     [hud removeFromSuperview];
+    hud = nil;
 }
 @end
