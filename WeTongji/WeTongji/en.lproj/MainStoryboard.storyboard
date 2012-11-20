@@ -900,11 +900,11 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="text_input2.png" id="FR7-KR-Rwh">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="text_input3.png" id="FR7-KR-Rwh">
                                         <rect key="frame" x="10" y="82" width="301" height="177"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" id="Ptn-Ls-rHO">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入学号" adjustsFontSizeToFit="NO" minimumFontSize="17" id="Ptn-Ls-rHO">
                                         <rect key="frame" x="131" y="90" width="169" height="30"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -914,7 +914,7 @@
                                             <action selector="touchOnTextFiled:" destination="Cv7-YQ-g1U" eventType="editingDidBegin" id="7Nk-Ul-57O"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" id="Bg8-gX-efD">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="姓名" adjustsFontSizeToFit="NO" minimumFontSize="17" id="Bg8-gX-efD">
                                         <rect key="frame" x="131" y="134" width="169" height="30"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -924,7 +924,7 @@
                                             <action selector="touchOnTextFiled:" destination="Cv7-YQ-g1U" eventType="editingDidBegin" id="16p-Za-auY"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" id="uTM-5b-hfR">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="密码" adjustsFontSizeToFit="NO" minimumFontSize="17" id="uTM-5b-hfR">
                                         <rect key="frame" x="131" y="178" width="173" height="30"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -934,7 +934,7 @@
                                             <action selector="touchOnTextFiled:" destination="Cv7-YQ-g1U" eventType="editingDidBegin" id="xWL-oU-1NM"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" id="7Cg-2e-8vZ">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请再次输入密码" adjustsFontSizeToFit="NO" minimumFontSize="17" id="7Cg-2e-8vZ">
                                         <rect key="frame" x="131" y="223" width="174" height="30"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1460,7 +1460,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wKs-cu-oVq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-751" y="3059"/>
+            <point key="canvasLocation" x="-616" y="3042"/>
         </scene>
     </scenes>
     <resources>
@@ -1492,7 +1492,7 @@
         <image name="rounded_cell.png" width="301" height="45"/>
         <image name="settings_btn.png" width="40" height="40"/>
         <image name="text_input.png" width="301" height="89"/>
-        <image name="text_input2.png" width="301" height="177"/>
+        <image name="text_input3.png" width="301" height="177"/>
         <image name="today.png" width="80" height="24"/>
         <image name="today_btn" width="16" height="16"/>
         <image name="tonggao_un.png" width="80" height="40"/>
@@ -1634,9 +1634,6 @@
         </class>
         <class className="ScheduleViewController" superclassName="MiddleAbstractSecondViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ScheduleViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="todayClicked:"/>
-            </relationships>
         </class>
         <class className="SchoolNewsContactCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SchoolNewsContactCell.h"/>
