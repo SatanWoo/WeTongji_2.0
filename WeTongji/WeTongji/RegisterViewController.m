@@ -9,7 +9,8 @@
 #import "RegisterViewController.h"
 #import "RegInfomationCell.h"
 #import "Macro.h"
-#define kMailURL @"mail.tongji.edu.cn"
+
+#define kMailURL @"http://mail.tongji.edu.cn"
 
 @interface RegisterViewController ()
 
