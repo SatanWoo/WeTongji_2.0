@@ -21,7 +21,9 @@
         if (high) {
             [button setBounds:[[UIImageView alloc] initWithImage:high].bounds];
             [button setImage:high forState:UIControlStateHighlighted];
-        } 
+        } else {
+            [button setBounds:[[UIImageView alloc] initWithImage:image].bounds];
+        }
         [button addTarget:target action:selector forControlEvents:UIControlEventTouchUpInside];
         [button setImage:image forState:UIControlStateNormal];
         [button setImage:image forState:UIControlStateSelected];
