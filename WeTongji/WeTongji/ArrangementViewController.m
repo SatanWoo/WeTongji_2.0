@@ -138,6 +138,11 @@
 {
     [super viewDidLoad];
     [self configureTableView];
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
     [self todayClicked];
 }
 
@@ -226,7 +231,14 @@
             }
             else if ( [activity isKindOfClass:[Course class]] )
             {
-                [((ArrangementCell *)cell).colorBall setImage:[UIImage imageNamed:@"dot_blue"]];
+                if ( [((Course *)activity).require_type isEqualToString:@"必修"] )
+                    [((ArrangementCell *)cell).colorBall setImage:[UIImage imageNamed:@"dot_blue"]];
+                else
+                    [((ArrangementCell *)cell).colorBall setImage:[UIImage imageNamed:@"dot_green"]];
+            }
+            else if ( [activity isKindOfClass:[Exam class]] )
+            {
+                [((ArrangementCell *)cell).colorBall setImage:[UIImage imageNamed:@"dot_red"]];
             }
         }
     }
