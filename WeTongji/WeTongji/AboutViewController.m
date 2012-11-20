@@ -40,6 +40,8 @@
 {
     [super viewDidLoad];
     [self configureNavBar];
+    self.aboutTableView.tableFooterView = [[[NSBundle mainBundle] loadNibNamed:@"InfoFooterView" owner:self options:nil] objectAtIndex:0];
+
 }
 
 - (void)didReceiveMemoryWarning
