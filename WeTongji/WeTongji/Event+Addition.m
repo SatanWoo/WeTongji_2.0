@@ -34,7 +34,6 @@
     result.imageLink = [NSString stringWithFormat:@"%@",[dict objectForKey:@"Image"]];
     NSLog(@"%@",[dict objectForKey:@"Image"]);
     result.organizer = [NSString stringWithFormat:@"%@", [dict objectForKey:@"Organizer"]];
-    //result.status =  [NSString stringWithFormat:@"%@", [dict objectForKey:@"Status"]];
     result.beginTime = [[NSString stringWithFormat:@"%@", [dict objectForKey:@"Begin"]] convertToDate];
     result.endTime = [[NSString stringWithFormat:@"%@", [dict objectForKey:@"End"]] convertToDate];
     result.channelId = [[NSNumber numberWithInt:[[dict objectForKey:@"Channel_Id"] intValue] - 1] stringValue];
@@ -42,11 +41,11 @@
     result.favorite = [NSNumber numberWithInt:[[dict objectForKey:@"Favorite"] intValue]];
     result.schedule = [NSNumber numberWithInt:[[dict objectForKey:@"Schedule"] intValue]];
     if ( [result.canFavorite boolValue] )
-    result.canFavorite = [NSNumber numberWithInt:[[dict objectForKey:@"CanFavorite"] intValue]];
+        result.canFavorite = [NSNumber numberWithInt:[[dict objectForKey:@"CanFavorite"] intValue]];
     if ( [result.canLike boolValue] )
-    result.canLike = [NSNumber numberWithInt:[[dict objectForKey:@"CanLike"] intValue]];
+        result.canLike = [NSNumber numberWithInt:[[dict objectForKey:@"CanLike"] intValue]];
     if ( [result.canSchedule boolValue] )
-    result.canSchedule = [NSNumber numberWithInt:[[dict objectForKey:@"CanSchedule"] intValue]];
+        result.canSchedule = [NSNumber numberWithInt:[[dict objectForKey:@"CanSchedule"] intValue]];
     result.begin_time = result.beginTime;
     result.end_time = result.endTime;
     result.what = result.title;

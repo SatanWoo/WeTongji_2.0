@@ -65,7 +65,7 @@
         center.x = center.x - 180;
     } else if ( self.information && [self.information.category isEqualToString:GetInformationTypeForStaff] ) {
         center.x = center.x - 180;
-    } if ( self.information && [self.information.category isEqualToString:GetInformationTypeAround] ) {
+    } else if ( self.information && [self.information.category isEqualToString:GetInformationTypeAround] ) {
         center.x = center.x - 54;
         [self.recommendImage setAlpha:1];
     } else
@@ -127,6 +127,28 @@
             [request cancelLikeActivity:self.event.activityId];
         }
     }
+    if ( self.information )
+    {
+        if ( [self.information.canLike boolValue] )
+        {
+            [request setInformationLike:self.information.informationId inType:self.information.category];
+        }
+        else
+        {
+            [request setInformationUnLike:self.information.informationId inType:self.information.category];
+        }
+    }
+    if ( self.star )
+    {
+        if ( [self.star.canLike boolValue] )
+        {
+            [request likeStar:self.star.starId];
+        }
+        else
+        {
+            [request unlikeStar:self.star.starId];
+        }
+    }
     [client enqueueRequest:request];
 }
 
@@ -167,6 +189,28 @@
         else
         {
             [request cancelActivityFavored:self.event.activityId];
+        }
+    }
+    if ( self.information )
+    {
+        if ( [self.information.canFavorite boolValue] )
+        {
+            [request setInformationFavored:self.information.informationId inType:self.information.category];
+        }
+        else
+        {
+            [request setInformationUnFavored:self.information.informationId inType:self.information.category];
+        }
+    }
+    if ( self.star )
+    {
+        if ( [self.star.canFavorite boolValue] )
+        {
+            [request setStarFavored:self.star.starId];
+        }
+        else
+        {
+            [request cancelStarFaved:self.star.starId];
         }
     }
     [client enqueueRequest:request];

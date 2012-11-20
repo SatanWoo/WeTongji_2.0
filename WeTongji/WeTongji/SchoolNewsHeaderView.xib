@@ -203,7 +203,7 @@
 										<reference key="NSNextResponder" ref="151349597"/>
 										<int key="NSvFlags">1280</int>
 										<object class="NSPSMatrix" key="NSFrameMatrix"/>
-										<string key="NSFrame">{{10, 12}, {15, 15}}</string>
+										<string key="NSFrame">{{9, 13}, {15, 15}}</string>
 										<reference key="NSSuperview" ref="151349597"/>
 										<reference key="NSWindow"/>
 										<reference key="NSNextKeyView" ref="848315691"/>
@@ -306,7 +306,6 @@
 										<string key="NSFrame">{{28, 7}, {28, 21}}</string>
 										<reference key="NSSuperview" ref="609548878"/>
 										<reference key="NSWindow"/>
-										<reference key="NSNextKeyView"/>
 										<bool key="IBUIOpaque">NO</bool>
 										<bool key="IBUIClipsSubviews">YES</bool>
 										<int key="IBUIContentMode">7</int>
@@ -442,6 +441,24 @@
 						<reference key="destination" ref="1071397648"/>
 					</object>
 					<int key="connectionID">31</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">favoriteClicked:</string>
+						<reference key="source" ref="938021248"/>
+						<reference key="destination" ref="5041310"/>
+						<int key="IBEventType">7</int>
+					</object>
+					<int key="connectionID">90</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">likeClicked:</string>
+						<reference key="source" ref="668755827"/>
+						<reference key="destination" ref="5041310"/>
+						<int key="IBEventType">7</int>
+					</object>
+					<int key="connectionID">91</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -615,14 +632,34 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">89</int>
+			<int key="maxID">91</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
 				<object class="IBPartialClassDescription">
 					<string key="className">WUTableHeaderView</string>
 					<string key="superclassName">UIView</string>
+					<dictionary class="NSMutableDictionary" key="actions">
+						<string key="addScheduleClicked:">id</string>
+						<string key="favoriteClicked:">id</string>
+						<string key="likeClicked:">id</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="actionInfosByName">
+						<object class="IBActionInfo" key="addScheduleClicked:">
+							<string key="name">addScheduleClicked:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="favoriteClicked:">
+							<string key="name">favoriteClicked:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="likeClicked:">
+							<string key="name">likeClicked:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
+						<string key="addScheduleButton">UIButton</string>
 						<string key="buttonBoard">UIView</string>
 						<string key="eventTime">UILabel</string>
 						<string key="favoriteButton">UIButton</string>
@@ -645,6 +682,10 @@
 						<string key="upperHiddenView">UIView</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<object class="IBToOneOutletInfo" key="addScheduleButton">
+							<string key="name">addScheduleButton</string>
+							<string key="candidateClassName">UIButton</string>
+						</object>
 						<object class="IBToOneOutletInfo" key="buttonBoard">
 							<string key="name">buttonBoard</string>
 							<string key="candidateClassName">UIView</string>

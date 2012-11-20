@@ -63,6 +63,7 @@
     [self.newsTableView registerNib:[UINib nibWithNibName:@"TextViewTableCell" bundle:nil] forCellReuseIdentifier:kTextViewTableCell];
     self.newsTableView.backgroundColor = [UIColor clearColor];
     [self.view insertSubview:self.pageViewController.view belowSubview:self.newsTableView];
+    self.newsTableView.frame = CGRectMake(0, 0, 320, self.newsTableView.frame.size.height + (self.headerView.bounds.size.height - kContentOffset));
     originNewsTableViewCenter = [self.newsTableView center];
    
 }
@@ -252,7 +253,7 @@
         {
             [self.buttonBackImageView setAlpha:0.0f];
             CGPoint center = [self.newsTableView center];
-            center.y = center.y - kContentOffset;
+            center.y = center.y - (self.headerView.bounds.size.height - kContentOffset);
             [self.newsTableView setCenter:center];
             [self.headerView changeButtonPositionToLeft];
         }
@@ -267,7 +268,7 @@
         {
             [self.buttonBackImageView setAlpha:1.0f];
             CGPoint center = [self.newsTableView center];
-            center.y = center.y + kContentOffset;
+            center.y = center.y + (self.headerView.bounds.size.height - kContentOffset);
             [self.newsTableView setCenter:center];
             [self.headerView resetButtonPosition];
         }
