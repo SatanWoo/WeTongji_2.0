@@ -13,6 +13,7 @@
 #import <WeTongjiSDK/WeTongjiSDK.h>
 #import "User+Addition.h"
 #import "EditInfoHeaderView.h"
+#import "UIBarButtonItem+CustomButton.h"
 
 @interface EditInfoViewController ()<UITableViewDataSource, UITableViewDelegate,UIActionSheetDelegate,UIImagePickerControllerDelegate>
 {
@@ -29,6 +30,7 @@
 @property (nonatomic,strong) NSArray * staticList;
 @property (nonatomic,strong) NSArray * infoList;
 - (void)configureTableView;
+- (void)configureNavBar;
 @end
 
 @implementation EditInfoViewController
@@ -82,11 +84,17 @@
     self.infoTableView.tableHeaderView = self.headerView;
 }
 
+- (void)configureNavBar
+{
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:@"edit" selector:@selector(editClcked:) target:self];
+}
+
 #pragma mark - Life Cyclc
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     [self configureTableView];
+    [self configureNavBar];
     if ( self.user )
     {
         [self.headerView.avatar setImageWithURL:[NSURL URLWithString: self.user.avatarLink]];
@@ -99,7 +107,7 @@
             [self.headerView.sex setImage:[UIImage imageNamed:@"female.png"]];
         self.headerView.ageLabel.text = [self.user.age stringValue];
     }
-    self.navigationItem.rightBarButtonItem = nil;
+    //self.navigationItem.rightBarButtonItem = nil;
 }
 
 - (void)viewDidUnload
@@ -217,7 +225,6 @@ static id tempLeftBarItem;
     tempLeftBarItem = self.navigationItem.leftBarButtonItem;
     self.navigationItem.leftBarButtonItem = self.cancelEditButton;
     self.navigationItem.rightBarButtonItem = self.ConfirmEditBarButton;
-    [self.editButton setHidden:YES];
     self.infoList = [NSArray arrayWithObjects:self.editableList, nil];
     [self.infoTableView reloadData];
 }
@@ -226,7 +233,7 @@ static id tempLeftBarItem;
 {
     self.navigationItem.leftBarButtonItem = tempLeftBarItem;
     self.navigationItem.rightBarButtonItem = nil;
-    [self.editButton setHidden:NO];
+    [self configureNavBar];
     _isEditEnable = NO;
     self.infoList = nil;
     _isKeyBoardAppear = NO;
@@ -276,7 +283,7 @@ static id tempLeftBarItem;
 {
     self.navigationItem.leftBarButtonItem = tempLeftBarItem;
     self.navigationItem.rightBarButtonItem = nil;
-    [self.editButton setHidden:NO];
+     [self configureNavBar];
     _isEditEnable = NO;
     self.infoList = nil;
     _isKeyBoardAppear = NO;
