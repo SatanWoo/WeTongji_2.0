@@ -12,6 +12,7 @@
 
 @interface RegisterSecondViewController ()
 - (void)configureNavBar;
+- (void)configureScrollView;
 @end
 
 @implementation RegisterSecondViewController
@@ -22,11 +23,21 @@
     self.navigationItem.rightBarButtonItem = button;
 }
 
+- (void)configureScrollView
+{
+    CGRect frame = self.scrollView.frame;
+    frame.size.height += 1;
+    self.scrollView.contentSize = frame.size;
+    
+    [self.stuNumber becomeFirstResponder];
+}
+
 #pragma mark - Life Cycle
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     [self configureNavBar];
+    [self configureScrollView];
 }
 
 - (void)didReceiveMemoryWarning

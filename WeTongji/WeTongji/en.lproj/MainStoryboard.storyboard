@@ -914,6 +914,7 @@
                                         <connections>
                                             <action selector="textDidEndEdit:" destination="Cv7-YQ-g1U" eventType="editingDidEndOnExit" id="gvk-Uc-ZuJ"/>
                                             <action selector="touchOnTextFiled:" destination="Cv7-YQ-g1U" eventType="editingDidBegin" id="7Nk-Ul-57O"/>
+                                            <outlet property="delegate" destination="Cv7-YQ-g1U" id="Th9-Ic-dlx"/>
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="姓名" adjustsFontSizeToFit="NO" minimumFontSize="17" id="Bg8-gX-efD">
@@ -924,6 +925,7 @@
                                         <connections>
                                             <action selector="textDidEndEdit:" destination="Cv7-YQ-g1U" eventType="editingDidEndOnExit" id="MTK-Wu-dMO"/>
                                             <action selector="touchOnTextFiled:" destination="Cv7-YQ-g1U" eventType="editingDidBegin" id="16p-Za-auY"/>
+                                            <outlet property="delegate" destination="Cv7-YQ-g1U" id="2XR-nN-rdA"/>
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="密码" adjustsFontSizeToFit="NO" minimumFontSize="17" id="uTM-5b-hfR">
@@ -934,6 +936,7 @@
                                         <connections>
                                             <action selector="textDidEndEdit:" destination="Cv7-YQ-g1U" eventType="editingDidEndOnExit" id="83F-kL-hl4"/>
                                             <action selector="touchOnTextFiled:" destination="Cv7-YQ-g1U" eventType="editingDidBegin" id="xWL-oU-1NM"/>
+                                            <outlet property="delegate" destination="Cv7-YQ-g1U" id="5cQ-nq-9F3"/>
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请再次输入密码" adjustsFontSizeToFit="NO" minimumFontSize="17" id="7Cg-2e-8vZ">
@@ -944,7 +947,7 @@
                                         <connections>
                                             <action selector="textDidEndEdit:" destination="Cv7-YQ-g1U" eventType="editingDidEndOnExit" id="I1C-9q-Ny3"/>
                                             <action selector="touchOnTextFiled:" destination="Cv7-YQ-g1U" eventType="editingDidBegin" id="DaB-lk-yiG"/>
-                                            <outlet property="delegate" destination="Cv7-YQ-g1U" id="L3N-s6-QIC"/>
+                                            <outlet property="delegate" destination="Cv7-YQ-g1U" id="lus-fZ-Bu9"/>
                                         </connections>
                                     </textField>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="点击注册代表您同意" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xft-ah-Shy">
@@ -1709,6 +1712,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="nGL-0f-2v0"/>
-        <segue reference="0wO-jl-pfe"/>
+        <segue reference="5c9-iE-HEP"/>
     </inferredMetricsTieBreakers>
 </document>
