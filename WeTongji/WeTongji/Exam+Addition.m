@@ -31,6 +31,7 @@
     exam.required = [NSString stringWithFormat:@"%@",[dict objectForKey:@"Required"]];
     exam.teacher = [NSString stringWithFormat:@"%@",[dict objectForKey:@"Teacher"]];
     exam.what = [NSString stringWithFormat:@"%@(考试)",exam.name];
+    exam.canSchedule = [NSNumber numberWithBool:NO];
     exam.where = exam.location;
     exam.begin_time = exam.begin;
     exam.end_time = exam.end;

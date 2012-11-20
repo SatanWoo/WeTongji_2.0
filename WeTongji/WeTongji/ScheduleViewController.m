@@ -48,7 +48,7 @@
     WTClient * client = [WTClient sharedClient];
     WTRequest * request = [WTRequest  requestWithSuccessBlock:^(id responseData)
     {
-        NSLog(@"%@",responseData);
+        [Course clearDataInManagedObjectContext:self.managedObjectContext];
         NSString *semesterBeginString = [NSString stringWithFormat:@"%@", [responseData objectForKey:@"SchoolYearStartAt"]];
         NSDate *semesterBeginDate = [semesterBeginString convertToDate];
         NSInteger semesterWeekCount = [[NSString stringWithFormat:@"%@", [responseData objectForKey:@"SchoolYearWeekCount"]] integerValue];
@@ -71,7 +71,8 @@
     WTClient * client = [WTClient sharedClient];
     WTRequest * request = [WTRequest  requestWithSuccessBlock:^(id responseData)
     {
-        NSLog(@"%@",responseData);
+        [Event clearAllScheduledEventInManagedObjectContext:self.managedObjectContext];
+        [Exam clearDataInManagedObjectContext:self.managedObjectContext];
         NSArray * events = [responseData objectForKey:@"Activities"];
         for ( NSDictionary * dict in events )
         {

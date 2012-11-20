@@ -388,11 +388,9 @@
 		FFBF21E7165AB47500F4657A /* add_to_schedule.png in Resources */ = {isa = PBXBuildFile; fileRef = FFBF21E3165AB47100F4657A /* add_to_schedule.png */; };
 		FFBF21E8165AB47500F4657A /* add_to_schedule@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFBF21E4165AB47200F4657A /* add_to_schedule@2x.png */; };
 		FFBF4FE91657CC43001690D2 /* AbstractCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBF4FE81657CC42001690D2 /* AbstractCollection.m */; };
-		FFBF4FEC1657CC5F001690D2 /* AbstractActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBF4FEB1657CC5E001690D2 /* AbstractActivity.m */; };
 		FFBF4FEF1657CC6C001690D2 /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBF4FEE1657CC6B001690D2 /* Course.m */; };
 		FFBF4FF21657CC6D001690D2 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBF4FF11657CC6D001690D2 /* User.m */; };
 		FFBF4FF51657CC6D001690D2 /* Exam.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBF4FF41657CC6D001690D2 /* Exam.m */; };
-		FFBF4FFB1657CC6F001690D2 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBF4FFA1657CC6E001690D2 /* Event.m */; };
 		FFBF5010165814B6001690D2 /* Information.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBF500F165814B5001690D2 /* Information.m */; };
 		FFBF501216582970001690D2 /* SchoolNewsHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFBF501116582970001690D2 /* SchoolNewsHeaderView.xib */; };
 		FFBF5014165829B1001690D2 /* GroupNewsHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFBF5013165829B0001690D2 /* GroupNewsHeaderView.xib */; };
@@ -403,6 +401,10 @@
 		FFBF9A21164843A100E3D610 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBF9A20164843A100E3D610 /* MobileCoreServices.framework */; };
 		FFBF9A23164843A600E3D610 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBF9A22164843A600E3D610 /* SystemConfiguration.framework */; };
 		FFBF9A25164843AD00E3D610 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBF9A24164843AD00E3D610 /* MapKit.framework */; };
+		FFC0066F165B66B20040FD44 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC0066E165B66B10040FD44 /* Event.m */; };
+		FFC00672165B66B30040FD44 /* AbstractActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC00671165B66B30040FD44 /* AbstractActivity.m */; };
+		FFC00674165B9A1F0040FD44 /* ArrangementNothingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFC00673165B9A1F0040FD44 /* ArrangementNothingCell.xib */; };
+		FFC00677165B9BF20040FD44 /* AbstractActivity+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC00676165B9BF20040FD44 /* AbstractActivity+Addition.m */; };
 		FFC07086165742BB00323E38 /* Exam+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC07085165742BB00323E38 /* Exam+Addition.m */; };
 		FFC1203B165160AC003FF0E6 /* 注册登录.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FFC1203A165160AC003FF0E6 /* 注册登录.jpg */; };
 		FFC1203F1651639A003FF0E6 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC1203E1651639A003FF0E6 /* LoginViewController.m */; };
@@ -896,16 +898,12 @@
 		FFBF21E4165AB47200F4657A /* add_to_schedule@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "add_to_schedule@2x.png"; sourceTree = "<group>"; };
 		FFBF4FE71657CC42001690D2 /* AbstractCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractCollection.h; sourceTree = "<group>"; };
 		FFBF4FE81657CC42001690D2 /* AbstractCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbstractCollection.m; sourceTree = "<group>"; };
-		FFBF4FEA1657CC5E001690D2 /* AbstractActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractActivity.h; sourceTree = "<group>"; };
-		FFBF4FEB1657CC5E001690D2 /* AbstractActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbstractActivity.m; sourceTree = "<group>"; };
 		FFBF4FED1657CC6B001690D2 /* Course.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Course.h; sourceTree = "<group>"; };
 		FFBF4FEE1657CC6B001690D2 /* Course.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Course.m; sourceTree = "<group>"; };
 		FFBF4FF01657CC6D001690D2 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		FFBF4FF11657CC6D001690D2 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		FFBF4FF31657CC6D001690D2 /* Exam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exam.h; sourceTree = "<group>"; };
 		FFBF4FF41657CC6D001690D2 /* Exam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Exam.m; sourceTree = "<group>"; };
-		FFBF4FF91657CC6E001690D2 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
-		FFBF4FFA1657CC6E001690D2 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
 		FFBF500E165814B5001690D2 /* Information.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Information.h; path = ../Information.h; sourceTree = "<group>"; };
 		FFBF500F165814B5001690D2 /* Information.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Information.m; path = ../Information.m; sourceTree = "<group>"; };
 		FFBF501116582970001690D2 /* SchoolNewsHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SchoolNewsHeaderView.xib; sourceTree = "<group>"; };
@@ -917,6 +915,13 @@
 		FFBF9A20164843A100E3D610 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		FFBF9A22164843A600E3D610 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		FFBF9A24164843AD00E3D610 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		FFC0066D165B66B10040FD44 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
+		FFC0066E165B66B10040FD44 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
+		FFC00670165B66B30040FD44 /* AbstractActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractActivity.h; sourceTree = "<group>"; };
+		FFC00671165B66B30040FD44 /* AbstractActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbstractActivity.m; sourceTree = "<group>"; };
+		FFC00673165B9A1F0040FD44 /* ArrangementNothingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArrangementNothingCell.xib; sourceTree = "<group>"; };
+		FFC00675165B9BF10040FD44 /* AbstractActivity+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AbstractActivity+Addition.h"; sourceTree = "<group>"; };
+		FFC00676165B9BF20040FD44 /* AbstractActivity+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AbstractActivity+Addition.m"; sourceTree = "<group>"; };
 		FFC07084165742BB00323E38 /* Exam+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Exam+Addition.h"; sourceTree = "<group>"; };
 		FFC07085165742BB00323E38 /* Exam+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Exam+Addition.m"; sourceTree = "<group>"; };
 		FFC1203A165160AC003FF0E6 /* 注册登录.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "注册登录.jpg"; sourceTree = "<group>"; };
@@ -1539,6 +1544,7 @@
 				E5D2447A1647BF8900DA43DD /* ArrangementCell.h */,
 				E5D2447B1647BF8900DA43DD /* ArrangementCell.m */,
 				E5D2447E1647BFA900DA43DD /* ArrangementCell.xib */,
+				FFC00673165B9A1F0040FD44 /* ArrangementNothingCell.xib */,
 				03D540D816513D920070F727 /* EditInfoCell.h */,
 				03D540D916513D920070F727 /* EditInfoCell.m */,
 				03D540DB16513DA20070F727 /* EditInfoCell.xib */,
@@ -1806,8 +1812,8 @@
 		FFBEB2AF164B88450004AF4C /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				FFBF4FF91657CC6E001690D2 /* Event.h */,
-				FFBF4FFA1657CC6E001690D2 /* Event.m */,
+				FFC0066D165B66B10040FD44 /* Event.h */,
+				FFC0066E165B66B10040FD44 /* Event.m */,
 				FFBF500E165814B5001690D2 /* Information.h */,
 				FFBF500F165814B5001690D2 /* Information.m */,
 				FFB14F091658AEDC0035F888 /* Star.h */,
@@ -1818,8 +1824,8 @@
 				FFBF4FF11657CC6D001690D2 /* User.m */,
 				FFBF4FF31657CC6D001690D2 /* Exam.h */,
 				FFBF4FF41657CC6D001690D2 /* Exam.m */,
-				FFBF4FEA1657CC5E001690D2 /* AbstractActivity.h */,
-				FFBF4FEB1657CC5E001690D2 /* AbstractActivity.m */,
+				FFC00670165B66B30040FD44 /* AbstractActivity.h */,
+				FFC00671165B66B30040FD44 /* AbstractActivity.m */,
 				FFBF4FE71657CC42001690D2 /* AbstractCollection.h */,
 				FFBF4FE81657CC42001690D2 /* AbstractCollection.m */,
 			);
@@ -1841,6 +1847,8 @@
 				FF6E953116537EB2002497FA /* User+Addition.m */,
 				FFC07084165742BB00323E38 /* Exam+Addition.h */,
 				FFC07085165742BB00323E38 /* Exam+Addition.m */,
+				FFC00675165B9BF10040FD44 /* AbstractActivity+Addition.h */,
+				FFC00676165B9BF20040FD44 /* AbstractActivity+Addition.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -2271,6 +2279,7 @@
 				FFBF21E6165AB47500F4657A /* add_to_schedule_hl@2x.png in Resources */,
 				FFBF21E7165AB47500F4657A /* add_to_schedule.png in Resources */,
 				FFBF21E8165AB47500F4657A /* add_to_schedule@2x.png in Resources */,
+				FFC00674165B9A1F0040FD44 /* ArrangementNothingCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2350,11 +2359,9 @@
 				03326A7316569430005E8A16 /* WUKenBurnViewHeader.m in Sources */,
 				FFC07086165742BB00323E38 /* Exam+Addition.m in Sources */,
 				FFBF4FE91657CC43001690D2 /* AbstractCollection.m in Sources */,
-				FFBF4FEC1657CC5F001690D2 /* AbstractActivity.m in Sources */,
 				FFBF4FEF1657CC6C001690D2 /* Course.m in Sources */,
 				FFBF4FF21657CC6D001690D2 /* User.m in Sources */,
 				FFBF4FF51657CC6D001690D2 /* Exam.m in Sources */,
-				FFBF4FFB1657CC6F001690D2 /* Event.m in Sources */,
 				FFBF5010165814B6001690D2 /* Information.m in Sources */,
 				FFB14EFD16587DAD0035F888 /* SchoolNewsLocationCell.m in Sources */,
 				FFB14F0016587DC50035F888 /* SchoolNewsContactCell.m in Sources */,
@@ -2367,6 +2374,9 @@
 				033DF63A165938A700C0441A /* RegisterSecondViewController.m in Sources */,
 				03D1CD84165A835900334F0D /* SettingNoImageCell.m in Sources */,
 				03D1CD8A165A841700334F0D /* SettingViewController.m in Sources */,
+				FFC0066F165B66B20040FD44 /* Event.m in Sources */,
+				FFC00672165B66B30040FD44 /* AbstractActivity.m in Sources */,
+				FFC00677165B9BF20040FD44 /* AbstractActivity+Addition.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -80,26 +80,15 @@
 
 - (NSArray *)getRightCellDataArrayAtIndexPath:(NSIndexPath *)indexPath {
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    [request setEntity:[NSEntityDescription entityForName:@"Course" inManagedObjectContext:self.managedObjectContext]];
+    [request setEntity:[NSEntityDescription entityForName:@"AbstractActivity" inManagedObjectContext:self.managedObjectContext]];
     NSDate *semesterBegin = [NSUserDefaults getCurrentSemesterBeginDate];
     NSTimeInterval timeInterval = indexPath.row * DAY_TIME_INTERVAL;
     NSPredicate *beginPredicate = [NSPredicate predicateWithFormat:@"begin_time >= %@", [semesterBegin dateByAddingTimeInterval:timeInterval]];
     NSPredicate *endPredicate = [NSPredicate predicateWithFormat:@"begin_time < %@", [semesterBegin dateByAddingTimeInterval:timeInterval + DAY_TIME_INTERVAL]];
-    [request setPredicate:[NSCompoundPredicate andPredicateWithSubpredicates:[NSArray arrayWithObjects: beginPredicate, endPredicate, nil]]];
-    NSArray *result = [self.managedObjectContext executeFetchRequest:request error:NULL];
-    
-    NSFetchRequest *requestEvent = [[NSFetchRequest alloc] init];
-    [requestEvent setEntity:[NSEntityDescription entityForName:@"Event" inManagedObjectContext:self.managedObjectContext]];
     NSPredicate * schedule = [NSPredicate predicateWithFormat:@"canSchedule == %@",[NSNumber numberWithBool:NO]];
-    [requestEvent setPredicate:[NSCompoundPredicate andPredicateWithSubpredicates:[NSArray arrayWithObjects: beginPredicate, endPredicate,schedule,nil]]];
-    NSArray *resultEvent = [self.managedObjectContext executeFetchRequest:requestEvent error:NULL];
-    
-    NSFetchRequest *requestExam = [[NSFetchRequest alloc] init];
-    [requestExam setEntity:[NSEntityDescription entityForName:@"Exam" inManagedObjectContext:self.managedObjectContext]];
-    [requestExam setPredicate:[NSCompoundPredicate andPredicateWithSubpredicates:[NSArray arrayWithObjects: beginPredicate, endPredicate,nil]]];
-    NSArray *resultExam = [self.managedObjectContext executeFetchRequest:requestExam error:NULL];
-    
-    return [[result arrayByAddingObjectsFromArray:resultEvent] arrayByAddingObjectsFromArray:resultExam];
+    [request setPredicate:[NSCompoundPredicate andPredicateWithSubpredicates:[NSArray arrayWithObjects: beginPredicate, endPredicate, schedule, nil]]];
+    NSArray *result = [self.managedObjectContext executeFetchRequest:request error:NULL];
+    return result;
 }
 
 #pragma mark -

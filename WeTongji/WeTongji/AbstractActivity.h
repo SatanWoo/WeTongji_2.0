@@ -2,7 +2,7 @@
 //  AbstractActivity.h
 //  WeTongji
 //
-//  Created by tang zhixiong on 12-11-17.
+//  Created by tang zhixiong on 12-11-20.
 //
 //
 
@@ -17,5 +17,6 @@
 @property (nonatomic, retain) NSDate * end_time;
 @property (nonatomic, retain) NSString * what;
 @property (nonatomic, retain) NSString * where;
+@property (nonatomic, retain) NSNumber * canSchedule;
 
 @end

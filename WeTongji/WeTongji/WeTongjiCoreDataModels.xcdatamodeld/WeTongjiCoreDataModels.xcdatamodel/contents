@@ -2,6 +2,7 @@
 <model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1811" systemVersion="12C60" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="AbstractActivity" representedClassName="AbstractActivity" isAbstract="YES" parentEntity="AbstractCollection" syncable="YES">
         <attribute name="begin_time" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="canSchedule" optional="YES" attributeType="Boolean" defaultValueString="0" syncable="YES"/>
         <attribute name="end_time" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="what" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="where" optional="YES" attributeType="String" syncable="YES"/>
@@ -28,7 +29,6 @@
         <attribute name="beginTime" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="canFavorite" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="canLike" optional="YES" attributeType="Boolean" syncable="YES"/>
-        <attribute name="canSchedule" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="channelId" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="createAt" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="detail" optional="YES" attributeType="String" syncable="YES"/>
@@ -113,10 +113,10 @@
         <attribute name="year" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="AbstractActivity" positionX="160" positionY="192" width="128" height="105"/>
+        <element name="AbstractActivity" positionX="160" positionY="192" width="128" height="120"/>
         <element name="AbstractCollection" positionX="160" positionY="192" width="128" height="90"/>
         <element name="Course" positionX="160" positionY="192" width="128" height="195"/>
-        <element name="Event" positionX="160" positionY="192" width="128" height="330"/>
+        <element name="Event" positionX="160" positionY="192" width="128" height="315"/>
         <element name="Exam" positionX="160" positionY="192" width="128" height="180"/>
         <element name="Information" positionX="160" positionY="192" width="128" height="345"/>
         <element name="Star" positionX="160" positionY="192" width="128" height="255"/>
