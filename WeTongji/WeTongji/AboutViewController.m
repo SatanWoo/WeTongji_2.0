@@ -71,7 +71,6 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
         cell.textLabel.font = [UIFont fontWithName:@"Heiti SC" size:16];
-        cell.backgroundColor = [UIColor whiteColor];
     }
     if (indexPath.section == 0 && indexPath.row == 0) {
         cell.textLabel.text = @"给WeTongji打分";
