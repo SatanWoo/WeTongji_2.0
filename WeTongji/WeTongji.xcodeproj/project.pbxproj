@@ -121,6 +121,11 @@
 		03D61EF7165BA786005F19A1 /* bottom_bar_intro@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 03D61EF5165BA786005F19A1 /* bottom_bar_intro@2x.png */; };
 		03D61EFA165BA7AC005F19A1 /* login_or_register.png in Resources */ = {isa = PBXBuildFile; fileRef = 03D61EF8165BA7AC005F19A1 /* login_or_register.png */; };
 		03D61EFB165BA7AC005F19A1 /* login_or_register@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 03D61EF9165BA7AC005F19A1 /* login_or_register@2x.png */; };
+		03D61F17165BB251005F19A1 /* PasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D61F16165BB251005F19A1 /* PasswordViewController.m */; };
+		03D61F1A165BB347005F19A1 /* find_passowrd_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 03D61F18165BB347005F19A1 /* find_passowrd_btn.png */; };
+		03D61F1B165BB347005F19A1 /* find_passowrd_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 03D61F19165BB347005F19A1 /* find_passowrd_btn@2x.png */; };
+		03D61F1E165BB373005F19A1 /* rounded_cell.png in Resources */ = {isa = PBXBuildFile; fileRef = 03D61F1C165BB373005F19A1 /* rounded_cell.png */; };
+		03D61F1F165BB373005F19A1 /* rounded_cell@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 03D61F1D165BB373005F19A1 /* rounded_cell@2x.png */; };
 		03E6FBA316552B9800A3E60C /* like_hl.png in Resources */ = {isa = PBXBuildFile; fileRef = 03E6FB9F16552B9800A3E60C /* like_hl.png */; };
 		03E6FBA416552B9800A3E60C /* like_hl@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 03E6FBA016552B9800A3E60C /* like_hl@2x.png */; };
 		03E6FBA516552B9800A3E60C /* like.png in Resources */ = {isa = PBXBuildFile; fileRef = 03E6FBA116552B9800A3E60C /* like.png */; };
@@ -572,6 +577,12 @@
 		03D61EF8165BA7AC005F19A1 /* login_or_register.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_or_register.png; sourceTree = "<group>"; };
 		03D61EF9165BA7AC005F19A1 /* login_or_register@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login_or_register@2x.png"; sourceTree = "<group>"; };
 		03D61F02165BA8EA005F19A1 /* WeTongjiSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = WeTongjiSDK.xcodeproj; path = ../../wetongji_ios_sdk/WeTongjiSDK.xcodeproj; sourceTree = "<group>"; };
+		03D61F15165BB251005F19A1 /* PasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswordViewController.h; sourceTree = "<group>"; };
+		03D61F16165BB251005F19A1 /* PasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordViewController.m; sourceTree = "<group>"; };
+		03D61F18165BB347005F19A1 /* find_passowrd_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = find_passowrd_btn.png; sourceTree = "<group>"; };
+		03D61F19165BB347005F19A1 /* find_passowrd_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "find_passowrd_btn@2x.png"; sourceTree = "<group>"; };
+		03D61F1C165BB373005F19A1 /* rounded_cell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rounded_cell.png; sourceTree = "<group>"; };
+		03D61F1D165BB373005F19A1 /* rounded_cell@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rounded_cell@2x.png"; sourceTree = "<group>"; };
 		03E6FB9F16552B9800A3E60C /* like_hl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = like_hl.png; sourceTree = "<group>"; };
 		03E6FBA016552B9800A3E60C /* like_hl@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "like_hl@2x.png"; sourceTree = "<group>"; };
 		03E6FBA116552B9800A3E60C /* like.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = like.png; sourceTree = "<group>"; };
@@ -1494,6 +1505,10 @@
 		E52352D21631922000DBFF7C /* LeftMenu */ = {
 			isa = PBXGroup;
 			children = (
+				03D61F1C165BB373005F19A1 /* rounded_cell.png */,
+				03D61F1D165BB373005F19A1 /* rounded_cell@2x.png */,
+				03D61F18165BB347005F19A1 /* find_passowrd_btn.png */,
+				03D61F19165BB347005F19A1 /* find_passowrd_btn@2x.png */,
 				03D61EDF165BA737005F19A1 /* userIntro */,
 				E56A797E1658E1EB0007FD97 /* renren_logo.png */,
 				E56A797F1658E1EB0007FD97 /* renren_logo@2x.png */,
@@ -1922,6 +1937,8 @@
 				FFC1204216517562003FF0E6 /* Register */,
 				FFC1203D1651639A003FF0E6 /* LoginViewController.h */,
 				FFC1203E1651639A003FF0E6 /* LoginViewController.m */,
+				03D61F15165BB251005F19A1 /* PasswordViewController.h */,
+				03D61F16165BB251005F19A1 /* PasswordViewController.m */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -2340,6 +2357,10 @@
 				03D61EF7165BA786005F19A1 /* bottom_bar_intro@2x.png in Resources */,
 				03D61EFA165BA7AC005F19A1 /* login_or_register.png in Resources */,
 				03D61EFB165BA7AC005F19A1 /* login_or_register@2x.png in Resources */,
+				03D61F1A165BB347005F19A1 /* find_passowrd_btn.png in Resources */,
+				03D61F1B165BB347005F19A1 /* find_passowrd_btn@2x.png in Resources */,
+				03D61F1E165BB373005F19A1 /* rounded_cell.png in Resources */,
+				03D61F1F165BB373005F19A1 /* rounded_cell@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2437,6 +2458,7 @@
 				03D1CD84165A835900334F0D /* SettingNoImageCell.m in Sources */,
 				03D1CD8A165A841700334F0D /* SettingViewController.m in Sources */,
 				03D61EDE165BA6CA005F19A1 /* UserIntroViewController.m in Sources */,
+				03D61F17165BB251005F19A1 /* PasswordViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

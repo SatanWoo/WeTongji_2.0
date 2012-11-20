@@ -21,7 +21,7 @@
 - (void)configureButton
 {
     self.closeBtn.hidden = YES;
-    self.passwordForgetBtn.hidden = YES;
+    //self.passwordForgetBtn.hidden = YES;
 }
 
 - (void)viewDidLoad
@@ -59,7 +59,6 @@
 
 - (IBAction)textEditDidBegin:(id)sender
 {
-    self.passwordForgetBtn.hidden = NO;
     self.closeBtn.hidden = NO;
     [UIView beginAnimations:nil context:NULL];
 	[UIView setAnimationDuration:.3];
@@ -86,6 +85,5 @@
     [request login:self.NOTextField.text password:self.passwordTextField.text];
     [client enqueueRequest:request];
 }
-
 
 @end

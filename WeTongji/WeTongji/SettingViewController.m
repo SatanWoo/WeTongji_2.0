@@ -86,15 +86,12 @@
         if (indexPath.row == 0) {
             cell.name.text = @"仅在Wifi下加载图片";
             cell.accessoryType = UITableViewCellAccessoryNone;
-            cell.back.image = [UIImage imageNamed:@"table_first"];
         } else if (indexPath.row == 1) {
             cell.name.text = @"检测新版本";
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-            cell.back.image = [UIImage imageNamed:@"table_middle"];
         } else {
             cell.name.text = @"清楚缓存";
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-            cell.back.image = [UIImage imageNamed:@"table_last"];
         }
     }
     

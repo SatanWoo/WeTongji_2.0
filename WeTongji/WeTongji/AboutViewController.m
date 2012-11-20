@@ -92,15 +92,6 @@
         cell.textLabel.text = @"微同济官方主页";
         cell.imageView.image = [UIImage imageNamed:@"we_logo"];
     }
-    
-    if (indexPath.row == 0) {
-        cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"table_first"]];
-    } else if (indexPath.row == 2) {
-        cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"table_last"]];
-    } else {
-        cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"table_middle"]];
-    }
-    
     return cell;
 }
 
