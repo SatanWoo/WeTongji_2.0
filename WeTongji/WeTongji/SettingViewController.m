@@ -29,16 +29,29 @@
     self.navigationItem.leftBarButtonItem = button;
 }
 
+- (void)logout
+{
+    
+}
+
 - (void)configureTableView
 {
-    [self.settingTableView registerNib:[UINib nibWithNibName:@"SettingNoImageCell" bundle:nil] forCellReuseIdentifier:kSettingNoImageCell];
+//    [self.settingTableView registerNib:[UINib nibWithNibName:@"SettingNoImageCell" bundle:nil] forCellReuseIdentifier:kSettingNoImageCell];
+    
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button addTarget:self action:@selector(logout) forControlEvents:UIControlEventTouchUpInside];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logout_btn"]];
+    [button setImage:imageView.image forState:UIControlStateNormal];
+    [button setFrame:CGRectMake(0, 0, imageView.bounds.size.width, imageView.bounds.size.height)];
+    
+    self.settingTableView.tableFooterView = button;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     [self configureNavBar];
-    //[self configureTableView];
+    [self configureTableView];
 }
 
 - (void)didReceiveMemoryWarning
@@ -62,7 +75,7 @@
     if (section == 0) {
         return 1;
     } else {
-        return 3;
+        return 4;
     }
 }
 
@@ -80,7 +93,7 @@
     }
         
     if (indexPath.section == 0) {
-        cell.textLabel.text = @"更新密码";
+        cell.textLabel.text = @"更改密码";
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     } else {
         if (indexPath.row == 0) {
@@ -89,8 +102,11 @@
         } else if (indexPath.row == 1) {
             cell.name.text = @"检测新版本";
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        } else {
+        } else if (indexPath.row == 2){
             cell.name.text = @"清楚缓存";
+            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        } else {
+            cell.name.text = @"校园资讯默认界面";
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         }
     }

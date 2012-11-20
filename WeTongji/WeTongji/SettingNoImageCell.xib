@@ -56,7 +56,7 @@
 							<object class="IBUILabel" id="91197400">
 								<reference key="NSNextResponder" ref="841937698"/>
 								<int key="NSvFlags">256</int>
-								<string key="NSFrame">{{20, 11}, {137, 21}}</string>
+								<string key="NSFrame">{{20, 11}, {182, 21}}</string>
 								<reference key="NSSuperview" ref="841937698"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="493734342"/>
@@ -72,7 +72,7 @@
 									<bytes key="NSRGB">MCAwIDAAA</bytes>
 									<string key="IBUIColorCocoaTouchKeyPath">darkTextColor</string>
 								</object>
-								<object class="NSColor" key="IBUIHighlightedColor" id="91754020">
+								<object class="NSColor" key="IBUIHighlightedColor" id="1065937589">
 									<int key="NSColorSpace">3</int>
 									<bytes key="NSWhite">MQA</bytes>
 								</object>
@@ -112,7 +112,7 @@
 				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="841937698"/>
 				<string key="NSReuseIdentifierKey">_NS:9</string>
-				<reference key="IBUIBackgroundColor" ref="91754020"/>
+				<reference key="IBUIBackgroundColor" ref="1065937589"/>
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 				<int key="IBUISelectionStyle">0</int>
 				<reference key="IBUIContentView" ref="841937698"/>

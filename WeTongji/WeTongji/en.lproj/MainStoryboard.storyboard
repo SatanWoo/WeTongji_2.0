@@ -1261,7 +1261,7 @@
             </objects>
             <point key="canvasLocation" x="670" y="1165"/>
         </scene>
-        <!--About View Controller - Info-->
+        <!--About View Controller - 关于-->
         <scene sceneID="uv3-uC-wEG">
             <objects>
                 <viewController id="OrD-eY-YPk" customClass="AboutViewController" sceneMemberID="viewController">
@@ -1281,7 +1281,7 @@
                         </subviews>
                         <color key="backgroundColor" white="0.90492691530000002" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Info" id="aoQ-33-WKv"/>
+                    <navigationItem key="navigationItem" title="关于" id="aoQ-33-WKv"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="aboutTableView" destination="Vba-iT-jlW" id="Tiy-XE-fHs"/>
@@ -1679,6 +1679,7 @@
         <class className="UserIntroViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UserIntroViewController.h"/>
             <relationships>
+                <relationship kind="action" name="directLogin:"/>
                 <relationship kind="outlet" name="bottomBar" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="pageControl" candidateClass="UIPageControl"/>
                 <relationship kind="outlet" name="registerloginbtn" candidateClass="UIButton"/>
@@ -1712,6 +1713,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="nGL-0f-2v0"/>
-        <segue reference="5c9-iE-HEP"/>
+        <segue reference="0wO-jl-pfe"/>
     </inferredMetricsTieBreakers>
 </document>
