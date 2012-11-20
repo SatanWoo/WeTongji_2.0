@@ -31,6 +31,7 @@
 #define kPersonalInfoCell @"kPersonalInfoCell"
 #define kScheduleCell @"kScheduleCell"
 #define kEventInfoCell @"kEventInfoCell"
+#define kMyFavoriteCell @"kMyFavoriteCell"
 #define kSchoolInfoCell @"kSchoolInfoCell"
 #define kScheduleReminderCell @"kScheduleReminderCell"
 #define kGroupInfoCell @"kGroupInfoCell"

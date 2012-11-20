@@ -15,62 +15,19 @@
 #import "WeeklyPersonCell.h"
 
 @interface MyFavortieViewController () < UITableViewDelegate, UITableViewDataSource>
-- (void)configureTableView;
-@property (nonatomic ,assign) int currentSelectSection;
 @end
 
 @implementation MyFavortieViewController
-@synthesize contentTableView;
-@synthesize recommendButton;
-@synthesize schoolInfoButton;
-@synthesize celebrityButton;
-@synthesize titleButton;
-
-@synthesize currentSelectSection = _currentSelectSection;
-
-#pragma mark - Setter & Getter
-
-- (void)setCurrentSelectSection:(int)currentSelectSection
-{
-    _currentSelectSection = currentSelectSection;
-    [self.contentTableView reloadData];
-}
-
-#pragma mark - Private Method
-- (void)configureTableView
-{
-    [self.contentTableView registerNib:[UINib nibWithNibName:@"EventInfoCell" bundle:nil] forCellReuseIdentifier:kEventInfoCell];
-    [self.contentTableView registerNib:[UINib nibWithNibName:@"SchoolNewsCell" bundle:nil] forCellReuseIdentifier:kSchoolInfoCell];
-    [self.contentTableView registerNib:[UINib nibWithNibName:@"WeeklyPersonCell" bundle:nil] forCellReuseIdentifier:kWeeklyPersonCell];
-    self.currentSelectSection = -1;
-}
-
--(void)headerClicked:(id)sender
-{
-    int sectionIndex = ((UIButton*)sender).tag;
-    if (sectionIndex == self.currentSelectSection) {
-        self.currentSelectSection = -1;
-    } else {
-        self.currentSelectSection = sectionIndex;
-    }
-    [self.contentTableView reloadData];
-}
 
 #pragma mark - LifeCycle
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self configureTableView];
 	// Do any additional setup after loading the view.
 }
 
 - (void)viewDidUnload
 {
-    [self setContentTableView:nil];
-    [self setRecommendButton:nil];
-    [self setSchoolInfoButton:nil];
-    [self setCelebrityButton:nil];
-    [self setTitleButton:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -88,96 +45,25 @@
 }
 
 #pragma mark - UITableViewDataSource
-- (float)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (indexPath.section == self.currentSelectSection) {
-        if (self.currentSelectSection == eRECOMMEND) {
-            return 122;
-        } else if (self.currentSelectSection == eSCHOOL) {
-            return 70;
-        } else {
-            return 75;
-        }
-    }
-    return 0;
-}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 3;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if (section == self.currentSelectSection) {
-        return 5;
-    } else {
-        return 0;
-    }
+    return 30;
 }
 
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-{
-    WUFolderView *abtn = [[[NSBundle mainBundle] loadNibNamed:@"WUFolderView" owner:self options:nil] objectAtIndex:0];
-    abtn.tapButton.tag = section;
-    if (section == 0) {
-        abtn.name.text = @"推荐活动";
-    } else if (section == 1) {
-        abtn.name.text = @"校园资讯";
-    } else {
-        abtn.name.text = @"每周人物";
-    }
-    
-    [abtn.tapButton addTarget:self action:@selector(headerClicked:) forControlEvents:UIControlEventTouchUpInside];
-    return abtn;
-}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (self.currentSelectSection == eRECOMMEND) {
-        EventInfoCell *cell = [tableView dequeueReusableCellWithIdentifier:kEventInfoCell];
+        EventInfoCell *cell = [tableView dequeueReusableCellWithIdentifier:kMyFavoriteCell];
         if (cell == nil) {
-            cell = [[EventInfoCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kEventInfoCell];
+            cell = [[EventInfoCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kMyFavoriteCell];
         }
-        for (UIView *sub in cell.disableView.subviews) {
-            sub.userInteractionEnabled = NO;
-        }
-        cell.favorButton.userInteractionEnabled = YES;
-        cell.likeButton.userInteractionEnabled = YES;
-        [cell.favorButton setImage:[UIImage imageNamed:@"favourite_hl.png"] forState:UIControlStateHighlighted];
-        [cell.likeButton setImage:[UIImage imageNamed:@"like_hl.png"] forState:UIControlStateHighlighted];
         return cell;
-    } else if (self.currentSelectSection == eSCHOOL) {
-        SchoolNewsCell *cell = [tableView dequeueReusableCellWithIdentifier:kSchoolInfoCell];
-        if (cell == nil) {
-            cell = [[SchoolNewsCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kSchoolInfoCell];
-        }
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        return cell;
-    } else {
-        WeeklyPersonCell *cell = [tableView dequeueReusableCellWithIdentifier:kWeeklyPersonCell];
-        if (cell == nil) {
-            cell = [[WeeklyPersonCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kWeeklyPersonCell];
-        }
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        return cell;
-    }
 }
 
--(CGFloat)tableView:(UITableView*)tableView heightForHeaderInSection:(NSInteger)section
-{
-    return 35.0;
-}
-
-
--(CGFloat)tableView:(UITableView*)tableView heightForFooterInSection:(NSInteger)section
-{
-    return 15.0;
-}
-
--(UIView*)tableView:(UITableView*)tableView viewForFooterInSection:(NSInteger)section
-{
-    return [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
-}
-#pragma mark - Private 
 @end

@@ -129,26 +129,30 @@
 {
     [super viewDidLoad];
     [self configureTableView];
-//    [Course clearDataInManagedObjectContext:self.managedObjectContext];
-//    WTClient * client = [WTClient sharedClient];
-//    WTRequest * request = [WTRequest  requestWithSuccessBlock:^(id responseData)
-//                           {
-//                               [Course clearDataInManagedObjectContext:self.managedObjectContext];
-//                               NSString *semesterBeginString = [NSString stringWithFormat:@"%@", [responseData objectForKey:@"SchoolYearStartAt"]];
-//                               NSDate *semesterBeginDate = [semesterBeginString convertToDate];
-//                               NSInteger semesterWeekCount = [[NSString stringWithFormat:@"%@", [responseData objectForKey:@"SchoolYearWeekCount"]] integerValue];
-//                               NSArray *courses = [responseData objectForKey:@"Courses"];
-//                               NSInteger semesterCourseWeekCount = [[NSString stringWithFormat:@"%@", [responseData objectForKey:@"SchoolYearCourseWeekCount"]] integerValue];
-//                               for(NSDictionary *dict in courses)
-//                               {
-//                                   [Course insertCourse:dict withSemesterBeginTime:semesterBeginDate semesterWeekCount:semesterCourseWeekCount inManagedObjectContext:self.managedObjectContext];
-//                               }
-//                               NSDate *semesterEndDate = [semesterBeginDate dateByAddingTimeInterval:60 * 60 * 24 * 7 * semesterWeekCount];
-//                               [NSUserDefaults setCurrentSemesterBeginTime:semesterBeginDate endTime:semesterEndDate];
-//                               [self loadScheduleActivity];
-//                           }failureBlock:^(NSError *error){}];
-//    [request getCourses];
-//    [client enqueueRequest:request];
+    [self loadScheduleActivity];
+    [self loadCourses];
+}
+
+-(void)loadCourses
+{
+    WTClient * client = [WTClient sharedClient];
+    WTRequest * request = [WTRequest  requestWithSuccessBlock:^(id responseData)
+                           {
+                               [Course clearDataInManagedObjectContext:self.managedObjectContext];
+                               NSString *semesterBeginString = [NSString stringWithFormat:@"%@", [responseData objectForKey:@"SchoolYearStartAt"]];
+                               NSDate *semesterBeginDate = [semesterBeginString convertToDate];
+                               NSInteger semesterWeekCount = [[NSString stringWithFormat:@"%@", [responseData objectForKey:@"SchoolYearWeekCount"]] integerValue];
+                               NSArray *courses = [responseData objectForKey:@"Courses"];
+                               NSInteger semesterCourseWeekCount = [[NSString stringWithFormat:@"%@", [responseData objectForKey:@"SchoolYearCourseWeekCount"]] integerValue];
+                               for(NSDictionary *dict in courses)
+                               {
+                                   [Course insertCourse:dict withSemesterBeginTime:semesterBeginDate semesterWeekCount:semesterCourseWeekCount inManagedObjectContext:self.managedObjectContext];
+                               }
+                               NSDate *semesterEndDate = [semesterBeginDate dateByAddingTimeInterval:60 * 60 * 24 * 7 * semesterWeekCount];
+                               [NSUserDefaults setCurrentSemesterBeginTime:semesterBeginDate endTime:semesterEndDate];
+                           }failureBlock:^(NSError *error){}];
+    [request getCourses];
+    [client enqueueRequest:request];
 }
 
 - (void)loadScheduleActivity
@@ -172,6 +176,7 @@
     [request getScheduleWithBeginDate:[NSUserDefaults getCurrentSemesterBeginDate] endDate:[NSUserDefaults getCurrentSemesterEndDate]];
     [client enqueueRequest:request];
 }
+
 
 - (void)viewDidAppear:(BOOL)animated
 {
