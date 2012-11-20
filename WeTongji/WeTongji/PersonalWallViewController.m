@@ -15,7 +15,12 @@
 #import "WUTapImageView.h"
 #import "WUScrollBackgroundView.h"
 #import "WUPageControlViewController.h"
+#import "NSString+Addition.h"
 #import <WeTongjiSDK/WeTongjiSDK.h>
+#import "Course+Addition.h"
+#import "Exam+Addition.h"
+#import "Event+Addition.h"
+#import "AbstractActivity+Addition.h"
 
 #define kContentOffSet 156
 #define kRowHeight 44
@@ -113,16 +118,59 @@
 #pragma mark - Pangesture
 
 #pragma mark - Lifecycle
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    [self configureTableView];
-}
 
 - (void)viewDidUnload
 {
     [self setHeaderBoard:nil];
     [super viewDidUnload];
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    [self configureTableView];
+    [Course clearDataInManagedObjectContext:self.managedObjectContext];
+    WTClient * client = [WTClient sharedClient];
+    WTRequest * request = [WTRequest  requestWithSuccessBlock:^(id responseData)
+                           {
+                               [Course clearDataInManagedObjectContext:self.managedObjectContext];
+                               NSString *semesterBeginString = [NSString stringWithFormat:@"%@", [responseData objectForKey:@"SchoolYearStartAt"]];
+                               NSDate *semesterBeginDate = [semesterBeginString convertToDate];
+                               NSInteger semesterWeekCount = [[NSString stringWithFormat:@"%@", [responseData objectForKey:@"SchoolYearWeekCount"]] integerValue];
+                               NSArray *courses = [responseData objectForKey:@"Courses"];
+                               NSInteger semesterCourseWeekCount = [[NSString stringWithFormat:@"%@", [responseData objectForKey:@"SchoolYearCourseWeekCount"]] integerValue];
+                               for(NSDictionary *dict in courses)
+                               {
+                                   [Course insertCourse:dict withSemesterBeginTime:semesterBeginDate semesterWeekCount:semesterCourseWeekCount inManagedObjectContext:self.managedObjectContext];
+                               }
+                               NSDate *semesterEndDate = [semesterBeginDate dateByAddingTimeInterval:60 * 60 * 24 * 7 * semesterWeekCount];
+                               [NSUserDefaults setCurrentSemesterBeginTime:semesterBeginDate endTime:semesterEndDate];
+                               [self loadScheduleActivity];
+                           }failureBlock:^(NSError *error){}];
+    [request getCourses];
+    [client enqueueRequest:request];
+}
+
+- (void)loadScheduleActivity
+{
+    WTClient * client = [WTClient sharedClient];
+    WTRequest * request = [WTRequest  requestWithSuccessBlock:^(id responseData)
+                           {
+                               [Event clearAllScheduledEventInManagedObjectContext:self.managedObjectContext];
+                               [Exam clearDataInManagedObjectContext:self.managedObjectContext];
+                               NSArray * events = [responseData objectForKey:@"Activities"];
+                               for ( NSDictionary * dict in events )
+                               {
+                                   [Event insertActivity:dict inManagedObjectContext:self.managedObjectContext];
+                               }
+                               NSArray * exams = [responseData objectForKey:@"Exams"];
+                               for ( NSDictionary * dict in exams )
+                               {
+                                   [Exam insertAnExam:dict inManagedObjectContext:self.managedObjectContext];
+                               }
+                           }failureBlock:^(NSError *error){}];
+    [request getScheduleWithBeginDate:[NSUserDefaults getCurrentSemesterBeginDate] endDate:[NSUserDefaults getCurrentSemesterEndDate]];
+    [client enqueueRequest:request];
 }
 
 - (void)viewDidAppear:(BOOL)animated
