@@ -298,10 +298,10 @@
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="schedule_week_left_bar_bg.png">{65, 352}</string>
-			<string key="schedule_week_left_bar_shadow.png">{15, 352}</string>
-			<string key="schedule_week_top_bar_bg.png">{320, 20}</string>
-			<string key="schedule_week_top_bar_shadow.png">{320, 30}</string>
+			<string key="schedule_week_left_bar_bg.png">{16, 16}</string>
+			<string key="schedule_week_left_bar_shadow.png">{16, 16}</string>
+			<string key="schedule_week_top_bar_bg.png">{16, 16}</string>
+			<string key="schedule_week_top_bar_shadow.png">{16, 16}</string>
 		</dictionary>
 		<string key="IBCocoaTouchPluginVersion">1930</string>
 	</data>

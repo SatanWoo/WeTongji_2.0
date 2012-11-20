@@ -21,6 +21,7 @@
 #define kSchedueViewController @"kSchedueViewController"
 #define kWUKenBurnsViewController @"kWUKenBurnsViewController"
 #define kProtocolViewController @"kProtocolViewController"
+#define kUserIntroViewController @"kUserIntroViewController"
 
 // TableViewCell
 #define kLeftMenuCell @"kLeftMenuCell"
@@ -55,6 +56,7 @@
 #define kProtocolViewControllerSegue @"kProtocolViewController"
 #define kSeeUserProtocolSegue @"kSeeUserProtocol"
 #define kRegisterSecondViewControllerSegue @"kRegisterSecondViewController"
+#define kSettingViewControllerSegue @"kSettingViewController"
 #define kSettingViewControllerSegue @"kSettingViewController"
 
 // Slide

@@ -10,10 +10,11 @@
 #import <QuartzCore/QuartzCore.h>
 #import "Macro.h"
 #import "UIBarButtonItem+CustomButton.h"
-
+#import "UserIntroViewController.h"
 
 @interface WUSlideViewController ()
 @property (assign ,nonatomic) int currentStatus;
+@property (nonatomic ,strong) UserIntroViewController *introViewController;
 
 - (void)renderShadow:(BOOL)rendered;
 - (void)revealLeftViewController:(UIGestureRecognizer *)recognizer;
@@ -29,14 +30,18 @@
 @synthesize leftViewController = _leftViewController;
 
 @synthesize currentStatus = _currentStatus;
-
+@synthesize introViewController = _introViewController;
 #pragma mark - Lifecycle
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.middelViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:kPersonalViewController];
+    
+    self.middelViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:kLoginViewController];
     self.leftViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:kLeftMenuViewController];
-	// Do any additional setup after loading the view.
+    
+//    [self.middelViewController.view removeFromSuperview];
+//    [self.view addSubview:self.introViewController.view];
+    
 }
 
 - (void)viewDidUnload
@@ -140,7 +145,7 @@
         _middelViewController.view.frame = self.view.bounds;
         [self.view addSubview:_middelViewController.view];
     }
-
+    
     UISwipeGestureRecognizer *rightGesturer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(revealLeftViewController:)];
     rightGesturer.direction = UISwipeGestureRecognizerDirectionRight;
     [_middelViewController.view addGestureRecognizer:rightGesturer];
@@ -162,6 +167,16 @@
     _leftViewController.view.frame = leftViewFrame;
     _leftViewController.slideViewController = self;
     [self.view insertSubview:_leftViewController.view atIndex:0];
+}
+
+- (UserIntroViewController *)introViewController
+{
+    if (_introViewController == nil) {
+        _introViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:kUserIntroViewController];
+        _introViewController.view.frame = self.view.bounds;
+        [_introViewController addPicture:self.middelViewController.view];
+    }
+    return _introViewController;
 }
 
 #pragma mark - UIGestureRecognizerDelegate

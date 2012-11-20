@@ -836,11 +836,8 @@
 		03BAB359164FD0010049DA19 /* icon & Splash */ = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< HEAD
 				FFB138801656820200D73C71 /* default.png */,
 				FFB138811656820200D73C71 /* default@2x.png */,
-=======
->>>>>>> Ziqi
 				03BAB35A164FD01B0049DA19 /* Icon-57.png */,
 				03BAB35B164FD01B0049DA19 /* Icon-Small-58@2x.png.png */,
 				03BAB35C164FD01B0049DA19 /* Icon@2x.png.png */,
@@ -926,12 +923,9 @@
 		B00D6911162CFCAC00592B1D = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< HEAD
 				FFB1387E165681B000D73C71 /* Default@2x.png */,
-=======
 				03326A4B16567FE3005E8A16 /* default.png */,
 				03326A4C16567FE3005E8A16 /* default@2x.png */,
->>>>>>> Ziqi
 				03BAB368164FD0720049DA19 /* Icon@2x.png.png */,
 				03BAB366164FD06B0049DA19 /* Icon-57.png */,
 				FFB1388A1656871F00D73C71 /* WeTongjiSDK.xcodeproj */,
@@ -1984,11 +1978,9 @@
 				FFB210771656130F00FCAF5F /* to_do_list_point_green@2x.png in Resources */,
 				FFB210781656130F00FCAF5F /* to_do_list_point_yellow.png in Resources */,
 				FFB210791656130F00FCAF5F /* to_do_list_point_yellow@2x.png in Resources */,
-<<<<<<< HEAD
 				FFB1387F165681B000D73C71 /* Default@2x.png in Resources */,
 				FFB138821656820200D73C71 /* default.png in Resources */,
 				FFB138831656820200D73C71 /* default@2x.png in Resources */,
-=======
 				03326A491656798A005E8A16 /* recommend_img.png in Resources */,
 				03326A4A1656798A005E8A16 /* recommend_img@2x.png in Resources */,
 				03326A4D16567FE3005E8A16 /* default.png in Resources */,
@@ -2002,7 +1994,6 @@
 				03326A6B165691BA005E8A16 /* l3@2x.png in Resources */,
 				03326A6C165691BA005E8A16 /* l3.png in Resources */,
 				03326A751656949C005E8A16 /* WUKenBurnViewHeader.xib in Resources */,
->>>>>>> Ziqi
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2091,16 +2082,13 @@
 				FFB20FFF1655DA0900FCAF5F /* ScheduleWeekRightTableViewCell.m in Sources */,
 				FFB210021655DA0900FCAF5F /* ScheduleWeekViewController.m in Sources */,
 				FFB210041655DA0900FCAF5F /* ScheduleWeekLeftTableView.m in Sources */,
-<<<<<<< HEAD
 				FFB2108116565BA500FCAF5F /* ScheduleWeekRightTableViewCellContentView.m in Sources */,
 				FFB2108716565DE800FCAF5F /* Course.m in Sources */,
 				FFB2108D16565EB000FCAF5F /* AbstractActivity.m in Sources */,
 				FFB138A0165691F400D73C71 /* Exam.m in Sources */,
 				FFB138A316569D3B00D73C71 /* Event.m in Sources */,
-=======
 				03326A5C16568FA8005E8A16 /* JBKenBurnsView.m in Sources */,
 				03326A7316569430005E8A16 /* WUKenBurnViewHeader.m in Sources */,
->>>>>>> Ziqi
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,5 +11,6 @@
 
 @interface EditInfoViewController : MiddleAbstractSecondViewController
 @property (weak, nonatomic) IBOutlet UITableView *infoTableView;
+@property (weak, nonatomic) IBOutlet UIImageView *avatar;
 
 @end
