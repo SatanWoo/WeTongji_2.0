@@ -192,7 +192,6 @@
 {
     [super viewDidLoad];
     [self configureTableView];
-    
     UISwipeGestureRecognizer *leftGesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(goBack:)];
     leftGesture.direction = UISwipeGestureRecognizerDirectionRight;
     [self.view addGestureRecognizer:leftGesture];
@@ -220,6 +219,13 @@
 {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES animated:YES];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [UIView animateWithDuration:0.8f animations:^{
+        self.pageViewController.view.frame = CGRectMake(0, kStateY, self.pageViewController.view.frame.size.width, self.pageViewController.view.frame.size.height);} completion:nil];
 }
 
 - (void) viewWillDisappear:(BOOL)animated
