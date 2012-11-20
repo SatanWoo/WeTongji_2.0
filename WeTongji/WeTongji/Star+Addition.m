@@ -21,9 +21,9 @@
         result = [NSEntityDescription insertNewObjectForEntityForName:@"Star" inManagedObjectContext:context];
     }
     result.avatarLink = [NSString stringWithFormat:@"%@",[dict objectForKey:@"Avatar"]];
-    if ( [result.canFavorite boolValue] )
+    if ( [result.canFavorite boolValue] || !result.canFavorite )
         result.canFavorite = [NSNumber numberWithInt:[[dict objectForKey:@"CanFavorite"] intValue]];
-    if ( [result.canLike boolValue] )
+    if ( [result.canLike boolValue] || !result.canLike )
         result.canLike = [NSNumber numberWithInt:[[dict objectForKey:@"CanLike"] intValue]];
     result.detail = [NSString stringWithFormat:@"%@",[dict objectForKey:@"Description"]];
     result.starId = [NSString stringWithFormat:@"%@",[dict objectForKey:@"Id"]];

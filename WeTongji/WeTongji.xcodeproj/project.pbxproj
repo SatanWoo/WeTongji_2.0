@@ -426,6 +426,7 @@
 		FFBF9A21164843A100E3D610 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBF9A20164843A100E3D610 /* MobileCoreServices.framework */; };
 		FFBF9A23164843A600E3D610 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBF9A22164843A600E3D610 /* SystemConfiguration.framework */; };
 		FFBF9A25164843AD00E3D610 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBF9A24164843AD00E3D610 /* MapKit.framework */; };
+		FFC006CA165BCED60040FD44 /* AbstractActivity+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC006C9165BCED60040FD44 /* AbstractActivity+Addition.m */; };
 		FFC07086165742BB00323E38 /* Exam+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC07085165742BB00323E38 /* Exam+Addition.m */; };
 		FFC1203B165160AC003FF0E6 /* 注册登录.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FFC1203A165160AC003FF0E6 /* 注册登录.jpg */; };
 		FFC1203F1651639A003FF0E6 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC1203E1651639A003FF0E6 /* LoginViewController.m */; };
@@ -443,11 +444,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		03D61F09165BA8EA005F19A1 /* PBXContainerItemProxy */ = {
+		FFC006C4165BCE760040FD44 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 03D61F02165BA8EA005F19A1 /* WeTongjiSDK.xcodeproj */;
+			containerPortal = FFC006BD165BCE760040FD44 /* WeTongjiSDK.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = E110DF2B16365B990087EA46;
+			remoteInfo = WeTongjiSDK;
+		};
+		FFC006C6165BCE800040FD44 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FFC006BD165BCE760040FD44 /* WeTongjiSDK.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = E110DF2A16365B990087EA46;
 			remoteInfo = WeTongjiSDK;
 		};
 /* End PBXContainerItemProxy section */
@@ -579,7 +587,6 @@
 		03D61EF5165BA786005F19A1 /* bottom_bar_intro@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bottom_bar_intro@2x.png"; sourceTree = "<group>"; };
 		03D61EF8165BA7AC005F19A1 /* login_or_register.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_or_register.png; sourceTree = "<group>"; };
 		03D61EF9165BA7AC005F19A1 /* login_or_register@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login_or_register@2x.png"; sourceTree = "<group>"; };
-		03D61F02165BA8EA005F19A1 /* WeTongjiSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = WeTongjiSDK.xcodeproj; path = ../../wetongji_ios_sdk/WeTongjiSDK.xcodeproj; sourceTree = "<group>"; };
 		03D61F15165BB251005F19A1 /* PasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswordViewController.h; sourceTree = "<group>"; };
 		03D61F16165BB251005F19A1 /* PasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordViewController.m; sourceTree = "<group>"; };
 		03D61F18165BB347005F19A1 /* find_passowrd_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = find_passowrd_btn.png; sourceTree = "<group>"; };
@@ -959,6 +966,9 @@
 		FFBF9A20164843A100E3D610 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		FFBF9A22164843A600E3D610 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		FFBF9A24164843AD00E3D610 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		FFC006BD165BCE760040FD44 /* WeTongjiSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = WeTongjiSDK.xcodeproj; path = ../../../wetongji_ios_sdk/WeTongjiSDK.xcodeproj; sourceTree = "<group>"; };
+		FFC006C8165BCED60040FD44 /* AbstractActivity+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AbstractActivity+Addition.h"; sourceTree = "<group>"; };
+		FFC006C9165BCED60040FD44 /* AbstractActivity+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AbstractActivity+Addition.m"; sourceTree = "<group>"; };
 		FFC07084165742BB00323E38 /* Exam+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Exam+Addition.h"; sourceTree = "<group>"; };
 		FFC07085165742BB00323E38 /* Exam+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Exam+Addition.m"; sourceTree = "<group>"; };
 		FFC1203A165160AC003FF0E6 /* 注册登录.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "注册登录.jpg"; sourceTree = "<group>"; };
@@ -1137,14 +1147,6 @@
 			name = userIntro;
 			sourceTree = "<group>";
 		};
-		03D61F03165BA8EA005F19A1 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				03D61F0A165BA8EA005F19A1 /* WeTongjiSDK.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		03E6FBB4165536FF00A3E60C /* WeeklyPersonViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -1190,7 +1192,7 @@
 		B00D6911162CFCAC00592B1D = {
 			isa = PBXGroup;
 			children = (
-				03D61F02165BA8EA005F19A1 /* WeTongjiSDK.xcodeproj */,
+				FFC006BD165BCE760040FD44 /* WeTongjiSDK.xcodeproj */,
 				03326A4B16567FE3005E8A16 /* default.png */,
 				03326A4C16567FE3005E8A16 /* default@2x.png */,
 				03BAB368164FD0720049DA19 /* Icon@2x.png.png */,
@@ -1931,8 +1933,18 @@
 				FF6E953116537EB2002497FA /* User+Addition.m */,
 				FFC07084165742BB00323E38 /* Exam+Addition.h */,
 				FFC07085165742BB00323E38 /* Exam+Addition.m */,
+				FFC006C8165BCED60040FD44 /* AbstractActivity+Addition.h */,
+				FFC006C9165BCED60040FD44 /* AbstractActivity+Addition.m */,
 			);
 			name = Categories;
+			sourceTree = "<group>";
+		};
+		FFC006BE165BCE760040FD44 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FFC006C5165BCE760040FD44 /* WeTongjiSDK.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		FFC1203716515DD0003FF0E6 /* SignIn */ = {
@@ -1989,6 +2001,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				FFC006C7165BCE800040FD44 /* PBXTargetDependency */,
 			);
 			name = WeTongji;
 			productName = WeTongji;
@@ -2015,8 +2028,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 03D61F03165BA8EA005F19A1 /* Products */;
-					ProjectRef = 03D61F02165BA8EA005F19A1 /* WeTongjiSDK.xcodeproj */;
+					ProductGroup = FFC006BE165BCE760040FD44 /* Products */;
+					ProjectRef = FFC006BD165BCE760040FD44 /* WeTongjiSDK.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -2027,11 +2040,11 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		03D61F0A165BA8EA005F19A1 /* WeTongjiSDK.framework */ = {
+		FFC006C5165BCE760040FD44 /* WeTongjiSDK.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = WeTongjiSDK.framework;
-			remoteRef = 03D61F09165BA8EA005F19A1 /* PBXContainerItemProxy */;
+			remoteRef = FFC006C4165BCE760040FD44 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -2473,10 +2486,19 @@
 				03D61EDE165BA6CA005F19A1 /* UserIntroViewController.m in Sources */,
 				03D61F17165BB251005F19A1 /* PasswordViewController.m in Sources */,
 				03D61F34165BB968005F19A1 /* MBProgressHUD.m in Sources */,
+				FFC006CA165BCED60040FD44 /* AbstractActivity+Addition.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FFC006C7165BCE800040FD44 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = WeTongjiSDK;
+			targetProxy = FFC006C6165BCE800040FD44 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		B00D6929162CFCAC00592B1D /* InfoPlist.strings */ = {
