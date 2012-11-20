@@ -72,11 +72,18 @@
 - (void)configureNotification
 {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(login:) name:kLoginNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reveal:) name:kSlideNotification object:nil];
 }
 
 - (void)removeNotification
 {
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [[NSNotificationCenter defaultCenter] removeObserver:self forKeyPath:kLoginNotification];
+    [[NSNotificationCenter defaultCenter] removeObserver:self forKeyPath:kSlideNotification];
+}
+
+- (void)reveal:(NSNotification *)notification
+{
+    [self revealLeftViewController:nil];
 }
 
 - (void)revealMiddleViewController:(UIGestureRecognizer *)recognizer

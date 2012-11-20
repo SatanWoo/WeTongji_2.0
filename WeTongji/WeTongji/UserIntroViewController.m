@@ -8,6 +8,7 @@
 
 #import "UserIntroViewController.h"
 #import <QuartzCore/QuartzCore.h>
+#import "Macro.h"
 #define kPageContent 407
 #define kLastContent 460
 
@@ -89,6 +90,11 @@
 - (IBAction)directLogin:(id)sender
 {
     [self.view removeFromSuperview];
+}
+
+- (IBAction)directUser:(id)sender
+{
+    [[NSNotificationCenter defaultCenter] postNotificationName:kSlideNotification object:self];
 }
 
 #pragma mark - UIScrollViewDelegate
