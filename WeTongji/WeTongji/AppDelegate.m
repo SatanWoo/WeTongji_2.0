@@ -11,6 +11,7 @@
 #import "NSString+Addition.h"
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import <WeTongjiSDK/WeTongjiSDK.h>
 #import "User+Addition.h"
 #import "Event+Addition.h"
 #import "Information+Addition.h"
@@ -32,6 +33,7 @@
     [Event clearAllEventInManagedObjectContext:self.managedObjectContext];
     [Information clearDataInManagedObjectContext:self.managedObjectContext];
     [Star clearDataInManagedObjectContext:self.managedObjectContext];
+    [NSUserDefaults setCurrentUserID:@"" session:@""];
 #endif
     return YES;
 }

@@ -65,6 +65,7 @@
 
 // Notification
 #define kLoginNotification @"kLoginNotification"
+#define kLogoutNotification @"kLogoutNotification"
 #define kSlideNotification @"kSlideNotification"
 
 #endif

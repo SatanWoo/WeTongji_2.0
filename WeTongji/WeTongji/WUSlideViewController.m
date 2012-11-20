@@ -45,7 +45,7 @@
     identifier = model.identifier;
     self.middelViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:identifier];
     [self.leftViewController.menuTableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:NO scrollPosition:UITableViewRowAnimationNone];
-    [self configureNotification];    
+    [self configureNotification];
 }
 
 - (void)viewDidUnload

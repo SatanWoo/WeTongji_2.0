@@ -67,6 +67,20 @@
     [self.infoButton setImage:[UIImage imageNamed:@"info_btn_hl.png"] forState:UIControlStateHighlighted];
 }
 
+- (void)configureNotification
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(logout) name:kLogoutNotification object:nil];
+}
+
+- (void)logout
+{
+    self.identifierArray = nil;
+    [self.menuTableView reloadData];
+    LeftMenuCellModel * model = self.identifierArray[0];
+    UIViewController *controller = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:model.identifier];
+    [self.delegate changeMiddleContent:controller];
+}
+
 #pragma mark - Getter & Setter
 - (NSArray *)identifierArray
 {
@@ -132,6 +146,7 @@
     [super viewDidLoad];
     [self configureTableView];
     [self configureBottomBarButton];
+    [self configureNotification];
 }
 
 - (void)viewDidUnload
@@ -151,11 +166,6 @@
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-//    if (self.isLogin) {
-//        return [self.identifierArray count];
-//    } else {
-//        return ;
-//    }
     return [self.identifierArray count];
 }
 

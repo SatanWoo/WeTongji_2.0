@@ -11,12 +11,30 @@
 #import "Macro.h"
 #import "AboutHeaderView.h"
 #import "UIBarButtonItem+CustomButton.h"
+#import "User+Addition.h"
+#import "Course+Addition.h"
+#import "Event+Addition.h"
+#import "Information+Addition.h"
+#import "Star+Addition.h"
+#import "Exam+Addition.h"
+#import <WeTongjiSDK/WeTongjiSDK.h>
+
 
 @interface SettingViewController ()<UITableViewDataSource, UITableViewDelegate>
+
+@property (nonatomic,readonly) BOOL isLogIn;
+
 - (void)configureTableView;
+
 @end
 
 @implementation SettingViewController
+
+-(BOOL) isLogIn
+{
+    if ( [User userinManagedObjectContext:self.managedObjectContext] ) return YES;
+    else return NO;
+}
 
 - (void)pressNavButton
 {
@@ -29,9 +47,10 @@
     self.navigationItem.leftBarButtonItem = button;
 }
 
-- (void)logout
+-(void)adjust
 {
-    
+    [self.settingTableView.tableFooterView setHidden:!self.isLogIn];
+    [self.settingTableView reloadData];
 }
 
 - (void)configureTableView
@@ -41,8 +60,43 @@
     UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logout_btn"]];
     [button setImage:imageView.image forState:UIControlStateNormal];
     [button setFrame:CGRectMake(0, 0, imageView.bounds.size.width, imageView.bounds.size.height)];
-    
     self.settingTableView.tableFooterView = button;
+}
+
+-(void) logout
+{
+    [User userClearinManagedObjectContext:self.managedObjectContext];
+    [Course clearDataInManagedObjectContext:self.managedObjectContext];
+    [Exam clearDataInManagedObjectContext:self.managedObjectContext];
+    NSArray * list = [Event allEventsInManagedObjectContext:self.managedObjectContext];
+    for ( Event * event in list )
+    {
+        event.canFavorite = [NSNumber numberWithBool:YES];
+        event.canLike = [NSNumber numberWithBool:YES];
+        event.canSchedule = [NSNumber numberWithBool:YES];
+    }
+    list = [Information getAllInformationWithCategory:nil inManagedObjectContext:self.managedObjectContext];
+    for ( Information * information in list )
+    {
+        information.canFavorite = [NSNumber numberWithBool:YES];
+        information.canLike = [NSNumber numberWithBool:YES];
+    }
+    list = [Star getAllStarsInManagedObjectContext:self.managedObjectContext];
+    for ( Star * star in list )
+    {
+        star.canLike = [NSNumber numberWithBool:YES];
+        star.canFavorite = [NSNumber numberWithBool:YES];
+    }
+    WTClient * client = [WTClient sharedClient];
+    WTRequest * request = [WTRequest requestWithSuccessBlock:nil failureBlock:nil];
+    [request logoff];
+    [client enqueueRequest:request];
+    [NSUserDefaults setCurrentUserID:@"" session:@""];
+    [self adjust];
+    [[NSNotificationCenter defaultCenter] postNotificationName:kLogoutNotification object:self];
+#ifdef DEBUG
+    NSLog(@"log out clicked!");
+#endif
 }
 
 - (void)viewDidLoad
@@ -50,6 +104,10 @@
     [super viewDidLoad];
     [self configureNavBar];
     [self configureTableView];
+    [self adjust];
+#ifdef DEBUG
+    NSLog(@"isLogIn:%d",self.isLogIn);
+#endif
 }
 
 - (void)didReceiveMemoryWarning
@@ -71,7 +129,8 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if (section == 0) {
-        return 1;
+       if (self.isLogIn) return 1;
+       else return 0;
     } else {
         return 4;
     }
@@ -108,7 +167,6 @@
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         }
     }
-    
     return cell;
 }
 

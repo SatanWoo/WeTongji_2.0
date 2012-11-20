@@ -242,18 +242,18 @@
                             #endif
                            }];
     
-//    if ( self.event )
-//    {
-//        if ( [self.event.canSchedule boolValue] )
-//        {
-//            [request setActivityScheduled:self.event.activityId];
-//        }
-//        else
-//        {
-//            [request cancelActivityScheduled:self.event.activityId];
-//        }
-//    }
-//    [client enqueueRequest:request];
+    if ( self.event )
+    {
+        if ( [self.event.canSchedule boolValue] )
+        {
+            [request setActivityScheduled:self.event.activityId];
+        }
+        else
+        {
+            [request cancelActivityScheduled:self.event.activityId];
+        }
+    }
+    [client enqueueRequest:request];
 }
 
 -(void)setEvent:(Event *)event
