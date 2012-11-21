@@ -154,7 +154,6 @@
 {
     [super viewDidLoad];
     [self configureTableView];
-    [self loadScheduleActivity];
     [self loadCourses];
     [self loadMyFavorites];
     [self loadActivities];
@@ -179,6 +178,7 @@
                                NSDate *semesterEndDate = [semesterBeginDate dateByAddingTimeInterval:60 * 60 * 24 * 7 * semesterWeekCount];
                                [NSUserDefaults setCurrentSemesterBeginTime:semesterBeginDate endTime:semesterEndDate];
                                [self.scheduleTableView reloadData];
+                               [self loadScheduleActivity];
                            }failureBlock:^(NSError *error){}];
     [request getCourses];
     [client enqueueRequest:request];
