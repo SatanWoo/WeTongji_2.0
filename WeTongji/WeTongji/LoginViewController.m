@@ -29,6 +29,7 @@
 {
     [super viewDidLoad];
     [self configureButton];
+    [self.navigationController.navigationBar setHidden:YES];
     [self.navigationItem setHidesBackButton:YES];
 }
 
