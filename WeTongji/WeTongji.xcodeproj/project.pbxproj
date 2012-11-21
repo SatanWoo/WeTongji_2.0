@@ -381,6 +381,9 @@
 		FFB14F0816588ED90035F888 /* WeeklyPersonHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB14F0716588ED90035F888 /* WeeklyPersonHeaderCell.m */; };
 		FFB14F0B1658AEDC0035F888 /* Star.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB14F0A1658AEDC0035F888 /* Star.m */; };
 		FFB14F651658D8410035F888 /* ScheduleWeekRightTableViewCellContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB2108016565BA300FCAF5F /* ScheduleWeekRightTableViewCellContentView.m */; };
+		FFB19D8B165D462700DE9291 /* ZoomScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB19D8A165D462700DE9291 /* ZoomScrollView.m */; };
+		FFB19D8E165D594F00DE9291 /* default_pic.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB19D8C165D594F00DE9291 /* default_pic.png */; };
+		FFB19D8F165D594F00DE9291 /* default_pic@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB19D8D165D594F00DE9291 /* default_pic@2x.png */; };
 		FFB20FEF1655D72F00FCAF5F /* ScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB20FEE1655D72F00FCAF5F /* ScheduleViewController.m */; };
 		FFB20FFD1655DA0900FCAF5F /* ScheduleWeekLeftTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB20FF11655DA0900FCAF5F /* ScheduleWeekLeftTableViewCell.m */; };
 		FFB20FFE1655DA0900FCAF5F /* ScheduleWeekLeftTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFB20FF21655DA0900FCAF5F /* ScheduleWeekLeftTableViewCell.xib */; };
@@ -964,6 +967,10 @@
 		FFB14F0716588ED90035F888 /* WeeklyPersonHeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeeklyPersonHeaderCell.m; sourceTree = "<group>"; };
 		FFB14F091658AEDC0035F888 /* Star.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Star.h; sourceTree = "<group>"; };
 		FFB14F0A1658AEDC0035F888 /* Star.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Star.m; sourceTree = "<group>"; };
+		FFB19D89165D462700DE9291 /* ZoomScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZoomScrollView.h; sourceTree = "<group>"; };
+		FFB19D8A165D462700DE9291 /* ZoomScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZoomScrollView.m; sourceTree = "<group>"; };
+		FFB19D8C165D594F00DE9291 /* default_pic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default_pic.png; sourceTree = "<group>"; };
+		FFB19D8D165D594F00DE9291 /* default_pic@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default_pic@2x.png"; sourceTree = "<group>"; };
 		FFB20FED1655D72F00FCAF5F /* ScheduleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScheduleViewController.h; sourceTree = "<group>"; };
 		FFB20FEE1655D72F00FCAF5F /* ScheduleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScheduleViewController.m; sourceTree = "<group>"; };
 		FFB20FF01655DA0900FCAF5F /* ScheduleWeekLeftTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScheduleWeekLeftTableViewCell.h; sourceTree = "<group>"; };
@@ -1516,6 +1523,8 @@
 				03D61F50165BD7C2005F19A1 /* InfoFooterView.h */,
 				03D61F51165BD7C2005F19A1 /* InfoFooterView.m */,
 				03D61F53165BD7D2005F19A1 /* InfoFooterView.xib */,
+				FFB19D89165D462700DE9291 /* ZoomScrollView.h */,
+				FFB19D8A165D462700DE9291 /* ZoomScrollView.m */,
 			);
 			name = UIView;
 			sourceTree = "<group>";
@@ -1741,6 +1750,8 @@
 		E52352D31631922500DBFF7C /* MiddleContent */ = {
 			isa = PBXGroup;
 			children = (
+				FFB19D8C165D594F00DE9291 /* default_pic.png */,
+				FFB19D8D165D594F00DE9291 /* default_pic@2x.png */,
 				FFC1204016516C38003FF0E6 /* back_btn@2x.png */,
 				E5E22E8C1658AAFA00B0C9AC /* info_btn_hl.png */,
 				E5E22E8D1658AAFA00B0C9AC /* info_btn_hl@2x.png */,
@@ -2644,6 +2655,8 @@
 				03187512165D25CA000D446B /* list_btn@2x.png in Resources */,
 				0398838D165D39F100A31620 /* change_password_btn.png in Resources */,
 				0398838E165D39F100A31620 /* change_password_btn@2x.png in Resources */,
+				FFB19D8E165D594F00DE9291 /* default_pic.png in Resources */,
+				FFB19D8F165D594F00DE9291 /* default_pic@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2749,6 +2762,7 @@
 				FFB1268F165C7706005ECC2D /* MyFavoriteViewCell.m in Sources */,
 				FFB12696165CAEE8005ECC2D /* FavoriteIconCell.m in Sources */,
 				0398838A165D395500A31620 /* UpdatePasswordViewController.m in Sources */,
+				FFB19D8B165D462700DE9291 /* ZoomScrollView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

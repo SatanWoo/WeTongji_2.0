@@ -53,10 +53,9 @@
 - (void) configureTodayRecommend
 {
     self.recommendTitle.text = self.recommandEvent.title;
-    NSLog(@"recommendactivityId : %@",self.recommandEvent.activityId);
     [self.pageViewController clearPicture];
-    UIImageView *imageView = [[UIImageView alloc] initWithFrame:self.view.frame];
-    [imageView setImageWithURL:[NSURL URLWithString:self.recommandEvent.imageLink]];
+    UIImageView * imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"scaleview.png"]];
+    [imageView setImageWithURL:[NSURL URLWithString:self.recommandEvent.imageLink] placeholderImage:[UIImage imageNamed:@"default_pic"]];
     [self.pageViewController addPicture:imageView];
 }
 
@@ -70,7 +69,6 @@
     originScheduleTableViewCenter = self.scheduleTableView.center;
     [self.view insertSubview:self.pageViewController.view belowSubview:self.headerBoard];
     self.scheduleTableView.contentInset = UIEdgeInsetsMake(kContentOffSet, 0.0f, 0.0f, 0.0f);
-    self.scheduleTableView.backgroundColor =[UIColor clearColor];
     CGPoint center = CGPointMake(self.headerBoard.center.x, (-self.scheduleTableView.contentOffset.y)/2);
     [self.headerBoard setCenter:center];
 }
@@ -80,8 +78,7 @@
 {
     self.isAnimationFinished = false;
     [UIView animateWithDuration:0.55f animations:^{
-        [self.scheduleTableView setCenter:originScheduleTableViewCenter];
-    } completion:^(BOOL finished) {
+        [self.scheduleTableView setCenter:originScheduleTableViewCenter];    } completion:^(BOOL finished) {
         self.scheduleTableView.userInteractionEnabled = YES;
     }];
     
@@ -153,12 +150,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    NSLog(@"%f",self.parentViewController.view.frame.size.height);
+    [self configureTodayRecommend];
     [self configureTableView];
     [self loadCourses];
     [self loadMyFavorites];
     [self loadActivities];
-    [self configureTodayRecommend];
+    
 }
+
+
 
 -(void)loadCourses
 {
@@ -201,7 +202,6 @@
                                    [Exam insertAnExam:dict inManagedObjectContext:self.managedObjectContext];
                                }
                                [self.scheduleTableView reloadData];
-                               [self configureTodayRecommend];
                            }failureBlock:^(NSError *error){}];
     [request getScheduleWithBeginDate:[NSUserDefaults getCurrentSemesterBeginDate] endDate:[NSUserDefaults getCurrentSemesterEndDate]];
     [client enqueueRequest:request];
@@ -220,7 +220,6 @@
                                    event.hidden = [NSNumber numberWithBool:NO];
                                }
                                [self.scheduleTableView reloadData];
-                               [self configureTodayRecommend];
                            }
                             failureBlock:^(NSError * error)
                            {
@@ -252,6 +251,7 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    NSLog(@"%f",self.parentViewController.view.frame.size.height);
     [UIView animateWithDuration:0.8f animations:^{
         self.pageViewController.view.frame = CGRectMake(0, kStateY, self.pageViewController.view.frame.size.width, self.pageViewController.view.frame.size.height);} completion:nil];
 }
@@ -354,9 +354,7 @@
             CGPoint center = CGPointMake(self.headerBoard.center.x, (self.pageViewController.view.frame.size.height)/2);
             [self.headerBoard setCenter:center];
         } completion:^(BOOL finished) {
-            self.pageViewController.pagedScrollView.scrollEnabled = NO;
             self.pageViewController.view.userInteractionEnabled = YES;
-            self.scheduleTableView.userInteractionEnabled = NO;
         }];
     } else
         if (self.isAnimationFinished == false)

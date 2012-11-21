@@ -7,6 +7,7 @@
 //
 
 #import "WUPageControlViewController.h"
+#import "ZoomScrollView.h"
 
 @interface WUPageControlViewController () <UIScrollViewDelegate>
 - (void)configureScrollView;
@@ -32,20 +33,11 @@
 - (void)addPicture:(UIImageView *)image
 {
     CGRect frame = self.view.bounds;
-    frame.origin.x = frame.size.width * self.pictureNumber;
-    frame.origin.y = 0.0f;
-    UIScrollView * scrollView = [[UIScrollView alloc] initWithFrame:frame];
     frame.origin.x = 0;
+    frame.origin.y = 0.0f;
     image.frame = frame;
-    [scrollView addSubview:image];
-    [scrollView setDelegate:self];
-    scrollView.minimumZoomScale = 1;
-    scrollView.maximumZoomScale = 2;
-    scrollView.zoomScale = 1;
-    UITapGestureRecognizer * twoFingerTapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onTwoFingerDoubleTap:)];
-    twoFingerTapRecognizer.numberOfTapsRequired = 1;
-    twoFingerTapRecognizer.numberOfTouchesRequired = 2;
-    [scrollView addGestureRecognizer:twoFingerTapRecognizer];
+    frame.origin.x = frame.size.width * self.pictureNumber;
+    ZoomScrollView * scrollView = [[ZoomScrollView alloc] initWithFrame:frame withImage:image];
     [self.pagedScrollView addSubview:scrollView];
     self.pictureNumber ++;
     self.pageControl.numberOfPages = self.pictureNumber;
@@ -89,15 +81,6 @@
     self.pageControl.numberOfPages = 0;
 }
 
-- (void)onTwoFingerDoubleTap:(UITapGestureRecognizer*)recognizer
-{
-    UIScrollView * scrollView = self.imageList[self.pageControl.currentPage];
-    CGFloat newZoomScale = scrollView.zoomScale;
-    newZoomScale = MAX(newZoomScale, scrollView.minimumZoomScale);
-    NSLog(@"%f",newZoomScale);
-    [scrollView setZoomScale:newZoomScale animated:YES];
-}
-
 - (void)viewDidUnload
 {
     [self setPagedScrollView:nil];
@@ -111,15 +94,6 @@
 }
 
 #pragma mark - UIScrollViewDelegate
-
-- (UIView*)viewForZoomingInScrollView:(UIScrollView *)sender
-{
-    if ( sender != self.pagedScrollView )
-    {
-        return [[sender subviews] lastObject];
-    }
-    return nil;
-}
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     // Load the pages which are now on screen

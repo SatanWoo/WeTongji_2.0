@@ -93,7 +93,13 @@
         for ( NSString * link in self.imageList )
         {
             UIImageView * view = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"scaleview.png"]];
-            [view setImageWithURL:[NSURL URLWithString:link]];
+            [view setImageWithURL:[NSURL URLWithString:link] placeholderImage:[UIImage imageNamed:@"default_pic"]];
+            [_pageViewController addPicture:view];
+        }
+        if ( self.imageList.count == 0)
+        {
+            UIImageView * view = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"scaleview.png"]];
+            [view setImage:[UIImage imageNamed:@"default_pic"]];
             [_pageViewController addPicture:view];
         }
         originPageViewCenter = [_pageViewController.view center];
