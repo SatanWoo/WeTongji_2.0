@@ -27,6 +27,7 @@
 #define kLeftMenuCell @"kLeftMenuCell"
 #define KRecommendCell @"KRecommendCell"
 #define kReminderCell @"kReminderCell"
+#define kReminderNothingCell @"kReminderNothingCell"
 #define kFavoriteCell @"kFavoriteCell"
 #define kPersonalInfoCell @"kPersonalInfoCell"
 #define kScheduleCell @"kScheduleCell"

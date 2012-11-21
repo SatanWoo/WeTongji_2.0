@@ -12,4 +12,6 @@
 
 +(AbstractActivity *) emptyActivityInManagedObjectContext:(NSManagedObjectContext *)context;
 
++(AbstractActivity *) getTodayNextScheduleInManagedObjectContext:(NSManagedObjectContext *)context;
+
 @end

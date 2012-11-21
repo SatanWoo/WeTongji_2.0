@@ -21,6 +21,7 @@
 #import "Exam+Addition.h"
 #import "Event+Addition.h"
 #import "AbstractActivity+Addition.h"
+#import "NSString+Addition.h"
 
 #define kContentOffSet 156
 #define kRowHeight 44
@@ -47,6 +48,7 @@
 - (void)configureTableView
 {
     [self.scheduleTableView registerNib:[UINib nibWithNibName:@"ReminderCell" bundle:nil] forCellReuseIdentifier:kReminderCell];
+    [self.scheduleTableView registerNib:[UINib nibWithNibName:@"ReminderNothingCell" bundle:nil] forCellReuseIdentifier:kReminderNothingCell];
     [self.scheduleTableView registerNib:[UINib nibWithNibName:@"FavoriteCell" bundle:nil] forCellReuseIdentifier:kFavoriteCell];
     [self.scheduleTableView registerNib:[UINib nibWithNibName:@"PersonalInfoCell" bundle:nil] forCellReuseIdentifier:kPersonalInfoCell];
     [self.scheduleTableView registerNib:[UINib nibWithNibName:@"ScheduleCell" bundle:nil] forCellReuseIdentifier:kScheduleCell];
@@ -131,6 +133,7 @@
     [self configureTableView];
     [self loadScheduleActivity];
     [self loadCourses];
+    [self loadMyFavorites];
 }
 
 -(void)loadCourses
@@ -150,6 +153,7 @@
                                }
                                NSDate *semesterEndDate = [semesterBeginDate dateByAddingTimeInterval:60 * 60 * 24 * 7 * semesterWeekCount];
                                [NSUserDefaults setCurrentSemesterBeginTime:semesterBeginDate endTime:semesterEndDate];
+                               [self.scheduleTableView reloadData];
                            }failureBlock:^(NSError *error){}];
     [request getCourses];
     [client enqueueRequest:request];
@@ -172,11 +176,31 @@
                                {
                                    [Exam insertAnExam:dict inManagedObjectContext:self.managedObjectContext];
                                }
+                               [self.scheduleTableView reloadData];
                            }failureBlock:^(NSError *error){}];
     [request getScheduleWithBeginDate:[NSUserDefaults getCurrentSemesterBeginDate] endDate:[NSUserDefaults getCurrentSemesterEndDate]];
     [client enqueueRequest:request];
 }
 
+
+-(void) loadMyFavorites
+{
+    WTClient *client = [WTClient sharedClient];
+    WTRequest * request = [WTRequest requestWithSuccessBlock:^(id responseData)
+                           {
+                               NSArray *array = [responseData objectForKey:@"Activities"];
+                               for(NSDictionary *eventDict in array)
+                               {
+                                   Event *event = [Event insertActivity:eventDict inManagedObjectContext:self.managedObjectContext];
+                                   event.hidden = [NSNumber numberWithBool:NO];
+                               }
+                           }
+                            failureBlock:^(NSError * error)
+                           {
+                           }];
+    [request getFavoritesWithNextPage:0];
+    [client enqueueRequest:request];
+}
 
 - (void)viewDidAppear:(BOOL)animated
 {
@@ -212,9 +236,21 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section == 0) {
-        ReminderCell *cell = [tableView dequeueReusableCellWithIdentifier:kReminderCell];
+        NSString * identifier;
+        AbstractActivity * thing = [AbstractActivity getTodayNextScheduleInManagedObjectContext:self.managedObjectContext];
+        if ( thing )
+            identifier = kReminderCell;
+        else
+            identifier = kReminderNothingCell;
+        ReminderCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
         if (cell == nil) {
-            cell = [[ReminderCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kReminderCell];
+            cell = [[ReminderCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        }
+        if ( thing )
+        {
+            cell.eventNameLabel.text = thing.what;
+            cell.locationLabel.text = thing.where;
+            cell.timeLabel.text = [NSString timeConvertFromBeginDate:thing.begin_time endDate:thing.end_time];
         }
         return cell;
     } else if (indexPath.section == 1) {
