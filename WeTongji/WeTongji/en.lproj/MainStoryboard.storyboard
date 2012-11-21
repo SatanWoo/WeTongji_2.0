@@ -700,7 +700,7 @@
             <objects>
                 <viewController id="ft9-E4-WVk" customClass="LoginViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wyo-4J-hLK">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" id="VeN-sM-Xzz">
@@ -708,15 +708,15 @@
                                 <autoresizingMask key="autoresizingMask"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="we_logo_reg.png" id="1Yv-KI-yCq">
-                                        <rect key="frame" x="128" y="104" width="104" height="59"/>
+                                        <rect key="frame" x="128" y="117" width="104" height="59"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="text_input.png" id="Pot-Re-ayc">
-                                        <rect key="frame" x="30" y="219" width="301" height="89"/>
+                                        <rect key="frame" x="30" y="238" width="301" height="89"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                     </imageView>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" id="6gs-nd-Asr">
-                                        <rect key="frame" x="105" y="226" width="209" height="30"/>
+                                        <rect key="frame" x="105" y="245" width="209" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
@@ -726,7 +726,7 @@
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" id="Itf-20-hYg">
-                                        <rect key="frame" x="105" y="270" width="209" height="30"/>
+                                        <rect key="frame" x="105" y="289" width="209" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
@@ -736,7 +736,7 @@
                                         </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="s7Q-cD-iWL">
-                                        <rect key="frame" x="30" y="326" width="301" height="40"/>
+                                        <rect key="frame" x="30" y="345" width="301" height="40"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" backgroundImage="login_btn.png">
@@ -751,7 +751,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="FPh-TU-kko">
-                                        <rect key="frame" x="29" y="448" width="137" height="44"/>
+                                        <rect key="frame" x="29" y="485" width="137" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" image="register_btn.png">
@@ -766,7 +766,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="IwL-kL-8Fi">
-                                        <rect key="frame" x="194" y="448" width="137" height="44"/>
+                                        <rect key="frame" x="194" y="485" width="137" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" image="directly_enter_btn.png">
@@ -778,11 +778,11 @@
                                         </state>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="no_account.png" id="d95-2V-ey0">
-                                        <rect key="frame" x="30" y="425" width="301" height="15"/>
+                                        <rect key="frame" x="30" y="462" width="301" height="15"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="6yM-YH-6CS">
-                                        <rect key="frame" x="33" y="177" width="22" height="23"/>
+                                        <rect key="frame" x="33" y="195" width="22" height="23"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="Button" backgroundImage="close_btn.png">
@@ -797,7 +797,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="0Gr-x2-YeB">
-                                        <rect key="frame" x="261" y="273" width="22" height="23"/>
+                                        <rect key="frame" x="261" y="290" width="22" height="23"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="Button" backgroundImage="password_forget.png">
@@ -818,6 +818,7 @@
                         <color key="backgroundColor" red="0.92357336960000003" green="0.92357336960000003" blue="0.92357336960000003" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="登陆" id="mYL-HR-exd"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="NOTextField" destination="6gs-nd-Asr" id="vW2-Nk-1Ph"/>
@@ -836,7 +837,7 @@
             <objects>
                 <viewController id="MpH-hm-30q" customClass="RegisterViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RaS-Gn-QfF">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_reg.png" id="elD-LV-45D">
@@ -887,15 +888,15 @@
             <objects>
                 <viewController id="Cv7-YQ-g1U" customClass="RegisterSecondViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YhO-9a-Ink">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="XRz-CG-JOQ">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="text_input3.png" id="FR7-KR-Rwh">
-                                        <rect key="frame" x="10" y="82" width="301" height="177"/>
+                                        <rect key="frame" x="10" y="82" width="301" height="221"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入学号" adjustsFontSizeToFit="NO" minimumFontSize="17" id="Ptn-Ls-rHO">
@@ -966,7 +967,7 @@
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" id="wYK-Jr-8hf">
-                                        <rect key="frame" x="182" y="297" width="70" height="1"/>
+                                        <rect key="frame" x="182" y="297" width="70" height="45"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <color key="backgroundColor" name="controlShadowColor" catalog="System" colorSpace="catalog"/>
                                     </view>
@@ -1463,15 +1464,15 @@
             <objects>
                 <viewController storyboardIdentifier="kPasswordViewController" id="pDm-qB-Ncv" customClass="PasswordViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Kp2-24-9Kk">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="897-81-Oe1">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="rounded_cell.png" id="UF1-KL-EQl">
-                                        <rect key="frame" x="10" y="66" width="301" height="44"/>
+                                        <rect key="frame" x="10" y="66" width="301" height="88"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="学号" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ujH-Rb-GBC">
