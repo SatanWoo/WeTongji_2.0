@@ -29,10 +29,13 @@
 {
     [super viewDidLoad];
     [self configureButton];
-    [self.navigationController.navigationBar setHidden:YES];
     [self.navigationItem setHidesBackButton:YES];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [self.navigationController.navigationBar setHidden:YES];
+}
 
 - (void)viewDidUnload {
     [self setScrollVIew:nil];
