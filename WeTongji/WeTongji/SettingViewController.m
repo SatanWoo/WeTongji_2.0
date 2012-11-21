@@ -130,7 +130,7 @@
 {
     if (section == 0) {
        if (self.isLogIn) return 1;
-       else return 0;
+       else return 1;
     } else {
         return 4;
     }
@@ -189,6 +189,9 @@
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if (indexPath.section == 0) {
+        [self performSegueWithIdentifier:kUpdatePasswordViewControllerSegue sender:self];
+    }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 @end
