@@ -24,6 +24,8 @@
 {
     UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithImage:@"nav_finish_btn" selector:@selector(pressNavButton) target:self];
     self.navigationItem.leftBarButtonItem = button;
+    
+    self.title = @"更改密码";
 }
 
 - (void)configureScrollView
@@ -32,7 +34,7 @@
     frame.size.height += 1;
     self.scrollView.contentSize = frame.size;
     
-    [self.oldPass becomeFirstResponder];
+    //[self.oldPass becomeFirstResponder];
 }
 
 - (void)viewDidLoad

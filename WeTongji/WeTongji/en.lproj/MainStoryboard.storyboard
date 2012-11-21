@@ -217,7 +217,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="settingTableView" destination="EfF-kp-33Z" id="5qu-gg-HXG"/>
-                        <segue destination="x0g-D6-LN3" kind="modal" identifier="kUpdatePasswordViewController" id="uEQ-x7-mhD"/>
+                        <segue destination="x0g-D6-LN3" kind="push" identifier="kUpdatePasswordViewController" id="uEQ-x7-mhD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZS0-S8-VW9" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1414,49 +1414,49 @@
             <objects>
                 <viewController id="x0g-D6-LN3" customClass="UpdatePasswordViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eJ1-K0-p5d">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="ckB-i3-12l">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="table_first.png" id="o8l-d0-kME">
-                                        <rect key="frame" x="10" y="106" width="301" height="45"/>
+                                        <rect key="frame" x="10" y="75" width="301" height="45"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="table_middle.png" id="eVS-s7-ymZ">
-                                        <rect key="frame" x="10" y="149" width="301" height="45"/>
+                                        <rect key="frame" x="10" y="119" width="301" height="45"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="table_last.png" id="9vz-gr-XAz">
-                                        <rect key="frame" x="10" y="192" width="301" height="45"/>
+                                        <rect key="frame" x="10" y="161" width="301" height="45"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="旧密码" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jSm-8d-ITT">
-                                        <rect key="frame" x="66" y="118" width="51" height="21"/>
+                                        <rect key="frame" x="66" y="87" width="51" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="新密码" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="chS-ZQ-2NL">
-                                        <rect key="frame" x="66" y="161" width="51" height="21"/>
+                                        <rect key="frame" x="66" y="130" width="51" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="确认密码" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1PA-C1-edv">
-                                        <rect key="frame" x="49" y="204" width="68" height="21"/>
+                                        <rect key="frame" x="49" y="173" width="68" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" id="hGu-KQ-URG">
-                                        <rect key="frame" x="136" y="115" width="164" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <rect key="frame" x="136" y="84" width="164" height="30"/>
+                                        <autoresizingMask key="autoresizingMask"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                         <connections>
@@ -1466,8 +1466,8 @@
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" id="XdU-la-VjI">
-                                        <rect key="frame" x="136" y="154" width="164" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <rect key="frame" x="136" y="124" width="164" height="30"/>
+                                        <autoresizingMask key="autoresizingMask"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                         <connections>
@@ -1477,8 +1477,8 @@
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" id="Nvd-kb-iFA">
-                                        <rect key="frame" x="136" y="195" width="164" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <rect key="frame" x="136" y="164" width="164" height="30"/>
+                                        <autoresizingMask key="autoresizingMask"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                         <connections>
@@ -1488,7 +1488,7 @@
                                         </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="5Bh-0x-yWQ">
-                                        <rect key="frame" x="10" y="274" width="301" height="46"/>
+                                        <rect key="frame" x="10" y="243" width="301" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" backgroundImage="change_password_btn.png">
@@ -1504,6 +1504,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="confirm" destination="Nvd-kb-iFA" id="LTI-IN-hJN"/>
@@ -1872,14 +1873,14 @@
                 <relationship kind="outlet" name="settingTableView" candidateClass="UITableView"/>
             </relationships>
         </class>
-        <class className="UpdatePasswordViewController" superclassName="UIViewController">
+        <class className="UpdatePasswordViewController" superclassName="MiddleAbstractSecondViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UpdatePasswordViewController.h"/>
             <relationships>
                 <relationship kind="action" name="textDidEndEdit:"/>
                 <relationship kind="action" name="touchOnTextFiled:" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="confirm" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="newPass" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="oldPass" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="password" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
             </relationships>
         </class>

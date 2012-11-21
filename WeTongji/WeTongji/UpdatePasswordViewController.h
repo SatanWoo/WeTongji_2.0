@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MiddleAbstractSecondViewController.h"
 
-@interface UpdatePasswordViewController : UIViewController
+@interface UpdatePasswordViewController : MiddleAbstractSecondViewController
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UITextField *confirm;
 @property (weak, nonatomic) IBOutlet UITextField *password;
