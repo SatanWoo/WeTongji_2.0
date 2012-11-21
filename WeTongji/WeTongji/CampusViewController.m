@@ -468,7 +468,6 @@ static NSInteger tempRow;
         if (cell == nil) {
             cell = [[SchoolNewsCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kSchoolInfoCell];
         }
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         [cell setInformation:self.schoolList[indexPath.row]];
         return cell;
     } else if (tableView == self.groupOInfoTableView) {
@@ -476,7 +475,6 @@ static NSInteger tempRow;
         if (cell == nil) {
             cell = [[GroupInfoCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kGroupInfoCell];
         }
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         [cell setInformation:self.groupList[indexPath.row]];
         return cell;
         
@@ -485,7 +483,6 @@ static NSInteger tempRow;
         if (cell == nil) {
             cell = [[RecommendCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:KRecommendCell];
         }
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         [cell setInformation:self.recommendlList[indexPath.row]];
         return cell;
     } else {
@@ -493,7 +490,6 @@ static NSInteger tempRow;
         if (cell == nil) {
             cell = [[SchoolNewsCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kSchoolInfoCell];
         }
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         [cell setInformation:self.actionList[indexPath.row]];
         return cell;
     }
