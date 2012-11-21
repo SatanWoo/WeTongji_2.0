@@ -12,4 +12,5 @@
 @property (weak, nonatomic) IBOutlet UIScrollView *pagedScrollView;
 @property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
 - (void)addPicture:(UIImageView *)image;
+- (void)clearPicture;
 @end

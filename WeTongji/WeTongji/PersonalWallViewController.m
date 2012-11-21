@@ -36,6 +36,8 @@
 @property (nonatomic, assign) BOOL isAnimationFinished;
 @property (weak, nonatomic) IBOutlet UIView *headerBoard;
 @property (nonatomic, strong) WUPageControlViewController *pageViewController;
+@property (nonatomic,strong)Event * recommandEvent;
+@property (weak, nonatomic) IBOutlet UILabel *recommendTitle;
 - (void)configureTableView;
 - (void)didTap:(UITapGestureRecognizer *)recognizer;
 - (void)didSwipe:(UISwipeGestureRecognizer *)recognizer;
@@ -44,8 +46,20 @@
 @implementation PersonalWallViewController
 @synthesize isAnimationFinished = _isAnimationFinished;
 @synthesize pageViewController = _pageViewController;
+@synthesize recommandEvent = _recommandEvent;
 
 #pragma mark - Private Method
+
+- (void) configureTodayRecommend
+{
+    self.recommendTitle.text = self.recommandEvent.title;
+    NSLog(@"recommendactivityId : %@",self.recommandEvent.activityId);
+    [self.pageViewController clearPicture];
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:self.view.frame];
+    [imageView setImageWithURL:[NSURL URLWithString:self.recommandEvent.imageLink]];
+    [self.pageViewController addPicture:imageView];
+}
+
 - (void)configureTableView
 {
     [self.scheduleTableView registerNib:[UINib nibWithNibName:@"ReminderCell" bundle:nil] forCellReuseIdentifier:kReminderCell];
@@ -97,6 +111,16 @@
 }
 
 #pragma mark - Setter & Getter
+
+-(Event *) recommandEvent
+{
+    if ( !_recommandEvent )
+    {
+        _recommandEvent = [Event getTodayRecommendEventInManagedObjectContext:self.managedObjectContext];
+    }
+    return _recommandEvent;
+}
+
 - (WUPageControlViewController *)pageViewController
 {
     if (_pageViewController == nil) {
@@ -109,9 +133,6 @@
         
         [_pageViewController.view setFrame:CGRectMake(0, kStateY, 320 ,480)];
         _pageViewController.view.userInteractionEnabled = NO;
-        [_pageViewController addPicture:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"scaleview.png"]]];
-        [_pageViewController addPicture:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"scaleview.png"]]];
-        [_pageViewController addPicture:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"scaleview.png"]]];
         originPageControlViewCenter = _pageViewController.view.center;
     }
     
@@ -125,6 +146,7 @@
 - (void)viewDidUnload
 {
     [self setHeaderBoard:nil];
+    [self setRecommendTitle:nil];
     [super viewDidUnload];
 }
 
@@ -135,6 +157,8 @@
     [self loadScheduleActivity];
     [self loadCourses];
     [self loadMyFavorites];
+    [self loadActivities];
+    [self configureTodayRecommend];
 }
 
 -(void)loadCourses
@@ -165,7 +189,6 @@
     WTClient * client = [WTClient sharedClient];
     WTRequest * request = [WTRequest  requestWithSuccessBlock:^(id responseData)
                            {
-                               [Event clearAllScheduledEventInManagedObjectContext:self.managedObjectContext];
                                [Exam clearDataInManagedObjectContext:self.managedObjectContext];
                                NSArray * events = [responseData objectForKey:@"Activities"];
                                for ( NSDictionary * dict in events )
@@ -178,6 +201,7 @@
                                    [Exam insertAnExam:dict inManagedObjectContext:self.managedObjectContext];
                                }
                                [self.scheduleTableView reloadData];
+                               [self configureTodayRecommend];
                            }failureBlock:^(NSError *error){}];
     [request getScheduleWithBeginDate:[NSUserDefaults getCurrentSemesterBeginDate] endDate:[NSUserDefaults getCurrentSemesterEndDate]];
     [client enqueueRequest:request];
@@ -196,11 +220,32 @@
                                    event.hidden = [NSNumber numberWithBool:NO];
                                }
                                [self.scheduleTableView reloadData];
+                               [self configureTodayRecommend];
                            }
                             failureBlock:^(NSError * error)
                            {
                            }];
     [request getFavoritesWithNextPage:0];
+    [client enqueueRequest:request];
+}
+
+-(void) loadActivities
+{
+    WTClient *client = [WTClient sharedClient];
+    WTRequest * request = [WTRequest requestWithSuccessBlock:^(id responseData)
+                           {
+                               NSArray *array = [responseData objectForKey:@"Activities"];
+                               for(NSDictionary *eventDict in array)
+                               {
+                                   Event *event = [Event insertActivity:eventDict inManagedObjectContext:self.managedObjectContext];
+                                   event.hidden = [NSNumber numberWithBool:NO];
+                               }
+                               [self configureTodayRecommend];
+                           }
+                            failureBlock:^(NSError * error)
+                           {
+                           }];
+    [request getActivitiesInChannel:nil inSort:GetActivitySortMethodCreateDesc Expired:YES nextPage:0];
     [client enqueueRequest:request];
 }
 
@@ -309,6 +354,7 @@
             CGPoint center = CGPointMake(self.headerBoard.center.x, (self.pageViewController.view.frame.size.height)/2);
             [self.headerBoard setCenter:center];
         } completion:^(BOOL finished) {
+            self.pageViewController.pagedScrollView.scrollEnabled = NO;
             self.pageViewController.view.userInteractionEnabled = YES;
             self.scheduleTableView.userInteractionEnabled = NO;
         }];

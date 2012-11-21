@@ -30,6 +30,14 @@
     self.pictureNumber ++;
 }
 
+- (void)clearPicture
+{
+    NSArray * views = [self.pagedScrollView subviews];
+    for ( UIView * view in views )
+        [view removeFromSuperview];
+    self.pictureNumber = 0 ;
+}
+
 #pragma mark - Private Method
 - (void)configureScrollView
 {

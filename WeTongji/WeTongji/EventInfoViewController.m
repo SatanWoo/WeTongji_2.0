@@ -283,7 +283,6 @@ static NSInteger tempRow;
         }];
     [request getActivitiesInChannel:nil inSort:self.filterString Expired:YES nextPage:self.nextPage];
     [client enqueueRequest:request];
-    NSLog(@"%@ : %d",self.filterString,self.nextPage);
 }
 
 #pragma mark -

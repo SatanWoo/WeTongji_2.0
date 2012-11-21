@@ -9,6 +9,8 @@
 #import "Event+Addition.h"
 #import "NSString+Addition.h"
 
+#define DAY_TIME_INTERVAL ( 60 * 60 * 24 )
+
 @implementation Event (Addition)
 
 + (Event *)insertActivity:(NSDictionary *)dict inManagedObjectContext:(NSManagedObjectContext *)context
@@ -80,6 +82,35 @@
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     [request setEntity:[NSEntityDescription entityForName:@"Event" inManagedObjectContext:context]];
     NSArray *result = [context executeFetchRequest:request error:NULL];
+    return result;
+}
+
++ (Event *) getTodayRecommendEventInManagedObjectContext:(NSManagedObjectContext *)context
+{
+    Event * result = nil;
+    
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSDate * now = [NSDate dateWithTimeIntervalSinceNow:0];
+    NSInteger interval = [now timeIntervalSince1970] / DAY_TIME_INTERVAL;
+    NSDate * today = [NSDate dateWithTimeIntervalSince1970:interval * DAY_TIME_INTERVAL];
+    
+    for ( int index = 0 ; index < 7 ; index ++ )
+    {
+        [request setEntity:[NSEntityDescription entityForName:@"Event" inManagedObjectContext:context]];
+        NSPredicate *createEndPredicate = [NSPredicate predicateWithFormat:@"createAt < %@", today];
+        NSPredicate * createBeginPredicate = [NSPredicate predicateWithFormat:@"createAt >= %@",[today dateByAddingTimeInterval:-DAY_TIME_INTERVAL]];
+        NSPredicate * imagePredicate = [NSPredicate predicateWithFormat:@"imageLink <> %@",[NSNull null]];
+        [request setPredicate:[NSCompoundPredicate andPredicateWithSubpredicates:[NSArray arrayWithObjects: createEndPredicate, createBeginPredicate, imagePredicate, nil]]];
+        NSSortDescriptor *sort = [[NSSortDescriptor alloc] initWithKey:@"like" ascending:YES];
+        [request setSortDescriptors:[[NSArray alloc] initWithObjects:sort , nil]];
+        NSArray *list = [context executeFetchRequest:request error:NULL];
+        today = [today dateByAddingTimeInterval:-DAY_TIME_INTERVAL];
+        if ( [list count] )
+        {
+            result = [list lastObject];
+            return result;
+        }
+    }
     return result;
 }
 
