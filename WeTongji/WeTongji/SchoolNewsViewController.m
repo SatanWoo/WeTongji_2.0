@@ -334,7 +334,7 @@
 {
     if ( indexPath.section == 1 )
     {
-        if ( self.information && indexPath.row < 3 ) return 56;
+        if ( self.information && indexPath.row < 3 ) return 40;
         return self.currentCell.bounds.size.height;
     }
     return 0;
