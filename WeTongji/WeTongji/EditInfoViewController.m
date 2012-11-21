@@ -88,7 +88,7 @@
 {
     //self.navigationItem.leftBarButtonItem = nil;
     self.navigationItem.rightBarButtonItem = nil;
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:@"edit" selector:@selector(editClcked:) target:self];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:@"edit_btn" selector:@selector(editClcked:) target:self];
 }
 
 #pragma mark - Life Cyclc

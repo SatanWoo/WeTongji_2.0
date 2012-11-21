@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
 @property (weak, nonatomic) IBOutlet UIImageView *bottomBar;
 @property (weak, nonatomic) IBOutlet UIButton *registerloginbtn;
+@property (weak, nonatomic) IBOutlet UIButton *directUser;
 - (void)addPicture:(UIView *)view;
 - (IBAction)directUser:(id)sender;
 @end

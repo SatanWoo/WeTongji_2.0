@@ -127,9 +127,19 @@
         _kenView.kenView.layer.borderColor = [UIColor blackColor].CGColor;
         
         NSArray *myImages = [NSArray arrayWithObjects:
-                             [UIImage imageNamed:@"l1.png"],
-                             [UIImage imageNamed:@"l2.png"],
-                             [UIImage imageNamed:@"l3.png"],
+                             [UIImage imageNamed:@"1.png"],
+                             [UIImage imageNamed:@"2.png"],
+                             [UIImage imageNamed:@"3.png"],
+                             [UIImage imageNamed:@"4.png"],
+                             [UIImage imageNamed:@"5.png"],
+                             [UIImage imageNamed:@"6.png"],
+                             [UIImage imageNamed:@"7.png"],
+                             [UIImage imageNamed:@"8.png"],
+                             [UIImage imageNamed:@"9.png"],
+                             [UIImage imageNamed:@"10.png"],
+                             [UIImage imageNamed:@"11.png"],
+                             [UIImage imageNamed:@"12.png"],
+                             [UIImage imageNamed:@"13.png"],
                               nil];
         
         [_kenView.kenView animateWithImages:myImages

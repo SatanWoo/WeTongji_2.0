@@ -126,9 +126,9 @@
 {
     if (indexPath.section == 0 && indexPath.row == 1) {
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:WE_TONGJI_APP_STORE_URL]];  
-    } else if (indexPath.section == 0 && indexPath.row == 1) {
-        [self triggerMail];
     } else if (indexPath.section == 0 && indexPath.row == 2) {
+        [self triggerMail];
+    } else if (indexPath.section == 0 && indexPath.row == 3) {
         [self performSegueWithIdentifier:kProtocolViewControllerSegue sender:self];
     } else if (indexPath.section == 1 && indexPath.row == 0) {
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:WE_TONGJI_SINA_WEIBO_URL]];
