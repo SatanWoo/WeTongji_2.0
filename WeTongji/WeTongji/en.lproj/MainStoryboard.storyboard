@@ -839,6 +839,7 @@
                     <connections>
                         <outlet property="NOTextField" destination="6gs-nd-Asr" id="vW2-Nk-1Ph"/>
                         <outlet property="closeBtn" destination="6yM-YH-6CS" id="U0o-3R-fMM"/>
+                        <outlet property="navButton" destination="ZIU-97-uAV" id="QMv-It-35u"/>
                         <outlet property="passwordForgetBtn" destination="0Gr-x2-YeB" id="7Iw-Ff-vOc"/>
                         <outlet property="passwordTextField" destination="Itf-20-hYg" id="m8v-ZK-Aug"/>
                         <outlet property="scrollVIew" destination="VeN-sM-Xzz" id="MXF-bo-a0I"/>
@@ -1657,6 +1658,7 @@
                 <relationship kind="action" name="slide:"/>
                 <relationship kind="outlet" name="NOTextField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="closeBtn" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="navButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="passwordForgetBtn" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="passwordTextField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="scrollVIew" candidateClass="UIScrollView"/>

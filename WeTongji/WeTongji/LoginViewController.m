@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *NOTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 - (void)configureButton;
+- (void)enableButton:(NSNotification *)notification;
 @end
 
 @implementation LoginViewController
@@ -25,11 +26,19 @@
     //self.passwordForgetBtn.hidden = YES;
 }
 
+- (void)enableButton:(NSNotification *)notification
+{
+    NSLog(@"wocaoniamde");
+    self.view.userInteractionEnabled = YES;
+    self.navButton.userInteractionEnabled = YES;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     [self configureButton];
     [self.navigationItem setHidesBackButton:YES];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(enableButton:) name:kEnableInteractionNotification object:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -38,11 +47,13 @@
 }
 
 - (void)viewDidUnload {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
     [self setScrollVIew:nil];
     [self setNOTextField:nil];
     [self setPasswordTextField:nil];
     [self setCloseBtn:nil];
     [self setPasswordForgetBtn:nil];
+    [self setNavButton:nil];
     [super viewDidUnload];
 }
 

@@ -70,5 +70,6 @@
 #define kLogoutNotification @"kLogoutNotification"
 #define kSlideNotification @"kSlideNotification"
 #define kUpdateMiddleContent @"kUpdateMiddleContent"
+#define kEnableInteractionNotification @"kEnableInteractionNotification"
 
 #endif

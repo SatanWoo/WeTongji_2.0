@@ -122,7 +122,8 @@
 
 - (void)reveal:(NSNotification *)notification
 {
-    [self revealLeftViewController:nil];
+    [self pressNavButton];
+    [[NSNotificationCenter defaultCenter] postNotificationName:kEnableInteractionNotification object:self];
 }
 
 - (void)revealMiddleViewController:(UIGestureRecognizer *)recognizer
