@@ -132,7 +132,7 @@
         course.week_type = weekType;
         course.canSchedule = [NSNumber numberWithBool:NO];
         [course configureCourseInfo:dict];
-        
+        course.can_favorite = [NSNumber numberWithBool:YES];
         [result addObject:course];
     }
     return result;

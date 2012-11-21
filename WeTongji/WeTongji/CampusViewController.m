@@ -371,6 +371,7 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    [self.currentRefreshManagememt firstTrigger];
 }
 
 - (void)viewDidUnload

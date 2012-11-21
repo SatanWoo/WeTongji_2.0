@@ -43,7 +43,15 @@
     information.summary = [NSString stringWithFormat:@"%@",[infoDict objectForKey:@"Summary"]];
     information.ticketService = [NSString stringWithFormat:@"%@",[infoDict objectForKey:@"TicketService"]];
     information.title = [NSString stringWithFormat:@"%@",[infoDict objectForKey:@"Title"]];
+    information.collectionSummary = information.context;
+    information.collectionTitle = information.title;
+    information.collectionSource = @"校园资讯";
     return information;
+}
+
+-(NSNumber *) can_favorite
+{
+    return self.canFavorite;
 }
 
 +(NSArray *) getAllInformationWithCategory:(NSString *) category inManagedObjectContext:(NSManagedObjectContext *) context

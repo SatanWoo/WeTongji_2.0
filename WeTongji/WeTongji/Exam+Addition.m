@@ -35,6 +35,7 @@
     exam.where = exam.location;
     exam.begin_time = exam.begin;
     exam.end_time = exam.end;
+    exam.can_favorite = [NSNumber numberWithBool:YES];
 }
 
 +(NSArray *) getAllExamithCategoryinManagedObjectContext:(NSManagedObjectContext *) context

@@ -321,6 +321,9 @@
 		FF710995164D1EB0008F2A06 /* Information+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = FF710994164D1EB0008F2A06 /* Information+Addition.m */; };
 		FF7109B4164D3AFD008F2A06 /* Star+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7109B3164D3AFC008F2A06 /* Star+Addition.m */; };
 		FF7109BA164D4667008F2A06 /* PullRefreshManagement.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7109B9164D4667008F2A06 /* PullRefreshManagement.m */; };
+		FFB12689165C6DC8005ECC2D /* AbstractCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB12688165C6DC8005ECC2D /* AbstractCollection.m */; };
+		FFB1268C165C6E00005ECC2D /* AbstractCollection+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB1268B165C6E00005ECC2D /* AbstractCollection+Addition.m */; };
+		FFB1268F165C7706005ECC2D /* MyFavoriteViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB1268E165C7706005ECC2D /* MyFavoriteViewCell.m */; };
 		FFB14EFD16587DAD0035F888 /* SchoolNewsLocationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB14EFC16587DAD0035F888 /* SchoolNewsLocationCell.m */; };
 		FFB14F0016587DC50035F888 /* SchoolNewsContactCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB14EFF16587DC50035F888 /* SchoolNewsContactCell.m */; };
 		FFB14F0316587DD90035F888 /* SchoolNewsTicketCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB14F0216587DD90035F888 /* SchoolNewsTicketCell.m */; };
@@ -419,7 +422,6 @@
 		FFBF21E6165AB47500F4657A /* add_to_schedule_hl@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFBF21E2165AB46F00F4657A /* add_to_schedule_hl@2x.png */; };
 		FFBF21E7165AB47500F4657A /* add_to_schedule.png in Resources */ = {isa = PBXBuildFile; fileRef = FFBF21E3165AB47100F4657A /* add_to_schedule.png */; };
 		FFBF21E8165AB47500F4657A /* add_to_schedule@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFBF21E4165AB47200F4657A /* add_to_schedule@2x.png */; };
-		FFBF4FE91657CC43001690D2 /* AbstractCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBF4FE81657CC42001690D2 /* AbstractCollection.m */; };
 		FFBF4FEC1657CC5F001690D2 /* AbstractActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBF4FEB1657CC5E001690D2 /* AbstractActivity.m */; };
 		FFBF4FEF1657CC6C001690D2 /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBF4FEE1657CC6B001690D2 /* Course.m */; };
 		FFBF4FF21657CC6D001690D2 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBF4FF11657CC6D001690D2 /* User.m */; };
@@ -847,6 +849,12 @@
 		FF7109B3164D3AFC008F2A06 /* Star+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Star+Addition.m"; sourceTree = "<group>"; };
 		FF7109B8164D4667008F2A06 /* PullRefreshManagement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PullRefreshManagement.h; sourceTree = "<group>"; };
 		FF7109B9164D4667008F2A06 /* PullRefreshManagement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PullRefreshManagement.m; sourceTree = "<group>"; };
+		FFB12687165C6DC8005ECC2D /* AbstractCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractCollection.h; sourceTree = "<group>"; };
+		FFB12688165C6DC8005ECC2D /* AbstractCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbstractCollection.m; sourceTree = "<group>"; };
+		FFB1268A165C6E00005ECC2D /* AbstractCollection+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AbstractCollection+Addition.h"; sourceTree = "<group>"; };
+		FFB1268B165C6E00005ECC2D /* AbstractCollection+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AbstractCollection+Addition.m"; sourceTree = "<group>"; };
+		FFB1268D165C7706005ECC2D /* MyFavoriteViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyFavoriteViewCell.h; sourceTree = "<group>"; };
+		FFB1268E165C7706005ECC2D /* MyFavoriteViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyFavoriteViewCell.m; sourceTree = "<group>"; };
 		FFB14EFB16587DAD0035F888 /* SchoolNewsLocationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SchoolNewsLocationCell.h; sourceTree = "<group>"; };
 		FFB14EFC16587DAD0035F888 /* SchoolNewsLocationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SchoolNewsLocationCell.m; sourceTree = "<group>"; };
 		FFB14EFE16587DC50035F888 /* SchoolNewsContactCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SchoolNewsContactCell.h; sourceTree = "<group>"; };
@@ -962,8 +970,6 @@
 		FFBF21E2165AB46F00F4657A /* add_to_schedule_hl@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "add_to_schedule_hl@2x.png"; sourceTree = "<group>"; };
 		FFBF21E3165AB47100F4657A /* add_to_schedule.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add_to_schedule.png; sourceTree = "<group>"; };
 		FFBF21E4165AB47200F4657A /* add_to_schedule@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "add_to_schedule@2x.png"; sourceTree = "<group>"; };
-		FFBF4FE71657CC42001690D2 /* AbstractCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractCollection.h; sourceTree = "<group>"; };
-		FFBF4FE81657CC42001690D2 /* AbstractCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbstractCollection.m; sourceTree = "<group>"; };
 		FFBF4FEA1657CC5E001690D2 /* AbstractActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractActivity.h; sourceTree = "<group>"; };
 		FFBF4FEB1657CC5E001690D2 /* AbstractActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbstractActivity.m; sourceTree = "<group>"; };
 		FFBF4FED1657CC6B001690D2 /* Course.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Course.h; sourceTree = "<group>"; };
@@ -1679,6 +1685,8 @@
 				03D1CD82165A835900334F0D /* SettingNoImageCell.h */,
 				03D1CD83165A835900334F0D /* SettingNoImageCell.m */,
 				03D1CD85165A836D00334F0D /* SettingNoImageCell.xib */,
+				FFB1268D165C7706005ECC2D /* MyFavoriteViewCell.h */,
+				FFB1268E165C7706005ECC2D /* MyFavoriteViewCell.m */,
 			);
 			name = UITableViewCell;
 			sourceTree = "<group>";
@@ -1949,8 +1957,8 @@
 				FFBF4FF41657CC6D001690D2 /* Exam.m */,
 				FFBF4FEA1657CC5E001690D2 /* AbstractActivity.h */,
 				FFBF4FEB1657CC5E001690D2 /* AbstractActivity.m */,
-				FFBF4FE71657CC42001690D2 /* AbstractCollection.h */,
-				FFBF4FE81657CC42001690D2 /* AbstractCollection.m */,
+				FFB12687165C6DC8005ECC2D /* AbstractCollection.h */,
+				FFB12688165C6DC8005ECC2D /* AbstractCollection.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -1972,6 +1980,8 @@
 				FFC07085165742BB00323E38 /* Exam+Addition.m */,
 				FFC006C8165BCED60040FD44 /* AbstractActivity+Addition.h */,
 				FFC006C9165BCED60040FD44 /* AbstractActivity+Addition.m */,
+				FFB1268A165C6E00005ECC2D /* AbstractCollection+Addition.h */,
+				FFB1268B165C6E00005ECC2D /* AbstractCollection+Addition.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -2510,7 +2520,6 @@
 				03326A5C16568FA8005E8A16 /* JBKenBurnsView.m in Sources */,
 				03326A7316569430005E8A16 /* WUKenBurnViewHeader.m in Sources */,
 				FFC07086165742BB00323E38 /* Exam+Addition.m in Sources */,
-				FFBF4FE91657CC43001690D2 /* AbstractCollection.m in Sources */,
 				FFBF4FEC1657CC5F001690D2 /* AbstractActivity.m in Sources */,
 				FFBF4FEF1657CC6C001690D2 /* Course.m in Sources */,
 				FFBF4FF21657CC6D001690D2 /* User.m in Sources */,
@@ -2533,6 +2542,9 @@
 				03D61F34165BB968005F19A1 /* MBProgressHUD.m in Sources */,
 				FFC006CA165BCED60040FD44 /* AbstractActivity+Addition.m in Sources */,
 				03D61F52165BD7C2005F19A1 /* InfoFooterView.m in Sources */,
+				FFB12689165C6DC8005ECC2D /* AbstractCollection.m in Sources */,
+				FFB1268C165C6E00005ECC2D /* AbstractCollection+Addition.m in Sources */,
+				FFB1268F165C7706005ECC2D /* MyFavoriteViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

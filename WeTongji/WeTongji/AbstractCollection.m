@@ -2,7 +2,7 @@
 //  AbstractCollection.m
 //  WeTongji
 //
-//  Created by tang zhixiong on 12-11-17.
+//  Created by tang zhixiong on 12-11-21.
 //
 //
 
@@ -11,8 +11,10 @@
 
 @implementation AbstractCollection
 
-@dynamic collectionTitle;
 @dynamic collectionImageLink;
 @dynamic collectionSource;
+@dynamic collectionTitle;
+@dynamic can_favorite;
+@dynamic collectionSummary;
 
 @end

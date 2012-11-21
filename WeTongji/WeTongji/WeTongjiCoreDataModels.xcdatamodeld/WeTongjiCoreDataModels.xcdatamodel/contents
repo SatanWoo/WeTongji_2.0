@@ -8,8 +8,10 @@
         <attribute name="where" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="AbstractCollection" representedClassName="AbstractCollection" isAbstract="YES" syncable="YES">
+        <attribute name="can_favorite" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="collectionImageLink" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="collectionSource" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="collectionSummary" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="collectionTitle" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Course" representedClassName="Course" parentEntity="AbstractActivity" syncable="YES">
@@ -114,7 +116,7 @@
     </entity>
     <elements>
         <element name="AbstractActivity" positionX="160" positionY="192" width="128" height="120"/>
-        <element name="AbstractCollection" positionX="160" positionY="192" width="128" height="90"/>
+        <element name="AbstractCollection" positionX="160" positionY="192" width="128" height="120"/>
         <element name="Course" positionX="160" positionY="192" width="128" height="195"/>
         <element name="Event" positionX="160" positionY="192" width="128" height="315"/>
         <element name="Exam" positionX="160" positionY="192" width="128" height="180"/>

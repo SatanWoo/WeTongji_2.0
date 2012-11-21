@@ -34,7 +34,15 @@
     result.read = [NSNumber numberWithInt:[[dict objectForKey:@"Like"] intValue]];
     result.title = [NSString stringWithFormat:@"%@",[dict objectForKey:@"Title"]];
     result.words = [NSString stringWithFormat:@"%@",[dict objectForKey:@"Words"]];
+    result.collectionSummary = result.words;
+    result.collectionTitle = result.title;
+    result.collectionSource = @"每周人物";
     return result;
+}
+
+-(NSNumber *) can_favorite
+{
+    return self.canFavorite;
 }
 
 +(NSArray *) getAllStarsInManagedObjectContext:(NSManagedObjectContext *)context

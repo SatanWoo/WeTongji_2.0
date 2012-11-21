@@ -52,7 +52,15 @@
     result.end_time = result.endTime;
     result.what = result.title;
     result.where =result.location;
+    result.collectionSummary = result.detail;
+    result.collectionTitle = result.title;
+    result.collectionSource = @"推荐活动";
     return result;
+}
+
+-(NSNumber *) can_favorite
+{
+    return self.canFavorite;
 }
 
 + (Event *)EventWithID:(NSString *)activityId inManagedObjectContext:(NSManagedObjectContext *)context
