@@ -261,7 +261,6 @@
             cell = [[FavoriteCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kFavoriteCell];
         }
         [cell setTableList:[AbstractCollection allCollectionInManagedObjectContext:self.managedObjectContext]];
-        [cell.iconTableView reloadData];
         [cell rotate];
         return cell;
     } else if (indexPath.section == 2){

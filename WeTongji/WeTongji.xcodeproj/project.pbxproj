@@ -325,6 +325,8 @@
 		FFB1268C165C6E00005ECC2D /* AbstractCollection+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB1268B165C6E00005ECC2D /* AbstractCollection+Addition.m */; };
 		FFB1268F165C7706005ECC2D /* MyFavoriteViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB1268E165C7706005ECC2D /* MyFavoriteViewCell.m */; };
 		FFB12691165C8F6B005ECC2D /* ReminderNothingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFB12690165C8F6B005ECC2D /* ReminderNothingCell.xib */; };
+		FFB12693165CAE81005ECC2D /* FavoriteIconCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFB12692165CAE80005ECC2D /* FavoriteIconCell.xib */; };
+		FFB12696165CAEE8005ECC2D /* FavoriteIconCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB12695165CAEE7005ECC2D /* FavoriteIconCell.m */; };
 		FFB14EFD16587DAD0035F888 /* SchoolNewsLocationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB14EFC16587DAD0035F888 /* SchoolNewsLocationCell.m */; };
 		FFB14F0016587DC50035F888 /* SchoolNewsContactCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB14EFF16587DC50035F888 /* SchoolNewsContactCell.m */; };
 		FFB14F0316587DD90035F888 /* SchoolNewsTicketCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB14F0216587DD90035F888 /* SchoolNewsTicketCell.m */; };
@@ -857,6 +859,9 @@
 		FFB1268D165C7706005ECC2D /* MyFavoriteViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyFavoriteViewCell.h; sourceTree = "<group>"; };
 		FFB1268E165C7706005ECC2D /* MyFavoriteViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyFavoriteViewCell.m; sourceTree = "<group>"; };
 		FFB12690165C8F6B005ECC2D /* ReminderNothingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReminderNothingCell.xib; sourceTree = "<group>"; };
+		FFB12692165CAE80005ECC2D /* FavoriteIconCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FavoriteIconCell.xib; sourceTree = "<group>"; };
+		FFB12694165CAEE7005ECC2D /* FavoriteIconCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoriteIconCell.h; sourceTree = "<group>"; };
+		FFB12695165CAEE7005ECC2D /* FavoriteIconCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoriteIconCell.m; sourceTree = "<group>"; };
 		FFB14EFB16587DAD0035F888 /* SchoolNewsLocationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SchoolNewsLocationCell.h; sourceTree = "<group>"; };
 		FFB14EFC16587DAD0035F888 /* SchoolNewsLocationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SchoolNewsLocationCell.m; sourceTree = "<group>"; };
 		FFB14EFE16587DC50035F888 /* SchoolNewsContactCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SchoolNewsContactCell.h; sourceTree = "<group>"; };
@@ -1647,6 +1652,9 @@
 				E5897B06163D6CC900FE6017 /* FavoriteCell.h */,
 				E5897B07163D6CCA00FE6017 /* FavoriteCell.m */,
 				E5897B09163D6CDB00FE6017 /* FavoriteCell.xib */,
+				FFB12694165CAEE7005ECC2D /* FavoriteIconCell.h */,
+				FFB12695165CAEE7005ECC2D /* FavoriteIconCell.m */,
+				FFB12692165CAE80005ECC2D /* FavoriteIconCell.xib */,
 				E5897B0B163D6EB300FE6017 /* PersonalInfoCell.h */,
 				E5897B0C163D6EB400FE6017 /* PersonalInfoCell.m */,
 				E5897B0E163D6F0B00FE6017 /* PersonalInfoCell.xib */,
@@ -2446,6 +2454,7 @@
 				03D61F64165BE342005F19A1 /* nav_finish_btn@2x.png in Resources */,
 				03D61F66165BE40D005F19A1 /* avatar_shadow.png in Resources */,
 				FFB12691165C8F6B005ECC2D /* ReminderNothingCell.xib in Resources */,
+				FFB12693165CAE81005ECC2D /* FavoriteIconCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2549,6 +2558,7 @@
 				FFB12689165C6DC8005ECC2D /* AbstractCollection.m in Sources */,
 				FFB1268C165C6E00005ECC2D /* AbstractCollection+Addition.m in Sources */,
 				FFB1268F165C7706005ECC2D /* MyFavoriteViewCell.m in Sources */,
+				FFB12696165CAEE8005ECC2D /* FavoriteIconCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

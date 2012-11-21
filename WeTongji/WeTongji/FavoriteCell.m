@@ -12,6 +12,7 @@
 #import "Star+Addition.h"
 #import "Information+Addition.h"
 #import <WeTongjiSDK/WeTongjiSDK.h>
+#import "FavoriteIconCell.h"
 
 @interface FavoriteCell()<UITableViewDataSource,UITableViewDelegate>
 {
@@ -34,30 +35,12 @@
 
 -(void) setTableList:(NSArray *)tableList
 {
-    _tableList = nil;
-    [self.iconTableView reloadData];
+    if ( _tableList == nil )
+        [self.iconTableView  registerNib:[UINib nibWithNibName:@"FavoriteIconCell" bundle:nil] forCellReuseIdentifier:@"FavoriteIconCell"];
     _tableList = tableList;
     if ( _tableList.count > 4 )
     {
         _tableList = [[NSArray alloc] initWithObjects:_tableList[0],_tableList[1],_tableList[2],_tableList[3], nil];
-    }
-    [self.iconTableView reloadData];
-    for ( int index = 0 ; index < _tableList.count ; index++ )
-    {
-        AbstractCollection * collection = _tableList[index];
-        UITableViewCell * cell = [self.iconTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:index inSection:0]];
-        if ( [collection isKindOfClass:[Event class]] )
-        {
-            [cell.imageView setImageWithURL:[NSURL URLWithString:((Event *) collection).orgranizerAvatarLink]];
-        }
-        else if ( [collection isKindOfClass:[Star class]] )
-        {
-            [cell.imageView setImageWithURL:[NSURL URLWithString:((Star *) collection).avatarLink]];
-        }
-        else if ( [collection isKindOfClass:[Event class]] )
-        {
-            [cell.imageView setImageWithURL:[NSURL URLWithString:((Information *) collection).organizerAvatar]];
-        }
     }
     [self.iconTableView reloadData];
 }
@@ -84,12 +67,26 @@
 
 -(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    FavoriteIconCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FavoriteIconCell"];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
+        cell = [[FavoriteIconCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"FavoriteIconCell"];
     }
     CGAffineTransform at = CGAffineTransformMakeRotation(M_PI/2);
     [cell.contentView setTransform:at];
+    AbstractCollection * collection = _tableList[indexPath.row];
+    UIImage *placeholder = [UIImage imageNamed:@"avatar_shadow@2x.png"];
+    if ( [collection isKindOfClass:[Event class]] )
+    {
+        [cell.avatar setImageWithURL:[NSURL URLWithString:((Event *) collection).orgranizerAvatarLink] placeholderImage:placeholder];
+    }
+    else if ( [collection isKindOfClass:[Star class]] )
+    {
+        [cell.avatar setImageWithURL:[NSURL URLWithString:((Star *) collection).avatarLink] placeholderImage:placeholder];
+    }
+    else if ( [collection isKindOfClass:[Event class]] )
+    {
+        [cell.avatar setImageWithURL:[NSURL URLWithString:((Information *) collection).organizerAvatar] placeholderImage:placeholder];
+    }
     return cell;
 }
 
