@@ -119,6 +119,7 @@
 
 - (IBAction)directUser:(id)sender
 {
+    [self directLogin:nil];
     [[NSNotificationCenter defaultCenter] postNotificationName:kSlideNotification object:self];
 }
 

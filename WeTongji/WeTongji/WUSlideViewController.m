@@ -13,7 +13,7 @@
 #import "UserIntroViewController.h"
 #import "LeftMenuCellModel.h"
 
-#define kFirstUseKey @"kFirstUszessasaasas111ssaas1aaKssaey"
+#define kFirstUseKey @"kkey"
 
 @interface WUSlideViewController ()
 @property (assign ,nonatomic) int currentStatus;

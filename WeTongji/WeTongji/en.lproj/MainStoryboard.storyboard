@@ -1460,8 +1460,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="directLogin:" destination="u4s-KT-TW6" eventType="touchUpInside" id="eqt-rx-Bfq"/>
-                                    <action selector="directUser:" destination="u4s-KT-TW6" eventType="touchUpInside" id="bf5-Lq-6sW"/>
+                                    <action selector="directUser:" destination="u4s-KT-TW6" eventType="touchUpInside" id="4hX-Za-rst"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1764,6 +1763,7 @@
         <class className="UserIntroViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UserIntroViewController.h"/>
             <relationships>
+                <relationship kind="action" name="directLogin:"/>
                 <relationship kind="action" name="directUser:"/>
                 <relationship kind="outlet" name="bottomBar" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="directUser" candidateClass="UIButton"/>
