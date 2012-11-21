@@ -13,7 +13,7 @@
 #import "UserIntroViewController.h"
 #import "LeftMenuCellModel.h"
 
-#define kFirstUseKey @"kFirstUsesssssKey"
+#define kFirstUseKey @"kFirstUsessssssKey"
 
 @interface WUSlideViewController ()
 @property (assign ,nonatomic) int currentStatus;
@@ -83,7 +83,8 @@
 
 - (void)update:(NSNotification *)notification
 {
-    self.middelViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:kLoginViewController];
+    [self.view addSubview:self.middelViewController.view];
+//    self.middelViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:kLoginViewController];
 }
 
 - (void)configureView
