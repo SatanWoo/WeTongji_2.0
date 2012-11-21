@@ -151,6 +151,7 @@
         self.currentStatus = eLEFT;
         [self renderShadow:YES];
     }];
+    [[NSNotificationCenter defaultCenter] postNotificationName:kEnableInteractionNotification object:self];
 }
 
 - (void)pressNavButton

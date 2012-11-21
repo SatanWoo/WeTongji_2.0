@@ -28,7 +28,6 @@
 
 - (void)enableButton:(NSNotification *)notification
 {
-    NSLog(@"wocaoniamde");
     self.view.userInteractionEnabled = YES;
     self.navButton.userInteractionEnabled = YES;
 }
