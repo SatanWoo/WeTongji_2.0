@@ -22,7 +22,12 @@
 #define kHeight self.scrollView.frame.size.height
 #define kContentOffSet 41
 
-
+typedef enum {
+    School = 0,
+    Group,
+    Action,
+    Recommend
+} State;
 
 @interface CampusViewController () <UITableViewDataSource, UITableViewDelegate,PullRefreshManagementDelegate>
 @property (nonatomic, strong) UIView *schoolInfoView;
@@ -50,6 +55,7 @@
 @property (nonatomic, strong) NSArray * actionList;
 @property (nonatomic, weak) NSArray * currentList;
 @property (nonatomic, strong) NSString * currentInformationType;
+@property (nonatomic) State state;
 
 - (void)configureScrollView;
 - (void)pageChange:(UIButton *)clickButton;
@@ -328,24 +334,28 @@
     
     switch (index) {
         case 0:
+            self.state = School;
             self.currentList = self.schoolList;
             self.currentNextPage = self.schoolNextPage;
             self.currentInformationType = GetInformationTypeForStaff;
             self.currentRefreshManagememt = self.schoolRefreshManagement;
             break;
         case 1:
+            self.state = Group;
             self.currentList = self.groupList;
             self.currentNextPage = self.groupNextPage;
             self.currentInformationType = GetInformationTypeClubNews;
             self.currentRefreshManagememt = self.groupRefreshManagement;
             break;
         case 2:
+            self.state = Action;
             self.currentList = self.actionList;
             self.currentNextPage = self.actionNextPage;
             self.currentInformationType = GetInformationTypeSchoolNews;
             self.currentRefreshManagememt = self.actionRefreshManagement;
             break;
         case 3:
+            self.state = Recommend;
             self.currentList = self.recommendlList;
             self.currentNextPage = self.recommendlNextPage;
             self.currentInformationType = GetInformationTypeAround;
@@ -510,19 +520,19 @@ static NSInteger tempRow;
 
 - (void)endLoading
 {
-    if ( self.currentList == self.schoolList ) {
+    if ( self.state == School ) {
         self.schoolList = nil;
         [self.schoolInfoTableView reloadData];
         self.currentList = self.schoolList;
-    } else if ( self.currentList == self.groupList ) {
+    } else if ( self.state == Group ) {
         self.groupList = nil;
         [self.groupOInfoTableView reloadData];
         self.currentList = self.groupList;
-    } else if ( self.currentList == self.actionList ) {
+    } else if ( self.state == Action ) {
         self.actionList = nil;
         [self.actionTableView reloadData];
         self.currentList = self.actionList;
-    } else if ( self.currentList == self.recommendlList ) {
+    } else if ( self.state == Recommend ) {
         self.recommendlList = nil;
         [self.recommendTableView reloadData];
         self.currentList = self.recommendlList;
