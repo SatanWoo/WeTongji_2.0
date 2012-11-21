@@ -387,24 +387,25 @@
             <objects>
                 <viewController storyboardIdentifier="kWUPageControlViewController" id="Luw-GI-iEd" customClass="WUPageControlViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hga-2K-g9T">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" bouncesZoom="NO" id="6JC-Li-Qze">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                            <scrollView clipsSubviews="YES" contentMode="scaleToFill" directionalLockEnabled="YES" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" bouncesZoom="NO" id="6JC-Li-Qze">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="Luw-GI-iEd" id="rD1-j1-SSP"/>
                                 </connections>
                             </scrollView>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" id="UNP-jE-JkN">
-                                <rect key="frame" x="141" y="350" width="38" height="36"/>
+                                <rect key="frame" x="141" y="400" width="38" height="36"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </pageControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="pageControl" destination="UNP-jE-JkN" id="8aa-ZB-xdq"/>
                         <outlet property="pagedScrollView" destination="6JC-Li-Qze" id="Qk3-mK-zpf"/>
@@ -1276,6 +1277,7 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
+                        <outlet property="backButton" destination="RMH-9f-Kta" id="pfK-pj-uLp"/>
                         <outlet property="buttonBackImageView" destination="XzR-8D-C5a" id="qAG-Z6-cSd"/>
                         <outlet property="newsTableView" destination="C4a-xk-m7J" id="LhP-AL-5tP"/>
                     </connections>

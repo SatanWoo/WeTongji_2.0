@@ -74,6 +74,7 @@
     self.pageViewController.view.userInteractionEnabled = NO;
     [UIView animateWithDuration:0.55f animations:^{
         [self.newsTableView setCenter:originNewsTableViewCenter];
+        [self.backButton setAlpha:1.0];
     } completion:^(BOOL finished) {}];
     
     [UIView animateWithDuration:0.8f animations:^{
@@ -217,6 +218,7 @@
     [self setBackButton:nil];
     [self setNewsTableView:nil];
     [self setButtonBackImageView:nil];
+    [self setBackButton:nil];
     [super viewDidUnload];
 }
 
@@ -285,6 +287,7 @@
         [UIView animateWithDuration:0.25f animations:^{
             self.newsTableView.frame = CGRectMake(0, self.view.frame.size.height, self.newsTableView.frame.size.width, self.newsTableView.frame.size.height);
             self.pageViewController.view.frame = CGRectMake(0,0, self.pageViewController.view.frame.size.width, self.pageViewController.view.frame.size.height);
+            [self.backButton setAlpha:0.0];
         } completion:^(BOOL finished) {
             self.pageViewController.view.userInteractionEnabled = YES;
         }];
