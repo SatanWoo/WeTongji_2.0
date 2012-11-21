@@ -12,4 +12,5 @@
 @property (weak, nonatomic) IBOutlet UIButton *closeBtn;
 @property (weak, nonatomic) IBOutlet UIButton *passwordForgetBtn;
 - (IBAction)logInClick:(id)sender;
+- (IBAction)slide:(id)sender;
 @end

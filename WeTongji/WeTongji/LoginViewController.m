@@ -92,4 +92,8 @@
     [client enqueueRequest:request];
 }
 
+- (IBAction)slide:(id)sender
+{
+    [[NSNotificationCenter defaultCenter] postNotificationName:kSlideNotification object:self];
+}
 @end
