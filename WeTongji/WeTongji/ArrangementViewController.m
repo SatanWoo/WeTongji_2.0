@@ -120,7 +120,7 @@
         _beginDate = [NSUserDefaults getCurrentSemesterBeginDate];
         NSInteger interval = [_beginDate timeIntervalSince1970] / DAY_TIME_INTERVAL;
         interval = interval * DAY_TIME_INTERVAL;
-        _beginDate = [NSDate dateWithTimeIntervalSince1970:interval];
+        _beginDate = [NSDate dateWithTimeIntervalSince1970:(interval - 8* 60 *60)];
     }
     return _beginDate;
 }
