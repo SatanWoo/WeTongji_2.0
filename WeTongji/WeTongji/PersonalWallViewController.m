@@ -21,6 +21,7 @@
 #import "Exam+Addition.h"
 #import "Event+Addition.h"
 #import "AbstractActivity+Addition.h"
+#import "AbstractCollection+Addition.h"
 #import "NSString+Addition.h"
 
 #define kContentOffSet 156
@@ -194,6 +195,7 @@
                                    Event *event = [Event insertActivity:eventDict inManagedObjectContext:self.managedObjectContext];
                                    event.hidden = [NSNumber numberWithBool:NO];
                                }
+                               [self.scheduleTableView reloadData];
                            }
                             failureBlock:^(NSError * error)
                            {
@@ -258,6 +260,9 @@
         if (cell == nil) {
             cell = [[FavoriteCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kFavoriteCell];
         }
+        [cell setTableList:[AbstractCollection allCollectionInManagedObjectContext:self.managedObjectContext]];
+        [cell.iconTableView reloadData];
+        [cell rotate];
         return cell;
     } else if (indexPath.section == 2){
         PersonalInfoCell *cell = [tableView dequeueReusableCellWithIdentifier:kPersonalInfoCell];

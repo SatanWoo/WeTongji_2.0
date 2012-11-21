@@ -106,10 +106,6 @@ static NSInteger tempRow;
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
--(void) tableView:(UITableView *)tableView didEndDisplayingCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    NSLog(@"Hfasdf");
-}
 
 #pragma mark - UITableViewDataSource
 
