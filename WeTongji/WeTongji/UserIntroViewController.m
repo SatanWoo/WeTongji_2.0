@@ -11,6 +11,7 @@
 #import "Macro.h"
 #define kPageContent 407
 #define kLastContent 460
+#define kMoveDistance self.bottomBar.frame.size.height
 
 @interface UserIntroViewController ()<UIScrollViewDelegate>
 - (void)configureScrollView;
@@ -52,16 +53,29 @@
 
 - (void)loadVisiblePages
 {
+    static BOOL needToScroll = false;
     NSInteger page = self.scrollView.contentOffset.y / kPageContent;
     if (page > 3) {
-        self.bottomBar.hidden = YES;
-        self.registerloginbtn.hidden = YES;
-        self.directUser.hidden = YES;
+        [UIView animateWithDuration:0.1f animations:^{
+        
+            self.bottomBar.frame = CGRectMake(self.bottomBar.frame.origin.x, self.bottomBar.frame.origin.y + kMoveDistance, self.bottomBar.frame.size.width, self.bottomBar.frame.size.height);
+            
+            self.registerloginbtn.frame = CGRectMake(self.registerloginbtn.frame.origin.x, self.registerloginbtn.frame.origin.y + kMoveDistance, self.registerloginbtn.frame.size.width, self.registerloginbtn.frame.size.height);;
+            self.directUser.frame = CGRectMake(self.directUser.frame.origin.x, self.directUser.frame.origin.y + kMoveDistance, self.directUser.frame.size.width, self.directUser.frame.size.height);
+        }];
+        needToScroll = true;
         self.scrollView.frame = self.view.bounds;
     } else {
-        self.bottomBar.hidden = NO;
-        self.registerloginbtn.hidden = NO;
-        self.directUser.hidden = NO;
+        if (needToScroll) {
+            [UIView animateWithDuration:0.1f animations:^{
+                
+                self.bottomBar.frame = CGRectMake(self.bottomBar.frame.origin.x, self.bottomBar.frame.origin.y - kMoveDistance, self.bottomBar.frame.size.width, self.bottomBar.frame.size.height);
+                
+                self.registerloginbtn.frame = CGRectMake(self.registerloginbtn.frame.origin.x, self.registerloginbtn.frame.origin.y - kMoveDistance, self.registerloginbtn.frame.size.width, self.registerloginbtn.frame.size.height);;
+                self.directUser.frame = CGRectMake(self.directUser.frame.origin.x, self.directUser.frame.origin.y - kMoveDistance, self.directUser.frame.size.width, self.directUser.frame.size.height);
+            }];
+            needToScroll = false;
+        }
         self.scrollView.frame = self.originRect;
     }
     self.pageControl.currentPage = page;
@@ -92,7 +106,7 @@
 
 - (IBAction)directLogin:(id)sender
 {
-    [self.scrollView setContentOffset:CGPointMake(0, 0) animated:NO];
+    //[self.scrollView setContentOffset:CGPointMake(0, 0) animated:NO];
     [self.view removeFromSuperview];
     [[NSNotificationCenter defaultCenter] postNotificationName:kUpdateMiddleContent object:self];
 }

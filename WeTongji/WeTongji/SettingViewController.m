@@ -160,7 +160,7 @@
             cell.name.text = @"检测新版本";
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         } else if (indexPath.row == 2){
-            cell.name.text = @"清楚缓存";
+            cell.name.text = @"清除缓存";
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         } else {
             cell.name.text = @"校园资讯默认界面";
