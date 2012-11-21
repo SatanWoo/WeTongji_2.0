@@ -1452,6 +1452,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="bottomBar" destination="reY-So-TO3" id="PUd-7y-93T"/>
+                        <outlet property="directUser" destination="ua1-iB-69p" id="Dpb-oq-qzy"/>
                         <outlet property="pageControl" destination="dIZ-G7-bTb" id="idj-BU-kzj"/>
                         <outlet property="registerloginbtn" destination="tjz-FL-mbi" id="m41-8P-3J3"/>
                         <outlet property="scrollView" destination="qNl-pr-vbq" id="SYQ-lC-961"/>
@@ -1742,6 +1743,7 @@
         <class className="UserIntroViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UserIntroViewController.h"/>
             <relationships>
+                <relationship kind="action" name="directLogin:"/>
                 <relationship kind="action" name="directUser:"/>
                 <relationship kind="outlet" name="bottomBar" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="pageControl" candidateClass="UIPageControl"/>

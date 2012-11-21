@@ -13,6 +13,8 @@
 #import "UserIntroViewController.h"
 #import "LeftMenuCellModel.h"
 
+#define kFirstUseKey @"kFirstUseKey"
+
 @interface WUSlideViewController ()
 @property (assign ,nonatomic) int currentStatus;
 @property (nonatomic ,strong) UserIntroViewController *introViewController;
@@ -26,6 +28,7 @@
 - (void)configureNotification;
 - (void)login:(NSNotification *)notification;
 - (void)removeNotification;
+- (void)configureView;
 - (UIViewController *)getContentViewController;
 @end
 
@@ -39,12 +42,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.leftViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:kLeftMenuViewController];
-    NSString * identifier;
-    LeftMenuCellModel * model = self.leftViewController.identifierArray[0];
-    identifier = model.identifier;
-    self.middelViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:identifier];
-    [self.leftViewController.menuTableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:NO scrollPosition:UITableViewRowAnimationNone];
     [self configureNotification];
 }
 
@@ -84,8 +81,27 @@
     }];
 }
 
+- (void)configureView
+{
+    self.leftViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:kLeftMenuViewController];
+    
+    LeftMenuCellModel * model = self.leftViewController.identifierArray[0];
+    NSString * identifier = model.identifier;
+    self.middelViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:identifier];
+    [self.leftViewController.menuTableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:NO scrollPosition:UITableViewRowAnimationNone];
+}
+
 - (void)configureNotification
 {
+    [self configureView];
+    
+    [[NSUserDefaults standardUserDefaults] registerDefaults:[NSDictionary dictionaryWithObject:[NSNumber numberWithInt:0] forKey:kFirstUseKey]];
+    
+    int isFirstUse = [[NSUserDefaults standardUserDefaults] integerForKey:kFirstUseKey];
+    if (isFirstUse == 0) {
+        [self.view addSubview:self.introViewController.view];
+    }
+    [[NSUserDefaults standardUserDefaults] setInteger:1 forKey:kFirstUseKey];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(login:) name:kLoginNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reveal:) name:kSlideNotification object:nil];
 }

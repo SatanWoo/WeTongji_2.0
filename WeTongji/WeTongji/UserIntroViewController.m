@@ -56,10 +56,12 @@
     if (page > 3) {
         self.bottomBar.hidden = YES;
         self.registerloginbtn.hidden = YES;
+        self.directUser.hidden = YES;
         self.scrollView.frame = self.view.bounds;
     } else {
         self.bottomBar.hidden = NO;
         self.registerloginbtn.hidden = NO;
+        self.directUser.hidden = NO;
         self.scrollView.frame = self.originRect;
     }
     self.pageControl.currentPage = page;
@@ -84,6 +86,7 @@
     [self setPageControl:nil];
     [self setBottomBar:nil];
     [self setRegisterloginbtn:nil];
+    [self setDirectUser:nil];
     [super viewDidUnload];
 }
 
