@@ -131,11 +131,10 @@
 
 -(void) configureCurrentCell
 {
-    [self.currentCell setFrame:CGRectMake(0, 0,self.currentCell.frame.size.width,MAX(self.currentCell.textView.contentSize.height,430))];
+    [self.currentCell setFrame:CGRectMake(0, 0,self.currentCell.frame.size.width,MAX(self.currentCell.textView.contentSize.height,self.view.bounds.size.height))];
     CGRect frame = self.currentCell.textView.frame;
     frame.size.height = self.currentCell.frame.size.height;
     self.currentCell.textView.frame = frame;
-    //[self.currentCell.textView sizeToFit];
 }
 
 -(void) setEvent:(Event *)event
@@ -195,6 +194,12 @@
     UISwipeGestureRecognizer *leftGesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(goBack:)];
     leftGesture.direction = UISwipeGestureRecognizerDirectionRight;
     [self.view addGestureRecognizer:leftGesture];
+}
+
+-(void) viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
     if ( self.event ) {
         self.currentCell.textView.text = self.event.detail;
         [self configureCurrentCell];
@@ -215,11 +220,6 @@
     [super viewDidUnload];
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    [self.navigationController setNavigationBarHidden:YES animated:YES];
-}
 
 - (void)viewDidAppear:(BOOL)animated
 {
@@ -334,8 +334,8 @@
 {
     if ( indexPath.section == 1 )
     {
-        if ( self.information && indexPath.row < 3 ) return 40;
-        return self.currentCell.bounds.size.height;
+        if ( self.information && [self.information.category isEqualToString:GetInformationTypeAround] &&indexPath.row < 3 ) return 40;
+        return self.currentCell.frame.size.height;
     }
     return 0;
 }

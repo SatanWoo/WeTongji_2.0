@@ -22,6 +22,8 @@
 #define kHeight self.scrollView.frame.size.height
 #define kContentOffSet 41
 
+
+
 @interface CampusViewController () <UITableViewDataSource, UITableViewDelegate,PullRefreshManagementDelegate>
 @property (nonatomic, strong) UIView *schoolInfoView;
 @property (nonatomic, strong) UIView *groupInfoView;
@@ -175,7 +177,7 @@
     {
         WTClient * client = [WTClient sharedClient];
         [client cancelAllHTTPOperationsWithMethod:nil path:nil];
-        [_currentRefreshManagememt firstTrigger];
+        [currentRefreshManagememt firstTrigger];
     }
     _currentRefreshManagememt = currentRefreshManagememt;
 }
@@ -194,7 +196,7 @@
             Information *info2 = (Information *)obj2;
             return [info2.createdAt compare: info1.createdAt];
         }];
-        _schoolList = sortedNames;
+        _schoolList = [[NSArray alloc] initWithArray: sortedNames];
     }
     return _schoolList;
 }
@@ -213,7 +215,7 @@
             Information *info2 = (Information *)obj2;
             return [info2.createdAt compare: info1.createdAt];
         }];
-        _groupList = sortedNames;
+        _groupList = [[NSArray alloc] initWithArray: sortedNames];
         
     }
     return _groupList;
@@ -233,7 +235,7 @@
             Information *info2 = (Information *)obj2;
             return [info2.createdAt compare: info1.createdAt];
         }];
-        _recommendlList = sortedNames;
+        _recommendlList = [[NSArray alloc] initWithArray: sortedNames];
     }
     return _recommendlList;
 }
@@ -252,7 +254,7 @@
             Information *info2 = (Information *)obj2;
             return [info2.createdAt compare: info1.createdAt];
         }];
-        _actionList = sortedNames;
+        _actionList = [[NSArray alloc] initWithArray: sortedNames];
     }
     return _actionList;
 }

@@ -37,15 +37,15 @@
     if ( _isButtonBoardLeft ) return;
     CGPoint center = [self.buttonBoard center];
     if ( self.star ) {
-        center.x = center.x + 180;
+        center.x = center.x + 100;
     } else if ( self.information && [self.information.category isEqualToString:GetInformationTypeClubNews] ) {
-        center.x = center.x + 180;
+        center.x = center.x + 100;
     } else if ( self.information && [self.information.category isEqualToString:GetInformationTypeSchoolNews] ) {
-        center.x = center.x + 180;
+        center.x = center.x + 100;
     } else if ( self.information && [self.information.category isEqualToString:GetInformationTypeForStaff] ) {
-        center.x = center.x + 180;
+        center.x = center.x + 100;
     } else if ( self.information && [self.information.category isEqualToString:GetInformationTypeAround] ) {
-        center.x = center.x + 54;
+        center.x = center.x -20;
         [self.recommendImage setAlpha:0];
     } else
     center.x = center.x + 54;
@@ -58,15 +58,15 @@
     if ( !_isButtonBoardLeft ) return;
     CGPoint center = [self.buttonBoard center];
     if ( self.star ) {
-        center.x = center.x - 180;
+        center.x = center.x - 100;
     } else if ( self.information && [self.information.category isEqualToString:GetInformationTypeClubNews] ) {
-        center.x = center.x - 180;
+        center.x = center.x - 100;
     } else if ( self.information && [self.information.category isEqualToString:GetInformationTypeSchoolNews] ) {
-        center.x = center.x - 180;
+        center.x = center.x - 100;
     } else if ( self.information && [self.information.category isEqualToString:GetInformationTypeForStaff] ) {
-        center.x = center.x - 180;
+        center.x = center.x - 100;
     } else if ( self.information && [self.information.category isEqualToString:GetInformationTypeAround] ) {
-        center.x = center.x - 54;
+        center.x = center.x + 20;
         [self.recommendImage setAlpha:1];
     } else
     center.x = center.x - 54;
