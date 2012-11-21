@@ -17,7 +17,7 @@
 
 - (void)pressNavButton
 {
-    [self.parentViewController dismissModalViewControllerAnimated:YES];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)configureNavBar
