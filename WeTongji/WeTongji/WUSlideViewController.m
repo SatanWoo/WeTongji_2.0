@@ -13,7 +13,7 @@
 #import "UserIntroViewController.h"
 #import "LeftMenuCellModel.h"
 
-#define kFirstUseKey @"kFirstUseKey"
+#define kFirstUseKey @"kFirstUsesKey"
 
 @interface WUSlideViewController ()
 @property (assign ,nonatomic) int currentStatus;
@@ -102,6 +102,7 @@
         [self.view addSubview:self.introViewController.view];
     }
     [[NSUserDefaults standardUserDefaults] setInteger:1 forKey:kFirstUseKey];
+    [[NSUserDefaults standardUserDefaults] synchronize];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(login:) name:kLoginNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reveal:) name:kSlideNotification object:nil];
 }
@@ -233,7 +234,9 @@
     if (_introViewController == nil) {
         _introViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:kUserIntroViewController];
         _introViewController.view.frame = self.view.bounds;
-        [_introViewController addPicture:self.middelViewController.view];
+        
+        UIViewController* loginViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:kLoginViewController];
+        [_introViewController addPicture:loginViewController.view];
     }
     return _introViewController;
 }
