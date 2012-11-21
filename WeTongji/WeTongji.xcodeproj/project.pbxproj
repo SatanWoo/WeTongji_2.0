@@ -106,6 +106,9 @@
 		035E34AD1653EFB8009AC6BF /* header_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 035E34A91653EFB8009AC6BF /* header_bg@2x.png */; };
 		035E34B21653F040009AC6BF /* WUFolderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 035E34B11653F040009AC6BF /* WUFolderView.m */; };
 		035E34B41653F068009AC6BF /* WUFolderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 035E34B31653F068009AC6BF /* WUFolderView.xib */; };
+		0398838A165D395500A31620 /* UpdatePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03988389165D395500A31620 /* UpdatePasswordViewController.m */; };
+		0398838D165D39F100A31620 /* change_password_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 0398838B165D39F100A31620 /* change_password_btn.png */; };
+		0398838E165D39F100A31620 /* change_password_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0398838C165D39F100A31620 /* change_password_btn@2x.png */; };
 		03BAB35E164FD01B0049DA19 /* Icon-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 03BAB35A164FD01B0049DA19 /* Icon-57.png */; };
 		03BAB35F164FD01B0049DA19 /* Icon-Small-58@2x.png.png in Resources */ = {isa = PBXBuildFile; fileRef = 03BAB35B164FD01B0049DA19 /* Icon-Small-58@2x.png.png */; };
 		03BAB360164FD01B0049DA19 /* Icon@2x.png.png in Resources */ = {isa = PBXBuildFile; fileRef = 03BAB35C164FD01B0049DA19 /* Icon@2x.png.png */; };
@@ -621,6 +624,10 @@
 		035E34B01653F03F009AC6BF /* WUFolderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WUFolderView.h; sourceTree = "<group>"; };
 		035E34B11653F040009AC6BF /* WUFolderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WUFolderView.m; sourceTree = "<group>"; };
 		035E34B31653F068009AC6BF /* WUFolderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WUFolderView.xib; sourceTree = "<group>"; };
+		03988388165D395500A31620 /* UpdatePasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdatePasswordViewController.h; sourceTree = "<group>"; };
+		03988389165D395500A31620 /* UpdatePasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdatePasswordViewController.m; sourceTree = "<group>"; };
+		0398838B165D39F100A31620 /* change_password_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = change_password_btn.png; sourceTree = "<group>"; };
+		0398838C165D39F100A31620 /* change_password_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "change_password_btn@2x.png"; sourceTree = "<group>"; };
 		03BAB35A164FD01B0049DA19 /* Icon-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-57.png"; sourceTree = "<group>"; };
 		03BAB35B164FD01B0049DA19 /* Icon-Small-58@2x.png.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-58@2x.png.png"; sourceTree = "<group>"; };
 		03BAB35C164FD01B0049DA19 /* Icon@2x.png.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png.png"; sourceTree = "<group>"; };
@@ -1209,6 +1216,8 @@
 		03988386165D37D200A31620 /* updatepassword */ = {
 			isa = PBXGroup;
 			children = (
+				03988388165D395500A31620 /* UpdatePasswordViewController.h */,
+				03988389165D395500A31620 /* UpdatePasswordViewController.m */,
 			);
 			name = updatepassword;
 			sourceTree = "<group>";
@@ -1311,6 +1320,8 @@
 		03D61F5C165BE337005F19A1 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
+				0398838B165D39F100A31620 /* change_password_btn.png */,
+				0398838C165D39F100A31620 /* change_password_btn@2x.png */,
 				03D61F5D165BE342005F19A1 /* nav_finish_btn_hl.png */,
 				03D61F5E165BE342005F19A1 /* nav_finish_btn_hl@2x.png */,
 				03D61F5F165BE342005F19A1 /* nav_finish_btn.png */,
@@ -2631,6 +2642,8 @@
 				0318750E165D1080000D446B /* 13@2x.png in Resources */,
 				03187511165D25CA000D446B /* list_btn.png in Resources */,
 				03187512165D25CA000D446B /* list_btn@2x.png in Resources */,
+				0398838D165D39F100A31620 /* change_password_btn.png in Resources */,
+				0398838E165D39F100A31620 /* change_password_btn@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2735,6 +2748,7 @@
 				FFB1268C165C6E00005ECC2D /* AbstractCollection+Addition.m in Sources */,
 				FFB1268F165C7706005ECC2D /* MyFavoriteViewCell.m in Sources */,
 				FFB12696165CAEE8005ECC2D /* FavoriteIconCell.m in Sources */,
+				0398838A165D395500A31620 /* UpdatePasswordViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

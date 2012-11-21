@@ -60,6 +60,7 @@
 #define kRegisterSecondViewControllerSegue @"kRegisterSecondViewController"
 #define kSettingViewControllerSegue @"kSettingViewController"
 #define kSettingViewControllerSegue @"kSettingViewController"
+#define kUpdatePasswordViewControllerSegue @"kUpdatePasswordViewController"
 
 // Slide
 #define kMenuFullWidth 320.0f
