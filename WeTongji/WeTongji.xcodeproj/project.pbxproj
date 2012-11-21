@@ -1206,6 +1206,13 @@
 			name = register;
 			sourceTree = "<group>";
 		};
+		03988386165D37D200A31620 /* updatepassword */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = updatepassword;
+			sourceTree = "<group>";
+		};
 		03BAB359164FD0010049DA19 /* icon & Splash */ = {
 			isa = PBXGroup;
 			children = (
@@ -1220,6 +1227,7 @@
 		03D1CD87165A83FE00334F0D /* Setting */ = {
 			isa = PBXGroup;
 			children = (
+				03988386165D37D200A31620 /* updatepassword */,
 				03D1CD88165A841700334F0D /* SettingViewController.h */,
 				03D1CD89165A841700334F0D /* SettingViewController.m */,
 			);

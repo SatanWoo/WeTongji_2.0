@@ -106,8 +106,14 @@
 
 - (IBAction)directLogin:(id)sender
 {
-    //[self.scrollView setContentOffset:CGPointMake(0, 0) animated:NO];
-    [self.view removeFromSuperview];
+    [UIView animateWithDuration:0.2f animations:^{
+        self.view.layer.opacity = 0.0f;
+    } completion:^(BOOL finished) {
+        if (finished) {
+            [self.view removeFromSuperview];
+        }
+    }];
+    
     [[NSNotificationCenter defaultCenter] postNotificationName:kUpdateMiddleContent object:self];
 }
 
