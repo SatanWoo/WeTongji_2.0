@@ -92,7 +92,9 @@
 
 - (IBAction)directLogin:(id)sender
 {
+    [self.scrollView setContentOffset:CGPointMake(0, 0) animated:NO];
     [self.view removeFromSuperview];
+    [[NSNotificationCenter defaultCenter] postNotificationName:kUpdateMiddleContent object:self];
 }
 
 - (IBAction)directUser:(id)sender

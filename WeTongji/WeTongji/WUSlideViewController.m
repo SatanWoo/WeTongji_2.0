@@ -13,7 +13,7 @@
 #import "UserIntroViewController.h"
 #import "LeftMenuCellModel.h"
 
-#define kFirstUseKey @"kFirstUsesKey"
+#define kFirstUseKey @"kFirstUsesssssKey"
 
 @interface WUSlideViewController ()
 @property (assign ,nonatomic) int currentStatus;
@@ -81,6 +81,11 @@
     }];
 }
 
+- (void)update:(NSNotification *)notification
+{
+    self.middelViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:kLoginViewController];
+}
+
 - (void)configureView
 {
     self.leftViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:kLeftMenuViewController];
@@ -103,9 +108,10 @@
     }
     [[NSUserDefaults standardUserDefaults] setInteger:1 forKey:kFirstUseKey];
     [[NSUserDefaults standardUserDefaults] synchronize];
+    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(login:) name:kLoginNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reveal:) name:kSlideNotification object:nil];
-}
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(update:) name:kUpdateMiddleContent object:nil];}
 
 - (void)removeNotification
 {
@@ -235,8 +241,8 @@
         _introViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:kUserIntroViewController];
         _introViewController.view.frame = self.view.bounds;
         
-        UIViewController* loginViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:kLoginViewController];
-        [_introViewController addPicture:loginViewController.view];
+        [self.middelViewController.view removeFromSuperview];
+        [_introViewController addPicture:self.middelViewController.view];
     }
     return _introViewController;
 }
