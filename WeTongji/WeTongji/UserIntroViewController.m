@@ -9,11 +9,16 @@
 #import "UserIntroViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "Macro.h"
+#import <math.h>
 #define kPageContent 460
 #define kLastContent 460
-#define kMoveDistance self.bottomBar.frame.size.height
+#define kMoveDistance self.moveView.frame.size.height
 
 @interface UserIntroViewController ()<UIScrollViewDelegate>
+{
+    CGPoint originRect;
+    CGPoint bottomRect;
+}
 - (void)configureScrollView;
 - (void)loadVisiblePages;
 @property (nonatomic ,assign) int pictureNumber;
@@ -23,6 +28,7 @@
 @implementation UserIntroViewController
 @synthesize pictureNumber = _pictureNumber;
 @synthesize originRect = _originRect;
+@synthesize moveView;
 
 #pragma mark - Private Method
 - (void)configureScrollView
@@ -54,11 +60,6 @@
 - (void)loadVisiblePages
 {
     NSInteger page = self.scrollView.contentOffset.y / kPageContent;
-    if (page > 3) {
-        self.scrollView.frame = self.view.bounds;
-    } else {
-        self.scrollView.frame = self.originRect;
-    }
     self.pageControl.currentPage = page;
 }
 
@@ -67,6 +68,9 @@
 {
     [super viewDidLoad];
     [self configureScrollView];
+    originRect = self.moveView.center;
+    bottomRect = self.moveView.center;
+    bottomRect.y -= kMoveDistance;
 	// Do any additional setup after loading the view.
 }
 
@@ -107,17 +111,24 @@
 
 - (void)scrollBottomBar
 {
-    float startCountPos = (self.pageControl.numberOfPages - 2) * kPageContent;
+    float startCountPos = (self.pageControl.numberOfPages - 1) * kPageContent;
     float difference = self.scrollView.contentOffset.y - startCountPos;
-    float actualMove = difference * kMoveDistance / kPageContent;
-    if (actualMove > 20 || actualMove < 0 ) {
+    if (difference > kPageContent || difference < -kPageContent) {
         return ;
     }
-    NSLog(@"Actual move is %g",actualMove);
+    float actualMove = (fabs(difference) - kPageContent) * kMoveDistance / kPageContent;
     
-    CGPoint center = self.moveView.center;
-    center.y += actualMove;
-    self.moveView.center = center;
+    actualMove = fabsf(actualMove);
+    
+    if (difference > 0) {
+        CGPoint center = self.moveView.center;
+        center.y = bottomRect.y - actualMove;
+        self.moveView.center = center;
+    } else {
+        CGPoint center = self.moveView.center;
+        center.y = originRect.y + actualMove;
+        self.moveView.center = center;
+    }
 }
 
 
