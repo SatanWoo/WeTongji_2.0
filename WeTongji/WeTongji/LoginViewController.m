@@ -10,16 +10,32 @@
 #import <WeTongjiSDK/WeTongjiSDK.h>
 #import "User+Addition.h"
 #import "Macro.h"
+#import "MBProgressHUD.h"
+#import "NSArray+Addition.h"
 
-@interface LoginViewController ()
+@interface LoginViewController ()<MBProgressHUDDelegate>
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollVIew;
 @property (weak, nonatomic) IBOutlet UITextField *NOTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
+@property (strong,nonatomic) MBProgressHUD * progress;
 - (void)configureButton;
 - (void)enableButton:(NSNotification *)notification;
 @end
 
 @implementation LoginViewController
+
+-(MBProgressHUD *) progress
+{
+    if ( !_progress )
+    {
+        _progress = [[MBProgressHUD alloc] initWithView:self.view];
+        [self.view addSubview:_progress];
+        _progress.delegate = self;
+        _progress.labelText = @"登录中...";
+    }
+    return _progress;
+}
+
 - (void)configureButton
 {
     self.closeBtn.hidden = YES;
@@ -90,6 +106,8 @@
 
 - (IBAction)logInClick:(id)sender
 {
+    
+    [self.progress show:YES];
     [self resignAllFirstResponder];
     WTClient * client = [WTClient sharedClient];
     WTRequest * request = [WTRequest requestWithSuccessBlock: ^(id responseData)
@@ -97,10 +115,23 @@
         [NSUserDefaults setCurrentUserID:[[responseData objectForKey:@"User"] objectForKey:@"UID"] session:[responseData objectForKey:@"Session"]];
         [User updateUser:[responseData objectForKey:@"User"] inManagedObjectContext:self.managedObjectContext];
         NSLog(@"%@",responseData);
+        self.progress.labelText = @"登陆成功";
+        [self.progress hide:YES afterDelay:1];
         [[NSNotificationCenter defaultCenter] postNotificationName:kLoginNotification object:self];
-    }failureBlock:^(NSError * error){}];
+    }failureBlock:^(NSError * error)
+    {
+        self.progress.labelText = [[error userInfo] objectForKey:@"errorDesc"];
+        self.progress.mode = MBProgressHUDModeCustomView;
+        [self.progress hide:YES afterDelay:1];
+    }];
     [request login:self.NOTextField.text password:self.passwordTextField.text];
     [client enqueueRequest:request];
+}
+
+-(void) hudWasHidden:(MBProgressHUD *)hud
+{
+    [hud removeFromSuperview];
+    self.progress = nil;
 }
 
 - (IBAction)slide:(id)sender
