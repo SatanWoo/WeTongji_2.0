@@ -11,6 +11,8 @@
 
 #define DAY_TIME_INTERVAL ( 60 * 60 * 24 )
 
+#define MISSING_PIC_LINK @"http://we.tongji.edu.cn/images/original/missing.png"
+
 @implementation Event (Addition)
 
 + (Event *)insertActivity:(NSDictionary *)dict inManagedObjectContext:(NSManagedObjectContext *)context
@@ -99,7 +101,7 @@
         [request setEntity:[NSEntityDescription entityForName:@"Event" inManagedObjectContext:context]];
         NSPredicate *createEndPredicate = [NSPredicate predicateWithFormat:@"createAt < %@", today];
         NSPredicate * createBeginPredicate = [NSPredicate predicateWithFormat:@"createAt >= %@",[today dateByAddingTimeInterval:-DAY_TIME_INTERVAL]];
-        NSPredicate * imagePredicate = [NSPredicate predicateWithFormat:@"imageLink <> %@",[NSNull null]];
+        NSPredicate * imagePredicate = [NSPredicate predicateWithFormat:@"imageLink <> %@",MISSING_PIC_LINK];
         [request setPredicate:[NSCompoundPredicate andPredicateWithSubpredicates:[NSArray arrayWithObjects: createEndPredicate, createBeginPredicate, imagePredicate, nil]]];
         NSSortDescriptor *sort = [[NSSortDescriptor alloc] initWithKey:@"like" ascending:YES];
         [request setSortDescriptors:[[NSArray alloc] initWithObjects:sort , nil]];
@@ -108,6 +110,7 @@
         if ( [list count] )
         {
             result = [list lastObject];
+            NSLog(@"%@",result.imageLink);
             return result;
         }
     }
