@@ -73,10 +73,20 @@
 }
 
 #pragma mark - Life Cycle
+
+- (void)disableSwipe
+{
+    UISwipeGestureRecognizer *rightGesturer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:nil];
+    rightGesturer.direction = UISwipeGestureRecognizerDirectionRight;
+    [self.view addGestureRecognizer:rightGesturer];
+
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	[self configureScrollView];
+    [self disableSwipe];
     self.pageControl.currentPage = 0;
     self.pageControl.numberOfPages = 0;
     [self setWantsFullScreenLayout:YES];
