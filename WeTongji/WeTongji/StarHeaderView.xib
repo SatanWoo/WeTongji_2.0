@@ -282,7 +282,6 @@
 										<string key="NSFrame">{{28, 7}, {28, 21}}</string>
 										<reference key="NSSuperview" ref="698377396"/>
 										<reference key="NSWindow"/>
-										<reference key="NSNextKeyView"/>
 										<bool key="IBUIOpaque">NO</bool>
 										<bool key="IBUIClipsSubviews">YES</bool>
 										<int key="IBUIContentMode">7</int>
@@ -397,21 +396,21 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
-						<string key="label">favoriteClicked:</string>
-						<reference key="source" ref="412002193"/>
+						<string key="label">likeClicked:</string>
+						<reference key="source" ref="105560766"/>
 						<reference key="destination" ref="1058080063"/>
 						<int key="IBEventType">7</int>
 					</object>
-					<int key="connectionID">137</int>
+					<int key="connectionID">140</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
-						<string key="label">likeClicked:</string>
-						<reference key="source" ref="464048014"/>
+						<string key="label">favoriteClicked:</string>
+						<reference key="source" ref="698377396"/>
 						<reference key="destination" ref="1058080063"/>
 						<int key="IBEventType">7</int>
 					</object>
-					<int key="connectionID">138</int>
+					<int key="connectionID">139</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -572,13 +571,32 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">138</int>
+			<int key="maxID">140</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
 				<object class="IBPartialClassDescription">
 					<string key="className">WUTableHeaderView</string>
 					<string key="superclassName">UIView</string>
+					<dictionary class="NSMutableDictionary" key="actions">
+						<string key="addScheduleClicked:">id</string>
+						<string key="favoriteClicked:">id</string>
+						<string key="likeClicked:">id</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="actionInfosByName">
+						<object class="IBActionInfo" key="addScheduleClicked:">
+							<string key="name">addScheduleClicked:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="favoriteClicked:">
+							<string key="name">favoriteClicked:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="likeClicked:">
+							<string key="name">likeClicked:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="addScheduleButton">UIButton</string>
 						<string key="buttonBoard">UIView</string>

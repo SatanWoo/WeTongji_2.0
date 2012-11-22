@@ -195,9 +195,6 @@
     }
     cell.favorButton.userInteractionEnabled = YES;
     cell.likeButton.userInteractionEnabled = YES;
-    [cell.favorButton setImage:[UIImage imageNamed:@"favourite_hl"] forState:UIControlStateHighlighted];
-    [cell.likeButton setImage:[UIImage imageNamed:@"like_hl"] forState:UIControlStateHighlighted];
-    NSLog(@"%@",[self.eventList objectAtIndex:indexPath.row]);
     [cell setEvent:[self.eventList objectAtIndex:indexPath.row]];
     return cell;
 }

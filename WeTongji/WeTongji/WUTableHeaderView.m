@@ -188,9 +188,26 @@
                                    NSLog(@"like operation succeed!");
                                else NSLog(@"unlike operation succeed!");
                             #endif
+                               NSInteger tempInt;
                                if ( [purposeImage isEqualToString:@"like_hl"] )
+                               {
                                    [self likeSucceed];
-                               else [self disLikeSucced];
+                                   tempInt = 1;
+                               }
+                               else
+                               {
+                                   [self disLikeSucced];
+                                   tempInt = -1;
+                               }
+                               self.event.like = [NSNumber numberWithInt:([self.event.like intValue] + tempInt)];
+                               self.information.like = [NSNumber numberWithInt:([self.information.like intValue] + tempInt)];
+                               self.star.like = [NSNumber numberWithInt:([self.star.like intValue] + tempInt)];
+                               if ( self.event )
+                                   self.likeNumber.text = [NSString stringWithFormat:@"%@",self.event.like];
+                               if ( self.information )
+                                   self.likeNumber.text = [NSString stringWithFormat:@"%@",self.information.like];
+                               if ( self.star )
+                                   self.likeNumber.text = [NSString stringWithFormat:@"%@",self.star.like];
                                self.event.canLike = [NSNumber numberWithBool:!self.event.canLike.boolValue];
                                self.information.canLike = [NSNumber numberWithBool:!self.information.canLike.boolValue];
                                self.star.canLike = [NSNumber numberWithBool:!self.star.canLike.boolValue];
@@ -263,9 +280,26 @@
                                    NSLog(@"favourite operation succeed!");
                                else NSLog(@"unfavourite operation succeed!");
                             #endif
+                               NSInteger tempInt;
                                if ( [purposeImage isEqualToString:@"favourite_hl"] )
+                               {
                                    [self favoriteSucceed];
-                               else [self unFavoriteSucceed];
+                                   tempInt = +1;
+                               }
+                               else
+                               {
+                                   [self unFavoriteSucceed];
+                                   tempInt = -1;
+                               }
+                               self.event.favorite = [NSNumber numberWithInt:([self.event.favorite intValue] + tempInt)];
+                               self.information.favorite = [NSNumber numberWithInt:([self.information.favorite intValue] + tempInt)];
+                               self.star.favorite = [NSNumber numberWithInt:([self.star.favorite intValue] + tempInt)];
+                               if ( self.event )
+                                   self.favoriteNumber.text = [NSString stringWithFormat:@"%@",self.event.favorite];
+                               if ( self.information )
+                                   self.favoriteNumber.text = [NSString stringWithFormat:@"%@",self.information.favorite];
+                               if ( self.star )
+                                   self.favoriteNumber.text = [NSString stringWithFormat:@"%@",self.star.favorite];
                                self.event.canFavorite = [NSNumber numberWithBool:!self.event.canFavorite.boolValue];
                                self.information.canFavorite = [NSNumber numberWithBool:!self.information.canFavorite.boolValue];
                                self.star.canFavorite = [NSNumber numberWithBool:!self.star.canFavorite.boolValue];

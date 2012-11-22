@@ -406,21 +406,21 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
-						<string key="label">likeClicked:</string>
-						<reference key="source" ref="672641560"/>
+						<string key="label">favoriteClicked:</string>
+						<reference key="source" ref="134868995"/>
 						<reference key="destination" ref="1007803879"/>
 						<int key="IBEventType">7</int>
 					</object>
-					<int key="connectionID">118</int>
+					<int key="connectionID">120</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
-						<string key="label">favoriteClicked:</string>
-						<reference key="source" ref="154833174"/>
+						<string key="label">likeClicked:</string>
+						<reference key="source" ref="342411297"/>
 						<reference key="destination" ref="1007803879"/>
 						<int key="IBEventType">7</int>
 					</object>
-					<int key="connectionID">117</int>
+					<int key="connectionID">119</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -576,7 +576,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">118</int>
+			<int key="maxID">120</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes"/>
 		<int key="IBDocument.localizationMode">0</int>
