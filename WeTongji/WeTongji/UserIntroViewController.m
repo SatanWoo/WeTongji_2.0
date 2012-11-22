@@ -43,7 +43,7 @@
 
 - (void)addPicture:(UIView *)image
 {
-    CGRect frame = self.scrollView.bounds;
+    CGRect frame = image.bounds;
     frame.origin.x = 0.0f;
     frame.origin.y = self.pictureNumber * kPageContent;
     image.frame = frame;
