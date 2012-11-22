@@ -945,7 +945,7 @@
                                         <rect key="frame" x="131" y="28" width="169" height="30"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
                                         <connections>
                                             <action selector="textDidEndEdit:" destination="Cv7-YQ-g1U" eventType="editingDidEndOnExit" id="gvk-Uc-ZuJ"/>
                                             <action selector="touchOnTextFiled:" destination="Cv7-YQ-g1U" eventType="editingDidBegin" id="7Nk-Ul-57O"/>
@@ -1481,7 +1481,7 @@
                                         <rect key="frame" x="136" y="29" width="164" height="30"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="next" secureTextEntry="YES"/>
                                         <connections>
                                             <action selector="textDidEndEdit:" destination="x0g-D6-LN3" eventType="editingDidEndOnExit" id="uWd-GW-PfI"/>
                                             <action selector="touchOnTextFiled:" destination="x0g-D6-LN3" eventType="editingDidBegin" id="p2Z-vI-ETE"/>
@@ -1492,7 +1492,7 @@
                                         <rect key="frame" x="136" y="69" width="164" height="30"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="next" secureTextEntry="YES"/>
                                         <connections>
                                             <action selector="textDidEndEdit:" destination="x0g-D6-LN3" eventType="editingDidEndOnExit" id="rAH-Iz-lGE"/>
                                             <action selector="touchOnTextFiled:" destination="x0g-D6-LN3" eventType="editingDidBegin" id="cWc-o9-eVq"/>
@@ -1503,7 +1503,7 @@
                                         <rect key="frame" x="136" y="109" width="164" height="30"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
                                         <connections>
                                             <action selector="textDidEndEdit:" destination="x0g-D6-LN3" eventType="editingDidEndOnExit" id="l73-ZG-qYx"/>
                                             <action selector="touchOnTextFiled:" destination="x0g-D6-LN3" eventType="editingDidBegin" id="t2r-Z5-ox6"/>
