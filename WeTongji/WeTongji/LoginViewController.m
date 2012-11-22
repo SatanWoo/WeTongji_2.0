@@ -121,7 +121,7 @@
     }failureBlock:^(NSError * error)
     {
         self.progress.labelText = [[error userInfo] objectForKey:@"errorDesc"];
-        self.progress.mode = MBProgressHUDModeCustomView;
+        self.progress.mode = MBProgressHUDModeText;
         [self.progress hide:YES afterDelay:1];
     }];
     [request login:self.NOTextField.text password:self.passwordTextField.text];

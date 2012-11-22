@@ -9,13 +9,18 @@
 #import "WUTableHeaderView.h"
 #import "NSString+Addition.h"
 #import <WeTongjiSDK/WeTongjiSDK.h>
+#import "MBProgressHUD.h"
+#import "User+Addition.h"
+#import "AppDelegate.h"
+#import <CoreData/CoreData.h>
 
-@interface WUTableHeaderView()
+@interface WUTableHeaderView()<MBProgressHUDDelegate>
 {
     BOOL _isButtonBoardLeft;
 }
 @property (weak, nonatomic) IBOutlet UIView *buttonBoard;
-
+@property (strong, nonatomic) MBProgressHUD * progress;
+@property (nonatomic,readonly) BOOL isLogIn;
 @end
 
 @implementation WUTableHeaderView
@@ -31,6 +36,82 @@
 @synthesize moveFavorView;
 @synthesize moveLikeView;
 @synthesize buttonBoard;
+
+-(MBProgressHUD *) progress
+{
+    if ( !_progress )
+    {
+        _progress = [[MBProgressHUD alloc] initWithView:self.window];
+        [self.window addSubview:_progress];
+        _progress.delegate = self;
+        _progress.margin = 10.f;
+        _progress.yOffset = 150.f;
+        _progress.mode = MBProgressHUDModeText;
+    }
+    return _progress;
+}
+
+-(void) hudWasHidden:(MBProgressHUD *)hud
+{
+    [self.progress removeFromSuperview];
+    self.progress =  nil;
+}
+
+-(BOOL) isLogIn
+{
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    if ( [User userinManagedObjectContext:appDelegate.managedObjectContext] ) return YES;
+    return NO;
+}
+
+-(void)pleaseLogIn
+{
+    self.progress.labelText = @"请先登陆";
+    [self.progress show:YES];
+    [self.progress hide:YES afterDelay:1];
+}
+
+-(void) likeSucceed
+{
+    self.progress.labelText = @"赞成功";
+    [self.progress show:YES];
+    [self.progress hide:YES afterDelay:1];
+}
+
+-(void) disLikeSucced
+{
+    self.progress.labelText = @"取消赞成功";
+    [self.progress show:YES];
+    [self.progress hide:YES afterDelay:1];
+}
+
+-(void) favoriteSucceed
+{
+    self.progress.labelText = @"已添加到收藏";
+    [self.progress show:YES];
+    [self.progress hide:YES afterDelay:1];
+}
+
+-(void) unFavoriteSucceed
+{
+    self.progress.labelText = @"已取消收藏";
+    [self.progress show:YES];
+    [self.progress hide:YES afterDelay:1];
+}
+
+-(void) scheduleSucceed
+{
+    self.progress.labelText = @"已添加到日程";
+    [self.progress show:YES];
+    [self.progress hide:YES afterDelay:1];
+}
+
+-(void) unScheduleSucceed
+{
+    self.progress.labelText = @"已取消该日程";
+    [self.progress show:YES];
+    [self.progress hide:YES afterDelay:1];
+}
 
 -(void) changeButtonPositionToLeft
 {
@@ -90,6 +171,11 @@
 }
 - (IBAction)likeClicked:(id)sender
 {
+    if ( !self.isLogIn )
+    {
+        [self pleaseLogIn];
+        return;
+    }
     NSString * purposeImage;
     if ( [self.event.canLike boolValue] || [self.information.canLike boolValue] || [self.star.canLike boolValue] )
         purposeImage = @"like_hl";
@@ -102,6 +188,9 @@
                                    NSLog(@"like operation succeed!");
                                else NSLog(@"unlike operation succeed!");
                             #endif
+                               if ( [purposeImage isEqualToString:@"like_hl"] )
+                                   [self likeSucceed];
+                               else [self disLikeSucced];
                                self.event.canLike = [NSNumber numberWithBool:!self.event.canLike.boolValue];
                                self.information.canLike = [NSNumber numberWithBool:!self.information.canLike.boolValue];
                                self.star.canLike = [NSNumber numberWithBool:!self.star.canLike.boolValue];
@@ -114,6 +203,9 @@
                                    NSLog(@"like operation failed!");
                                else NSLog(@"unlike operation failed!");
                             #endif
+                               self.progress.labelText = [[error userInfo] objectForKey:@"errorDesc"];
+                               self.progress.mode = MBProgressHUDModeText;
+                               [self.progress hide:YES afterDelay:1];
                            }];
     
     if ( self.event )
@@ -154,6 +246,11 @@
 
 - (IBAction)favoriteClicked:(id)sender
 {
+    if ( !self.isLogIn )
+    {
+        [self pleaseLogIn];
+        return;
+    }
     NSString * purposeImage;
     if ( [self.event.canFavorite boolValue] || [self.information.canFavorite boolValue] || [self.star.canFavorite boolValue] )
         purposeImage = @"favourite_hl";
@@ -166,6 +263,9 @@
                                    NSLog(@"favourite operation succeed!");
                                else NSLog(@"unfavourite operation succeed!");
                             #endif
+                               if ( [purposeImage isEqualToString:@"favourite_hl"] )
+                                   [self favoriteSucceed];
+                               else [self unFavoriteSucceed];
                                self.event.canFavorite = [NSNumber numberWithBool:!self.event.canFavorite.boolValue];
                                self.information.canFavorite = [NSNumber numberWithBool:!self.information.canFavorite.boolValue];
                                self.star.canFavorite = [NSNumber numberWithBool:!self.star.canFavorite.boolValue];
@@ -178,6 +278,9 @@
                                    NSLog(@"favourite operation failed!");
                                else NSLog(@"unfavourite operation failed!");
                             #endif
+                               self.progress.labelText = [[error userInfo] objectForKey:@"errorDesc"];
+                               self.progress.mode = MBProgressHUDModeText;
+                               [self.progress hide:YES afterDelay:1];
                            }];
     
     if ( self.event )
@@ -218,6 +321,11 @@
 
 - (IBAction)addScheduleClicked:(id)sender
 {
+    if ( !self.isLogIn )
+    {
+        [self pleaseLogIn];
+        return;
+    }
     NSString * purposeImage;
     if ( [self.event.canSchedule boolValue] )
         purposeImage = @"add_to_schedule_hl";
@@ -230,6 +338,9 @@
                                    NSLog(@"schedule operation succeed!");
                                else NSLog(@"unschedule operation succeed!");
                             #endif
+                               if ( [purposeImage isEqualToString:@"add_to_schedule_hl"] )
+                                   [self scheduleSucceed];
+                               else [self unScheduleSucceed];
                                self.event.canSchedule = [NSNumber numberWithBool:!self.event.canSchedule.boolValue];
                                [self.addScheduleButton setImage:[UIImage imageNamed:purposeImage] forState:UIControlStateNormal];
                            }
@@ -240,6 +351,9 @@
                                    NSLog(@"schedule operation failed!");
                                else NSLog(@"unschedule operation failed!");
                             #endif
+                               self.progress.labelText = [[error userInfo] objectForKey:@"errorDesc"];
+                               self.progress.mode = MBProgressHUDModeText;
+                               [self.progress hide:YES afterDelay:1];
                            }];
     
     if ( self.event )
