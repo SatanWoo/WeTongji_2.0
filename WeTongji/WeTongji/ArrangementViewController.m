@@ -48,6 +48,7 @@
         NSArray * tempList = [self getCellsData];
         if ( ![tempList count] ) return _arrangeList;
         NSInteger index = 0;
+        NSDate * now = [NSDate dateWithTimeIntervalSinceNow:8*60*60];
         while ( [self.endDate compare:[NSUserDefaults getCurrentSemesterEndDate]] <= 0 )
         {
             AbstractActivity * thing = tempList[index];
@@ -60,9 +61,10 @@
             else
             if ( [self.endDate compare:thing.begin_time] <= 0 )
             {
-                if ( [[NSDate dateWithTimeIntervalSinceNow:0] timeIntervalSinceDate:self.beginDate] >= 0 &&
-                    [[NSDate dateWithTimeIntervalSinceNow:0] timeIntervalSinceDate:self.beginDate] < DAY_TIME_INTERVAL )
+                if ( [now timeIntervalSinceDate:self.beginDate] >= 0 &&
+                    [now timeIntervalSinceDate:self.endDate] < 0 )
                 {
+                    NSLog(@"%@",now);
                     self.todayIndexPath = [NSIndexPath indexPathForRow:0 inSection:[self.sectionList count]];
                     [_arrangeList addObject:[[NSArray alloc] initWithObjects:[AbstractActivity emptyActivityInManagedObjectContext:self.managedObjectContext], nil]];
                     [self.sectionList addObject:self.beginDate];
@@ -84,8 +86,8 @@
                 {
                     [_arrangeList addObject:rowList];
                     [self.sectionList addObject:self.beginDate];
-                    if ( [[NSDate dateWithTimeIntervalSinceNow:0] timeIntervalSinceDate:self.beginDate] >= 0 &&
-                        [[NSDate dateWithTimeIntervalSinceNow:0] timeIntervalSinceDate:self.beginDate] < DAY_TIME_INTERVAL )
+                    if ( [now timeIntervalSinceDate:self.beginDate] >= 0 &&
+                        [now timeIntervalSinceDate:self.beginDate] < DAY_TIME_INTERVAL )
                     {
                         self.todayIndexPath = [NSIndexPath indexPathForRow:0 inSection:[self.sectionList count]-1];
                     }
@@ -119,8 +121,8 @@
     {
         _beginDate = [NSUserDefaults getCurrentSemesterBeginDate];
         NSInteger interval = [_beginDate timeIntervalSince1970] / DAY_TIME_INTERVAL;
-        interval = interval * DAY_TIME_INTERVAL;
-        _beginDate = [NSDate dateWithTimeIntervalSince1970:(interval - 8* 60 *60)];
+        _beginDate = [NSDate dateWithTimeIntervalSince1970:(interval * DAY_TIME_INTERVAL)];
+        NSLog(@"%@",_beginDate);
     }
     return _beginDate;
 }

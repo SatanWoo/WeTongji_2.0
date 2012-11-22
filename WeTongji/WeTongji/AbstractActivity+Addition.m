@@ -17,7 +17,7 @@
     AbstractActivity *result;
     
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    NSDate * now = [NSDate dateWithTimeIntervalSinceNow:0];
+    NSDate * now = [NSDate dateWithTimeIntervalSinceNow:8*60*60];
     NSInteger interval = [now timeIntervalSince1970] / DAY_TIME_INTERVAL;
     NSDate * today = [NSDate dateWithTimeIntervalSince1970:(interval * DAY_TIME_INTERVAL)];
     [request setEntity:[NSEntityDescription entityForName:@"AbstractActivity" inManagedObjectContext:context]];

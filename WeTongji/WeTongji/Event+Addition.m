@@ -41,7 +41,7 @@
     result.organizer = [NSString stringWithFormat:@"%@", [dict objectForKey:@"Organizer"]];
     result.beginTime = [[NSString stringWithFormat:@"%@", [dict objectForKey:@"Begin"]] convertToDate];
     result.endTime = [[NSString stringWithFormat:@"%@", [dict objectForKey:@"End"]] convertToDate];
-    result.channelId = [[NSNumber numberWithInt:[[dict objectForKey:@"Channel_Id"] intValue] - 1] stringValue];
+    result.channelId = [[NSNumber numberWithInt:[[dict objectForKey:@"Channel_Id"] intValue]] stringValue];
     result.like = [NSNumber numberWithInt:[[dict objectForKey:@"Like"] intValue]];
     result.favorite = [NSNumber numberWithInt:[[dict objectForKey:@"Favorite"] intValue]];
     result.schedule = [NSNumber numberWithInt:[[dict objectForKey:@"Schedule"] intValue]];
@@ -92,7 +92,7 @@
     Event * result = nil;
     
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    NSDate * now = [NSDate dateWithTimeIntervalSinceNow:-8*60*60];
+    NSDate * now = [NSDate dateWithTimeIntervalSinceNow:8*60*60];
     [request setEntity:[NSEntityDescription entityForName:@"Event" inManagedObjectContext:context]];
     NSPredicate *beginPredicate = [NSPredicate predicateWithFormat:@"beginTime >= %@", now];
     [request setPredicate:[NSCompoundPredicate andPredicateWithSubpredicates:[NSArray arrayWithObjects: beginPredicate, nil]]];
@@ -135,11 +135,10 @@
     Event * result = nil;
     
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    NSDate * today = [NSDate dateWithTimeIntervalSinceNow:0];
+    NSDate * today = [NSDate dateWithTimeIntervalSinceNow:8*60*60];
     NSInteger interval = [today timeIntervalSince1970] / DAY_TIME_INTERVAL;
     interval = interval * DAY_TIME_INTERVAL;
-    today = [NSDate dateWithTimeIntervalSince1970:(interval - 8* 60 *60)];
-    
+    today = [NSDate dateWithTimeIntervalSince1970:interval];
     for ( int index = 0 ; index < 3 ; index ++ )
     {
         [request setEntity:[NSEntityDescription entityForName:@"Event" inManagedObjectContext:context]];

@@ -7,10 +7,13 @@
 //
 
 #import "TransparentTableHeaderView.h"
+#import "AppDelegate.h"
 #import <WetongjiSDK/WeTongjiSDK.h>
+#import "Channel+Addition.h"
 
 @interface TransparentTableHeaderView()
 @property (weak, nonatomic) IBOutlet UILabel *label;
+@property (weak, nonatomic) IBOutlet UIImageView *backImage;
 
 @end
 
@@ -31,6 +34,7 @@
     [self.publisherLabel setHidden:hide];
     [self.categoryLabel setHidden:hide];
     [self.label setHidden:hide];
+    //[self.backImage setHidden:YES];
 }
 
 -(void) setInformation:(Information *)information
@@ -46,9 +50,10 @@
 
 -(void) setEvent:(Event *)event
 {
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     [self.avatarImageView setImageWithURL:[NSURL URLWithString:event.orgranizerAvatarLink]];
     self.publisherLabel.text = event.organizer;
-    self.categoryLabel.text = event.channelId;
+    self.categoryLabel.text = [Channel channelWithId:event.channelId inManagedObjectContext:appDelegate.managedObjectContext].title;
     _event = event;
 #ifdef DEBUG
     NSLog(@"Event (%@,%@) has been set in TransparentTableHeaderView",event.activityId,event.title);

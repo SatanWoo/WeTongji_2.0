@@ -16,6 +16,9 @@
 #import "Event+Addition.h"
 #import "Information+Addition.h"
 #import "Star+Addition.h"
+#import "Channel+Addition.h"
+#import "Exam+Addition.h"
+#import "Course+Addition.h"
 
 @implementation AppDelegate
 
@@ -33,8 +36,24 @@
     [Event clearAllEventInManagedObjectContext:self.managedObjectContext];
     [Information clearDataInManagedObjectContext:self.managedObjectContext];
     [Star clearDataInManagedObjectContext:self.managedObjectContext];
+    [Exam clearDataInManagedObjectContext:self.managedObjectContext];
+    [Course clearDataInManagedObjectContext:self.managedObjectContext];
+    [Channel clearAllChannelsInManagedObjectContext:self.managedObjectContext];
+    [NSUserDefaults setCurrentSemesterBeginTime:[NSDate dateWithTimeIntervalSinceNow:0] endTime:[NSDate dateWithTimeIntervalSinceNow:0]];
     [NSUserDefaults setCurrentUserID:@"" session:@""];
 #endif
+    WTClient * client = [WTClient sharedClient];
+    WTRequest * request = [WTRequest requestWithSuccessBlock:^(id responseData)
+        {
+#ifdef DEBUG
+            NSLog(@"%@",responseData);
+#endif
+            NSArray *list = [responseData objectForKey:@"Channels"];
+            for ( NSDictionary *dict in list )
+                [Channel insertChannel:dict inManagedObjectContext:self.managedObjectContext];
+        }failureBlock:nil];
+    [request getChannels];
+    [client enqueueRequest:request];
     return YES;
 }
 							
