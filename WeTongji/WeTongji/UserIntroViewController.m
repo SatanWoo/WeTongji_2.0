@@ -129,10 +129,16 @@
         center.y = originRect.y + actualMove;
         self.moveView.center = center;
     }
+    if ( self.moveView.center.y > 486 )
+    {
+        self.view.layer.opacity = 0.0f;
+        [self.view removeFromSuperview];
+        [[NSNotificationCenter defaultCenter] postNotificationName:kUpdateMiddleContent object:self];
+    }
 }
 
-
 #pragma mark - UIScrollViewDelegate
+
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     [self loadVisiblePages];
     [self scrollBottomBar];
