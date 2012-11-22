@@ -8,12 +8,36 @@
 
 #import "UpdatePasswordViewController.h"
 #import "UIBarButtonItem+CustomButton.h"
+#import "MBProgressHUD.h"
+#import <WeTongjiSDK/WeTongjiSDK.h>
 
-@interface UpdatePasswordViewController ()
+@interface UpdatePasswordViewController ()<MBProgressHUDDelegate>
+
+@property (nonatomic,strong) MBProgressHUD * progress;
 
 @end
 
 @implementation UpdatePasswordViewController
+
+-(MBProgressHUD *) progress
+{
+    if ( !_progress )
+    {
+        _progress = [[MBProgressHUD alloc]initWithView:self.view];
+        [self.view addSubview:_progress];
+        _progress.mode = MBProgressHUDModeIndeterminate;
+        _progress.delegate = self;
+    }
+    return _progress;
+}
+
+-(void) hudWasHidden:(MBProgressHUD *)hud
+{
+    if ([self.progress.labelText isEqualToString:@"更新成功"])
+        [self.navigationController popViewControllerAnimated:YES];
+    [self.progress removeFromSuperview];
+    self.progress = nil;
+}
 
 - (void)configureScrollView
 {
@@ -62,6 +86,51 @@
         [self resignAllFirstResponder];
     }
     return NO;
+}
+
+-(void) passwordNotMatch
+{
+    [self.progress show:YES];
+    self.progress.mode = MBProgressHUDModeText;
+    self.progress.labelText = @"确认密码不匹配";
+    [self.progress hide:YES afterDelay:1];
+}
+
+-(IBAction)confirm:(id)sender
+{
+    [self resignAllFirstResponder];
+    if ( ![self.password.text isEqualToString:self.confirm.text] )
+    {
+        [self passwordNotMatch];
+        return;
+    }
+    [self.progress show:YES];
+    self.progress.labelText = @"密码更新中...";
+    WTClient * client = [WTClient sharedClient];
+    WTRequest * request = [WTRequest requestWithSuccessBlock:^(id responseData)
+                           {
+                            #ifdef DEBUG
+                               NSLog(@"%@",responseData);
+                            #endif
+                               NSString * session;
+                               session = [responseData objectForKey:@"Session"];
+                               [NSUserDefaults setCurrentUserID:[NSUserDefaults getCurrentUserID] session:session];
+                               self.progress.mode = MBProgressHUDModeText;
+                               self.progress.labelText = @"更新成功";
+                               [self.progress hide:YES afterDelay:1];
+                           }
+                            failureBlock:^(NSError * error )
+                           {
+                            #ifdef DEBUG
+                               NSLog(@"updatePasswordFailed:%@",error);
+                            #endif
+                               self.progress.labelText = @"更新失败";
+                               self.progress.detailsLabelText = [[error userInfo] objectForKey:@"errorDesc"];
+                               self.progress.mode = MBProgressHUDModeText;
+                               [self.progress hide:YES afterDelay:1];
+                           }];
+    [request updatePassword:self.password.text oldPassword:self.oldPass.text];
+    [client enqueueRequest:request];
 }
 
 - (IBAction)touchOnTextFiled:(UITextField *)textField

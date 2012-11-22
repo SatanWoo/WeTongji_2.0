@@ -19,8 +19,6 @@
 #pragma mark - Private 
 - (void)configureNavBar
 {
-    UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithImage:@"nav_register" selector:nil target:self];
-    self.navigationItem.rightBarButtonItem = button;
 }
 
 - (void)configureScrollView
@@ -89,6 +87,10 @@
 	[UIView setAnimationDuration:.3];
     self.scrollView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
     [UIView commitAnimations];
+}
+
+- (IBAction)registerClicked:(id)sender
+{
 }
 
 - (IBAction)showUserProtocol:(id)sender
