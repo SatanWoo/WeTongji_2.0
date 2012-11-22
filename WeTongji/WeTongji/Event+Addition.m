@@ -87,6 +87,49 @@
     return result;
 }
 
++(Event *) getNearestEventInManagedObjectContext:(NSManagedObjectContext *)context
+{
+    Event * result = nil;
+    
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSDate * now = [NSDate dateWithTimeIntervalSinceNow:-8*60*60];
+    [request setEntity:[NSEntityDescription entityForName:@"Event" inManagedObjectContext:context]];
+    NSPredicate *beginPredicate = [NSPredicate predicateWithFormat:@"beginTime >= %@", now];
+    [request setPredicate:[NSCompoundPredicate andPredicateWithSubpredicates:[NSArray arrayWithObjects: beginPredicate, nil]]];
+    NSSortDescriptor *sort = [[NSSortDescriptor alloc] initWithKey:@"beginTime" ascending:YES];
+    [request setSortDescriptors:[[NSArray alloc] initWithObjects:sort , nil]];
+        NSArray *list = [context executeFetchRequest:request error:NULL];
+    if ( list.count )
+    result = list[0];
+    return result;
+}
+
++(Event *) getLatestEventInManagedObjectContext:(NSManagedObjectContext *)context
+{
+    Event * result = nil;
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setEntity:[NSEntityDescription entityForName:@"Event" inManagedObjectContext:context]];
+    NSSortDescriptor *sort = [[NSSortDescriptor alloc] initWithKey:@"createAt" ascending:NO];
+    [request setSortDescriptors:[[NSArray alloc] initWithObjects:sort , nil]];
+    NSArray *list = [context executeFetchRequest:request error:NULL];
+    if ( list.count )
+        result = list[0];
+    return result;
+}
+
++(Event *) getHotestEventInManagedObjectContext:(NSManagedObjectContext *)context
+{
+    Event * result = nil;
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setEntity:[NSEntityDescription entityForName:@"Event" inManagedObjectContext:context]];
+    NSSortDescriptor *sort = [[NSSortDescriptor alloc] initWithKey:@"like" ascending:NO];
+    [request setSortDescriptors:[[NSArray alloc] initWithObjects:sort , nil]];
+    NSArray *list = [context executeFetchRequest:request error:NULL];
+    if ( list.count )
+        result = list[0];
+    return result;
+}
+
 + (Event *) getTodayRecommendEventInManagedObjectContext:(NSManagedObjectContext *)context
 {
     Event * result = nil;

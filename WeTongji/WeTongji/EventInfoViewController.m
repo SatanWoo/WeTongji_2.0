@@ -272,10 +272,7 @@ static NSInteger tempRow;
             self.nextPage = [[NSString stringWithFormat:@"%@", [responseData objectForKey:@"NextPager"]] intValue];
             if (self.nextPage == 0) [self.pullRefreshManagement setNoMoreData:YES];
             [self.pullRefreshManagement endLoading];
-            for ( Event * event in [Event allEventsInManagedObjectContext:self.managedObjectContext])
-            {
-                NSLog(@"%@ : %@",event.canLike,event.title);
-            }
+            [self.filterViewController reloadTableView];
         }
         failureBlock:^(NSError * error)
         {

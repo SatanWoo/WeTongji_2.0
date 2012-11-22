@@ -17,7 +17,7 @@
 + (Event *) getTodayRecommendEventInManagedObjectContext:(NSManagedObjectContext *)context;
 + (NSArray *)allScheduledEventsInManagedObjectContext:(NSManagedObjectContext *)context;
 + (void) clearAllScheduledEventInManagedObjectContext:(NSManagedObjectContext *)context;
-
-
-
++(Event *) getNearestEventInManagedObjectContext:(NSManagedObjectContext *)context;
++(Event *) getLatestEventInManagedObjectContext:(NSManagedObjectContext *)context;
++(Event *) getHotestEventInManagedObjectContext:(NSManagedObjectContext *)context;
 @end

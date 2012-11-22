@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CoreDataViewController.h"
 
 @protocol FilterViewControllerDelegate <NSObject>
 
@@ -15,7 +16,7 @@
 
 @end
 
-@interface FilterViewController : UIViewController
+@interface FilterViewController : CoreDataViewController
 {
     BOOL _isFilterViewAppear;
 }
@@ -26,6 +27,7 @@
 
 -(void)showFilterView;
 -(void)hideFilterView;
+-(void) reloadTableView;
 -(void)selectRow:(NSInteger) row;
 
 @end

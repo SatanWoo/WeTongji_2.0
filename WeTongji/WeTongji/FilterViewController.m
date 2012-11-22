@@ -8,9 +8,14 @@
 
 #import "FilterViewController.h"
 #import "FilterTableViewCell.h"
+#import "Event+Addition.h"
+#import <WeTongjiSDK/WeTongjiSDK.h>
 #import "Macro.h"
 
 @interface FilterViewController ()<UITableViewDelegate>
+{
+    NSInteger _selectedIndex;
+}
 
 @property (nonatomic,strong) NSArray * filterList;
 @property (nonatomic,weak) UIView * contentView;
@@ -102,9 +107,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    _selectedIndex = 1;
     CGAffineTransform at =CGAffineTransformMakeRotation(-M_PI/2);
     [self.filterTableView setTransform:at];
-    [self.filterTableView setCenter:self.view.center];
+    CGPoint center = self.view.center;
+    center.y -= 5;
+    [self.filterTableView setCenter:center];
     [self.filterTableView registerNib:[UINib nibWithNibName:@"FilterTableViewCell" bundle:nil] forCellReuseIdentifier:kFilterTableViewCell];
 }
 
@@ -139,9 +147,33 @@
         cell = [[FilterTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kFilterTableViewCell];
         
     }
+    Event * event;
+    switch (indexPath.row) {
+        case 0:
+            event = [Event getNearestEventInManagedObjectContext:self.managedObjectContext];
+            NSLog(@"%@",event.beginTime);
+            break;
+        case 1:
+            event = [Event getLatestEventInManagedObjectContext:self.managedObjectContext];
+            NSLog(@"%@",event.createAt);
+            break;
+        case 2:
+            event = [Event getHotestEventInManagedObjectContext:self.managedObjectContext];
+            NSLog(@"%@",event.title);
+            break;
+        default:
+            break;
+    }
+    [cell.avatarImage setImageWithURL:[NSURL URLWithString:event.orgranizerAvatarLink] placeholderImage:[UIImage imageNamed:@"default_pic"]];
     cell.contentView.transform = CGAffineTransformMakeRotation(+M_PI/2);
     cell.descriptionLabel.text = [self.filterList objectAtIndex:indexPath.row];
     return cell;
+}
+
+-(void) reloadTableView
+{
+    [self.filterTableView reloadData];
+    [self.filterTableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:_selectedIndex inSection:0] animated:YES scrollPosition:UITableViewScrollPositionNone];
 }
 
 - (float)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -151,11 +183,13 @@
 
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    _selectedIndex = indexPath.row;
     [self.delegate filterViewSelectedRow:indexPath.row];
 }
 
 -(void)selectRow:(NSInteger) row
 {
+    _selectedIndex = row;
     [self.filterTableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:row inSection:0] animated:YES scrollPosition:UITableViewScrollPositionNone];
     [self.delegate filterViewSelectedRow:row];
 }
