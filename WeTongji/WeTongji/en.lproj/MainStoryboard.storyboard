@@ -817,7 +817,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="pDm-qB-Ncv" kind="push" id="dxO-TZ-7Q6"/>
+                                            <segue destination="Ogc-hV-geP" kind="modal" id="Bsm-mb-NeT"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ZIU-97-uAV">
@@ -856,6 +856,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vha-ub-g5X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-785" y="2258"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="hS3-w8-ZLH">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="Ogc-hV-geP" sceneMemberID="viewController">
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9zg-U2-618">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="pDm-qB-Ncv" kind="relationship" relationship="rootViewController" id="OBK-Ga-SbE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BMF-SS-PFh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1108" y="2898"/>
         </scene>
         <!--Register View Controller - 注册 1-->
         <scene sceneID="dp8-bp-nJ1">
@@ -1600,32 +1616,32 @@
             <objects>
                 <viewController storyboardIdentifier="kPasswordViewController" id="pDm-qB-Ncv" customClass="PasswordViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Kp2-24-9Kk">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="897-81-Oe1">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="rounded_cell.png" id="UF1-KL-EQl">
-                                        <rect key="frame" x="10" y="66" width="301" height="45"/>
+                                        <rect key="frame" x="10" y="20" width="301" height="45"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="学号" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ujH-Rb-GBC">
-                                        <rect key="frame" x="54" y="78" width="42" height="21"/>
+                                        <rect key="frame" x="54" y="32" width="42" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="STHeitiSC-Medium" family="Heiti SC" pointSize="17"/>
                                         <color key="textColor" name="controlShadowColor" catalog="System" colorSpace="catalog"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" id="Zdx-jg-1zm">
-                                        <rect key="frame" x="134" y="74" width="166" height="30"/>
+                                        <rect key="frame" x="134" y="28" width="166" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="cX9-0S-jJi">
-                                        <rect key="frame" x="10" y="153" width="301" height="45"/>
+                                        <rect key="frame" x="10" y="91" width="301" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" backgroundImage="find_passowrd_btn.png">
@@ -1653,7 +1669,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wKs-cu-oVq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-616" y="3042"/>
+            <point key="canvasLocation" x="-764" y="2898"/>
         </scene>
     </scenes>
     <resources>
@@ -1777,8 +1793,6 @@
             <relationships>
                 <relationship kind="action" name="logInClick:"/>
                 <relationship kind="action" name="slide:"/>
-                <relationship kind="action" name="textDidEndEdit:"/>
-                <relationship kind="action" name="textEditDidBegin:"/>
                 <relationship kind="outlet" name="NOTextField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="closeBtn" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="navButton" candidateClass="UIButton"/>
