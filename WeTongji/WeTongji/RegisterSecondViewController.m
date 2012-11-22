@@ -9,19 +9,47 @@
 #import "RegisterSecondViewController.h"
 #import "Macro.h"
 #import "UIBarButtonItem+CustomButton.h"
+#import "MBProgressHUD.h"
+#import <WeTongjiSDK/WeTongjiSDK.h>
 
-@interface RegisterSecondViewController ()
-- (void)configureNavBar;
+@interface RegisterSecondViewController ()<MBProgressHUDDelegate>
+@property (nonatomic,strong) MBProgressHUD * progress;
 - (void)configureScrollView;
 @end
 
 @implementation RegisterSecondViewController
-#pragma mark - Private 
-- (void)configureNavBar
+
+-(MBProgressHUD *) progress
 {
-    UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithImage:@"nav_register" selector:nil target:self];
-    self.navigationItem.rightBarButtonItem = button;
+    if ( !_progress )
+    {
+        _progress = [[MBProgressHUD alloc] initWithView:self.view];
+        [self.view addSubview:_progress];
+        _progress.mode = MBProgressHUDModeIndeterminate;
+        _progress.delegate = self;
+    }
+    return _progress;
 }
+
+-(void) passwordConfirmFailed
+{
+    [self.progress show:YES];
+    self.progress.mode = MBProgressHUDModeText;
+    self.progress.labelText = @"确认密码不符";
+    [self.progress hide:YES afterDelay:1];
+}
+
+-(void) hudWasHidden:(MBProgressHUD *)hud
+{
+    if ( [hud.labelText isEqualToString:@"注册成功"] )
+    {
+        [self.navigationController popToRootViewControllerAnimated:YES];
+    }
+    [self.progress removeFromSuperview];
+    self.progress = nil;
+}
+
+#pragma mark - Private
 
 - (void)configureScrollView
 {
@@ -36,7 +64,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self configureNavBar];
     [self configureScrollView];
 }
 
@@ -89,6 +116,40 @@
 	[UIView setAnimationDuration:.3];
     self.scrollView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
     [UIView commitAnimations];
+}
+
+- (IBAction)registerClicked:(id)sender
+{
+    [self resignAllFirstResponder];
+    if ( ![self.password.text isEqualToString:self.confirmPassword.text])
+    {
+        [self passwordConfirmFailed];
+        return ;
+    }
+    [self.progress show:YES];
+    self.progress.labelText = @"密码更新中...";
+    WTClient * client = [WTClient sharedClient];
+    WTRequest * request = [WTRequest requestWithSuccessBlock:^(id responseData)
+                           {
+                            #ifdef DEBUG
+                               NSLog(@"%@",responseData);
+                            #endif
+                               self.progress.mode = MBProgressHUDModeText;
+                               self.progress.labelText = @"注册成功";
+                               [self.progress hide:YES afterDelay:1];
+                           }
+                                                failureBlock:^(NSError * error )
+                           {
+                            #ifdef DEBUG
+                               NSLog(@"registerFailed:%@",error);
+                            #endif
+                               self.progress.labelText = @"注册失败";
+                               self.progress.detailsLabelText = [[error userInfo] objectForKey:@"errorDesc"];
+                               self.progress.mode = MBProgressHUDModeText;
+                               [self.progress hide:YES afterDelay:1];
+                           }];
+    [request activeUserWithNo:self.stuNumber.text password:self.password.text name:self.name.text];
+    [client enqueueRequest:request];
 }
 
 - (IBAction)showUserProtocol:(id)sender

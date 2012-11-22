@@ -58,8 +58,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
-    [self.navigationController setNavigationBarHidden:YES animated:NO];
+    [self.navigationController setNavigationBarHidden:YES animated:animated];
 }
 
 - (void)viewDidUnload {
@@ -115,12 +114,13 @@
         [NSUserDefaults setCurrentUserID:[[responseData objectForKey:@"User"] objectForKey:@"UID"] session:[responseData objectForKey:@"Session"]];
         [User updateUser:[responseData objectForKey:@"User"] inManagedObjectContext:self.managedObjectContext];
         NSLog(@"%@",responseData);
+        self.progress.mode = MBProgressHUDModeText;
         self.progress.labelText = @"登陆成功";
         [self.progress hide:YES afterDelay:1];
-        [[NSNotificationCenter defaultCenter] postNotificationName:kLoginNotification object:self];
     }failureBlock:^(NSError * error)
     {
-        self.progress.labelText = [[error userInfo] objectForKey:@"errorDesc"];
+        self.progress.labelText = @"登陆失败";
+        self.progress.detailsLabelText = [[error userInfo] objectForKey:@"errorDesc"];
         self.progress.mode = MBProgressHUDModeText;
         [self.progress hide:YES afterDelay:1];
     }];
@@ -130,6 +130,8 @@
 
 -(void) hudWasHidden:(MBProgressHUD *)hud
 {
+    if ( [hud.labelText isEqualToString:@"登陆成功"] )
+        [[NSNotificationCenter defaultCenter] postNotificationName:kLoginNotification object:self];
     [hud removeFromSuperview];
     self.progress = nil;
 }

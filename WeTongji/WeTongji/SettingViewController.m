@@ -130,7 +130,7 @@
 {
     if (section == 0) {
        if (self.isLogIn) return 1;
-       else return 1;
+       else return 0;
     } else {
         return 4;
     }
