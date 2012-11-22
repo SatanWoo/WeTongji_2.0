@@ -31,11 +31,8 @@
 -(void) setEvent:(Event *)event
 {
     self.refreshTime.text = [NSString stringWithHowLongAgo: event.createAt];
-    //NSLog(@"createAt : %@",self.event.createAt);
-    //NSLog(@"begintime: %@",self.event.beginTime);
 #ifdef DEBUG
 #endif
-    if ( _event == event ) return;
     _event = event;
     self.eventName.text = self.event.title;
     self.location.text = self.event.location;

@@ -295,7 +295,6 @@
 										<object class="NSPSMatrix" key="NSFrameMatrix"/>
 										<string key="NSFrame">{{28, 7}, {28, 21}}</string>
 										<reference key="NSSuperview" ref="609548878"/>
-										<reference key="NSNextKeyView"/>
 										<bool key="IBUIOpaque">NO</bool>
 										<bool key="IBUIClipsSubviews">YES</bool>
 										<int key="IBUIContentMode">7</int>
@@ -431,21 +430,21 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
-						<string key="label">favoriteClicked:</string>
-						<reference key="source" ref="938021248"/>
+						<string key="label">likeClicked:</string>
+						<reference key="source" ref="151349597"/>
 						<reference key="destination" ref="5041310"/>
 						<int key="IBEventType">7</int>
 					</object>
-					<int key="connectionID">90</int>
+					<int key="connectionID">94</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
-						<string key="label">likeClicked:</string>
-						<reference key="source" ref="668755827"/>
+						<string key="label">favoriteClicked:</string>
+						<reference key="source" ref="609548878"/>
 						<reference key="destination" ref="5041310"/>
 						<int key="IBEventType">7</int>
 					</object>
-					<int key="connectionID">91</int>
+					<int key="connectionID">95</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -619,7 +618,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">91</int>
+			<int key="maxID">95</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes"/>
 		<int key="IBDocument.localizationMode">0</int>

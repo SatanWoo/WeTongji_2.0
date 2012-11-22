@@ -24,7 +24,7 @@
     [self.avatar setImageWithURL:[NSURL URLWithString:star.avatarLink]];
     self.name.text = star.title;
     self.job.text = star.jobTitle;
-    self.count.text = star.count;
+    self.count.text = [NSString stringWithFormat:@"第%@期",star.count];
     _star = star;
 }
 
