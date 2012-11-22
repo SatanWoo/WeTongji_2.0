@@ -82,6 +82,7 @@
     [self setBottomBar:nil];
     [self setRegisterloginbtn:nil];
     [self setDirectUser:nil];
+    [self setMoveView:nil];
     [super viewDidUnload];
 }
 
@@ -106,19 +107,33 @@
 
 - (void)scrollBottomBar
 {
-    float startCountPos = self.scrollView.contentSize.height - (self.pageControl.numberOfPages - 1) * kPageContent;
+    float startCountPos = (self.pageControl.numberOfPages - 2) * kPageContent;
+    float backCountPos = self.scrollView.contentSize.height;
     float difference = self.scrollView.contentOffset.y - startCountPos;
-    float actualMove = difference * kMoveDistance / kLastContent;
-    NSLog(@"Actual move is %g",self.scrollView.contentOffset.y);
-    if (actualMove > kMoveDistance || actualMove < -kMoveDistance) {
+    float backDifference = self.scrollView.contentOffset.y - backCountPos;
+    float actualMove = difference * kMoveDistance / kPageContent;
+    float resMove = backDifference * kMoveDistance / kLastContent;
+    if (actualMove > kMoveDistance || resMove < -kMoveDistance) {
         return ;
     }
+        
     [UIView animateWithDuration:0.1f animations:^{
         self.bottomBar.frame = CGRectMake(self.bottomBar.frame.origin.x, self.bottomBar.frame.origin.y + actualMove, self.bottomBar.frame.size.width, self.bottomBar.frame.size.height);
         
         self.registerloginbtn.frame = CGRectMake(self.registerloginbtn.frame.origin.x, self.registerloginbtn.frame.origin.y + actualMove, self.registerloginbtn.frame.size.width, self.registerloginbtn.frame.size.height);;
         self.directUser.frame = CGRectMake(self.directUser.frame.origin.x, self.directUser.frame.origin.y + actualMove, self.directUser.frame.size.width, self.directUser.frame.size.height);
+        
+        self.scrollView.frame = self.view.bounds;
     }];
+    
+//    [UIView animateWithDuration:0.1f animations:^{
+//        self.bottomBar.frame = CGRectMake(self.bottomBar.frame.origin.x, self.bottomBar.frame.origin.y + resMove, self.bottomBar.frame.size.width, self.bottomBar.frame.size.height);
+//        
+//        self.registerloginbtn.frame = CGRectMake(self.registerloginbtn.frame.origin.x, self.registerloginbtn.frame.origin.y + resMove, self.registerloginbtn.frame.size.width, self.registerloginbtn.frame.size.height);;
+//        self.directUser.frame = CGRectMake(self.directUser.frame.origin.x, self.directUser.frame.origin.y + resMove, self.directUser.frame.size.width, self.directUser.frame.size.height);
+//        
+//        self.scrollView.frame = self.originRect;
+//    }];
 }
 
 

@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *bottomBar;
 @property (weak, nonatomic) IBOutlet UIButton *registerloginbtn;
 @property (weak, nonatomic) IBOutlet UIButton *directUser;
+@property (weak, nonatomic) IBOutlet UIView *moveView;
 - (void)addPicture:(UIView *)view;
 - (IBAction)directUser:(id)sender;
 @end
