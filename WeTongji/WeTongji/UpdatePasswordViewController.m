@@ -15,34 +15,20 @@
 
 @implementation UpdatePasswordViewController
 
-- (void)pressNavButton
-{
-    [self.navigationController popViewControllerAnimated:YES];
-}
-
-- (void)configureNavBar
-{
-    UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithImage:@"nav_finish_btn" selector:@selector(pressNavButton) target:self];
-    self.navigationItem.leftBarButtonItem = button;
-    
-    self.title = @"更改密码";
-}
-
 - (void)configureScrollView
 {
     CGRect frame = self.scrollView.frame;
-    frame.size.height += 1;
+    frame.size.height += 20;
     self.scrollView.contentSize = frame.size;
     
-    //[self.oldPass becomeFirstResponder];
+    [self.oldPass becomeFirstResponder];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     [self configureScrollView];
-    [self configureNavBar];
-	// Do any additional setup after loading the view.
+    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning
@@ -80,7 +66,7 @@
 
 - (IBAction)touchOnTextFiled:(UITextField *)textField
 {
-    [self.scrollView setContentOffset:CGPointMake(0, textField.frame.origin.y / 3 * 2) animated:YES];
+    [self.scrollView setContentOffset:CGPointMake(0, textField.frame.origin.y / 3 * 2 - 5) animated:YES];
 }
 
 - (IBAction)textDidEndEdit:(id)sender

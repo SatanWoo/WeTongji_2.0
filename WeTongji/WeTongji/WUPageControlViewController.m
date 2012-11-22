@@ -79,6 +79,7 @@
 	[self configureScrollView];
     self.pageControl.currentPage = 0;
     self.pageControl.numberOfPages = 0;
+    [self setWantsFullScreenLayout:YES];
 }
 
 - (void)viewDidUnload
