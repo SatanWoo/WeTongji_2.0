@@ -354,9 +354,6 @@
         [UIView animateWithDuration:0.25f animations:^{
             self.scheduleTableView.frame = CGRectMake(0, self.view.frame.size.height, self.scheduleTableView.frame.size.width, self.scheduleTableView.frame.size.height);
             CGPoint center = self.view.center;
-            CGRect old = self.pageViewController.view.frame;
-            old.origin.y = 0;
-            [self.pageViewController.view setFrame:old];
             self.pageViewController.view.center = center;
             center = CGPointMake(self.headerBoard.center.x, (self.pageViewController.view.frame.size.height)/2);
             [self.headerBoard setCenter:center];
