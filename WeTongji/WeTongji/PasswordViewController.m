@@ -8,6 +8,7 @@
 
 #import "PasswordViewController.h"
 #import "MBProgressHUD.h"
+#import "UIBarButtonItem+CustomButton.h"
 
 @interface PasswordViewController () <MBProgressHUDDelegate>
 @property (nonatomic ,strong) MBProgressHUD *HUD;
@@ -21,9 +22,22 @@
     self.scrollView.contentSize = frame.size;
 }
 
+- (void)pressNavButton
+{
+    [self.parentViewController dismissModalViewControllerAnimated:YES];
+}
+
+- (void)configureNavBar
+{
+    self.navigationItem.leftBarButtonItem = nil;
+    UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithImage:@"nav_back_btn.png" selector:@selector(pressNavButton) target:self];
+    self.navigationItem.leftBarButtonItem = button;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self configureNavBar];
     [self configureScrollView];
     [self.password becomeFirstResponder];
 	// Do any additional setup after loading the view.

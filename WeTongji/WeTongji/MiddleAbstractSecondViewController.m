@@ -23,7 +23,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithImage:@"nav_back_btn.png" selector:@selector(pressNavButton) target:self];
+    UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithImage:@"nav_back_btn_normal" selector:@selector(pressNavButton) target:self];
     self.navigationItem.leftBarButtonItem = button;
     
     UISwipeGestureRecognizer *leftGesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(pressNavButton)];
