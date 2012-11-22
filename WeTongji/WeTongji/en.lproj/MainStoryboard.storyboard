@@ -1432,10 +1432,10 @@
             </objects>
             <point key="canvasLocation" x="-1179" y="2258"/>
         </scene>
-        <!--Update Password View Controller-->
+        <!--Update Password View Controller - 更改密码-->
         <scene sceneID="RBp-Wy-lxK">
             <objects>
-                <viewController id="x0g-D6-LN3" customClass="UpdatePasswordViewController" sceneMemberID="viewController">
+                <viewController title="更改密码" id="x0g-D6-LN3" customClass="UpdatePasswordViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eJ1-K0-p5d">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1445,40 +1445,40 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="table_first.png" id="o8l-d0-kME">
-                                        <rect key="frame" x="10" y="75" width="301" height="45"/>
+                                        <rect key="frame" x="10" y="20" width="301" height="45"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="table_middle.png" id="eVS-s7-ymZ">
-                                        <rect key="frame" x="10" y="119" width="301" height="45"/>
+                                        <rect key="frame" x="10" y="64" width="301" height="45"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="table_last.png" id="9vz-gr-XAz">
-                                        <rect key="frame" x="10" y="161" width="301" height="45"/>
+                                        <rect key="frame" x="10" y="106" width="301" height="45"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="旧密码" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jSm-8d-ITT">
-                                        <rect key="frame" x="66" y="87" width="51" height="21"/>
+                                        <rect key="frame" x="66" y="32" width="51" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="新密码" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="chS-ZQ-2NL">
-                                        <rect key="frame" x="66" y="130" width="51" height="21"/>
+                                        <rect key="frame" x="66" y="75" width="51" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="确认密码" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1PA-C1-edv">
-                                        <rect key="frame" x="49" y="173" width="68" height="21"/>
+                                        <rect key="frame" x="49" y="118" width="68" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" id="hGu-KQ-URG">
-                                        <rect key="frame" x="136" y="84" width="164" height="30"/>
+                                        <rect key="frame" x="136" y="29" width="164" height="30"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="next"/>
@@ -1489,7 +1489,7 @@
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" id="XdU-la-VjI">
-                                        <rect key="frame" x="136" y="124" width="164" height="30"/>
+                                        <rect key="frame" x="136" y="69" width="164" height="30"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="next"/>
@@ -1500,7 +1500,7 @@
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" id="Nvd-kb-iFA">
-                                        <rect key="frame" x="136" y="164" width="164" height="30"/>
+                                        <rect key="frame" x="136" y="109" width="164" height="30"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done"/>
@@ -1511,7 +1511,7 @@
                                         </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="5Bh-0x-yWQ">
-                                        <rect key="frame" x="10" y="243" width="301" height="45"/>
+                                        <rect key="frame" x="10" y="188" width="301" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" backgroundImage="change_password_btn.png">
@@ -1538,7 +1538,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7hb-hz-dee" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1697" y="1830"/>
+            <point key="canvasLocation" x="-1579" y="2154"/>
         </scene>
         <!--User Intro View Controller-->
         <scene sceneID="8gx-Ps-5Zn">
