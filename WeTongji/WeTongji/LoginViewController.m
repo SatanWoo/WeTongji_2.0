@@ -23,7 +23,6 @@
 - (void)configureButton
 {
     self.closeBtn.hidden = YES;
-    //self.passwordForgetBtn.hidden = YES;
 }
 
 - (void)enableButton:(NSNotification *)notification
@@ -42,7 +41,9 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    [self.navigationController.navigationBar setHidden:YES];
+    [super viewWillAppear:animated];
+    
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
 }
 
 - (void)viewDidUnload {

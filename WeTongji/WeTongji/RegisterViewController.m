@@ -18,11 +18,15 @@
 
 @implementation RegisterViewController
 
-#pragma mark - Life Cycle
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self.navigationController.navigationBar setHidden:NO];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [self.navigationController setNavigationBarHidden:NO animated:animated];
 }
 
 - (void)didReceiveMemoryWarning
@@ -30,7 +34,13 @@
     [super didReceiveMemoryWarning];
 }
 
-- (void)viewDidUnload {
+-(void)viewWillUnload
+{
+    [super viewWillUnload];
+}
+
+- (void)viewDidUnload
+{
     [super viewDidUnload];
 }
 
