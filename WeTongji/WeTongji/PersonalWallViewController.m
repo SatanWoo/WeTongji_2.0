@@ -76,6 +76,7 @@
 -(void)showScheduleTable
 {
     [self.navigationController setNavigationBarHidden:NO animated:YES];
+    [[UIApplication sharedApplication]setStatusBarHidden:NO withAnimation:UIStatusBarAnimationSlide];
     self.isAnimationFinished = false;
     [UIView animateWithDuration:0.55f animations:^{
         self.scheduleTableView.center = self.view.center;
@@ -121,7 +122,7 @@
         upSwipe.direction = UISwipeGestureRecognizerDirectionUp;
         [_pageViewController.view addGestureRecognizer:upSwipe];
         
-        [_pageViewController.view setFrame:CGRectMake(0, kStateY, 320 ,480)];
+        [_pageViewController.view setFrame:CGRectMake(0, kStateY, _pageViewController.view.bounds.size.width ,_pageViewController.view.bounds.size.height)];
         _pageViewController.view.userInteractionEnabled = NO;
         originPageControlViewCenter = _pageViewController.view.center;
     }
@@ -150,10 +151,9 @@
     [self loadCourses];
     [self loadMyFavorites];
     [self loadActivities];
+    [self setWantsFullScreenLayout:YES];
     
 }
-
-
 
 -(void)loadCourses
 {
@@ -350,9 +350,13 @@
     {
         self.isAnimationFinished = true;
         [self.navigationController setNavigationBarHidden:YES animated:YES];
+        [[UIApplication sharedApplication]setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
         [UIView animateWithDuration:0.25f animations:^{
             self.scheduleTableView.frame = CGRectMake(0, self.view.frame.size.height, self.scheduleTableView.frame.size.width, self.scheduleTableView.frame.size.height);
             CGPoint center = self.view.center;
+            CGRect old = self.pageViewController.view.frame;
+            old.origin.y = 0;
+            [self.pageViewController.view setFrame:old];
             self.pageViewController.view.center = center;
             center = CGPointMake(self.headerBoard.center.x, (self.pageViewController.view.frame.size.height)/2);
             [self.headerBoard setCenter:center];
