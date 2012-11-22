@@ -64,7 +64,7 @@
 
 // Slide
 #define kMenuFullWidth 320.0f
-#define kMenuDisplayedWidth 268.0f
+#define kMenuDisplayedWidth 260.0f
 
 // Notification
 #define kLoginNotification @"kLoginNotification"
