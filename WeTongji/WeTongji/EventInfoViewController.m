@@ -78,8 +78,8 @@
         NSArray *sortedNames = [__eventList sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
             Event *str1 = (Event *)obj1;
             Event *str2 = (Event *)obj2;
-            if ( [self.filterString isEqualToString:GetActivitySortMethodBeginDesc] )
-                return [str2.beginTime compare:str1.beginTime];
+            if ( [self.filterString isEqualToString:@""] )
+                return [str1.beginTime compare:str2.beginTime];
             if ( [self.filterString isEqualToString:GetActivitySortMethodLikeDesc] )
                 return [str2.like compare:str1.like];
             if ( [self.filterString isEqualToString:GetActivitySortMethodCreateDesc] )
@@ -98,7 +98,7 @@
         NSMutableDictionary * dict = [[NSMutableDictionary alloc] init];
         [dict setObject:GetActivitySortMethodCreateDesc forKey:@"最新活动"];
         [dict setObject:GetActivitySortMethodLikeDesc forKey:@"最火活动"];
-        [dict setObject:GetActivitySortMethodBeginDesc forKey:@"最近活动"];
+        [dict setObject:@"" forKey:@"最近活动"];
         _filterDict = [[NSDictionary alloc] initWithDictionary:dict];
     }
     return _filterDict;
@@ -281,6 +281,11 @@ static NSInteger tempRow;
         {
             [self.pullRefreshManagement endLoading];
         }];
+    if ( [self.filterString isEqualToString:@""] )
+    {
+        [request getActivitiesInChannel:nil inSort:nil Expired:NO nextPage:self.nextPage];
+    }
+    else
     [request getActivitiesInChannel:nil inSort:self.filterString Expired:YES nextPage:self.nextPage];
     [client enqueueRequest:request];
 }

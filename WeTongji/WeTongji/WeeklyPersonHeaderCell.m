@@ -7,6 +7,8 @@
 //
 
 #import "WeeklyPersonHeaderCell.h"
+#import "NSArray+Addition.h"
+#import <WeTongjiSDK/WeTongjiSDK.h>
 
 @implementation WeeklyPersonHeaderCell
 
@@ -25,6 +27,8 @@
     self.name.text = star.title;
     self.title.text = star.jobTitle;
     self.summary.text = star.words;
+    NSArray * imageList = [NSArray getImageLinkListInJsonString:star.images];
+    [self.image setImageWithURL:[NSURL URLWithString:imageList[0]] placeholderImage:[UIImage imageNamed:@"defalut_pic"]];
     _star = star;
 }
 

@@ -1240,19 +1240,19 @@
                                             <outlet property="contact" destination="8u2-cR-eKB" id="uZ1-je-cbD"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="SchoolNewsTicketCell" rowHeight="40" id="h5e-qQ-hcb" customClass="SchoolNewsTicketCell">
-                                        <rect key="frame" x="0.0" y="102" width="320" height="40"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="SchoolNewsTicketCell" rowHeight="50" id="h5e-qQ-hcb" customClass="SchoolNewsTicketCell">
+                                        <rect key="frame" x="0.0" y="102" width="320" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="39"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="ticket_detail_cell" id="R85-ad-KEL">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="票务信息" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="F2X-HZ-jTn">
-                                                    <rect key="frame" x="73" y="9" width="68" height="21"/>
+                                                    <rect key="frame" x="69" y="14" width="68" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>

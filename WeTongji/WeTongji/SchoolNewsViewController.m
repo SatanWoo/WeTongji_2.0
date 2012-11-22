@@ -357,7 +357,8 @@
 {
     if ( indexPath.section == 1 )
     {
-        if ( self.information && [self.information.category isEqualToString:GetInformationTypeAround] &&indexPath.row < 3 ) return 40;
+        if ( self.information && [self.information.category isEqualToString:GetInformationTypeAround] &&indexPath.row < 2 ) return 40;
+        if ( self.information && [self.information.category isEqualToString:GetInformationTypeAround] &&indexPath.row == 2 ) return 50;
         return self.currentCell.frame.size.height;
     }
     return 0;
