@@ -112,6 +112,10 @@
 		036E49D5165E5016006B33EE /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 036E49D4165E5016006B33EE /* Default@2x.png */; };
 		036E49E1165E50C6006B33EE /* nav_back_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 036E49DF165E50C6006B33EE /* nav_back_btn.png */; };
 		036E49E2165E50C6006B33EE /* nav_back_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 036E49E0165E50C6006B33EE /* nav_back_btn@2x.png */; };
+		036E49E6165E55B9006B33EE /* nav_back_btn_nomarl.png in Resources */ = {isa = PBXBuildFile; fileRef = 036E49E3165E55B9006B33EE /* nav_back_btn_nomarl.png */; };
+		036E49E7165E55B9006B33EE /* nav_back_btn_normal_hl.png in Resources */ = {isa = PBXBuildFile; fileRef = 036E49E4165E55B9006B33EE /* nav_back_btn_normal_hl.png */; };
+		036E49E8165E55B9006B33EE /* nav_back_btn_normal_hl@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 036E49E5165E55B9006B33EE /* nav_back_btn_normal_hl@2x.png */; };
+		036E49EA165E55CB006B33EE /* nav_back_btn_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 036E49E9165E55CB006B33EE /* nav_back_btn_normal@2x.png */; };
 		0398838A165D395500A31620 /* UpdatePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03988389165D395500A31620 /* UpdatePasswordViewController.m */; };
 		0398838D165D39F100A31620 /* change_password_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 0398838B165D39F100A31620 /* change_password_btn.png */; };
 		0398838E165D39F100A31620 /* change_password_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0398838C165D39F100A31620 /* change_password_btn@2x.png */; };
@@ -643,6 +647,10 @@
 		036E49D4165E5016006B33EE /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		036E49DF165E50C6006B33EE /* nav_back_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nav_back_btn.png; sourceTree = "<group>"; };
 		036E49E0165E50C6006B33EE /* nav_back_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_back_btn@2x.png"; sourceTree = "<group>"; };
+		036E49E3165E55B9006B33EE /* nav_back_btn_nomarl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nav_back_btn_nomarl.png; sourceTree = "<group>"; };
+		036E49E4165E55B9006B33EE /* nav_back_btn_normal_hl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nav_back_btn_normal_hl.png; sourceTree = "<group>"; };
+		036E49E5165E55B9006B33EE /* nav_back_btn_normal_hl@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_back_btn_normal_hl@2x.png"; sourceTree = "<group>"; };
+		036E49E9165E55CB006B33EE /* nav_back_btn_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_back_btn_normal@2x.png"; sourceTree = "<group>"; };
 		03988388165D395500A31620 /* UpdatePasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdatePasswordViewController.h; sourceTree = "<group>"; };
 		03988389165D395500A31620 /* UpdatePasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdatePasswordViewController.m; sourceTree = "<group>"; };
 		0398838B165D39F100A31620 /* change_password_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = change_password_btn.png; sourceTree = "<group>"; };
@@ -1621,6 +1629,10 @@
 		E523527E16317F3400DBFF7C /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
+				036E49E9165E55CB006B33EE /* nav_back_btn_normal@2x.png */,
+				036E49E3165E55B9006B33EE /* nav_back_btn_nomarl.png */,
+				036E49E4165E55B9006B33EE /* nav_back_btn_normal_hl.png */,
+				036E49E5165E55B9006B33EE /* nav_back_btn_normal_hl@2x.png */,
 				036E49DF165E50C6006B33EE /* nav_back_btn.png */,
 				036E49E0165E50C6006B33EE /* nav_back_btn@2x.png */,
 				E5E22EA41658B1A700B0C9AC /* navbar_list_btn_hl.png */,
@@ -2693,6 +2705,10 @@
 				036E49D5165E5016006B33EE /* Default@2x.png in Resources */,
 				036E49E1165E50C6006B33EE /* nav_back_btn.png in Resources */,
 				036E49E2165E50C6006B33EE /* nav_back_btn@2x.png in Resources */,
+				036E49E6165E55B9006B33EE /* nav_back_btn_nomarl.png in Resources */,
+				036E49E7165E55B9006B33EE /* nav_back_btn_normal_hl.png in Resources */,
+				036E49E8165E55B9006B33EE /* nav_back_btn_normal_hl@2x.png in Resources */,
+				036E49EA165E55CB006B33EE /* nav_back_btn_normal@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
