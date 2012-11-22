@@ -9,7 +9,7 @@
 #import "UserIntroViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "Macro.h"
-#define kPageContent 407
+#define kPageContent 460
 #define kLastContent 460
 #define kMoveDistance self.bottomBar.frame.size.height
 
@@ -110,17 +110,21 @@
     float startCountPos = (self.pageControl.numberOfPages - 2) * kPageContent;
     float difference = self.scrollView.contentOffset.y - startCountPos;
     float actualMove = difference * kMoveDistance / kPageContent;
+    if (actualMove > 20 || actualMove < 0 ) {
+        return ;
+    }
+    NSLog(@"Actual move is %g",actualMove);
     
     CGPoint center = self.moveView.center;
-    center.y = actualMove + self.moveView.frame.size.height/2;
+    center.y += actualMove;
     self.moveView.center = center;
 }
 
 
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    [self scrollBottomBar];
     [self loadVisiblePages];
+    [self scrollBottomBar];
 }
 
 @end
