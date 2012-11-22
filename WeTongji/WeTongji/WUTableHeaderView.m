@@ -406,6 +406,10 @@
     self.seeNumber.text = [information.read stringValue];
     _information = information;
     [self configButton];
+    WTClient * client = [WTClient sharedClient];
+    WTRequest * request = [WTRequest requestWithSuccessBlock:nil failureBlock:nil];
+    [request readInformaion:information.informationId inType:information.category];
+    [client enqueueRequest:request];
 #ifdef DEBUG
     NSLog(@"Information (%@,%@) has been set in WUTableHeaderView",information.informationId,information.title);
 #endif
@@ -419,9 +423,13 @@
     self.starSummary.text = star.words;
     self.likeNumber.text = [star.like stringValue];
     self.favoriteNumber.text = [star.favorite stringValue];
-    self.starNumber.text = star.count;
+    self.starNumber.text = [NSString stringWithFormat:@"第%@期",star.count];
     _star = star;
     [self configButton];
+    WTClient * client = [WTClient sharedClient];
+    WTRequest * request = [WTRequest requestWithSuccessBlock:nil failureBlock:nil];
+    [request readStar:star.starId];
+    [client enqueueRequest:request];
 #ifdef DEBUG
     NSLog(@"Star (%@,%@) has been set in WUTableHeaderView",star.starId,star.title);
 #endif

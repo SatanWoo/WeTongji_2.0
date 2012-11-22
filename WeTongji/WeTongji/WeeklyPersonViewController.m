@@ -38,7 +38,7 @@
         NSArray *sortedNames = [__starList sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
             Star *str1 = (Star *)obj1;
             Star *str2 = (Star *)obj2;
-            return [str2.starId compare: str1.starId];
+            return [str2.count compare: str1.count];
         }];
         _starList = sortedNames;
     }
