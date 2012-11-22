@@ -199,8 +199,13 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    for (UITableViewCell *cell in [tableView visibleCells]) {
+        [cell setSelected:NO];
+    }
+    
     LeftMenuCell *cell = (LeftMenuCell *)[tableView cellForRowAtIndexPath:indexPath];
     [cell setSelected:YES];
+    //[cell setSelected:NO animated:YES];
     UIViewController *controller = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:cell.identifer];
     [self.delegate changeMiddleContent:controller];
 }

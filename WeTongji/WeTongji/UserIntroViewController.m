@@ -43,7 +43,7 @@
 
 - (void)addPicture:(UIView *)image
 {
-    CGRect frame = self.scrollView.bounds;
+    CGRect frame = image.bounds;
     frame.origin.x = 0.0f;
     frame.origin.y = self.pictureNumber * kPageContent;
     image.frame = frame;
@@ -53,29 +53,10 @@
 
 - (void)loadVisiblePages
 {
-    static BOOL needToScroll = false;
     NSInteger page = self.scrollView.contentOffset.y / kPageContent;
     if (page > 3) {
-        [UIView animateWithDuration:0.1f animations:^{
-        
-            self.bottomBar.frame = CGRectMake(self.bottomBar.frame.origin.x, self.bottomBar.frame.origin.y + kMoveDistance, self.bottomBar.frame.size.width, self.bottomBar.frame.size.height);
-            
-            self.registerloginbtn.frame = CGRectMake(self.registerloginbtn.frame.origin.x, self.registerloginbtn.frame.origin.y + kMoveDistance, self.registerloginbtn.frame.size.width, self.registerloginbtn.frame.size.height);;
-            self.directUser.frame = CGRectMake(self.directUser.frame.origin.x, self.directUser.frame.origin.y + kMoveDistance, self.directUser.frame.size.width, self.directUser.frame.size.height);
-        }];
-        needToScroll = true;
         self.scrollView.frame = self.view.bounds;
     } else {
-        if (needToScroll) {
-            [UIView animateWithDuration:0.1f animations:^{
-                
-                self.bottomBar.frame = CGRectMake(self.bottomBar.frame.origin.x, self.bottomBar.frame.origin.y - kMoveDistance, self.bottomBar.frame.size.width, self.bottomBar.frame.size.height);
-                
-                self.registerloginbtn.frame = CGRectMake(self.registerloginbtn.frame.origin.x, self.registerloginbtn.frame.origin.y - kMoveDistance, self.registerloginbtn.frame.size.width, self.registerloginbtn.frame.size.height);;
-                self.directUser.frame = CGRectMake(self.directUser.frame.origin.x, self.directUser.frame.origin.y - kMoveDistance, self.directUser.frame.size.width, self.directUser.frame.size.height);
-            }];
-            needToScroll = false;
-        }
         self.scrollView.frame = self.originRect;
     }
     self.pageControl.currentPage = page;
@@ -123,8 +104,27 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:kSlideNotification object:self];
 }
 
+- (void)scrollBottomBar
+{
+    float startCountPos = self.scrollView.contentSize.height - (self.pageControl.numberOfPages - 1) * kPageContent;
+    float difference = self.scrollView.contentOffset.y - startCountPos;
+    float actualMove = difference * kMoveDistance / kLastContent;
+    NSLog(@"Actual move is %g",self.scrollView.contentOffset.y);
+    if (actualMove > kMoveDistance || actualMove < -kMoveDistance) {
+        return ;
+    }
+    [UIView animateWithDuration:0.1f animations:^{
+        self.bottomBar.frame = CGRectMake(self.bottomBar.frame.origin.x, self.bottomBar.frame.origin.y + actualMove, self.bottomBar.frame.size.width, self.bottomBar.frame.size.height);
+        
+        self.registerloginbtn.frame = CGRectMake(self.registerloginbtn.frame.origin.x, self.registerloginbtn.frame.origin.y + actualMove, self.registerloginbtn.frame.size.width, self.registerloginbtn.frame.size.height);;
+        self.directUser.frame = CGRectMake(self.directUser.frame.origin.x, self.directUser.frame.origin.y + actualMove, self.directUser.frame.size.width, self.directUser.frame.size.height);
+    }];
+}
+
+
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    [self scrollBottomBar];
     [self loadVisiblePages];
 }
 

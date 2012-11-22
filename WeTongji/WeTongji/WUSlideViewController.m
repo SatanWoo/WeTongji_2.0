@@ -13,7 +13,7 @@
 #import "UserIntroViewController.h"
 #import "LeftMenuCellModel.h"
 
-#define kFirstUseKey @"kkkkkkey"
+#define kFirstUseKey @"kkkksasssssSSkkey"
 
 @interface WUSlideViewController ()
 @property (assign ,nonatomic) int currentStatus;
@@ -103,7 +103,7 @@
     [[NSUserDefaults standardUserDefaults] registerDefaults:[NSDictionary dictionaryWithObject:[NSNumber numberWithInt:0] forKey:kFirstUseKey]];
     
     int isFirstUse = [[NSUserDefaults standardUserDefaults] integerForKey:kFirstUseKey];
-    if (isFirstUse == 0) {
+    if (isFirstUse != 0) {
         [self.view addSubview:self.introViewController.view];
     }
     [[NSUserDefaults standardUserDefaults] setInteger:1 forKey:kFirstUseKey];
