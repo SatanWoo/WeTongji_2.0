@@ -14,8 +14,10 @@
 #import "User+Addition.h"
 #import "EditInfoHeaderView.h"
 #import "UIBarButtonItem+CustomButton.h"
+#import "EditAvatarViewController.h"
+#import "MBProgressHUD.h"
 
-@interface EditInfoViewController ()<UITableViewDataSource, UITableViewDelegate,UIActionSheetDelegate,UIImagePickerControllerDelegate>
+@interface EditInfoViewController ()<UITableViewDataSource, UITableViewDelegate,UIActionSheetDelegate,UINavigationControllerDelegate, UIImagePickerControllerDelegate,EditAvatarViewControllerDelegate,MBProgressHUDDelegate>
 {
     BOOL _isEditEnable;
     BOOL _isKeyBoardAppear;
@@ -29,6 +31,7 @@
 @property (nonatomic,strong) NSArray * editableList;
 @property (nonatomic,strong) NSArray * staticList;
 @property (nonatomic,strong) NSArray * infoList;
+@property (nonatomic,strong) MBProgressHUD * progress;
 - (void)configureTableView;
 - (void)configureNavBar;
 @end
@@ -38,6 +41,18 @@
 @synthesize user = _user;
 
 #pragma mark - Setter & Getter
+
+-(MBProgressHUD *) progress
+{
+    if ( !_progress )
+    {
+        _progress = [[MBProgressHUD alloc] initWithView:self.view];
+        [self.view addSubview:_progress];
+        _progress.delegate = self;
+    }
+    return _progress;
+}
+
 -(User *) user
 {
     if ( !_user )
@@ -270,13 +285,27 @@ static id tempLeftBarItem;
                 break;
         }
     }
+    self.progress.labelText  = @"更新资料中...";
     WTClient * client = [WTClient sharedClient];
     WTRequest * request = [WTRequest requestWithSuccessBlock:^(id responseData) 
     {
         [User updateUser:[responseData objectForKey:@"User"] inManagedObjectContext:self.managedObjectContext];
         [self.infoTableView reloadData];
+        self.progress.mode = MBProgressHUDModeText;
+        self.progress.labelText = @"更新完成";
+        [self.progress hide:YES afterDelay:1];
+    #ifdef DEBUG
         NSLog(@"%@",responseData);
-    } failureBlock:^(NSError * error){}];
+    #endif
+    }
+    failureBlock:^(NSError * error)
+    {
+        self.progress.mode = MBProgressHUDModeText;
+        self.progress.labelText = @"更新失败";
+        self.progress.square = YES;
+        self.progress.detailsLabelText = [[error userInfo] objectForKey:@"errorDesc"];
+        [self.progress hide:YES afterDelay:1];
+    }];
     [request updateUserDisplayName:nil email:email weiboName:weiboName phoneNum:phone qqAccount:qq];
     [client enqueueRequest:request];
 }
@@ -328,11 +357,51 @@ static id tempLeftBarItem;
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
-    self.avatar.image = image;
-    [self.navigationController popViewControllerAnimated:YES];
+    EditAvatarViewController *vc = [[EditAvatarViewController alloc] initWithImage:image];
+    vc.delegate = self;
+    [picker pushViewController:vc animated:YES];
 }
 
+- (void)editAvatarViewDidCancelEdit
+{
+    [self dismissModalViewControllerAnimated:YES];
+}
 
+- (void)editAvatarViewDidFinishEdit:(UIImage *)image
+{
+    [self.progress show:YES];
+    self.progress.mode = MBProgressHUDModeIndeterminate;
+    self.progress.labelText = @"更新头像中...";
+    self.avatar.image = image;
+    WTClient * client = [WTClient sharedClient];
+    WTRequest * request = [WTRequest requestWithSuccessBlock:^(id responseData)
+                           {
+                            #ifdef DEBUG
+                               NSLog(@"%@",responseData);
+                            #endif
+                               [User updateUser:[responseData objectForKey:@"User"] inManagedObjectContext:self.managedObjectContext];
+                               [self.infoTableView reloadData];
+                               self.progress.mode = MBProgressHUDModeText;
+                               self.progress.labelText = @"更新完成";
+                               [self.progress hide:YES afterDelay:1];
+                           }
+                            failureBlock:^(NSError * error)
+                            {
+                                self.progress.mode = MBProgressHUDModeText;
+                                self.progress.labelText = @"更新失败";
+                                self.progress.square = YES;
+                                self.progress.detailsLabelText = [[error userInfo] objectForKey:@"errorDesc"];
+                                [self.progress hide:YES afterDelay:1];
+                            }];
+    [request updateUserAvatar:image];
+    [client enqueueRequest:request];
+    [self dismissModalViewControllerAnimated:YES];
+}
 
+-(void) hudWasHidden:(MBProgressHUD *)hud
+{
+    [self.progress removeFromSuperview];
+    self.progress =  nil;
+}
 
 @end
