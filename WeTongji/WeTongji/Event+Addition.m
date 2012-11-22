@@ -92,21 +92,22 @@
     Event * result = nil;
     
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    NSDate * now = [NSDate dateWithTimeIntervalSinceNow:0];
-    NSInteger interval = [now timeIntervalSince1970] / DAY_TIME_INTERVAL;
-    NSDate * today = [NSDate dateWithTimeIntervalSince1970:interval * DAY_TIME_INTERVAL];
+    NSDate * today = [NSDate dateWithTimeIntervalSinceNow:0];
+    NSInteger interval = [today timeIntervalSince1970] / DAY_TIME_INTERVAL;
+    interval = interval * DAY_TIME_INTERVAL;
+    today = [NSDate dateWithTimeIntervalSince1970:(interval - 8* 60 *60)];
     
-    for ( int index = 0 ; index < 7 ; index ++ )
+    for ( int index = 0 ; index < 3 ; index ++ )
     {
         [request setEntity:[NSEntityDescription entityForName:@"Event" inManagedObjectContext:context]];
-        NSPredicate *createEndPredicate = [NSPredicate predicateWithFormat:@"createAt < %@", today];
-        NSPredicate * createBeginPredicate = [NSPredicate predicateWithFormat:@"createAt >= %@",[today dateByAddingTimeInterval:-DAY_TIME_INTERVAL]];
+        NSPredicate *beginPredicate = [NSPredicate predicateWithFormat:@"beginTime >= %@", today];
+        NSPredicate * endPredicate = [NSPredicate predicateWithFormat:@"beginTime < %@",[today dateByAddingTimeInterval:DAY_TIME_INTERVAL]];
         NSPredicate * imagePredicate = [NSPredicate predicateWithFormat:@"imageLink <> %@",MISSING_PIC_LINK];
-        [request setPredicate:[NSCompoundPredicate andPredicateWithSubpredicates:[NSArray arrayWithObjects: createEndPredicate, createBeginPredicate, imagePredicate, nil]]];
+        [request setPredicate:[NSCompoundPredicate andPredicateWithSubpredicates:[NSArray arrayWithObjects: beginPredicate, endPredicate, imagePredicate, nil]]];
         NSSortDescriptor *sort = [[NSSortDescriptor alloc] initWithKey:@"like" ascending:YES];
         [request setSortDescriptors:[[NSArray alloc] initWithObjects:sort , nil]];
         NSArray *list = [context executeFetchRequest:request error:NULL];
-        today = [today dateByAddingTimeInterval:-DAY_TIME_INTERVAL];
+        today = [today dateByAddingTimeInterval:DAY_TIME_INTERVAL];
         if ( [list count] )
         {
             result = [list lastObject];
