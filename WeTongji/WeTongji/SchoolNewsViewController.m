@@ -32,7 +32,6 @@
 }
 - (void)renderShadow:(UIView *)view;
 - (void)configureTableView;
-- (void)didTap:(UITapGestureRecognizer *)recognizer;
 @property (weak, nonatomic) IBOutlet UIImageView *buttonBackImageView;
 @property (nonatomic, strong) WUTableHeaderView *headerView;
 @property (nonatomic, strong) WUPageControlViewController *pageViewController;
@@ -68,7 +67,8 @@
    
 }
 #pragma mark - Tap
-- (void)didTap:(UITapGestureRecognizer *)recognizer
+
+-(void)showScheduleTable
 {
     self.isAnimationFinished = false;
     self.pageViewController.view.userInteractionEnabled = NO;
@@ -83,12 +83,24 @@
     } completion:^(BOOL finished) {}];
 }
 
+- (void)didTap:(UITapGestureRecognizer *)recognizer
+{
+    [self showScheduleTable];
+}
+
+- (void)didSwipe:(UISwipeGestureRecognizer *)recognizer
+{
+    [self showScheduleTable];
+}
+
 #pragma mark - Setter & Getter
 - (WUPageControlViewController *)pageViewController
 {
     if (_pageViewController == nil) {
         _pageViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:kWUPageControlViewController];
-        [_pageViewController.view addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTap:)]];
+        UISwipeGestureRecognizer *upSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(didSwipe:)];
+        upSwipe.direction = UISwipeGestureRecognizerDirectionUp;
+        [_pageViewController.view addGestureRecognizer:upSwipe];
         [_pageViewController.view setFrame:CGRectMake(0, kStateY, 320 ,480)];
         _pageViewController.view.userInteractionEnabled = NO;
         for ( NSString * link in self.imageList )

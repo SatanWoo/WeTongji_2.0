@@ -39,8 +39,6 @@
 @property (nonatomic,strong)Event * recommandEvent;
 @property (weak, nonatomic) IBOutlet UILabel *recommendTitle;
 - (void)configureTableView;
-- (void)didTap:(UITapGestureRecognizer *)recognizer;
-- (void)didSwipe:(UISwipeGestureRecognizer *)recognizer;
 @end
 
 @implementation PersonalWallViewController
@@ -77,6 +75,7 @@
 
 -(void)showScheduleTable
 {
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
     self.isAnimationFinished = false;
     [UIView animateWithDuration:0.55f animations:^{
         self.scheduleTableView.center = self.view.center;
@@ -118,8 +117,6 @@
 {
     if (_pageViewController == nil) {
         _pageViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:kWUPageControlViewController];
-        
-        [_pageViewController.view addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTap:)]];
         UISwipeGestureRecognizer *upSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(didSwipe:)];
         upSwipe.direction = UISwipeGestureRecognizerDirectionUp;
         [_pageViewController.view addGestureRecognizer:upSwipe];
@@ -147,6 +144,7 @@
 {
     [super viewDidLoad];
     NSLog(@"%f",self.parentViewController.view.frame.size.height);
+    [self.navigationController setNavigationBarHidden:YES];
     [self configureTodayRecommend];
     [self configureTableView];
     [self loadCourses];
@@ -244,10 +242,17 @@
     [client enqueueRequest:request];
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+
+}
+
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    NSLog(@"%f",self.view.frame.origin.y);
+    [self.navigationController setNavigationBarHidden:NO];
+    NSLog(@"%f",self.pageViewController.view.frame.size.height);
     [UIView animateWithDuration:0.8f animations:^{
         self.pageViewController.view.center = originPageControlViewCenter;} completion:nil];
 }
@@ -344,6 +349,7 @@
     if (rate > 2)
     {
         self.isAnimationFinished = true;
+        [self.navigationController setNavigationBarHidden:YES animated:YES];
         [UIView animateWithDuration:0.25f animations:^{
             self.scheduleTableView.frame = CGRectMake(0, self.view.frame.size.height, self.scheduleTableView.frame.size.width, self.scheduleTableView.frame.size.height);
             CGPoint center = self.view.center;

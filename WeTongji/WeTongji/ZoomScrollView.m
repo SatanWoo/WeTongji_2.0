@@ -24,12 +24,34 @@
         self.maximumZoomScale = 2;
         self.minimumZoomScale = 1;
         self.zoomScale = 1;
+        UITapGestureRecognizer * doubleTapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onDoubleTap:)];
+        doubleTapRecognizer.numberOfTapsRequired = 2;
+        doubleTapRecognizer.numberOfTouchesRequired = 1;
+        [self addGestureRecognizer:doubleTapRecognizer];
+
         UITapGestureRecognizer * twoFingerTapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onTwoFingerDoubleTap:)];
         twoFingerTapRecognizer.numberOfTapsRequired = 1;
         twoFingerTapRecognizer.numberOfTouchesRequired = 2;
         [self addGestureRecognizer:twoFingerTapRecognizer];
     }
     return self;
+}
+
+- (void)onDoubleTap:(UITapGestureRecognizer*)recognizer
+{
+    CGPoint pointInView = [recognizer locationInView:self.image];
+    float scale;
+    if ( self.zoomScale > 1.5 ) scale = 0.5;
+    else scale = 2.0;
+    CGFloat newZoomScale = self.zoomScale * scale;
+    newZoomScale = MIN(newZoomScale, self.maximumZoomScale);
+    CGSize scrollViewSize = self.bounds.size;
+    CGFloat w = scrollViewSize.width / newZoomScale;
+    CGFloat h = scrollViewSize.height / newZoomScale;
+    CGFloat x = pointInView.x - (w / scale);
+    CGFloat y = pointInView.y - (h / scale);
+    CGRect rectToZoomTo = CGRectMake(x, y, w, h);
+    [self zoomToRect:rectToZoomTo animated:YES];
 }
 
 - (void)onTwoFingerDoubleTap:(UITapGestureRecognizer*)recognizer
