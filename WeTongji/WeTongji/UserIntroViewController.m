@@ -109,7 +109,7 @@
     float startCountPos = self.scrollView.contentSize.height - (self.pageControl.numberOfPages - 1) * kPageContent;
     float difference = self.scrollView.contentOffset.y - startCountPos;
     float actualMove = difference * kMoveDistance / kLastContent;
-    NSLog(@"Actual move is %g",actualMove);
+    NSLog(@"Actual move is %g",self.scrollView.contentOffset.y);
     if (actualMove > kMoveDistance || actualMove < -kMoveDistance) {
         return ;
     }
