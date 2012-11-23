@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="11G63" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
@@ -443,19 +443,6 @@
                         <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="aFp-oW-yfi"/>
                     </toolbarItems>
                     <navigationItem key="navigationItem" id="Fc4-JF-NGN">
-                        <nil key="title"/>
-                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="TMM-ux-EVt">
-                            <rect key="frame" x="96" y="6" width="128" height="33"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
-                            <state key="normal" title="推荐活动">
-                                <color key="titleColor" red="1" green="0.98863636359999996" blue="0.98863636359999996" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <state key="highlighted">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                        </button>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="bES-L9-nNu">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="jSH-zO-jZ0">
                                 <rect key="frame" x="244" y="0.0" width="71" height="43"/>
@@ -477,7 +464,6 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="eventTableView" destination="MJk-4K-Qoz" id="Cbr-Av-qlu"/>
-                        <outlet property="titleLabel" destination="TMM-ux-EVt" id="Tg5-8l-HlC"/>
                         <segue destination="D5h-rN-X3u" kind="push" identifier="kEventInfoViewController" id="h0M-RQ-8NL"/>
                     </connections>
                 </viewController>
@@ -1216,11 +1202,11 @@
             <objects>
                 <viewController id="D5h-rN-X3u" customClass="SchoolNewsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DIe-wx-Dre">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="C4a-xk-m7J">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -1755,6 +1741,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="5c9-iE-HEP"/>
-        <segue reference="83Y-JL-KCk"/>
+        <segue reference="h0M-RQ-8NL"/>
     </inferredMetricsTieBreakers>
 </document>
