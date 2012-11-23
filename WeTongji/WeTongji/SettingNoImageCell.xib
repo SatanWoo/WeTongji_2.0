@@ -94,7 +94,6 @@
 						<string key="NSFrameSize">{300, 44}</string>
 						<reference key="NSSuperview" ref="808678235"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:11</string>
 						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">3</int>
@@ -114,7 +113,6 @@
 				<string key="NSReuseIdentifierKey">_NS:9</string>
 				<reference key="IBUIBackgroundColor" ref="1065937589"/>
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-				<int key="IBUISelectionStyle">0</int>
 				<reference key="IBUIContentView" ref="841937698"/>
 				<string key="IBUIReuseIdentifier">kSettingNoImageCell</string>
 			</object>

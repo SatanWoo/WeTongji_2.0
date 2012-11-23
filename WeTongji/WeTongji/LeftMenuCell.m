@@ -29,13 +29,13 @@
         UIImageView *image = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"cell_sl"]];
         image.frame = CGRectMake(0, 0, image.bounds.size.width, image.bounds.size.height);
         [self insertSubview:image atIndex:0];
-        [UIView animateWithDuration:0.35f animations:^{
-            [image setAlpha:0.0f];
-        } completion:^(BOOL finished) {
-            if (finished) {
-                [image removeFromSuperview];
-            }
-        }];
+        image.tag = kTag;
+    } else {
+        UIView *view = [self viewWithTag:kTag];
+        view.tag = 0;
+        if (view) {
+            [view removeFromSuperview];
+        }
     }
 }
 
