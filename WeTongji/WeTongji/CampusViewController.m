@@ -500,7 +500,7 @@ static NSInteger tempRow;
 
 - (void)refresh
 {
-    self.currentNextPage = 0;
+    self.currentNextPage = 1;
     [self loadMoreData];
 }
 
@@ -540,7 +540,7 @@ static NSInteger tempRow;
     WTClient * client = [WTClient sharedClient];
     WTRequest * request = [WTRequest requestWithSuccessBlock:^(id responseData)
                            {
-                               if(self.currentNextPage == 0)
+                               if(self.currentNextPage == 1)
                                    [self clearData];
                                NSString * key;
                                if ( [self.currentInformationType isEqualToString: GetInformationTypeAround] ||
