@@ -201,6 +201,9 @@
 										<reference key="NSSuperview" ref="925634669"/>
 										<reference key="NSNextKeyView" ref="476333896"/>
 										<bool key="IBUIOpaque">NO</bool>
+										<object class="IBUIAccessibilityConfiguration" key="IBUIAccessibilityConfiguration">
+											<integer value="257" key="IBUIAccessibilityTraits"/>
+										</object>
 										<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 										<int key="IBUIContentHorizontalAlignment">0</int>
 										<int key="IBUIContentVerticalAlignment">0</int>
@@ -241,6 +244,9 @@
 										<bool key="IBUIClipsSubviews">YES</bool>
 										<int key="IBUIContentMode">7</int>
 										<bool key="IBUIUserInteractionEnabled">NO</bool>
+										<object class="IBUIAccessibilityConfiguration" key="IBUIAccessibilityConfiguration">
+											<integer value="320" key="IBUIAccessibilityTraits"/>
+										</object>
 										<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 										<string key="IBUIText">22</string>
 										<reference key="IBUITextColor" ref="517407229"/>
@@ -273,6 +279,9 @@
 										<reference key="NSSuperview" ref="761782886"/>
 										<reference key="NSNextKeyView" ref="657584968"/>
 										<bool key="IBUIOpaque">NO</bool>
+										<object class="IBUIAccessibilityConfiguration" key="IBUIAccessibilityConfiguration">
+											<integer value="257" key="IBUIAccessibilityTraits"/>
+										</object>
 										<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 										<int key="IBUIContentHorizontalAlignment">0</int>
 										<int key="IBUIContentVerticalAlignment">0</int>
@@ -299,6 +308,9 @@
 										<bool key="IBUIClipsSubviews">YES</bool>
 										<int key="IBUIContentMode">7</int>
 										<bool key="IBUIUserInteractionEnabled">NO</bool>
+										<object class="IBUIAccessibilityConfiguration" key="IBUIAccessibilityConfiguration">
+											<integer value="320" key="IBUIAccessibilityTraits"/>
+										</object>
 										<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 										<string key="IBUIText">22</string>
 										<reference key="IBUITextColor" ref="517407229"/>

@@ -166,6 +166,9 @@
 										<reference key="NSSuperview" ref="829231781"/>
 										<reference key="NSNextKeyView" ref="506679636"/>
 										<bool key="IBUIOpaque">NO</bool>
+										<object class="IBUIAccessibilityConfiguration" key="IBUIAccessibilityConfiguration">
+											<integer value="257" key="IBUIAccessibilityTraits"/>
+										</object>
 										<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 										<int key="IBUIContentHorizontalAlignment">0</int>
 										<int key="IBUIContentVerticalAlignment">0</int>
@@ -206,6 +209,9 @@
 										<bool key="IBUIClipsSubviews">YES</bool>
 										<int key="IBUIContentMode">7</int>
 										<bool key="IBUIUserInteractionEnabled">NO</bool>
+										<object class="IBUIAccessibilityConfiguration" key="IBUIAccessibilityConfiguration">
+											<integer value="320" key="IBUIAccessibilityTraits"/>
+										</object>
 										<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 										<string key="IBUIText">22</string>
 										<reference key="IBUITextColor" ref="103427897"/>
@@ -245,6 +251,9 @@
 										<reference key="NSSuperview" ref="551405642"/>
 										<reference key="NSNextKeyView" ref="436366246"/>
 										<bool key="IBUIOpaque">NO</bool>
+										<object class="IBUIAccessibilityConfiguration" key="IBUIAccessibilityConfiguration">
+											<integer value="257" key="IBUIAccessibilityTraits"/>
+										</object>
 										<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 										<int key="IBUIContentHorizontalAlignment">0</int>
 										<int key="IBUIContentVerticalAlignment">0</int>
@@ -272,6 +281,9 @@
 										<bool key="IBUIClipsSubviews">YES</bool>
 										<int key="IBUIContentMode">7</int>
 										<bool key="IBUIUserInteractionEnabled">NO</bool>
+										<object class="IBUIAccessibilityConfiguration" key="IBUIAccessibilityConfiguration">
+											<integer value="320" key="IBUIAccessibilityTraits"/>
+										</object>
 										<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 										<string key="IBUIText">22</string>
 										<reference key="IBUITextColor" ref="103427897"/>
@@ -304,6 +316,9 @@
 										<reference key="NSSuperview" ref="234976442"/>
 										<reference key="NSNextKeyView" ref="665507818"/>
 										<bool key="IBUIOpaque">NO</bool>
+										<object class="IBUIAccessibilityConfiguration" key="IBUIAccessibilityConfiguration">
+											<integer value="257" key="IBUIAccessibilityTraits"/>
+										</object>
 										<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 										<int key="IBUIContentHorizontalAlignment">0</int>
 										<int key="IBUIContentVerticalAlignment">0</int>
@@ -330,6 +345,9 @@
 										<bool key="IBUIClipsSubviews">YES</bool>
 										<int key="IBUIContentMode">7</int>
 										<bool key="IBUIUserInteractionEnabled">NO</bool>
+										<object class="IBUIAccessibilityConfiguration" key="IBUIAccessibilityConfiguration">
+											<integer value="320" key="IBUIAccessibilityTraits"/>
+										</object>
 										<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 										<string key="IBUIText">添加到日程</string>
 										<reference key="IBUITextColor" ref="103427897"/>

@@ -22,7 +22,7 @@
     NSDate * today = [NSDate dateWithTimeIntervalSince1970:(interval * DAY_TIME_INTERVAL)];
     [request setEntity:[NSEntityDescription entityForName:@"AbstractActivity" inManagedObjectContext:context]];
     NSPredicate *beginPredicate = [NSPredicate predicateWithFormat:@"begin_time < %@", [today dateByAddingTimeInterval:DAY_TIME_INTERVAL]];
-    NSPredicate *endPredicate = [NSPredicate predicateWithFormat:@"begin_time > %@", [now dateByAddingTimeInterval:-DAY_TIME_INTERVAL]];
+    NSPredicate *endPredicate = [NSPredicate predicateWithFormat:@"begin_time > %@", now];
     NSPredicate * schedule = [NSPredicate predicateWithFormat:@"canSchedule == %@",[NSNumber numberWithBool:NO]];
     [request setPredicate:[NSCompoundPredicate andPredicateWithSubpredicates:[NSArray arrayWithObjects:endPredicate, beginPredicate, schedule, nil]]];
     NSSortDescriptor *sort = [[NSSortDescriptor alloc] initWithKey:@"begin_time" ascending:YES];
