@@ -19,7 +19,10 @@
 {
     [super viewDidLoad];
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navbar"] forBarMetrics:UIBarMetricsDefault];
-
+    [self.navigationController.navigationBar dropShadowWithOffset:CGSizeMake(0, 2)
+                                                           radius:1
+                                                            color:[UIColor darkGrayColor]
+                                                          opacity:0.6];
 }
 
 - (void)viewDidUnload

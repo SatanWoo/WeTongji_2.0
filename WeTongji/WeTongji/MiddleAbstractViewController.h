@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "CoreDataViewController.h"
+#import "UINavigationBar+Shadow.h"
 
 @interface MiddleAbstractViewController : CoreDataViewController
 
