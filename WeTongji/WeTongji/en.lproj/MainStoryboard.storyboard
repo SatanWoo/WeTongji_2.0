@@ -221,6 +221,7 @@
                     <connections>
                         <outlet property="settingTableView" destination="EfF-kp-33Z" id="5qu-gg-HXG"/>
                         <segue destination="x0g-D6-LN3" kind="push" identifier="kUpdatePasswordViewController" id="uEQ-x7-mhD"/>
+                        <segue destination="j86-im-8te" kind="push" identifier="kSchoolPreferenceViewController" id="OYb-Jf-kfj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZS0-S8-VW9" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1202,11 +1203,11 @@
             <objects>
                 <viewController id="D5h-rN-X3u" customClass="SchoolNewsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DIe-wx-Dre">
-                        <rect key="frame" x="0.0" y="20" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="C4a-xk-m7J">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -1625,6 +1626,36 @@
             </objects>
             <point key="canvasLocation" x="-2403" y="1675"/>
         </scene>
+        <!--School Preference View Controller-->
+        <scene sceneID="bDW-9L-q6W">
+            <objects>
+                <viewController id="j86-im-8te" customClass="SchoolPreferenceViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dYd-HQ-CQe">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="C3b-Mv-Kuf">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="j86-im-8te" id="bQ3-L6-lFI"/>
+                                    <outlet property="delegate" destination="j86-im-8te" id="ARR-Tz-8Zt"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="H0a-zq-Int"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="preferenceTableView" destination="C3b-Mv-Kuf" id="mmQ-nh-UVp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vtf-e5-aY2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1842" y="1053"/>
+        </scene>
         <!--Password View Controller - 找回密码-->
         <scene sceneID="eDN-Wp-vrt">
             <objects>
@@ -1908,6 +1939,12 @@
                 <relationship kind="outlet" name="newsTableView" candidateClass="UITableView"/>
             </relationships>
         </class>
+        <class className="SchoolPreferenceViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SchoolPreferenceViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="preferenceTableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
         <class className="SettingViewController" superclassName="MiddleAbstractSecondViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingViewController.h"/>
             <relationships>
@@ -1963,7 +2000,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="nGL-0f-2v0"/>
         <segue reference="5c9-iE-HEP"/>
-        <segue reference="h0M-RQ-8NL"/>
     </inferredMetricsTieBreakers>
 </document>

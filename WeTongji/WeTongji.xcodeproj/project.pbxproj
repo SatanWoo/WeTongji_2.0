@@ -194,6 +194,7 @@
 		03D80C00165FBC7D0086054D /* navbar_sort_btn_hl@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 03D80BFE165FBC7D0086054D /* navbar_sort_btn_hl@2x.png */; };
 		03D80C03165FBFFB0086054D /* UINavigationBar+Shadow.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D80C02165FBFFB0086054D /* UINavigationBar+Shadow.m */; };
 		03D80C1D165FC5780086054D /* WUStatusbarWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D80C1C165FC5780086054D /* WUStatusbarWindow.m */; };
+		03D80C25165FCEDD0086054D /* SchoolPreferenceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D80C24165FCEDD0086054D /* SchoolPreferenceViewController.m */; };
 		03E6FBA316552B9800A3E60C /* like_hl.png in Resources */ = {isa = PBXBuildFile; fileRef = 03E6FB9F16552B9800A3E60C /* like_hl.png */; };
 		03E6FBA416552B9800A3E60C /* like_hl@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 03E6FBA016552B9800A3E60C /* like_hl@2x.png */; };
 		03E6FBA516552B9800A3E60C /* like.png in Resources */ = {isa = PBXBuildFile; fileRef = 03E6FBA116552B9800A3E60C /* like.png */; };
@@ -762,6 +763,8 @@
 		03D80C02165FBFFB0086054D /* UINavigationBar+Shadow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+Shadow.m"; sourceTree = "<group>"; };
 		03D80C1B165FC5780086054D /* WUStatusbarWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WUStatusbarWindow.h; sourceTree = "<group>"; };
 		03D80C1C165FC5780086054D /* WUStatusbarWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WUStatusbarWindow.m; sourceTree = "<group>"; };
+		03D80C23165FCEDD0086054D /* SchoolPreferenceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SchoolPreferenceViewController.h; sourceTree = "<group>"; };
+		03D80C24165FCEDD0086054D /* SchoolPreferenceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SchoolPreferenceViewController.m; sourceTree = "<group>"; };
 		03E6FB9F16552B9800A3E60C /* like_hl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = like_hl.png; sourceTree = "<group>"; };
 		03E6FBA016552B9800A3E60C /* like_hl@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "like_hl@2x.png"; sourceTree = "<group>"; };
 		03E6FBA116552B9800A3E60C /* like.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = like.png; sourceTree = "<group>"; };
@@ -1335,6 +1338,7 @@
 		03D1CD87165A83FE00334F0D /* Setting */ = {
 			isa = PBXGroup;
 			children = (
+				03D80C22165FCEBB0086054D /* Preference */,
 				03988386165D37D200A31620 /* updatepassword */,
 				03D1CD88165A841700334F0D /* SettingViewController.h */,
 				03D1CD89165A841700334F0D /* SettingViewController.m */,
@@ -1429,6 +1433,15 @@
 				03D61F60165BE342005F19A1 /* nav_finish_btn@2x.png */,
 			);
 			name = Setting;
+			sourceTree = "<group>";
+		};
+		03D80C22165FCEBB0086054D /* Preference */ = {
+			isa = PBXGroup;
+			children = (
+				03D80C23165FCEDD0086054D /* SchoolPreferenceViewController.h */,
+				03D80C24165FCEDD0086054D /* SchoolPreferenceViewController.m */,
+			);
+			name = Preference;
 			sourceTree = "<group>";
 		};
 		03E6FBB4165536FF00A3E60C /* WeeklyPersonViewController */ = {
@@ -2927,6 +2940,7 @@
 				FFB2322A165E9F7100789810 /* Channel+Addition.m in Sources */,
 				03D80C03165FBFFB0086054D /* UINavigationBar+Shadow.m in Sources */,
 				03D80C1D165FC5780086054D /* WUStatusbarWindow.m in Sources */,
+				03D80C25165FCEDD0086054D /* SchoolPreferenceViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

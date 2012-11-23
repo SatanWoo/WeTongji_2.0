@@ -143,7 +143,7 @@
         cell =  [[[NSBundle mainBundle] loadNibNamed:@"SettingNoImageCell" owner:self options:nil] objectAtIndex:0];
         cell.textLabel.font = [UIFont fontWithName:@"Heiti SC" size:16];
     }
-    if (indexPath.section == 1 && indexPath.row == 0) {
+    if (indexPath.section == 1 && indexPath.row == 1) {
         cell.swtich.hidden = NO;
     } else {
         cell.swtich.hidden = YES;
@@ -153,13 +153,13 @@
         cell.textLabel.text = @"更改密码";
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     } else {
-        if (indexPath.row == 0) {
+        if (indexPath.row == 1) {
             cell.name.text = @"仅在Wifi下加载图片";
             cell.accessoryType = UITableViewCellAccessoryNone;
-        } else if (indexPath.row == 1) {
+        } else if (indexPath.row == 2) {
             cell.name.text = @"检测新版本";
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        } else if (indexPath.row == 2){
+        } else if (indexPath.row == 3){
             cell.name.text = @"清除缓存";
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         } else {
@@ -191,6 +191,8 @@
 {
     if (indexPath.section == 0) {
         [self performSegueWithIdentifier:kUpdatePasswordViewControllerSegue sender:self];
+    } else if (indexPath.section == 1 && indexPath.row == 0) {
+        [self performSegueWithIdentifier:kSchoolPreferenceViewControllerSegue sender:self];
     }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
