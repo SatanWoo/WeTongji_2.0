@@ -232,7 +232,7 @@ static NSInteger tempRow;
 
 - (void)refresh
 {
-    self.nextPage = 0;
+    self.nextPage = 1;
     [self loadMoreData];
 }
 
@@ -258,7 +258,7 @@ static NSInteger tempRow;
     WTClient *client = [WTClient sharedClient];
     WTRequest * request = [WTRequest requestWithSuccessBlock:^(id responseData)
         {
-            if(self.nextPage == 0)
+            if(self.nextPage == 1)
                 [self clearData];
             NSArray *array = [responseData objectForKey:@"Activities"];
             for(NSDictionary *eventDict in array)
