@@ -23,7 +23,9 @@
 
 @property (nonatomic ,strong) WUKenBurnViewHeader *kenView;
 @property (nonatomic ,readonly) BOOL isLogIn;
-@property (nonatomic ,strong) UIImageView *mainImageView;
+@property (nonatomic ,strong) UIImageView *topImageView;
+@property (nonatomic ,strong) UIImageView *bottomImageView;
+@property (nonatomic ,strong) NSArray *imageArray;
 
 - (void)configureBottomBarButton;
 - (void)configureTableView;
@@ -39,7 +41,10 @@
 
 @synthesize identifierArray = _identifierArray;
 @synthesize kenView = _kenView;
-@synthesize mainImageView = _mainImageView;
+@synthesize topImageView = _topImageView;
+@synthesize bottomImageView = _bottomImageView;
+@synthesize imageArray = _imageArray;
+
 #pragma mark - IBAction
 - (IBAction)triggerInfo:(UIButton *)sender
 {
@@ -82,8 +87,13 @@
 
 - (void)configureHeader
 {
-    self.mainImageView = [[UIImageView alloc]init];
-    NSArray *myImages = [NSArray arrayWithObjects:
+    self.bottomImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0,0,270,120)];
+    [self.view addSubview:self.bottomImageView];
+    
+    self.topImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0,0,270,120)];
+    [self.view addSubview:self.topImageView];
+    
+    self.imageArray = [NSArray arrayWithObjects:
                           [UIImage imageNamed:@"1.png"],
                           [UIImage imageNamed:@"2.png"],
                           [UIImage imageNamed:@"3.png"],
@@ -99,24 +109,35 @@
                           [UIImage imageNamed:@"13.png"],
                           nil];
 
-    [NSTimer scheduledTimerWithTimeInterval:10.0f target:self selector:@selector(crossfade) userInfo:nil repeats:YES];
-    [self.mainImageView  setFrame:CGRectMake(0,0,270,120)];
-    
-    self.mainImageView.animationImages = myImages;
-    self.mainImageView.animationDuration = 60;
-    self.mainImageView.animationRepeatCount = 0;
-    [self.mainImageView startAnimating];
-    
-    [self.view addSubview:self.mainImageView];
-     self.menuTableView.contentInset = UIEdgeInsetsMake(self.mainImageView.frame.size.height, 0, 0, 0);
+    [NSTimer scheduledTimerWithTimeInterval:5.0f target:self selector:@selector(crossfade) userInfo:nil repeats:YES];
+        
+    self.menuTableView.contentInset = UIEdgeInsetsMake(self.topImageView.frame.size.height, 0, 0, 0);
 }
 
 - (void)crossfade {
-    [UIView animateWithDuration:0.5 delay:0.0 options:UIViewAnimationOptionCurveLinear animations:^{
-        self.mainImageView.alpha = !self.mainImageView.alpha;
-    }completion:^(BOOL done){
-        
-    }];
+    static int topIndex = 0;
+    static int prevTopIndex = 1;
+    if(topIndex %2 == 0){
+        [UIView animateWithDuration:5.0 animations:^
+         {
+             self.topImageView.alpha = 0.0;
+         }];
+        self.topImageView.image = [self.imageArray objectAtIndex:prevTopIndex];
+        self.bottomImageView.image = [self.imageArray objectAtIndex:topIndex];
+    }else{
+        [UIView animateWithDuration:5.0 animations:^
+         {
+             self.topImageView.alpha = 1.0;
+         }];
+        self.topImageView.image = [self.imageArray objectAtIndex:topIndex];
+        self.bottomImageView.image = [self.imageArray objectAtIndex:prevTopIndex];
+    }
+    prevTopIndex = topIndex;
+    if(topIndex == [self.imageArray count] - 1){
+        topIndex = 0;
+    }else{
+        topIndex++;
+    }
 }
 
 #pragma mark - Getter & Setter
