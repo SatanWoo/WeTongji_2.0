@@ -8,12 +8,13 @@
 
 #import "MiddleAbstractSecondViewController.h"
 #import "UIBarButtonItem+CustomButton.h"
+#import "WUStatusbarWindow.h"
 
 @interface MiddleAbstractSecondViewController ()
+
 @end
 
 @implementation MiddleAbstractSecondViewController
-
 - (void)pressNavButton
 {
     [self.navigationController popViewControllerAnimated:YES];

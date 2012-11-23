@@ -72,5 +72,6 @@
 #define kSlideNotification @"kSlideNotification"
 #define kUpdateMiddleContent @"kUpdateMiddleContent"
 #define kEnableInteractionNotification @"kEnableInteractionNotification"
+#define kScrollToTopNotification @"kScrollToTopNotification"
 
 #endif

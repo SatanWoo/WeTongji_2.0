@@ -117,6 +117,7 @@
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self forKeyPath:kLoginNotification];
     [[NSNotificationCenter defaultCenter] removeObserver:self forKeyPath:kSlideNotification];
+    [[NSNotificationCenter defaultCenter] removeObserver:self forKeyPath:kUpdateMiddleContent];
 }
 
 - (void)reveal:(NSNotification *)notification

@@ -27,6 +27,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *titleLabel;
 
 - (void)configureTableView;
+- (void)configureNotification;
 @end
 
 @implementation EventInfoViewController
@@ -133,18 +134,35 @@
     self.pullRefreshManagement.delegate = self;
 }
 
+- (void)scrollToTop:(NSNotification *)notification
+{
+    NSLog(@"Did scroll");
+    [self.eventTableView setContentOffset:CGPointZero animated:YES];
+}
+
+- (void)configureNotification
+{
+     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(scrollToTop:) name:kScrollToTopNotification object:nil];
+}
+
+- (void)removeNotification
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self forKeyPath:kScrollToTopNotification];
+}
+
 #pragma mark - LifeCycle
 @synthesize eventTableView;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     [self configureTableView];
+    [self configureNotification];
     [self.filterViewController selectRow:1];
 }
 
 - (void)viewDidUnload
 {
-
+    [self removeNotification];
     [self setEventTableView:nil];
     [self setTitleLabel:nil];
     [self setTitleLabel:nil];
@@ -168,7 +186,6 @@
 {
     [self.filterViewController showFilterView];
 }
-
 
 #pragma mark - UITableViewDataSource
 
