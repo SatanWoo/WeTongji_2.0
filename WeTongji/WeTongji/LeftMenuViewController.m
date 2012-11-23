@@ -197,15 +197,25 @@
     return cell;
 }
 
+- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"Will Select");
+    LeftMenuCell *cell = (LeftMenuCell *)[tableView cellForRowAtIndexPath:indexPath];
+    [cell setSelected:YES];
+
+    return indexPath;
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSLog(@"Did select");
     for (UITableViewCell *cell in [tableView visibleCells]) {
         [cell setSelected:NO];
     }
     
     LeftMenuCell *cell = (LeftMenuCell *)[tableView cellForRowAtIndexPath:indexPath];
-    [cell setSelected:YES];
-    //[cell setSelected:NO animated:YES];
+    //[cell setSelected:YES];
+    
     UIViewController *controller = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:cell.identifer];
     [self.delegate changeMiddleContent:controller];
 }

@@ -52,7 +52,7 @@
 {
     if ( !_filterString )
     {
-        //_filterString = GetActivitySortMethodCreateDesc;
+        
     }
     return _filterString;
 }
@@ -322,6 +322,8 @@ static NSInteger tempRow;
 {
     self.titleLabel.titleLabel.text = [[self.filterDict allKeys] objectAtIndex:row];
     [self setFilterString:[self.filterDict objectForKey:self.titleLabel.titleLabel.text]];
+    self.title = [[self.filterDict allKeys] objectAtIndex:row];
+    NSLog(@"Title is %@",self.title);
     [self.filterViewController hideFilterView];
 }
 
