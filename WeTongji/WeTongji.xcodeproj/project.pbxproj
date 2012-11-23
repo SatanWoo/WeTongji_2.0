@@ -369,6 +369,8 @@
 		FF710995164D1EB0008F2A06 /* Information+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = FF710994164D1EB0008F2A06 /* Information+Addition.m */; };
 		FF7109B4164D3AFD008F2A06 /* Star+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7109B3164D3AFC008F2A06 /* Star+Addition.m */; };
 		FF7109BA164D4667008F2A06 /* PullRefreshManagement.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7109B9164D4667008F2A06 /* PullRefreshManagement.m */; };
+		FFABBA28165F5E07000D6940 /* default.png in Resources */ = {isa = PBXBuildFile; fileRef = FFABBA26165F5E07000D6940 /* default.png */; };
+		FFABBA29165F5E07000D6940 /* default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFABBA27165F5E07000D6940 /* default@2x.png */; };
 		FFB12689165C6DC8005ECC2D /* AbstractCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB12688165C6DC8005ECC2D /* AbstractCollection.m */; };
 		FFB1268C165C6E00005ECC2D /* AbstractCollection+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB1268B165C6E00005ECC2D /* AbstractCollection+Addition.m */; };
 		FFB1268F165C7706005ECC2D /* MyFavoriteViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB1268E165C7706005ECC2D /* MyFavoriteViewCell.m */; };
@@ -976,6 +978,8 @@
 		FF7109B3164D3AFC008F2A06 /* Star+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Star+Addition.m"; sourceTree = "<group>"; };
 		FF7109B8164D4667008F2A06 /* PullRefreshManagement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PullRefreshManagement.h; sourceTree = "<group>"; };
 		FF7109B9164D4667008F2A06 /* PullRefreshManagement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PullRefreshManagement.m; sourceTree = "<group>"; };
+		FFABBA26165F5E07000D6940 /* default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default.png; sourceTree = "<group>"; };
+		FFABBA27165F5E07000D6940 /* default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default@2x.png"; sourceTree = "<group>"; };
 		FFB12687165C6DC8005ECC2D /* AbstractCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractCollection.h; sourceTree = "<group>"; };
 		FFB12688165C6DC8005ECC2D /* AbstractCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbstractCollection.m; sourceTree = "<group>"; };
 		FFB1268A165C6E00005ECC2D /* AbstractCollection+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AbstractCollection+Addition.h"; sourceTree = "<group>"; };
@@ -1300,6 +1304,8 @@
 		03BAB359164FD0010049DA19 /* icon & Splash */ = {
 			isa = PBXGroup;
 			children = (
+				FFABBA26165F5E07000D6940 /* default.png */,
+				FFABBA27165F5E07000D6940 /* default@2x.png */,
 				03BAB35A164FD01B0049DA19 /* Icon-57.png */,
 				03BAB35B164FD01B0049DA19 /* Icon-Small-58@2x.png.png */,
 				03BAB35C164FD01B0049DA19 /* Icon@2x.png.png */,
@@ -2785,6 +2791,8 @@
 				FFB23230165EA9E400789810 /* dot_green@2x.png in Resources */,
 				FFB23231165EA9E400789810 /* dot_red.png in Resources */,
 				FFB23232165EA9E400789810 /* dot_red@2x.png in Resources */,
+				FFABBA28165F5E07000D6940 /* default.png in Resources */,
+				FFABBA29165F5E07000D6940 /* default@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

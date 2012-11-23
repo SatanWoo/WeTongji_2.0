@@ -92,9 +92,9 @@
     Event * result = nil;
     
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    NSDate * now = [NSDate dateWithTimeIntervalSinceNow:8*60*60];
+    NSDate * now = [NSDate dateWithTimeIntervalSinceNow:0];
     [request setEntity:[NSEntityDescription entityForName:@"Event" inManagedObjectContext:context]];
-    NSPredicate *beginPredicate = [NSPredicate predicateWithFormat:@"beginTime >= %@", now];
+    NSPredicate *beginPredicate = [NSPredicate predicateWithFormat:@"endTime >= %@", now];
     [request setPredicate:[NSCompoundPredicate andPredicateWithSubpredicates:[NSArray arrayWithObjects: beginPredicate, nil]]];
     NSSortDescriptor *sort = [[NSSortDescriptor alloc] initWithKey:@"beginTime" ascending:YES];
     [request setSortDescriptors:[[NSArray alloc] initWithObjects:sort , nil]];
