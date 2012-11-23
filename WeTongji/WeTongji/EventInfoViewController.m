@@ -309,7 +309,6 @@ static NSInteger tempRow;
 	[self.pullRefreshManagement scrollViewDidScroll:scrollView];
 }
 
-
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerat
 {
     [self.pullRefreshManagement scrollViewDidEndDragging:scrollView willDecelerate:decelerat];
@@ -323,7 +322,6 @@ static NSInteger tempRow;
     self.titleLabel.titleLabel.text = [[self.filterDict allKeys] objectAtIndex:row];
     [self setFilterString:[self.filterDict objectForKey:self.titleLabel.titleLabel.text]];
     self.title = [[self.filterDict allKeys] objectAtIndex:row];
-    NSLog(@"Title is %@",self.title);
     [self.filterViewController hideFilterView];
 }
 

@@ -23,6 +23,7 @@
 
 @property (nonatomic ,strong) WUKenBurnViewHeader *kenView;
 @property (nonatomic ,readonly) BOOL isLogIn;
+@property (nonatomic ,strong) UIImageView *mainImageView;
 
 - (void)configureBottomBarButton;
 - (void)configureTableView;
@@ -38,6 +39,7 @@
 
 @synthesize identifierArray = _identifierArray;
 @synthesize kenView = _kenView;
+@synthesize mainImageView = _mainImageView;
 #pragma mark - IBAction
 - (IBAction)triggerInfo:(UIButton *)sender
 {
@@ -56,9 +58,6 @@
 {
     self.menuTableView.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"leftMenuBg.png"]];
     [self.menuTableView registerNib:[UINib nibWithNibName:@"LeftMenuCell" bundle:nil] forCellReuseIdentifier:kLeftMenuCell];
-    
-    [self.view addSubview:self.kenView];
-    self.menuTableView.contentInset = UIEdgeInsetsMake(self.kenView.frame.size.height, 0, 0, 0);
 }
 
 - (void)configureBottomBarButton
@@ -79,6 +78,45 @@
     LeftMenuCellModel * model = self.identifierArray[0];
     UIViewController *controller = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:model.identifier];
     [self.delegate changeMiddleContent:controller];
+}
+
+- (void)configureHeader
+{
+    self.mainImageView = [[UIImageView alloc]init];
+    NSArray *myImages = [NSArray arrayWithObjects:
+                          [UIImage imageNamed:@"1.png"],
+                          [UIImage imageNamed:@"2.png"],
+                          [UIImage imageNamed:@"3.png"],
+                          [UIImage imageNamed:@"4.png"],
+                          [UIImage imageNamed:@"5.png"],
+                          [UIImage imageNamed:@"6.png"],
+                          [UIImage imageNamed:@"7.png"],
+                          [UIImage imageNamed:@"8.png"],
+                          [UIImage imageNamed:@"9.png"],
+                          [UIImage imageNamed:@"10.png"],
+                          [UIImage imageNamed:@"11.png"],
+                          [UIImage imageNamed:@"12.png"],
+                          [UIImage imageNamed:@"13.png"],
+                          nil];
+
+    [NSTimer scheduledTimerWithTimeInterval:10.0f target:self selector:@selector(crossfade) userInfo:nil repeats:YES];
+    [self.mainImageView  setFrame:CGRectMake(0,0,270,120)];
+    
+    self.mainImageView.animationImages = myImages;
+    self.mainImageView.animationDuration = 60;
+    self.mainImageView.animationRepeatCount = 0;
+    [self.mainImageView startAnimating];
+    
+    [self.view addSubview:self.mainImageView];
+     self.menuTableView.contentInset = UIEdgeInsetsMake(self.mainImageView.frame.size.height, 0, 0, 0);
+}
+
+- (void)crossfade {
+    [UIView animateWithDuration:0.5 delay:0.0 options:UIViewAnimationOptionCurveLinear animations:^{
+        self.mainImageView.alpha = !self.mainImageView.alpha;
+    }completion:^(BOOL done){
+        
+    }];
 }
 
 #pragma mark - Getter & Setter
@@ -117,44 +155,12 @@
     [self.menuTableView reloadData];
 }
 
-- (WUKenBurnViewHeader *)kenView
-{
-    if (_kenView == nil) {
-        
-        _kenView = [[[NSBundle mainBundle] loadNibNamed:@"WUKenBurnViewHeader" owner:self options:nil] objectAtIndex:0];
-
-        _kenView.kenView.layer.borderWidth = 1;
-        _kenView.kenView.layer.borderColor = [UIColor blackColor].CGColor;
-        
-        NSArray *myImages = [NSArray arrayWithObjects:
-                             [UIImage imageNamed:@"1.png"],
-                             [UIImage imageNamed:@"2.png"],
-                             [UIImage imageNamed:@"3.png"],
-                             [UIImage imageNamed:@"4.png"],
-                             [UIImage imageNamed:@"5.png"],
-                             [UIImage imageNamed:@"6.png"],
-                             [UIImage imageNamed:@"7.png"],
-                             [UIImage imageNamed:@"8.png"],
-                             [UIImage imageNamed:@"9.png"],
-                             [UIImage imageNamed:@"10.png"],
-                             [UIImage imageNamed:@"11.png"],
-                             [UIImage imageNamed:@"12.png"],
-                             [UIImage imageNamed:@"13.png"],
-                              nil];
-        
-        [_kenView.kenView animateWithImages:myImages
-                     transitionDuration:15
-                                   loop:YES
-                            isLandscape:YES];
-    }
-    return _kenView;
-}
-
 #pragma mark - Lifecycle
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     [self configureTableView];
+    [self configureHeader];
     [self configureBottomBarButton];
     [self configureNotification];
 }
@@ -209,12 +215,12 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSLog(@"Did select");
-    for (UITableViewCell *cell in [tableView visibleCells]) {
-        [cell setSelected:NO];
-    }
+//    for (UITableViewCell *cell in [tableView visibleCells]) {
+//        [cell setSelected:NO];
+//    }
     
     LeftMenuCell *cell = (LeftMenuCell *)[tableView cellForRowAtIndexPath:indexPath];
-    //[cell setSelected:YES];
+    [cell setSelected:NO];
     
     UIViewController *controller = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:cell.identifer];
     [self.delegate changeMiddleContent:controller];
