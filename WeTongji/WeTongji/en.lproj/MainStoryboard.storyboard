@@ -1626,7 +1626,7 @@
             </objects>
             <point key="canvasLocation" x="-2403" y="1675"/>
         </scene>
-        <!--School Preference View Controller-->
+        <!--School Preference View Controller - 校园资讯偏好设置-->
         <scene sceneID="bDW-9L-q6W">
             <objects>
                 <viewController id="j86-im-8te" customClass="SchoolPreferenceViewController" sceneMemberID="viewController">
@@ -1637,16 +1637,16 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="C3b-Mv-Kuf">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="j86-im-8te" id="bQ3-L6-lFI"/>
                                     <outlet property="delegate" destination="j86-im-8te" id="ARR-Tz-8Zt"/>
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.92357336960000003" green="0.92357336960000003" blue="0.92357336960000003" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="H0a-zq-Int"/>
+                    <navigationItem key="navigationItem" title="校园资讯偏好设置" id="H0a-zq-Int"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="preferenceTableView" destination="C3b-Mv-Kuf" id="mmQ-nh-UVp"/>
@@ -1939,7 +1939,7 @@
                 <relationship kind="outlet" name="newsTableView" candidateClass="UITableView"/>
             </relationships>
         </class>
-        <class className="SchoolPreferenceViewController" superclassName="UIViewController">
+        <class className="SchoolPreferenceViewController" superclassName="MiddleAbstractSecondViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SchoolPreferenceViewController.h"/>
             <relationships>
                 <relationship kind="outlet" name="preferenceTableView" candidateClass="UITableView"/>

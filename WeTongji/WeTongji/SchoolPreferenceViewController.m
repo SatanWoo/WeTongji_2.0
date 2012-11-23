@@ -7,6 +7,7 @@
 //
 
 #import "SchoolPreferenceViewController.h"
+#import "AboutHeaderView.h"
 #define kUserDefaultSelection @"kUserDefaultSelection"
 
 @interface SchoolPreferenceViewController () <UITableViewDataSource, UITableViewDelegate>
@@ -17,8 +18,6 @@
 - (void)registerUserDefault
 {
     [[NSUserDefaults standardUserDefaults] registerDefaults:[NSDictionary dictionaryWithObject:[NSNumber numberWithInt:0] forKey:kUserDefaultSelection]];
-    
-    NSInteger selectedRow = [[NSUserDefaults standardUserDefaults] integerForKey:kUserDefaultSelection];
 }
 
 - (void)viewDidLoad
@@ -70,6 +69,19 @@
     }
     
     return cell;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    AboutHeaderView *headerView = [[[NSBundle mainBundle] loadNibNamed:@"AboutHeaderView" owner:self options:nil] objectAtIndex:0];
+    headerView.name.text = @"校园资讯偏好";
+
+    return headerView;
+}
+
+- (float)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 45;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
