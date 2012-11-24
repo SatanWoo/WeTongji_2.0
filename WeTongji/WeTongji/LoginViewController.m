@@ -122,6 +122,7 @@
         self.progress.labelText = @"登陆失败";
         self.progress.detailsLabelText = [[error userInfo] objectForKey:@"errorDesc"];
         self.progress.mode = MBProgressHUDModeText;
+        self.closeBtn.hidden = YES;
         [self.progress hide:YES afterDelay:1];
     }];
     [request login:self.NOTextField.text password:self.passwordTextField.text];
