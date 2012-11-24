@@ -320,7 +320,7 @@ static NSInteger tempRow;
 -(void) filterViewSelectedRow:(NSInteger)row
 {
     self.titleLabel.titleLabel.text = [[self.filterDict allKeys] objectAtIndex:row];
-    [self setFilterString:[self.filterDict objectForKey:self.titleLabel.titleLabel.text]];
+    [self setFilterString:[self.filterDict objectForKey:[[self.filterDict allKeys] objectAtIndex:row]]];
     self.title = [[self.filterDict allKeys] objectAtIndex:row];
     [self.filterViewController hideFilterView];
 }
