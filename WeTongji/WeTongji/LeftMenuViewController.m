@@ -108,6 +108,9 @@
                           [UIImage imageNamed:@"12.png"],
                           [UIImage imageNamed:@"13.png"],
                           nil];
+    
+    self.topImageView.image = [self.imageArray objectAtIndex:0];
+    self.bottomImageView.image = [self.imageArray objectAtIndex:1];
 
     [NSTimer scheduledTimerWithTimeInterval:3.0f target:self selector:@selector(crossfade) userInfo:nil repeats:YES];
         
@@ -117,26 +120,38 @@
 - (void)crossfade {
     static int topIndex = 0;
     static int prevTopIndex = 1;
-    if(topIndex %2 == 0){
-        [UIView animateWithDuration:3.0 animations:^
-         {
-             self.topImageView.alpha = 0.0;
-         }];
-        self.topImageView.image = [self.imageArray objectAtIndex:prevTopIndex];
-        self.bottomImageView.image = [self.imageArray objectAtIndex:topIndex];
+    static int round = 0;
+    if(round % 2 == 0){
+        
+        [UIView animateWithDuration:3.0f animations:^{
+            self.topImageView.alpha = 0.0;
+        } completion:^(BOOL finished) {
+            if (finished) {
+                topIndex += 2;
+                if (topIndex > [self.imageArray count] - 1) {
+                    topIndex = 0;
+                }
+                self.topImageView.image = [self.imageArray objectAtIndex:topIndex];
+                self.bottomImageView.image = [self.imageArray objectAtIndex:prevTopIndex];
+                round += 1;
+            }
+        }];
+       
     }else{
-        [UIView animateWithDuration:3.0 animations:^
-         {
-             self.topImageView.alpha = 1.0;
-         }];
-        self.topImageView.image = [self.imageArray objectAtIndex:topIndex];
-        self.bottomImageView.image = [self.imageArray objectAtIndex:prevTopIndex];
-    }
-    prevTopIndex = topIndex;
-    if(topIndex == [self.imageArray count] - 1){
-        topIndex = 0;
-    }else{
-        topIndex++;
+        [UIView animateWithDuration:3.0f animations:^{
+            self.topImageView.alpha = 1.0;
+        } completion:^(BOOL finished) {
+            if (finished) {
+                prevTopIndex += 2;
+                if (prevTopIndex > [self.imageArray count] - 1) {
+                    prevTopIndex = 1;
+                }
+                self.topImageView.image = [self.imageArray objectAtIndex:topIndex];
+                self.bottomImageView.image = [self.imageArray objectAtIndex:prevTopIndex];
+                
+                round -= 1;
+            }
+        }];
     }
 }
 
