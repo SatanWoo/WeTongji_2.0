@@ -17,6 +17,7 @@
 #import "Information+Addition.h"
 #import "Star+Addition.h"
 #import "Exam+Addition.h"
+#import "Channel+Addition.h"
 #import <WeTongjiSDK/WeTongjiSDK.h>
 
 
@@ -132,7 +133,7 @@
        if (self.isLogIn) return 1;
        else return 0;
     } else {
-        return 4;
+        return 3;
     }
 }
 
@@ -143,8 +144,8 @@
         cell =  [[[NSBundle mainBundle] loadNibNamed:@"SettingNoImageCell" owner:self options:nil] objectAtIndex:0];
         cell.textLabel.font = [UIFont fontWithName:@"Heiti SC" size:16];
     }
-    if (indexPath.section == 1 && indexPath.row == 1) {
-        cell.swtich.hidden = NO;
+    if (indexPath.section == 1 && indexPath.row == 3) {
+        cell.swtich.hidden = YES;
     } else {
         cell.swtich.hidden = YES;
     }
@@ -153,13 +154,13 @@
         cell.textLabel.text = @"更改密码";
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     } else {
-        if (indexPath.row == 1) {
+        if (indexPath.row == 3) {
             cell.name.text = @"仅在Wifi下加载图片";
             cell.accessoryType = UITableViewCellAccessoryNone;
-        } else if (indexPath.row == 2) {
+        } else if (indexPath.row == 1) {
             cell.name.text = @"检测新版本";
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        } else if (indexPath.row == 3){
+        } else if (indexPath.row == 2){
             cell.name.text = @"清除缓存";
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         } else {
@@ -193,7 +194,28 @@
         [self performSegueWithIdentifier:kUpdatePasswordViewControllerSegue sender:self];
     } else if (indexPath.section == 1 && indexPath.row == 0) {
         [self performSegueWithIdentifier:kSchoolPreferenceViewControllerSegue sender:self];
+    } else if (indexPath.section == 1 && indexPath.row == 2) {
+        UIAlertView *  alert = [[UIAlertView alloc]
+                 initWithTitle:@"确定清除缓存？" message:@"清除后应用将还原到第一次开启的界面" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+        [alert show];
     }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if ( buttonIndex == 0 ) return ;
+    [User userClearinManagedObjectContext:self.managedObjectContext];
+    [Event clearAllEventInManagedObjectContext:self.managedObjectContext];
+    [Information clearDataInManagedObjectContext:self.managedObjectContext];
+    [Star clearDataInManagedObjectContext:self.managedObjectContext];
+    [Exam clearDataInManagedObjectContext:self.managedObjectContext];
+    [Course clearDataInManagedObjectContext:self.managedObjectContext];
+    [Channel clearAllChannelsInManagedObjectContext:self.managedObjectContext];
+    [NSUserDefaults setCurrentSemesterBeginTime:[NSDate dateWithTimeIntervalSinceNow:0] endTime:[NSDate dateWithTimeIntervalSinceNow:0]];
+    [NSUserDefaults setCurrentUserID:@"" session:@""];
+    [[NSNotificationCenter defaultCenter] postNotificationName:kLogoutNotification object:self];
+    [self adjust];
+}
+
 @end

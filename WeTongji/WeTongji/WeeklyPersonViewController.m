@@ -169,7 +169,9 @@ NSInteger tempRow;
     WTClient *client = [WTClient sharedClient];
     WTRequest * request = [WTRequest requestWithSuccessBlock:^(id responseData)
                            {
+                            #ifdef DEBUG
                                NSLog(@"%@",responseData);
+                            #endif
                                if(self.nextPage == 0)
                                    [self clearData];
                                NSArray *array = [responseData objectForKey:@"People"];
@@ -182,7 +184,7 @@ NSInteger tempRow;
                                if (self.nextPage == 0) [self.pullRefreshManagement setNoMoreData:YES];
                                [self.pullRefreshManagement endLoading];
                            }
-                                                failureBlock:^(NSError * error)
+                            failureBlock:^(NSError * error)
                            {
                                [self.pullRefreshManagement endLoading];
                            }];

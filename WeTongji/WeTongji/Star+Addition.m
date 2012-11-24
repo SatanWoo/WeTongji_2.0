@@ -32,7 +32,7 @@
     result.like = [NSNumber numberWithInt:[[dict objectForKey:@"Like"] intValue]];
     result.count = [NSString stringWithFormat:@"%@",[dict objectForKey:@"NO"]];
     result.read = [NSNumber numberWithInt:[[dict objectForKey:@"Like"] intValue]];
-    result.title = [NSString stringWithFormat:@"%@",[dict objectForKey:@"Title"]];
+    result.title = [NSString stringWithFormat:@"%@",[dict objectForKey:@"Name"]];
     result.words = [NSString stringWithFormat:@"%@",[dict objectForKey:@"Words"]];
     result.collectionSummary = result.words;
     result.collectionTitle = result.title;
