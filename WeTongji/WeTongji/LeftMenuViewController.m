@@ -221,27 +221,15 @@
     LeftMenuCellModel *model = (LeftMenuCellModel *)[self.identifierArray objectAtIndex:indexPath.row];
     cell.title.text = model.cellName;
     cell.identifer = model.identifier;
+    cell.selectedBackgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"cell_sl.png"]];
     return cell;
 }
 
-- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    NSLog(@"Will Select");
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{    
     LeftMenuCell *cell = (LeftMenuCell *)[tableView cellForRowAtIndexPath:indexPath];
     [cell setSelected:YES];
-
-    return indexPath;
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    NSLog(@"Did select");
-//    for (UITableViewCell *cell in [tableView visibleCells]) {
-//        [cell setSelected:NO];
-//    }
-    
-    LeftMenuCell *cell = (LeftMenuCell *)[tableView cellForRowAtIndexPath:indexPath];
-    [cell setSelected:NO];
+    //[tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     UIViewController *controller = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:cell.identifer];
     [self.delegate changeMiddleContent:controller];
