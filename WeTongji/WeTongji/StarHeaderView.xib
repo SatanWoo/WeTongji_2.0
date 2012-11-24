@@ -2,13 +2,13 @@
 <archive type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="8.00">
 	<data>
 		<int key="IBDocument.SystemTarget">1536</int>
-		<string key="IBDocument.SystemVersion">12C60</string>
-		<string key="IBDocument.InterfaceBuilderVersion">2844</string>
-		<string key="IBDocument.AppKitVersion">1187.34</string>
-		<string key="IBDocument.HIToolboxVersion">625.00</string>
+		<string key="IBDocument.SystemVersion">11G63</string>
+		<string key="IBDocument.InterfaceBuilderVersion">2843</string>
+		<string key="IBDocument.AppKitVersion">1138.51</string>
+		<string key="IBDocument.HIToolboxVersion">569.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-			<string key="NS.object.0">1930</string>
+			<string key="NS.object.0">1929</string>
 		</object>
 		<array key="IBDocument.IntegratedClassDependencies">
 			<string>IBProxyObject</string>
@@ -72,7 +72,7 @@
 						<reference key="NSNextResponder" ref="1058080063"/>
 						<int key="NSvFlags">1280</int>
 						<object class="NSPSMatrix" key="NSFrameMatrix"/>
-						<string key="NSFrame">{{112, 34}, {42, 21}}</string>
+						<string key="NSFrame">{{112, 36}, {42, 21}}</string>
 						<reference key="NSSuperview" ref="1058080063"/>
 						<reference key="NSNextKeyView" ref="79878722"/>
 						<bool key="IBUIOpaque">NO</bool>
@@ -102,7 +102,7 @@
 						<reference key="NSNextResponder" ref="1058080063"/>
 						<int key="NSvFlags">1280</int>
 						<object class="NSPSMatrix" key="NSFrameMatrix"/>
-						<string key="NSFrame">{{111, 68}, {184, 21}}</string>
+						<string key="NSFrame">{{111, 72}, {184, 21}}</string>
 						<reference key="NSSuperview" ref="1058080063"/>
 						<reference key="NSNextKeyView" ref="861728725"/>
 						<bool key="IBUIOpaque">NO</bool>
@@ -174,7 +174,7 @@
 										<reference key="NSNextResponder" ref="105560766"/>
 										<int key="NSvFlags">1280</int>
 										<object class="NSPSMatrix" key="NSFrameMatrix"/>
-										<string key="NSFrame">{{10, 12}, {15, 15}}</string>
+										<string key="NSFrame">{{10, 10}, {15, 15}}</string>
 										<reference key="NSSuperview" ref="105560766"/>
 										<reference key="NSNextKeyView" ref="732632139"/>
 										<bool key="IBUIOpaque">NO</bool>
@@ -214,7 +214,7 @@
 										<reference key="NSNextResponder" ref="105560766"/>
 										<int key="NSvFlags">1280</int>
 										<object class="NSPSMatrix" key="NSFrameMatrix"/>
-										<string key="NSFrame">{{32, 7}, {23, 21}}</string>
+										<string key="NSFrame">{{40, 7}, {23, 21}}</string>
 										<reference key="NSSuperview" ref="105560766"/>
 										<reference key="NSNextKeyView" ref="698377396"/>
 										<bool key="IBUIOpaque">NO</bool>
@@ -235,7 +235,7 @@
 									</object>
 								</array>
 								<object class="NSPSMatrix" key="NSFrameMatrix"/>
-								<string key="NSFrame">{{11, 7}, {55, 36}}</string>
+								<string key="NSFrame">{{10, 7}, {70, 36}}</string>
 								<reference key="NSSuperview" ref="861728725"/>
 								<reference key="NSNextKeyView" ref="464048014"/>
 								<object class="NSColor" key="IBUIBackgroundColor">
@@ -252,7 +252,7 @@
 										<reference key="NSNextResponder" ref="698377396"/>
 										<int key="NSvFlags">1280</int>
 										<object class="NSPSMatrix" key="NSFrameMatrix"/>
-										<string key="NSFrame">{{10, 12}, {15, 15}}</string>
+										<string key="NSFrame">{{13, 10}, {15, 15}}</string>
 										<reference key="NSSuperview" ref="698377396"/>
 										<reference key="NSNextKeyView" ref="302231435"/>
 										<bool key="IBUIOpaque">NO</bool>
@@ -279,8 +279,9 @@
 										<reference key="NSNextResponder" ref="698377396"/>
 										<int key="NSvFlags">1280</int>
 										<object class="NSPSMatrix" key="NSFrameMatrix"/>
-										<string key="NSFrame">{{28, 7}, {28, 21}}</string>
+										<string key="NSFrame">{{41, 7}, {28, 21}}</string>
 										<reference key="NSSuperview" ref="698377396"/>
+										<reference key="NSNextKeyView"/>
 										<bool key="IBUIOpaque">NO</bool>
 										<bool key="IBUIClipsSubviews">YES</bool>
 										<int key="IBUIContentMode">7</int>
@@ -299,7 +300,7 @@
 									</object>
 								</array>
 								<object class="NSPSMatrix" key="NSFrameMatrix"/>
-								<string key="NSFrame">{{74, 7}, {56, 36}}</string>
+								<string key="NSFrame">{{90, 7}, {70, 36}}</string>
 								<reference key="NSSuperview" ref="861728725"/>
 								<reference key="NSNextKeyView" ref="412002193"/>
 								<object class="NSColor" key="IBUIBackgroundColor">
@@ -309,7 +310,7 @@
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 							</object>
 						</array>
-						<string key="NSFrame">{{0, 107}, {140, 50}}</string>
+						<string key="NSFrame">{{0, 107}, {170, 50}}</string>
 						<reference key="NSSuperview" ref="1058080063"/>
 						<reference key="NSNextKeyView" ref="105560766"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
@@ -581,6 +582,6 @@
 			<string key="favourite">{16, 16}</string>
 			<string key="like">{16, 16}</string>
 		</dictionary>
-		<string key="IBCocoaTouchPluginVersion">1930</string>
+		<string key="IBCocoaTouchPluginVersion">1929</string>
 	</data>
 </archive>
