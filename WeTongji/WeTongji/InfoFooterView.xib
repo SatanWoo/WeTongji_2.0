@@ -38,7 +38,7 @@
 					<object class="IBUILabel" id="675385844">
 						<reference key="NSNextResponder" ref="552518929"/>
 						<int key="NSvFlags">256</int>
-						<string key="NSFrame">{{131, 9}, {38, 21}}</string>
+						<string key="NSFrame">{{131, 7}, {38, 21}}</string>
 						<reference key="NSSuperview" ref="552518929"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="67629557"/>
@@ -58,7 +58,7 @@
 							<int key="NSColorSpace">1</int>
 							<bytes key="NSRGB">MC45ODg2MzYzNjM2IDEgMQA</bytes>
 						</object>
-						<string key="IBUIShadowOffset">{0, 2}</string>
+						<string key="IBUIShadowOffset">{0, 1}</string>
 						<int key="IBUIBaselineAdjustment">0</int>
 						<object class="IBUIFontDescription" key="IBUIFontDescription" id="925106396">
 							<int key="type">1</int>
@@ -74,10 +74,9 @@
 					<object class="IBUILabel" id="67629557">
 						<reference key="NSNextResponder" ref="552518929"/>
 						<int key="NSvFlags">256</int>
-						<string key="NSFrame">{{105, 32}, {90, 21}}</string>
+						<string key="NSFrame">{{105, 30}, {90, 21}}</string>
 						<reference key="NSSuperview" ref="552518929"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -94,7 +93,7 @@
 							<int key="NSColorSpace">1</int>
 							<bytes key="NSRGB">MC45ODg2MzYzNjM2IDEgMQA</bytes>
 						</object>
-						<string key="IBUIShadowOffset">{0, 2}</string>
+						<string key="IBUIShadowOffset">{0, 1}</string>
 						<int key="IBUIBaselineAdjustment">0</int>
 						<reference key="IBUIFontDescription" ref="925106396"/>
 						<reference key="IBUIFont" ref="768789297"/>
