@@ -110,7 +110,7 @@
     if (section == 0) {
         headerView.name.text = @"应用信息";
     } else {
-        headerView.name.text = @"团队";
+        headerView.name.text = @"关注我们";
     }
     return headerView;
 }
