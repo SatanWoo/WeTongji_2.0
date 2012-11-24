@@ -109,7 +109,7 @@
                           [UIImage imageNamed:@"13.png"],
                           nil];
 
-    [NSTimer scheduledTimerWithTimeInterval:5.0f target:self selector:@selector(crossfade) userInfo:nil repeats:YES];
+    [NSTimer scheduledTimerWithTimeInterval:3.0f target:self selector:@selector(crossfade) userInfo:nil repeats:YES];
         
     self.menuTableView.contentInset = UIEdgeInsetsMake(self.topImageView.frame.size.height, 0, 0, 0);
 }
@@ -118,14 +118,14 @@
     static int topIndex = 0;
     static int prevTopIndex = 1;
     if(topIndex %2 == 0){
-        [UIView animateWithDuration:5.0 animations:^
+        [UIView animateWithDuration:3.0 animations:^
          {
              self.topImageView.alpha = 0.0;
          }];
         self.topImageView.image = [self.imageArray objectAtIndex:prevTopIndex];
         self.bottomImageView.image = [self.imageArray objectAtIndex:topIndex];
     }else{
-        [UIView animateWithDuration:5.0 animations:^
+        [UIView animateWithDuration:3.0 animations:^
          {
              self.topImageView.alpha = 1.0;
          }];
@@ -226,10 +226,13 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{    
+{
+    for (UITableViewCell *cell in [tableView visibleCells]) {
+        [cell setSelected:NO];
+    }
+    
     LeftMenuCell *cell = (LeftMenuCell *)[tableView cellForRowAtIndexPath:indexPath];
     [cell setSelected:YES];
-    //[tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     UIViewController *controller = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:cell.identifer];
     [self.delegate changeMiddleContent:controller];

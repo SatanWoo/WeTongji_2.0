@@ -41,6 +41,7 @@
 
 - (void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated
 {
+    self.title.textColor = highlighted ? [UIColor whiteColor] : [UIColor grayColor];
         if (highlighted) {
             UIImageView *image = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"cell_sl"]];
             image.frame = CGRectMake(0, 0, image.bounds.size.width, image.bounds.size.height);
