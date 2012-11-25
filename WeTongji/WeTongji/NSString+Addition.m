@@ -25,7 +25,7 @@
 
 + (NSString *)yearMonthDayConvertFromDate:(NSDate *)date {
     NSDateFormatter *form = [[NSDateFormatter alloc] init];
-    [form setDateFormat:@"yyyy年MM月dd日"];
+    [form setDateFormat:@"yyyy年M月d日"];
     NSString *result = [form stringFromDate:date];
     return result;
 }
@@ -175,18 +175,20 @@
 
 + (NSString *) stringWithHowLongAgo:(NSDate *) date;
 {
-    NSString * result = @"";
-    NSTimeInterval interval = -[date timeIntervalSinceNow];
+    NSString * result =@"";
+    NSInteger interval = -[date timeIntervalSinceNow];
     NSInteger minute = interval / (60);
-    NSInteger hour   = interval / (60 * 60);
-    NSInteger day    = interval / (60 * 60 * 24);
-    NSInteger mouth  = interval / (60 * 60 * 24 * 30);
     NSInteger year   = interval / (60 * 60 * 24 * 30 * 12);
+    NSDate * today = [NSDate dateWithTimeIntervalSinceNow:0];
+    interval = [today timeIntervalSince1970] / (60 * 60 * 24);
+    NSDateFormatter *form = [[NSDateFormatter alloc] init];
     if ( year ) return [result stringByAppendingFormat:@"%d 年前",year];
-    if ( mouth ) return [result stringByAppendingFormat:@"%d 月前",mouth];
-    if ( day ) return [result stringByAppendingFormat:@"%d 天前",day];
-    if ( hour ) return [result stringByAppendingFormat:@"%d 小时前",hour];
-    if ( minute ) return [result stringByAppendingFormat:@"%d 分钟前",minute];
+    if ( 1 < minute && minute < 60 ) return [result stringByAppendingFormat:@"%d 分钟前",minute];
+    [form setDateFormat:@"今天HH:mm"];
+    today = [NSDate dateWithTimeIntervalSince1970:interval*(60 * 60 * 24)];
+    if ( [date timeIntervalSinceDate:today] > 0 ) return [form stringFromDate:date];
+    [form setDateFormat:@"M月dd号"];
+    if ( [date timeIntervalSinceDate:today] <= 0 ) return [form stringFromDate:date];
     return @"刚刚更新";
 }
 
