@@ -119,11 +119,11 @@
         [self.progress hide:YES afterDelay:1];
     }failureBlock:^(NSError * error)
     {
-        self.progress.labelText = @"登陆失败";
-        self.progress.detailsLabelText = [[error userInfo] objectForKey:@"errorDesc"];
-        self.progress.mode = MBProgressHUDModeText;
+        [self.progress hide:YES];
+        UIAlertView *  alert = [[UIAlertView alloc]
+                                initWithTitle:@"登陆失败" message:[[error userInfo] objectForKey:@"errorDesc"] delegate:self cancelButtonTitle:@"我知道了" otherButtonTitles: nil];
+        [alert show];
         self.closeBtn.hidden = YES;
-        [self.progress hide:YES afterDelay:1];
     }];
     [request login:self.NOTextField.text password:self.passwordTextField.text];
     [client enqueueRequest:request];

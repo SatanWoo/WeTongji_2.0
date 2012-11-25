@@ -8,22 +8,18 @@
 
 #import "SchoolPreferenceViewController.h"
 #import "AboutHeaderView.h"
+#import "NSUserDefaults+Settings.h"
+
 #define kUserDefaultSelection @"kUserDefaultSelection"
 
 @interface SchoolPreferenceViewController () <UITableViewDataSource, UITableViewDelegate>
-- (void)registerUserDefault;
 @end
 
 @implementation SchoolPreferenceViewController
-- (void)registerUserDefault
-{
-    [[NSUserDefaults standardUserDefaults] registerDefaults:[NSDictionary dictionaryWithObject:[NSNumber numberWithInt:0] forKey:kUserDefaultSelection]];
-}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self registerUserDefault];
 	// Do any additional setup after loading the view.
 }
 
@@ -54,8 +50,12 @@
         cell.accessoryType = UITableViewCellAccessoryNone;
     }
     
-    if (indexPath.row == [[NSUserDefaults standardUserDefaults] integerForKey:kUserDefaultSelection]) {
+    if (indexPath.row == [NSUserDefaults getInformationDefaultType]) {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    }
+    else
+    {
+        cell.accessoryType = UITableViewCellAccessoryNone;
     }
     
     if (indexPath.row == 0) {
@@ -86,15 +86,23 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    for (UITableViewCell *cell in [tableView visibleCells]) {
-        cell.accessoryType = UITableViewCellAccessoryNone;
+    switch (indexPath.row) {
+        case 0:
+            [NSUserDefaults setInformationDefaultType:InformationDefaultTypeSchool];
+            break;
+        case 1:
+            [NSUserDefaults setInformationDefaultType:InformationDefaultTypeClub];
+            break;
+        case 2:
+            [NSUserDefaults setInformationDefaultType:InformationDefaultTypeTongji];
+            break;
+        case 3:
+            [NSUserDefaults setInformationDefaultType:InformationDefaultTypeRecommend];
+            break;
+        default:
+            break;
     }
-    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-    cell.accessoryType = UITableViewCellAccessoryCheckmark;
-    
-    [[NSUserDefaults standardUserDefaults] setInteger:indexPath.row forKey:kUserDefaultSelection];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-    
+    [tableView reloadData];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 

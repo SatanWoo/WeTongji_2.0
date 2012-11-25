@@ -17,6 +17,7 @@
 #import <WeTongjiSDK/WeTongjiSDK.h>
 #import "PullRefreshManagement.h"
 #import "SchoolNewsViewController.h"
+#import "NSUserDefaults+Settings.h"
 
 #define kWidth self.scrollView.frame.size.width
 #define kHeight self.scrollView.frame.size.height
@@ -317,6 +318,27 @@ typedef enum {
     self.actionRefreshManagement.delegate = self;
 }
 
+- (void)configureDifaultSelection
+{
+    InformationDefaultType type = [NSUserDefaults getInformationDefaultType];
+    switch (type) {
+        case InformationDefaultTypeSchool:
+            [self pageChange:self.schoolInfoButton];
+            break;
+        case InformationDefaultTypeClub:
+            [self pageChange:self.groupInfoButton];
+            break;
+        case InformationDefaultTypeTongji:
+            [self pageChange:self.actionButton];
+            break;
+        case InformationDefaultTypeRecommend:
+            [self pageChange:self.recommendButton];
+            break;
+        default:
+            break;
+    }
+}
+
 - (void)pageChange:(UIButton *)clickButton
 {
     __block int index = 0;
@@ -378,7 +400,7 @@ typedef enum {
     [self configureScrollView];
     [self configureTabBar];
     [self configureTableView];
-    [self pageChange:self.schoolInfoButton];
+    [self configureDifaultSelection];
 }
 
 - (void)viewWillAppear:(BOOL)animated
