@@ -131,7 +131,7 @@
 {
     if (section == 0) {
        if (self.isLogIn) return 1;
-       else return 0;
+       else return 1;
     } else {
         return 3;
     }
@@ -151,8 +151,16 @@
     }
         
     if (indexPath.section == 0) {
-        cell.textLabel.text = @"更改密码";
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        if ( self.isLogIn )
+        {
+            cell.textLabel.text = @"更改密码";
+            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        }
+        else
+        {
+            cell.textLabel.text = @"登陆";
+            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        }
     } else {
         if (indexPath.row == 3) {
             cell.name.text = @"仅在Wifi下加载图片";
@@ -191,7 +199,13 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section == 0) {
-        [self performSegueWithIdentifier:kUpdatePasswordViewControllerSegue sender:self];
+        if (self.isLogIn)
+            [self performSegueWithIdentifier:kUpdatePasswordViewControllerSegue sender:self];
+        else
+        {
+            [self dismissModalViewControllerAnimated:YES];
+            [[NSNotificationCenter defaultCenter] postNotificationName:kLogoutNotification object:self];
+        }
     } else if (indexPath.section == 1 && indexPath.row == 0) {
         [self performSegueWithIdentifier:kSchoolPreferenceViewControllerSegue sender:self];
     } else if (indexPath.section == 1 && indexPath.row == 2) {
