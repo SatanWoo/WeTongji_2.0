@@ -39,6 +39,7 @@
     CGRect frame = self.drawView.frame;
     frame.origin.y = -frame.size.height / 4 - offset;
     self.drawView.frame = frame;
+    [self.drawView setNeedsDisplay];
 }
 
 - (void)setDrawViewVerticalOffset:(CGFloat)offset {

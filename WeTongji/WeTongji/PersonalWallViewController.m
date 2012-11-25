@@ -50,6 +50,7 @@
 
 - (void) configureTodayRecommend
 {
+    self.recommandEvent = nil;
     self.recommendTitle.text = self.recommandEvent.title;
     [self.pageViewController clearPicture];
     UIImageView * imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"scaleview.png"]];

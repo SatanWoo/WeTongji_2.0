@@ -156,6 +156,7 @@
         
         if([self getTodayRowInRightTableView] == indexPath.row)
             rightCell.weekDayLabel.textColor = [UIColor colorWithRed:0 green:0.37f blue:0.66f alpha:1];
+        else rightCell.weekDayLabel.textColor = [UIColor colorWithRed:0 green:0.0f blue:0.0f alpha:1];
         
         [rightCell setDrawViewVerticalOffset:self.leftTableView.contentOffset.y  row:indexPath.row dataArray:[self getRightCellDataArrayAtIndexPath:indexPath]];
     }

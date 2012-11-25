@@ -63,7 +63,7 @@
     CGContextMoveToPoint(context, 85.0, 0);
     CGContextAddLineToPoint(context, 85.0, self.frame.size.height); 
     if(self.row == 0) { 
-        CGContextMoveToPoint(context, 0, self.frame.size.height);
+        CGContextMoveToPoint(context, 0, 0);
         CGContextAddLineToPoint(context, 0, self.frame.size.height);
     }
     CGContextStrokePath(context);

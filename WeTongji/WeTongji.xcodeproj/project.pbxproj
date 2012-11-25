@@ -544,11 +544,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		5C1D435E1661BDCB00D259A2 /* PBXContainerItemProxy */ = {
+		FFA3715B166215DB006958F3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 5C1D43571661BDCB00D259A2 /* WeTongjiSDK.xcodeproj */;
+			containerPortal = FFA37154166215DB006958F3 /* WeTongjiSDK.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = E110DF2B16365B990087EA46;
+			remoteInfo = WeTongjiSDK;
+		};
+		FFA3715D166215EC006958F3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FFA37154166215DB006958F3 /* WeTongjiSDK.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = E110DF2A16365B990087EA46;
 			remoteInfo = WeTongjiSDK;
 		};
 /* End PBXContainerItemProxy section */
@@ -783,7 +790,6 @@
 		03E6FBCE16553CFF00A3E60C /* WeeklyPersonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeeklyPersonCell.h; sourceTree = "<group>"; };
 		03E6FBCF16553CFF00A3E60C /* WeeklyPersonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeeklyPersonCell.m; sourceTree = "<group>"; };
 		03E6FBD116553D5100A3E60C /* WeeklyPersonCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeeklyPersonCell.xib; sourceTree = "<group>"; };
-		5C1D43571661BDCB00D259A2 /* WeTongjiSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = WeTongjiSDK.xcodeproj; path = ../../wetongji_ios_sdk/wetongji_ios_sdk/WeTongjiSDK.xcodeproj; sourceTree = "<group>"; };
 		5C1D43601661C35200D259A2 /* bg_shadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_shadow.png; sourceTree = "<group>"; };
 		5C1D43611661C35200D259A2 /* bg_shadow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_shadow@2x.png"; sourceTree = "<group>"; };
 		5C2A6A2F16610E780089229B /* bottom_bar_intro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bottom_bar_intro.png; sourceTree = "<group>"; };
@@ -994,6 +1000,7 @@
 		FF7109B9164D4667008F2A06 /* PullRefreshManagement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PullRefreshManagement.m; sourceTree = "<group>"; };
 		FFA371461661A5E4006958F3 /* NSUserDefaults+Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+Settings.h"; sourceTree = "<group>"; };
 		FFA371471661A5E4006958F3 /* NSUserDefaults+Settings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+Settings.m"; sourceTree = "<group>"; };
+		FFA37154166215DB006958F3 /* WeTongjiSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = WeTongjiSDK.xcodeproj; path = "../../WeTongji 2.0 SDK/WeTongjiSDK.xcodeproj"; sourceTree = "<group>"; };
 		FFABBA26165F5E07000D6940 /* default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default.png; sourceTree = "<group>"; };
 		FFABBA27165F5E07000D6940 /* default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default@2x.png"; sourceTree = "<group>"; };
 		FFB12687165C6DC8005ECC2D /* AbstractCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractCollection.h; sourceTree = "<group>"; };
@@ -1460,14 +1467,6 @@
 			name = WeeklyPerson;
 			sourceTree = "<group>";
 		};
-		5C1D43581661BDCB00D259A2 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				5C1D435F1661BDCB00D259A2 /* WeTongjiSDK.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		B00B6391162FCDB300AD7712 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
@@ -1486,7 +1485,7 @@
 		B00D6911162CFCAC00592B1D = {
 			isa = PBXGroup;
 			children = (
-				5C1D43571661BDCB00D259A2 /* WeTongjiSDK.xcodeproj */,
+				FFA37154166215DB006958F3 /* WeTongjiSDK.xcodeproj */,
 				036E49D4165E5016006B33EE /* Default@2x.png */,
 				036E49D2165E5006006B33EE /* Default.png */,
 				03326A4B16567FE3005E8A16 /* default.png */,
@@ -2107,6 +2106,14 @@
 			name = UserProtocol;
 			sourceTree = "<group>";
 		};
+		FFA37155166215DB006958F3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FFA3715C166215DB006958F3 /* WeTongjiSDK.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		FFB20FBB1655D60E00FCAF5F /* Schedule */ = {
 			isa = PBXGroup;
 			children = (
@@ -2362,6 +2369,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				FFA3715E166215EC006958F3 /* PBXTargetDependency */,
 			);
 			name = WeTongji;
 			productName = WeTongji;
@@ -2388,8 +2396,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 5C1D43581661BDCB00D259A2 /* Products */;
-					ProjectRef = 5C1D43571661BDCB00D259A2 /* WeTongjiSDK.xcodeproj */;
+					ProductGroup = FFA37155166215DB006958F3 /* Products */;
+					ProjectRef = FFA37154166215DB006958F3 /* WeTongjiSDK.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -2400,11 +2408,11 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		5C1D435F1661BDCB00D259A2 /* WeTongjiSDK.framework */ = {
+		FFA3715C166215DB006958F3 /* WeTongjiSDK.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = WeTongjiSDK.framework;
-			remoteRef = 5C1D435E1661BDCB00D259A2 /* PBXContainerItemProxy */;
+			remoteRef = FFA3715B166215DB006958F3 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -2952,6 +2960,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		FFA3715E166215EC006958F3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = WeTongjiSDK;
+			targetProxy = FFA3715D166215EC006958F3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		B00D6929162CFCAC00592B1D /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
@@ -3065,7 +3081,7 @@
 				B00D6939162CFCAC00592B1D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		B00D693A162CFCAC00592B1D /* Build configuration list for PBXNativeTarget "WeTongji" */ = {
 			isa = XCConfigurationList;
@@ -3074,7 +3090,7 @@
 				B00D693C162CFCAC00592B1D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 
