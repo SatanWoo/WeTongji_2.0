@@ -236,6 +236,10 @@
     LeftMenuCellModel *model = (LeftMenuCellModel *)[self.identifierArray objectAtIndex:indexPath.row];
     cell.title.text = model.cellName;
     cell.identifer = model.identifier;
+    if ([cell.identifer isEqualToString:kPersonalViewController] && self.isLogIn)
+    {
+        cell.title.text = [User userinManagedObjectContext:self.managedObjectContext].displayname;
+    }
     cell.selectedBackgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"cell_sl.png"]];
     return cell;
 }
