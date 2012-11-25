@@ -236,7 +236,7 @@
     if (cell == nil) {
         cell = [[LeftMenuCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kLeftMenuCell];
     }
-        
+    
     LeftMenuCellModel *model = (LeftMenuCellModel *)[self.identifierArray objectAtIndex:indexPath.row];
     cell.title.text = model.cellName;
     cell.identifer = model.identifier;
@@ -245,6 +245,13 @@
         cell.title.text = [User userinManagedObjectContext:self.managedObjectContext].displayname;
     }
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.row == 0) {
+        [cell setSelected:YES];
+    }
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

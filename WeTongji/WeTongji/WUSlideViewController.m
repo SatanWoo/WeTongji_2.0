@@ -94,9 +94,6 @@
     LeftMenuCellModel * model = self.leftViewController.identifierArray[0];
     NSString * identifier = model.identifier;
     self.middelViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:identifier];
-    
-    LeftMenuCell *cell = (LeftMenuCell *)[self.leftViewController.menuTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
-    [cell setSelected:YES];
 }
 
 - (void)configureNotification
