@@ -38,7 +38,7 @@
 					<object class="IBUILabel" id="675385844">
 						<reference key="NSNextResponder" ref="552518929"/>
 						<int key="NSvFlags">256</int>
-						<string key="NSFrame">{{131, 7}, {38, 21}}</string>
+						<string key="NSFrame">{{131, 2}, {38, 21}}</string>
 						<reference key="NSSuperview" ref="552518929"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="67629557"/>
@@ -60,13 +60,13 @@
 						</object>
 						<string key="IBUIShadowOffset">{0, 1}</string>
 						<int key="IBUIBaselineAdjustment">0</int>
-						<object class="IBUIFontDescription" key="IBUIFontDescription" id="925106396">
+						<object class="IBUIFontDescription" key="IBUIFontDescription" id="474410093">
 							<int key="type">1</int>
-							<double key="pointSize">17</double>
+							<double key="pointSize">16</double>
 						</object>
-						<object class="NSFont" key="IBUIFont" id="768789297">
+						<object class="NSFont" key="IBUIFont" id="537186359">
 							<string key="NSName">Helvetica</string>
-							<double key="NSSize">17</double>
+							<double key="NSSize">16</double>
 							<int key="NSfFlags">16</int>
 						</object>
 						<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
@@ -74,7 +74,7 @@
 					<object class="IBUILabel" id="67629557">
 						<reference key="NSNextResponder" ref="552518929"/>
 						<int key="NSvFlags">256</int>
-						<string key="NSFrame">{{105, 30}, {90, 21}}</string>
+						<string key="NSFrame">{{105, 25}, {90, 21}}</string>
 						<reference key="NSSuperview" ref="552518929"/>
 						<reference key="NSWindow"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
@@ -95,8 +95,8 @@
 						</object>
 						<string key="IBUIShadowOffset">{0, 1}</string>
 						<int key="IBUIBaselineAdjustment">0</int>
-						<reference key="IBUIFontDescription" ref="925106396"/>
-						<reference key="IBUIFont" ref="768789297"/>
+						<reference key="IBUIFontDescription" ref="474410093"/>
+						<reference key="IBUIFont" ref="537186359"/>
 						<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
 					</object>
 				</array>
