@@ -238,7 +238,7 @@
                             failureBlock:^(NSError * error)
                            {
                            }];
-    [request getActivitiesInChannel:nil inSort:GetActivitySortMethodCreateDesc Expired:YES nextPage:0];
+    [request getActivitiesInChannel:nil inSort:GetActivitySortMethodBeginDesc Expired:NO nextPage:0];
     [client enqueueRequest:request];
 }
 
