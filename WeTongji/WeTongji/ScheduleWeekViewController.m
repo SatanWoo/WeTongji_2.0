@@ -36,6 +36,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self.rightTableView registerNib:[UINib nibWithNibName:@"ScheduleWeekRightTableViewCell" bundle:nil] forCellReuseIdentifier:@"ScheduleWeekRightTableViewCell"];
+    [self.leftTableView registerNib:[UINib nibWithNibName:@"ScheduleWeekLeftTableViewCell" bundle:nil] forCellReuseIdentifier:@"ScheduleWeekLeftTableViewCell"];
     // Do any additional setup after loading the view from its nib.
     [self configureRightTableView];
     [self configureView];
@@ -155,7 +157,7 @@
         if([self getTodayRowInRightTableView] == indexPath.row)
             rightCell.weekDayLabel.textColor = [UIColor colorWithRed:0 green:0.37f blue:0.66f alpha:1];
         
-        [rightCell setDrawViewVerticalOffset:self.leftTableView.contentOffset.y row:indexPath.row dataArray:[self getRightCellDataArrayAtIndexPath:indexPath]];
+        [rightCell setDrawViewVerticalOffset:self.leftTableView.contentOffset.y  row:indexPath.row dataArray:[self getRightCellDataArrayAtIndexPath:indexPath]];
     }
 }
 
@@ -182,9 +184,11 @@
     else 
         cellIdentifier = @"ScheduleWeekLeftTableViewCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    NSArray *nib = [[NSBundle mainBundle] loadNibNamed:cellIdentifier owner:self options:nil];
-    cell = [nib objectAtIndex:0];
-    
+    if ( !cell )
+    {
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:cellIdentifier owner:self options:nil];
+        cell = [nib objectAtIndex:0];
+    }
     [self configureCell:cell atIndexPath:indexPath];
     return cell;
 }

@@ -28,9 +28,18 @@
 @synthesize likeLabel = _likeLabel;
 @synthesize organizationLabel = _organizationLabel;
 
+-(UIColor *) colorForHowLongAgo:(NSDate *) date
+{
+    NSTimeInterval interval = -[date timeIntervalSinceNow];
+    if ( interval < 60 * 15 ) return [UIColor orangeColor];
+    return [UIColor grayColor];
+}
+
 -(void) setEvent:(Event *)event
 {
     self.refreshTime.text = [NSString stringWithHowLongAgo: event.createAt];
+    [self.refreshTime setTextColor:[self colorForHowLongAgo:event.createAt]];
+    NSLog(@"%@",self.refreshTime.textColor);
 #ifdef DEBUG
 #endif
     _event = event;

@@ -11,7 +11,6 @@
 @implementation ScheduleWeekLeftTableViewCell
 
 @synthesize hourLabel = _hourLabel;
-@synthesize separatorImageView = _separatorImageView;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {

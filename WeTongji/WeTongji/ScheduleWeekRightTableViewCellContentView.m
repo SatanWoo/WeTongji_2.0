@@ -46,11 +46,11 @@
 - (void)drawHorizontalLines:(CGContextRef)context {
     CGContextSetRGBStrokeColor(context, 0.8f, 0.8f, 0.8f, 0.7f);
     CGContextSetLineWidth(context, 1.0f);
-    for (int i = 1; i < LEFT_TABLE_VIEW_ROW_COUNT; i++) {
+    for (int i = 1; i <= LEFT_TABLE_VIEW_ROW_COUNT; i++) {
         //draw horizontal lines
         CGFloat leftCellHeight = LEFT_CELL_HEIGHT;
         CGFloat rightCellWidth = 85.0f;
-        CGFloat verticalPos = i * leftCellHeight + VERTICAL_OFFSET;
+        CGFloat verticalPos = i * leftCellHeight + VERTICAL_OFFSET - 15;
             
         CGContextMoveToPoint(context, 0, verticalPos);
         CGContextAddLineToPoint(context, rightCellWidth, verticalPos);
