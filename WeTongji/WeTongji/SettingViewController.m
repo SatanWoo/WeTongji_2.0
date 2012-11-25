@@ -18,18 +18,38 @@
 #import "Star+Addition.h"
 #import "Exam+Addition.h"
 #import "Channel+Addition.h"
+#import "MBProgressHUD.h"
 #import <WeTongjiSDK/WeTongjiSDK.h>
 
 
-@interface SettingViewController ()<UITableViewDataSource, UITableViewDelegate>
+@interface SettingViewController ()<UITableViewDataSource, UITableViewDelegate,MBProgressHUDDelegate>
 
 @property (nonatomic,readonly) BOOL isLogIn;
+@property (nonatomic,strong) MBProgressHUD * progress;
+@property (nonatomic,strong) NSString * versionUrlString;
 
 - (void)configureTableView;
 
 @end
 
 @implementation SettingViewController
+
+-(MBProgressHUD *) progress
+{
+    if ( !_progress )
+    {
+        _progress = [[MBProgressHUD alloc] initWithView:self.view];
+        [self.view addSubview:_progress];
+        _progress.delegate = self;
+    }
+    return _progress;
+}
+
+-(void) hudWasHidden:(MBProgressHUD *)hud
+{
+    [self.progress removeFromSuperview];
+    self.progress = nil;
+}
 
 -(BOOL) isLogIn
 {
@@ -95,9 +115,53 @@
     [NSUserDefaults setCurrentUserID:@"" session:@""];
     [self adjust];
     [[NSNotificationCenter defaultCenter] postNotificationName:kLogoutNotification object:self];
+    self.progress.mode = MBProgressHUDModeText;
+    self.progress.labelText = @"您已成功登出";
+    [self.progress show:YES];
+    [self.progress hide:YES afterDelay:0.5];
 #ifdef DEBUG
     NSLog(@"log out clicked!");
 #endif
+}
+
+-(void) checkNewVerion
+{
+    self.progress.mode = MBProgressHUDModeIndeterminate;
+    self.progress.labelText = @"版本检测中...";
+    [self.progress show:YES];
+    WTClient * client = [WTClient sharedClient];
+    WTRequest *request = [WTRequest requestWithSuccessBlock:^(id responseData)
+                          {
+                            #ifdef DEBUG
+                              NSLog(@"%@",responseData);
+                            #endif
+                              [self.progress hide:YES];
+                              id version = [responseData objectForKey:@"Version"];
+                              if ([version isKindOfClass:[NSNull class]])
+                              {
+                                  UIAlertView *  alert = [[UIAlertView alloc]
+                                                          initWithTitle:@"当前已经是最新版" message:nil delegate:self cancelButtonTitle:@"我知道了" otherButtonTitles: nil];
+                                  [alert show];
+                              }
+                              else
+                              {
+                                  NSString * current = [version objectForKey:@"Current"];
+                                  NSString * latest = [version objectForKey:@"Latest"];
+                                  self.versionUrlString = [version objectForKey:@"Url"];
+                                  UIAlertView *  alert = [[UIAlertView alloc]
+                                                          initWithTitle:@"检测到最新版本" message:[NSString stringWithFormat:@"您当前版本为%@,已检测到最新版：%@，是否前往下载？",current,latest] delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定",nil];
+                                  [alert show];
+                              }
+                          }
+                            failureBlock:^(NSError * error)
+                          {
+                              self.progress.mode = MBProgressHUDModeText;
+                              self.progress.labelText = @"监测失败";
+                              self.progress.detailsLabelText = [[error userInfo] objectForKey:@"errorDesc"] ;
+                              [self.progress hide:YES afterDelay:1];
+                          }];
+    [request getNewVersion];
+    [client enqueueRequest:request];
 }
 
 - (void)viewDidLoad
@@ -208,6 +272,8 @@
         }
     } else if (indexPath.section == 1 && indexPath.row == 0) {
         [self performSegueWithIdentifier:kSchoolPreferenceViewControllerSegue sender:self];
+    } else if (indexPath.section == 1 && indexPath.row == 1) {
+        [self checkNewVerion];
     } else if (indexPath.section == 1 && indexPath.row == 2) {
         UIAlertView *  alert = [[UIAlertView alloc]
                  initWithTitle:@"确定清除缓存？" message:@"清除后应用将还原到第一次开启的界面" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
@@ -219,17 +285,24 @@
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if ( buttonIndex == 0 ) return ;
-    [User userClearinManagedObjectContext:self.managedObjectContext];
-    [Event clearAllEventInManagedObjectContext:self.managedObjectContext];
-    [Information clearDataInManagedObjectContext:self.managedObjectContext];
-    [Star clearDataInManagedObjectContext:self.managedObjectContext];
-    [Exam clearDataInManagedObjectContext:self.managedObjectContext];
-    [Course clearDataInManagedObjectContext:self.managedObjectContext];
-    [Channel clearAllChannelsInManagedObjectContext:self.managedObjectContext];
-    [NSUserDefaults setCurrentSemesterBeginTime:[NSDate dateWithTimeIntervalSinceNow:0] endTime:[NSDate dateWithTimeIntervalSinceNow:0]];
-    [NSUserDefaults setCurrentUserID:@"" session:@""];
-    [[NSNotificationCenter defaultCenter] postNotificationName:kLogoutNotification object:self];
-    [self adjust];
+    if ( [alertView.title isEqualToString:@"确定清除缓存？"])
+    {
+        [User userClearinManagedObjectContext:self.managedObjectContext];
+        [Event clearAllEventInManagedObjectContext:self.managedObjectContext];
+        [Information clearDataInManagedObjectContext:self.managedObjectContext];
+        [Star clearDataInManagedObjectContext:self.managedObjectContext];
+        [Exam clearDataInManagedObjectContext:self.managedObjectContext];
+        [Course clearDataInManagedObjectContext:self.managedObjectContext];
+        [Channel clearAllChannelsInManagedObjectContext:self.managedObjectContext];
+        [NSUserDefaults setCurrentSemesterBeginTime:[NSDate dateWithTimeIntervalSinceNow:0] endTime:[NSDate dateWithTimeIntervalSinceNow:0]];
+        [NSUserDefaults setCurrentUserID:@"" session:@""];
+        [[NSNotificationCenter defaultCenter] postNotificationName:kLogoutNotification object:self];
+        [self adjust];
+    }
+    if ( [alertView.title isEqualToString:@"检测到最新版本"] )
+    {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:self.versionUrlString]];
+    }
 }
 
 @end

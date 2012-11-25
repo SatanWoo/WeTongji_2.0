@@ -3081,7 +3081,7 @@
 				B00D6939162CFCAC00592B1D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		B00D693A162CFCAC00592B1D /* Build configuration list for PBXNativeTarget "WeTongji" */ = {
 			isa = XCConfigurationList;
@@ -3090,7 +3090,7 @@
 				B00D693C162CFCAC00592B1D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 
