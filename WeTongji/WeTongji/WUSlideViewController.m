@@ -12,6 +12,7 @@
 #import "UIBarButtonItem+CustomButton.h"
 #import "UserIntroViewController.h"
 #import "LeftMenuCellModel.h"
+#import "LeftMenuCell.h"
 
 #define kFirstUseKey @"kkkksasssssSSkkey"
 
@@ -93,7 +94,9 @@
     LeftMenuCellModel * model = self.leftViewController.identifierArray[0];
     NSString * identifier = model.identifier;
     self.middelViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:identifier];
-    [self.leftViewController.menuTableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:NO scrollPosition:UITableViewRowAnimationNone];
+    
+    LeftMenuCell *cell = (LeftMenuCell *)[self.leftViewController.menuTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+    [cell setSelected:YES];
 }
 
 - (void)configureNotification

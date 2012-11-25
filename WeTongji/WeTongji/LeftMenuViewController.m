@@ -83,6 +83,9 @@
     LeftMenuCellModel * model = self.identifierArray[0];
     UIViewController *controller = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:model.identifier];
     [self.delegate changeMiddleContent:controller];
+    
+    LeftMenuCell *cell = (LeftMenuCell *)[self.menuTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+    [cell setSelected:YES];
 }
 
 - (void)configureHeader
@@ -233,6 +236,7 @@
     if (cell == nil) {
         cell = [[LeftMenuCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kLeftMenuCell];
     }
+        
     LeftMenuCellModel *model = (LeftMenuCellModel *)[self.identifierArray objectAtIndex:indexPath.row];
     cell.title.text = model.cellName;
     cell.identifer = model.identifier;
@@ -240,7 +244,6 @@
     {
         cell.title.text = [User userinManagedObjectContext:self.managedObjectContext].displayname;
     }
-    cell.selectedBackgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"cell_sl.png"]];
     return cell;
 }
 
