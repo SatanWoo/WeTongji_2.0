@@ -1218,7 +1218,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="39"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="location_cell" id="68E-iD-9G8">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="location_cell.png" id="68E-iD-9G8">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
@@ -1244,7 +1244,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="39"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="phone_cell" id="bVG-Zf-NeZ">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="phone_cell.png" id="bVG-Zf-NeZ">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
@@ -1270,7 +1270,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="ticket_detail_cell" id="R85-ad-KEL">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="ticket_detail_cell.png" id="R85-ad-KEL">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
@@ -1739,7 +1739,7 @@
         <image name="info_avatar.png" width="73" height="73"/>
         <image name="info_btn.png" width="40" height="40"/>
         <image name="list_btn.png" width="41" height="41"/>
-        <image name="location_cell" width="16" height="16"/>
+        <image name="location_cell.png" width="320" height="40"/>
         <image name="login_btn.png" width="301" height="40"/>
         <image name="login_or_register.png" width="136" height="40"/>
         <image name="mark_btn" width="16" height="16"/>
@@ -1749,7 +1749,7 @@
         <image name="next_step_btn_un.png" width="301" height="40"/>
         <image name="no_account.png" width="301" height="15"/>
         <image name="password_forget.png" width="27" height="27"/>
-        <image name="phone_cell" width="16" height="16"/>
+        <image name="phone_cell.png" width="320" height="40"/>
         <image name="register_btn.png" width="136" height="40"/>
         <image name="rounded_cell.png" width="301" height="45"/>
         <image name="settings_btn.png" width="40" height="40"/>
@@ -1758,7 +1758,7 @@
         <image name="table_middle.png" width="301" height="45"/>
         <image name="text_input.png" width="301" height="89"/>
         <image name="text_input3.png" width="301" height="177"/>
-        <image name="ticket_detail_cell" width="16" height="16"/>
+        <image name="ticket_detail_cell.png" width="320" height="50"/>
         <image name="today.png" width="80" height="24"/>
         <image name="today_btn" width="16" height="16"/>
         <image name="today_btn.png" width="50" height="32"/>
