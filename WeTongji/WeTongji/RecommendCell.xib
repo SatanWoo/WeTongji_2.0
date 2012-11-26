@@ -43,7 +43,7 @@
 							<object class="IBUILabel" id="133819672">
 								<reference key="NSNextResponder" ref="589053254"/>
 								<int key="NSvFlags">256</int>
-								<string key="NSFrame">{{114, 8}, {140, 21}}</string>
+								<string key="NSFrame">{{114, 8}, {169, 21}}</string>
 								<reference key="NSSuperview" ref="589053254"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="574082116"/>
@@ -63,7 +63,7 @@
 									<int key="NSColorSpace">3</int>
 									<bytes key="NSWhite">MQA</bytes>
 								</object>
-								<int key="IBUIBaselineAdjustment">0</int>
+								<int key="IBUILineBreakMode">1</int>
 								<object class="IBUIFontDescription" key="IBUIFontDescription">
 									<int key="type">1</int>
 									<double key="pointSize">17</double>
@@ -108,8 +108,8 @@
 							</object>
 							<object class="IBUIImageView" id="574082116">
 								<reference key="NSNextResponder" ref="589053254"/>
-								<int key="NSvFlags">256</int>
-								<string key="NSFrame">{{240, 9}, {20, 20}}</string>
+								<int key="NSvFlags">257</int>
+								<string key="NSFrame">{{291, 8}, {20, 20}}</string>
 								<reference key="NSSuperview" ref="589053254"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="449297915"/>
@@ -287,11 +287,11 @@
 						<array class="NSMutableArray" key="children">
 							<reference ref="992034451"/>
 							<reference ref="449297915"/>
-							<reference ref="574082116"/>
 							<reference ref="6439175"/>
 							<reference ref="218913055"/>
 							<reference ref="833151488"/>
 							<reference ref="133819672"/>
+							<reference ref="574082116"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>

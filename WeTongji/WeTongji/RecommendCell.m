@@ -36,7 +36,7 @@
     
     CGRect oldFrame = self.icon.frame;
     CGRect titleFrame = self.infoTitle.frame;
-    float newX = titleFrame.origin.x + 3 + titleFrame.size.width;
+    float newX = titleFrame.origin.x + 4 + titleFrame.size.width;
     oldFrame.origin.x = newX;
     self.icon.frame = oldFrame;
 }
