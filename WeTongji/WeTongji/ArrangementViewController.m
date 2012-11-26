@@ -227,6 +227,13 @@
             ((ArrangementCell *)cell).timeLabel.text = [NSString timeConvertFromBeginDate:activity.begin_time endDate:activity.end_time];
             ((ArrangementCell *)cell).titleLabel.text = activity.what;
             ((ArrangementCell *)cell).locationLabel.text = activity.where;
+            
+            [((ArrangementCell *)cell).locationLabel sizeToFit];
+            CGRect oldFrame = ((ArrangementCell *)cell).locationLabel.frame;
+            CGRect iconFrame = ((ArrangementCell *)cell).locationIcon.frame;
+            iconFrame.origin.x = oldFrame.origin.x - 3 - ((ArrangementCell *)cell).locationIcon.frame.size.width;
+            ((ArrangementCell *)cell).locationIcon.frame = iconFrame;
+            
             if ( [activity isKindOfClass:[Event class]] )
             {
                 [((ArrangementCell *)cell).colorBall setImage:[UIImage imageNamed:@"dot_yellow"]];
