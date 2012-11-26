@@ -296,7 +296,7 @@
 										<reference key="NSNextResponder" ref="234976442"/>
 										<int key="NSvFlags">1280</int>
 										<object class="NSPSMatrix" key="NSFrameMatrix"/>
-										<string key="NSFrame">{{10, 10}, {15, 15}}</string>
+										<string key="NSFrame">{{8.5, 8}, {18, 19}}</string>
 										<reference key="NSSuperview" ref="234976442"/>
 										<reference key="NSNextKeyView" ref="665507818"/>
 										<bool key="IBUIOpaque">NO</bool>
@@ -325,6 +325,7 @@
 										<object class="NSPSMatrix" key="NSFrameMatrix"/>
 										<string key="NSFrame">{{33, 7}, {70, 21}}</string>
 										<reference key="NSSuperview" ref="234976442"/>
+										<reference key="NSNextKeyView"/>
 										<bool key="IBUIOpaque">NO</bool>
 										<bool key="IBUIClipsSubviews">YES</bool>
 										<int key="IBUIContentMode">7</int>

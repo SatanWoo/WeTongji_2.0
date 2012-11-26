@@ -536,7 +536,6 @@
 		FFC1203F1651639A003FF0E6 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC1203E1651639A003FF0E6 /* LoginViewController.m */; };
 		FFC1204116516C38003FF0E6 /* back_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFC1204016516C38003FF0E6 /* back_btn@2x.png */; };
 		FFC1204516517582003FF0E6 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC1204416517582003FF0E6 /* RegisterViewController.m */; };
-		FFC12047165179C1003FF0E6 /* 注册1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FFC12046165179C1003FF0E6 /* 注册1.jpg */; };
 		FFC1204A16517F50003FF0E6 /* RegInfomationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC1204916517F50003FF0E6 /* RegInfomationCell.m */; };
 		FFC65D36164FE52200156F77 /* FilterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFC65D34164FE52200156F77 /* FilterTableViewCell.xib */; };
 		FFC65D37164FE52200156F77 /* FilterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFC65D35164FE52200156F77 /* FilterViewController.xib */; };
@@ -1203,7 +1202,6 @@
 		FFC1204016516C38003FF0E6 /* back_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back_btn@2x.png"; sourceTree = "<group>"; };
 		FFC1204316517582003FF0E6 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
 		FFC1204416517582003FF0E6 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
-		FFC12046165179C1003FF0E6 /* 注册1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "注册1.jpg"; sourceTree = "<group>"; };
 		FFC1204816517F50003FF0E6 /* RegInfomationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegInfomationCell.h; sourceTree = "<group>"; };
 		FFC1204916517F50003FF0E6 /* RegInfomationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegInfomationCell.m; sourceTree = "<group>"; };
 		FFC65D32164FE50600156F77 /* FilterTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterTableViewCell.h; sourceTree = "<group>"; };
@@ -1694,7 +1692,6 @@
 				03D80BFE165FBC7D0086054D /* navbar_sort_btn_hl@2x.png */,
 				5C1D43601661C35200D259A2 /* bg_shadow.png */,
 				5C1D43611661C35200D259A2 /* bg_shadow@2x.png */,
-				FFC12046165179C1003FF0E6 /* 注册1.jpg */,
 				03D61F65165BE40D005F19A1 /* avatar_shadow.png */,
 				03E6FB9F16552B9800A3E60C /* like_hl.png */,
 				03E6FBA016552B9800A3E60C /* like_hl@2x.png */,
@@ -2533,7 +2530,6 @@
 				03D540E41651450F0070F727 /* left_arrow@2x.png in Resources */,
 				FFC1203B165160AC003FF0E6 /* 注册登录.jpg in Resources */,
 				FFC1204116516C38003FF0E6 /* back_btn@2x.png in Resources */,
-				FFC12047165179C1003FF0E6 /* 注册1.jpg in Resources */,
 				0355150B1652771F0058EC06 /* favorite.png in Resources */,
 				0355150C1652771F0058EC06 /* favorite@2x.png in Resources */,
 				0355150D1652771F0058EC06 /* info.png in Resources */,
