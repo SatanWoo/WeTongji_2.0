@@ -18,7 +18,8 @@
 #import "SchoolNewsLocationCell.h"
 #import "SchoolNewsTicketCell.h"
 #import <WeTongjiSDK/WeTongjiSDK.h>
-#import "NSArray+Addition.h"
+#import "NSDictionary+Addition.h"
+#import "UIApplication+nj_SmartStatusBar.h"
 
 #define kContentOffset 50
 #define kStateY -150
@@ -38,7 +39,7 @@
 @property (nonatomic, assign) BOOL isAnimationFinished;
 @property (nonatomic, strong) TextViewTableCell* currentCell;
 @property (nonatomic, strong) TransparentTableHeaderView * transparentHeaderView;
-@property (nonatomic, strong) NSArray * imageList;
+@property (nonatomic, strong) NSDictionary * imageDict;
 @end
 
 @implementation SchoolNewsViewController
@@ -72,7 +73,9 @@
 {
     self.isAnimationFinished = false;
     self.pageViewController.view.userInteractionEnabled = NO;
+    [[UIApplication sharedApplication] nj_setStatusBarHidden:NO withAnimation:UIStatusBarAnimationSlide];
     [UIView animateWithDuration:0.55f animations:^{
+        [self.view setFrame: [self.view bounds]];
         [self.newsTableView setCenter:originNewsTableViewCenter];
         [self.backButton setAlpha:1.0];
         [self.buttonBackImageView setAlpha:1.0];
@@ -103,17 +106,17 @@
         [_pageViewController.view addGestureRecognizer:upSwipe];
         [_pageViewController.view setFrame:CGRectMake(0, kStateY, 320 ,480)];
         _pageViewController.view.userInteractionEnabled = NO;
-        for ( NSString * link in self.imageList )
+        for ( NSString * link in [self.imageDict allKeys] )
         {
-            UIImageView * view = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"scaleview.png"]];
+            UIImageView * view = [[UIImageView alloc] init];
             [view setImageWithURL:[NSURL URLWithString:link] placeholderImage:[UIImage imageNamed:@"default_pic"]];
-            [_pageViewController addPicture:view];
+            [_pageViewController addPicture:view withDescription:self.imageDict[link]];
         }
-        if ( self.imageList.count == 0)
+        if ( [self.imageDict allKeys].count == 0)
         {
-            UIImageView * view = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"scaleview.png"]];
+            UIImageView * view = [[UIImageView alloc] init];
             [view setImage:[UIImage imageNamed:@"default_pic"]];
-            [_pageViewController addPicture:view];
+            [_pageViewController addPicture:view withDescription:[NSNull null]];
         }
         originPageViewCenter = [_pageViewController.view center];
     }
@@ -164,7 +167,7 @@
     [self.headerView setEvent:event];
     [self.transparentHeaderView setHideBoard:NO];
     [self.transparentHeaderView setEvent:event];
-    self.imageList = [NSArray arrayWithObject:event.imageLink];
+    self.imageDict = [NSDictionary dictionaryWithObject:[NSNull null] forKey:event.imageLink];
     _event = event;
 }
 
@@ -192,7 +195,7 @@
         [self.headerView  setInformation:information];
         [self.transparentHeaderView setHideBoard:YES];
     }
-    self.imageList = [NSArray getImageLinkListInJsonString:information.images];
+    self.imageDict = [NSDictionary getImageLinkDictInJsonString:information.images];
     _information = information;
 }
 
@@ -202,7 +205,7 @@
     [self renderShadow:self.headerView];
     [self.headerView setStar:star];
     [self.transparentHeaderView setHideBoard:YES];
-    self.imageList = [NSArray getImageLinkListInJsonString:star.images];
+    self.imageDict = [NSDictionary getImageLinkDictInJsonString:star.images];
     _star = star;
 }
 
@@ -303,12 +306,15 @@
     }
     if (rate > 1) {
         self.isAnimationFinished = true;
+        [[UIApplication sharedApplication] nj_setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
         [UIView animateWithDuration:0.25f animations:^{
+            [self.view setFrame: [[UIScreen mainScreen] bounds]];
             self.newsTableView.frame = CGRectMake(0, self.view.frame.size.height, self.newsTableView.frame.size.width, self.newsTableView.frame.size.height);
             self.pageViewController.view.frame = CGRectMake(0,0, self.pageViewController.view.frame.size.width, self.pageViewController.view.frame.size.height);
             [self.backButton setAlpha:0.0];
             [self.buttonBackImageView setAlpha:0.0];
         } completion:^(BOOL finished) {
+            NSLog(@"%f",self.view.frame.origin.x);
             self.pageViewController.view.userInteractionEnabled = YES;
         }];
     }

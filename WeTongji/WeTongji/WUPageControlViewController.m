@@ -14,6 +14,8 @@
 - (void)loadVisiblePages;
 @property (nonatomic ,assign) int pictureNumber;
 @property (nonatomic ,strong) NSMutableArray * imageList;
+@property (weak, nonatomic) IBOutlet UITextView *imageDescription;
+@property (strong, nonatomic) NSMutableArray * descriptionList;
 @end
 
 @implementation WUPageControlViewController
@@ -29,8 +31,17 @@
     return _imageList;
 }
 
+-(NSMutableArray *) descriptionList
+{
+    if ( !_descriptionList )
+    {
+        _descriptionList = [[NSMutableArray alloc] init];
+    }
+    return _descriptionList;
+}
+
 #pragma mark - Public
-- (void)addPicture:(UIImageView *)image
+- (void)addPicture:(UIImageView *)image withDescription:(id)desc
 {
     CGRect frame = self.view.bounds;
     frame.origin.x = 0;
@@ -41,17 +52,22 @@
     [self.pagedScrollView addSubview:scrollView];
     self.pictureNumber ++;
     self.pageControl.numberOfPages = self.pictureNumber;
+    [self.descriptionList addObject:[desc copy]];
     [self.imageList addObject:scrollView];
+    self.imageDescription.text = [NSString stringWithFormat:@"%@",desc];
+    if ( [self.descriptionList count] == 1 )
+        [self.imageDescription setHidden: ([desc isKindOfClass:[NSNull class]] ? YES : NO)];
     [self configureScrollView];
 }
 
-- (void)clearPicture
+- (void)clearPictureAndDescription
 {
     NSArray * views = [self.pagedScrollView subviews];
     for ( UIView * view in views )
         [view removeFromSuperview];
     self.pictureNumber = 0 ;
     self.imageList = nil;
+    self.descriptionList = nil;
     [self configureScrollView];
     self.pageControl.numberOfPages = self.pictureNumber;
 }
@@ -68,8 +84,10 @@
 - (void)loadVisiblePages {
     CGFloat pageWidth = self.pagedScrollView.frame.size.width;
     NSInteger page = (NSInteger)floor((self.pagedScrollView.contentOffset.x * 2.0f + pageWidth) / (pageWidth * 2.0f));
-    
     self.pageControl.currentPage = page;
+    id desc = self.descriptionList[page];
+    self.imageDescription.text = [NSString stringWithFormat:@"%@",desc];
+    [self.imageDescription setHidden: ([desc isKindOfClass:[NSNull class]] ? YES : NO)];
 }
 
 #pragma mark - Life Cycle
@@ -96,6 +114,7 @@
 {
     [self setPagedScrollView:nil];
     [self setPageControl:nil];
+    [self setImageDescription:nil];
     [super viewDidUnload];
 }
 

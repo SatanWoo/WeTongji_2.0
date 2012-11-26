@@ -378,6 +378,8 @@
 		FF710995164D1EB0008F2A06 /* Information+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = FF710994164D1EB0008F2A06 /* Information+Addition.m */; };
 		FF7109B4164D3AFD008F2A06 /* Star+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7109B3164D3AFC008F2A06 /* Star+Addition.m */; };
 		FF7109BA164D4667008F2A06 /* PullRefreshManagement.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7109B9164D4667008F2A06 /* PullRefreshManagement.m */; };
+		FF78958B16639A740030D039 /* NSDictionary+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = FF78958A16639A740030D039 /* NSDictionary+Addition.m */; };
+		FF78958E1663C2200030D039 /* UIApplication+nj_SmartStatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = FF78958D1663C2200030D039 /* UIApplication+nj_SmartStatusBar.m */; };
 		FFA371481661A5E4006958F3 /* NSUserDefaults+Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = FFA371471661A5E4006958F3 /* NSUserDefaults+Settings.m */; };
 		FFABBA28165F5E07000D6940 /* default.png in Resources */ = {isa = PBXBuildFile; fileRef = FFABBA26165F5E07000D6940 /* default.png */; };
 		FFABBA29165F5E07000D6940 /* default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFABBA27165F5E07000D6940 /* default@2x.png */; };
@@ -998,6 +1000,10 @@
 		FF7109B3164D3AFC008F2A06 /* Star+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Star+Addition.m"; sourceTree = "<group>"; };
 		FF7109B8164D4667008F2A06 /* PullRefreshManagement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PullRefreshManagement.h; sourceTree = "<group>"; };
 		FF7109B9164D4667008F2A06 /* PullRefreshManagement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PullRefreshManagement.m; sourceTree = "<group>"; };
+		FF78958916639A740030D039 /* NSDictionary+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Addition.h"; sourceTree = "<group>"; };
+		FF78958A16639A740030D039 /* NSDictionary+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Addition.m"; sourceTree = "<group>"; };
+		FF78958C1663C2200030D039 /* UIApplication+nj_SmartStatusBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+nj_SmartStatusBar.h"; sourceTree = "<group>"; };
+		FF78958D1663C2200030D039 /* UIApplication+nj_SmartStatusBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+nj_SmartStatusBar.m"; sourceTree = "<group>"; };
 		FFA371461661A5E4006958F3 /* NSUserDefaults+Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+Settings.h"; sourceTree = "<group>"; };
 		FFA371471661A5E4006958F3 /* NSUserDefaults+Settings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+Settings.m"; sourceTree = "<group>"; };
 		FFA37154166215DB006958F3 /* WeTongjiSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = WeTongjiSDK.xcodeproj; path = "../../WeTongji 2.0 SDK/WeTongjiSDK.xcodeproj"; sourceTree = "<group>"; };
@@ -1578,6 +1584,10 @@
 				03D80C02165FBFFB0086054D /* UINavigationBar+Shadow.m */,
 				FFA371461661A5E4006958F3 /* NSUserDefaults+Settings.h */,
 				FFA371471661A5E4006958F3 /* NSUserDefaults+Settings.m */,
+				FF78958916639A740030D039 /* NSDictionary+Addition.h */,
+				FF78958A16639A740030D039 /* NSDictionary+Addition.m */,
+				FF78958C1663C2200030D039 /* UIApplication+nj_SmartStatusBar.h */,
+				FF78958D1663C2200030D039 /* UIApplication+nj_SmartStatusBar.m */,
 			);
 			name = Category;
 			sourceTree = "<group>";
@@ -2955,6 +2965,8 @@
 				03D80C1D165FC5780086054D /* WUStatusbarWindow.m in Sources */,
 				03D80C25165FCEDD0086054D /* SchoolPreferenceViewController.m in Sources */,
 				FFA371481661A5E4006958F3 /* NSUserDefaults+Settings.m in Sources */,
+				FF78958B16639A740030D039 /* NSDictionary+Addition.m in Sources */,
+				FF78958E1663C2200030D039 /* UIApplication+nj_SmartStatusBar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

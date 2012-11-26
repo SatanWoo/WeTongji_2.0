@@ -11,6 +11,6 @@
 @interface WUPageControlViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIScrollView *pagedScrollView;
 @property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
-- (void)addPicture:(UIImageView *)image;
-- (void)clearPicture;
+- (void)addPicture:(UIImageView *)image withDescription:(id) desc;
+- (void)clearPictureAndDescription;
 @end

@@ -23,6 +23,7 @@
 #import "AbstractActivity+Addition.h"
 #import "AbstractCollection+Addition.h"
 #import "NSString+Addition.h"
+#import "UIApplication+nj_SmartStatusBar.h"
 
 #define kContentOffSet 156
 #define kRowHeight 44
@@ -52,10 +53,11 @@
 {
     self.recommandEvent = nil;
     self.recommendTitle.text = self.recommandEvent.title;
-    [self.pageViewController clearPicture];
+    [self.pageViewController clearPictureAndDescription];
     UIImageView * imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"scaleview.png"]];
     [imageView setImageWithURL:[NSURL URLWithString:self.recommandEvent.imageLink] placeholderImage:[UIImage imageNamed:@"default_pic"]];
-    [self.pageViewController addPicture:imageView];
+    [self.pageViewController addPicture:imageView withDescription:[NSNull null]];
+    NSLog(@"pageheight%f",self.pageViewController.view.frame.size.height);
 }
 
 - (void)configureTableView
@@ -77,7 +79,7 @@
 -(void)showScheduleTable
 {
     [self.navigationController setNavigationBarHidden:NO animated:YES];
-    [[UIApplication sharedApplication]setStatusBarHidden:NO withAnimation:UIStatusBarAnimationSlide];
+    [[UIApplication sharedApplication] nj_setStatusBarHidden:NO withAnimation:UIStatusBarAnimationSlide];
     self.isAnimationFinished = false;
     [UIView animateWithDuration:0.55f animations:^{
         self.scheduleTableView.center = self.view.center;
@@ -122,8 +124,7 @@
         UISwipeGestureRecognizer *upSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(didSwipe:)];
         upSwipe.direction = UISwipeGestureRecognizerDirectionUp;
         [_pageViewController.view addGestureRecognizer:upSwipe];
-        
-        [_pageViewController.view setFrame:CGRectMake(0, kStateY, _pageViewController.view.bounds.size.width ,_pageViewController.view.bounds.size.height)];
+        [_pageViewController.view setFrame:CGRectMake(0, kStateY, 320 ,480)];
         _pageViewController.view.userInteractionEnabled = NO;
         originPageControlViewCenter = _pageViewController.view.center;
     }
@@ -145,15 +146,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSLog(@"%f",self.parentViewController.view.frame.size.height);
     [self.navigationController setNavigationBarHidden:YES];
+    NSLog(@"pageheight%f",self.pageViewController.view.frame.size.height);
     [self configureTodayRecommend];
     [self configureTableView];
     [self loadCourses];
     [self loadMyFavorites];
     [self loadActivities];
     [self setWantsFullScreenLayout:YES];
-    
+    NSLog(@"pageheight%f",self.pageViewController.view.frame.size.height);
 }
 
 -(void)loadCourses
@@ -253,7 +254,6 @@
 {
     [super viewDidAppear:animated];
     [self.navigationController setNavigationBarHidden:NO];
-    NSLog(@"%f",self.pageViewController.view.frame.size.height);
     [UIView animateWithDuration:0.8f animations:^{
         self.pageViewController.view.center = originPageControlViewCenter;} completion:nil];
 }
@@ -344,14 +344,16 @@
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     static int velocity = 15;
-    
     float rate = (scrollView.contentOffset.y + kContentOffSet) / -kRowHeight;
     
     if (rate > 2)
     {
         self.isAnimationFinished = true;
         [self.navigationController setNavigationBarHidden:YES animated:YES];
-        [[UIApplication sharedApplication]setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
+        [[UIApplication sharedApplication] nj_setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
+        CGRect frame = self.pageViewController.view.frame;
+        frame.size.height = 480;
+        self.pageViewController.view.frame = frame;
         [UIView animateWithDuration:0.25f animations:^{
             self.scheduleTableView.frame = CGRectMake(0, self.view.frame.size.height, self.scheduleTableView.frame.size.width, self.scheduleTableView.frame.size.height);
             CGPoint center = self.view.center;
