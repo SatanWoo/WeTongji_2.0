@@ -21,6 +21,7 @@
 #define DAY_TIME_INTERVAL (60 * 60 * 24)
 #define kXPos 278
 #define kYPos 55
+#define kOffSet 6
 
 @interface ArrangementViewController () <UITableViewDataSource, UITableViewDelegate>
 {
@@ -236,7 +237,7 @@
             oldFrame.origin.y = kYPos;
             ((ArrangementCell *)cell).locationLabel.frame = oldFrame;
             CGRect iconFrame = ((ArrangementCell *)cell).locationIcon.frame;
-            iconFrame.origin.x = oldFrame.origin.x - 3 - ((ArrangementCell *)cell).locationIcon.frame.size.width;
+            iconFrame.origin.x = oldFrame.origin.x - kOffSet - ((ArrangementCell *)cell).locationIcon.frame.size.width;
             ((ArrangementCell *)cell).locationIcon.frame = iconFrame;
             
             if ( [activity isKindOfClass:[Event class]] )

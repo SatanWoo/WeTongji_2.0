@@ -8,6 +8,7 @@
 
 #import "RecommendCell.h"
 #import <WeTongjiSDK/WeTongjiSDK.h>
+#define kOffset 6
 
 @implementation RecommendCell
 @synthesize infoTitle = _infoTitle;
@@ -36,7 +37,7 @@
     
     CGRect oldFrame = self.icon.frame;
     CGRect titleFrame = self.infoTitle.frame;
-    float newX = titleFrame.origin.x + 4 + titleFrame.size.width;
+    float newX = titleFrame.origin.x + kOffset + titleFrame.size.width;
     oldFrame.origin.x = newX;
     self.icon.frame = oldFrame;
 }
