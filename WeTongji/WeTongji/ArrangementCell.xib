@@ -117,22 +117,21 @@
 							</object>
 							<object class="IBUILabel" id="1016081019">
 								<reference key="NSNextResponder" ref="5349931"/>
-								<int key="NSvFlags">260</int>
+								<int key="NSvFlags">259</int>
 								<string key="NSFrame">{{228, 51}, {50, 19}}</string>
 								<reference key="NSSuperview" ref="5349931"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView" ref="154330402"/>
+								<reference key="NSNextKeyView" ref="597592684"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
-								<int key="IBUIContentMode">12</int>
+								<int key="IBUIContentMode">8</int>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<string key="IBUIText">大礼堂</string>
 								<reference key="IBUITextColor" ref="668746772"/>
 								<nil key="IBUIHighlightedColor"/>
 								<int key="IBUITextAlignment">2</int>
-								<int key="IBUILineBreakMode">1</int>
 								<object class="IBUIFontDescription" key="IBUIFontDescription">
 									<string key="name">STHeitiSC-Light</string>
 									<string key="family">Heiti SC</string>
@@ -167,7 +166,7 @@
 								<string key="NSFrame">{{213, 56}, {7, 10}}</string>
 								<reference key="NSSuperview" ref="5349931"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView" ref="597592684"/>
+								<reference key="NSNextKeyView" ref="1016081019"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -182,7 +181,7 @@
 								<string key="NSFrame">{{285, 30}, {16, 17}}</string>
 								<reference key="NSSuperview" ref="5349931"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView" ref="1016081019"/>
+								<reference key="NSNextKeyView" ref="154330402"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>

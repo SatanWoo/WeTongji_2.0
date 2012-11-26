@@ -19,8 +19,8 @@
 #import "Course+Addition.h"
 
 #define DAY_TIME_INTERVAL (60 * 60 * 24)
-#define kXPos 228
-#define kYPos 50
+#define kXPos 278
+#define kYPos 55
 
 @interface ArrangementViewController () <UITableViewDataSource, UITableViewDelegate>
 {
@@ -234,7 +234,7 @@
             CGRect oldFrame = ((ArrangementCell *)cell).locationLabel.frame;
             oldFrame.origin.x = kXPos - oldFrame.size.width;
             oldFrame.origin.y = kYPos;
-            //((ArrangementCell *)cell).locationLabel.frame = oldFrame;
+            ((ArrangementCell *)cell).locationLabel.frame = oldFrame;
             CGRect iconFrame = ((ArrangementCell *)cell).locationIcon.frame;
             iconFrame.origin.x = oldFrame.origin.x - 3 - ((ArrangementCell *)cell).locationIcon.frame.size.width;
             ((ArrangementCell *)cell).locationIcon.frame = iconFrame;
