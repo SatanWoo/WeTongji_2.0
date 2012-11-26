@@ -351,10 +351,10 @@
         self.isAnimationFinished = true;
         [self.navigationController setNavigationBarHidden:YES animated:YES];
         [[UIApplication sharedApplication] nj_setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
-        CGRect frame = self.pageViewController.view.frame;
-        frame.size.height = 480;
-        self.pageViewController.view.frame = frame;
         [UIView animateWithDuration:0.25f animations:^{
+            CGRect frame = self.pageViewController.view.frame;
+            frame.size.height = 480;
+            self.pageViewController.view.frame = frame;
             self.scheduleTableView.frame = CGRectMake(0, self.view.frame.size.height, self.scheduleTableView.frame.size.width, self.scheduleTableView.frame.size.height);
             CGPoint center = self.view.center;
             self.pageViewController.view.center = center;

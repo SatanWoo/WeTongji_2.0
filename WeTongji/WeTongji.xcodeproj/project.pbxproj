@@ -512,7 +512,6 @@
 		FFBEB2B6164B89090004AF4C /* WeTongjiCoreDataModels.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FFBEB2B4164B89090004AF4C /* WeTongjiCoreDataModels.xcdatamodeld */; };
 		FFBEB2CB164B943A0004AF4C /* Event+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBEB2CA164B943A0004AF4C /* Event+Addition.m */; };
 		FFBEB2F5164B9CF70004AF4C /* NSString+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBEB2F4164B9CF70004AF4C /* NSString+Addition.m */; };
-		FFBEB2F8164BA0760004AF4C /* NSArray+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBEB2F7164BA0760004AF4C /* NSArray+Addition.m */; };
 		FFBF21E5165AB47500F4657A /* add_to_schedule_hl.png in Resources */ = {isa = PBXBuildFile; fileRef = FFBF21E1165AB46E00F4657A /* add_to_schedule_hl.png */; };
 		FFBF21E6165AB47500F4657A /* add_to_schedule_hl@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFBF21E2165AB46F00F4657A /* add_to_schedule_hl@2x.png */; };
 		FFBF21E7165AB47500F4657A /* add_to_schedule.png in Resources */ = {isa = PBXBuildFile; fileRef = FFBF21E3165AB47100F4657A /* add_to_schedule.png */; };
@@ -1171,8 +1170,6 @@
 		FFBEB2CA164B943A0004AF4C /* Event+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Event+Addition.m"; sourceTree = "<group>"; };
 		FFBEB2F3164B9CF70004AF4C /* NSString+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Addition.h"; sourceTree = "<group>"; };
 		FFBEB2F4164B9CF70004AF4C /* NSString+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Addition.m"; sourceTree = "<group>"; };
-		FFBEB2F6164BA0760004AF4C /* NSArray+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Addition.h"; sourceTree = "<group>"; };
-		FFBEB2F7164BA0760004AF4C /* NSArray+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Addition.m"; sourceTree = "<group>"; };
 		FFBF21E1165AB46E00F4657A /* add_to_schedule_hl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add_to_schedule_hl.png; sourceTree = "<group>"; };
 		FFBF21E2165AB46F00F4657A /* add_to_schedule_hl@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "add_to_schedule_hl@2x.png"; sourceTree = "<group>"; };
 		FFBF21E3165AB47100F4657A /* add_to_schedule.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add_to_schedule.png; sourceTree = "<group>"; };
@@ -1586,8 +1583,6 @@
 				B00D693F162CFD1C00592B1D /* UIImageView+Screenshot.m */,
 				E52352CB16318BFA00DBFF7C /* UIBarButtonItem+CustomButton.h */,
 				E52352CC16318BFA00DBFF7C /* UIBarButtonItem+CustomButton.m */,
-				FFBEB2F6164BA0760004AF4C /* NSArray+Addition.h */,
-				FFBEB2F7164BA0760004AF4C /* NSArray+Addition.m */,
 				03D80C01165FBFFB0086054D /* UINavigationBar+Shadow.h */,
 				03D80C02165FBFFB0086054D /* UINavigationBar+Shadow.m */,
 				FFA371461661A5E4006958F3 /* NSUserDefaults+Settings.h */,
@@ -2907,7 +2902,6 @@
 				FFBEB2B6164B89090004AF4C /* WeTongjiCoreDataModels.xcdatamodeld in Sources */,
 				FFBEB2CB164B943A0004AF4C /* Event+Addition.m in Sources */,
 				FFBEB2F5164B9CF70004AF4C /* NSString+Addition.m in Sources */,
-				FFBEB2F8164BA0760004AF4C /* NSArray+Addition.m in Sources */,
 				FF710971164CFBE5008F2A06 /* EGORefreshTableFooterView.m in Sources */,
 				FF710978164D0A77008F2A06 /* EGORefreshTableHeaderView.m in Sources */,
 				FF710995164D1EB0008F2A06 /* Information+Addition.m in Sources */,

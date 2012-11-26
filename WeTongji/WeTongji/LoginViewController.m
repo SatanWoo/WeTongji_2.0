@@ -11,7 +11,6 @@
 #import "User+Addition.h"
 #import "Macro.h"
 #import "MBProgressHUD.h"
-#import "NSArray+Addition.h"
 
 @interface LoginViewController ()<MBProgressHUDDelegate>
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollVIew;
