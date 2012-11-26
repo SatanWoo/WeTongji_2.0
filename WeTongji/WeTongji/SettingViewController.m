@@ -222,7 +222,7 @@
         }
         else
         {
-            cell.textLabel.text = @"登陆";
+            cell.textLabel.text = @"  登录";
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         }
     } else {

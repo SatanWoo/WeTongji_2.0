@@ -16,6 +16,7 @@
 @synthesize titleLabel = _titleLabel;
 @synthesize colorBall = _colorBall;
 @synthesize line = _line;
+@synthesize locationIcon = _locationIcon;
 
 //- (void)setLine:(UIImageView *)line
 //{

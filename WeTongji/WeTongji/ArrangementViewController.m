@@ -19,6 +19,9 @@
 #import "Course+Addition.h"
 
 #define DAY_TIME_INTERVAL (60 * 60 * 24)
+#define kXPos 278
+#define kYPos 55
+#define kOffSet 6
 
 @interface ArrangementViewController () <UITableViewDataSource, UITableViewDelegate>
 {
@@ -227,6 +230,16 @@
             ((ArrangementCell *)cell).timeLabel.text = [NSString timeConvertFromBeginDate:activity.begin_time endDate:activity.end_time];
             ((ArrangementCell *)cell).titleLabel.text = activity.what;
             ((ArrangementCell *)cell).locationLabel.text = activity.where;
+            
+            [((ArrangementCell *)cell).locationLabel sizeToFit];
+            CGRect oldFrame = ((ArrangementCell *)cell).locationLabel.frame;
+            oldFrame.origin.x = kXPos - oldFrame.size.width;
+            oldFrame.origin.y = kYPos;
+            ((ArrangementCell *)cell).locationLabel.frame = oldFrame;
+            CGRect iconFrame = ((ArrangementCell *)cell).locationIcon.frame;
+            iconFrame.origin.x = oldFrame.origin.x - kOffSet - ((ArrangementCell *)cell).locationIcon.frame.size.width;
+            ((ArrangementCell *)cell).locationIcon.frame = iconFrame;
+            
             if ( [activity isKindOfClass:[Event class]] )
             {
                 [((ArrangementCell *)cell).colorBall setImage:[UIImage imageNamed:@"dot_yellow"]];

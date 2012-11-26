@@ -41,7 +41,7 @@
 						<reference key="NSNextResponder" ref="219683063"/>
 						<int key="NSvFlags">1280</int>
 						<object class="NSPSMatrix" key="NSFrameMatrix"/>
-						<string key="NSFrame">{{6, -1}, {240, 21}}</string>
+						<string key="NSFrame">{{10, 10}, {240, 44}}</string>
 						<reference key="NSSuperview" ref="219683063"/>
 						<reference key="NSNextKeyView" ref="153693774"/>
 						<bool key="IBUIOpaque">NO</bool>
@@ -52,27 +52,28 @@
 						<string key="IBUIText">同济大学物理科学与工程学院成立</string>
 						<object class="NSColor" key="IBUITextColor">
 							<int key="NSColorSpace">1</int>
-							<bytes key="NSRGB">MCAwIDAAA</bytes>
-							<string key="IBUIColorCocoaTouchKeyPath">darkTextColor</string>
+							<bytes key="NSRGB">MC4yMzMyOTE1MTQ2IDAuMjU5ODY1NDE5NyAwLjMwNjc5NzQ0NTMAA</bytes>
 						</object>
 						<nil key="IBUIHighlightedColor"/>
 						<int key="IBUIBaselineAdjustment">0</int>
-						<float key="IBUIMinimumFontSize">10</float>
+						<int key="IBUINumberOfLines">2</int>
 						<object class="IBUIFontDescription" key="IBUIFontDescription">
 							<int key="type">2</int>
-							<double key="pointSize">16</double>
+							<double key="pointSize">18</double>
 						</object>
 						<object class="NSFont" key="IBUIFont">
 							<string key="NSName">Helvetica-Bold</string>
-							<double key="NSSize">16</double>
+							<double key="NSSize">18</double>
 							<int key="NSfFlags">16</int>
 						</object>
+						<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
+						<double key="preferredMaxLayoutWidth">240</double>
 					</object>
 					<object class="IBUILabel" id="839567174">
 						<reference key="NSNextResponder" ref="219683063"/>
 						<int key="NSvFlags">1280</int>
 						<object class="NSPSMatrix" key="NSFrameMatrix"/>
-						<string key="NSFrame">{{6, 28}, {42, 21}}</string>
+						<string key="NSFrame">{{12, 55}, {42, 21}}</string>
 						<reference key="NSSuperview" ref="219683063"/>
 						<reference key="NSNextKeyView" ref="766462957"/>
 						<bool key="IBUIOpaque">NO</bool>
@@ -102,7 +103,7 @@
 						<reference key="NSNextResponder" ref="219683063"/>
 						<int key="NSvFlags">1280</int>
 						<object class="NSPSMatrix" key="NSFrameMatrix"/>
-						<string key="NSFrame">{{56, 28}, {98, 21}}</string>
+						<string key="NSFrame">{{56, 55}, {98, 21}}</string>
 						<reference key="NSSuperview" ref="219683063"/>
 						<reference key="NSNextKeyView" ref="670261615"/>
 						<bool key="IBUIOpaque">NO</bool>
@@ -122,7 +123,7 @@
 						<reference key="NSNextResponder" ref="219683063"/>
 						<int key="NSvFlags">1280</int>
 						<object class="NSPSMatrix" key="NSFrameMatrix"/>
-						<string key="NSFrame">{{193, 28}, {28, 21}}</string>
+						<string key="NSFrame">{{253, 56}, {28, 21}}</string>
 						<reference key="NSSuperview" ref="219683063"/>
 						<reference key="NSNextKeyView" ref="144096905"/>
 						<bool key="IBUIOpaque">NO</bool>
@@ -142,7 +143,7 @@
 						<reference key="NSNextResponder" ref="219683063"/>
 						<int key="NSvFlags">1280</int>
 						<object class="NSPSMatrix" key="NSFrameMatrix"/>
-						<string key="NSFrame">{{267, 0}, {53, 21}}</string>
+						<string key="NSFrame">{{260, 12}, {53, 21}}</string>
 						<reference key="NSSuperview" ref="219683063"/>
 						<reference key="NSNextKeyView" ref="839567174"/>
 						<bool key="IBUIOpaque">NO</bool>
@@ -175,7 +176,7 @@
 						<reference key="NSNextResponder" ref="219683063"/>
 						<int key="NSvFlags">1280</int>
 						<object class="NSPSMatrix" key="NSFrameMatrix"/>
-						<string key="NSFrame">{{169, 34}, {16, 10}}</string>
+						<string key="NSFrame">{{229, 62}, {16, 10}}</string>
 						<reference key="NSSuperview" ref="219683063"/>
 						<reference key="NSNextKeyView" ref="181089076"/>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
@@ -197,7 +198,7 @@
 										<reference key="NSNextResponder" ref="925634669"/>
 										<int key="NSvFlags">1280</int>
 										<object class="NSPSMatrix" key="NSFrameMatrix"/>
-										<string key="NSFrame">{{10, 12}, {15, 15}}</string>
+										<string key="NSFrame">{{10, 10}, {19, 16}}</string>
 										<reference key="NSSuperview" ref="925634669"/>
 										<reference key="NSNextKeyView" ref="476333896"/>
 										<bool key="IBUIOpaque">NO</bool>
@@ -237,7 +238,7 @@
 										<reference key="NSNextResponder" ref="925634669"/>
 										<int key="NSvFlags">1280</int>
 										<object class="NSPSMatrix" key="NSFrameMatrix"/>
-										<string key="NSFrame">{{32, 7}, {23, 21}}</string>
+										<string key="NSFrame">{{42, 7}, {20, 21}}</string>
 										<reference key="NSSuperview" ref="925634669"/>
 										<reference key="NSNextKeyView" ref="761782886"/>
 										<bool key="IBUIOpaque">NO</bool>
@@ -258,7 +259,7 @@
 									</object>
 								</array>
 								<object class="NSPSMatrix" key="NSFrameMatrix"/>
-								<string key="NSFrame">{{9, 7}, {55, 36}}</string>
+								<string key="NSFrame">{{9, 7}, {70, 36}}</string>
 								<reference key="NSSuperview" ref="144096905"/>
 								<reference key="NSNextKeyView" ref="246074887"/>
 								<object class="NSColor" key="IBUIBackgroundColor">
@@ -275,7 +276,7 @@
 										<reference key="NSNextResponder" ref="761782886"/>
 										<int key="NSvFlags">1280</int>
 										<object class="NSPSMatrix" key="NSFrameMatrix"/>
-										<string key="NSFrame">{{10, 12}, {15, 15}}</string>
+										<string key="NSFrame">{{9, 9}, {18, 19}}</string>
 										<reference key="NSSuperview" ref="761782886"/>
 										<reference key="NSNextKeyView" ref="657584968"/>
 										<bool key="IBUIOpaque">NO</bool>
@@ -302,7 +303,7 @@
 										<reference key="NSNextResponder" ref="761782886"/>
 										<int key="NSvFlags">1280</int>
 										<object class="NSPSMatrix" key="NSFrameMatrix"/>
-										<string key="NSFrame">{{28, 7}, {28, 21}}</string>
+										<string key="NSFrame">{{42, 7}, {20, 21}}</string>
 										<reference key="NSSuperview" ref="761782886"/>
 										<bool key="IBUIOpaque">NO</bool>
 										<bool key="IBUIClipsSubviews">YES</bool>
@@ -322,7 +323,7 @@
 									</object>
 								</array>
 								<object class="NSPSMatrix" key="NSFrameMatrix"/>
-								<string key="NSFrame">{{73, 7}, {56, 36}}</string>
+								<string key="NSFrame">{{90, 7}, {70, 36}}</string>
 								<reference key="NSSuperview" ref="144096905"/>
 								<reference key="NSNextKeyView" ref="96670799"/>
 								<object class="NSColor" key="IBUIBackgroundColor">
@@ -332,7 +333,7 @@
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 							</object>
 						</array>
-						<string key="NSFrame">{{0, 52}, {140, 50}}</string>
+						<string key="NSFrame">{{0, 80}, {170, 50}}</string>
 						<reference key="NSSuperview" ref="219683063"/>
 						<reference key="NSNextKeyView" ref="925634669"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
@@ -340,12 +341,12 @@
 					</object>
 				</array>
 				<object class="NSPSMatrix" key="NSFrameMatrix"/>
-				<string key="NSFrameSize">{320, 103}</string>
+				<string key="NSFrameSize">{320, 130}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSNextKeyView" ref="468782144"/>
 				<object class="NSColor" key="IBUIBackgroundColor">
-					<int key="NSColorSpace">3</int>
-					<bytes key="NSWhite">MC45MDQ5MjY5MTUzAA</bytes>
+					<int key="NSColorSpace">1</int>
+					<bytes key="NSRGB">MC45Njc5MjMxMjk2IDAuOTY0NDQ0NTcxMiAwLjk2OTMyMDI1NTUAA</bytes>
 				</object>
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 			</object>
@@ -484,11 +485,11 @@
 						<array class="NSMutableArray" key="children">
 							<reference ref="670261615"/>
 							<reference ref="153693774"/>
-							<reference ref="181089076"/>
 							<reference ref="766462957"/>
 							<reference ref="839567174"/>
 							<reference ref="468782144"/>
 							<reference ref="144096905"/>
+							<reference ref="181089076"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>

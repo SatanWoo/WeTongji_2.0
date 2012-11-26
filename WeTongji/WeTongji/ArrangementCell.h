@@ -14,4 +14,5 @@
 @property (nonatomic ,weak) IBOutlet UILabel *locationLabel;
 @property (nonatomic ,weak) IBOutlet UIImageView *colorBall;
 @property (nonatomic ,weak) IBOutlet UIImageView *line;
+@property (nonatomic ,weak) IBOutlet UIImageView *locationIcon;
 @end
