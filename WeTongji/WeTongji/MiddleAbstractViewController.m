@@ -26,6 +26,10 @@
                                                             color:[UIColor darkGrayColor]
                                                           opacity:0.6];
     
+    UISwipeGestureRecognizer *rightGesturer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:nil];
+    rightGesturer.direction = UISwipeGestureRecognizerDirectionRight;
+    [self.navigationController.navigationBar addGestureRecognizer:rightGesturer];
+    
     self.window = [[WUStatusbarWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     [self.window refreshWindow];
 }
