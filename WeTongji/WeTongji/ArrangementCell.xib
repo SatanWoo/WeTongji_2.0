@@ -3,12 +3,12 @@
 	<data>
 		<int key="IBDocument.SystemTarget">1536</int>
 		<string key="IBDocument.SystemVersion">11G63</string>
-		<string key="IBDocument.InterfaceBuilderVersion">2844</string>
+		<string key="IBDocument.InterfaceBuilderVersion">2843</string>
 		<string key="IBDocument.AppKitVersion">1138.51</string>
 		<string key="IBDocument.HIToolboxVersion">569.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-			<string key="NS.object.0">1930</string>
+			<string key="NS.object.0">1929</string>
 		</object>
 		<array key="IBDocument.IntegratedClassDependencies">
 			<string>IBProxyObject</string>
@@ -148,7 +148,7 @@
 							<object class="IBUIImageView" id="1069816319">
 								<reference key="NSNextResponder" ref="5349931"/>
 								<int key="NSvFlags">257</int>
-								<string key="NSFrame">{{78, 36}, {10, 10}}</string>
+								<string key="NSFrame">{{85, 36}, {10, 10}}</string>
 								<reference key="NSSuperview" ref="5349931"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="598922381"/>
@@ -438,6 +438,6 @@
 			<string key="partition_line_new.png">{208, 3}</string>
 			<string key="time.png">{10, 10}</string>
 		</dictionary>
-		<string key="IBCocoaTouchPluginVersion">1930</string>
+		<string key="IBCocoaTouchPluginVersion">1929</string>
 	</data>
 </archive>
