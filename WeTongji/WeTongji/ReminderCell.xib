@@ -62,7 +62,7 @@
 									<object class="IBUILabel" id="34767308">
 										<reference key="NSNextResponder" ref="889131235"/>
 										<int key="NSvFlags">256</int>
-										<string key="NSFrame">{{31, 0}, {213, 21}}</string>
+										<string key="NSFrame">{{29, 0}, {213, 21}}</string>
 										<reference key="NSSuperview" ref="889131235"/>
 										<reference key="NSNextKeyView" ref="122305308"/>
 										<string key="NSReuseIdentifierKey">_NS:9</string>
@@ -92,7 +92,7 @@
 									<object class="IBUILabel" id="11564165">
 										<reference key="NSNextResponder" ref="889131235"/>
 										<int key="NSvFlags">256</int>
-										<string key="NSFrame">{{52, 16}, {175, 21}}</string>
+										<string key="NSFrame">{{48, 19}, {194, 21}}</string>
 										<reference key="NSSuperview" ref="889131235"/>
 										<reference key="NSNextKeyView" ref="313060207"/>
 										<string key="NSReuseIdentifierKey">_NS:9</string>
@@ -105,7 +105,6 @@
 										<reference key="IBUITextColor" ref="288820146"/>
 										<nil key="IBUIHighlightedColor"/>
 										<int key="IBUIBaselineAdjustment">0</int>
-										<float key="IBUIMinimumFontSize">10</float>
 										<object class="IBUIFontDescription" key="IBUIFontDescription" id="528888141">
 											<int key="type">1</int>
 											<double key="pointSize">12</double>
@@ -115,12 +114,14 @@
 											<double key="NSSize">12</double>
 											<int key="NSfFlags">16</int>
 										</object>
+										<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
 									</object>
 									<object class="IBUILabel" id="328822834">
 										<reference key="NSNextResponder" ref="889131235"/>
 										<int key="NSvFlags">256</int>
-										<string key="NSFrame">{{52, 30}, {175, 21}}</string>
+										<string key="NSFrame">{{48, 35}, {194, 21}}</string>
 										<reference key="NSSuperview" ref="889131235"/>
+										<reference key="NSNextKeyView"/>
 										<string key="NSReuseIdentifierKey">_NS:9</string>
 										<bool key="IBUIOpaque">NO</bool>
 										<bool key="IBUIClipsSubviews">YES</bool>
@@ -138,7 +139,7 @@
 									<object class="IBUIImageView" id="122305308">
 										<reference key="NSNextResponder" ref="889131235"/>
 										<int key="NSvFlags">256</int>
-										<string key="NSFrame">{{34, 23}, {10, 10}}</string>
+										<string key="NSFrame">{{29, 25}, {10, 10}}</string>
 										<reference key="NSSuperview" ref="889131235"/>
 										<reference key="NSNextKeyView" ref="11564165"/>
 										<string key="NSReuseIdentifierKey">_NS:9</string>
@@ -152,7 +153,7 @@
 									<object class="IBUIImageView" id="313060207">
 										<reference key="NSNextResponder" ref="889131235"/>
 										<int key="NSvFlags">256</int>
-										<string key="NSFrame">{{35, 37}, {7, 10}}</string>
+										<string key="NSFrame">{{30, 41}, {7, 10}}</string>
 										<reference key="NSSuperview" ref="889131235"/>
 										<reference key="NSNextKeyView" ref="328822834"/>
 										<string key="NSReuseIdentifierKey">_NS:9</string>
