@@ -54,8 +54,6 @@
 #pragma mark - Private Method
 - (void)renderShadow:(UIView *)view
 {
-    view.layer.shadowOpacity = 1;
-    view.layer.shadowColor = [UIColor blackColor].CGColor;
 }
 
 - (void)configureTableView

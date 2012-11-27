@@ -29,7 +29,7 @@
     self.summary.text = star.words;
     NSDictionary * imageDict = [NSDictionary getImageLinkDictInJsonString:star.images];
     id key = [imageDict allKeys][0];
-    [self.image setImageWithURL:[NSURL URLWithString:imageDict[key]] placeholderImage:[UIImage imageNamed:@"defalut_pic"]];
+    [self.image setImageWithURL:[NSURL URLWithString:key] placeholderImage:[UIImage imageNamed:@"defalut_pic"]];
     _star = star;
 }
 
