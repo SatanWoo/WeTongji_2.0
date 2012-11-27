@@ -33,6 +33,7 @@
 }
 - (void)renderShadow:(UIView *)view;
 - (void)configureTableView;
+- (void)renderBorder:(UIView *)view;
 @property (weak, nonatomic) IBOutlet UIImageView *buttonBackImageView;
 @property (nonatomic, strong) WUTableHeaderView *headerView;
 @property (nonatomic, strong) WUPageControlViewController *pageViewController;
@@ -66,6 +67,12 @@
     self.newsTableView.frame = CGRectMake(0, 0, 320, self.newsTableView.frame.size.height + (self.headerView.bounds.size.height - kContentOffset));
     originNewsTableViewCenter = [self.newsTableView center];
    
+}
+
+- (void)renderBorder:(UIView *)view
+{
+    view.layer.borderWidth = 1.0f;
+    view.layer.borderColor = [UIColor colorWithRed:214 green:214 blue:214 alpha:1.0].CGColor;
 }
 #pragma mark - Tap
 
@@ -169,6 +176,9 @@
     [self.transparentHeaderView setEvent:event];
     self.imageDict = [NSDictionary dictionaryWithObject:[NSNull null] forKey:event.imageLink];
     _event = event;
+    
+    [self renderBorder:self.headerView.likeButtonBg];
+    [self renderBorder:self.headerView.favoriteButtonBg];
 }
 
 -(void) setInformation:(Information *)information
@@ -195,6 +205,10 @@
         [self.headerView  setInformation:information];
         [self.transparentHeaderView setHideBoard:YES];
     }
+    
+    [self renderBorder:self.headerView.likeButtonBg];
+    [self renderBorder:self.headerView.favoriteButtonBg];
+
     self.imageDict = [NSDictionary getImageLinkDictInJsonString:information.images];
     _information = information;
 }

@@ -154,6 +154,7 @@
 										<reference key="NSWindow"/>
 										<reference key="NSNextKeyView" ref="506679636"/>
 										<bool key="IBUIOpaque">NO</bool>
+										<bool key="IBUIUserInteractionEnabled">NO</bool>
 										<object class="IBUIAccessibilityConfiguration" key="IBUIAccessibilityConfiguration">
 											<integer value="257" key="IBUIAccessibilityTraits"/>
 										</object>
@@ -242,6 +243,7 @@
 										<reference key="NSWindow"/>
 										<reference key="NSNextKeyView" ref="436366246"/>
 										<bool key="IBUIOpaque">NO</bool>
+										<bool key="IBUIUserInteractionEnabled">NO</bool>
 										<object class="IBUIAccessibilityConfiguration" key="IBUIAccessibilityConfiguration">
 											<integer value="257" key="IBUIAccessibilityTraits"/>
 										</object>
@@ -310,6 +312,7 @@
 										<reference key="NSWindow"/>
 										<reference key="NSNextKeyView" ref="665507818"/>
 										<bool key="IBUIOpaque">NO</bool>
+										<bool key="IBUIUserInteractionEnabled">NO</bool>
 										<object class="IBUIAccessibilityConfiguration" key="IBUIAccessibilityConfiguration">
 											<integer value="257" key="IBUIAccessibilityTraits"/>
 										</object>

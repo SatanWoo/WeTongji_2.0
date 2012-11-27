@@ -209,6 +209,7 @@
 										<reference key="NSWindow"/>
 										<reference key="NSNextKeyView" ref="476333896"/>
 										<bool key="IBUIOpaque">NO</bool>
+										<bool key="IBUIUserInteractionEnabled">NO</bool>
 										<object class="IBUIAccessibilityConfiguration" key="IBUIAccessibilityConfiguration">
 											<integer value="257" key="IBUIAccessibilityTraits"/>
 										</object>
@@ -271,7 +272,7 @@
 								<reference key="NSSuperview" ref="144096905"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="246074887"/>
-								<object class="NSColor" key="IBUIBackgroundColor" id="218287998">
+								<object class="NSColor" key="IBUIBackgroundColor" id="420640337">
 									<int key="NSColorSpace">1</int>
 									<bytes key="NSRGB">MC45NDc1ODA2NDUyIDAuOTUwMzUyODIyNiAwLjk0OTMxMzI1NgA</bytes>
 								</object>
@@ -290,6 +291,7 @@
 										<reference key="NSWindow"/>
 										<reference key="NSNextKeyView" ref="657584968"/>
 										<bool key="IBUIOpaque">NO</bool>
+										<bool key="IBUIUserInteractionEnabled">NO</bool>
 										<object class="IBUIAccessibilityConfiguration" key="IBUIAccessibilityConfiguration">
 											<integer value="257" key="IBUIAccessibilityTraits"/>
 										</object>
@@ -338,7 +340,7 @@
 								<reference key="NSSuperview" ref="144096905"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="96670799"/>
-								<reference key="IBUIBackgroundColor" ref="218287998"/>
+								<reference key="IBUIBackgroundColor" ref="420640337"/>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 							</object>
 						</array>
