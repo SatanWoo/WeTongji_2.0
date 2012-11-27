@@ -274,7 +274,7 @@
 								<reference key="NSSuperview" ref="861728725"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="464048014"/>
-								<object class="NSColor" key="IBUIBackgroundColor" id="974799754">
+								<object class="NSColor" key="IBUIBackgroundColor" id="975259411">
 									<int key="NSColorSpace">1</int>
 									<bytes key="NSRGB">MC45NDc1ODA2NDUyIDAuOTUwMzUyODIyNiAwLjk0OTMxMzI1NgA</bytes>
 								</object>
@@ -342,7 +342,7 @@
 								<reference key="NSSuperview" ref="861728725"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="412002193"/>
-								<reference key="IBUIBackgroundColor" ref="974799754"/>
+								<reference key="IBUIBackgroundColor" ref="975259411"/>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 							</object>
 						</array>

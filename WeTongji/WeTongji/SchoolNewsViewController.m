@@ -219,6 +219,9 @@
     [self.transparentHeaderView setHideBoard:YES];
     self.imageDict = [NSDictionary getImageLinkDictInJsonString:star.images];
     _star = star;
+    
+    [self renderBorder:self.headerView.likeButtonBg];
+    [self renderBorder:self.headerView.favoriteButtonBg];
 }
 
 #pragma mark - LifeCycle
