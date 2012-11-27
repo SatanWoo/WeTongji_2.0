@@ -36,6 +36,9 @@
 @property (weak, nonatomic) Information * information;
 @property (weak, nonatomic) Star * star;
 @property (weak, nonatomic) IBOutlet UIButton *addScheduleButton;
+@property (weak, nonatomic) IBOutlet UIButton *likeButtonBg;
+@property (weak, nonatomic) IBOutlet UIButton *favoriteButtonBg;
+@property (weak, nonatomic) IBOutlet UIButton *addToScheduleBg;
 
 -(void) changeButtonPositionToLeft;
 -(void) resetButtonPosition;

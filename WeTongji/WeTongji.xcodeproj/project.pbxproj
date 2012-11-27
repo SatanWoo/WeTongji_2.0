@@ -548,18 +548,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		FF78959C1663CD190030D039 /* PBXContainerItemProxy */ = {
+		031C60AA16645C0200A15FFA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = FF7895951663CD190030D039 /* WeTongjiSDK.xcodeproj */;
+			containerPortal = 031C60A316645C0200A15FFA /* WeTongjiSDK.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = E110DF2B16365B990087EA46;
-			remoteInfo = WeTongjiSDK;
-		};
-		FF78959E1663CD240030D039 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FF7895951663CD190030D039 /* WeTongjiSDK.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = E110DF2A16365B990087EA46;
 			remoteInfo = WeTongjiSDK;
 		};
 /* End PBXContainerItemProxy section */
@@ -607,6 +600,7 @@
 		031874F4165D1080000D446B /* 13@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "13@2x.png"; sourceTree = "<group>"; };
 		0318750F165D25CA000D446B /* list_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = list_btn.png; sourceTree = "<group>"; };
 		03187510165D25CA000D446B /* list_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "list_btn@2x.png"; sourceTree = "<group>"; };
+		031C60A316645C0200A15FFA /* WeTongjiSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = WeTongjiSDK.xcodeproj; path = ../../wetongji_ios_sdk/WeTongjiSDK.xcodeproj; sourceTree = "<group>"; };
 		03326A471656798A005E8A16 /* recommend_img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = recommend_img.png; sourceTree = "<group>"; };
 		03326A481656798A005E8A16 /* recommend_img@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recommend_img@2x.png"; sourceTree = "<group>"; };
 		03326A4B16567FE3005E8A16 /* default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default.png; sourceTree = "<group>"; };
@@ -1018,7 +1012,6 @@
 		FF78958A16639A740030D039 /* NSDictionary+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Addition.m"; sourceTree = "<group>"; };
 		FF78958C1663C2200030D039 /* UIApplication+nj_SmartStatusBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+nj_SmartStatusBar.h"; sourceTree = "<group>"; };
 		FF78958D1663C2200030D039 /* UIApplication+nj_SmartStatusBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+nj_SmartStatusBar.m"; sourceTree = "<group>"; };
-		FF7895951663CD190030D039 /* WeTongjiSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = WeTongjiSDK.xcodeproj; path = "../../WeTongji 2.0 SDK/WeTongjiSDK.xcodeproj"; sourceTree = "<group>"; };
 		FFA371461661A5E4006958F3 /* NSUserDefaults+Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+Settings.h"; sourceTree = "<group>"; };
 		FFA371471661A5E4006958F3 /* NSUserDefaults+Settings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+Settings.m"; sourceTree = "<group>"; };
 		FFABBA26165F5E07000D6940 /* default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default.png; sourceTree = "<group>"; };
@@ -1273,6 +1266,14 @@
 			name = Gallery;
 			sourceTree = "<group>";
 		};
+		031C60A416645C0200A15FFA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				031C60AB16645C0200A15FFA /* WeTongjiSDK.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		033DF606165931B200C0441A /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -1496,7 +1497,7 @@
 		B00D6911162CFCAC00592B1D = {
 			isa = PBXGroup;
 			children = (
-				FF7895951663CD190030D039 /* WeTongjiSDK.xcodeproj */,
+				031C60A316645C0200A15FFA /* WeTongjiSDK.xcodeproj */,
 				036E49D4165E5016006B33EE /* Default@2x.png */,
 				036E49D2165E5006006B33EE /* Default.png */,
 				03326A4B16567FE3005E8A16 /* default.png */,
@@ -2120,14 +2121,6 @@
 			name = UserProtocol;
 			sourceTree = "<group>";
 		};
-		FF7895961663CD190030D039 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				FF78959D1663CD190030D039 /* WeTongjiSDK.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		FFB20FBB1655D60E00FCAF5F /* Schedule */ = {
 			isa = PBXGroup;
 			children = (
@@ -2383,7 +2376,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				FF78959F1663CD240030D039 /* PBXTargetDependency */,
 			);
 			name = WeTongji;
 			productName = WeTongji;
@@ -2410,8 +2402,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = FF7895961663CD190030D039 /* Products */;
-					ProjectRef = FF7895951663CD190030D039 /* WeTongjiSDK.xcodeproj */;
+					ProductGroup = 031C60A416645C0200A15FFA /* Products */;
+					ProjectRef = 031C60A316645C0200A15FFA /* WeTongjiSDK.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -2422,11 +2414,11 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		FF78959D1663CD190030D039 /* WeTongjiSDK.framework */ = {
+		031C60AB16645C0200A15FFA /* WeTongjiSDK.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = WeTongjiSDK.framework;
-			remoteRef = FF78959C1663CD190030D039 /* PBXContainerItemProxy */;
+			remoteRef = 031C60AA16645C0200A15FFA /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -2977,14 +2969,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		FF78959F1663CD240030D039 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = WeTongjiSDK;
-			targetProxy = FF78959E1663CD240030D039 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		B00D6929162CFCAC00592B1D /* InfoPlist.strings */ = {

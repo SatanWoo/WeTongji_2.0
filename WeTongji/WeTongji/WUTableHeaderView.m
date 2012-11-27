@@ -36,6 +36,9 @@
 @synthesize moveFavorView;
 @synthesize moveLikeView;
 @synthesize buttonBoard;
+@synthesize likeButtonBg = _likeButtonBg;
+@synthesize favoriteButtonBg = _favoriteButtonBg;
+@synthesize addScheduleButton = _addScheduleButton;
 
 -(MBProgressHUD *) progress
 {

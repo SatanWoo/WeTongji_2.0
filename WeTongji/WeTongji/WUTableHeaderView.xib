@@ -3,12 +3,12 @@
 	<data>
 		<int key="IBDocument.SystemTarget">1536</int>
 		<string key="IBDocument.SystemVersion">11G63</string>
-		<string key="IBDocument.InterfaceBuilderVersion">2843</string>
+		<string key="IBDocument.InterfaceBuilderVersion">2844</string>
 		<string key="IBDocument.AppKitVersion">1138.51</string>
 		<string key="IBDocument.HIToolboxVersion">569.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-			<string key="NS.object.0">1929</string>
+			<string key="NS.object.0">1930</string>
 		</object>
 		<array key="IBDocument.IntegratedClassDependencies">
 			<string>IBProxyObject</string>
@@ -225,7 +225,7 @@
 								<reference key="NSNextKeyView" ref="190400798"/>
 								<object class="NSColor" key="IBUIBackgroundColor">
 									<int key="NSColorSpace">1</int>
-									<bytes key="NSRGB">MC44MTYyMDY5NTE1IDAuODE2MjA2OTUxNSAwLjgxNjIwNjk1MTUAA</bytes>
+									<bytes key="NSRGB">MC45NDc1ODA2NDUyIDAuOTUwMzUyODIyNiAwLjk0OTMxMzI1NgA</bytes>
 								</object>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 							</object>
@@ -293,7 +293,7 @@
 								<reference key="NSNextKeyView" ref="377421230"/>
 								<object class="NSColor" key="IBUIBackgroundColor">
 									<int key="NSColorSpace">1</int>
-									<bytes key="NSRGB">MC44MTYyMDY5NTE1IDAuODE2MjA2OTUxNSAwLjgxNjIwNjk1MTUAA</bytes>
+									<bytes key="NSRGB">MC45NDc1ODA2NDUyIDAuOTUwMzUyODIyNiAwLjk0OTMxMzI1NgA</bytes>
 								</object>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 							</object>
@@ -360,7 +360,7 @@
 								<reference key="NSNextKeyView" ref="277208536"/>
 								<object class="NSColor" key="IBUIBackgroundColor">
 									<int key="NSColorSpace">1</int>
-									<bytes key="NSRGB">MC44MTYyMDY5NTE1IDAuODE2MjA2OTUxNSAwLjgxNjIwNjk1MTUAA</bytes>
+									<bytes key="NSRGB">MC45NDc1ODA2NDUyIDAuOTUwMzUyODIyNiAwLjk0OTMxMzI1NgA</bytes>
 								</object>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 							</object>
@@ -533,6 +533,30 @@
 						<reference key="destination" ref="277208536"/>
 					</object>
 					<int key="connectionID">75</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">likeButtonBg</string>
+						<reference key="source" ref="883244779"/>
+						<reference key="destination" ref="829231781"/>
+					</object>
+					<int key="connectionID">85</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">favoriteButtonBg</string>
+						<reference key="source" ref="883244779"/>
+						<reference key="destination" ref="551405642"/>
+					</object>
+					<int key="connectionID">86</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">addToScheduleBg</string>
+						<reference key="source" ref="883244779"/>
+						<reference key="destination" ref="234976442"/>
+					</object>
+					<int key="connectionID">87</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
@@ -753,7 +777,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">84</int>
+			<int key="maxID">87</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -762,11 +786,14 @@
 					<string key="superclassName">UIView</string>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="addScheduleButton">UIButton</string>
+						<string key="addToScheduleBg">UIButton</string>
 						<string key="buttonBoard">UIView</string>
 						<string key="eventTime">UILabel</string>
 						<string key="favoriteButton">UIButton</string>
+						<string key="favoriteButtonBg">UIButton</string>
 						<string key="favoriteNumber">UILabel</string>
 						<string key="likeButton">UIButton</string>
+						<string key="likeButtonBg">UIButton</string>
 						<string key="likeNumber">UILabel</string>
 						<string key="location">UILabel</string>
 						<string key="moveFavorView">UIView</string>
@@ -788,6 +815,10 @@
 							<string key="name">addScheduleButton</string>
 							<string key="candidateClassName">UIButton</string>
 						</object>
+						<object class="IBToOneOutletInfo" key="addToScheduleBg">
+							<string key="name">addToScheduleBg</string>
+							<string key="candidateClassName">UIButton</string>
+						</object>
 						<object class="IBToOneOutletInfo" key="buttonBoard">
 							<string key="name">buttonBoard</string>
 							<string key="candidateClassName">UIView</string>
@@ -800,12 +831,20 @@
 							<string key="name">favoriteButton</string>
 							<string key="candidateClassName">UIButton</string>
 						</object>
+						<object class="IBToOneOutletInfo" key="favoriteButtonBg">
+							<string key="name">favoriteButtonBg</string>
+							<string key="candidateClassName">UIButton</string>
+						</object>
 						<object class="IBToOneOutletInfo" key="favoriteNumber">
 							<string key="name">favoriteNumber</string>
 							<string key="candidateClassName">UILabel</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="likeButton">
 							<string key="name">likeButton</string>
+							<string key="candidateClassName">UIButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="likeButtonBg">
+							<string key="name">likeButtonBg</string>
 							<string key="candidateClassName">UIButton</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="likeNumber">
@@ -887,6 +926,6 @@
 			<string key="location.png">{7, 10}</string>
 			<string key="time.png">{10, 10}</string>
 		</dictionary>
-		<string key="IBCocoaTouchPluginVersion">1929</string>
+		<string key="IBCocoaTouchPluginVersion">1930</string>
 	</data>
 </archive>
