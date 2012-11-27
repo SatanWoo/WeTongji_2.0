@@ -63,6 +63,11 @@
     [self.pullRefreshManagement firstTrigger];
 }
 
+- (void)configureWeeklyPersonCellBg:(NSString *)imageName forCell:(WeeklyPersonCell *)cell
+{
+    cell.bgView.image = [UIImage imageNamed:imageName];
+}
+
 #pragma mark - Life Cycle
 @synthesize personTableView;
 - (void)viewDidLoad
@@ -112,6 +117,19 @@
         {
             cell = [[WeeklyPersonCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kWeeklyPersonCell];
         }
+        
+        if ([self.starList count] == 2) {
+            [self configureWeeklyPersonCellBg:@"list_single_cell.png" forCell:((WeeklyPersonCell *)cell)];
+        } else if ([self.starList count] > 2) {
+            if (indexPath.row == 1) {
+                [self configureWeeklyPersonCellBg:@"list_header.png" forCell:((WeeklyPersonCell *)cell)];
+            } else if (indexPath.row == [self.starList count] - 1) {
+                [self configureWeeklyPersonCellBg:@"list_footer.png" forCell:((WeeklyPersonCell *)cell)];
+            } else {
+                [self configureWeeklyPersonCellBg:@"list_cell.png" forCell:((WeeklyPersonCell *)cell)];
+            }
+        }
+        
         ((WeeklyPersonCell *)cell).star = self.starList[indexPath.row];
     }
     return cell;
@@ -119,8 +137,26 @@
 
 - (float)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.row == 0) return 316;
-    return 75;
+    if ([self.starList count] == 1) {
+        return 316;
+    } else if ([self.starList count] == 2) {
+        if (indexPath.row == 0) {
+            return 316;
+        } else {
+            return 92;
+        }
+    } else if ([self.starList count] > 2) {
+        if (indexPath.row == 0) {
+            return 316;
+        } else if (indexPath.row == 1) {
+            return 82;
+        } else if (indexPath.row == [self.starList count] - 1) {
+            return 83;
+        } else {
+            return 75;
+        }
+    }
+    return 0;
 }
 
 #pragma mark - UITableViewDelegate
