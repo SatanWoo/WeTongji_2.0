@@ -153,7 +153,6 @@
 								<string key="NSFrame">{{0, 233}, {320, 73}}</string>
 								<reference key="NSSuperview" ref="1699620"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -350,7 +349,7 @@
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="list_cell.png">{320, 73}</string>
+			<string key="list_cell.png">{320, 75}</string>
 			<string key="this_week_bg.png">{320, 316}</string>
 			<string key="this_week_icon.png">{87, 20}</string>
 		</dictionary>
