@@ -235,9 +235,9 @@
 								<reference key="NSSuperview" ref="1013233796"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="672641560"/>
-								<object class="NSColor" key="IBUIBackgroundColor">
+								<object class="NSColor" key="IBUIBackgroundColor" id="809298868">
 									<int key="NSColorSpace">1</int>
-									<bytes key="NSRGB">MC44MTYyMDY5NTE1IDAuODE2MjA2OTUxNSAwLjgxNjIwNjk1MTUAA</bytes>
+									<bytes key="NSRGB">MC45NDc1ODA2NDUyIDAuOTUwMzUyODIyNiAwLjk0OTMxMzI1NgA</bytes>
 								</object>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 							</object>
@@ -303,10 +303,7 @@
 								<reference key="NSSuperview" ref="1013233796"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="154833174"/>
-								<object class="NSColor" key="IBUIBackgroundColor">
-									<int key="NSColorSpace">1</int>
-									<bytes key="NSRGB">MC44MTYyMDY5NTE1IDAuODE2MjA2OTUxNSAwLjgxNjIwNjk1MTUAA</bytes>
-								</object>
+								<reference key="IBUIBackgroundColor" ref="809298868"/>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 							</object>
 						</array>
@@ -444,6 +441,22 @@
 						<reference key="destination" ref="700433498"/>
 					</object>
 					<int key="connectionID">116</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">likeButtonBg</string>
+						<reference key="source" ref="1007803879"/>
+						<reference key="destination" ref="342411297"/>
+					</object>
+					<int key="connectionID">124</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">favoriteButtonBg</string>
+						<reference key="source" ref="1007803879"/>
+						<reference key="destination" ref="134868995"/>
+					</object>
+					<int key="connectionID">125</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
@@ -624,7 +637,143 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">123</int>
+			<int key="maxID">125</int>
+		</object>
+		<object class="IBClassDescriber" key="IBDocument.Classes">
+			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
+				<object class="IBPartialClassDescription">
+					<string key="className">WUTableHeaderView</string>
+					<string key="superclassName">UIView</string>
+					<dictionary class="NSMutableDictionary" key="outlets">
+						<string key="addScheduleButton">UIButton</string>
+						<string key="addToScheduleBg">UIButton</string>
+						<string key="buttonBoard">UIView</string>
+						<string key="eventTime">UILabel</string>
+						<string key="favoriteButton">UIButton</string>
+						<string key="favoriteButtonBg">UIButton</string>
+						<string key="favoriteNumber">UILabel</string>
+						<string key="likeButton">UIButton</string>
+						<string key="likeButtonBg">UIButton</string>
+						<string key="likeNumber">UILabel</string>
+						<string key="location">UILabel</string>
+						<string key="moveFavorView">UIView</string>
+						<string key="moveLikeView">UIView</string>
+						<string key="recommendImage">UIImageView</string>
+						<string key="releaseTimeLabel">UILabel</string>
+						<string key="seeNumber">UILabel</string>
+						<string key="sourceLabel">UILabel</string>
+						<string key="starImage">UIImageView</string>
+						<string key="starName">UILabel</string>
+						<string key="starNumber">UILabel</string>
+						<string key="starSummary">UILabel</string>
+						<string key="starTitle">UILabel</string>
+						<string key="titleLabel">UILabel</string>
+						<string key="upperHiddenView">UIView</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<object class="IBToOneOutletInfo" key="addScheduleButton">
+							<string key="name">addScheduleButton</string>
+							<string key="candidateClassName">UIButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="addToScheduleBg">
+							<string key="name">addToScheduleBg</string>
+							<string key="candidateClassName">UIButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="buttonBoard">
+							<string key="name">buttonBoard</string>
+							<string key="candidateClassName">UIView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="eventTime">
+							<string key="name">eventTime</string>
+							<string key="candidateClassName">UILabel</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="favoriteButton">
+							<string key="name">favoriteButton</string>
+							<string key="candidateClassName">UIButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="favoriteButtonBg">
+							<string key="name">favoriteButtonBg</string>
+							<string key="candidateClassName">UIButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="favoriteNumber">
+							<string key="name">favoriteNumber</string>
+							<string key="candidateClassName">UILabel</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="likeButton">
+							<string key="name">likeButton</string>
+							<string key="candidateClassName">UIButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="likeButtonBg">
+							<string key="name">likeButtonBg</string>
+							<string key="candidateClassName">UIButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="likeNumber">
+							<string key="name">likeNumber</string>
+							<string key="candidateClassName">UILabel</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="location">
+							<string key="name">location</string>
+							<string key="candidateClassName">UILabel</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="moveFavorView">
+							<string key="name">moveFavorView</string>
+							<string key="candidateClassName">UIView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="moveLikeView">
+							<string key="name">moveLikeView</string>
+							<string key="candidateClassName">UIView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="recommendImage">
+							<string key="name">recommendImage</string>
+							<string key="candidateClassName">UIImageView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="releaseTimeLabel">
+							<string key="name">releaseTimeLabel</string>
+							<string key="candidateClassName">UILabel</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="seeNumber">
+							<string key="name">seeNumber</string>
+							<string key="candidateClassName">UILabel</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="sourceLabel">
+							<string key="name">sourceLabel</string>
+							<string key="candidateClassName">UILabel</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="starImage">
+							<string key="name">starImage</string>
+							<string key="candidateClassName">UIImageView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="starName">
+							<string key="name">starName</string>
+							<string key="candidateClassName">UILabel</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="starNumber">
+							<string key="name">starNumber</string>
+							<string key="candidateClassName">UILabel</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="starSummary">
+							<string key="name">starSummary</string>
+							<string key="candidateClassName">UILabel</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="starTitle">
+							<string key="name">starTitle</string>
+							<string key="candidateClassName">UILabel</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="titleLabel">
+							<string key="name">titleLabel</string>
+							<string key="candidateClassName">UILabel</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="upperHiddenView">
+							<string key="name">upperHiddenView</string>
+							<string key="candidateClassName">UIView</string>
+						</object>
+					</dictionary>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/WUTableHeaderView.h</string>
+					</object>
+				</object>
+			</array>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
