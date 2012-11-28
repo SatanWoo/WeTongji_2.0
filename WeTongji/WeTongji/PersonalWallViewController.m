@@ -24,6 +24,7 @@
 #import "AbstractCollection+Addition.h"
 #import "NSString+Addition.h"
 #import "UIApplication+nj_SmartStatusBar.h"
+#import "SchoolNewsViewController.h"
 
 #define kContentOffSet 156
 #define kRowHeight 44
@@ -39,6 +40,7 @@
 @property (nonatomic, strong) WUPageControlViewController *pageViewController;
 @property (nonatomic,strong)Event * recommandEvent;
 @property (weak, nonatomic) IBOutlet UILabel *recommendTitle;
+@property (weak, nonatomic) IBOutlet UIButton *recommendButton;
 - (void)configureTableView;
 @end
 
@@ -72,22 +74,24 @@
     originScheduleTableViewCenter = self.scheduleTableView.center;
     CGPoint center = CGPointMake(self.headerBoard.center.x, (-self.scheduleTableView.contentOffset.y)/2);
     [self.headerBoard setCenter:center];
+    [self.recommendButton setCenter:center];
 }
 
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    UIViewController * controller = segue.destinationViewController;
+    if ( [controller isKindOfClass:[SchoolNewsViewController class]] )
+    {
+        SchoolNewsViewController *vc = (SchoolNewsViewController *)controller;
+        [vc setEvent:self.recommandEvent];
+    }
+}
 
-
-- (void)HeaderBoardDidTap:(UITapGestureRecognizer *)recognizer
+- (IBAction)headerButtonClicked:(id)sender
 {
     [self performSegueWithIdentifier:kTodayRecommendEvent sender:self];
 }
 
-- (void) configureHeaderBoard
-{
-    UITapGestureRecognizer * gesture = [[ UITapGestureRecognizer alloc] initWithTarget:self action:@selector(HeaderBoardDidTap:)];
-    gesture.numberOfTapsRequired = 1;
-    gesture.numberOfTouchesRequired  = 1;
-    [self.recommendTitle addGestureRecognizer:gesture];
-}
 
 #pragma mark - Tap
 
@@ -107,6 +111,7 @@
         CGPoint center = CGPointMake(self.headerBoard.center.x, (-self.scheduleTableView.contentOffset.y)/2);
         [self.headerBoard setAlpha:1.0];
         [self.headerBoard setCenter:center];
+        [self.recommendButton setCenter:center];
     } completion:^(BOOL finished) {
         self.pageViewController.view.userInteractionEnabled = NO;
     }];
@@ -151,6 +156,7 @@
 {
     [self setHeaderBoard:nil];
     [self setRecommendTitle:nil];
+    [self setRecommendButton:nil];
     [super viewDidUnload];
 }
 
@@ -161,7 +167,6 @@
     NSLog(@"pageheight%f",self.pageViewController.view.frame.size.height);
     [self configureTodayRecommend];
     [self configureTableView];
-    [self configureHeaderBoard];
     [self loadCourses];
     [self loadMyFavorites];
     [self loadActivities];
@@ -373,6 +378,7 @@
             self.pageViewController.view.center = center;
             center = CGPointMake(self.headerBoard.center.x, (self.pageViewController.view.frame.size.height)/2);
             [self.headerBoard setCenter:center];
+            [self.recommendButton setCenter:center];
         } completion:^(BOOL finished) {
             self.pageViewController.view.userInteractionEnabled = YES;
         }];
@@ -383,6 +389,7 @@
             center.y = kStateY + velocity * rate + self.pageViewController.view.frame.size.height/2;
             self.pageViewController.view.center = center;            center = CGPointMake(self.headerBoard.center.x, (-scrollView.contentOffset.y)/2);
             [self.headerBoard setCenter:center];
+            [self.recommendButton setCenter:center];
         }
 }
 
