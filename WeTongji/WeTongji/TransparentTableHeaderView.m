@@ -14,6 +14,7 @@
 @interface TransparentTableHeaderView()
 @property (weak, nonatomic) IBOutlet UILabel *label;
 @property (weak, nonatomic) IBOutlet UIImageView *backImage;
+@property (weak, nonatomic) IBOutlet UIImageView *avatarShadow;
 
 @end
 
@@ -34,7 +35,8 @@
     [self.publisherLabel setHidden:hide];
     [self.categoryLabel setHidden:hide];
     [self.label setHidden:hide];
-    //[self.backImage setHidden:YES];
+    [self.backImage setHidden:hide];
+    [self.avatarShadow setHidden:hide];
 }
 
 -(void) setInformation:(Information *)information
