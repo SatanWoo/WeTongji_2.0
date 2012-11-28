@@ -9,6 +9,8 @@
 #import "WeeklyPersonHeaderCell.h"
 #import "NSDictionary+Addition.h"
 #import <WeTongjiSDK/WeTongjiSDK.h>
+#import <QuartzCore/QuartzCore.h>
+#define kRound 3.0f
 
 @implementation WeeklyPersonHeaderCell
 
@@ -31,6 +33,14 @@
     id key = [imageDict allKeys][0];
     [self.image setImageWithURL:[NSURL URLWithString:key] placeholderImage:[UIImage imageNamed:@"defalut_pic"]];
     _star = star;
+    
+    
+    CAShapeLayer * shapeLayer = [CAShapeLayer layer];
+    shapeLayer.backgroundColor = [UIColor clearColor].CGColor;
+    shapeLayer.path = [UIBezierPath bezierPathWithRoundedRect:self.personBG.bounds byRoundingCorners: UIRectCornerTopLeft | UIRectCornerTopRight cornerRadii:CGSizeMake(kRound, kRound)].CGPath;
+    [self.personBG.layer setMasksToBounds:YES];
+    self.personBG.layer.mask = shapeLayer;
+    //[self.personBG.layer setCornerRadius:3.0f];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated

@@ -138,16 +138,16 @@
 - (float)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if ([self.starList count] == 1) {
-        return 347;
+        return 367;
     } else if ([self.starList count] == 2) {
         if (indexPath.row == 0) {
-            return 347;
+            return 367;
         } else {
             return 92;
         }
     } else if ([self.starList count] > 2) {
         if (indexPath.row == 0) {
-            return 347;
+            return 367;
         } else if (indexPath.row == 1) {
             return 82;
         } else if (indexPath.row == [self.starList count] - 1) {
