@@ -193,9 +193,9 @@
 								<reference key="NSSuperview" ref="926562711"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="605283833"/>
-								<object class="NSColor" key="IBUIBackgroundColor" id="477418298">
+								<object class="NSColor" key="IBUIBackgroundColor" id="303794851">
 									<int key="NSColorSpace">1</int>
-									<bytes key="NSRGB">MC45NDc1ODA2NDUyIDAuOTUwMzUyODIyNiAwLjk0OTMxMzI1NgA</bytes>
+									<bytes key="NSRGB">MC45Njg2Mjc0NTEgMC45Njg2Mjc0NTEgMC45Njg2Mjc0NTEAA</bytes>
 								</object>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 							</object>
@@ -261,7 +261,7 @@
 								<reference key="NSSuperview" ref="926562711"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="288960233"/>
-								<reference key="IBUIBackgroundColor" ref="477418298"/>
+								<reference key="IBUIBackgroundColor" ref="303794851"/>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 							</object>
 						</array>
@@ -280,7 +280,7 @@
 				<reference key="NSNextKeyView" ref="203977329"/>
 				<object class="NSColor" key="IBUIBackgroundColor">
 					<int key="NSColorSpace">1</int>
-					<bytes key="NSRGB">MC45Njc5MjMxMjk2IDAuOTY0NDQ0NTcxMiAwLjk2OTMyMDI1NTUAA</bytes>
+					<bytes key="NSRGB">MC45Njg2Mjc0NTEgMC45Njg2Mjc0NTEgMC45Njg2Mjc0NTEAA</bytes>
 				</object>
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 			</object>
@@ -529,6 +529,17 @@
 				<object class="IBPartialClassDescription">
 					<string key="className">WUTableHeaderView</string>
 					<string key="superclassName">UIView</string>
+					<object class="NSMutableDictionary" key="actions">
+						<string key="NS.key.0">likeClicked:</string>
+						<string key="NS.object.0">id</string>
+					</object>
+					<object class="NSMutableDictionary" key="actionInfosByName">
+						<string key="NS.key.0">likeClicked:</string>
+						<object class="IBActionInfo" key="NS.object.0">
+							<string key="name">likeClicked:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+					</object>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="addScheduleButton">UIButton</string>
 						<string key="addToScheduleBg">UIButton</string>
