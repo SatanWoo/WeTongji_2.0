@@ -22,6 +22,7 @@
 #define kWUKenBurnsViewController @"kWUKenBurnsViewController"
 #define kProtocolViewController @"kProtocolViewController"
 #define kUserIntroViewController @"kUserIntroViewController"
+#define kTodayRecommendEvent @"kTodayRecommendEvent"
 
 // TableViewCell
 #define kLeftMenuCell @"kLeftMenuCell"

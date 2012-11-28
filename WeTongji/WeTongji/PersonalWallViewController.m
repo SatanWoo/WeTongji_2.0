@@ -74,6 +74,21 @@
     [self.headerBoard setCenter:center];
 }
 
+
+
+- (void)HeaderBoardDidTap:(UITapGestureRecognizer *)recognizer
+{
+    [self performSegueWithIdentifier:kTodayRecommendEvent sender:self];
+}
+
+- (void) configureHeaderBoard
+{
+    UITapGestureRecognizer * gesture = [[ UITapGestureRecognizer alloc] initWithTarget:self action:@selector(HeaderBoardDidTap:)];
+    gesture.numberOfTapsRequired = 1;
+    gesture.numberOfTouchesRequired  = 1;
+    [self.recommendTitle addGestureRecognizer:gesture];
+}
+
 #pragma mark - Tap
 
 -(void)showScheduleTable
@@ -90,15 +105,11 @@
     [UIView animateWithDuration:0.8f animations:^{
         [self.pageViewController.view setCenter:originPageControlViewCenter];
         CGPoint center = CGPointMake(self.headerBoard.center.x, (-self.scheduleTableView.contentOffset.y)/2);
+        [self.headerBoard setAlpha:1.0];
         [self.headerBoard setCenter:center];
     } completion:^(BOOL finished) {
         self.pageViewController.view.userInteractionEnabled = NO;
     }];
-}
-
-- (void)didTap:(UITapGestureRecognizer *)recognizer
-{
-    [self showScheduleTable];
 }
 
 - (void)didSwipe:(UISwipeGestureRecognizer *)recognizer
@@ -150,6 +161,7 @@
     NSLog(@"pageheight%f",self.pageViewController.view.frame.size.height);
     [self configureTodayRecommend];
     [self configureTableView];
+    [self configureHeaderBoard];
     [self loadCourses];
     [self loadMyFavorites];
     [self loadActivities];
@@ -354,6 +366,7 @@
         [UIView animateWithDuration:0.25f animations:^{
             CGRect frame = self.pageViewController.view.frame;
             frame.size.height = 480;
+            [self.headerBoard setAlpha:0];
             self.pageViewController.view.frame = frame;
             self.scheduleTableView.frame = CGRectMake(0, self.view.frame.size.height, self.scheduleTableView.frame.size.width, self.scheduleTableView.frame.size.height);
             CGPoint center = self.view.center;
