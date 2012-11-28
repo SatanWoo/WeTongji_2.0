@@ -19,6 +19,7 @@
 @interface WUSlideViewController ()
 @property (assign ,nonatomic) int currentStatus;
 @property (nonatomic ,strong) UserIntroViewController *introViewController;
+@property (nonatomic ,strong) UIGestureRecognizer *recoginzer;
 
 - (void)renderShadow:(BOOL)rendered;
 - (void)revealLeftViewController:(UIGestureRecognizer *)recognizer;
@@ -39,6 +40,7 @@
 
 @synthesize currentStatus = _currentStatus;
 @synthesize introViewController = _introViewController;
+@synthesize recoginzer = _recoginzer;
 #pragma mark - Lifecycle
 - (void)viewDidLoad
 {
@@ -87,6 +89,11 @@
     
 }
 
+- (void)disableGesture:(NSNotification *)notification
+{
+    self.recoginzer.enabled = !self.recoginzer.enabled;
+}
+
 - (void)configureView
 {
     self.leftViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:kLeftMenuViewController];
@@ -111,13 +118,16 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(login:) name:kLoginNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reveal:) name:kSlideNotification object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(update:) name:kUpdateMiddleContent object:nil];}
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(update:) name:kUpdateMiddleContent object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(disableGesture:) name:kDisableGestureNotification object:nil];
+}
 
 - (void)removeNotification
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self forKeyPath:kLoginNotification];
     [[NSNotificationCenter defaultCenter] removeObserver:self forKeyPath:kSlideNotification];
     [[NSNotificationCenter defaultCenter] removeObserver:self forKeyPath:kUpdateMiddleContent];
+    [[NSNotificationCenter defaultCenter] removeObserver:self forKeyPath:kDisableGestureNotification];
 }
 
 - (void)reveal:(NSNotification *)notification
@@ -200,6 +210,7 @@
     if (middelViewController == nil || middelViewController == _middelViewController)
         return ;
     if (_middelViewController) {
+        self.recoginzer = nil;
         [_middelViewController.view removeFromSuperview];
         _middelViewController = middelViewController;
         _middelViewController.view.frame = oldFrame;
@@ -217,6 +228,7 @@
     
     UISwipeGestureRecognizer *rightGesturer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(revealLeftViewController:)];
     rightGesturer.direction = UISwipeGestureRecognizerDirectionRight;
+    self.recoginzer = rightGesturer;
     [_middelViewController.view addGestureRecognizer:rightGesturer];
     
     UISwipeGestureRecognizer *leftGesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(revealMiddleViewController:)];

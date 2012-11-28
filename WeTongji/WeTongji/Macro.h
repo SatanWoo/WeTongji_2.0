@@ -75,5 +75,6 @@
 #define kUpdateMiddleContent @"kUpdateMiddleContent"
 #define kEnableInteractionNotification @"kEnableInteractionNotification"
 #define kScrollToTopNotification @"kScrollToTopNotification"
+#define kDisableGestureNotification @"kDisableGestureNotification"
 
 #endif

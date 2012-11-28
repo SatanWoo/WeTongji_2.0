@@ -82,7 +82,7 @@
     } completion:^(BOOL isFinished){
         if (isFinished)
         {
-            
+            [[NSNotificationCenter defaultCenter] postNotificationName:kDisableGestureNotification object:self];
         }
     }];
     _isFilterViewAppear=YES;
@@ -99,6 +99,7 @@
         {
             [self.view setHidden:YES];
             [self.shadowView setHidden:YES];
+            [[NSNotificationCenter defaultCenter] postNotificationName:kDisableGestureNotification object:self];
         }
     }];
     _isFilterViewAppear=NO;
