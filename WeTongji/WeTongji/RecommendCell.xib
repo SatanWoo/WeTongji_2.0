@@ -3,12 +3,12 @@
 	<data>
 		<int key="IBDocument.SystemTarget">1536</int>
 		<string key="IBDocument.SystemVersion">11G63</string>
-		<string key="IBDocument.InterfaceBuilderVersion">2843</string>
+		<string key="IBDocument.InterfaceBuilderVersion">2844</string>
 		<string key="IBDocument.AppKitVersion">1138.51</string>
 		<string key="IBDocument.HIToolboxVersion">569.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-			<string key="NS.object.0">1929</string>
+			<string key="NS.object.0">1930</string>
 		</object>
 		<array key="IBDocument.IntegratedClassDependencies">
 			<string>IBProxyObject</string>
@@ -42,8 +42,8 @@
 						<array class="NSMutableArray" key="NSSubviews">
 							<object class="IBUILabel" id="133819672">
 								<reference key="NSNextResponder" ref="589053254"/>
-								<int key="NSvFlags">256</int>
-								<string key="NSFrame">{{105, 8}, {169, 21}}</string>
+								<int key="NSvFlags">258</int>
+								<string key="NSFrame">{{105, 8}, {167, 21}}</string>
 								<reference key="NSSuperview" ref="589053254"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="574082116"/>
@@ -109,8 +109,8 @@
 							</object>
 							<object class="IBUIImageView" id="574082116">
 								<reference key="NSNextResponder" ref="589053254"/>
-								<int key="NSvFlags">257</int>
-								<string key="NSFrame">{{279, 7}, {20, 20}}</string>
+								<int key="NSvFlags">256</int>
+								<string key="NSFrame">{{271, 7}, {20, 20}}</string>
 								<reference key="NSSuperview" ref="589053254"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="449297915"/>
@@ -128,7 +128,7 @@
 								<string key="NSFrame">{{252, 46}, {16, 10}}</string>
 								<reference key="NSSuperview" ref="589053254"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView" ref="605947273"/>
+								<reference key="NSNextKeyView" ref="6439175"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -143,7 +143,7 @@
 								<string key="NSFrame">{{274, 40}, {20, 21}}</string>
 								<reference key="NSSuperview" ref="589053254"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView"/>
+								<reference key="NSNextKeyView" ref="605947273"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
@@ -200,7 +200,6 @@
 								<string key="NSFrame">{{297, 27.5}, {10, 15}}</string>
 								<reference key="NSSuperview" ref="589053254"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView" ref="6439175"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -308,8 +307,8 @@
 							<reference ref="218913055"/>
 							<reference ref="833151488"/>
 							<reference ref="133819672"/>
-							<reference ref="574082116"/>
 							<reference ref="605947273"/>
+							<reference ref="574082116"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -419,10 +418,6 @@
 		</object>
 		<int key="IBDocument.localizationMode">0</int>
 		<string key="IBDocument.TargetRuntimeIdentifier">IBCocoaTouchFramework</string>
-		<object class="NSMutableDictionary" key="IBDocument.PluginDeclaredDependencyDefaults">
-			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaTouchPlugin.iPhoneOS</string>
-			<real value="1536" key="NS.object.0"/>
-		</object>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
@@ -431,6 +426,6 @@
 			<string key="recommend_img.png">{95, 65}</string>
 			<string key="ticket.png">{20, 20}</string>
 		</dictionary>
-		<string key="IBCocoaTouchPluginVersion">1929</string>
+		<string key="IBCocoaTouchPluginVersion">1930</string>
 	</data>
 </archive>
