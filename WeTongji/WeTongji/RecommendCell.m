@@ -10,6 +10,7 @@
 #import <WeTongjiSDK/WeTongjiSDK.h>
 #define kOffset 6
 #define kMaxWidth 167
+#define kIconX 271
 
 @implementation RecommendCell
 @synthesize infoTitle = _infoTitle;
@@ -38,7 +39,7 @@
         self.infoTitle.frame = oldFrame;
         
         CGRect iconFrame = self.icon.frame;
-        iconFrame.origin.x = iconFrame.origin.x - 2;
+        iconFrame.origin.x = kIconX - 2;
         self.icon.frame = iconFrame;
     } else {
         CGRect oldFrame = self.icon.frame;
