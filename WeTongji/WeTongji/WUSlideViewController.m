@@ -100,10 +100,17 @@ static NSString *reviewURL = @"itms-apps://ax.itunes.apple.com/WebObjects/MZStor
     self.recoginzer.enabled = !self.recoginzer.enabled;
 }
 
+- (void)disableRating
+{
+    // Cancel
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:kIsRatingShowed];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
 - (void)showRating
 {
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"给Wetongji来个好评吧！"
-                                                        message:@"喜欢WeTongji的话就去App Store给个评分吧!"
+                                                        message:nil
                                                        delegate:self
                                               cancelButtonTitle:@"不要再提示我"
                                               otherButtonTitles:@"带我去评分吧", @"稍后再提示我吧", nil];
@@ -113,11 +120,11 @@ static NSString *reviewURL = @"itms-apps://ax.itunes.apple.com/WebObjects/MZStor
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if (buttonIndex == 0) {
-        // Cancel
-        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:kIsRatingShowed];
-        [[NSUserDefaults standardUserDefaults] synchronize];
+        [self disableRating];
     } else if (buttonIndex == 1){
-        //Goto Review
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:reviewURL]];
+    } else if (buttonIndex == 2) {
+        [self disableRating];
     }
 }
 
