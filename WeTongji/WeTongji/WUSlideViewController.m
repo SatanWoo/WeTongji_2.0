@@ -15,8 +15,13 @@
 #import "LeftMenuCell.h"
 
 #define kFirstUseKey @"kkkksasssssSSkkey"
+#define kFirstUseDate @"kFirstUseDate"
+#define kIsRatingShowed @"kIsRatingShowed"
+#define kDayInterval 15
 
-@interface WUSlideViewController ()
+static NSString *reviewURL = @"itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=526260090";
+
+@interface WUSlideViewController () <UIAlertViewDelegate>
 @property (assign ,nonatomic) int currentStatus;
 @property (nonatomic ,strong) UserIntroViewController *introViewController;
 @property (nonatomic ,strong) UIGestureRecognizer *recoginzer;
@@ -31,6 +36,7 @@
 - (void)login:(NSNotification *)notification;
 - (void)removeNotification;
 - (void)configureView;
+- (void)showRating;
 - (UIViewController *)getContentViewController;
 @end
 
@@ -86,7 +92,7 @@
 
 - (void)update:(NSNotification *)notification
 {
-    
+   
 }
 
 - (void)disableGesture:(NSNotification *)notification
@@ -94,6 +100,28 @@
     self.recoginzer.enabled = !self.recoginzer.enabled;
 }
 
+- (void)showRating
+{
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"给Wetongji来个好评吧！"
+                                                        message:@"喜欢WeTongji的话就去App Store给个评分吧!"
+                                                       delegate:self
+                                              cancelButtonTitle:@"不要再提示我"
+                                              otherButtonTitles:@"带我去评分吧", @"稍后再提示我吧", nil];
+	[alertView show];
+}
+#pragma mark - UIAlertViewDelegate
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 0) {
+        // Cancel
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:kIsRatingShowed];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    } else if (buttonIndex == 1){
+        //Goto Review
+    }
+}
+
+#pragma mark - Private Method
 - (void)configureView
 {
     self.leftViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:kLeftMenuViewController];
@@ -109,11 +137,29 @@
     
     [[NSUserDefaults standardUserDefaults] registerDefaults:[NSDictionary dictionaryWithObject:[NSNumber numberWithInt:0] forKey:kFirstUseKey]];
     
+    [[NSUserDefaults standardUserDefaults] registerDefaults:[NSDictionary dictionaryWithObject:[NSDate date] forKey:kFirstUseDate]];
+    
+    [[NSUserDefaults standardUserDefaults] registerDefaults:[NSDictionary dictionaryWithObject:[NSNumber numberWithBool:NO] forKey:kIsRatingShowed]];
+
     int isFirstUse = [[NSUserDefaults standardUserDefaults] integerForKey:kFirstUseKey];
-    if (isFirstUse != 0) {
+    if (isFirstUse == 0) {
         [self.view addSubview:self.introViewController.view];
     }
-    [[NSUserDefaults standardUserDefaults] setInteger:1 forKey:kFirstUseKey];
+    
+    NSLog(@"Is first use key is %d",isFirstUse);
+    
+    bool isAlertShowed = [[NSUserDefaults standardUserDefaults] boolForKey:kIsRatingShowed];
+    NSDate *firstUseDate = [[NSUserDefaults standardUserDefaults] objectForKey:kFirstUseDate];
+    
+    if (isAlertShowed == NO) {
+        NSTimeInterval interval = [[NSDate date] timeIntervalSinceDate:firstUseDate];
+        NSTimeInterval definedInterval = 60 * 60 * 24 * kDayInterval;
+        if (interval >= definedInterval || isFirstUse >= 5) {
+            [self showRating];
+        }
+    }
+    
+    [[NSUserDefaults standardUserDefaults] setInteger:++isFirstUse forKey:kFirstUseKey];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(login:) name:kLoginNotification object:nil];
