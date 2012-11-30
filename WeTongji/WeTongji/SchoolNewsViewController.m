@@ -70,7 +70,7 @@
 - (void)renderBorder:(UIView *)view
 {
     view.layer.borderWidth = 1.0f;
-    view.layer.borderColor = [UIColor colorWithRed:214 green:214 blue:214 alpha:1.0].CGColor;
+    view.layer.borderColor = [UIColor colorWithRed:157 green:157 blue:157 alpha:1.0].CGColor;
 }
 #pragma mark - Tap
 

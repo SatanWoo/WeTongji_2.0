@@ -571,16 +571,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		03669372166774F7004FED04 /* PBXContainerItemProxy */ = {
+		5C0CC1501668CFB900D610DC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 0366936B166774F7004FED04 /* WeTongjiSDK.xcodeproj */;
+			containerPortal = 5C0CC1491668CFB900D610DC /* WeTongjiSDK.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = E110DF2B16365B990087EA46;
 			remoteInfo = WeTongjiSDK;
 		};
-		03669374166774FE004FED04 /* PBXContainerItemProxy */ = {
+		5C0CC1521668CFC200D610DC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 0366936B166774F7004FED04 /* WeTongjiSDK.xcodeproj */;
+			containerPortal = 5C0CC1491668CFB900D610DC /* WeTongjiSDK.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = E110DF2A16365B990087EA46;
 			remoteInfo = WeTongjiSDK;
@@ -710,7 +710,6 @@
 		035E34B01653F03F009AC6BF /* WUFolderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WUFolderView.h; sourceTree = "<group>"; };
 		035E34B11653F040009AC6BF /* WUFolderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WUFolderView.m; sourceTree = "<group>"; };
 		035E34B31653F068009AC6BF /* WUFolderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WUFolderView.xib; sourceTree = "<group>"; };
-		0366936B166774F7004FED04 /* WeTongjiSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = WeTongjiSDK.xcodeproj; path = ../../wetongji_ios_sdk/WeTongjiSDK.xcodeproj; sourceTree = "<group>"; };
 		036E49CE165E4F3F006B33EE /* cell_sl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cell_sl.png; sourceTree = "<group>"; };
 		036E49CF165E4F3F006B33EE /* cell_sl@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cell_sl@2x.png"; sourceTree = "<group>"; };
 		036E49D2165E5006006B33EE /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
@@ -866,6 +865,7 @@
 		5C0755A51663BD7000957439 /* phone_cell@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "phone_cell@2x.png"; sourceTree = "<group>"; };
 		5C0755A61663BD7000957439 /* ticket_detail_cell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ticket_detail_cell.png; sourceTree = "<group>"; };
 		5C0755A71663BD7100957439 /* ticket_detail_cell@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ticket_detail_cell@2x.png"; sourceTree = "<group>"; };
+		5C0CC1491668CFB900D610DC /* WeTongjiSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = WeTongjiSDK.xcodeproj; path = ../../wetongji_ios_sdk/wetongji_ios_sdk/WeTongjiSDK.xcodeproj; sourceTree = "<group>"; };
 		5C64E0AE166335F600775762 /* pic_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pic_bg.png; sourceTree = "<group>"; };
 		5C64E0AF166335F600775762 /* pic_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pic_bg@2x.png"; sourceTree = "<group>"; };
 		5CBDE69916637DA5007F02D7 /* today_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = today_btn.png; sourceTree = "<group>"; };
@@ -1367,14 +1367,6 @@
 			name = register;
 			sourceTree = "<group>";
 		};
-		0366936C166774F7004FED04 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				03669373166774F7004FED04 /* WeTongjiSDK.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		036EAC981664EC53000A66CF /* new */ = {
 			isa = PBXGroup;
 			children = (
@@ -1562,6 +1554,14 @@
 			name = WeeklyPerson;
 			sourceTree = "<group>";
 		};
+		5C0CC14A1668CFB900D610DC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5C0CC1511668CFB900D610DC /* WeTongjiSDK.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		B00B6391162FCDB300AD7712 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
@@ -1580,7 +1580,7 @@
 		B00D6911162CFCAC00592B1D = {
 			isa = PBXGroup;
 			children = (
-				0366936B166774F7004FED04 /* WeTongjiSDK.xcodeproj */,
+				5C0CC1491668CFB900D610DC /* WeTongjiSDK.xcodeproj */,
 				036E49D4165E5016006B33EE /* Default@2x.png */,
 				036E49D2165E5006006B33EE /* Default.png */,
 				03326A4B16567FE3005E8A16 /* default.png */,
@@ -2460,7 +2460,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				03669375166774FE004FED04 /* PBXTargetDependency */,
+				5C0CC1531668CFC200D610DC /* PBXTargetDependency */,
 			);
 			name = WeTongji;
 			productName = WeTongji;
@@ -2487,8 +2487,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 0366936C166774F7004FED04 /* Products */;
-					ProjectRef = 0366936B166774F7004FED04 /* WeTongjiSDK.xcodeproj */;
+					ProductGroup = 5C0CC14A1668CFB900D610DC /* Products */;
+					ProjectRef = 5C0CC1491668CFB900D610DC /* WeTongjiSDK.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -2499,11 +2499,11 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		03669373166774F7004FED04 /* WeTongjiSDK.framework */ = {
+		5C0CC1511668CFB900D610DC /* WeTongjiSDK.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = WeTongjiSDK.framework;
-			remoteRef = 03669372166774F7004FED04 /* PBXContainerItemProxy */;
+			remoteRef = 5C0CC1501668CFB900D610DC /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -3079,10 +3079,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		03669375166774FE004FED04 /* PBXTargetDependency */ = {
+		5C0CC1531668CFC200D610DC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = WeTongjiSDK;
-			targetProxy = 03669374166774FE004FED04 /* PBXContainerItemProxy */;
+			targetProxy = 5C0CC1521668CFC200D610DC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
