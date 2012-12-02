@@ -73,7 +73,6 @@
     FavoriteIconCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FavoriteIconCell"];
     if (cell == nil) {
         cell = [[FavoriteIconCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"FavoriteIconCell"];
-        [cell.avatar.layer setCornerRadius:15.0f];
     }
     
     CGAffineTransform at = CGAffineTransformMakeRotation(M_PI/2);
@@ -92,13 +91,6 @@
     else if ( [collection isKindOfClass:[Event class]] )
     {
         [cell.avatar setImageWithURL:[NSURL URLWithString:((Information *) collection).organizerAvatar] placeholderImage:placeholder];
-    }
-    
-    if (![cell viewWithTag:kShadowTag]) {
-        NSLog(@"fuck u ");
-        UIImageView *shadowImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"favourite_avatar"]];
-        [shadowImage setFrame:CGRectMake(cell.avatar.frame.origin.x, cell.avatar.frame.origin.y, shadowImage.frame.size.width,shadowImage.frame.size.height)];
-        [cell insertSubview:shadowImage belowSubview:cell.avatar];
     }
     
     return cell;

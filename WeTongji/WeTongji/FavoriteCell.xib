@@ -73,9 +73,10 @@
 							<object class="IBUITableView" id="773158261">
 								<reference key="NSNextResponder" ref="718125785"/>
 								<int key="NSvFlags">274</int>
-								<string key="NSFrame">{{152, 0}, {46, 248}}</string>
+								<string key="NSFrame">{{148, 0}, {50, 248}}</string>
 								<reference key="NSSuperview" ref="718125785"/>
 								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<object class="NSColor" key="IBUIBackgroundColor">
 									<int key="NSColorSpace">3</int>
@@ -88,7 +89,7 @@
 								<int key="IBUISectionIndexMinimumDisplayRowCount">0</int>
 								<bool key="IBUIAllowsSelection">NO</bool>
 								<bool key="IBUIShowsSelectionImmediatelyOnTouchBegin">YES</bool>
-								<float key="IBUIRowHeight">44</float>
+								<float key="IBUIRowHeight">55</float>
 								<float key="IBUISectionHeaderHeight">22</float>
 								<float key="IBUISectionFooterHeight">22</float>
 							</object>
