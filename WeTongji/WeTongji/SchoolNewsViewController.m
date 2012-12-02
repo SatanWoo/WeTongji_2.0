@@ -24,6 +24,7 @@
 #define kContentOffset 50
 #define kStateY -150
 #define kRowHeight 44
+#define noPic @"missing.png"
 
 @interface SchoolNewsViewController () <UIScrollViewDelegate, UITableViewDelegate, UITableViewDataSource>
 {
@@ -178,11 +179,10 @@
     [self.headerView setEvent:event];
     [self.transparentHeaderView setHideBoard:NO];
     [self.transparentHeaderView setEvent:event];
-    self.imageDict = [NSDictionary dictionaryWithObject:[NSNull null] forKey:event.imageLink];
+    NSLog(@"%@",event.imageLink);
+    if ( ![event.imageLink hasSuffix:noPic] )
+        self.imageDict = [NSDictionary dictionaryWithObject:[NSNull null] forKey:event.imageLink];
     _event = event;
-    
-    //[self renderBorder:self.headerView.likeButtonBg];
-    //[self renderBorder:self.headerView.favoriteButtonBg];
 }
 
 -(void) setInformation:(Information *)information
