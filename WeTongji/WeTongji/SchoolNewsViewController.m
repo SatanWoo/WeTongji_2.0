@@ -175,8 +175,8 @@
     self.imageDict = [NSDictionary dictionaryWithObject:[NSNull null] forKey:event.imageLink];
     _event = event;
     
-    [self renderBorder:self.headerView.likeButtonBg];
-    [self renderBorder:self.headerView.favoriteButtonBg];
+    //[self renderBorder:self.headerView.likeButtonBg];
+    //[self renderBorder:self.headerView.favoriteButtonBg];
 }
 
 -(void) setInformation:(Information *)information
@@ -204,8 +204,8 @@
         [self.transparentHeaderView setHideBoard:YES];
     }
     
-    [self renderBorder:self.headerView.likeButtonBg];
-    [self renderBorder:self.headerView.favoriteButtonBg];
+    //[self renderBorder:self.headerView.likeButtonBg];
+    //[self renderBorder:self.headerView.favoriteButtonBg];
 
     self.imageDict = [NSDictionary getImageLinkDictInJsonString:information.images];
     _information = information;
@@ -220,8 +220,8 @@
     self.imageDict = [NSDictionary getImageLinkDictInJsonString:star.images];
     _star = star;
     
-    [self renderBorder:self.headerView.likeButtonBg];
-    [self renderBorder:self.headerView.favoriteButtonBg];
+    //[self renderBorder:self.headerView.likeButtonBg];
+    //[self renderBorder:self.headerView.favoriteButtonBg];
 }
 
 #pragma mark - LifeCycle
