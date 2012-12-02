@@ -50,7 +50,7 @@
         //draw horizontal lines
         CGFloat leftCellHeight = LEFT_CELL_HEIGHT;
         CGFloat rightCellWidth = 85.0f;
-        CGFloat verticalPos = i * leftCellHeight + VERTICAL_OFFSET - 15;
+        CGFloat verticalPos = i * leftCellHeight + VERTICAL_OFFSET - LEFT_CELL_HEIGHT/2;
             
         CGContextMoveToPoint(context, 0, verticalPos);
         CGContextAddLineToPoint(context, rightCellWidth, verticalPos);

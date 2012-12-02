@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-#define LEFT_CELL_HEIGHT 30
+#define LEFT_CELL_HEIGHT 28
+
 
 @interface ScheduleWeekRightTableViewCellContentView : UIView
 
