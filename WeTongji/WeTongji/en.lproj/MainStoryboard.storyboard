@@ -190,6 +190,7 @@
                         <segue destination="Hf1-lA-LKj" kind="push" identifier="kEditInfoViewController" id="Z7m-rj-mxe"/>
                         <segue destination="2q5-Zg-PzK" kind="push" identifier="kSchedueViewController" id="RYb-vh-NSA"/>
                         <segue destination="D5h-rN-X3u" kind="push" identifier="kTodayRecommendEvent" id="sR0-eS-rDJ"/>
+                        <segue destination="tSa-hA-s91" kind="push" identifier="kMyFavortieViewController" id="jTq-gF-xjE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SaJ-c4-Ze0" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1144,11 +1145,11 @@
             <objects>
                 <viewController id="tSa-hA-s91" customClass="MyFavortieViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1UW-4f-mGv">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="79" sectionHeaderHeight="22" sectionFooterHeight="22" id="8LJ-q2-rY6">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.92357336956521741" green="0.92357336956521741" blue="0.92357336956521741" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
