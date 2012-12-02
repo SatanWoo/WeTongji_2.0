@@ -40,11 +40,16 @@
     CGSize pagesScrollViewSize = self.scrollView.frame.size;
     self.scrollView.contentSize = CGSizeMake(pagesScrollViewSize.width,  (self.pageControl.numberOfPages - 1) * kPageContent + kLastContent);
     self.originRect = self.scrollView.frame;
-    
-    [self addPicture:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"guide1.png"]]];
-    [self addPicture:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"guide2.png"]]];
-    [self addPicture:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"guide3.png"]]];
-    [self addPicture:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"guide4.png"]]];
+    UIImageView * image = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"guide_bg"]];
+    CGRect frame = image.bounds;
+    frame.origin.x = 0.0f;
+    frame.origin.y = -1 * kPageContent;
+    image.frame = frame;
+    [self.scrollView addSubview:image];
+    [self addPicture:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"guide1"]]];
+    [self addPicture:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"guide2"]]];
+    [self addPicture:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"guide3"]]];
+    [self addPicture:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"guide4"]]];
 }
 
 - (void)addPicture:(UIView *)image
