@@ -329,7 +329,6 @@
             [self.backButton setAlpha:0.0];
             [self.buttonBackImageView setAlpha:0.0];
         } completion:^(BOOL finished) {
-            NSLog(@"%f",self.view.frame.origin.x);
             self.pageViewController.view.userInteractionEnabled = YES;
         }];
     }
