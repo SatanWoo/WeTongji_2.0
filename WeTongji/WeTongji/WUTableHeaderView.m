@@ -19,6 +19,7 @@
     BOOL _isButtonBoardLeft;
 }
 @property (weak, nonatomic) IBOutlet UIView *buttonBoard;
+@property (weak, nonatomic) IBOutlet UIImageView *recommendBack;
 @property (strong, nonatomic) MBProgressHUD * progress;
 @property (nonatomic,readonly) BOOL isLogIn;
 @end
@@ -119,6 +120,7 @@
 -(void) changeButtonPositionToLeft
 {
     if ( _isButtonBoardLeft ) return;
+    [self.recommendBack setAlpha:0.0];
     CGPoint center = [self.buttonBoard center];
     if ( self.star ) {
         center.x = center.x + 100;
@@ -140,6 +142,7 @@
 -(void) resetButtonPosition
 {
     if ( !_isButtonBoardLeft ) return;
+    [self.recommendBack setAlpha:1.0];
     CGPoint center = [self.buttonBoard center];
     if ( self.star ) {
         center.x = center.x - 100;
