@@ -123,6 +123,7 @@ static NSString *reviewURL = @"itms-apps://ax.itunes.apple.com/WebObjects/MZStor
         [self disableRating];
     } else if (buttonIndex == 1){
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:reviewURL]];
+        [self disableRating];
     } else if (buttonIndex == 2) {
         [self disableRating];
     }
