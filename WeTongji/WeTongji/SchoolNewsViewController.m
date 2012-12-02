@@ -163,6 +163,7 @@
 -(void) configureCurrentCell
 {
     [self.currentCell setFrame:CGRectMake(0, 0,self.currentCell.frame.size.width,MAX(self.currentCell.textView.contentSize.height,self.view.bounds.size.height))];
+    self.currentCell.contentView.backgroundColor = self.currentCell.textView.backgroundColor;
     CGRect frame = self.currentCell.textView.frame;
     frame.size.height = self.currentCell.frame.size.height;
     self.currentCell.textView.frame = frame;
