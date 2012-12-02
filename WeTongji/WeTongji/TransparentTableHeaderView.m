@@ -45,6 +45,8 @@
     self.publisherLabel.text = information.organizer;
     self.categoryLabel.text = information.source;
     _information = information;
+    [self.categoryLabel setHidden:YES];
+    [self.label setHidden:YES];
 #ifdef DEBUG
     NSLog(@"Information (%@,%@) has been set in TransparentTableHeaderView",information.informationId,information.title);
 #endif
