@@ -440,7 +440,7 @@
         self.seeNumber.text = [information.read stringValue];
         self.sourceLabel.text = information.source;
     } else if ( [information.category isEqualToString:GetInformationTypeAround] ){
-        self.location.text = information.location;
+        self.location.text = information.summary;
         [self.recommendImage setImageWithURL:[NSURL URLWithString:information.image]];
     }
     self.seeNumber.text = [information.read stringValue];

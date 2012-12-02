@@ -27,6 +27,8 @@
         information.canLike = [NSNumber numberWithInt:[[infoDict objectForKey:@"CanLike"] intValue]];
     information.category = [NSString stringWithFormat:@"%@",category];
     information.contact = [NSString stringWithFormat:@"%@",[infoDict objectForKey:@"Contact"]];
+    id temp = [infoDict objectForKey:@"Contact"];
+    if ( [temp isKindOfClass:[NSNull class]] ) information.contact=@"暂无联系方式";
     information.context = [NSString stringWithFormat:@"%@",[infoDict objectForKey:@"Context"]];
     information.createdAt = [[NSString stringWithFormat:@"%@",[infoDict objectForKey:@"CreatedAt"]] convertToDate];
     information.favorite = [NSNumber numberWithInt:[[infoDict objectForKey:@"Favorite"] intValue]];
@@ -36,12 +38,17 @@
     NSLog(@"%@",[infoDict objectForKey:@"Images"]);
     information.like = [NSNumber numberWithInt:[[infoDict objectForKey:@"Like"] intValue]];
     information.location = [NSString stringWithFormat:@"%@",[infoDict objectForKey:@"Location"]];
+    temp = [infoDict objectForKey:@"Location"];
+    if ( [temp isKindOfClass:[NSNull class]] ) information.location=@"暂无地点信息";
+    information.title = [NSString stringWithFormat:@"%@",[infoDict objectForKey:@"TicketService"]];
     information.organizer = [NSString stringWithFormat:@"%@",[infoDict objectForKey:@"Organizer"]];
     information.organizerAvatar = [NSString stringWithFormat:@"%@",[infoDict objectForKey:@"OrganizerAvatar"]];
     information.read = [NSNumber numberWithInt:[[infoDict objectForKey:@"Read"] intValue]];;
     information.source = [NSString stringWithFormat:@"%@",[infoDict objectForKey:@"Source"]];
     information.summary = [NSString stringWithFormat:@"%@",[infoDict objectForKey:@"Summary"]];
     information.ticketService = [NSString stringWithFormat:@"%@",[infoDict objectForKey:@"TicketService"]];
+    temp = [infoDict objectForKey:@"TicketService"];
+    if ( [temp isKindOfClass:[NSNull class]] ) information.ticketService=@"暂无票务信息";
     information.title = [NSString stringWithFormat:@"%@",[infoDict objectForKey:@"Title"]];
     information.collectionSummary = information.context;
     information.collectionTitle = information.title;

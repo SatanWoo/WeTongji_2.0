@@ -49,7 +49,7 @@
         self.icon.frame = oldFrame;
     }
     
-    self.source.text = information.source;
+    self.source.text = information.summary;
     self.count.text = [information.read stringValue];
     [self.preview setImageWithURL:[NSURL URLWithString: information.image]];
     _information = information;

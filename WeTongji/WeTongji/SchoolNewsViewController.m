@@ -119,7 +119,7 @@
         for ( NSString * link in [self.imageDict allKeys] )
         {
             UIImageView * view = [[UIImageView alloc] init];
-            [view setImageWithURL:[NSURL URLWithString:link] placeholderImage:[UIImage imageNamed:@"default_pic"]];
+            [view setImageWithURL:[NSURL URLWithString:link] placeholderImage:[UIImage imageNamed:@"default_pic_loading"]];
             [_pageViewController addPicture:view withDescription:self.imageDict[link]];
         }
         if ( [self.imageDict allKeys].count == 0)

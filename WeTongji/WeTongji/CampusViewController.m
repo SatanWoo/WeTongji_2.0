@@ -401,11 +401,11 @@ typedef enum {
     [self configureTabBar];
     [self configureTableView];
     [self configureDifaultSelection];
+    [self.currentRefreshManagememt firstTrigger];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    [self.currentRefreshManagememt firstTrigger];
 }
 
 - (void)viewDidUnload
