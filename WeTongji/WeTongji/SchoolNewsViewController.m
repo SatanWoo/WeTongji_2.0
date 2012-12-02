@@ -76,8 +76,7 @@
 
 -(void)showScheduleTable
 {
-    self.isAnimationFinished = false;
-    self.pageViewController.view.userInteractionEnabled = NO;
+    [self.newsTableView scrollRectToVisible:self.view.frame animated:NO];
     [[UIApplication sharedApplication] nj_setStatusBarHidden:NO withAnimation:UIStatusBarAnimationSlide];
     [UIView animateWithDuration:0.55f animations:^{
         [self.view setFrame: [self.view bounds]];
@@ -88,7 +87,10 @@
     
     [UIView animateWithDuration:0.8f animations:^{
         [self.pageViewController.view setCenter:originPageViewCenter];
-    } completion:^(BOOL finished) {}];
+    } completion:^(BOOL finished) {
+        self.isAnimationFinished = false;
+        self.pageViewController.view.userInteractionEnabled = NO;
+        self.newsTableView.userInteractionEnabled = YES;}];
 }
 
 - (void)didTap:(UITapGestureRecognizer *)recognizer
@@ -109,7 +111,8 @@
         UISwipeGestureRecognizer *upSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(didSwipe:)];
         upSwipe.direction = UISwipeGestureRecognizerDirectionUp;
         [_pageViewController.view addGestureRecognizer:upSwipe];
-        [_pageViewController.view setFrame:CGRectMake(0, kStateY, 320 ,480)];
+        float rate = (self.newsTableView.contentOffset.y + kContentOffset) / -kRowHeight;
+        [_pageViewController.view setFrame:CGRectMake(0, kStateY + 15 * rate, 320 ,480)];
         _pageViewController.view.userInteractionEnabled = NO;
         for ( NSString * link in [self.imageDict allKeys] )
         {
@@ -263,8 +266,6 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    [UIView animateWithDuration:0.8f animations:^{
-        self.pageViewController.view.frame = CGRectMake(0, kStateY, self.pageViewController.view.frame.size.width, self.pageViewController.view.frame.size.height);} completion:nil];
 }
 
 - (void) viewWillDisappear:(BOOL)animated
@@ -291,7 +292,7 @@
     
     float rate = (scrollView.contentOffset.y + kContentOffset) / -kRowHeight;
     
-    if ( rate < -3 && !_isBackGroundHide )
+    if ( rate < -3 && !_isBackGroundHide && !self.isAnimationFinished )
     {
         _isBackGroundHide = YES;
         [UIView animateWithDuration:0.25f animations:^
@@ -306,7 +307,7 @@
         
         return ;
     }
-    if ( rate > -3 && rate < 1 && _isBackGroundHide )
+    if ( rate > -3 && rate < 1 && _isBackGroundHide && !self.isAnimationFinished )
     {
         _isBackGroundHide = NO;
         [UIView animateWithDuration:0.25f animations:^
@@ -321,6 +322,7 @@
     }
     if (rate > 1) {
         self.isAnimationFinished = true;
+        self.newsTableView.userInteractionEnabled = NO;
         [[UIApplication sharedApplication] nj_setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
         [UIView animateWithDuration:0.25f animations:^{
             [self.view setFrame: [[UIScreen mainScreen] bounds]];
@@ -329,7 +331,6 @@
             [self.backButton setAlpha:0.0];
             [self.buttonBackImageView setAlpha:0.0];
         } completion:^(BOOL finished) {
-            NSLog(@"%f",self.view.frame.origin.x);
             self.pageViewController.view.userInteractionEnabled = YES;
         }];
     }

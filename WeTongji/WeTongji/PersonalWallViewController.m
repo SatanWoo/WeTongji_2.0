@@ -97,15 +97,8 @@
 
 -(void)showScheduleTable
 {
-    [self.navigationController setNavigationBarHidden:NO animated:YES];
     [[UIApplication sharedApplication] nj_setStatusBarHidden:NO withAnimation:UIStatusBarAnimationSlide];
-    self.isAnimationFinished = false;
-    [UIView animateWithDuration:0.55f animations:^{
-        self.scheduleTableView.center = self.view.center;
-    } completion:^(BOOL finished) {
-        self.scheduleTableView.userInteractionEnabled = YES;
-    }];
-    
+    [self.recommendButton setUserInteractionEnabled:YES];
     [UIView animateWithDuration:0.8f animations:^{
         [self.pageViewController.view setCenter:originPageControlViewCenter];
         CGPoint center = CGPointMake(self.headerBoard.center.x, (-self.scheduleTableView.contentOffset.y)/2);
@@ -114,6 +107,13 @@
         [self.recommendButton setCenter:center];
     } completion:^(BOOL finished) {
         self.pageViewController.view.userInteractionEnabled = NO;
+    }];
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+    self.isAnimationFinished = false;
+    [UIView animateWithDuration:0.55f animations:^{
+        self.scheduleTableView.center = self.view.center;
+    } completion:^(BOOL finished) {
+        self.scheduleTableView.userInteractionEnabled = YES;
     }];
 }
 
@@ -366,6 +366,7 @@
     if (rate > 2)
     {
         self.isAnimationFinished = true;
+        [self.recommendButton setUserInteractionEnabled:NO];
         [self.navigationController setNavigationBarHidden:YES animated:YES];
         [[UIApplication sharedApplication] nj_setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
         [UIView animateWithDuration:0.25f animations:^{
