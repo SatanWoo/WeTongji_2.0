@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MyFavoriteCell.h"
 
-@interface MyFavoriteInfoCell : UITableViewCell
+@interface MyFavoriteInfoCell : MyFavoriteCell
 @property (nonatomic, strong) IBOutlet UILabel *timeLabel;
 @property (nonatomic, strong) IBOutlet UILabel *titleLabel;
 @property (nonatomic, strong) IBOutlet UILabel *sourceLabel;

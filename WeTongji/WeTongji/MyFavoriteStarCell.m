@@ -1,16 +1,16 @@
 //
-//  MyFavoriteInfoCell.m
+//  MyFavoriteStarCell.m
 //  WeTongji
 //
-//  Created by 吴 wuziqi on 12-12-2.
+//  Created by Tang Zhixiong on 12-12-2.
 //
 //
 
-#import "MyFavoriteInfoCell.h"
-#import "Information+Addition.h"
-#import "NSString+Addition.h"
+#import "MyFavoriteStarCell.h"
+#import "Star+Addition.h"
+#import <WeTongjiSDK/WeTongjiSDK.h>
 
-@implementation MyFavoriteInfoCell
+@implementation MyFavoriteStarCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -24,11 +24,12 @@
 -(void) setCollection:(AbstractCollection *)collection
 {
     [super setCollection:collection];
-    if ( ![collection isKindOfClass:[Information class]] ) return;
-    Information * info = (Information *) collection;
-    self.titleLabel.text = info.title;
-    self.sourceLabel.text = info.organizer;
-    self.timeLabel.text = [NSString yearMonthDayConvertFromDate:info.createdAt];
+    if ( ![collection isKindOfClass:[Star class]] ) return;
+    Star * star = (Star *) collection;
+    self.countLabel.text = [NSString stringWithFormat:@"第%@期",star.count];
+    [self.avatar setImageWithURL:[NSURL URLWithString:star.avatarLink]];
+    self.title.text = star.starId;
+    self.words.text = star.words;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated

@@ -47,6 +47,9 @@
 #define kWeeklyPersonCell @"kWeeklyPersonCell"
 #define kWeeklyPersonHeaderCell @"kWeeklyPersonHeaderCell"
 #define kSettingNoImageCell @"kSettingNoImageCell"
+#define kMyFavoriteEventCell @"kMyFavoriteEventCell"
+#define kMyFavoriteInfoCell @"kMyFavoriteInfoCell"
+#define kMyFavoriteStarCell @"kMyFavoriteStarCell"
 
 // Segue
 #define kMyFavortieViewControllerSegue @"kMyFavortieViewController"

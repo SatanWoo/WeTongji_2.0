@@ -1148,53 +1148,10 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="79" sectionHeaderHeight="22" sectionFooterHeight="22" id="8LJ-q2-rY6">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="100" sectionHeaderHeight="22" sectionFooterHeight="22" id="8LJ-q2-rY6">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.92357336956521741" green="0.92357336956521741" blue="0.92357336956521741" alpha="1" colorSpace="calibratedRGB"/>
-                                <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="kMyFavoriteCell" rowHeight="79" id="A3V-Hy-T3T" customClass="MyFavoriteViewCell">
-                                        <rect key="frame" x="0.0" y="22" width="320" height="79"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="78"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="标题" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="h6G-fz-AeS">
-                                                    <rect key="frame" x="20" y="9" width="212" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="dkfalsdfjldf asl;lfjjjfjfjfjjfjfjfjfjfjfjjfjjffjjffjjfjffjfjfjffjfjffffjfjfjjfjfjfjjfjfjfjfjfjjfjf" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2rY-6c-1ae">
-                                                    <rect key="frame" x="20" y="28" width="175" height="44"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="分类" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jW5-OK-3Dp">
-                                                    <rect key="frame" x="239" y="51" width="53" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="mark_btn" id="e2k-Ei-qah">
-                                                    <rect key="frame" x="217" y="51" width="14" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                        <connections>
-                                            <outlet property="category" destination="jW5-OK-3Dp" id="0fV-5s-cP6"/>
-                                            <outlet property="summary" destination="2rY-6c-1ae" id="sN6-Qz-k9O"/>
-                                            <outlet property="title" destination="h6G-fz-AeS" id="pbz-Qf-FN5"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="tSa-hA-s91" id="Fy5-jo-kMc"/>
                                     <outlet property="delegate" destination="tSa-hA-s91" id="bbL-Sx-uU7"/>
@@ -1771,7 +1728,6 @@
         <image name="location_cell.png" width="320" height="40"/>
         <image name="login_btn.png" width="301" height="40"/>
         <image name="login_or_register.png" width="136" height="40"/>
-        <image name="mark_btn" width="16" height="16"/>
         <image name="nav_register" width="16" height="16"/>
         <image name="navbar_sort_btn.png" width="40" height="40"/>
         <image name="navbar_sort_btn_hl.png" width="40" height="40"/>
@@ -1884,14 +1840,6 @@
         <class className="MiddleAbstractViewController" superclassName="CoreDataViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MiddleAbstractViewController.h"/>
         </class>
-        <class className="MyFavoriteViewCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MyFavoriteViewCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="category" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="summary" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="title" candidateClass="UILabel"/>
-            </relationships>
-        </class>
         <class className="MyFavortieViewController" superclassName="MiddleAbstractSecondViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MyFavortieViewController.h"/>
             <relationships>
@@ -1909,7 +1857,6 @@
         <class className="PersonalWallViewController" superclassName="MiddleAbstractViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PersonalWallViewController.h"/>
             <relationships>
-                <relationship kind="action" name="headerButtonClicked:"/>
                 <relationship kind="outlet" name="headerBoard" candidateClass="UIView"/>
                 <relationship kind="outlet" name="recommendButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="recommendTitle" candidateClass="UILabel"/>
@@ -2033,7 +1980,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="sR0-eS-rDJ"/>
+        <segue reference="6k4-ha-E9F"/>
         <segue reference="5c9-iE-HEP"/>
     </inferredMetricsTieBreakers>
 </document>

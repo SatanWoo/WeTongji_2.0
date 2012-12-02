@@ -20,7 +20,10 @@
 #import "Information+Addition.h"
 #import "Event+Addition.h"
 #import "AbstractCollection+Addition.h"
-#import "MyFavoriteViewCell.h"
+#import "MyFavoriteCell.h"
+#import "MyFavoriteInfoCell.h"
+#import "MyFavoriteEventCell.h"
+#import "MyFavoriteStarCell.h"
 
 @interface MyFavortieViewController () < UITableViewDelegate, UITableViewDataSource ,PullRefreshManagementDelegate>
 
@@ -56,6 +59,9 @@
 
 -(void) configTableView
 {
+    [self.contentTableView registerNib:[UINib nibWithNibName:@"MyFavoriteEventCell" bundle:nil] forCellReuseIdentifier:kMyFavoriteEventCell];
+    [self.contentTableView registerNib:[UINib nibWithNibName:@"MyFavoriteInfoCell" bundle:nil] forCellReuseIdentifier:kMyFavoriteInfoCell];
+    [self.contentTableView registerNib:[UINib nibWithNibName:@"MyFavoriteStarCell" bundle:nil] forCellReuseIdentifier:kMyFavoriteStarCell];
     self.pullRefreshManagement.delegate = self;
 }
 
@@ -122,14 +128,25 @@ static NSInteger tempRow;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    MyFavoriteViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kMyFavoriteCell];
-    if (cell == nil) {
-        cell = [[MyFavoriteViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kMyFavoriteCell];
-    }
     AbstractCollection * collection = self.myFavoriteList[indexPath.row];
-    cell.title.text = collection.collectionTitle;
-    cell.summary.text = collection.collectionSummary;
-    cell.category.text = collection.collectionSource;
+    MyFavoriteCell *cell;
+    if ( [collection isKindOfClass:[Event class]] ) {
+        cell = [tableView dequeueReusableCellWithIdentifier:kMyFavoriteEventCell];
+        if (cell == nil) {
+            cell = [[MyFavoriteEventCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kMyFavoriteEventCell];
+        }
+    } else if ( [collection isKindOfClass:[Information class]] ) {
+        cell = [tableView dequeueReusableCellWithIdentifier:kMyFavoriteInfoCell];
+        if (cell == nil) {
+            cell = [[MyFavoriteInfoCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kMyFavoriteInfoCell];
+        }
+    } else if ( [collection isKindOfClass:[Star class]] ) {
+        cell = [tableView dequeueReusableCellWithIdentifier:kMyFavoriteStarCell];
+        if (cell == nil) {
+            cell = [[MyFavoriteStarCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kMyFavoriteStarCell];
+        }
+    }
+    [cell setCollection:collection];
     return cell;
 }
 

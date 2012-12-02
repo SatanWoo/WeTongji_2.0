@@ -1,22 +1,22 @@
 //
-//  MyFavoriteInfoCell.m
+//  MyFavoriteEventCell.m
 //  WeTongji
 //
 //  Created by 吴 wuziqi on 12-12-2.
 //
 //
 
-#import "MyFavoriteInfoCell.h"
-#import "Information+Addition.h"
+#import "MyFavoriteEventCell.h"
+#import "Event+Addition.h"
 #import "NSString+Addition.h"
+#import <WeTongjiSDK/WeTongjiSDK.h>
 
-@implementation MyFavoriteInfoCell
+@implementation MyFavoriteEventCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        // Initialization code
     }
     return self;
 }
@@ -24,18 +24,17 @@
 -(void) setCollection:(AbstractCollection *)collection
 {
     [super setCollection:collection];
-    if ( ![collection isKindOfClass:[Information class]] ) return;
-    Information * info = (Information *) collection;
-    self.titleLabel.text = info.title;
-    self.sourceLabel.text = info.organizer;
-    self.timeLabel.text = [NSString yearMonthDayConvertFromDate:info.createdAt];
+    if ( ![collection isKindOfClass:[Event class]] ) return;
+    Event * event = (Event *)collection;
+    [self.avatar setImageWithURL:[NSURL URLWithString:event.orgranizerAvatarLink]];
+    self.titleLabel.text = event.title;
+    self.timeLabel.text = [NSString yearMonthDayConvertFromDate:event.createAt];
+    self.sourceLabel.text = event.organizer;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
     [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
 }
 
 @end

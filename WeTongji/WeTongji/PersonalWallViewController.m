@@ -164,14 +164,12 @@
 {
     [super viewDidLoad];
     [self.navigationController setNavigationBarHidden:YES];
-    NSLog(@"pageheight%f",self.pageViewController.view.frame.size.height);
     [self configureTodayRecommend];
     [self configureTableView];
     [self loadCourses];
     [self loadMyFavorites];
     [self loadActivities];
     [self setWantsFullScreenLayout:YES];
-    NSLog(@"pageheight%f",self.pageViewController.view.frame.size.height);
 }
 
 -(void)loadCourses
@@ -257,7 +255,7 @@
                             failureBlock:^(NSError * error)
                            {
                            }];
-    [request getActivitiesInChannel:nil inSort:GetActivitySortMethodBeginDesc Expired:NO nextPage:0];
+    [request getActivitiesInChannel:nil inSort:nil Expired:NO nextPage:1];
     [client enqueueRequest:request];
 }
 
