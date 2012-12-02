@@ -64,6 +64,10 @@
 		031A27D1166B4CF200F5E8A6 /* cell_celebrity_re@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 031A27C9166B4CF200F5E8A6 /* cell_celebrity_re@2x.png */; };
 		031A27D2166B4CF200F5E8A6 /* cell_news_re.png in Resources */ = {isa = PBXBuildFile; fileRef = 031A27CA166B4CF200F5E8A6 /* cell_news_re.png */; };
 		031A27D3166B4CF200F5E8A6 /* cell_news_re@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 031A27CB166B4CF200F5E8A6 /* cell_news_re@2x.png */; };
+		031A27E1166B4D8900F5E8A6 /* MyfavoriteEventCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 031A27E0166B4D8900F5E8A6 /* MyfavoriteEventCell.m */; };
+		031A27E3166B4EE800F5E8A6 /* MyFavoriteEventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 031A27E2166B4EE800F5E8A6 /* MyFavoriteEventCell.xib */; };
+		031A27E6166B51CA00F5E8A6 /* MyFavoriteInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 031A27E5166B51CA00F5E8A6 /* MyFavoriteInfoCell.m */; };
+		031A27E8166B520900F5E8A6 /* MyFavoriteInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 031A27E7166B520900F5E8A6 /* MyFavoriteInfoCell.xib */; };
 		03326A491656798A005E8A16 /* recommend_img.png in Resources */ = {isa = PBXBuildFile; fileRef = 03326A471656798A005E8A16 /* recommend_img.png */; };
 		03326A4A1656798A005E8A16 /* recommend_img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 03326A481656798A005E8A16 /* recommend_img@2x.png */; };
 		03326A4D16567FE3005E8A16 /* default.png in Resources */ = {isa = PBXBuildFile; fileRef = 03326A4B16567FE3005E8A16 /* default.png */; };
@@ -584,6 +588,23 @@
 		FFC65D42164FE59600156F77 /* check_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFC65D41164FE59600156F77 /* check_btn@2x.png */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		031A27DB166B4D2300F5E8A6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 031A27D4166B4D2300F5E8A6 /* WeTongjiSDK.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E110DF2B16365B990087EA46;
+			remoteInfo = WeTongjiSDK;
+		};
+		031A27DD166B4D2900F5E8A6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 031A27D4166B4D2300F5E8A6 /* WeTongjiSDK.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = E110DF2A16365B990087EA46;
+			remoteInfo = WeTongjiSDK;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		030BBE511664FFC100C9CA92 /* list_cell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = list_cell.png; sourceTree = "<group>"; };
 		030BBE521664FFC100C9CA92 /* list_cell@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "list_cell@2x.png"; sourceTree = "<group>"; };
@@ -643,6 +664,13 @@
 		031A27C9166B4CF200F5E8A6 /* cell_celebrity_re@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cell_celebrity_re@2x.png"; sourceTree = "<group>"; };
 		031A27CA166B4CF200F5E8A6 /* cell_news_re.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cell_news_re.png; sourceTree = "<group>"; };
 		031A27CB166B4CF200F5E8A6 /* cell_news_re@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cell_news_re@2x.png"; sourceTree = "<group>"; };
+		031A27D4166B4D2300F5E8A6 /* WeTongjiSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = WeTongjiSDK.xcodeproj; path = ../../wetongji_ios_sdk/WeTongjiSDK.xcodeproj; sourceTree = "<group>"; };
+		031A27DF166B4D8900F5E8A6 /* MyfavoriteEventCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyfavoriteEventCell.h; sourceTree = "<group>"; };
+		031A27E0166B4D8900F5E8A6 /* MyfavoriteEventCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyfavoriteEventCell.m; sourceTree = "<group>"; };
+		031A27E2166B4EE800F5E8A6 /* MyFavoriteEventCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyFavoriteEventCell.xib; sourceTree = "<group>"; };
+		031A27E4166B51C900F5E8A6 /* MyFavoriteInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyFavoriteInfoCell.h; sourceTree = "<group>"; };
+		031A27E5166B51CA00F5E8A6 /* MyFavoriteInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyFavoriteInfoCell.m; sourceTree = "<group>"; };
+		031A27E7166B520900F5E8A6 /* MyFavoriteInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyFavoriteInfoCell.xib; sourceTree = "<group>"; };
 		03326A471656798A005E8A16 /* recommend_img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = recommend_img.png; sourceTree = "<group>"; };
 		03326A481656798A005E8A16 /* recommend_img@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recommend_img@2x.png"; sourceTree = "<group>"; };
 		03326A4B16567FE3005E8A16 /* default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default.png; sourceTree = "<group>"; };
@@ -1344,6 +1372,14 @@
 			name = myfavor;
 			sourceTree = "<group>";
 		};
+		031A27D5166B4D2300F5E8A6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				031A27DC166B4D2300F5E8A6 /* WeTongjiSDK.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		033DF606165931B200C0441A /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -1597,6 +1633,7 @@
 		B00D6911162CFCAC00592B1D = {
 			isa = PBXGroup;
 			children = (
+				031A27D4166B4D2300F5E8A6 /* WeTongjiSDK.xcodeproj */,
 				036E49D4165E5016006B33EE /* Default@2x.png */,
 				036E49D2165E5006006B33EE /* Default.png */,
 				03326A4B16567FE3005E8A16 /* default.png */,
@@ -2115,6 +2152,12 @@
 				03D1CD85165A836D00334F0D /* SettingNoImageCell.xib */,
 				FFB1268D165C7706005ECC2D /* MyFavoriteViewCell.h */,
 				FFB1268E165C7706005ECC2D /* MyFavoriteViewCell.m */,
+				031A27DF166B4D8900F5E8A6 /* MyfavoriteEventCell.h */,
+				031A27E0166B4D8900F5E8A6 /* MyfavoriteEventCell.m */,
+				031A27E2166B4EE800F5E8A6 /* MyFavoriteEventCell.xib */,
+				031A27E4166B51C900F5E8A6 /* MyFavoriteInfoCell.h */,
+				031A27E5166B51CA00F5E8A6 /* MyFavoriteInfoCell.m */,
+				031A27E7166B520900F5E8A6 /* MyFavoriteInfoCell.xib */,
 			);
 			name = UITableViewCell;
 			sourceTree = "<group>";
@@ -2483,6 +2526,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				031A27DE166B4D2900F5E8A6 /* PBXTargetDependency */,
 			);
 			name = WeTongji;
 			productName = WeTongji;
@@ -2507,12 +2551,28 @@
 			mainGroup = B00D6911162CFCAC00592B1D;
 			productRefGroup = B00D691D162CFCAC00592B1D /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 031A27D5166B4D2300F5E8A6 /* Products */;
+					ProjectRef = 031A27D4166B4D2300F5E8A6 /* WeTongjiSDK.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				B00D691B162CFCAC00592B1D /* WeTongji */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		031A27DC166B4D2300F5E8A6 /* WeTongjiSDK.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = WeTongjiSDK.framework;
+			remoteRef = 031A27DB166B4D2300F5E8A6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		B00D691A162CFCAC00592B1D /* Resources */ = {
@@ -2974,6 +3034,8 @@
 				031A27D1166B4CF200F5E8A6 /* cell_celebrity_re@2x.png in Resources */,
 				031A27D2166B4CF200F5E8A6 /* cell_news_re.png in Resources */,
 				031A27D3166B4CF200F5E8A6 /* cell_news_re@2x.png in Resources */,
+				031A27E3166B4EE800F5E8A6 /* MyFavoriteEventCell.xib in Resources */,
+				031A27E8166B520900F5E8A6 /* MyFavoriteInfoCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3093,10 +3155,20 @@
 				FFA371481661A5E4006958F3 /* NSUserDefaults+Settings.m in Sources */,
 				FF78958B16639A740030D039 /* NSDictionary+Addition.m in Sources */,
 				FF78958E1663C2200030D039 /* UIApplication+nj_SmartStatusBar.m in Sources */,
+				031A27E1166B4D8900F5E8A6 /* MyfavoriteEventCell.m in Sources */,
+				031A27E6166B51CA00F5E8A6 /* MyFavoriteInfoCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		031A27DE166B4D2900F5E8A6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = WeTongjiSDK;
+			targetProxy = 031A27DD166B4D2900F5E8A6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		B00D6929162CFCAC00592B1D /* InfoPlist.strings */ = {
