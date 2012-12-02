@@ -258,6 +258,7 @@
         if ( [self.star.canLike boolValue] )
         {
             [request likeStar:self.star.starId];
+            NSLog(@"%@",self.star.starId);
         }
         else
         {
@@ -462,6 +463,8 @@
     self.starTitle.text = star.jobTitle;
     self.starSummary.text = star.words;
     self.likeNumber.text = [star.like stringValue];
+    
+    NSLog(@"%@",star.like);
     self.favoriteNumber.text = [star.favorite stringValue];
     self.starNumber.text = [NSString stringWithFormat:@"第%@期",star.count];
     _star = star;

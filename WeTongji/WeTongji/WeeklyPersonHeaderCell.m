@@ -38,9 +38,9 @@
     
     CAShapeLayer * shapeLayer = [CAShapeLayer layer];
     shapeLayer.backgroundColor = [UIColor clearColor].CGColor;
-    shapeLayer.path = [UIBezierPath bezierPathWithRoundedRect:self.personBG.bounds byRoundingCorners: UIRectCornerTopLeft | UIRectCornerTopRight cornerRadii:CGSizeMake(kRound, kRound)].CGPath;
-    [self.personBG.layer setMasksToBounds:YES];
-    self.personBG.layer.mask = shapeLayer;
+    shapeLayer.path = [UIBezierPath bezierPathWithRoundedRect:self.image.bounds byRoundingCorners: UIRectCornerTopLeft | UIRectCornerTopRight cornerRadii:CGSizeMake(kRound, kRound)].CGPath;
+    [self.image.layer setMasksToBounds:YES];
+    self.image.layer.mask = shapeLayer;
     //[self.personBG.layer setCornerRadius:3.0f];
 }
 
