@@ -28,6 +28,7 @@
 @interface SchoolNewsViewController () <UIScrollViewDelegate, UITableViewDelegate, UITableViewDataSource>
 {
     BOOL _isBackGroundHide;
+    BOOL _haveImages;
     CGPoint originNewsTableViewCenter;
     CGPoint originPageViewCenter;
 }
@@ -114,6 +115,7 @@
         float rate = (self.newsTableView.contentOffset.y + kContentOffset) / -kRowHeight;
         [_pageViewController.view setFrame:CGRectMake(0, kStateY + 15 * rate, 320 ,480)];
         _pageViewController.view.userInteractionEnabled = NO;
+        _haveImages = [self.imageDict allKeys].count ? YES : NO;
         for ( NSString * link in [self.imageDict allKeys] )
         {
             UIImageView * view = [[UIImageView alloc] init];
@@ -321,7 +323,7 @@
         }
         completion:^(BOOL isFinished){}];
     }
-    if (rate > 1) {
+    if (rate > 1 && _haveImages) {
         self.isAnimationFinished = true;
         self.newsTableView.userInteractionEnabled = NO;
         [[UIApplication sharedApplication] nj_setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
