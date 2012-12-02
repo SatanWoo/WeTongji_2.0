@@ -29,9 +29,10 @@
     self.name.text = star.title;
     self.title.text = star.jobTitle;
     self.summary.text = star.words;
+    self.likeCount.text = [star.like stringValue];
     NSDictionary * imageDict = [NSDictionary getImageLinkDictInJsonString:star.images];
     id key = [imageDict allKeys][0];
-    [self.image setImageWithURL:[NSURL URLWithString:key] placeholderImage:[UIImage imageNamed:@"defalut_pic"]];
+    [self.image setImageWithURL:[NSURL URLWithString:key] placeholderImage:[UIImage imageNamed:@"defalut_pic_loading"]];
     _star = star;
     
     
