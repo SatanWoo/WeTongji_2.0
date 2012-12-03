@@ -18,7 +18,7 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        // Initialization code
+        
     }
     return self;
 }
@@ -31,8 +31,10 @@
     self.summary.text = star.words;
     self.likeCount.text = [star.like stringValue];
     NSDictionary * imageDict = [NSDictionary getImageLinkDictInJsonString:star.images];
-    id key = [imageDict allKeys][0];
-    [self.image setImageWithURL:[NSURL URLWithString:key] placeholderImage:[UIImage imageNamed:@"defalut_pic_loading"]];
+    if ( [imageDict allKeys].count ){
+        id key = [imageDict allKeys][0];
+        [self.image setImageWithURL:[NSURL URLWithString:key] placeholderImage:[UIImage imageNamed:@"defalut_pic_loading"]];
+    }
     _star = star;
     
     
