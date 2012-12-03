@@ -16,6 +16,7 @@
 @property (nonatomic ,weak) IBOutlet UILabel *count;
 @property (nonatomic ,weak) IBOutlet UILabel *job;
 @property (nonatomic ,weak) IBOutlet UIImageView *bgView;
+@property (nonatomic ,weak) IBOutlet UIImageView *partition;
 @property (nonatomic ,weak) Star * star;
 
 @end

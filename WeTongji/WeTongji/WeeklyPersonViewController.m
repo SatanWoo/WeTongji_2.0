@@ -122,10 +122,13 @@
             [self configureWeeklyPersonCellBg:@"list_single_cell.png" forCell:((WeeklyPersonCell *)cell)];
         } else if ([self.starList count] > 2) {
             if (indexPath.row == 1) {
+                ((WeeklyPersonCell *)cell).partition.hidden = NO;
                 [self configureWeeklyPersonCellBg:@"list_header.png" forCell:((WeeklyPersonCell *)cell)];
             } else if (indexPath.row == [self.starList count] - 1) {
+                ((WeeklyPersonCell *)cell).partition.hidden = YES;
                 [self configureWeeklyPersonCellBg:@"list_footer.png" forCell:((WeeklyPersonCell *)cell)];
             } else {
+                ((WeeklyPersonCell *)cell).partition.hidden = NO;
                 [self configureWeeklyPersonCellBg:@"list_cell.png" forCell:((WeeklyPersonCell *)cell)];
             }
         }
