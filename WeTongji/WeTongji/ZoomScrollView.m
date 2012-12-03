@@ -33,6 +33,8 @@
         twoFingerTapRecognizer.numberOfTapsRequired = 1;
         twoFingerTapRecognizer.numberOfTouchesRequired = 2;
         [self addGestureRecognizer:twoFingerTapRecognizer];
+        self.showsHorizontalScrollIndicator = NO;
+        self.showsVerticalScrollIndicator = NO;
     }
     return self;
 }
