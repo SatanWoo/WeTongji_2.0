@@ -258,7 +258,6 @@
         if ( [self.star.canLike boolValue] )
         {
             [request likeStar:self.star.starId];
-            NSLog(@"%@",self.star.starId);
         }
         else
         {
