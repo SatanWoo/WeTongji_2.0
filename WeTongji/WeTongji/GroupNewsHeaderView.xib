@@ -42,7 +42,7 @@
 						<int key="NSvFlags">1316</int>
 						<string key="NSFrame">{{0, 129}, {320, 1}}</string>
 						<reference key="NSSuperview" ref="16818318"/>
-						<reference key="NSNextKeyView" ref="926562711"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -89,7 +89,7 @@
 						<object class="NSPSMatrix" key="NSFrameMatrix"/>
 						<string key="NSFrame">{{260, 12}, {53, 21}}</string>
 						<reference key="NSSuperview" ref="16818318"/>
-						<reference key="NSNextKeyView" ref="253835486"/>
+						<reference key="NSNextKeyView" ref="926562711"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<int key="IBUIContentMode">7</int>
@@ -272,6 +272,7 @@
 										<object class="NSPSMatrix" key="NSFrameMatrix"/>
 										<string key="NSFrame">{{36, 5}, {24, 21}}</string>
 										<reference key="NSSuperview" ref="593886187"/>
+										<reference key="NSNextKeyView" ref="253835486"/>
 										<bool key="IBUIOpaque">NO</bool>
 										<bool key="IBUIClipsSubviews">YES</bool>
 										<int key="IBUIContentMode">7</int>
@@ -560,6 +561,7 @@
 				<string key="91.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<reference key="91.IBUserGuides" ref="0"/>
 				<boolean value="NO" key="91.showNotes"/>
+				<string key="95.CustomClassName">AutoResizeLabel</string>
 				<string key="95.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<reference key="95.IBUserGuides" ref="0"/>
 				<boolean value="NO" key="95.showNotes"/>
