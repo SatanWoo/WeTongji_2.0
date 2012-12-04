@@ -697,6 +697,7 @@
 				<string key="94.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<reference key="94.IBUserGuides" ref="0"/>
 				<boolean value="NO" key="94.showNotes"/>
+				<string key="95.CustomClassName">AutoResizeLabel</string>
 				<string key="95.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<reference key="95.IBUserGuides" ref="0"/>
 				<boolean value="NO" key="95.showNotes"/>
