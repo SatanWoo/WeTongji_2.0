@@ -61,7 +61,6 @@
     self.layer.shadowOpacity = rendered ? 1.0f : 0.0f;
     self.partitionline.hidden = rendered;
     if (rendered) {
-        self.layer.cornerRadius = 4.0f;
         self.layer.shadowRadius = 4.0f;
     }
 }
