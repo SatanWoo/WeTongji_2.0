@@ -187,7 +187,7 @@
     [form setDateFormat:@"今天HH:mm"];
     today = [NSDate dateWithTimeIntervalSince1970:interval*(60 * 60 * 24)];
     if ( [date timeIntervalSinceDate:today] > 0 ) return [form stringFromDate:date];
-    [form setDateFormat:@"M月dd号"];
+    [form setDateFormat:@"M月dd日"];
     if ( [date timeIntervalSinceDate:today] <= 0 ) return [form stringFromDate:date];
     return @"刚刚更新";
 }
