@@ -416,6 +416,7 @@
 		FF2C2C9F166BADC700309297 /* favourite_avatar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FF2C2C9D166BADC700309297 /* favourite_avatar@2x.png */; };
 		FF331046166C43A800CE9519 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 036E49D4165E5016006B33EE /* Default@2x.png */; };
 		FF331047166C43AB00CE9519 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 036E49D2165E5006006B33EE /* Default.png */; };
+		FF6A5EFC166E3D3B00ABBE70 /* AutoResizeLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = FF6A5EFB166E3D3B00ABBE70 /* AutoResizeLabel.m */; };
 		FF6E953216537EB2002497FA /* User+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = FF6E953116537EB2002497FA /* User+Addition.m */; };
 		FF710971164CFBE5008F2A06 /* EGORefreshTableFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = FF71096F164CFBE5008F2A06 /* EGORefreshTableFooterView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		FF710978164D0A77008F2A06 /* EGORefreshTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = FF710977164D0A77008F2A06 /* EGORefreshTableHeaderView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -1077,6 +1078,8 @@
 		FF2C2C9C166BADC700309297 /* favourite_avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = favourite_avatar.png; sourceTree = "<group>"; };
 		FF2C2C9D166BADC700309297 /* favourite_avatar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "favourite_avatar@2x.png"; sourceTree = "<group>"; };
 		FF51244C166DA10200412CBC /* WeTongjiSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = WeTongjiSDK.xcodeproj; path = "../../WeTongji 2.0 SDK/WeTongjiSDK.xcodeproj"; sourceTree = "<group>"; };
+		FF6A5EFA166E3D3B00ABBE70 /* AutoResizeLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoResizeLabel.h; sourceTree = "<group>"; };
+		FF6A5EFB166E3D3B00ABBE70 /* AutoResizeLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoResizeLabel.m; sourceTree = "<group>"; };
 		FF6E953016537EB2002497FA /* User+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "User+Addition.h"; sourceTree = "<group>"; };
 		FF6E953116537EB2002497FA /* User+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "User+Addition.m"; sourceTree = "<group>"; };
 		FF71096F164CFBE5008F2A06 /* EGORefreshTableFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGORefreshTableFooterView.m; sourceTree = "<group>"; };
@@ -1781,6 +1784,8 @@
 				FFB19D8A165D462700DE9291 /* ZoomScrollView.m */,
 				03D80C1B165FC5780086054D /* WUStatusbarWindow.h */,
 				03D80C1C165FC5780086054D /* WUStatusbarWindow.m */,
+				FF6A5EFA166E3D3B00ABBE70 /* AutoResizeLabel.h */,
+				FF6A5EFB166E3D3B00ABBE70 /* AutoResizeLabel.m */,
 			);
 			name = UIView;
 			sourceTree = "<group>";
@@ -3149,6 +3154,7 @@
 				031A27E6166B51CA00F5E8A6 /* MyFavoriteInfoCell.m in Sources */,
 				FF7B2B75166B5A9800EB7967 /* MyFavoriteStarCell.m in Sources */,
 				FF7B2B78166B5D9800EB7967 /* MyFavoriteCell.m in Sources */,
+				FF6A5EFC166E3D3B00ABBE70 /* AutoResizeLabel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
