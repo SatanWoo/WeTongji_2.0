@@ -184,7 +184,6 @@ typedef enum {
     {
         WTClient * client = [WTClient sharedClient];
         [client cancelAllHTTPOperationsWithMethod:nil path:nil];
-        [currentRefreshManagememt firstTrigger];
     }
     _currentRefreshManagememt = currentRefreshManagememt;
 }
@@ -390,6 +389,7 @@ typedef enum {
     [UIView animateWithDuration:0.3f animations:^{
         [self.scrollView setContentOffset:CGPointMake(index * kWidth, 0)];
     } completion:^(BOOL finished) {
+        [self.currentRefreshManagememt firstTrigger];
     }];
 }
 
@@ -401,7 +401,6 @@ typedef enum {
     [self configureTabBar];
     [self configureTableView];
     [self configureDifaultSelection];
-    [self.currentRefreshManagememt firstTrigger];
 }
 
 - (void)viewWillAppear:(BOOL)animated

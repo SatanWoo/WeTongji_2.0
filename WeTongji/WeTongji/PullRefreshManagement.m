@@ -42,6 +42,8 @@
             [self.pullRefreshFooterView setHidden:YES];
             [self.pullRefreshFooterView setIsEndingAll:YES];
         }
+        self.pullRefreshHeaderView.backgroundColor = scrollView.backgroundColor;
+        self.pullRefreshFooterView.backgroundColor = scrollView.backgroundColor;
     }
     return self;
 }
