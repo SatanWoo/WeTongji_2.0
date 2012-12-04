@@ -24,6 +24,8 @@
 #define kContentOffset 50
 #define kStateY -150
 #define kRowHeight 44
+#define kOrigin 2
+#define kCurrent 6
 #define noPic @"missing.png"
 
 @interface SchoolNewsViewController () <UIScrollViewDelegate, UITableViewDelegate, UITableViewDataSource>
@@ -301,6 +303,12 @@
             CGPoint center = [self.newsTableView center];
             center.y = center.y - (self.headerView.bounds.size.height - kContentOffset);
             [self.newsTableView setCenter:center];
+            
+            CGRect buttonFrame = self.backButton.frame;
+            buttonFrame.origin.x = kCurrent;
+            buttonFrame.origin.y = kCurrent;
+            self.backButton.frame = buttonFrame;
+            
             [self.headerView changeButtonPositionToLeft];
         }
         completion:^(BOOL isFinished){}];
@@ -316,6 +324,12 @@
             CGPoint center = [self.newsTableView center];
             center.y = center.y + (self.headerView.bounds.size.height - kContentOffset);
             [self.newsTableView setCenter:center];
+            
+            CGRect buttonFrame = self.backButton.frame;
+            buttonFrame.origin.x = kOrigin;
+            buttonFrame.origin.y = kOrigin;
+            self.backButton.frame = buttonFrame;
+            
             [self.headerView resetButtonPosition];
         }
         completion:^(BOOL isFinished){}];

@@ -39,6 +39,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *likeButtonBg;
 @property (weak, nonatomic) IBOutlet UIButton *favoriteButtonBg;
 @property (weak, nonatomic) IBOutlet UIButton *addToScheduleBg;
+@property (weak, nonatomic) IBOutlet UIImageView *partitionline;
 
 -(void) changeButtonPositionToLeft;
 -(void) resetButtonPosition;
