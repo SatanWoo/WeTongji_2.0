@@ -389,6 +389,7 @@ typedef enum {
     [UIView animateWithDuration:0.3f animations:^{
         [self.scrollView setContentOffset:CGPointMake(index * kWidth, 0)];
     } completion:^(BOOL finished) {
+        if (finished)
         [self.currentRefreshManagememt firstTrigger];
     }];
 }
