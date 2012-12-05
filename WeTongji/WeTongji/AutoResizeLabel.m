@@ -23,8 +23,10 @@
 {
     [super setText:text];
     CGRect frame = self.frame;
-    CGSize size = [text sizeWithFont:self.font forWidth:self.frame.size.width lineBreakMode:self.lineBreakMode];
-    frame.size = size;
+    CGSize size = [text sizeWithFont:self.font];
+    NSInteger lines = size.width / self.frame.size.width + 1;
+    if ( lines > self.numberOfLines ) lines = self.numberOfLines;
+    frame.size.height = size.height * lines;
     self.frame = frame;
 }
 
