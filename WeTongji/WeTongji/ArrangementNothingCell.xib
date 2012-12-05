@@ -60,7 +60,6 @@
 								<int key="NSvFlags">256</int>
 								<string key="NSFrame">{{80, 87}, {208, 3}}</string>
 								<reference key="NSSuperview" ref="671586437"/>
-								<reference key="NSNextKeyView"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
