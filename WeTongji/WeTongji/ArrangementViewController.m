@@ -20,7 +20,7 @@
 
 #define DAY_TIME_INTERVAL (60 * 60 * 24)
 #define kXPos 278
-#define kYPos 55
+#define kYPos 69
 #define kOffSet 6
 
 @interface ArrangementViewController () <UITableViewDataSource, UITableViewDelegate>
