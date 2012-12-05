@@ -12,4 +12,6 @@
 
 +(NSDictionary *) getImageLinkDictInJsonString:(NSString *) jSonString;
 
+-(NSArray *) allKeysInStringOrder;
+
 @end

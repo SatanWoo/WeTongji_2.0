@@ -87,7 +87,6 @@
     CGFloat pageWidth = self.pagedScrollView.frame.size.width;
     NSInteger page = (NSInteger)floor((self.pagedScrollView.contentOffset.x * 2.0f + pageWidth) / (pageWidth * 2.0f));
     self.pageControl.currentPage = page;
-    NSLog(@"Page : %d",page);
     id desc = self.descriptionList[page];
     self.imageDescription.text = [NSString stringWithFormat:@"%@",desc];
     [self.imageDescription setHidden: ([desc isKindOfClass:[NSNull class]] ? YES : NO)];

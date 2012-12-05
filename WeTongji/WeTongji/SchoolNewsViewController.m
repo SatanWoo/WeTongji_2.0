@@ -119,7 +119,7 @@
         [_pageViewController.view setFrame:CGRectMake(0, kStateY + 15 * rate, 320 ,480)];
         _pageViewController.view.userInteractionEnabled = NO;
         _haveImages = [self.imageDict allKeys].count ? YES : NO;
-        for ( NSString * link in [self.imageDict allKeys] )
+        for ( NSString * link in [self.imageDict allKeysInStringOrder] )
         {
             UIImageView * view = [[UIImageView alloc] init];
             [view setImageWithURL:[NSURL URLWithString:link] placeholderImage:[UIImage imageNamed:@"default_pic_loading"]];
