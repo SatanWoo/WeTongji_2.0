@@ -22,6 +22,19 @@
 @synthesize pagedScrollView;
 @synthesize pageControl;
 
+-(void) setPictureNumber:(int)pictureNumber
+{
+    _pictureNumber = pictureNumber;
+    if ( _pictureNumber > 1)
+    {
+        [self.pageControl setHidden:NO];
+    }
+    else
+    {
+        [self.pageControl setHidden:YES];
+    }
+}
+
 -(NSMutableArray *) imageList
 {
     if ( !_imageList )
