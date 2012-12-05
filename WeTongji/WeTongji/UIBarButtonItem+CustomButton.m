@@ -24,6 +24,7 @@
         } else {
             [button setBounds:[[UIImageView alloc] initWithImage:image].bounds];
         }
+        button.frame = CGRectMake(0, 0, button.bounds.size.width + 6, button.bounds.size.height + 6);
         [button addTarget:target action:selector forControlEvents:UIControlEventTouchUpInside];
         [button setImage:image forState:UIControlStateNormal];
         [button setImage:image forState:UIControlStateSelected];
