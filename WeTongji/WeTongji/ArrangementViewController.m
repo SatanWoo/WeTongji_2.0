@@ -167,7 +167,7 @@
 #pragma mark - UITableViewDataSource
 - (float)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 80;
+    return 90;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -183,7 +183,7 @@
 
 - (float)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    if ( tableView == self.sectionTableView ) return 80;
+    if ( tableView == self.sectionTableView ) return 90;
     return 0;
 }
 
