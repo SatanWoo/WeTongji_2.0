@@ -55,7 +55,7 @@
 					<object class="IBUIImageView" id="674694681">
 						<reference key="NSNextResponder" ref="1058080063"/>
 						<int key="NSvFlags">1316</int>
-						<string key="NSFrame">{{11, 11}, {68, 68}}</string>
+						<string key="NSFrame">{{9, 9}, {72, 72}}</string>
 						<reference key="NSSuperview" ref="1058080063"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="738930701"/>
@@ -70,7 +70,7 @@
 					<object class="IBUIImageView" id="738930701">
 						<reference key="NSNextResponder" ref="1058080063"/>
 						<int key="NSvFlags">1316</int>
-						<string key="NSFrame">{{20, 20}, {50, 50}}</string>
+						<string key="NSFrame">{{17, 17}, {56, 56}}</string>
 						<reference key="NSSuperview" ref="1058080063"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="173753125"/>
@@ -82,7 +82,7 @@
 						<reference key="NSNextResponder" ref="1058080063"/>
 						<int key="NSvFlags">1280</int>
 						<object class="NSPSMatrix" key="NSFrameMatrix"/>
-						<string key="NSFrame">{{83, 17}, {69, 21}}</string>
+						<string key="NSFrame">{{83, 12}, {69, 21}}</string>
 						<reference key="NSSuperview" ref="1058080063"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="942263811"/>
@@ -114,34 +114,36 @@
 						<reference key="NSNextResponder" ref="1058080063"/>
 						<int key="NSvFlags">1280</int>
 						<object class="NSPSMatrix" key="NSFrameMatrix"/>
-						<string key="NSFrame">{{83, 40}, {172, 21}}</string>
+						<string key="NSFrame">{{83, 40}, {172, 33}}</string>
 						<reference key="NSSuperview" ref="1058080063"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="861728725"/>
+						<reference key="NSNextKeyView" ref="1031808578"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<int key="IBUIContentMode">7</int>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-						<string key="IBUIText">职称</string>
+						<string key="IBUIText">职称职称职称职称职称职称职称职称职称</string>
 						<object class="NSColor" key="IBUITextColor" id="738453587">
 							<int key="NSColorSpace">3</int>
 							<bytes key="NSWhite">MC4zMzMzMzMzMzMzAA</bytes>
 						</object>
 						<nil key="IBUIHighlightedColor"/>
 						<int key="IBUIBaselineAdjustment">0</int>
-						<object class="IBUIFontDescription" key="IBUIFontDescription" id="326910802">
+						<int key="IBUINumberOfLines">2</int>
+						<object class="IBUIFontDescription" key="IBUIFontDescription" id="70783213">
 							<int key="type">1</int>
-							<double key="pointSize">14</double>
+							<double key="pointSize">13</double>
 						</object>
-						<object class="NSFont" key="IBUIFont" id="855861817">
+						<object class="NSFont" key="IBUIFont" id="28031347">
 							<string key="NSName">Helvetica</string>
-							<double key="NSSize">14</double>
+							<double key="NSSize">13</double>
 							<int key="NSfFlags">16</int>
 						</object>
 						<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
+						<double key="preferredMaxLayoutWidth">172</double>
 					</object>
-					<object class="IBUIImageView" id="699687357">
+					<object class="IBUIImageView" id="1031808578">
 						<reference key="NSNextResponder" ref="1058080063"/>
 						<int key="NSvFlags">1316</int>
 						<string key="NSFrame">{{15, 79}, {285, 35}}</string>
@@ -163,7 +165,7 @@
 						<string key="NSFrame">{{34, 88}, {245, 21}}</string>
 						<reference key="NSSuperview" ref="1058080063"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="559960623"/>
+						<reference key="NSNextKeyView" ref="861728725"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<int key="IBUIContentMode">7</int>
@@ -176,21 +178,14 @@
 						</object>
 						<nil key="IBUIHighlightedColor"/>
 						<int key="IBUIBaselineAdjustment">0</int>
-						<object class="IBUIFontDescription" key="IBUIFontDescription">
-							<int key="type">1</int>
-							<double key="pointSize">13</double>
-						</object>
-						<object class="NSFont" key="IBUIFont">
-							<string key="NSName">Helvetica</string>
-							<double key="NSSize">13</double>
-							<int key="NSfFlags">16</int>
-						</object>
+						<reference key="IBUIFontDescription" ref="70783213"/>
+						<reference key="IBUIFont" ref="28031347"/>
 						<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
 					</object>
 					<object class="IBUIImageView" id="798123082">
 						<reference key="NSNextResponder" ref="1058080063"/>
 						<int key="NSvFlags">1316</int>
-						<string key="NSFrame">{{254, 20}, {40, 16}}</string>
+						<string key="NSFrame">{{259, 15}, {40, 16}}</string>
 						<reference key="NSSuperview" ref="1058080063"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="1005211690"/>
@@ -206,7 +201,7 @@
 						<reference key="NSNextResponder" ref="1058080063"/>
 						<int key="NSvFlags">1280</int>
 						<object class="NSPSMatrix" key="NSFrameMatrix"/>
-						<string key="NSFrame">{{247, 17}, {53, 21}}</string>
+						<string key="NSFrame">{{252, 12}, {53, 21}}</string>
 						<reference key="NSSuperview" ref="1058080063"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="798123082"/>
@@ -317,8 +312,15 @@
 										<nil key="IBUIHighlightedColor"/>
 										<int key="IBUIBaselineAdjustment">0</int>
 										<float key="IBUIMinimumFontSize">10</float>
-										<reference key="IBUIFontDescription" ref="326910802"/>
-										<reference key="IBUIFont" ref="855861817"/>
+										<object class="IBUIFontDescription" key="IBUIFontDescription" id="326910802">
+											<int key="type">1</int>
+											<double key="pointSize">14</double>
+										</object>
+										<object class="NSFont" key="IBUIFont" id="515470335">
+											<string key="NSName">Helvetica</string>
+											<double key="NSSize">14</double>
+											<int key="NSfFlags">16</int>
+										</object>
 									</object>
 								</array>
 								<object class="NSPSMatrix" key="NSFrameMatrix"/>
@@ -384,7 +386,7 @@
 										<string key="NSFrame">{{36, 5.5}, {24, 21}}</string>
 										<reference key="NSSuperview" ref="698377396"/>
 										<reference key="NSWindow"/>
-										<reference key="NSNextKeyView" ref="699687357"/>
+										<reference key="NSNextKeyView" ref="559960623"/>
 										<bool key="IBUIOpaque">NO</bool>
 										<bool key="IBUIClipsSubviews">YES</bool>
 										<int key="IBUIContentMode">7</int>
@@ -399,7 +401,7 @@
 										<int key="IBUIBaselineAdjustment">0</int>
 										<float key="IBUIMinimumFontSize">10</float>
 										<reference key="IBUIFontDescription" ref="326910802"/>
-										<reference key="IBUIFont" ref="855861817"/>
+										<reference key="IBUIFont" ref="515470335"/>
 									</object>
 								</array>
 								<object class="NSPSMatrix" key="NSFrameMatrix"/>
@@ -588,7 +590,7 @@
 							<reference ref="674694681"/>
 							<reference ref="559960623"/>
 							<reference ref="738930701"/>
-							<reference ref="699687357"/>
+							<reference ref="1031808578"/>
 							<reference ref="79878722"/>
 							<reference ref="798123082"/>
 							<reference ref="942263811"/>
@@ -701,7 +703,7 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">151</int>
-						<reference key="object" ref="699687357"/>
+						<reference key="object" ref="1031808578"/>
 						<reference key="parent" ref="1058080063"/>
 					</object>
 				</array>
@@ -774,6 +776,17 @@
 				<object class="IBPartialClassDescription">
 					<string key="className">WUTableHeaderView</string>
 					<string key="superclassName">UIView</string>
+					<object class="NSMutableDictionary" key="actions">
+						<string key="NS.key.0">addScheduleClicked:</string>
+						<string key="NS.object.0">id</string>
+					</object>
+					<object class="NSMutableDictionary" key="actionInfosByName">
+						<string key="NS.key.0">addScheduleClicked:</string>
+						<object class="IBActionInfo" key="NS.object.0">
+							<string key="name">addScheduleClicked:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+					</object>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="addScheduleButton">UIButton</string>
 						<string key="addToScheduleBg">UIButton</string>
