@@ -1705,54 +1705,54 @@
         </scene>
     </scenes>
     <resources>
-        <image name="arrange_remind_bg@2x.png" width="640" height="840"/>
+        <image name="arrange_remind_bg@2x.png" width="16" height="16"/>
         <image name="back_bg" width="16" height="16"/>
-        <image name="bg_reg.png" width="320" height="416"/>
-        <image name="bottom_bar.png" width="275" height="54"/>
-        <image name="bottom_bar_intro.png" width="320" height="57"/>
-        <image name="campusBG.png" width="320" height="420"/>
-        <image name="cancel_edit.png" width="50" height="32"/>
-        <image name="change_password_btn.png" width="301" height="45"/>
-        <image name="close_btn.png" width="22" height="22"/>
-        <image name="directly_enter_btn.png" width="136" height="40"/>
-        <image name="dongtai_un.png" width="80" height="40"/>
-        <image name="edit_btn_hl.png" width="40" height="40"/>
-        <image name="email_register_btn.png" width="301" height="40"/>
-        <image name="female.png" width="47" height="16"/>
-        <image name="find_passowrd_btn.png" width="301" height="45"/>
-        <image name="finish_edit_new.png" width="50" height="32"/>
-        <image name="finish_edit_new_hl.png" width="50" height="32"/>
-        <image name="info_avatar.png" width="73" height="73"/>
-        <image name="info_btn.png" width="40" height="40"/>
-        <image name="list_btn.png" width="41" height="41"/>
-        <image name="location_cell.png" width="320" height="40"/>
-        <image name="login_btn.png" width="301" height="40"/>
-        <image name="login_or_register.png" width="136" height="40"/>
-        <image name="nav_back_btn_nomarl.png" width="40" height="40"/>
-        <image name="nav_back_btn_normal_hl.png" width="40" height="40"/>
+        <image name="bg_reg.png" width="16" height="16"/>
+        <image name="bottom_bar.png" width="16" height="16"/>
+        <image name="bottom_bar_intro.png" width="16" height="16"/>
+        <image name="campusBG.png" width="16" height="16"/>
+        <image name="cancel_edit.png" width="16" height="16"/>
+        <image name="change_password_btn.png" width="16" height="16"/>
+        <image name="close_btn.png" width="16" height="16"/>
+        <image name="directly_enter_btn.png" width="16" height="16"/>
+        <image name="dongtai_un.png" width="16" height="16"/>
+        <image name="edit_btn_hl.png" width="16" height="16"/>
+        <image name="email_register_btn.png" width="16" height="16"/>
+        <image name="female.png" width="16" height="16"/>
+        <image name="find_passowrd_btn.png" width="16" height="16"/>
+        <image name="finish_edit_new.png" width="16" height="16"/>
+        <image name="finish_edit_new_hl.png" width="16" height="16"/>
+        <image name="info_avatar.png" width="16" height="16"/>
+        <image name="info_btn.png" width="16" height="16"/>
+        <image name="list_btn.png" width="16" height="16"/>
+        <image name="location_cell.png" width="16" height="16"/>
+        <image name="login_btn.png" width="16" height="16"/>
+        <image name="login_or_register.png" width="16" height="16"/>
+        <image name="nav_back_btn_nomarl.png" width="16" height="16"/>
+        <image name="nav_back_btn_normal_hl.png" width="16" height="16"/>
         <image name="nav_register" width="16" height="16"/>
-        <image name="navbar_sort_btn.png" width="40" height="40"/>
-        <image name="navbar_sort_btn_hl.png" width="40" height="40"/>
-        <image name="next_step_btn_un.png" width="301" height="40"/>
-        <image name="no_account.png" width="301" height="15"/>
-        <image name="password_forget.png" width="27" height="27"/>
-        <image name="phone_cell.png" width="320" height="40"/>
-        <image name="register_btn.png" width="136" height="40"/>
-        <image name="rounded_cell.png" width="301" height="45"/>
-        <image name="settings_btn.png" width="40" height="40"/>
-        <image name="table_first.png" width="301" height="45"/>
-        <image name="table_last.png" width="301" height="45"/>
-        <image name="table_middle.png" width="301" height="45"/>
-        <image name="text_input.png" width="301" height="89"/>
-        <image name="text_input3.png" width="301" height="177"/>
-        <image name="ticket_detail_cell.png" width="320" height="50"/>
-        <image name="today.png" width="80" height="24"/>
+        <image name="navbar_sort_btn.png" width="16" height="16"/>
+        <image name="navbar_sort_btn_hl.png" width="16" height="16"/>
+        <image name="next_step_btn_un.png" width="16" height="16"/>
+        <image name="no_account.png" width="16" height="16"/>
+        <image name="password_forget.png" width="16" height="16"/>
+        <image name="phone_cell.png" width="16" height="16"/>
+        <image name="register_btn.png" width="16" height="16"/>
+        <image name="rounded_cell.png" width="16" height="16"/>
+        <image name="settings_btn.png" width="16" height="16"/>
+        <image name="table_first.png" width="16" height="16"/>
+        <image name="table_last.png" width="16" height="16"/>
+        <image name="table_middle.png" width="16" height="16"/>
+        <image name="text_input.png" width="16" height="16"/>
+        <image name="text_input3.png" width="16" height="16"/>
+        <image name="ticket_detail_cell.png" width="16" height="16"/>
+        <image name="today.png" width="16" height="16"/>
         <image name="today_btn" width="16" height="16"/>
-        <image name="today_btn.png" width="50" height="32"/>
-        <image name="tonggao_un.png" width="80" height="40"/>
-        <image name="tuijian_un.png" width="80" height="40"/>
-        <image name="we_logo_reg.png" width="103" height="55"/>
-        <image name="xiaowu_un.png" width="80" height="40"/>
+        <image name="today_btn.png" width="16" height="16"/>
+        <image name="tonggao_un.png" width="16" height="16"/>
+        <image name="tuijian_un.png" width="16" height="16"/>
+        <image name="we_logo_reg.png" width="16" height="16"/>
+        <image name="xiaowu_un.png" width="16" height="16"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
