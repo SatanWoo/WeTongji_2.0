@@ -393,8 +393,20 @@
 {
     if ( indexPath.section == 1 )
     {
-        if ( self.information && [self.information.category isEqualToString:GetInformationTypeAround] &&indexPath.row < 2 ) return 40;
-        if ( self.information && [self.information.category isEqualToString:GetInformationTypeAround] &&indexPath.row == 2 ) return 50;
+        if ( self.information && [self.information.category isEqualToString:GetInformationTypeAround] &&indexPath.row < 2 )
+        {
+            if ( indexPath.row == 0 && [self.information.location isEqualToString:[NSString stringWithFormat:@"%@",[NSNull null]]])
+                return 0;
+            if ( indexPath.row == 1 && [self.information.contact isEqualToString:[NSString stringWithFormat:@"%@",[NSNull null]]])
+                return 0;
+            return 40;
+        }
+        if ( self.information && [self.information.category isEqualToString:GetInformationTypeAround] &&indexPath.row == 2 )
+        {
+            if ( indexPath.row == 2 && [self.information.ticketService isEqualToString:[NSString stringWithFormat:@"%@",[NSNull null]]])
+                return 0;
+            return 50;
+        }
         return self.currentCell.frame.size.height;
     }
     return 0;
@@ -412,26 +424,58 @@
                     if ( cell == nil )
                         cell = [[SchoolNewsLocationCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"SchoolNewsLocationCell"];
                     ((SchoolNewsLocationCell *)cell).location.text = self.information.location;
+                    if ( [self.information.location isEqualToString:[NSString stringWithFormat:@"%@",[NSNull null]]])
+                        [cell setHidden:YES];
                     break;
                 case 1:
                     cell = [tableView dequeueReusableCellWithIdentifier:@"SchoolNewsContactCell"];
                     if ( cell == nil )
                         cell = [[SchoolNewsContactCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"SchoolNewsContactCell"];
                     ((SchoolNewsContactCell *)cell).contact.text = self.information.contact;
+                    if ( [self.information.contact isEqualToString:[NSString stringWithFormat:@"%@",[NSNull null]]])
+                        [cell setHidden:YES];
                     break;
                 case 2:
                     cell = [tableView dequeueReusableCellWithIdentifier:@"SchoolNewsTicketCell"];
                     if ( cell == nil )
                         cell = [[SchoolNewsTicketCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"SchoolNewsTicketCell"];
                     ((SchoolNewsTicketCell *)cell).ticket.text = self.information.ticketService;
+                    if ( [self.information.ticketService isEqualToString:[NSString stringWithFormat:@"%@",[NSNull null]]])
+                        [cell setHidden:YES];
                     break;
-                    
                 default:
                     break;
             }
             return cell;
         }
     return self.currentCell;
+}
+
+-(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if ( indexPath.section == 1 && self.information && [self.information.category isEqualToString:GetInformationTypeAround] )
+    {
+        switch (indexPath.row)
+        {
+            case 0:
+                break;
+            case 1:
+                [self makeCall:self.information.contact];
+                break;
+            case 2:
+                break;
+            default:
+                break;
+        }
+    }
+}
+
+-(void) makeCall:(NSString *)phoneNumber
+{
+    NSString *strMob = [[NSString alloc] initWithFormat:@"tel://%@",phoneNumber];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:strMob]];
 }
 
 @end
