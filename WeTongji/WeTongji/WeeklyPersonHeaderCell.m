@@ -33,7 +33,7 @@
     NSDictionary * imageDict = [NSDictionary getImageLinkDictInJsonString:star.images];
     if ( [imageDict allKeys].count ){
         id key = [imageDict allKeysInStringOrder][0];
-        [self.image setImageWithURL:[NSURL URLWithString:key] placeholderImage:[UIImage imageNamed:@"defalut_pic_loading"]];
+        [self.image setImageWithURL:[NSURL URLWithString:key] placeholderImage:[UIImage imageNamed:@"person_default_pic"]];
     }
     _star = star;
     

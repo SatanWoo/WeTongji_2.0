@@ -68,6 +68,11 @@
     [super viewDidUnload];
 }
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [self findPassword:nil];
+}
+
 -(void) resetSuccessful
 {
     self.HUD.mode = MBProgressHUDModeText;
