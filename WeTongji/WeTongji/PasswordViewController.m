@@ -9,6 +9,7 @@
 #import "PasswordViewController.h"
 #import "MBProgressHUD.h"
 #import "UIBarButtonItem+CustomButton.h"
+#import <WeTongjiSDK/WeTongjiSDK.h>
 
 @interface PasswordViewController () <MBProgressHUDDelegate>
 @property (nonatomic ,strong) MBProgressHUD *HUD;
@@ -24,7 +25,13 @@
 
 -(MBProgressHUD *) HUD
 {
-    
+    if ( !_HUD )
+    {
+        _HUD = [[MBProgressHUD alloc] initWithView:self.view];
+        [self.view addSubview:_HUD];
+        _HUD.delegate = self;
+    }
+    return _HUD;
 }
 
 - (void)pressNavButton
@@ -61,30 +68,42 @@
     [super viewDidUnload];
 }
 
-- (void)myTask
+-(void) resetSuccessful
 {
-    sleep(3);
-    self.HUD.mode = MBProgressHUDModeIndeterminate;
+    self.HUD.mode = MBProgressHUDModeText;
     self.HUD.labelText = @"已发送至您的邮箱";
-    sleep(2);
+    [self.HUD hide:YES afterDelay:2];
 }
 
 - (IBAction)findPassword:(id)sender
 {
     [self.password resignFirstResponder];
-    
-    self.HUD = [[MBProgressHUD alloc] initWithView:self.view];
-	[self.view addSubview:self.HUD];
-	
-    self.HUD.delegate = self;
+    [self.name resignFirstResponder];
     self.HUD.labelText = @"发送至您的邮箱中";
-	
-    [self.HUD showWhileExecuting:@selector(myTask) onTarget:self withObject:nil animated:YES];
+    [self.HUD show:YES];
+    WTClient * client = [WTClient sharedClient];
+    WTRequest * request = [WTRequest requestWithSuccessBlock:^(id responseData)
+                           {
+                               [self resetSuccessful];
+                           }failureBlock:^(NSError * error)
+                            {
+                                self.HUD.mode = MBProgressHUDModeText;
+                                self.HUD.labelText = @"发送失败";
+                                self.HUD.detailsLabelText = [[error userInfo] objectForKey:@"errorDesc"];
+                                self.HUD.mode = MBProgressHUDModeText;
+                                [self.HUD hide:YES afterDelay:1];
+                            }];
+    [request resetPasswordWithNO:self.password.text Name:self.name.text];
+    [client enqueueRequest:request];
 }
 
 - (void)hudWasHidden:(MBProgressHUD *)hud
 {
-    [hud removeFromSuperview];
-    hud = nil;
+    if ( [hud.labelText isEqualToString:@"已发送至您的邮箱"] )
+    {
+        [self dismissModalViewControllerAnimated:YES];
+    }
+    [self.HUD removeFromSuperview];
+    self.HUD = nil;
 }
 @end
