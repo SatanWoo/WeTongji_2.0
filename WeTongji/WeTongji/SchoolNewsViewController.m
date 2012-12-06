@@ -20,10 +20,14 @@
 #import <WeTongjiSDK/WeTongjiSDK.h>
 #import "NSDictionary+Addition.h"
 #import "UIApplication+nj_SmartStatusBar.h"
+#import "UIPhoneCallActionSheet.h"
+#import "UIMapApplicationSheet.h"
 
 #define kContentOffset 50
 #define kStateY -150
 #define kRowHeight 44
+#define kOrigin 2
+#define kCurrent 6
 #define noPic @"missing.png"
 
 @interface SchoolNewsViewController () <UIScrollViewDelegate, UITableViewDelegate, UITableViewDataSource>
@@ -117,7 +121,7 @@
         [_pageViewController.view setFrame:CGRectMake(0, kStateY + 15 * rate, 320 ,480)];
         _pageViewController.view.userInteractionEnabled = NO;
         _haveImages = [self.imageDict allKeys].count ? YES : NO;
-        for ( NSString * link in [self.imageDict allKeys] )
+        for ( NSString * link in [self.imageDict allKeysInStringOrder] )
         {
             UIImageView * view = [[UIImageView alloc] init];
             [view setImageWithURL:[NSURL URLWithString:link] placeholderImage:[UIImage imageNamed:@"default_pic_loading"]];
@@ -209,9 +213,6 @@
         [self.headerView  setInformation:information];
         [self.transparentHeaderView setHideBoard:YES];
     }
-    
-    //[self renderBorder:self.headerView.likeButtonBg];
-    //[self renderBorder:self.headerView.favoriteButtonBg];
 
     self.imageDict = [NSDictionary getImageLinkDictInJsonString:information.images];
     _information = information;
@@ -225,9 +226,6 @@
     [self.transparentHeaderView setHideBoard:YES];
     self.imageDict = [NSDictionary getImageLinkDictInJsonString:star.images];
     _star = star;
-    
-    //[self renderBorder:self.headerView.likeButtonBg];
-    //[self renderBorder:self.headerView.favoriteButtonBg];
 }
 
 #pragma mark - LifeCycle
@@ -304,6 +302,12 @@
             CGPoint center = [self.newsTableView center];
             center.y = center.y - (self.headerView.bounds.size.height - kContentOffset);
             [self.newsTableView setCenter:center];
+            
+            CGRect buttonFrame = self.backButton.frame;
+            buttonFrame.origin.x = kCurrent;
+            buttonFrame.origin.y = kCurrent;
+            self.backButton.frame = buttonFrame;
+            
             [self.headerView changeButtonPositionToLeft];
         }
         completion:^(BOOL isFinished){}];
@@ -319,6 +323,12 @@
             CGPoint center = [self.newsTableView center];
             center.y = center.y + (self.headerView.bounds.size.height - kContentOffset);
             [self.newsTableView setCenter:center];
+            
+            CGRect buttonFrame = self.backButton.frame;
+            buttonFrame.origin.x = kOrigin;
+            buttonFrame.origin.y = kOrigin;
+            self.backButton.frame = buttonFrame;
+            
             [self.headerView resetButtonPosition];
         }
         completion:^(BOOL isFinished){}];
@@ -382,8 +392,20 @@
 {
     if ( indexPath.section == 1 )
     {
-        if ( self.information && [self.information.category isEqualToString:GetInformationTypeAround] &&indexPath.row < 2 ) return 40;
-        if ( self.information && [self.information.category isEqualToString:GetInformationTypeAround] &&indexPath.row == 2 ) return 50;
+        if ( self.information && [self.information.category isEqualToString:GetInformationTypeAround] &&indexPath.row < 2 )
+        {
+            if ( indexPath.row == 0 && [self.information.location isEqualToString:[NSString stringWithFormat:@"%@",[NSNull null]]])
+                return 0;
+            if ( indexPath.row == 1 && [self.information.contact isEqualToString:[NSString stringWithFormat:@"%@",[NSNull null]]])
+                return 0;
+            return 40;
+        }
+        if ( self.information && [self.information.category isEqualToString:GetInformationTypeAround] &&indexPath.row == 2 )
+        {
+            if ( indexPath.row == 2 && [self.information.ticketService isEqualToString:[NSString stringWithFormat:@"%@",[NSNull null]]])
+                return 0;
+            return 50;
+        }
         return self.currentCell.frame.size.height;
     }
     return 0;
@@ -401,26 +423,65 @@
                     if ( cell == nil )
                         cell = [[SchoolNewsLocationCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"SchoolNewsLocationCell"];
                     ((SchoolNewsLocationCell *)cell).location.text = self.information.location;
+                    if ( [self.information.location isEqualToString:[NSString stringWithFormat:@"%@",[NSNull null]]])
+                        [cell setHidden:YES];
                     break;
                 case 1:
                     cell = [tableView dequeueReusableCellWithIdentifier:@"SchoolNewsContactCell"];
                     if ( cell == nil )
                         cell = [[SchoolNewsContactCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"SchoolNewsContactCell"];
                     ((SchoolNewsContactCell *)cell).contact.text = self.information.contact;
+                    if ( [self.information.contact isEqualToString:[NSString stringWithFormat:@"%@",[NSNull null]]])
+                        [cell setHidden:YES];
                     break;
                 case 2:
                     cell = [tableView dequeueReusableCellWithIdentifier:@"SchoolNewsTicketCell"];
                     if ( cell == nil )
                         cell = [[SchoolNewsTicketCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"SchoolNewsTicketCell"];
                     ((SchoolNewsTicketCell *)cell).ticket.text = self.information.ticketService;
+                    if ( [self.information.ticketService isEqualToString:[NSString stringWithFormat:@"%@",[NSNull null]]])
+                        [cell setHidden:YES];
                     break;
-                    
                 default:
                     break;
             }
             return cell;
         }
     return self.currentCell;
+}
+
+-(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if ( indexPath.section == 1 && self.information && [self.information.category isEqualToString:GetInformationTypeAround] )
+    {
+        switch (indexPath.row)
+        {
+            case 0:
+                [self showLocation:self.information.location];
+                break;
+            case 1:
+                [self makeCall:self.information.contact];
+                break;
+            case 2:
+                break;
+            default:
+                break;
+        }
+    }
+}
+
+-(void) showLocation:(NSString *) location
+{
+    UIMapApplicationSheet * actionSheet = [[UIMapApplicationSheet alloc] initWithLocation:location];
+    [actionSheet showInView:self.view];
+}
+
+-(void) makeCall:(NSString *)phoneNumber
+{
+    UIPhoneCallActionSheet * actionSheet = [[UIPhoneCallActionSheet alloc] initWithPhoneNumber:phoneNumber];
+    [actionSheet showInView:self.view];
 }
 
 @end

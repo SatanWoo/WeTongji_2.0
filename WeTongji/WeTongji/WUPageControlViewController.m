@@ -22,6 +22,19 @@
 @synthesize pagedScrollView;
 @synthesize pageControl;
 
+-(void) setPictureNumber:(int)pictureNumber
+{
+    _pictureNumber = pictureNumber;
+    if ( _pictureNumber > 1)
+    {
+        [self.pageControl setHidden:NO];
+    }
+    else
+    {
+        [self.pageControl setHidden:YES];
+    }
+}
+
 -(NSMutableArray *) imageList
 {
     if ( !_imageList )
@@ -54,9 +67,11 @@
     self.pageControl.numberOfPages = self.pictureNumber;
     [self.descriptionList addObject:[desc copy]];
     [self.imageList addObject:scrollView];
-    self.imageDescription.text = [NSString stringWithFormat:@"%@",desc];
     if ( [self.descriptionList count] == 1 )
+    {
         [self.imageDescription setHidden: ([desc isKindOfClass:[NSNull class]] ? YES : NO)];
+        self.imageDescription.text = [NSString stringWithFormat:@"%@",desc];
+    }
     [self configureScrollView];
 }
 

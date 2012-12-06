@@ -217,12 +217,12 @@
     if (indexPath.section == 0) {
         if ( self.isLogIn )
         {
-            cell.textLabel.text = @"更改密码";
+            cell.name.text = @"更改密码";
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         }
         else
         {
-            cell.textLabel.text = @"  登录";
+            cell.name.text = @"登录";
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         }
     } else {
@@ -257,6 +257,15 @@
 - (float)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
     return 45;
+}
+
+- (float)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    if (section == 1) {
+        return 20;
+    } else {
+        return 0;
+    }
 }
 
 #pragma mark - UITableViewDelegate

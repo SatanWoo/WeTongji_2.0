@@ -507,7 +507,7 @@
             <objects>
                 <viewController id="Hf1-lA-LKj" customClass="EditInfoViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lDp-ZF-SRH">
-                        <rect key="frame" x="0.0" y="64" width="320" height="372"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="328"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" id="S2v-Ez-alx">
@@ -584,6 +584,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.95822010869565222" green="0.95822010869565222" blue="0.95822010869565222" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" title="个人资料" id="lFa-dC-Fyf">
                         <barButtonItem key="leftBarButtonItem" width="50" id="pxC-mm-sQy">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="oRZ-95-rVC">
@@ -626,6 +627,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="ConfirmEditBarButton" destination="kda-ti-RF7" id="VV8-He-6DR"/>
                         <outlet property="avatar" destination="hjn-gs-dnm" id="26r-aH-SBs"/>
@@ -730,7 +732,7 @@
                                 <autoresizingMask key="autoresizingMask"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="we_logo_reg.png" id="1Yv-KI-yCq">
-                                        <rect key="frame" x="128" y="117" width="104" height="59"/>
+                                        <rect key="frame" x="128" y="130" width="104" height="59"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="text_input.png" id="Pot-Re-ayc">
@@ -773,7 +775,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="FPh-TU-kko">
-                                        <rect key="frame" x="29" y="485" width="137" height="44"/>
+                                        <rect key="frame" x="29" y="493" width="137" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" image="register_btn.png">
@@ -788,7 +790,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="IwL-kL-8Fi">
-                                        <rect key="frame" x="194" y="485" width="137" height="44"/>
+                                        <rect key="frame" x="194" y="493" width="137" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" image="directly_enter_btn.png">
@@ -803,7 +805,7 @@
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="no_account.png" id="d95-2V-ey0">
-                                        <rect key="frame" x="30" y="462" width="301" height="15"/>
+                                        <rect key="frame" x="30" y="470" width="301" height="15"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="6yM-YH-6CS">
@@ -1198,7 +1200,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="SchoolNewsLocationCell" rowHeight="40" id="R5f-WH-8Vu" customClass="SchoolNewsLocationCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="SchoolNewsLocationCell" rowHeight="40" id="R5f-WH-8Vu" customClass="SchoolNewsLocationCell">
                                         <rect key="frame" x="0.0" y="22" width="320" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -1224,14 +1226,14 @@
                                             <outlet property="location" destination="0Fn-ur-37l" id="nV9-Er-Jst"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="SchoolNewsContactCell" rowHeight="40" id="hPw-fR-Iv1" customClass="SchoolNewsContactCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" showsReorderControl="YES" indentationWidth="10" reuseIdentifier="SchoolNewsContactCell" rowHeight="40" id="hPw-fR-Iv1" customClass="SchoolNewsContactCell">
                                         <rect key="frame" x="0.0" y="62" width="320" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="39"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="phone_cell.png" id="bVG-Zf-NeZ">
+                                                <imageView contentMode="scaleToFill" image="phone_cell.png" id="bVG-Zf-NeZ">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
@@ -1250,7 +1252,7 @@
                                             <outlet property="contact" destination="8u2-cR-eKB" id="uZ1-je-cbD"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="SchoolNewsTicketCell" rowHeight="50" id="h5e-qQ-hcb" customClass="SchoolNewsTicketCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="SchoolNewsTicketCell" rowHeight="50" id="h5e-qQ-hcb" customClass="SchoolNewsTicketCell">
                                         <rect key="frame" x="0.0" y="102" width="320" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -1279,7 +1281,7 @@
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="D5h-rN-X3u" id="Qt7-gT-2Mo"/>
-                                    <outlet property="delegate" destination="D5h-rN-X3u" id="Oen-zw-Vew"/>
+                                    <outlet property="delegate" destination="D5h-rN-X3u" id="3cX-0O-UlY"/>
                                 </connections>
                             </tableView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="back_bg" id="XzR-8D-C5a">
@@ -1287,14 +1289,14 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="RMH-9f-Kta">
-                                <rect key="frame" x="0.0" y="11" width="45" height="33"/>
+                                <rect key="frame" x="2" y="2" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" image="back_btn.png">
+                                <state key="normal" backgroundImage="back_btn">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <state key="highlighted">
+                                <state key="highlighted" backgroundImage="nav_back_btn_normal_hl.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -1315,7 +1317,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eCc-eg-5bi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="264" y="271"/>
+            <point key="canvasLocation" x="292" y="326"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="KFp-6K-6oa">
@@ -1707,7 +1709,7 @@
     <resources>
         <image name="arrange_remind_bg@2x.png" width="640" height="840"/>
         <image name="back_bg" width="16" height="16"/>
-        <image name="back_btn.png" width="20" height="17"/>
+        <image name="back_btn" width="16" height="16"/>
         <image name="bg_reg.png" width="320" height="416"/>
         <image name="bottom_bar.png" width="275" height="54"/>
         <image name="bottom_bar_intro.png" width="320" height="57"/>
@@ -1729,6 +1731,7 @@
         <image name="location_cell.png" width="320" height="40"/>
         <image name="login_btn.png" width="301" height="40"/>
         <image name="login_or_register.png" width="136" height="40"/>
+        <image name="nav_back_btn_normal_hl.png" width="40" height="40"/>
         <image name="nav_register" width="16" height="16"/>
         <image name="navbar_sort_btn.png" width="40" height="40"/>
         <image name="navbar_sort_btn_hl.png" width="40" height="40"/>
@@ -1750,7 +1753,7 @@
         <image name="today_btn.png" width="50" height="32"/>
         <image name="tonggao_un.png" width="80" height="40"/>
         <image name="tuijian_un.png" width="80" height="40"/>
-        <image name="we_logo_reg.png" width="104" height="59"/>
+        <image name="we_logo_reg.png" width="115" height="60"/>
         <image name="xiaowu_un.png" width="80" height="40"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -1759,7 +1762,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="h0M-RQ-8NL"/>
         <segue reference="5c9-iE-HEP"/>
+        <segue reference="6k4-ha-E9F"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -10,11 +10,12 @@
 #import "Information+Addition.h"
 #import "Event+Addition.h"
 #import "Star+Addition.h"
+#import "AutoResizeLabel.h"
 
 @interface WUTableHeaderView : UIView
 
 @property (weak, nonatomic) IBOutlet UIView *upperHiddenView;
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet AutoResizeLabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *sourceLabel;
 @property (weak, nonatomic) IBOutlet UILabel *seeNumber;
 @property (weak, nonatomic) IBOutlet UILabel *releaseTimeLabel;
@@ -39,6 +40,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *likeButtonBg;
 @property (weak, nonatomic) IBOutlet UIButton *favoriteButtonBg;
 @property (weak, nonatomic) IBOutlet UIButton *addToScheduleBg;
+@property (weak, nonatomic) IBOutlet UIImageView *partitionline;
 
 -(void) changeButtonPositionToLeft;
 -(void) resetButtonPosition;

@@ -291,18 +291,18 @@ typedef enum {
 
 - (void)configureTabBar
 {
-    [self.schoolInfoButton setBackgroundImage:[UIImage imageNamed:@"xiaowu_hl.png"] forState:UIControlStateHighlighted];
-    [self.schoolInfoButton setBackgroundImage:[UIImage imageNamed:@"xiaowu_sl.png"] forState:UIControlStateSelected];
+    [self.schoolInfoButton setBackgroundImage:[UIImage imageNamed:@"xiaowu_hl"] forState:UIControlStateHighlighted];
+    [self.schoolInfoButton setBackgroundImage:[UIImage imageNamed:@"xiaowu_sl"] forState:UIControlStateSelected];
     [self.schoolInfoButton setSelected:YES];
     
-    [self.groupInfoButton setBackgroundImage:[UIImage imageNamed:@"tonggao_hl.png"] forState:UIControlStateHighlighted];
-    [self.groupInfoButton setBackgroundImage:[UIImage imageNamed:@"tonggao_sl.png"] forState:UIControlStateSelected];
+    [self.groupInfoButton setBackgroundImage:[UIImage imageNamed:@"tonggao_hl"] forState:UIControlStateHighlighted];
+    [self.groupInfoButton setBackgroundImage:[UIImage imageNamed:@"tonggao_sl"] forState:UIControlStateSelected];
     
-    [self.actionButton setBackgroundImage:[UIImage imageNamed:@"dongtai_hl.png"] forState:UIControlStateHighlighted];
-    [self.actionButton setBackgroundImage:[UIImage imageNamed:@"dongtai_sl.png"] forState:UIControlStateSelected];
+    [self.actionButton setBackgroundImage:[UIImage imageNamed:@"dongtai_hl"] forState:UIControlStateHighlighted];
+    [self.actionButton setBackgroundImage:[UIImage imageNamed:@"dongtai_sl"] forState:UIControlStateSelected];
     
-    [self.recommendButton setBackgroundImage:[UIImage imageNamed:@"tuijian_hl.png"] forState:UIControlStateHighlighted];
-    [self.recommendButton setBackgroundImage:[UIImage imageNamed:@"tuijian_sl.png"] forState:UIControlStateSelected];
+    [self.recommendButton setBackgroundImage:[UIImage imageNamed:@"tuijian_hl"] forState:UIControlStateHighlighted];
+    [self.recommendButton setBackgroundImage:[UIImage imageNamed:@"tuijian_sl"] forState:UIControlStateSelected];
 }
 
 - (void)configureTableView
@@ -389,6 +389,7 @@ typedef enum {
     [UIView animateWithDuration:0.3f animations:^{
         [self.scrollView setContentOffset:CGPointMake(index * kWidth, 0)];
     } completion:^(BOOL finished) {
+        if (finished)
         [self.currentRefreshManagememt firstTrigger];
     }];
 }

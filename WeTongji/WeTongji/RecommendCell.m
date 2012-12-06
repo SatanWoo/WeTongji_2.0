@@ -7,10 +7,15 @@
 //
 
 #import "RecommendCell.h"
+#import "DetailImageViewController.h"
 #import <WeTongjiSDK/WeTongjiSDK.h>
 #define kOffset 6
 #define kMaxWidth 167
 #define kIconX 271
+
+@interface RecommendCell()
+
+@end
 
 @implementation RecommendCell
 @synthesize infoTitle = _infoTitle;
@@ -48,15 +53,16 @@
         oldFrame.origin.x = newX;
         self.icon.frame = oldFrame;
     }
-    
+    [self.icon setHidden:([information.ticketService isEqualToString:[NSString stringWithFormat:@"%@",[NSNull null]]] ? YES : NO)];
     self.source.text = information.summary;
     self.count.text = [information.read stringValue];
     [self.preview setImageWithURL:[NSURL URLWithString: information.image]];
     _information = information;
-    
-   
 }
-
+- (IBAction)imageClicked:(id)sender
+{
+    [DetailImageViewController showDetailImageWithURL:self.information.image];
+}
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
     [super setSelected:selected animated:animated];

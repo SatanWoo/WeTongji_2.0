@@ -57,7 +57,7 @@
     self.recommendTitle.text = self.recommandEvent.title;
     [self.pageViewController clearPictureAndDescription];
     UIImageView * imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"scaleview.png"]];
-    [imageView setImageWithURL:[NSURL URLWithString:self.recommandEvent.imageLink] placeholderImage:[UIImage imageNamed:@"default_pic"]];
+    [imageView setImageWithURL:[NSURL URLWithString:self.recommandEvent.imageLink] placeholderImage:[UIImage imageNamed:@"default_pic_loading"]];
     [self.pageViewController addPicture:imageView withDescription:[NSNull null]];
     NSLog(@"pageheight%f",self.pageViewController.view.frame.size.height);
 }

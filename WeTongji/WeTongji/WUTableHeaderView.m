@@ -13,6 +13,8 @@
 #import "User+Addition.h"
 #import "AppDelegate.h"
 #import <CoreData/CoreData.h>
+#import <QuartzCore/QuartzCore.h>
+#import "DetailImageViewController.h"
 
 @interface WUTableHeaderView()<MBProgressHUDDelegate>
 {
@@ -53,6 +55,15 @@
         _progress.mode = MBProgressHUDModeText;
     }
     return _progress;
+}
+
+- (void)renderShadow:(BOOL)rendered
+{
+    self.layer.shadowOpacity = rendered ? 1.0f : 0.0f;
+    self.partitionline.hidden = rendered;
+    if (rendered) {
+        self.layer.shadowRadius = 4.0f;
+    }
 }
 
 -(void) hudWasHidden:(MBProgressHUD *)hud
@@ -137,6 +148,8 @@
     center.x = center.x + 54;
     [self.buttonBoard setCenter:center];
     _isButtonBoardLeft = YES;
+    
+    [self renderShadow:YES];
 }
 
 -(void) resetButtonPosition
@@ -159,6 +172,8 @@
     center.x = center.x - 54;
     [self.buttonBoard setCenter:center];
     _isButtonBoardLeft = NO;
+    
+    [self renderShadow:NO];
 }
 
 -(void) configButton
@@ -475,6 +490,11 @@
 #ifdef DEBUG
     NSLog(@"Star (%@,%@) has been set in WUTableHeaderView",star.starId,star.title);
 #endif
+}
+
+- (IBAction)imageClicked:(id)sender
+{
+    [DetailImageViewController showDetailImageWithURL:self.information.image];
 }
 
 - (id)initWithFrame:(CGRect)frame

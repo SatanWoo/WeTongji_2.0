@@ -61,14 +61,14 @@
 #pragma mark - Private Method
 - (void)configureTableView
 {
-    self.menuTableView.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"leftMenuBg.png"]];
+    self.menuTableView.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"leftMenuBg"]];
     [self.menuTableView registerNib:[UINib nibWithNibName:@"LeftMenuCell" bundle:nil] forCellReuseIdentifier:kLeftMenuCell];
 }
 
 - (void)configureBottomBarButton
 {
     [self.settingButton setImage:[UIImage imageNamed:@"settings_btn_hl"] forState:UIControlStateHighlighted];
-    [self.infoButton setImage:[UIImage imageNamed:@"info_btn_hl.png"] forState:UIControlStateHighlighted];
+    [self.infoButton setImage:[UIImage imageNamed:@"info_btn_hl"] forState:UIControlStateHighlighted];
 }
 
 - (void)configureNotification
@@ -97,19 +97,19 @@
     [self.view addSubview:self.topImageView];
     
     self.imageArray = [NSArray arrayWithObjects:
-                          [UIImage imageNamed:@"1.png"],
-                          [UIImage imageNamed:@"2.png"],
-                          [UIImage imageNamed:@"3.png"],
-                          [UIImage imageNamed:@"4.png"],
-                          [UIImage imageNamed:@"5.png"],
-                          [UIImage imageNamed:@"6.png"],
-                          [UIImage imageNamed:@"7.png"],
-                          [UIImage imageNamed:@"8.png"],
-                          [UIImage imageNamed:@"9.png"],
-                          [UIImage imageNamed:@"10.png"],
-                          [UIImage imageNamed:@"11.png"],
-                          [UIImage imageNamed:@"12.png"],
-                          [UIImage imageNamed:@"13.png"],
+                          [UIImage imageNamed:@"1"],
+                          [UIImage imageNamed:@"2"],
+                          [UIImage imageNamed:@"3"],
+                          [UIImage imageNamed:@"4"],
+                          [UIImage imageNamed:@"5"],
+                          [UIImage imageNamed:@"6"],
+                          [UIImage imageNamed:@"7"],
+                          [UIImage imageNamed:@"8"],
+                          [UIImage imageNamed:@"9"],
+                          [UIImage imageNamed:@"10"],
+                          [UIImage imageNamed:@"11"],
+                          [UIImage imageNamed:@"12"],
+                          [UIImage imageNamed:@"13"],
                           nil];
     
     self.topImageView.image = [self.imageArray objectAtIndex:0];

@@ -37,4 +37,13 @@
     return result;
 }
 
+-(NSArray *) allKeysInStringOrder
+{
+    
+    NSArray * result = [[self allKeys] sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        return [obj1 compare:obj2];
+    }];
+    return result;
+}
+
 @end

@@ -79,7 +79,7 @@
     [cell.contentView setTransform:at];
     AbstractCollection * collection = _tableList[indexPath.row];
     
-    UIImage *placeholder = [UIImage imageNamed:@"favourite_avatar.png"];
+    UIImage *placeholder = [UIImage imageNamed:@"favourite_avatar"];
     if ( [collection isKindOfClass:[Event class]] )
     {
         [cell.avatar setImageWithURL:[NSURL URLWithString:((Event *) collection).orgranizerAvatarLink] placeholderImage:placeholder];

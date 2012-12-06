@@ -32,7 +32,7 @@
     self.likeCount.text = [star.like stringValue];
     NSDictionary * imageDict = [NSDictionary getImageLinkDictInJsonString:star.images];
     if ( [imageDict allKeys].count ){
-        id key = [imageDict allKeys][0];
+        id key = [imageDict allKeysInStringOrder][0];
         [self.image setImageWithURL:[NSURL URLWithString:key] placeholderImage:[UIImage imageNamed:@"defalut_pic_loading"]];
     }
     _star = star;

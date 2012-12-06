@@ -31,7 +31,7 @@
 -(UIColor *) colorForHowLongAgo:(NSDate *) date
 {
     NSTimeInterval interval = -[date timeIntervalSinceNow];
-    if ( interval < 60 * 15 ) return [UIColor orangeColor];
+    if ( interval < 60 * 60 ) return [UIColor orangeColor];
     return [UIColor grayColor];
 }
 
