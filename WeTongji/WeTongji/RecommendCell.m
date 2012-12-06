@@ -53,7 +53,7 @@
         oldFrame.origin.x = newX;
         self.icon.frame = oldFrame;
     }
-    
+    [self.icon setHidden:([information.ticketService isEqualToString:[NSString stringWithFormat:@"%@",[NSNull null]]] ? YES : NO)];
     self.source.text = information.summary;
     self.count.text = [information.read stringValue];
     [self.preview setImageWithURL:[NSURL URLWithString: information.image]];
