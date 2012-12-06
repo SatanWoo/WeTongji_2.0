@@ -1712,7 +1712,7 @@
                                         <rect key="frame" x="134" y="81" width="166" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                        <textInputTraits key="textInputTraits"/>
                                     </textField>
                                 </subviews>
                             </scrollView>
@@ -1883,6 +1883,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PasswordViewController.h"/>
             <relationships>
                 <relationship kind="action" name="findPassword:"/>
+                <relationship kind="outlet" name="name" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="password" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
             </relationships>
@@ -1906,6 +1907,7 @@
         <class className="RegisterSecondViewController" superclassName="MiddleAbstractSecondViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/RegisterSecondViewController.h"/>
             <relationships>
+                <relationship kind="action" name="registerClicked:"/>
                 <relationship kind="action" name="showUserProtocol:"/>
                 <relationship kind="action" name="touchOnTextFiled:" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="confirmPassword" candidateClass="UITextField"/>
@@ -1923,9 +1925,6 @@
         </class>
         <class className="ScheduleViewController" superclassName="MiddleAbstractSecondViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ScheduleViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="todayClicked:"/>
-            </relationships>
         </class>
         <class className="SchoolNewsContactCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SchoolNewsContactCell.h"/>
@@ -1969,6 +1968,7 @@
         <class className="UpdatePasswordViewController" superclassName="MiddleAbstractSecondViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UpdatePasswordViewController.h"/>
             <relationships>
+                <relationship kind="action" name="confirm:"/>
                 <relationship kind="action" name="textDidEndEdit:"/>
                 <relationship kind="action" name="touchOnTextFiled:" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="confirm" candidateClass="UITextField"/>
