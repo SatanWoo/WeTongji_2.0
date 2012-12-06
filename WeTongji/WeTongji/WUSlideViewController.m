@@ -99,6 +99,7 @@ static NSString *reviewURL = @"itms-apps://ax.itunes.apple.com/WebObjects/MZStor
 {
     self.currentStatus = eMIDDLE;
     self.introViewController = nil;
+    self.middelViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:kLoginViewController];
     [self.view addSubview:self.introViewController.view];
 }
 
