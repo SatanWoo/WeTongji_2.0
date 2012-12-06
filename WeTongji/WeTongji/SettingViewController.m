@@ -304,6 +304,18 @@
         [Course clearDataInManagedObjectContext:self.managedObjectContext];
         [Channel clearAllChannelsInManagedObjectContext:self.managedObjectContext];
         [self pressNavButton];
+        WTClient * client = [WTClient sharedClient];
+        WTRequest * request = [WTRequest requestWithSuccessBlock:^(id responseData)
+                               {
+                                #ifdef DEBUG
+                                   NSLog(@"%@",responseData);
+                                #endif
+                                   NSArray *list = [responseData objectForKey:@"Channels"];
+                                   for ( NSDictionary *dict in list )
+                                       [Channel insertChannel:dict inManagedObjectContext:self.managedObjectContext];
+                               }failureBlock:nil];
+        [request getChannels];
+        [client enqueueRequest:request];
         [NSUserDefaults setCurrentSemesterBeginTime:[NSDate dateWithTimeIntervalSinceNow:0] endTime:[NSDate dateWithTimeIntervalSinceNow:0]];
         [NSUserDefaults setCurrentUserID:@"" session:@""];
         [[NSNotificationCenter defaultCenter] postNotificationName:kRefreshCacheNotification object:self];
