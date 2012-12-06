@@ -732,9 +732,9 @@
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="btn_short_bg.png">{16, 16}</string>
-			<string key="detail_partition_line.png">{16, 16}</string>
-			<string key="eye_icon.png">{16, 16}</string>
+			<string key="btn_short_bg.png">{58, 29}</string>
+			<string key="detail_partition_line.png">{320, 1}</string>
+			<string key="eye_icon.png">{16, 10}</string>
 			<string key="favourite">{16, 16}</string>
 			<string key="like">{16, 16}</string>
 		</dictionary>

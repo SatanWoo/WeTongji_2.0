@@ -35,7 +35,7 @@ typedef enum {
         // Initialization code
         self.pointImageViewArray = [[NSMutableArray alloc] initWithCapacity:4];
         for(int i = 0; i < 4; i++) {
-            UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"crop_image_puller.png"]];
+            UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"crop_image_puller"]];
             [self.pointImageViewArray addObject:imageView];
             [self addSubview:imageView];
         }

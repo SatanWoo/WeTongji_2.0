@@ -118,10 +118,10 @@
         self.headerView.nameLabel.text = self.user.displayname;
         if ( [self.user.gender isEqualToString:@"男"] )
         {
-            [self.headerView.sex setImage:[UIImage imageNamed:@"male.png"]];
+            [self.headerView.sex setImage:[UIImage imageNamed:@"male"]];
         }
         else
-            [self.headerView.sex setImage:[UIImage imageNamed:@"female.png"]];
+            [self.headerView.sex setImage:[UIImage imageNamed:@"female"]];
         self.headerView.ageLabel.text = [self.user.age stringValue];
     }
     //self.navigationItem.rightBarButtonItem = nil;
