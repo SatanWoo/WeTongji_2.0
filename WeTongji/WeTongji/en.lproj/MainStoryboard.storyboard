@@ -1683,7 +1683,7 @@
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="cX9-0S-jJi">
-                                        <rect key="frame" x="10" y="91" width="301" height="45"/>
+                                        <rect key="frame" x="10" y="135" width="301" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" backgroundImage="find_passowrd_btn.png">
@@ -1697,6 +1697,23 @@
                                             <action selector="findPassword:" destination="pDm-qB-Ncv" eventType="touchUpInside" id="ko0-bz-zmn"/>
                                         </connections>
                                     </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="rounded_cell.png" id="Ql2-xE-xYg">
+                                        <rect key="frame" x="10" y="73" width="301" height="45"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="姓名" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CMJ-H0-3dZ">
+                                        <rect key="frame" x="54" y="85" width="42" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="STHeitiSC-Medium" family="Heiti SC" pointSize="17"/>
+                                        <color key="textColor" name="controlShadowColor" catalog="System" colorSpace="catalog"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" id="rwm-Ea-OLC">
+                                        <rect key="frame" x="134" y="81" width="166" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                    </textField>
                                 </subviews>
                             </scrollView>
                         </subviews>
@@ -1705,6 +1722,7 @@
                     <navigationItem key="navigationItem" title="找回密码" id="nLF-bT-J5a"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
+                        <outlet property="name" destination="rwm-Ea-OLC" id="k5x-Mm-lgk"/>
                         <outlet property="password" destination="Zdx-jg-1zm" id="JiJ-fy-LvE"/>
                         <outlet property="scrollView" destination="897-81-Oe1" id="gQF-OQ-r1k"/>
                     </connections>
@@ -1765,6 +1783,234 @@
         <image name="we_logo_reg.png" width="115" height="60"/>
         <image name="xiaowu_un.png" width="80" height="40"/>
     </resources>
+    <classes>
+        <class className="AboutViewController" superclassName="MiddleAbstractViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AboutViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="aboutTableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="ArrangementViewController" superclassName="MiddleAbstractSecondViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ArrangementViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="arrangementTableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="sectionTableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="CampusViewController" superclassName="MiddleAbstractViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CampusViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="buttonPressed:" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="actionButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="groupInfoButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="indicator" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="recommendButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="schoolInfoButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+            </relationships>
+        </class>
+        <class className="CoreDataViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CoreDataViewController.h"/>
+        </class>
+        <class className="EditInfoHeaderView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/EditInfoHeaderView.h"/>
+            <relationships>
+                <relationship kind="outlet" name="ageLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="avatar" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="editButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="sex" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="EditInfoViewController" superclassName="MiddleAbstractSecondViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/EditInfoViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="ConfirmEditBarButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="avatar" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="cancelEditButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="editButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="headerView" candidateClass="EditInfoHeaderView"/>
+                <relationship kind="outlet" name="infoTableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+            </relationships>
+        </class>
+        <class className="EventInfoViewController" superclassName="MiddleAbstractViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/EventInfoViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="eventTableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="titleLabel" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="LeftMenuViewController" superclassName="CoreDataViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LeftMenuViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="triggerInfo:" candidateClass="UIButton"/>
+                <relationship kind="action" name="triggerSetting:" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="delegate"/>
+                <relationship kind="outlet" name="infoButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="menuTableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="settingButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="LoginViewController" superclassName="CoreDataViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="logInClick:"/>
+                <relationship kind="action" name="slide:"/>
+                <relationship kind="action" name="textDidEndEdit:"/>
+                <relationship kind="action" name="textEditDidBegin:"/>
+                <relationship kind="outlet" name="NOTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="closeBtn" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="navButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="passwordForgetBtn" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="passwordTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="scrollVIew" candidateClass="UIScrollView"/>
+            </relationships>
+        </class>
+        <class className="MiddleAbstractSecondViewController" superclassName="MiddleAbstractViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MiddleAbstractSecondViewController.h"/>
+        </class>
+        <class className="MiddleAbstractViewController" superclassName="CoreDataViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MiddleAbstractViewController.h"/>
+        </class>
+        <class className="MyFavortieViewController" superclassName="MiddleAbstractSecondViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MyFavortieViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="contentTableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="PasswordViewController" superclassName="MiddleAbstractSecondViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PasswordViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="findPassword:"/>
+                <relationship kind="outlet" name="password" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+            </relationships>
+        </class>
+        <class className="PersonalWallViewController" superclassName="MiddleAbstractViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PersonalWallViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="headerBoard" candidateClass="UIView"/>
+                <relationship kind="outlet" name="recommendButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="recommendTitle" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="scheduleTableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="ProtocolViewController" superclassName="MiddleAbstractSecondViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ProtocolViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="protocolLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+            </relationships>
+        </class>
+        <class className="RegisterSecondViewController" superclassName="MiddleAbstractSecondViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RegisterSecondViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="showUserProtocol:"/>
+                <relationship kind="action" name="touchOnTextFiled:" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="confirmPassword" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="name" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="password" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="stuNumber" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="RegisterViewController" superclassName="MiddleAbstractSecondViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RegisterViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="registerMail:"/>
+            </relationships>
+        </class>
+        <class className="ScheduleViewController" superclassName="MiddleAbstractSecondViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ScheduleViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="todayClicked:"/>
+            </relationships>
+        </class>
+        <class className="SchoolNewsContactCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SchoolNewsContactCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="contact" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="SchoolNewsLocationCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SchoolNewsLocationCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="location" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="SchoolNewsTicketCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SchoolNewsTicketCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="ticket" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="SchoolNewsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SchoolNewsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="goBack:"/>
+                <relationship kind="outlet" name="backButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonBackImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="newsTableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="SchoolPreferenceViewController" superclassName="MiddleAbstractSecondViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SchoolPreferenceViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="preferenceTableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="SettingViewController" superclassName="MiddleAbstractSecondViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="settingTableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="UpdatePasswordViewController" superclassName="MiddleAbstractSecondViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UpdatePasswordViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="textDidEndEdit:"/>
+                <relationship kind="action" name="touchOnTextFiled:" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="confirm" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="oldPass" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="password" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+            </relationships>
+        </class>
+        <class className="UserIntroViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UserIntroViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="directLogin:"/>
+                <relationship kind="action" name="directUser:"/>
+                <relationship kind="outlet" name="bottomBar" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="directUser" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="moveView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="pageControl" candidateClass="UIPageControl"/>
+                <relationship kind="outlet" name="registerloginbtn" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+            </relationships>
+        </class>
+        <class className="WUButton" superclassName="UIButton">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WUButton.h"/>
+        </class>
+        <class className="WUPageControlViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WUPageControlViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="imageDescription" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="pageControl" candidateClass="UIPageControl"/>
+                <relationship kind="outlet" name="pagedScrollView" candidateClass="UIScrollView"/>
+            </relationships>
+        </class>
+        <class className="WUSlideViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WUSlideViewController.h"/>
+        </class>
+        <class className="WeeklyPersonViewController" superclassName="MiddleAbstractViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WeeklyPersonViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="personTableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
