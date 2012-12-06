@@ -1219,7 +1219,7 @@
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="left_arrow.png" id="pZq-Q7-CwH">
-                                                    <rect key="frame" x="296" y="12" width="10" height="15"/>
+                                                    <rect key="frame" x="296" y="22.5" width="10" height="15"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                             </subviews>
@@ -1870,6 +1870,7 @@
         <class className="PersonalWallViewController" superclassName="MiddleAbstractViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PersonalWallViewController.h"/>
             <relationships>
+                <relationship kind="action" name="headerButtonClicked:"/>
                 <relationship kind="outlet" name="headerBoard" candidateClass="UIView"/>
                 <relationship kind="outlet" name="recommendButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="recommendTitle" candidateClass="UILabel"/>
@@ -1886,7 +1887,9 @@
         <class className="RegisterSecondViewController" superclassName="MiddleAbstractSecondViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/RegisterSecondViewController.h"/>
             <relationships>
+                <relationship kind="action" name="registerClicked:"/>
                 <relationship kind="action" name="showUserProtocol:"/>
+                <relationship kind="action" name="textDidEndEdit:"/>
                 <relationship kind="action" name="touchOnTextFiled:" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="confirmPassword" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="name" candidateClass="UITextField"/>
@@ -1946,6 +1949,7 @@
         <class className="UpdatePasswordViewController" superclassName="MiddleAbstractSecondViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UpdatePasswordViewController.h"/>
             <relationships>
+                <relationship kind="action" name="confirm:"/>
                 <relationship kind="action" name="textDidEndEdit:"/>
                 <relationship kind="action" name="touchOnTextFiled:" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="confirm" candidateClass="UITextField"/>
@@ -1957,6 +1961,7 @@
         <class className="UserIntroViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UserIntroViewController.h"/>
             <relationships>
+                <relationship kind="action" name="directLogin:"/>
                 <relationship kind="action" name="directUser:"/>
                 <relationship kind="outlet" name="bottomBar" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="directUser" candidateClass="UIButton"/>
