@@ -15,6 +15,8 @@
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     [request setEntity:[NSEntityDescription entityForName:@"AbstractCollection" inManagedObjectContext:context]];
     [request setPredicate:[NSPredicate predicateWithFormat:@"can_favorite == 0"]];
+    NSSortDescriptor *sort = [[NSSortDescriptor alloc] initWithKey:@"collectionSource" ascending:YES];
+    [request setSortDescriptors:[NSArray arrayWithObjects:sort, nil]];
     NSArray *result = [context executeFetchRequest:request error:NULL];
     return result;
 }

@@ -44,7 +44,15 @@
     information.summary = [NSString stringWithFormat:@"%@",[infoDict objectForKey:@"Summary"]];
     information.ticketService = [NSString stringWithFormat:@"%@",[infoDict objectForKey:@"TicketService"]];
     information.title = [NSString stringWithFormat:@"%@",[infoDict objectForKey:@"Title"]];
-    information.collectionSummary = information.context;
+    if ( [information.category isEqualToString:GetInformationTypeAround] ) {
+        information.collectionSummary = information.summary;
+    } else if ( [information.category isEqualToString:GetInformationTypeClubNews] ) {
+        information.collectionSummary = information.organizer;
+    } else if ( [information.category isEqualToString:GetInformationTypeForStaff] ) {
+        information.collectionSummary = information.summary;
+    } else if ( [information.category isEqualToString:GetInformationTypeSchoolNews] ) {
+        information.collectionSummary = information.summary;
+    }
     information.collectionTitle = information.title;
     information.collectionSource = @"校园资讯";
     return information;

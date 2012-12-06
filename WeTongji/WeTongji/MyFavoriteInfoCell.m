@@ -26,8 +26,8 @@
     [super setCollection:collection];
     if ( ![collection isKindOfClass:[Information class]] ) return;
     Information * info = (Information *) collection;
-    self.titleLabel.text = info.title;
-    self.sourceLabel.text = info.organizer;
+    self.titleLabel.text = info.collectionTitle;
+    self.sourceLabel.text = info.collectionSummary ;
     self.timeLabel.text = [NSString yearMonthDayConvertFromDate:info.createdAt];
 }
 

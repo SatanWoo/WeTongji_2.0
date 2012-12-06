@@ -28,7 +28,7 @@
     Star * star = (Star *) collection;
     self.countLabel.text = [NSString stringWithFormat:@"第%@期",star.count];
     [self.avatar setImageWithURL:[NSURL URLWithString:star.avatarLink]];
-    self.title.text = star.starId;
+    self.title.text = star.title;
     self.words.text = star.words;
 }
 

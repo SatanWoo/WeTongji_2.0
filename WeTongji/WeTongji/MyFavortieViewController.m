@@ -181,6 +181,9 @@ static NSInteger tempRow;
     WTClient *client = [WTClient sharedClient];
     WTRequest * request = [WTRequest requestWithSuccessBlock:^(id responseData)
                            {
+                            #ifdef DEBUG
+                               NSLog(@"%@",responseData);
+                            #endif
                                if(self.nextPage == 1)
                                    [self clearData];
                                NSArray *array = [responseData objectForKey:@"Activities"];
