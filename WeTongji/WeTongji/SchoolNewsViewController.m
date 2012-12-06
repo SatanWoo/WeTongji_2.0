@@ -394,19 +394,19 @@
     {
         if ( self.information && [self.information.category isEqualToString:GetInformationTypeAround] &&indexPath.row == 0 )
         {
-            if ( indexPath.row == 1 && [self.information.contact isEqualToString:[NSString stringWithFormat:@"%@",[NSNull null]]])
+            if ([self.information.contact isEqualToString:[NSString stringWithFormat:@"%@",[NSNull null]]])
                 return 0;
             return 60;
         }
         if ( self.information && [self.information.category isEqualToString:GetInformationTypeAround] &&indexPath.row == 1 )
         {
-            if ( indexPath.row == 1 && [self.information.contact isEqualToString:[NSString stringWithFormat:@"%@",[NSNull null]]])
+            if ([self.information.contact isEqualToString:[NSString stringWithFormat:@"%@",[NSNull null]]])
                 return 0;
             return 40;
         }
         if ( self.information && [self.information.category isEqualToString:GetInformationTypeAround] &&indexPath.row == 2 )
         {
-            if ( indexPath.row == 2 && [self.information.ticketService isEqualToString:[NSString stringWithFormat:@"%@",[NSNull null]]])
+            if ([self.information.ticketService isEqualToString:[NSString stringWithFormat:@"%@",[NSNull null]]])
                 return 0;
             return 60;
         }

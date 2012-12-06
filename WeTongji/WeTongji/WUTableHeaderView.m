@@ -24,6 +24,9 @@
 @property (weak, nonatomic) IBOutlet UIImageView *recommendBack;
 @property (strong, nonatomic) MBProgressHUD * progress;
 @property (nonatomic,readonly) BOOL isLogIn;
+@property (weak, nonatomic) IBOutlet UIImageView *likeBackImage;
+@property (weak, nonatomic) IBOutlet UIImageView *favoriteBackImage;
+@property (weak, nonatomic) IBOutlet UIImageView *scheduleBackImage;
 @end
 
 @implementation WUTableHeaderView
@@ -209,6 +212,7 @@
                                    NSLog(@"like operation succeed!");
                                else NSLog(@"unlike operation succeed!");
                             #endif
+                               [self likeTouchUpOutSide];
                                NSInteger tempInt;
                                if ( [purposeImage isEqualToString:@"like_hl"] )
                                {
@@ -301,6 +305,7 @@
                                    NSLog(@"favourite operation succeed!");
                                else NSLog(@"unfavourite operation succeed!");
                             #endif
+                               [self favoriteTouchUpOutSide];
                                NSInteger tempInt;
                                if ( [purposeImage isEqualToString:@"favourite_hl"] )
                                {
@@ -393,6 +398,7 @@
                                    NSLog(@"schedule operation succeed!");
                                else NSLog(@"unschedule operation succeed!");
                             #endif
+                               [self scheduleTouchUpOutSide];
                                if ( [purposeImage isEqualToString:@"add_to_schedule_hl"] )
                                    [self scheduleSucceed];
                                else [self unScheduleSucceed];
@@ -505,6 +511,55 @@
     }
     return self;
 }
+- (IBAction)likeDidDragEnter
+{
+    [self.likeBackImage setImage:[UIImage imageNamed:@"btn_short_bg_hl"]];
+}
+- (IBAction)likeDidDragExit
+{
+    [self.likeBackImage setImage:[UIImage imageNamed:@"btn_short_bg"]];
+}
+- (IBAction)likeTouchDown
+{
+    [self.likeBackImage setImage:[UIImage imageNamed:@"btn_short_bg_hl"]];
+}
+- (IBAction)likeTouchUpOutSide
+{
+    [self.likeBackImage setImage:[UIImage imageNamed:@"btn_short_bg"]];
+}
 
+- (IBAction)favoriteDidDragEnter
+{
+    [self.favoriteBackImage setImage:[UIImage imageNamed:@"btn_short_bg_hl"]];
+}
+- (IBAction)favoriteDidDragExit
+{
+    [self.favoriteBackImage setImage:[UIImage imageNamed:@"btn_short_bg"]];
+}
+- (IBAction)favoriteTouchDown
+{
+    [self.favoriteBackImage setImage:[UIImage imageNamed:@"btn_short_bg_hl"]];
+}
+- (IBAction)favoriteTouchUpOutSide
+{
+    [self.favoriteBackImage setImage:[UIImage imageNamed:@"btn_short_bg"]];
+}
+
+- (IBAction)scheduleDidDragEnter
+{
+    [self.scheduleBackImage setImage:[UIImage imageNamed:@"btn_long_bg_hl"]];
+}
+- (IBAction)scheduleDidDragExit
+{
+    [self.scheduleBackImage setImage:[UIImage imageNamed:@"btn_long_bg"]];
+}
+- (IBAction)scheduleTouchDown
+{
+    [self.scheduleBackImage setImage:[UIImage imageNamed:@"btn_long_bg_hl"]];
+}
+- (IBAction)scheduleTouchUpOutSide
+{
+    [self.scheduleBackImage setImage:[UIImage imageNamed:@"btn_long_bg"]];
+}
 
 @end

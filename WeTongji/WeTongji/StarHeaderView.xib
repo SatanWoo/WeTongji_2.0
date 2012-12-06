@@ -2,10 +2,10 @@
 <archive type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="8.00">
 	<data>
 		<int key="IBDocument.SystemTarget">1536</int>
-		<string key="IBDocument.SystemVersion">11G63</string>
+		<string key="IBDocument.SystemVersion">12C60</string>
 		<string key="IBDocument.InterfaceBuilderVersion">2844</string>
-		<string key="IBDocument.AppKitVersion">1138.51</string>
-		<string key="IBDocument.HIToolboxVersion">569.00</string>
+		<string key="IBDocument.AppKitVersion">1187.34</string>
+		<string key="IBDocument.HIToolboxVersion">625.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 			<string key="NS.object.0">1930</string>
@@ -43,7 +43,6 @@
 						<string key="NSFrame">{{0, 162}, {320, 1}}</string>
 						<reference key="NSSuperview" ref="1058080063"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -543,6 +542,22 @@
 					<int key="connectionID">150</int>
 				</object>
 				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">likeBackImage</string>
+						<reference key="source" ref="1058080063"/>
+						<reference key="destination" ref="249359693"/>
+					</object>
+					<int key="connectionID">160</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">favoriteBackImage</string>
+						<reference key="source" ref="1058080063"/>
+						<reference key="destination" ref="70555079"/>
+					</object>
+					<int key="connectionID">161</int>
+				</object>
+				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">likeClicked:</string>
 						<reference key="source" ref="105560766"/>
@@ -553,12 +568,84 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">likeTouchDown</string>
+						<reference key="source" ref="105560766"/>
+						<reference key="destination" ref="1058080063"/>
+						<int key="IBEventType">1</int>
+					</object>
+					<int key="connectionID">152</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">likeDidDragEnter</string>
+						<reference key="source" ref="105560766"/>
+						<reference key="destination" ref="1058080063"/>
+						<int key="IBEventType">5</int>
+					</object>
+					<int key="connectionID">153</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">likeDidDragExit</string>
+						<reference key="source" ref="105560766"/>
+						<reference key="destination" ref="1058080063"/>
+						<int key="IBEventType">6</int>
+					</object>
+					<int key="connectionID">154</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">likeTouchUpOutSide</string>
+						<reference key="source" ref="105560766"/>
+						<reference key="destination" ref="1058080063"/>
+						<int key="IBEventType">4</int>
+					</object>
+					<int key="connectionID">155</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">favoriteClicked:</string>
 						<reference key="source" ref="698377396"/>
 						<reference key="destination" ref="1058080063"/>
 						<int key="IBEventType">7</int>
 					</object>
 					<int key="connectionID">139</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">favoriteTouchDown</string>
+						<reference key="source" ref="698377396"/>
+						<reference key="destination" ref="1058080063"/>
+						<int key="IBEventType">1</int>
+					</object>
+					<int key="connectionID">156</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">favoriteDidDragEnter</string>
+						<reference key="source" ref="698377396"/>
+						<reference key="destination" ref="1058080063"/>
+						<int key="IBEventType">5</int>
+					</object>
+					<int key="connectionID">157</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">favoriteDidDragExit</string>
+						<reference key="source" ref="698377396"/>
+						<reference key="destination" ref="1058080063"/>
+						<int key="IBEventType">6</int>
+					</object>
+					<int key="connectionID">158</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">favoriteTouchUpOutSide</string>
+						<reference key="source" ref="698377396"/>
+						<reference key="destination" ref="1058080063"/>
+						<int key="IBEventType">4</int>
+					</object>
+					<int key="connectionID">159</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -761,7 +848,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">151</int>
+			<int key="maxID">161</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -776,25 +863,40 @@
 				<object class="IBPartialClassDescription">
 					<string key="className">WUTableHeaderView</string>
 					<string key="superclassName">UIView</string>
-					<object class="NSMutableDictionary" key="actions">
-						<string key="NS.key.0">addScheduleClicked:</string>
-						<string key="NS.object.0">id</string>
-					</object>
-					<object class="NSMutableDictionary" key="actionInfosByName">
-						<string key="NS.key.0">addScheduleClicked:</string>
-						<object class="IBActionInfo" key="NS.object.0">
+					<dictionary class="NSMutableDictionary" key="actions">
+						<string key="addScheduleClicked:">id</string>
+						<string key="favoriteClicked:">id</string>
+						<string key="imageClicked:">id</string>
+						<string key="likeClicked:">id</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="actionInfosByName">
+						<object class="IBActionInfo" key="addScheduleClicked:">
 							<string key="name">addScheduleClicked:</string>
 							<string key="candidateClassName">id</string>
 						</object>
-					</object>
+						<object class="IBActionInfo" key="favoriteClicked:">
+							<string key="name">favoriteClicked:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="imageClicked:">
+							<string key="name">imageClicked:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="likeClicked:">
+							<string key="name">likeClicked:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="addScheduleButton">UIButton</string>
 						<string key="addToScheduleBg">UIButton</string>
 						<string key="buttonBoard">UIView</string>
 						<string key="eventTime">UILabel</string>
+						<string key="favoriteBackImage">UIImageView</string>
 						<string key="favoriteButton">UIButton</string>
 						<string key="favoriteButtonBg">UIButton</string>
 						<string key="favoriteNumber">UILabel</string>
+						<string key="likeBackImage">UIImageView</string>
 						<string key="likeButton">UIButton</string>
 						<string key="likeButtonBg">UIButton</string>
 						<string key="likeNumber">UILabel</string>
@@ -805,6 +907,7 @@
 						<string key="recommendBack">UIImageView</string>
 						<string key="recommendImage">UIImageView</string>
 						<string key="releaseTimeLabel">UILabel</string>
+						<string key="scheduleBackImage">UIImageView</string>
 						<string key="seeNumber">UILabel</string>
 						<string key="sourceLabel">UILabel</string>
 						<string key="starImage">UIImageView</string>
@@ -832,6 +935,10 @@
 							<string key="name">eventTime</string>
 							<string key="candidateClassName">UILabel</string>
 						</object>
+						<object class="IBToOneOutletInfo" key="favoriteBackImage">
+							<string key="name">favoriteBackImage</string>
+							<string key="candidateClassName">UIImageView</string>
+						</object>
 						<object class="IBToOneOutletInfo" key="favoriteButton">
 							<string key="name">favoriteButton</string>
 							<string key="candidateClassName">UIButton</string>
@@ -843,6 +950,10 @@
 						<object class="IBToOneOutletInfo" key="favoriteNumber">
 							<string key="name">favoriteNumber</string>
 							<string key="candidateClassName">UILabel</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="likeBackImage">
+							<string key="name">likeBackImage</string>
+							<string key="candidateClassName">UIImageView</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="likeButton">
 							<string key="name">likeButton</string>
@@ -883,6 +994,10 @@
 						<object class="IBToOneOutletInfo" key="releaseTimeLabel">
 							<string key="name">releaseTimeLabel</string>
 							<string key="candidateClassName">UILabel</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="scheduleBackImage">
+							<string key="name">scheduleBackImage</string>
+							<string key="candidateClassName">UIImageView</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="seeNumber">
 							<string key="name">seeNumber</string>
