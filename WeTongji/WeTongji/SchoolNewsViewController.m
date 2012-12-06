@@ -20,6 +20,8 @@
 #import <WeTongjiSDK/WeTongjiSDK.h>
 #import "NSDictionary+Addition.h"
 #import "UIApplication+nj_SmartStatusBar.h"
+#import "UIPhoneCallActionSheet.h"
+#import "UIMapApplicationSheet.h"
 
 #define kContentOffset 50
 #define kStateY -150
@@ -211,9 +213,6 @@
         [self.headerView  setInformation:information];
         [self.transparentHeaderView setHideBoard:YES];
     }
-    
-    //[self renderBorder:self.headerView.likeButtonBg];
-    //[self renderBorder:self.headerView.favoriteButtonBg];
 
     self.imageDict = [NSDictionary getImageLinkDictInJsonString:information.images];
     _information = information;
@@ -460,6 +459,7 @@
         switch (indexPath.row)
         {
             case 0:
+                [self showLocation:self.information.location];
                 break;
             case 1:
                 [self makeCall:self.information.contact];
@@ -472,10 +472,16 @@
     }
 }
 
+-(void) showLocation:(NSString *) location
+{
+    UIMapApplicationSheet * actionSheet = [[UIMapApplicationSheet alloc] initWithLocation:location];
+    [actionSheet showInView:self.view];
+}
+
 -(void) makeCall:(NSString *)phoneNumber
 {
-    NSString *strMob = [[NSString alloc] initWithFormat:@"tel://%@",phoneNumber];
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:strMob]];
+    UIPhoneCallActionSheet * actionSheet = [[UIPhoneCallActionSheet alloc] initWithPhoneNumber:phoneNumber];
+    [actionSheet showInView:self.view];
 }
 
 @end

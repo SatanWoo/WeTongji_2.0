@@ -14,6 +14,7 @@
 #import "AppDelegate.h"
 #import <CoreData/CoreData.h>
 #import <QuartzCore/QuartzCore.h>
+#import "DetailImageViewController.h"
 
 @interface WUTableHeaderView()<MBProgressHUDDelegate>
 {
@@ -489,6 +490,11 @@
 #ifdef DEBUG
     NSLog(@"Star (%@,%@) has been set in WUTableHeaderView",star.starId,star.title);
 #endif
+}
+
+- (IBAction)imageClicked:(id)sender
+{
+    [DetailImageViewController showDetailImageWithURL:self.information.image];
 }
 
 - (id)initWithFrame:(CGRect)frame

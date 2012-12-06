@@ -548,6 +548,8 @@
 		FFB5AECB164CDC0A00A232DF /* grayArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB5AEC2164CDC0A00A232DF /* grayArrow@2x.png */; };
 		FFB5AECC164CDC0A00A232DF /* whiteArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB5AEC3164CDC0A00A232DF /* whiteArrow.png */; };
 		FFB5AECD164CDC0A00A232DF /* whiteArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB5AEC4164CDC0A00A232DF /* whiteArrow@2x.png */; };
+		FFBAAF6516707958004D44E6 /* UIPhoneCallActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBAAF6416707958004D44E6 /* UIPhoneCallActionSheet.m */; };
+		FFBAAF6816708A27004D44E6 /* UIMapApplicationSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBAAF6716708A27004D44E6 /* UIMapApplicationSheet.m */; };
 		FFBEB29B164B6DA10004AF4C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBEB29A164B6DA10004AF4C /* CoreData.framework */; };
 		FFBEB29E164B6F1B0004AF4C /* CoreDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBEB29D164B6F1B0004AF4C /* CoreDataViewController.m */; };
 		FFBEB2B6164B89090004AF4C /* WeTongjiCoreDataModels.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FFBEB2B4164B89090004AF4C /* WeTongjiCoreDataModels.xcdatamodeld */; };
@@ -1237,6 +1239,10 @@
 		FFB5AEC2164CDC0A00A232DF /* grayArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grayArrow@2x.png"; sourceTree = "<group>"; };
 		FFB5AEC3164CDC0A00A232DF /* whiteArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteArrow.png; sourceTree = "<group>"; };
 		FFB5AEC4164CDC0A00A232DF /* whiteArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "whiteArrow@2x.png"; sourceTree = "<group>"; };
+		FFBAAF6316707958004D44E6 /* UIPhoneCallActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIPhoneCallActionSheet.h; sourceTree = "<group>"; };
+		FFBAAF6416707958004D44E6 /* UIPhoneCallActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIPhoneCallActionSheet.m; sourceTree = "<group>"; };
+		FFBAAF6616708A27004D44E6 /* UIMapApplicationSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIMapApplicationSheet.h; sourceTree = "<group>"; };
+		FFBAAF6716708A27004D44E6 /* UIMapApplicationSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIMapApplicationSheet.m; sourceTree = "<group>"; };
 		FFBEB29A164B6DA10004AF4C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		FFBEB29C164B6F1B0004AF4C /* CoreDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataViewController.h; sourceTree = "<group>"; };
 		FFBEB29D164B6F1B0004AF4C /* CoreDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataViewController.m; sourceTree = "<group>"; };
@@ -2193,11 +2199,15 @@
 			isa = PBXGroup;
 			children = (
 				FFB5AEB7164CDC0A00A232DF /* EGOTableViewPullRefresh */,
-				E5482E3F1636E5A40054C771 /* PlistReader.h */,
-				E5482E401636E5A40054C771 /* PlistReader.m */,
 				FF7109B8164D4667008F2A06 /* PullRefreshManagement.h */,
 				FF7109B9164D4667008F2A06 /* PullRefreshManagement.m */,
 				FFB27CC9164E0E32007A51DE /* PullRefreshManagementDelegate.h */,
+				E5482E3F1636E5A40054C771 /* PlistReader.h */,
+				E5482E401636E5A40054C771 /* PlistReader.m */,
+				FFBAAF6616708A27004D44E6 /* UIMapApplicationSheet.h */,
+				FFBAAF6716708A27004D44E6 /* UIMapApplicationSheet.m */,
+				FFBAAF6316707958004D44E6 /* UIPhoneCallActionSheet.h */,
+				FFBAAF6416707958004D44E6 /* UIPhoneCallActionSheet.m */,
 			);
 			name = Utility;
 			sourceTree = "<group>";
@@ -3127,6 +3137,8 @@
 				FF6A5EFC166E3D3B00ABBE70 /* AutoResizeLabel.m in Sources */,
 				FF1F4B2A166F914A003CEF8D /* DetailImageViewController.m in Sources */,
 				FF1F4B2E166F9477003CEF8D /* UIApplication+Addition.m in Sources */,
+				FFBAAF6516707958004D44E6 /* UIPhoneCallActionSheet.m in Sources */,
+				FFBAAF6816708A27004D44E6 /* UIMapApplicationSheet.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
