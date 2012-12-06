@@ -339,8 +339,8 @@
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
 			<string key="celebrity_avatar_list">{16, 16}</string>
-			<string key="eye_icon.png">{16, 10}</string>
-			<string key="left_arrow.png">{10, 15}</string>
+			<string key="eye_icon.png">{16, 16}</string>
+			<string key="left_arrow.png">{16, 16}</string>
 		</dictionary>
 		<string key="IBCocoaTouchPluginVersion">1930</string>
 	</data>
