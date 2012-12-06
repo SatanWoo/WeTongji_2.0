@@ -95,6 +95,14 @@ static NSString *reviewURL = @"itms-apps://ax.itunes.apple.com/WebObjects/MZStor
    
 }
 
+- (void)removeCache:(NSNotification *)notification
+{
+    self.currentStatus = eMIDDLE;
+    self.introViewController = nil;
+    [self.view addSubview:self.introViewController.view];
+}
+
+
 - (void)disableGesture:(NSNotification *)notification
 {
     self.recoginzer.enabled = !self.recoginzer.enabled;
@@ -174,6 +182,9 @@ static NSString *reviewURL = @"itms-apps://ax.itunes.apple.com/WebObjects/MZStor
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reveal:) name:kSlideNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(update:) name:kUpdateMiddleContent object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(disableGesture:) name:kDisableGestureNotification object:nil];
+    
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(removeCache:) name:kRefreshCacheNotification object:nil];
 }
 
 - (void)removeNotification
@@ -182,6 +193,7 @@ static NSString *reviewURL = @"itms-apps://ax.itunes.apple.com/WebObjects/MZStor
     [[NSNotificationCenter defaultCenter] removeObserver:self forKeyPath:kSlideNotification];
     [[NSNotificationCenter defaultCenter] removeObserver:self forKeyPath:kUpdateMiddleContent];
     [[NSNotificationCenter defaultCenter] removeObserver:self forKeyPath:kDisableGestureNotification];
+    [[NSNotificationCenter defaultCenter] removeObserver:self forKeyPath:kRefreshCacheNotification];
 }
 
 - (void)reveal:(NSNotification *)notification

@@ -15,6 +15,7 @@
 #import "WUKenBurnViewHeader.h"
 #import "WUSlideViewController.h"
 #import "User+Addition.h"
+#import "UserIntroViewController.h"
 
 #define kLabelHeight 30
 
@@ -209,6 +210,7 @@
     [self setMenuTableView:nil];
     [self setSettingButton:nil];
     [self setInfoButton:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
