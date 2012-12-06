@@ -292,12 +292,13 @@ static NSInteger tempRow;
         {
             [self.pullRefreshManagement endLoading];
         }];
-    if ( [self.filterString isEqualToString:@""] )
-    {
+    if ( [self.filterString isEqualToString:@""] ) {
         [request getActivitiesInChannel:nil inSort:nil Expired:NO nextPage:self.nextPage];
+    } else if ( [self.filterString isEqualToString:GetActivitySortMethodCreateDesc] ){
+        [request getActivitiesInChannel:nil inSort:self.filterString Expired:YES nextPage:self.nextPage];
+    } else if ( [self.filterString isEqualToString:GetActivitySortMethodLikeDesc] ){
+        [request getActivitiesInChannel:nil inSort:self.filterString Expired:NO nextPage:self.nextPage];
     }
-    else
-    [request getActivitiesInChannel:nil inSort:self.filterString Expired:YES nextPage:self.nextPage];
     [client enqueueRequest:request];
 }
 

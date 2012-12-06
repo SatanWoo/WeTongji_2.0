@@ -47,6 +47,9 @@
     _information = information;
     [self.categoryLabel setHidden:YES];
     [self.label setHidden:YES];
+    CGRect frame = self.publisherLabel.frame;
+    frame.origin.y = 60;
+    self.publisherLabel.frame = frame;
 #ifdef DEBUG
     NSLog(@"Information (%@,%@) has been set in TransparentTableHeaderView",information.informationId,information.title);
 #endif
