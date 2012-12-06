@@ -195,6 +195,7 @@
 }
 - (IBAction)likeClicked:(id)sender
 {
+    [self likeTouchUpOutSide];
     if ( !self.isLogIn )
     {
         [self pleaseLogIn];
@@ -212,7 +213,6 @@
                                    NSLog(@"like operation succeed!");
                                else NSLog(@"unlike operation succeed!");
                             #endif
-                               [self likeTouchUpOutSide];
                                NSInteger tempInt;
                                if ( [purposeImage isEqualToString:@"like_hl"] )
                                {
@@ -288,6 +288,7 @@
 
 - (IBAction)favoriteClicked:(id)sender
 {
+    [self favoriteTouchUpOutSide];
     if ( !self.isLogIn )
     {
         [self pleaseLogIn];
@@ -305,7 +306,6 @@
                                    NSLog(@"favourite operation succeed!");
                                else NSLog(@"unfavourite operation succeed!");
                             #endif
-                               [self favoriteTouchUpOutSide];
                                NSInteger tempInt;
                                if ( [purposeImage isEqualToString:@"favourite_hl"] )
                                {
@@ -381,6 +381,7 @@
 
 - (IBAction)addScheduleClicked:(id)sender
 {
+    [self scheduleTouchUpOutSide];
     if ( !self.isLogIn )
     {
         [self pleaseLogIn];
@@ -398,7 +399,6 @@
                                    NSLog(@"schedule operation succeed!");
                                else NSLog(@"unschedule operation succeed!");
                             #endif
-                               [self scheduleTouchUpOutSide];
                                if ( [purposeImage isEqualToString:@"add_to_schedule_hl"] )
                                    [self scheduleSucceed];
                                else [self unScheduleSucceed];

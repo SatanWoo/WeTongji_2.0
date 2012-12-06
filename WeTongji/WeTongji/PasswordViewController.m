@@ -22,6 +22,11 @@
     self.scrollView.contentSize = frame.size;
 }
 
+-(MBProgressHUD *) HUD
+{
+    
+}
+
 - (void)pressNavButton
 {
     [self.parentViewController dismissModalViewControllerAnimated:YES];
@@ -52,6 +57,7 @@
 - (void)viewDidUnload {
     [self setScrollView:nil];
     [self setPassword:nil];
+    [self setName:nil];
     [super viewDidUnload];
 }
 
@@ -76,7 +82,8 @@
     [self.HUD showWhileExecuting:@selector(myTask) onTarget:self withObject:nil animated:YES];
 }
 
-- (void)hudWasHidden:(MBProgressHUD *)hud {
+- (void)hudWasHidden:(MBProgressHUD *)hud
+{
     [hud removeFromSuperview];
     hud = nil;
 }
