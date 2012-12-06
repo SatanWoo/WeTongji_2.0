@@ -303,9 +303,10 @@
         [Exam clearDataInManagedObjectContext:self.managedObjectContext];
         [Course clearDataInManagedObjectContext:self.managedObjectContext];
         [Channel clearAllChannelsInManagedObjectContext:self.managedObjectContext];
+        [self pressNavButton];
         [NSUserDefaults setCurrentSemesterBeginTime:[NSDate dateWithTimeIntervalSinceNow:0] endTime:[NSDate dateWithTimeIntervalSinceNow:0]];
         [NSUserDefaults setCurrentUserID:@"" session:@""];
-        [[NSNotificationCenter defaultCenter] postNotificationName:kLogoutNotification object:self];
+        [[NSNotificationCenter defaultCenter] postNotificationName:kRefreshCacheNotification object:self];
         [self adjust];
     }
     if ( [alertView.title isEqualToString:@"检测到最新版本"] )

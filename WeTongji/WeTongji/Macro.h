@@ -79,5 +79,6 @@
 #define kEnableInteractionNotification @"kEnableInteractionNotification"
 #define kScrollToTopNotification @"kScrollToTopNotification"
 #define kDisableGestureNotification @"kDisableGestureNotification"
+#define kRefreshCacheNotification @"kRefreshCache"
 
 #endif
