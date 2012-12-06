@@ -195,10 +195,10 @@
 }
 - (IBAction)likeClicked:(id)sender
 {
-    [self likeTouchUpOutSide];
     if ( !self.isLogIn )
     {
         [self pleaseLogIn];
+        [self likeTouchUpOutSide];
         return;
     }
     NSString * purposeImage;
@@ -213,6 +213,7 @@
                                    NSLog(@"like operation succeed!");
                                else NSLog(@"unlike operation succeed!");
                             #endif
+                               [self likeTouchUpOutSide];
                                NSInteger tempInt;
                                if ( [purposeImage isEqualToString:@"like_hl"] )
                                {
@@ -245,6 +246,7 @@
                                    NSLog(@"like operation failed!");
                                else NSLog(@"unlike operation failed!");
                             #endif
+                               [self likeTouchUpOutSide];
                                self.progress.labelText = [[error userInfo] objectForKey:@"errorDesc"];
                                self.progress.mode = MBProgressHUDModeText;
                                [self.progress hide:YES afterDelay:1];
@@ -288,10 +290,10 @@
 
 - (IBAction)favoriteClicked:(id)sender
 {
-    [self favoriteTouchUpOutSide];
     if ( !self.isLogIn )
     {
         [self pleaseLogIn];
+        [self favoriteTouchUpOutSide];
         return;
     }
     NSString * purposeImage;
@@ -306,6 +308,7 @@
                                    NSLog(@"favourite operation succeed!");
                                else NSLog(@"unfavourite operation succeed!");
                             #endif
+                               [self favoriteTouchUpOutSide];
                                NSInteger tempInt;
                                if ( [purposeImage isEqualToString:@"favourite_hl"] )
                                {
@@ -338,6 +341,7 @@
                                    NSLog(@"favourite operation failed!");
                                else NSLog(@"unfavourite operation failed!");
                             #endif
+                               [self favoriteTouchUpOutSide];
                                self.progress.labelText = [[error userInfo] objectForKey:@"errorDesc"];
                                self.progress.mode = MBProgressHUDModeText;
                                [self.progress hide:YES afterDelay:1];
@@ -381,10 +385,10 @@
 
 - (IBAction)addScheduleClicked:(id)sender
 {
-    [self scheduleTouchUpOutSide];
     if ( !self.isLogIn )
     {
         [self pleaseLogIn];
+        [self scheduleTouchUpOutSide];
         return;
     }
     NSString * purposeImage;
@@ -399,6 +403,7 @@
                                    NSLog(@"schedule operation succeed!");
                                else NSLog(@"unschedule operation succeed!");
                             #endif
+                               [self scheduleTouchUpOutSide];
                                if ( [purposeImage isEqualToString:@"add_to_schedule_hl"] )
                                    [self scheduleSucceed];
                                else [self unScheduleSucceed];
@@ -412,6 +417,7 @@
                                    NSLog(@"schedule operation failed!");
                                else NSLog(@"unschedule operation failed!");
                             #endif
+                               [self scheduleTouchUpOutSide];
                                self.progress.labelText = [[error userInfo] objectForKey:@"errorDesc"];
                                self.progress.mode = MBProgressHUDModeText;
                                [self.progress hide:YES afterDelay:1];
