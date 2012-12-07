@@ -262,15 +262,13 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
-    [super viewDidAppear:animated];
     [self.navigationController setNavigationBarHidden:NO];
-    [UIView animateWithDuration:0.8f animations:^{
-        self.pageViewController.view.center = originPageControlViewCenter;} completion:nil];
+    self.pageViewController.view.center = originPageControlViewCenter;
+    [super viewDidAppear:animated];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

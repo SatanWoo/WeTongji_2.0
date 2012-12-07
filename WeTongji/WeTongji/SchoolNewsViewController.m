@@ -394,7 +394,7 @@
     {
         if ( self.information && [self.information.category isEqualToString:GetInformationTypeAround] &&indexPath.row == 0 )
         {
-            if ([self.information.contact isEqualToString:[NSString stringWithFormat:@"%@",[NSNull null]]])
+            if ([self.information.location isEqualToString:[NSString stringWithFormat:@"%@",[NSNull null]]])
                 return 0;
             return 60;
         }

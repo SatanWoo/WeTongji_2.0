@@ -71,6 +71,7 @@
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     [self findPassword:nil];
+    return NO;
 }
 
 -(void) resetSuccessful

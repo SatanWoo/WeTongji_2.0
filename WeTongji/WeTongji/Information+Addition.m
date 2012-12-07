@@ -53,6 +53,10 @@
     } else if ( [information.category isEqualToString:GetInformationTypeSchoolNews] ) {
         information.collectionSummary = information.summary;
     }
+    if ( [information.location isEqualToString:@""] ) information.location = [NSString stringWithFormat:@"%@",[NSNull null] ];
+    if ( [information.contact isEqualToString:@""] ) information.contact = [NSString stringWithFormat:@"%@",[NSNull null] ];;
+    if ( [information.ticketService isEqualToString:@""] )
+        information.ticketService = [NSString stringWithFormat:@"%@",[NSNull null] ];;
     information.collectionTitle = information.title;
     information.collectionSource = @"校园资讯";
     return information;
