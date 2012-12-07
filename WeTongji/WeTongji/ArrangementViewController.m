@@ -136,6 +136,7 @@
     [self.arrangementTableView registerNib:[UINib nibWithNibName:@"ArrangementCell" bundle:nil] forCellReuseIdentifier:kArrangementCell];
     [self.arrangementTableView registerNib:[UINib nibWithNibName:@"ArrangementNothingCell" bundle:nil] forCellReuseIdentifier:kArrangementNothingCell];
     self.arrangementTableView.backgroundColor = [UIColor clearColor];
+    [self.arrangementTableView reloadData];
 }
 
 #pragma mark - Life Cycle
@@ -145,10 +146,15 @@
     [self configureTableView];
 }
 
+-(void) viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.arrangementTableView scrollToRowAtIndexPath:self.todayIndexPath atScrollPosition:UITableViewScrollPositionTop animated:NO];
+}
+
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    [self.arrangementTableView scrollToRowAtIndexPath:self.todayIndexPath atScrollPosition:UITableViewScrollPositionTop animated:NO];
 }
 
 - (void)viewDidUnload
