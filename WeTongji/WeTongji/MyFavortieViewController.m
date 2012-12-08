@@ -181,9 +181,9 @@ static NSInteger tempRow;
     WTClient *client = [WTClient sharedClient];
     WTRequest * request = [WTRequest requestWithSuccessBlock:^(id responseData)
                            {
-                            #ifdef DEBUG
+                            //#ifdef DEBUG
                                NSLog(@"%@",responseData);
-                            #endif
+                            //#endif
                                if(self.nextPage == 1)
                                    [self clearData];
                                NSArray *array = [responseData objectForKey:@"Activities"];
@@ -191,6 +191,36 @@ static NSInteger tempRow;
                                {
                                    Event *event = [Event insertActivity:eventDict inManagedObjectContext:self.managedObjectContext];
                                    event.hidden = [NSNumber numberWithBool:NO];
+                               }
+                               array = [responseData objectForKey:@"SchoolNews"];
+                               for(NSDictionary *infoDict in array)
+                               {
+                                   Information *information = [Information insertAnInformation:infoDict inCategory:GetInformationTypeSchoolNews inManagedObjectContext:self.managedObjectContext];
+                                   information.hiden = [NSNumber numberWithBool:NO];
+                               }
+                               array = [responseData objectForKey:@"Arounds"];
+                               for(NSDictionary *infoDict in array)
+                               {
+                                   Information *information = [Information insertAnInformation:infoDict inCategory:GetInformationTypeAround inManagedObjectContext:self.managedObjectContext];
+                                   information.hiden = [NSNumber numberWithBool:NO];
+                               }
+                               array = [responseData objectForKey:@"ForStaffs"];
+                               for(NSDictionary *infoDict in array)
+                               {
+                                   Information *information = [Information insertAnInformation:infoDict inCategory:GetInformationTypeForStaff inManagedObjectContext:self.managedObjectContext];
+                                   information.hiden = [NSNumber numberWithBool:NO];
+                               }
+                               array = [responseData objectForKey:@"ClubNews"];
+                               for(NSDictionary *infoDict in array)
+                               {
+                                   Information *information = [Information insertAnInformation:infoDict inCategory:GetInformationTypeClubNews inManagedObjectContext:self.managedObjectContext];
+                                   information.hiden = [NSNumber numberWithBool:NO];
+                               }
+                               array = [responseData objectForKey:@"People"];
+                               for(NSDictionary *starDict in array)
+                               {
+                                   Star *star = [Star insertStarWithDict:starDict inManagedObjectContext:self.managedObjectContext];
+                                   star.hiden = [NSNumber numberWithBool:NO];
                                }
                                self.nextPage = [[NSString stringWithFormat:@"%@", [responseData objectForKey:@"NextPager"]] intValue];
                                if (self.nextPage == 0) [self.pullRefreshManagement setNoMoreData:YES];
