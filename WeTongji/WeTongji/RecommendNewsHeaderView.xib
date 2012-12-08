@@ -2,10 +2,10 @@
 <archive type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="8.00">
 	<data>
 		<int key="IBDocument.SystemTarget">1536</int>
-		<string key="IBDocument.SystemVersion">12C60</string>
+		<string key="IBDocument.SystemVersion">11G63</string>
 		<string key="IBDocument.InterfaceBuilderVersion">2844</string>
-		<string key="IBDocument.AppKitVersion">1187.34</string>
-		<string key="IBDocument.HIToolboxVersion">625.00</string>
+		<string key="IBDocument.AppKitVersion">1138.51</string>
+		<string key="IBDocument.HIToolboxVersion">569.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 			<string key="NS.object.0">1930</string>
@@ -119,7 +119,7 @@
 						<reference key="NSNextResponder" ref="1007803879"/>
 						<int key="NSvFlags">1280</int>
 						<object class="NSPSMatrix" key="NSFrameMatrix"/>
-						<string key="NSFrame">{{181, 61}, {98, 21}}</string>
+						<string key="NSFrame">{{180, 61}, {120, 21}}</string>
 						<reference key="NSSuperview" ref="1007803879"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="1013233796"/>
@@ -132,9 +132,9 @@
 						<reference key="IBUITextColor" ref="442950721"/>
 						<nil key="IBUIHighlightedColor"/>
 						<int key="IBUIBaselineAdjustment">0</int>
-						<float key="IBUIMinimumFontSize">10</float>
 						<reference key="IBUIFontDescription" ref="858289077"/>
 						<reference key="IBUIFont" ref="686646288"/>
+						<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
 					</object>
 					<object class="IBUILabel" id="153991488">
 						<reference key="NSNextResponder" ref="1007803879"/>
@@ -866,30 +866,6 @@
 				<object class="IBPartialClassDescription">
 					<string key="className">WUTableHeaderView</string>
 					<string key="superclassName">UIView</string>
-					<dictionary class="NSMutableDictionary" key="actions">
-						<string key="addScheduleClicked:">id</string>
-						<string key="favoriteClicked:">id</string>
-						<string key="imageClicked:">id</string>
-						<string key="likeClicked:">id</string>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="actionInfosByName">
-						<object class="IBActionInfo" key="addScheduleClicked:">
-							<string key="name">addScheduleClicked:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="favoriteClicked:">
-							<string key="name">favoriteClicked:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="imageClicked:">
-							<string key="name">imageClicked:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="likeClicked:">
-							<string key="name">likeClicked:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="addScheduleButton">UIButton</string>
 						<string key="addToScheduleBg">UIButton</string>
