@@ -22,11 +22,11 @@
     BOOL _isEditEnable;
     BOOL _isKeyBoardAppear;
 }
-@property (weak, nonatomic) IBOutlet EditInfoHeaderView *headerView;
+@property (strong, nonatomic) IBOutlet EditInfoHeaderView *headerView;
 @property (nonatomic,strong) User * user;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *cancelEditButton;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *ConfirmEditBarButton;
-@property (weak, nonatomic) IBOutlet UIButton *editButton;
+@property (weak, nonatomic) UIButton *editButton;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (nonatomic,strong) NSArray * editableList;
 @property (nonatomic,strong) NSArray * staticList;
@@ -96,6 +96,8 @@
     [self.infoTableView registerNib:[UINib nibWithNibName:@"EditInfoCell" bundle:nil] forCellReuseIdentifier:kEditInfoCell];
     [self.infoTableView setBackgroundView:nil];
     [self.infoTableView setBackgroundColor:self.headerView.backgroundColor];
+    [self.infoTableView setTableFooterView:nil];
+    [self.infoTableView setTableHeaderView:nil];
     self.infoTableView.tableHeaderView = self.headerView;
 }
 
@@ -147,13 +149,11 @@
 #pragma mark - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    NSLog(@"%d",[self.infoList count]);
     return [self.infoList count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSLog(@"%d",[[self.infoList objectAtIndex:section] count]);
     return [[self.infoList objectAtIndex:section] count];
 }
 
@@ -236,14 +236,17 @@
 
 static id tempLeftBarItem;
 
-- (IBAction)editClcked:(id)sender
+- (void)editClcked:(id)sender
 {
     _isEditEnable = YES;
     tempLeftBarItem = self.navigationItem.leftBarButtonItem;
     self.navigationItem.leftBarButtonItem = self.cancelEditButton;
     self.navigationItem.rightBarButtonItem = self.ConfirmEditBarButton;
     self.infoList = [NSArray arrayWithObjects:self.editableList, nil];
-    [self.infoTableView reloadData];
+    [self.infoTableView deleteSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
+    NSArray * cells = [self.infoTableView visibleCells];
+    for ( EditInfoCell * cell in cells )
+         [cell setIsEditEnable:YES];
 }
 
 - (IBAction)confirmEditClicked:(id)sender
@@ -290,7 +293,10 @@ static id tempLeftBarItem;
     WTRequest * request = [WTRequest requestWithSuccessBlock:^(id responseData) 
     {
         [User updateUser:[responseData objectForKey:@"User"] inManagedObjectContext:self.managedObjectContext];
-        [self.infoTableView reloadData];
+        [self.infoTableView insertSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
+        NSArray * cells = [self.infoTableView visibleCells];
+        for ( EditInfoCell * cell in cells )
+            [cell setIsEditEnable:NO];
         self.progress.mode = MBProgressHUDModeText;
         self.progress.labelText = @"更新完成";
         [self.progress hide:YES afterDelay:1];
@@ -300,6 +306,10 @@ static id tempLeftBarItem;
     }
     failureBlock:^(NSError * error)
     {
+        [self.infoTableView insertSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
+        NSArray * cells = [self.infoTableView visibleCells];
+        for ( EditInfoCell * cell in cells )
+            [cell setIsEditEnable:NO];
         self.progress.mode = MBProgressHUDModeText;
         self.progress.labelText = @"更新失败";
         self.progress.square = YES;
@@ -322,7 +332,10 @@ static id tempLeftBarItem;
      {
          if (isFinished) _isKeyBoardAppear = NO;
      }];
-    [self.infoTableView reloadData];
+    [self.infoTableView insertSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
+    NSArray * cells = [self.infoTableView visibleCells];
+    for ( EditInfoCell * cell in cells )
+        [cell setIsEditEnable:NO];
 }
 
 - (IBAction)didClickAvatarButton:(UIButton *)sender {
@@ -380,7 +393,6 @@ static id tempLeftBarItem;
                                NSLog(@"%@",responseData);
                             #endif
                                [User updateUser:[responseData objectForKey:@"User"] inManagedObjectContext:self.managedObjectContext];
-                               [self.infoTableView reloadData];
                                self.progress.mode = MBProgressHUDModeText;
                                self.progress.labelText = @"更新完成";
                                [self.progress hide:YES afterDelay:1];
