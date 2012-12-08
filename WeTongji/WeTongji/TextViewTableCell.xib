@@ -46,7 +46,6 @@
 								<string key="NSFrame">{{5, 0}, {310, 355}}</string>
 								<reference key="NSSuperview" ref="748803771"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView"/>
 								<object class="NSColor" key="IBUIBackgroundColor">
 									<int key="NSColorSpace">1</int>
 									<bytes key="NSRGB">MC45Njg2Mjc0NTEgMC45Njg2Mjc0NTEgMC45Njg2Mjc0NTEAA</bytes>
@@ -153,7 +152,7 @@ hui1sOWKv+S4iuOAguW+iOaYjuaYvu+8jOeEtuiAjO+8jOWKoOWGheeJueavleern+aYrzM25bKB55qE
 									<int key="IBUIAutocapitalizationType">2</int>
 									<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								</object>
-								<int key="IBUIDataDetectorTypes">15</int>
+								<int key="IBUIDataDetectorTypes">11</int>
 								<object class="IBUIFontDescription" key="IBUIFontDescription">
 									<int key="type">2</int>
 									<double key="pointSize">16</double>
@@ -278,10 +277,6 @@ hui1sOWKv+S4iuOAguW+iOaYjuaYvu+8jOeEtuiAjO+8jOWKoOWGheeJueavleern+aYrzM25bKB55qE
 		</object>
 		<int key="IBDocument.localizationMode">0</int>
 		<string key="IBDocument.TargetRuntimeIdentifier">IBCocoaTouchFramework</string>
-		<object class="NSMutableDictionary" key="IBDocument.PluginDeclaredDependencyDefaults">
-			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaTouchPlugin.iPhoneOS</string>
-			<real value="1536" key="NS.object.0"/>
-		</object>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<string key="IBCocoaTouchPluginVersion">1930</string>
