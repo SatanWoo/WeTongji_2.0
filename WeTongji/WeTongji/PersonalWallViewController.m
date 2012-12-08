@@ -56,10 +56,10 @@
     self.recommandEvent = nil;
     self.recommendTitle.text = self.recommandEvent.title;
     [self.pageViewController clearPictureAndDescription];
-    UIImageView * imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"scaleview.png"]];
+    NSLog(@"%@",self.recommandEvent.imageLink);
+    UIImageView * imageView = [[UIImageView alloc] init];
     [imageView setImageWithURL:[NSURL URLWithString:self.recommandEvent.imageLink] placeholderImage:[UIImage imageNamed:@"default_pic_loading"]];
     [self.pageViewController addPicture:imageView withDescription:[NSNull null]];
-    NSLog(@"pageheight%f",self.pageViewController.view.frame.size.height);
 }
 
 - (void)configureTableView
@@ -230,6 +230,37 @@
                                    Event *event = [Event insertActivity:eventDict inManagedObjectContext:self.managedObjectContext];
                                    event.hidden = [NSNumber numberWithBool:NO];
                                }
+                               array = [responseData objectForKey:@"SchoolNews"];
+                               for(NSDictionary *infoDict in array)
+                               {
+                                   Information *information = [Information insertAnInformation:infoDict inCategory:GetInformationTypeSchoolNews inManagedObjectContext:self.managedObjectContext];
+                                   information.hiden = [NSNumber numberWithBool:NO];
+                               }
+                               array = [responseData objectForKey:@"Arounds"];
+                               for(NSDictionary *infoDict in array)
+                               {
+                                   Information *information = [Information insertAnInformation:infoDict inCategory:GetInformationTypeAround inManagedObjectContext:self.managedObjectContext];
+                                   information.hiden = [NSNumber numberWithBool:NO];
+                               }
+                               array = [responseData objectForKey:@"ForStaffs"];
+                               for(NSDictionary *infoDict in array)
+                               {
+                                   Information *information = [Information insertAnInformation:infoDict inCategory:GetInformationTypeForStaff inManagedObjectContext:self.managedObjectContext];
+                                   information.hiden = [NSNumber numberWithBool:NO];
+                               }
+                               array = [responseData objectForKey:@"ClubNews"];
+                               for(NSDictionary *infoDict in array)
+                               {
+                                   Information *information = [Information insertAnInformation:infoDict inCategory:GetInformationTypeClubNews inManagedObjectContext:self.managedObjectContext];
+                                   information.hiden = [NSNumber numberWithBool:NO];
+                               }
+                               array = [responseData objectForKey:@"People"];
+                               for(NSDictionary *starDict in array)
+                               {
+                                   Star *star = [Star insertStarWithDict:starDict inManagedObjectContext:self.managedObjectContext];
+                                   star.hiden = [NSNumber numberWithBool:NO];
+                               }
+
                                [self.scheduleTableView reloadData];
                            }
                             failureBlock:^(NSError * error)
@@ -254,6 +285,7 @@
                            }
                             failureBlock:^(NSError * error)
                            {
+                               [self configureTodayRecommend];
                            }];
     [request getActivitiesInChannel:nil inSort:nil Expired:NO nextPage:1];
     [client enqueueRequest:request];
@@ -262,6 +294,7 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    [self.scheduleTableView reloadData];
 }
 
 - (void)viewDidAppear:(BOOL)animated

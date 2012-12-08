@@ -1828,14 +1828,9 @@
         <class className="EditInfoViewController" superclassName="MiddleAbstractSecondViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/EditInfoViewController.h"/>
             <relationships>
-                <relationship kind="action" name="cancelEditClicked:"/>
-                <relationship kind="action" name="confirmEditClicked:"/>
-                <relationship kind="action" name="didClickAvatarButton:" candidateClass="UIButton"/>
-                <relationship kind="action" name="editClcked:"/>
                 <relationship kind="outlet" name="ConfirmEditBarButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="avatar" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="cancelEditButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="editButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="headerView" candidateClass="EditInfoHeaderView"/>
                 <relationship kind="outlet" name="infoTableView" candidateClass="UITableView"/>
                 <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
@@ -1896,6 +1891,7 @@
         <class className="PersonalWallViewController" superclassName="MiddleAbstractViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PersonalWallViewController.h"/>
             <relationships>
+                <relationship kind="action" name="headerButtonClicked:"/>
                 <relationship kind="outlet" name="headerBoard" candidateClass="UIView"/>
                 <relationship kind="outlet" name="recommendButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="recommendTitle" candidateClass="UILabel"/>
@@ -1983,7 +1979,6 @@
         <class className="UserIntroViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UserIntroViewController.h"/>
             <relationships>
-                <relationship kind="action" name="directLogin:"/>
                 <relationship kind="action" name="directUser:"/>
                 <relationship kind="outlet" name="bottomBar" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="directUser" candidateClass="UIButton"/>
@@ -2020,7 +2015,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="sR0-eS-rDJ"/>
         <segue reference="5c9-iE-HEP"/>
-        <segue reference="6k4-ha-E9F"/>
     </inferredMetricsTieBreakers>
 </document>
