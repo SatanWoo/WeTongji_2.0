@@ -135,7 +135,7 @@
     Event * result = nil;
     
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    NSDate * today = [NSDate dateWithTimeIntervalSinceNow:8*60*60];
+    NSDate * today = [NSDate dateWithTimeIntervalSinceNow:32*60*60];
     NSInteger interval = [today timeIntervalSince1970] / DAY_TIME_INTERVAL;
     interval = interval * DAY_TIME_INTERVAL;
     today = [NSDate dateWithTimeIntervalSince1970:interval];
