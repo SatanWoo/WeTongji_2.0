@@ -41,10 +41,14 @@
     if ( _tableList == nil )
         [self.iconTableView  registerNib:[UINib nibWithNibName:@"FavoriteIconCell" bundle:nil] forCellReuseIdentifier:@"FavoriteIconCell"];
     _tableList = tableList;
-    if ( _tableList.count > 4 )
+    NSMutableArray * tempList = [[NSMutableArray alloc] init];
+    for ( id element in _tableList )
     {
-        _tableList = [[NSArray alloc] initWithObjects:_tableList[0],_tableList[1],_tableList[2],_tableList[3], nil];
+        if ( [element isKindOfClass:[Event class]] || [element isKindOfClass:[Star class]])
+            [tempList addObject:element];
+        if ( tempList.count >= 4 ) break;
     }
+    _tableList = [NSArray arrayWithArray:tempList];
     [self.iconTableView reloadData];
 }
 
