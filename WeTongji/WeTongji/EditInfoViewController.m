@@ -253,7 +253,7 @@ static id tempLeftBarItem;
 {
     self.navigationItem.leftBarButtonItem = tempLeftBarItem;
     self.navigationItem.rightBarButtonItem = nil;
-    [self configureNavBar];
+    //[self configureNavBar];
     _isEditEnable = NO;
     self.infoList = nil;
     _isKeyBoardAppear = NO;
@@ -300,6 +300,7 @@ static id tempLeftBarItem;
         self.progress.mode = MBProgressHUDModeText;
         self.progress.labelText = @"更新完成";
         [self.progress hide:YES afterDelay:1];
+        [self configureNavBar];
     #ifdef DEBUG
         NSLog(@"%@",responseData);
     #endif
@@ -315,6 +316,7 @@ static id tempLeftBarItem;
         self.progress.square = YES;
         self.progress.detailsLabelText = [[error userInfo] objectForKey:@"errorDesc"];
         [self.progress hide:YES afterDelay:1];
+        [self configureNavBar];
     }];
     [request updateUserDisplayName:nil email:email weiboName:weiboName phoneNum:phone qqAccount:qq];
     [client enqueueRequest:request];
