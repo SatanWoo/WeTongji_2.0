@@ -22,6 +22,7 @@
 #define kXPos 278
 #define kYPos 69
 #define kOffSet 6
+#define kMaxFrameWidth 182
 
 @interface ArrangementViewController () <UITableViewDataSource, UITableViewDelegate>
 {
@@ -110,6 +111,20 @@
         _sectionList = [[NSMutableArray alloc] init];
     }
     return _sectionList;
+}
+
+- (void)resizeCell:(ArrangementCell *)cell
+{
+    [cell.locationLabel sizeToFit];
+    CGRect oldFrame = cell.locationLabel.frame;
+    float maxLength = oldFrame.size.width > kMaxFrameWidth ? kMaxFrameWidth : oldFrame.size.width;
+    oldFrame.size.width = maxLength;
+    oldFrame.origin.x = kXPos - maxLength;
+    oldFrame.origin.y = kYPos;
+    cell.locationLabel.frame = oldFrame;
+    CGRect iconFrame = cell.locationIcon.frame;
+    iconFrame.origin.x = oldFrame.origin.x - kOffSet - cell.locationIcon.frame.size.width;
+    cell.locationIcon.frame = iconFrame;
 }
 
 -(NSDate *) endDate
@@ -237,15 +252,8 @@
             ((ArrangementCell *)cell).titleLabel.text = activity.what;
             ((ArrangementCell *)cell).locationLabel.text = activity.where;
             
-            [((ArrangementCell *)cell).locationLabel sizeToFit];
-            CGRect oldFrame = ((ArrangementCell *)cell).locationLabel.frame;
-            oldFrame.origin.x = kXPos - oldFrame.size.width;
-            oldFrame.origin.y = kYPos;
-            ((ArrangementCell *)cell).locationLabel.frame = oldFrame;
-            CGRect iconFrame = ((ArrangementCell *)cell).locationIcon.frame;
-            iconFrame.origin.x = oldFrame.origin.x - kOffSet - ((ArrangementCell *)cell).locationIcon.frame.size.width;
-            ((ArrangementCell *)cell).locationIcon.frame = iconFrame;
-            
+            [self resizeCell:((ArrangementCell *)cell)];
+                        
             if ( [activity isKindOfClass:[Event class]] )
             {
                 [((ArrangementCell *)cell).colorBall setImage:[UIImage imageNamed:@"dot_yellow"]];
