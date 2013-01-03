@@ -43,7 +43,7 @@
 							<object class="IBUIImageView" id="708422486">
 								<reference key="NSNextResponder" ref="368128722"/>
 								<int key="NSvFlags">256</int>
-								<string key="NSFrameSize">{320, 84}</string>
+								<string key="NSFrameSize">{320, 83}</string>
 								<reference key="NSSuperview" ref="368128722"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="626526230"/>
@@ -189,6 +189,7 @@
 								<string key="NSFrame">{{0, 81}, {320, 1}}</string>
 								<reference key="NSSuperview" ref="368128722"/>
 								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -420,7 +421,7 @@
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
 			<string key="celebrity_avatar_list.png">{52, 52}</string>
-			<string key="list_cell.png">{320, 75}</string>
+			<string key="list_cell.png">{320, 73}</string>
 			<string key="list_partition_line.png">{320, 1}</string>
 		</dictionary>
 		<string key="IBCocoaTouchPluginVersion">1930</string>
