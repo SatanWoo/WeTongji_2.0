@@ -193,6 +193,7 @@
     if ( [self.event.canFavorite boolValue] || [self.information.canFavorite boolValue] || [self.star.canFavorite boolValue] );else [self.favoriteButton setImage:[UIImage imageNamed:@"favourite_hl"] forState:UIControlStateNormal];
     if ( [self.event.canSchedule boolValue] );else [self.addScheduleButton setImage:[UIImage imageNamed:@"add_to_schedule_hl"] forState:UIControlStateNormal];
 }
+
 - (IBAction)likeClicked:(id)sender
 {
     if ( !self.isLogIn )
@@ -234,9 +235,9 @@
                                    self.likeNumber.text = [NSString stringWithFormat:@"%@",self.information.like];
                                if ( self.star )
                                    self.likeNumber.text = [NSString stringWithFormat:@"%@",self.star.like];
-                               self.event.canLike = [NSNumber numberWithBool:!self.event.canLike.boolValue];
-                               self.information.canLike = [NSNumber numberWithBool:!self.information.canLike.boolValue];
-                               self.star.canLike = [NSNumber numberWithBool:!self.star.canLike.boolValue];
+                               //self.event.canLike = [NSNumber numberWithBool:!self.event.canLike.boolValue];
+                               //self.information.canLike = [NSNumber numberWithBool:!self.information.canLike.boolValue];
+                               //self.star.canLike = [NSNumber numberWithBool:!self.star.canLike.boolValue];
                                [self.likeButton setImage:[UIImage imageNamed:purposeImage] forState:UIControlStateNormal];
                            }
                             failureBlock:^(NSError * error)
@@ -276,6 +277,8 @@
     }
     if ( self.star )
     {
+        self.star.canLike = [NSNumber numberWithBool:!self.star.canLike.boolValue];
+        NSLog(@"Now self.star.cankie is %d",self.star.canLike.boolValue);
         if ( [self.star.canLike boolValue] )
         {
             [request likeStar:self.star.starId];
@@ -332,6 +335,7 @@
                                self.event.canFavorite = [NSNumber numberWithBool:!self.event.canFavorite.boolValue];
                                self.information.canFavorite = [NSNumber numberWithBool:!self.information.canFavorite.boolValue];
                                self.star.canFavorite = [NSNumber numberWithBool:!self.star.canFavorite.boolValue];
+                    
                                [self.favoriteButton setImage:[UIImage imageNamed:purposeImage] forState:UIControlStateNormal];
                            }
                             failureBlock:^(NSError * error)
@@ -490,7 +494,7 @@
     self.starSummary.text = star.words;
     self.likeNumber.text = [star.like stringValue];
     
-    NSLog(@"%@",star.like);
+    NSLog(@"star.canlike is %d",[star.canLike boolValue]);
     self.favoriteNumber.text = [star.favorite stringValue];
     self.starNumber.text = [NSString stringWithFormat:@"第%@期",star.count];
     _star = star;

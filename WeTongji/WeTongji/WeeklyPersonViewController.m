@@ -15,7 +15,7 @@
 #import "Star+Addition.h"
 #import "SchoolNewsViewController.h"
 
-@interface WeeklyPersonViewController () <UITableViewDataSource, UITableViewDelegate, PullRefreshManagementDelegate>
+@interface WeeklyPersonViewController () <UITableViewDataSource, UITableViewDelegate, PullRefreshManagementDelegate, UINavigationControllerDelegate>
 @property (nonatomic ,strong) NSArray * starList;
 @property (nonatomic ,strong) PullRefreshManagement * pullRefreshManagement;
 @property (nonatomic) NSInteger nextPage;
@@ -60,7 +60,7 @@
     [self.personTableView registerNib:[UINib nibWithNibName:@"WeeklyPersonCell" bundle:nil] forCellReuseIdentifier:kWeeklyPersonCell];
     [self.personTableView registerNib:[UINib nibWithNibName:@"WeeklyPersonHeaderCell" bundle:nil] forCellReuseIdentifier:kWeeklyPersonHeaderCell];
     self.pullRefreshManagement.delegate = self;
-    [self.pullRefreshManagement firstTrigger];
+    //[self.pullRefreshManagement firstTrigger];
 }
 
 - (void)configureWeeklyPersonCellBg:(NSString *)imageName forCell:(WeeklyPersonCell *)cell
@@ -74,6 +74,7 @@
 {
     [super viewDidLoad];
     [self configureTableView];
+    self.navigationController.delegate = self;
 }
 
 - (void)viewDidUnload
@@ -245,6 +246,16 @@ NSInteger tempRow;
 {
     [self.pullRefreshManagement scrollViewDidEndDragging:scrollView willDecelerate:decelerat];
 }
+
+#pragma mark - UINavigationControllerDelegate
+- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
+{
+    if (viewController == self) {
+        [self.pullRefreshManagement firstTrigger];
+        [self.personTableView reloadData];
+    }
+}
+
 
 
 @end

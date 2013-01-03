@@ -70,7 +70,6 @@
     [self.view insertSubview:self.pageViewController.view belowSubview:self.newsTableView];
     self.newsTableView.frame = CGRectMake(0, 0, 320, self.newsTableView.frame.size.height + (self.headerView.bounds.size.height - kContentOffset));
     originNewsTableViewCenter = [self.newsTableView center];
-   
 }
 
 - (void)renderBorder:(UIView *)view
@@ -236,12 +235,6 @@
     UISwipeGestureRecognizer *leftGesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(goBack:)];
     leftGesture.direction = UISwipeGestureRecognizerDirectionRight;
     [self.view addGestureRecognizer:leftGesture];
-}
-
--(void) viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    [self.navigationController setNavigationBarHidden:YES animated:YES];
     if ( self.event ) {
         self.currentCell.textView.text = self.event.detail;
         [self configureCurrentCell];
@@ -252,6 +245,12 @@
         self.currentCell.textView.text = self.star.detail;
         [self configureCurrentCell];
     }
+}
+
+-(void) viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
 }
 
 - (void)viewDidUnload
