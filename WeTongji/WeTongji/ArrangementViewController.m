@@ -185,6 +185,12 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self performSegueWithIdentifier:kClassViewControllerSegue sender:self];
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+}
+
 #pragma mark - UITableViewDataSource
 - (float)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -270,6 +276,7 @@
                 [((ArrangementCell *)cell).colorBall setImage:[UIImage imageNamed:@"dot_red"]];
             }
         }
+        cell.accessoryType = UITableViewCellAccessoryNone;
     }
     return cell;
 }

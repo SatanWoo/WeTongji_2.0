@@ -26,6 +26,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self configureScrollView];
 	// Do any additional setup after loading the view.
 }
 
@@ -33,6 +34,18 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)viewDidUnload {
+    [self setScrollView:nil];
+    [super viewDidUnload];
+}
+
+- (void)configureScrollView
+{
+    CGRect frame = self.scrollView.frame;
+    frame.size.height += 10;
+    self.scrollView.contentSize = frame.size;
 }
 
 @end

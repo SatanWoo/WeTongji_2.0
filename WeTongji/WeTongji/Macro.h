@@ -66,6 +66,7 @@
 #define kSettingViewControllerSegue @"kSettingViewController"
 #define kUpdatePasswordViewControllerSegue @"kUpdatePasswordViewController"
 #define kSchoolPreferenceViewControllerSegue @"kSchoolPreferenceViewController"
+#define kClassViewControllerSegue @"ClassViewControllerSegue"
 
 // Slide
 #define kMenuFullWidth 320.0f

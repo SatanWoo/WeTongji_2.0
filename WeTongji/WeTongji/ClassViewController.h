@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MiddleAbstractSecondViewController.h"
 
-@interface ClassViewController : UIViewController
+@interface ClassViewController : MiddleAbstractSecondViewController
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @end
