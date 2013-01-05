@@ -11,6 +11,7 @@
 
 @interface MyFavortieViewController : MiddleAbstractSecondViewController
 @property (weak, nonatomic) IBOutlet UITableView *contentTableView;
+@property (weak, nonatomic) IBOutlet UIView *reminderView;
 
 
 @end

@@ -11,6 +11,7 @@
 @interface FavoriteCell : UITableViewCell
 
 @property (nonatomic ,weak) IBOutlet UIView *iconView;
+@property (nonatomic ,weak) IBOutlet UIView *reminderView;
 @property (weak, nonatomic) IBOutlet UITableView *iconTableView;
 @property (nonatomic,strong) NSArray * tableList;
 

@@ -353,8 +353,18 @@
         if (cell == nil) {
             cell = [[FavoriteCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kFavoriteCell];
         }
-        [cell setTableList:[AbstractCollection allCollectionInManagedObjectContext:self.managedObjectContext]];
-        [cell rotate];
+        NSArray *result = [AbstractCollection allCollectionInManagedObjectContext:self.managedObjectContext];
+        if (result == NULL || result.count == 0) {
+            [cell.iconTableView setHidden:YES];
+            [cell.iconView setHidden:YES];
+            cell.reminderView.hidden = NO;
+        } else {
+            cell.reminderView.hidden = YES;
+            cell.iconView.hidden = NO;
+            cell.iconTableView.hidden = NO;
+            [cell setTableList:result];
+            [cell rotate];
+        }
         return cell;
     } else if (indexPath.section == 2){
         PersonalInfoCell *cell = [tableView dequeueReusableCellWithIdentifier:kPersonalInfoCell];

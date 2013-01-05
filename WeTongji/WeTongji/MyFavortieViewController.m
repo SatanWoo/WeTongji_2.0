@@ -75,6 +75,7 @@
 
 - (void)viewDidUnload
 {
+    [self setReminderView:nil];
     [super viewDidUnload];
 }
 
@@ -112,6 +113,16 @@ static NSInteger tempRow;
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    if ([self.myFavoriteList count] != 0) {
+        self.reminderView.hidden = YES;
+        self.contentTableView.hidden = NO;
+    } else {
+        self.reminderView.hidden = NO;
+        self.contentTableView.hidden = YES;
+    }
+}
 
 #pragma mark - UITableViewDataSource
 
@@ -173,7 +184,6 @@ static NSInteger tempRow;
 {
     self.myFavoriteList = nil;
     [self.contentTableView reloadData];
-    
 }
 
 - (void)loadMoreData
