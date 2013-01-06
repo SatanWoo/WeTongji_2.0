@@ -29,7 +29,7 @@
 {
     [super viewDidLoad];
     [self configureScrollView];
-    [self configureContent];
+    //[self configureContent];
 	// Do any additional setup after loading the view.
 }
 
@@ -53,9 +53,35 @@
     [super viewDidUnload];
 }
 
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [self resetAllContent];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [self configureContent];
+}
+
+- (void)resetAllContent
+{
+    self.timeLabel.text = nil;
+    [self.timeLabel sizeToFit];
+    self.classroomLabel.text = nil;
+    self.courseNumberLabel.text = nil;
+    self.creditLabel.text = nil;
+    self.courseDurationLabel.text = nil;
+    
+    self.courseName.text = nil;
+    self.teacher.text = nil;
+    
+    self.examClassroomLabel.text = nil;
+    self.examTimeLabel.text = nil;
+}
+
 - (void)configureContent
 {
-    self.timeLabel.text =  [NSString timeConvertFromBeginDate:self.course.begin_time endDate:self.course.end_time];
+    self.timeLabel.text = [NSString timeConvertFromBeginDate:self.course.begin_time endDate:self.course.end_time];
     [self.timeLabel sizeToFit];
     self.classroomLabel.text = self.course.where;
     self.courseNumberLabel.text = self.course.course_id;
@@ -68,6 +94,9 @@
     if (self.exam == nil) {
         self.examClassroomLabel.text = @"无考试";
         self.examTimeLabel.text = @"无考试";
+    } else {
+        self.examClassroomLabel.text = self.exam.where;
+        self.examTimeLabel.text = [NSString timeConvertFromBeginDate:self.exam.begin_time endDate:self.exam.end_time];
     }
 }
 

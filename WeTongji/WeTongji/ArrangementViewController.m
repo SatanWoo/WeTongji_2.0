@@ -185,8 +185,14 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self performSegueWithIdentifier:kClassViewControllerSegue sender:self];
     self.selectedCourse = indexPath;
+    id activity = self.arrangeList[indexPath.section][indexPath.row];
+    if ([activity isKindOfClass:[Event class]]) {
+        [self performSegueWithIdentifier:kArrangeToDetailSegue sender:self];
+    } else {
+        [self performSegueWithIdentifier:kClassViewControllerSegue sender:self];
+
+    }
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
 }
 
@@ -296,12 +302,52 @@
 #pragma mark - Segue
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    if ([segue.identifier isEqualToString:kArrangeToDetailSegue]) {
+        UIViewController *controller = segue.destinationViewController;
+        if ([controller respondsToSelector:@selector(setEvent:)]) {
+            [controller performSelector:@selector(setEvent:) withObject:self.arrangeList[self.selectedCourse.section][self.selectedCourse.row]];
+        }
+    }
     ClassViewController * controller = segue.destinationViewController;
     id activity = self.arrangeList[self.selectedCourse.section][self.selectedCourse.row];
     if ([activity isKindOfClass:[Course class]]) {
         controller.course = activity;
+        int i = 0;
+        while (i < [self.arrangeList count]) {
+            BOOL isFound = NO;
+            for (id ex in self.arrangeList[i]) {
+                if ([ex isKindOfClass:[Exam class]]) {
+                    if ( [((Exam *)ex).nO isEqualToString:((Course *)activity).course_id]) {
+                        controller.exam = ex;
+                        isFound = YES;
+                        break;
+                    }
+                }
+            }
+            if (isFound) {
+                break;
+            }
+            i++;
+        }
     } else if ([activity isKindOfClass:[Exam class]]) {
-        
+        int i = 0;
+        while (i < [self.arrangeList count]) {
+            BOOL isFound = NO;
+            for (id ex in self.arrangeList[i]) {
+                if ([ex isKindOfClass:[Course class]]) {
+                    if ( [((Course *)ex).course_id isEqualToString:((Exam *)activity).nO]) {
+                        controller.course = ex;
+                        isFound = YES;
+                        break;
+                    }
+                }
+            }
+            if (isFound) {
+                break;
+            }
+            i++;
+        }
+        controller.exam = activity;
     }
 }
 
