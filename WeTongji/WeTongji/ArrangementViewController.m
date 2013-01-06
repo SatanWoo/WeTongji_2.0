@@ -17,6 +17,7 @@
 #import "Event+Addition.h"
 #import "Exam+Addition.h"
 #import "Course+Addition.h"
+#import "ClassViewController.h"
 
 #define DAY_TIME_INTERVAL (60 * 60 * 24)
 #define kXPos 278
@@ -34,7 +35,8 @@
 @property (strong, nonatomic) NSMutableArray * sectionList;
 @property (strong, nonatomic) NSDate * beginDate;
 @property (strong, nonatomic) NSDate * endDate;
-@property (strong, nonatomic) NSIndexPath * todayIndexPath;
+@property (strong, nonatomic) NSIndexPath *todayIndexPath;
+@property (strong, nonatomic) NSIndexPath *selectedCourse;
 - (void)configureTableView;
 @end
 
@@ -42,6 +44,7 @@
 @synthesize arrangementTableView;
 @synthesize endDate=_endDate;
 @synthesize beginDate=_beginDate;
+@synthesize selectedCourse = _selectedCourse;
 
 -(NSMutableArray *) arrangeList
 {
@@ -61,10 +64,7 @@
                 if ( index < [tempList count] - 1 )
                     index++;
                 else break;
-            }
-            else
-            if ( [self.endDate compare:thing.begin_time] <= 0 )
-            {
+            } else if ( [self.endDate compare:thing.begin_time] <= 0 ) {
                 if ( [now timeIntervalSinceDate:self.beginDate] >= 0 &&
                     [now timeIntervalSinceDate:self.endDate] < 0 )
                 {
@@ -74,9 +74,7 @@
                     [self.sectionList addObject:self.beginDate];
                 }
                 self.beginDate = [self.beginDate dateByAddingTimeInterval:DAY_TIME_INTERVAL];
-            }
-            else
-            {
+            } else {
                 NSMutableArray * rowList = [[NSMutableArray alloc] init];
                 while ( [thing.begin_time compare:self.endDate] < 0 )
                 {
@@ -188,6 +186,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [self performSegueWithIdentifier:kClassViewControllerSegue sender:self];
+    self.selectedCourse = indexPath;
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
 }
 
@@ -291,6 +290,18 @@
     if ( scrollView == self.arrangementTableView )
     {
         self.sectionTableView.contentOffset = self.arrangementTableView.contentOffset;
+    }
+}
+
+#pragma mark - Segue
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    ClassViewController * controller = segue.destinationViewController;
+    id activity = self.arrangeList[self.selectedCourse.section][self.selectedCourse.row];
+    if ([activity isKindOfClass:[Course class]]) {
+        controller.course = activity;
+    } else if ([activity isKindOfClass:[Exam class]]) {
+        
     }
 }
 

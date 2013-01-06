@@ -1169,51 +1169,51 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="周二 10:00 - 11:00 （单周）" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Amz-dX-Cce">
-                                        <rect key="frame" x="76" y="71" width="216" height="21"/>
+                                        <rect key="frame" x="69" y="71" width="216" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" white="0.29971018145161288" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="1月8号 10:00 - 10:30" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MIs-pI-CvK">
-                                        <rect key="frame" x="76" y="321" width="216" height="21"/>
+                                        <rect key="frame" x="73" y="321" width="216" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" white="0.29971018150000001" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="专用教室" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kIg-E1-Ocs">
-                                        <rect key="frame" x="76" y="115" width="224" height="21"/>
+                                        <rect key="frame" x="69" y="115" width="224" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" white="0.29971018150000001" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="南楼101" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kYJ-RU-Rp1">
-                                        <rect key="frame" x="76" y="365" width="224" height="21"/>
+                                        <rect key="frame" x="73" y="366" width="224" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" white="0.29971018150000001" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="000000" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sOV-AO-Vc1">
-                                        <rect key="frame" x="76" y="163" width="57" height="21"/>
+                                        <rect key="frame" x="73" y="163" width="108" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" white="0.29971018150000001" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="3.0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="HpJ-OX-hff">
-                                        <rect key="frame" x="76" y="207" width="24" height="21"/>
+                                        <rect key="frame" x="74" y="207" width="24" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" white="0.29971018150000001" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="32" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XPH-KC-teH">
-                                        <rect key="frame" x="225" y="206" width="37" height="21"/>
+                                        <rect key="frame" x="223" y="206" width="37" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" white="0.29971018150000001" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -1225,7 +1225,16 @@
                     </view>
                     <navigationItem key="navigationItem" title="课程详情" id="7sd-G2-MDy"/>
                     <connections>
+                        <outlet property="classroomLabel" destination="kIg-E1-Ocs" id="g01-fb-FEZ"/>
+                        <outlet property="courseDurationLabel" destination="XPH-KC-teH" id="SQd-eU-B3Y"/>
+                        <outlet property="courseName" destination="g51-lB-ndd" id="Bom-rB-8rn"/>
+                        <outlet property="courseNumberLabel" destination="sOV-AO-Vc1" id="5Ih-8l-Zch"/>
+                        <outlet property="creditLabel" destination="HpJ-OX-hff" id="Izg-Gt-DE8"/>
+                        <outlet property="examClassroomLabel" destination="kYJ-RU-Rp1" id="da3-1O-cCi"/>
+                        <outlet property="examTimeLabel" destination="MIs-pI-CvK" id="paQ-QC-w30"/>
                         <outlet property="scrollView" destination="qlL-Jj-f6q" id="Vdu-Ug-dvJ"/>
+                        <outlet property="teacher" destination="u7S-jt-lGy" id="0ZP-f1-c1g"/>
+                        <outlet property="timeLabel" destination="Amz-dX-Cce" id="VkB-uu-nkO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v9s-v1-w17" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2013,7 +2022,16 @@
         <class className="ClassViewController" superclassName="MiddleAbstractSecondViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ClassViewController.h"/>
             <relationships>
+                <relationship kind="outlet" name="classroomLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="courseDurationLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="courseName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="courseNumberLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="creditLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="examClassroomLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="examTimeLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="teacher" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="timeLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="CoreDataViewController" superclassName="UIViewController">

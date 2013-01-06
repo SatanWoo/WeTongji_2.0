@@ -7,12 +7,14 @@
 //
 
 #import "ClassViewController.h"
+#import "NSString+Addition.h"
 
 @interface ClassViewController ()
 
 @end
 
 @implementation ClassViewController
+@synthesize course = _course;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,6 +29,7 @@
 {
     [super viewDidLoad];
     [self configureScrollView];
+    [self configureContent];
 	// Do any additional setup after loading the view.
 }
 
@@ -38,7 +41,34 @@
 
 - (void)viewDidUnload {
     [self setScrollView:nil];
+    [self setTimeLabel:nil];
+    [self setClassroomLabel:nil];
+    [self setCourseNumberLabel:nil];
+    [self setCreditLabel:nil];
+    [self setCourseDurationLabel:nil];
+    [self setExamTimeLabel:nil];
+    [self setExamClassroomLabel:nil];
+    [self setCourseName:nil];
+    [self setTeacher:nil];
     [super viewDidUnload];
+}
+
+- (void)configureContent
+{
+    self.timeLabel.text =  [NSString timeConvertFromBeginDate:self.course.begin_time endDate:self.course.end_time];
+    [self.timeLabel sizeToFit];
+    self.classroomLabel.text = self.course.where;
+    self.courseNumberLabel.text = self.course.course_id;
+    self.creditLabel.text = [self.course.credit_point stringValue];
+    self.courseDurationLabel.text = [self.course.credit_hours stringValue];
+    
+    self.courseName.text = self.course.what;
+    self.teacher.text = self.course.teacher_name;
+    
+    if (self.exam == nil) {
+        self.examClassroomLabel.text = @"无考试";
+        self.examTimeLabel.text = @"无考试";
+    }
 }
 
 - (void)configureScrollView
