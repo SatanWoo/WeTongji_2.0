@@ -125,8 +125,15 @@
     NSSortDescriptor *sort = [[NSSortDescriptor alloc] initWithKey:@"like" ascending:NO];
     [request setSortDescriptors:[[NSArray alloc] initWithObjects:sort , nil]];
     NSArray *list = [context executeFetchRequest:request error:NULL];
-    if ( list.count )
-        result = list[0];
+    if ( list.count ) {
+        for (Event *event in list) {
+            if ([event.end_time compare:[NSDate date]] >= 0) {
+                result = event;
+                break;
+            }
+        }
+    }
+       
     return result;
 }
 
