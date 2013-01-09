@@ -50,6 +50,7 @@
 #define kMyFavoriteEventCell @"kMyFavoriteEventCell"
 #define kMyFavoriteInfoCell @"kMyFavoriteInfoCell"
 #define kMyFavoriteStarCell @"kMyFavoriteStarCell"
+#define kArrangementVacationCell @"kArrangementVacationCell"
 
 // Segue
 #define kMyFavortieViewControllerSegue @"kMyFavortieViewController"

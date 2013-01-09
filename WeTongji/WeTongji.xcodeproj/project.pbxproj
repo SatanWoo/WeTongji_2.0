@@ -151,6 +151,9 @@
 		036EACBE1664ED05000A66CF /* celebrity_avatar_detail@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 036EACBA1664ED05000A66CF /* celebrity_avatar_detail@2x.png */; };
 		038DBA071695829500B9B344 /* list_cell.png in Resources */ = {isa = PBXBuildFile; fileRef = 038DBA051695829500B9B344 /* list_cell.png */; };
 		038DBA081695829500B9B344 /* list_cell@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 038DBA061695829500B9B344 /* list_cell@2x.png */; };
+		038F9946169DAC4F00139544 /* vacation_mark.png in Resources */ = {isa = PBXBuildFile; fileRef = 038F9944169DAC4F00139544 /* vacation_mark.png */; };
+		038F9947169DAC4F00139544 /* vacation_mark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 038F9945169DAC4F00139544 /* vacation_mark@2x.png */; };
+		038F9949169DAC7A00139544 /* ArrangementVacationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 038F9948169DAC7900139544 /* ArrangementVacationCell.xib */; };
 		0398838A165D395500A31620 /* UpdatePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03988389165D395500A31620 /* UpdatePasswordViewController.m */; };
 		0398838D165D39F100A31620 /* change_password_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 0398838B165D39F100A31620 /* change_password_btn.png */; };
 		0398838E165D39F100A31620 /* change_password_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0398838C165D39F100A31620 /* change_password_btn@2x.png */; };
@@ -777,6 +780,9 @@
 		038DBA051695829500B9B344 /* list_cell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = list_cell.png; sourceTree = "<group>"; };
 		038DBA061695829500B9B344 /* list_cell@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "list_cell@2x.png"; sourceTree = "<group>"; };
 		038DBA1A169588E900B9B344 /* WeTongjiSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = WeTongjiSDK.xcodeproj; path = ../../wetongji_ios_sdk/WeTongjiSDK.xcodeproj; sourceTree = "<group>"; };
+		038F9944169DAC4F00139544 /* vacation_mark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vacation_mark.png; sourceTree = "<group>"; };
+		038F9945169DAC4F00139544 /* vacation_mark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "vacation_mark@2x.png"; sourceTree = "<group>"; };
+		038F9948169DAC7900139544 /* ArrangementVacationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArrangementVacationCell.xib; sourceTree = "<group>"; };
 		03988388165D395500A31620 /* UpdatePasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdatePasswordViewController.h; sourceTree = "<group>"; };
 		03988389165D395500A31620 /* UpdatePasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdatePasswordViewController.m; sourceTree = "<group>"; };
 		0398838B165D39F100A31620 /* change_password_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = change_password_btn.png; sourceTree = "<group>"; };
@@ -1469,6 +1475,7 @@
 		03435A571698590C006AE436 /* v2.0.1 */ = {
 			isa = PBXGroup;
 			children = (
+				038F9943169DAB9E00139544 /* Arrangement */,
 				03435A5916985929006AE436 /* MyFavorite */,
 				03435A581698591B006AE436 /* Class */,
 			);
@@ -1553,6 +1560,15 @@
 				038DBA22169588E900B9B344 /* WeTongjiSDK.framework */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		038F9943169DAB9E00139544 /* Arrangement */ = {
+			isa = PBXGroup;
+			children = (
+				038F9944169DAC4F00139544 /* vacation_mark.png */,
+				038F9945169DAC4F00139544 /* vacation_mark@2x.png */,
+			);
+			name = Arrangement;
 			sourceTree = "<group>";
 		};
 		03988386165D37D200A31620 /* updatepassword */ = {
@@ -2234,6 +2250,7 @@
 				E5D2447B1647BF8900DA43DD /* ArrangementCell.m */,
 				E5D2447E1647BFA900DA43DD /* ArrangementCell.xib */,
 				FFB19D90165D5E6D00DE9291 /* ArrangementNothingCell.xib */,
+				038F9948169DAC7900139544 /* ArrangementVacationCell.xib */,
 				03D540D816513D920070F727 /* EditInfoCell.h */,
 				03D540D916513D920070F727 /* EditInfoCell.m */,
 				03D540DB16513DA20070F727 /* EditInfoCell.xib */,
@@ -3161,6 +3178,9 @@
 				03435A7116985938006AE436 /* course_time@2x.png in Resources */,
 				03435A7416985947006AE436 /* texture.png in Resources */,
 				03435A7516985947006AE436 /* texture@2x.png in Resources */,
+				038F9946169DAC4F00139544 /* vacation_mark.png in Resources */,
+				038F9947169DAC4F00139544 /* vacation_mark@2x.png in Resources */,
+				038F9949169DAC7A00139544 /* ArrangementVacationCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

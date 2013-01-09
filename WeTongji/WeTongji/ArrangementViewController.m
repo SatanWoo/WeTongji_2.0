@@ -148,6 +148,7 @@
 {
     [self.arrangementTableView registerNib:[UINib nibWithNibName:@"ArrangementCell" bundle:nil] forCellReuseIdentifier:kArrangementCell];
     [self.arrangementTableView registerNib:[UINib nibWithNibName:@"ArrangementNothingCell" bundle:nil] forCellReuseIdentifier:kArrangementNothingCell];
+    [self.arrangementTableView registerNib:[UINib nibWithNibName:@"ArrangementVacationCell" bundle:nil] forCellReuseIdentifier:kArrangementVacationCell];
     self.arrangementTableView.backgroundColor = [UIColor clearColor];
     [self.arrangementTableView reloadData];
 }
@@ -249,9 +250,9 @@
             [activity isKindOfClass:[Course class]])
         {
             identifier = kArrangementCell;
-        }
-        else
+        } else if ([[NSDate date] compare:]){
             identifier = kArrangementNothingCell;
+        }
         cell = [tableView dequeueReusableCellWithIdentifier:identifier];
         if (cell == nil) {
             cell = [[ArrangementCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];}
