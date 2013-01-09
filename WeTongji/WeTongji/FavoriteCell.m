@@ -46,7 +46,7 @@
     {
         if ( [element isKindOfClass:[Event class]] || [element isKindOfClass:[Star class]])
             [tempList addObject:element];
-        if ( tempList.count >= 4 ) break;
+        if ( tempList.count >= 5 ) break;
     }
     _tableList = [NSArray arrayWithArray:tempList];
     [self.iconTableView reloadData];
@@ -102,7 +102,7 @@
 
 -(float)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 55;
+    return 45;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
