@@ -103,7 +103,6 @@
 										<string key="NSFrame">{{0, 11}, {238, 35}}</string>
 										<reference key="NSSuperview" ref="473078171"/>
 										<reference key="NSWindow"/>
-										<reference key="NSNextKeyView"/>
 										<string key="NSReuseIdentifierKey">_NS:9</string>
 										<bool key="IBUIOpaque">NO</bool>
 										<bool key="IBUIClipsSubviews">YES</bool>
@@ -118,14 +117,12 @@
 										<nil key="IBUIHighlightedColor"/>
 										<int key="IBUIBaselineAdjustment">0</int>
 										<int key="IBUINumberOfLines">2</int>
-										<object class="IBUIFontDescription" key="IBUIFontDescription" id="746922410">
-											<string key="name">STHeitiSC-Medium</string>
-											<string key="family">Heiti SC</string>
-											<int key="traits">2</int>
+										<object class="IBUIFontDescription" key="IBUIFontDescription" id="723794525">
+											<int key="type">1</int>
 											<double key="pointSize">15</double>
 										</object>
-										<object class="NSFont" key="IBUIFont" id="333670980">
-											<string key="NSName">STHeitiSC-Medium</string>
+										<object class="NSFont" key="IBUIFont" id="149924075">
+											<string key="NSName">Helvetica</string>
 											<double key="NSSize">15</double>
 											<int key="NSfFlags">16</int>
 										</object>
@@ -149,8 +146,8 @@
 										<nil key="IBUIHighlightedColor"/>
 										<int key="IBUIBaselineAdjustment">0</int>
 										<int key="IBUINumberOfLines">2</int>
-										<reference key="IBUIFontDescription" ref="746922410"/>
-										<reference key="IBUIFont" ref="333670980"/>
+										<reference key="IBUIFontDescription" ref="723794525"/>
+										<reference key="IBUIFont" ref="149924075"/>
 										<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
 										<double key="preferredMaxLayoutWidth">238</double>
 									</object>
