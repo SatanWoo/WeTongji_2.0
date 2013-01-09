@@ -189,9 +189,8 @@
     id activity = self.arrangeList[indexPath.section][indexPath.row];
     if ([activity isKindOfClass:[Event class]]) {
         [self performSegueWithIdentifier:kArrangeToDetailSegue sender:self];
-    } else {
+    } else if ([activity isKindOfClass:[Course class]]){
         [self performSegueWithIdentifier:kClassViewControllerSegue sender:self];
-
     }
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
 }
