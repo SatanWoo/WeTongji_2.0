@@ -211,7 +211,7 @@ NSInteger tempRow;
     WTRequest * request = [WTRequest requestWithSuccessBlock:^(id responseData)
                            {
                             #ifdef DEBUG
-                               NSLog(@"%@",responseData);
+                               //NSLog(@"%@",responseData);
                             #endif
                                if(self.nextPage == 0)
                                    [self clearData];
@@ -219,6 +219,7 @@ NSInteger tempRow;
                                for(NSDictionary *dict in array)
                                {
                                    Star *star = [Star insertStarWithDict:dict inManagedObjectContext:self.managedObjectContext];
+                                   NSLog(@"star count is %d",[star.favorite intValue]);
                                    star.hiden = [NSNumber numberWithBool:NO];
                                }
                                self.nextPage = [[NSString stringWithFormat:@"%@", [responseData objectForKey:@"NextPager"]] intValue];
