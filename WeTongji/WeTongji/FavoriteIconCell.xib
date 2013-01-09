@@ -45,7 +45,6 @@
 								<string key="NSFrame">{{2, 3}, {33, 33}}</string>
 								<reference key="NSSuperview" ref="411264990"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -53,7 +52,7 @@
 							<object class="IBUIImageView" id="216524646">
 								<reference key="NSNextResponder" ref="411264990"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{0, 1}, {35, 35}}</string>
+								<string key="NSFrame">{{1, 3}, {35, 35}}</string>
 								<reference key="NSSuperview" ref="411264990"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="162269261"/>
@@ -62,11 +61,11 @@
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<object class="NSCustomResource" key="IBUIImage">
 									<string key="NSClassName">NSImage</string>
-									<string key="NSResourceName">favourite_avatar</string>
+									<string key="NSResourceName">favourite_avatar.png</string>
 								</object>
 							</object>
 						</array>
-						<string key="NSFrameSize">{35, 36}</string>
+						<string key="NSFrameSize">{37, 38}</string>
 						<reference key="NSSuperview" ref="510182593"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="216524646"/>
@@ -82,7 +81,7 @@
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 					</object>
 				</array>
-				<string key="NSFrameSize">{35, 37}</string>
+				<string key="NSFrameSize">{37, 39}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="411264990"/>
@@ -94,7 +93,7 @@
 				<string key="IBUIRestorationIdentifier">FavoriteIconCell</string>
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 				<reference key="IBUIContentView" ref="411264990"/>
-				<real value="37" key="IBUIRowHeight"/>
+				<real value="39" key="IBUIRowHeight"/>
 			</object>
 		</array>
 		<object class="IBObjectContainer" key="IBDocument.Objects">
@@ -191,8 +190,8 @@
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<object class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="NS.key.0">favourite_avatar</string>
-			<string key="NS.object.0">{16, 16}</string>
+			<string key="NS.key.0">favourite_avatar.png</string>
+			<string key="NS.object.0">{49, 49}</string>
 		</object>
 		<string key="IBCocoaTouchPluginVersion">1930</string>
 	</data>
