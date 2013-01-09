@@ -72,6 +72,8 @@
 		03326A5C16568FA8005E8A16 /* JBKenBurnsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03326A5B16568FA8005E8A16 /* JBKenBurnsView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		03326A7316569430005E8A16 /* WUKenBurnViewHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 03326A7216569430005E8A16 /* WUKenBurnViewHeader.m */; };
 		03326A751656949C005E8A16 /* WUKenBurnViewHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03326A741656949C005E8A16 /* WUKenBurnViewHeader.xib */; };
+		033780C5169DB9A10082BE02 /* WinterVacationFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 033780C4169DB9A00082BE02 /* WinterVacationFooterView.m */; };
+		033780C7169DB9D60082BE02 /* WinterVacationFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 033780C6169DB9D50082BE02 /* WinterVacationFooterView.xib */; };
 		033DF60B165931CE00C0441A /* directly_enter_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 033DF607165931CE00C0441A /* directly_enter_btn.png */; };
 		033DF60C165931CE00C0441A /* directly_enter_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 033DF608165931CE00C0441A /* directly_enter_btn@2x.png */; };
 		033DF60D165931CE00C0441A /* register_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 033DF609165931CE00C0441A /* register_btn.png */; };
@@ -151,12 +153,11 @@
 		036EACBE1664ED05000A66CF /* celebrity_avatar_detail@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 036EACBA1664ED05000A66CF /* celebrity_avatar_detail@2x.png */; };
 		038DBA071695829500B9B344 /* list_cell.png in Resources */ = {isa = PBXBuildFile; fileRef = 038DBA051695829500B9B344 /* list_cell.png */; };
 		038DBA081695829500B9B344 /* list_cell@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 038DBA061695829500B9B344 /* list_cell@2x.png */; };
-		038F9946169DAC4F00139544 /* vacation_mark.png in Resources */ = {isa = PBXBuildFile; fileRef = 038F9944169DAC4F00139544 /* vacation_mark.png */; };
-		038F9947169DAC4F00139544 /* vacation_mark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 038F9945169DAC4F00139544 /* vacation_mark@2x.png */; };
-		038F9949169DAC7A00139544 /* ArrangementVacationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 038F9948169DAC7900139544 /* ArrangementVacationCell.xib */; };
 		0398838A165D395500A31620 /* UpdatePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03988389165D395500A31620 /* UpdatePasswordViewController.m */; };
 		0398838D165D39F100A31620 /* change_password_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 0398838B165D39F100A31620 /* change_password_btn.png */; };
 		0398838E165D39F100A31620 /* change_password_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0398838C165D39F100A31620 /* change_password_btn@2x.png */; };
+		03B3D033169DC86C000F2B05 /* vacation_mark.png in Resources */ = {isa = PBXBuildFile; fileRef = 03B3D031169DC86C000F2B05 /* vacation_mark.png */; };
+		03B3D034169DC86C000F2B05 /* vacation_mark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 03B3D032169DC86C000F2B05 /* vacation_mark@2x.png */; };
 		03BAB361164FD01B0049DA19 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = 03BAB35D164FD01B0049DA19 /* iTunesArtwork.png */; };
 		03BAB393164FDB620049DA19 /* bottom_bar.png in Resources */ = {isa = PBXBuildFile; fileRef = 03BAB389164FDB620049DA19 /* bottom_bar.png */; };
 		03BAB394164FDB620049DA19 /* bottom_bar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 03BAB38A164FDB620049DA19 /* bottom_bar@2x.png */; };
@@ -695,6 +696,9 @@
 		03326A7116569430005E8A16 /* WUKenBurnViewHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WUKenBurnViewHeader.h; sourceTree = "<group>"; };
 		03326A7216569430005E8A16 /* WUKenBurnViewHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WUKenBurnViewHeader.m; sourceTree = "<group>"; };
 		03326A741656949C005E8A16 /* WUKenBurnViewHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WUKenBurnViewHeader.xib; sourceTree = "<group>"; };
+		033780C3169DB9A00082BE02 /* WinterVacationFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WinterVacationFooterView.h; sourceTree = "<group>"; };
+		033780C4169DB9A00082BE02 /* WinterVacationFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WinterVacationFooterView.m; sourceTree = "<group>"; };
+		033780C6169DB9D50082BE02 /* WinterVacationFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WinterVacationFooterView.xib; sourceTree = "<group>"; };
 		033DF607165931CE00C0441A /* directly_enter_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = directly_enter_btn.png; sourceTree = "<group>"; };
 		033DF608165931CE00C0441A /* directly_enter_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "directly_enter_btn@2x.png"; sourceTree = "<group>"; };
 		033DF609165931CE00C0441A /* register_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = register_btn.png; sourceTree = "<group>"; };
@@ -780,13 +784,12 @@
 		038DBA051695829500B9B344 /* list_cell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = list_cell.png; sourceTree = "<group>"; };
 		038DBA061695829500B9B344 /* list_cell@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "list_cell@2x.png"; sourceTree = "<group>"; };
 		038DBA1A169588E900B9B344 /* WeTongjiSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = WeTongjiSDK.xcodeproj; path = ../../wetongji_ios_sdk/WeTongjiSDK.xcodeproj; sourceTree = "<group>"; };
-		038F9944169DAC4F00139544 /* vacation_mark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vacation_mark.png; sourceTree = "<group>"; };
-		038F9945169DAC4F00139544 /* vacation_mark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "vacation_mark@2x.png"; sourceTree = "<group>"; };
-		038F9948169DAC7900139544 /* ArrangementVacationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArrangementVacationCell.xib; sourceTree = "<group>"; };
 		03988388165D395500A31620 /* UpdatePasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdatePasswordViewController.h; sourceTree = "<group>"; };
 		03988389165D395500A31620 /* UpdatePasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdatePasswordViewController.m; sourceTree = "<group>"; };
 		0398838B165D39F100A31620 /* change_password_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = change_password_btn.png; sourceTree = "<group>"; };
 		0398838C165D39F100A31620 /* change_password_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "change_password_btn@2x.png"; sourceTree = "<group>"; };
+		03B3D031169DC86C000F2B05 /* vacation_mark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vacation_mark.png; sourceTree = "<group>"; };
+		03B3D032169DC86C000F2B05 /* vacation_mark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "vacation_mark@2x.png"; sourceTree = "<group>"; };
 		03BAB35A164FD01B0049DA19 /* Icon-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-57.png"; sourceTree = "<group>"; };
 		03BAB35B164FD01B0049DA19 /* Icon-Small-58@2x.png.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-58@2x.png.png"; sourceTree = "<group>"; };
 		03BAB35C164FD01B0049DA19 /* Icon@2x.png.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png.png"; sourceTree = "<group>"; };
@@ -1565,8 +1568,8 @@
 		038F9943169DAB9E00139544 /* Arrangement */ = {
 			isa = PBXGroup;
 			children = (
-				038F9944169DAC4F00139544 /* vacation_mark.png */,
-				038F9945169DAC4F00139544 /* vacation_mark@2x.png */,
+				03B3D031169DC86C000F2B05 /* vacation_mark.png */,
+				03B3D032169DC86C000F2B05 /* vacation_mark@2x.png */,
 			);
 			name = Arrangement;
 			sourceTree = "<group>";
@@ -2250,7 +2253,9 @@
 				E5D2447B1647BF8900DA43DD /* ArrangementCell.m */,
 				E5D2447E1647BFA900DA43DD /* ArrangementCell.xib */,
 				FFB19D90165D5E6D00DE9291 /* ArrangementNothingCell.xib */,
-				038F9948169DAC7900139544 /* ArrangementVacationCell.xib */,
+				033780C3169DB9A00082BE02 /* WinterVacationFooterView.h */,
+				033780C4169DB9A00082BE02 /* WinterVacationFooterView.m */,
+				033780C6169DB9D50082BE02 /* WinterVacationFooterView.xib */,
 				03D540D816513D920070F727 /* EditInfoCell.h */,
 				03D540D916513D920070F727 /* EditInfoCell.m */,
 				03D540DB16513DA20070F727 /* EditInfoCell.xib */,
@@ -3178,9 +3183,9 @@
 				03435A7116985938006AE436 /* course_time@2x.png in Resources */,
 				03435A7416985947006AE436 /* texture.png in Resources */,
 				03435A7516985947006AE436 /* texture@2x.png in Resources */,
-				038F9946169DAC4F00139544 /* vacation_mark.png in Resources */,
-				038F9947169DAC4F00139544 /* vacation_mark@2x.png in Resources */,
-				038F9949169DAC7A00139544 /* ArrangementVacationCell.xib in Resources */,
+				033780C7169DB9D60082BE02 /* WinterVacationFooterView.xib in Resources */,
+				03B3D033169DC86C000F2B05 /* vacation_mark.png in Resources */,
+				03B3D034169DC86C000F2B05 /* vacation_mark@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3309,6 +3314,7 @@
 				FFBAAF6516707958004D44E6 /* UIPhoneCallActionSheet.m in Sources */,
 				FFBAAF6816708A27004D44E6 /* UIMapApplicationSheet.m in Sources */,
 				03435A79169859D1006AE436 /* ClassViewController.m in Sources */,
+				033780C5169DB9A10082BE02 /* WinterVacationFooterView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -148,8 +148,12 @@
 {
     [self.arrangementTableView registerNib:[UINib nibWithNibName:@"ArrangementCell" bundle:nil] forCellReuseIdentifier:kArrangementCell];
     [self.arrangementTableView registerNib:[UINib nibWithNibName:@"ArrangementNothingCell" bundle:nil] forCellReuseIdentifier:kArrangementNothingCell];
-    [self.arrangementTableView registerNib:[UINib nibWithNibName:@"ArrangementVacationCell" bundle:nil] forCellReuseIdentifier:kArrangementVacationCell];
     self.arrangementTableView.backgroundColor = [UIColor clearColor];
+    
+    if ([[NSDate date] compare:[NSUserDefaults getCurrentSemesterEndDate]] < 0) {
+        self.arrangementTableView.tableFooterView = [[[NSBundle mainBundle] loadNibNamed:@"WinterVacationFooterView" owner:self options:nil] objectAtIndex:0];
+    }
+    
     [self.arrangementTableView reloadData];
 }
 
@@ -247,10 +251,9 @@
         NSString * identifier;
         if ( [activity isKindOfClass:[Event class]] ||
              [activity isKindOfClass:[Exam class]] ||
-            [activity isKindOfClass:[Course class]])
-        {
+            [activity isKindOfClass:[Course class]]) {
             identifier = kArrangementCell;
-        } else if ([[NSDate date] compare:]){
+        } else {
             identifier = kArrangementNothingCell;
         }
         cell = [tableView dequeueReusableCellWithIdentifier:identifier];
