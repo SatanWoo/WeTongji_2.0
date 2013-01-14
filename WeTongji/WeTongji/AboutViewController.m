@@ -44,7 +44,11 @@
     [self configureNavBar];
     
     InfoFooterView *footView = [[[NSBundle mainBundle] loadNibNamed:@"InfoFooterView" owner:self options:nil] objectAtIndex:0];
-    //footView.versionLabel.text = [[[NSBundle mainBundle] infoDictionary] objectForKey:(NSString *)kCFBundleVersionKey];
+    CFStringRef ver = CFBundleGetValueForInfoDictionaryKey(
+                                                           CFBundleGetMainBundle(),
+                                                           kCFBundleVersionKey);
+    NSString *appVersion = (__bridge NSString *)ver;
+    footView.versionLabel.text = appVersion;
     self.aboutTableView.tableFooterView = footView;
 }
 
