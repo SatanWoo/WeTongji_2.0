@@ -9,6 +9,7 @@
 #import "InfoFooterView.h"
 
 @implementation InfoFooterView
+@synthesize versionLabel;
 
 - (id)initWithFrame:(CGRect)frame
 {

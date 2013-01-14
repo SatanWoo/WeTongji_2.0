@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface InfoFooterView : UIView
-
+@property (nonatomic ,weak) IBOutlet UILabel *versionLabel;
 @end

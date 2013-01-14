@@ -12,6 +12,7 @@
 #import "Macro.h"
 #import <MessageUI/MFMailComposeViewController.h>
 #import <MessageUI/MessageUI.h>
+#import "InfoFooterView.h"
 
 #define WE_TONGJI_EMAIL             @"wetongji2012@gmail.com"
 #define WE_TONGJI_SINA_WEIBO_URL    @"http://www.weibo.com/wetongji"
@@ -41,14 +42,15 @@
 {
     [super viewDidLoad];
     [self configureNavBar];
-    self.aboutTableView.tableFooterView = [[[NSBundle mainBundle] loadNibNamed:@"InfoFooterView" owner:self options:nil] objectAtIndex:0];
-
+    
+    InfoFooterView *footView = [[[NSBundle mainBundle] loadNibNamed:@"InfoFooterView" owner:self options:nil] objectAtIndex:0];
+    //footView.versionLabel.text = [[[NSBundle mainBundle] infoDictionary] objectForKey:(NSString *)kCFBundleVersionKey];
+    self.aboutTableView.tableFooterView = footView;
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-
 }
 
 - (void)viewDidUnload {
