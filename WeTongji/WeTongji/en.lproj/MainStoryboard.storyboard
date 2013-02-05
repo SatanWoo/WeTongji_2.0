@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C3103" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C3103" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
         <!--Slide View Controller-->
@@ -1090,7 +1090,7 @@
                                         <size key="shadowOffset" width="0.0" height="1"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="季平" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="u7S-jt-lGy">
-                                        <rect key="frame" x="15" y="34" width="275" height="25"/>
+                                        <rect key="frame" x="15" y="35" width="275" height="25"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="STHeitiSC-Medium" family="Heiti SC" pointSize="17"/>
                                         <color key="textColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -1099,7 +1099,7 @@
                                         <size key="shadowOffset" width="0.0" height="1"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="考试安排" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SS2-Ej-Cj7">
-                                        <rect key="frame" x="17" y="272" width="275" height="25"/>
+                                        <rect key="frame" x="17" y="267" width="275" height="25"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="STHeitiSC-Medium" family="Heiti SC" pointSize="17"/>
                                         <color key="textColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -1112,7 +1112,7 @@
                                         <autoresizingMask key="autoresizingMask"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="cell_header.png" id="x3N-a1-7ds">
-                                        <rect key="frame" x="10" y="305" width="301" height="47"/>
+                                        <rect key="frame" x="10" y="300" width="301" height="47"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="course_detail_footer.png" id="Iqk-ZA-8Yk">
@@ -1120,7 +1120,7 @@
                                         <autoresizingMask key="autoresizingMask"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="cell_footer.png" id="Y9V-C1-Z1i">
-                                        <rect key="frame" x="10" y="352" width="301" height="47"/>
+                                        <rect key="frame" x="10" y="347" width="301" height="47"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="cell_body.png" id="M9Z-uc-b93">
@@ -1132,19 +1132,19 @@
                                         <autoresizingMask key="autoresizingMask"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="course_time.png" id="LX5-0l-lzw">
-                                        <rect key="frame" x="35" y="79" width="18" height="18"/>
+                                        <rect key="frame" x="32" y="81" width="18" height="18"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="course_location.png" id="tYL-c7-VuC">
-                                        <rect key="frame" x="37" y="124" width="13" height="19"/>
+                                        <rect key="frame" x="35" y="125" width="13" height="19"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="course_time.png" id="PVk-Dv-sQE">
-                                        <rect key="frame" x="35" y="319" width="18" height="18"/>
+                                        <rect key="frame" x="32" y="315" width="18" height="18"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="course_location.png" id="mvA-Of-zfk">
-                                        <rect key="frame" x="37" y="364" width="13" height="19"/>
+                                        <rect key="frame" x="35" y="361" width="13" height="19"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                     </imageView>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="课号" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="WIH-ui-5DP">
@@ -1155,63 +1155,63 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="学分" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="QEy-2n-26b">
-                                        <rect key="frame" x="24" y="213" width="34" height="21"/>
+                                        <rect key="frame" x="24" y="214" width="34" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="STHeitiSC-Medium" family="Heiti SC" pointSize="17"/>
                                         <color key="textColor" red="0.070588238540000001" green="0.45882356169999999" blue="0.61960786580000005" alpha="1" colorSpace="deviceRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="学时" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="QHK-fV-mMx">
-                                        <rect key="frame" x="178" y="213" width="34" height="21"/>
+                                        <rect key="frame" x="180" y="214" width="34" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="STHeitiSC-Medium" family="Heiti SC" pointSize="17"/>
                                         <color key="textColor" red="0.070588238540000001" green="0.45882356169999999" blue="0.61960786580000005" alpha="1" colorSpace="deviceRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="周二 10:00 - 11:00 （单周）" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Amz-dX-Cce">
-                                        <rect key="frame" x="69" y="76" width="216" height="21"/>
+                                        <rect key="frame" x="69" y="79" width="216" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" white="0.29971018145161288" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="1月8号 10:00 - 10:30" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MIs-pI-CvK">
-                                        <rect key="frame" x="69" y="317" width="237" height="21"/>
+                                        <rect key="frame" x="69" y="313" width="237" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" white="0.29971018150000001" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="专用教室" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kIg-E1-Ocs">
-                                        <rect key="frame" x="69" y="122" width="224" height="21"/>
+                                        <rect key="frame" x="69" y="124" width="224" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" white="0.29971018150000001" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="南楼101" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kYJ-RU-Rp1">
-                                        <rect key="frame" x="69" y="362" width="224" height="21"/>
+                                        <rect key="frame" x="69" y="360" width="224" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" white="0.29971018150000001" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="000000" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sOV-AO-Vc1">
-                                        <rect key="frame" x="69" y="167" width="108" height="21"/>
+                                        <rect key="frame" x="69" y="168" width="108" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" white="0.29971018150000001" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="3.0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="HpJ-OX-hff">
-                                        <rect key="frame" x="69" y="213" width="24" height="21"/>
+                                        <rect key="frame" x="69" y="214" width="24" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" white="0.29971018150000001" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="32" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XPH-KC-teH">
-                                        <rect key="frame" x="225" y="212" width="37" height="21"/>
+                                        <rect key="frame" x="229" y="214" width="37" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" white="0.29971018150000001" alpha="1" colorSpace="calibratedWhite"/>
