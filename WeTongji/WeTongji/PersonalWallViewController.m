@@ -26,7 +26,7 @@
 #import "UIApplication+nj_SmartStatusBar.h"
 #import "SchoolNewsViewController.h"
 
-#define kContentOffSet 156
+#define kContentOffSet ([[UIScreen mainScreen] bounds].size.height-324)
 #define kRowHeight 44
 #define kStateY -150
 
@@ -41,6 +41,7 @@
 @property (nonatomic,strong)Event * recommandEvent;
 @property (weak, nonatomic) IBOutlet UILabel *recommendTitle;
 @property (weak, nonatomic) IBOutlet UIButton *recommendButton;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *scheduleTopConstraint;
 - (void)configureTableView;
 @end
 
@@ -110,8 +111,9 @@
     }];
     [self.navigationController setNavigationBarHidden:NO animated:YES];
     self.isAnimationFinished = false;
+    [self.scheduleTopConstraint setConstant:0];
     [UIView animateWithDuration:0.55f animations:^{
-        self.scheduleTableView.center = self.view.center;
+        [self.view layoutIfNeeded];
     } completion:^(BOOL finished) {
         self.scheduleTableView.userInteractionEnabled = YES;
     }];
@@ -140,7 +142,7 @@
         UISwipeGestureRecognizer *upSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(didSwipe:)];
         upSwipe.direction = UISwipeGestureRecognizerDirectionUp;
         [_pageViewController.view addGestureRecognizer:upSwipe];
-        [_pageViewController.view setFrame:CGRectMake(0, kStateY, 320 ,480)];
+        [_pageViewController.view setFrame:CGRectMake(0, kStateY, 320 ,[[UIScreen mainScreen] bounds].size.height)];
         _pageViewController.view.userInteractionEnabled = NO;
         originPageControlViewCenter = _pageViewController.view.center;
     }
@@ -157,6 +159,7 @@
     [self setHeaderBoard:nil];
     [self setRecommendTitle:nil];
     [self setRecommendButton:nil];
+    [self setScheduleTopConstraint:nil];
     [super viewDidUnload];
 }
 
@@ -408,12 +411,14 @@
         [self.recommendButton setUserInteractionEnabled:NO];
         [self.navigationController setNavigationBarHidden:YES animated:YES];
         [[UIApplication sharedApplication] nj_setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
+        [self.scheduleTopConstraint setConstant:self.view.bounds.size.height];
         [UIView animateWithDuration:0.25f animations:^{
+            
+            [self.view layoutIfNeeded];
             CGRect frame = self.pageViewController.view.frame;
-            frame.size.height = 480;
+            frame.size.height = [[UIScreen mainScreen] bounds].size.height;
             [self.headerBoard setAlpha:0];
             self.pageViewController.view.frame = frame;
-            self.scheduleTableView.frame = CGRectMake(0, self.view.frame.size.height, self.scheduleTableView.frame.size.width, self.scheduleTableView.frame.size.height);
             CGPoint center = self.view.center;
             self.pageViewController.view.center = center;
             center = CGPointMake(self.headerBoard.center.x, (self.pageViewController.view.frame.size.height)/2);
@@ -422,6 +427,7 @@
         } completion:^(BOOL finished) {
             self.pageViewController.view.userInteractionEnabled = YES;
         }];
+        
     } else
         if (self.isAnimationFinished == false)
         {
