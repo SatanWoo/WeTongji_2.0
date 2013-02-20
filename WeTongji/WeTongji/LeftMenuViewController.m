@@ -27,6 +27,7 @@
 @property (nonatomic ,strong) UIImageView *topImageView;
 @property (nonatomic ,strong) UIImageView *bottomImageView;
 @property (nonatomic ,strong) NSArray *imageArray;
+@property (weak, nonatomic) IBOutlet UIView *bottomBarView;
 
 - (void)configureBottomBarButton;
 - (void)configureTableView;
@@ -60,6 +61,14 @@
 }
 
 #pragma mark - Private Method
+
+- (void)autolayout
+{
+    CGRect frame = self.bottomBarView.frame;
+    frame.origin.y = self.view.frame.size.height - frame.size.height;
+    [self.bottomBarView setFrame:frame];
+}
+
 - (void)configureTableView
 {
     self.menuTableView.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"leftMenuBg"]];
@@ -199,6 +208,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self autolayout];
     [self configureTableView];
     [self configureHeader];
     [self configureBottomBarButton];
@@ -211,6 +221,7 @@
     [self setSettingButton:nil];
     [self setInfoButton:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [self setBottomBarView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }

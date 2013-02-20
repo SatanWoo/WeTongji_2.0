@@ -41,7 +41,6 @@
 @property (nonatomic,strong)Event * recommandEvent;
 @property (weak, nonatomic) IBOutlet UILabel *recommendTitle;
 @property (weak, nonatomic) IBOutlet UIButton *recommendButton;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *scheduleTopConstraint;
 - (void)configureTableView;
 @end
 
@@ -51,6 +50,15 @@
 @synthesize recommandEvent = _recommandEvent;
 
 #pragma mark - Private Method
+
+- (void) autolayout
+{
+    self.scheduleTableView.contentInset = UIEdgeInsetsMake(kContentOffSet, 0.0f, 0.0f, 0.0f);
+    originScheduleTableViewCenter = self.scheduleTableView.center;
+    CGPoint center = CGPointMake(self.headerBoard.center.x, (-self.scheduleTableView.contentOffset.y)/2);
+    [self.headerBoard setCenter:center];
+    [self.recommendButton setCenter:center];
+}
 
 - (void) configureTodayRecommend
 {
@@ -71,11 +79,7 @@
     [self.scheduleTableView registerNib:[UINib nibWithNibName:@"PersonalInfoCell" bundle:nil] forCellReuseIdentifier:kPersonalInfoCell];
     [self.scheduleTableView registerNib:[UINib nibWithNibName:@"ScheduleCell" bundle:nil] forCellReuseIdentifier:kScheduleCell];
     [self.view insertSubview:self.pageViewController.view belowSubview:self.headerBoard];
-    self.scheduleTableView.contentInset = UIEdgeInsetsMake(kContentOffSet, 0.0f, 0.0f, 0.0f);
-    originScheduleTableViewCenter = self.scheduleTableView.center;
-    CGPoint center = CGPointMake(self.headerBoard.center.x, (-self.scheduleTableView.contentOffset.y)/2);
-    [self.headerBoard setCenter:center];
-    [self.recommendButton setCenter:center];
+
 }
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -111,9 +115,10 @@
     }];
     [self.navigationController setNavigationBarHidden:NO animated:YES];
     self.isAnimationFinished = false;
-    [self.scheduleTopConstraint setConstant:0];
     [UIView animateWithDuration:0.55f animations:^{
-        [self.view layoutIfNeeded];
+        CGRect frame = self.scheduleTableView.frame;
+        frame.origin.y = 0 ;
+        [self.scheduleTableView setFrame:frame];
     } completion:^(BOOL finished) {
         self.scheduleTableView.userInteractionEnabled = YES;
     }];
@@ -159,13 +164,13 @@
     [self setHeaderBoard:nil];
     [self setRecommendTitle:nil];
     [self setRecommendButton:nil];
-    [self setScheduleTopConstraint:nil];
     [super viewDidUnload];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self autolayout];
     [self.navigationController setNavigationBarHidden:YES];
     [self configureTodayRecommend];
     [self configureTableView];
@@ -411,11 +416,11 @@
         [self.recommendButton setUserInteractionEnabled:NO];
         [self.navigationController setNavigationBarHidden:YES animated:YES];
         [[UIApplication sharedApplication] nj_setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
-        [self.scheduleTopConstraint setConstant:self.view.bounds.size.height];
         [UIView animateWithDuration:0.25f animations:^{
-            
-            [self.view layoutIfNeeded];
-            CGRect frame = self.pageViewController.view.frame;
+            CGRect frame = self.scheduleTableView.frame;
+            frame.origin.y = self.view.frame.size.height;
+            [self.scheduleTableView setFrame:frame];
+            frame = self.pageViewController.view.frame;
             frame.size.height = [[UIScreen mainScreen] bounds].size.height;
             [self.headerBoard setAlpha:0];
             self.pageViewController.view.frame = frame;
