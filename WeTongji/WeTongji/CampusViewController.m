@@ -266,6 +266,14 @@ typedef enum {
 }
 
 #pragma mark - Private Method
+- (void)autolayout
+{
+    CGRect frame = self.scrollView.frame;
+    frame.origin.y = 86;
+    frame.size.height = self.view.frame.size.height - 40;
+    [self.scrollView setFrame:frame];
+}
+
 - (void)configureScrollView
 {
     self.schoolInfoView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kWidth, kHeight)];
@@ -398,6 +406,7 @@ typedef enum {
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self autolayout];
     [self configureScrollView];
     [self configureTabBar];
     [self configureTableView];

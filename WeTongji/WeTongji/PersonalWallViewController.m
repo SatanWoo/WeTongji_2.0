@@ -147,7 +147,9 @@
         UISwipeGestureRecognizer *upSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(didSwipe:)];
         upSwipe.direction = UISwipeGestureRecognizerDirectionUp;
         [_pageViewController.view addGestureRecognizer:upSwipe];
-        [_pageViewController.view setFrame:CGRectMake(0, kStateY, 320 ,[[UIScreen mainScreen] bounds].size.height)];
+        CGRect frame = _pageViewController.view.frame;
+        frame.origin.y = kStateY;
+        [_pageViewController.view setFrame:frame];
         _pageViewController.view.userInteractionEnabled = NO;
         originPageControlViewCenter = _pageViewController.view.center;
     }

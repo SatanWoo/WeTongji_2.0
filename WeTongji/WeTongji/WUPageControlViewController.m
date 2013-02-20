@@ -16,11 +16,29 @@
 @property (nonatomic ,strong) NSMutableArray * imageList;
 @property (weak, nonatomic) IBOutlet UITextView *imageDescription;
 @property (strong, nonatomic) NSMutableArray * descriptionList;
+@property (weak, nonatomic) IBOutlet UITextView *textView;
 @end
 
 @implementation WUPageControlViewController
 @synthesize pagedScrollView;
 @synthesize pageControl;
+
+-(void) autolayout
+{
+    CGRect frame = self.view.frame;
+    frame.size.height = [[UIScreen mainScreen] bounds].size.height;
+    [self.view setFrame:frame];
+    frame = self.pagedScrollView.frame;
+    frame.size.height = [[UIScreen mainScreen] bounds].size.height;
+    [self.pagedScrollView setFrame:frame];
+    frame = self.textView.frame;
+    frame.size.height = 40;
+    frame.origin.y = self.view.frame.size.height - 40;
+    [self.textView setFrame:frame];
+    frame = self.pageControl.frame;
+    frame.origin.y = self.view.frame.size.height - 80;
+    [self.pageControl setFrame:frame];
+}
 
 -(void) setPictureNumber:(int)pictureNumber
 {
@@ -123,6 +141,13 @@
     self.pageControl.currentPage = 0;
     self.pageControl.numberOfPages = 0;
     [self setWantsFullScreenLayout:YES];
+    [self autolayout];
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    NSLog(@"%f",self.view.frame.size.height);
 }
 
 - (void)viewDidUnload
@@ -130,6 +155,8 @@
     [self setPagedScrollView:nil];
     [self setPageControl:nil];
     [self setImageDescription:nil];
+    [self setTextView:nil];
+    [self setPageControl:nil];
     [super viewDidUnload];
 }
 

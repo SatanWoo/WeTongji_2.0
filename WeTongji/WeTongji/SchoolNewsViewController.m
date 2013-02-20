@@ -65,9 +65,9 @@
 
 - (void)autolayout
 {
-    CGRect frame = self.pageViewController.view.frame;
-    frame.size.height = [[UIScreen mainScreen] bounds].size.height;
-    [self.pageViewController.view setFrame:frame];
+//    CGRect frame = self.pageViewController.view.frame;
+//    frame.size.height = [[UIScreen mainScreen] bounds].size.height;
+//    [self.pageViewController.view setFrame:frame];
 }
 
 - (void)configureTableView
@@ -124,7 +124,9 @@
         upSwipe.direction = UISwipeGestureRecognizerDirectionUp;
         [_pageViewController.view addGestureRecognizer:upSwipe];
         float rate = (self.newsTableView.contentOffset.y + kContentOffset) / -kRowHeight;
-        [_pageViewController.view setFrame:CGRectMake(0, kStateY + 15 * rate, 320 ,480)];
+        CGRect frame = _pageViewController.view.frame;
+        frame.origin.y =  kStateY + 15 * rate;
+        [_pageViewController.view setFrame:frame];
         _pageViewController.view.userInteractionEnabled = NO;
         _haveImages = [self.imageDict allKeys].count ? YES : NO;
         for ( NSString * link in [self.imageDict allKeysInStringOrder] )

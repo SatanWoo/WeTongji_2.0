@@ -443,8 +443,9 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="imageDescription" destination="FLw-ti-25s" id="mbH-5L-yuk"/>
-                        <outlet property="pageControl" destination="UNP-jE-JkN" id="8aa-ZB-xdq"/>
+                        <outlet property="pageControl" destination="UNP-jE-JkN" id="t9X-th-EIN"/>
                         <outlet property="pagedScrollView" destination="6JC-Li-Qze" id="Qk3-mK-zpf"/>
+                        <outlet property="textView" destination="FLw-ti-25s" id="5KS-tE-fcv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pgV-4s-7P1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2206,6 +2207,7 @@
                 <relationship kind="outlet" name="imageDescription" candidateClass="UITextView"/>
                 <relationship kind="outlet" name="pageControl" candidateClass="UIPageControl"/>
                 <relationship kind="outlet" name="pagedScrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="textView" candidateClass="UITextView"/>
             </relationships>
         </class>
         <class className="WUSlideViewController" superclassName="UIViewController">
@@ -2224,7 +2226,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="6k4-ha-E9F"/>
+        <segue reference="sR0-eS-rDJ"/>
         <segue reference="5c9-iE-HEP"/>
     </inferredMetricsTieBreakers>
 </document>
