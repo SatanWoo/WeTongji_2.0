@@ -2037,6 +2037,9 @@
         <class className="EditInfoViewController" superclassName="MiddleAbstractSecondViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/EditInfoViewController.h"/>
             <relationships>
+                <relationship kind="action" name="cancelEditClicked:"/>
+                <relationship kind="action" name="confirmEditClicked:"/>
+                <relationship kind="action" name="didClickAvatarButton:" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="ConfirmEditBarButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="avatar" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="cancelEditButton" candidateClass="UIBarButtonItem"/>

@@ -91,6 +91,17 @@
 
 
 #pragma mark - Private
+- (void)autolayout
+{
+    CGRect frame = self.scrollView.frame;
+    frame.size.height = self.view.frame.size.height;
+    [self.scrollView setFrame:frame];
+    frame = self.infoTableView.frame;
+    frame.size.height = self.scrollView.frame.size.height;
+    [self.infoTableView setFrame:frame];
+    
+}
+
 - (void)configureTableView
 {
     [self.infoTableView registerNib:[UINib nibWithNibName:@"EditInfoCell" bundle:nil] forCellReuseIdentifier:kEditInfoCell];
@@ -112,6 +123,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self autolayout];
     [self configureTableView];
     [self configureNavBar];
     if ( self.user )
