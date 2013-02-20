@@ -2226,7 +2226,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="sR0-eS-rDJ"/>
         <segue reference="5c9-iE-HEP"/>
+        <segue reference="83Y-JL-KCk"/>
     </inferredMetricsTieBreakers>
 </document>

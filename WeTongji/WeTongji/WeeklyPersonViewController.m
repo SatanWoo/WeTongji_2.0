@@ -154,11 +154,11 @@
         if (indexPath.row == 0) {
             return 367;
         } else if (indexPath.row == 1) {
-            return 82;
+            return 83;
         } else if (indexPath.row == [self.starList count] - 1) {
             return 83;
         } else {
-            return 75;
+            return 83;
         }
     }
     return 0;
