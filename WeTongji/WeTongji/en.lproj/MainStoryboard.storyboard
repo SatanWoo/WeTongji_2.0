@@ -2101,7 +2101,6 @@
         <class className="PersonalWallViewController" superclassName="MiddleAbstractViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PersonalWallViewController.h"/>
             <relationships>
-                <relationship kind="action" name="headerButtonClicked:"/>
                 <relationship kind="outlet" name="headerBoard" candidateClass="UIView"/>
                 <relationship kind="outlet" name="recommendButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="recommendTitle" candidateClass="UILabel"/>
@@ -2225,7 +2224,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="sR0-eS-rDJ"/>
+        <segue reference="6k4-ha-E9F"/>
         <segue reference="5c9-iE-HEP"/>
     </inferredMetricsTieBreakers>
 </document>

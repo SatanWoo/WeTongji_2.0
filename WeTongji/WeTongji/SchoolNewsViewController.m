@@ -63,6 +63,13 @@
 {
 }
 
+- (void)autolayout
+{
+    CGRect frame = self.pageViewController.view.frame;
+    frame.size.height = [[UIScreen mainScreen] bounds].size.height;
+    [self.pageViewController.view setFrame:frame];
+}
+
 - (void)configureTableView
 {
     [self.newsTableView registerNib:[UINib nibWithNibName:@"TextViewTableCell" bundle:nil] forCellReuseIdentifier:kTextViewTableCell];
@@ -168,7 +175,7 @@
 
 -(void) configureCurrentCell
 {
-    [self.currentCell setFrame:CGRectMake(0, 0,self.currentCell.frame.size.width,MAX(self.currentCell.textView.contentSize.height,self.view.bounds.size.height))];
+    [self.currentCell setFrame:CGRectMake(0, 0,self.currentCell.frame.size.width,MAX(self.currentCell.textView.contentSize.height,self.view.bounds.size.height-kContentOffset-20))];
     self.currentCell.contentView.backgroundColor = self.currentCell.textView.backgroundColor;
     CGRect frame = self.currentCell.textView.frame;
     frame.size.height = self.currentCell.frame.size.height;
@@ -231,6 +238,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self autolayout];
     [self configureTableView];
     UISwipeGestureRecognizer *leftGesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(goBack:)];
     leftGesture.direction = UISwipeGestureRecognizerDirectionRight;
