@@ -16,7 +16,7 @@
 #import <WeTongjiSDK/WeTongjiSDK.h>
 
 #define IMAGE_MAX_WIDTH     320
-#define IMAGE_MAX_HEIGHT    480
+#define IMAGE_MAX_HEIGHT    [[UIScreen mainScreen] bounds].size.height
 
 @interface DetailImageViewController()
 
@@ -34,9 +34,20 @@
     self.scrollView = nil;
 }
 
+- (void)autolayout
+{
+    CGRect frame = self.view.frame;
+    frame.size.height = [[UIScreen mainScreen] bounds].size.height;
+    [self.view setFrame:frame];
+    frame = self.scrollView.frame;
+    frame.size.height = self.view.frame.size.height;
+    frame.origin.y = 0;
+    [self.scrollView setFrame:frame];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [self autolayout];
     UITapGestureRecognizer* gesture;
     gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissView)];
     [self.scrollView addGestureRecognizer:gesture];
@@ -64,8 +75,8 @@
     frame.size = size;
     self.imageView.frame = frame;
     
-    if (size.height <= 480) 
-        frame.origin.y = 480/2 - size.height/2;
+    if (size.height <= [[UIScreen mainScreen] bounds].size.height)
+        frame.origin.y = [[UIScreen mainScreen] bounds].size.height/2 - size.height/2;
     else 
         frame.origin.y = 0;
     
