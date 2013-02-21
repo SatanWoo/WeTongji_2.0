@@ -866,30 +866,6 @@
 				<object class="IBPartialClassDescription">
 					<string key="className">WUTableHeaderView</string>
 					<string key="superclassName">UIView</string>
-					<dictionary class="NSMutableDictionary" key="actions">
-						<string key="addScheduleClicked:">id</string>
-						<string key="favoriteClicked:">id</string>
-						<string key="imageClicked:">id</string>
-						<string key="likeClicked:">id</string>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="actionInfosByName">
-						<object class="IBActionInfo" key="addScheduleClicked:">
-							<string key="name">addScheduleClicked:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="favoriteClicked:">
-							<string key="name">favoriteClicked:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="imageClicked:">
-							<string key="name">imageClicked:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="likeClicked:">
-							<string key="name">likeClicked:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="addScheduleButton">UIButton</string>
 						<string key="addToScheduleBg">UIButton</string>

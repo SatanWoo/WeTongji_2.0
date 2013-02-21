@@ -23,6 +23,7 @@
 - (void)loadVisiblePages;
 @property (nonatomic ,assign) int pictureNumber;
 @property (nonatomic ,assign) CGRect originRect;
+@property (nonatomic) BOOL iphone5;
 @end
 
 @implementation UserIntroViewController
@@ -31,6 +32,17 @@
 @synthesize moveView;
 
 #pragma mark - Private Method
+
+- (BOOL) isIphone5
+{
+    CGFloat screenWidth = [[UIScreen mainScreen] bounds].size.width;
+    CGFloat screenHeight = [[UIScreen mainScreen] bounds].size.height;
+    if ((screenWidth==568)||(screenHeight==568)) {
+        return YES;
+    }
+    return NO;
+}
+
 - (void) autolayout
 {
     CGRect frame = self.moveView.frame;
@@ -47,16 +59,31 @@
     CGSize pagesScrollViewSize = self.scrollView.frame.size;
     self.scrollView.contentSize = CGSizeMake(pagesScrollViewSize.width,  (self.pageControl.numberOfPages - 1) * kPageContent + kLastContent);
     self.originRect = self.scrollView.frame;
-    UIImageView * image = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"guide_bg"]];
-    CGRect frame = image.bounds;
-    frame.origin.x = 0.0f;
-    frame.origin.y = -1 * kPageContent;
-    image.frame = frame;
-    [self.scrollView addSubview:image];
-    [self addPicture:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"guide1"]]];
-    [self addPicture:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"guide2"]]];
-    [self addPicture:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"guide3"]]];
-    [self addPicture:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"guide4"]]];
+    if ( ![self isIphone5] )
+    {
+        UIImageView * image = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"guide_bg"]];
+        CGRect frame = image.bounds;
+        frame.origin.x = 0.0f;
+        frame.origin.y = -1 * kPageContent;
+        image.frame = frame;
+        [self.scrollView addSubview:image];
+        [self addPicture:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"guide1"]]];
+        [self addPicture:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"guide2"]]];
+        [self addPicture:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"guide3"]]];
+        [self addPicture:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"guide4"]]];
+    }
+    else{
+        UIImageView * image = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"guide_bg-568h"]];
+        CGRect frame = image.bounds;
+        frame.origin.x = 0.0f;
+        frame.origin.y = -1 * kPageContent;
+        image.frame = frame;
+        [self.scrollView addSubview:image];
+        [self addPicture:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"guide1-568h"]]];
+        [self addPicture:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"guide2-568h"]]];
+        [self addPicture:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"guide3-568h"]]];
+        [self addPicture:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"guide4-568h"]]];
+    }
 }
 
 - (void)addPicture:(UIView *)image
@@ -142,7 +169,7 @@
         center.y = originRect.y + actualMove;
         self.moveView.center = center;
     }
-    if ( self.moveView.center.y > 486 )
+    if ( self.moveView.center.y > [[UIScreen mainScreen] bounds].size.height + 6 )
     {
         self.view.layer.opacity = 0.0f;
         [self.view removeFromSuperview];
