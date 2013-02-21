@@ -164,6 +164,19 @@
             return result;
         }
     }
+    [request setEntity:[NSEntityDescription entityForName:@"Event" inManagedObjectContext:context]];
+    NSPredicate *beginPredicate = [NSPredicate predicateWithFormat:@"beginTime >= %@", today];
+    NSPredicate * imagePredicate = [NSPredicate predicateWithFormat:@"imageLink <> %@",MISSING_PIC_LINK];
+    [request setPredicate:[NSCompoundPredicate andPredicateWithSubpredicates:[NSArray arrayWithObjects: beginPredicate, imagePredicate, nil]]];
+    NSSortDescriptor *sort = [[NSSortDescriptor alloc] initWithKey:@"like" ascending:YES];
+    [request setSortDescriptors:[[NSArray alloc] initWithObjects:sort , nil]];
+    NSArray *list = [context executeFetchRequest:request error:NULL];
+    if ( [list count] )
+    {
+        result = [list lastObject];
+        NSLog(@"%@",result.imageLink);
+        return result;
+    }
     return result;
 }
 
