@@ -124,7 +124,7 @@
             </objects>
             <point key="canvasLocation" x="-1195" y="-355"/>
         </scene>
-        <!--Personal Wall View Controller - 个人墙-->
+        <!--Personal Wall View Controller - 动态-->
         <scene sceneID="03E-SC-Jn2">
             <objects>
                 <viewController storyboardIdentifier="" wantsFullScreenLayout="YES" id="gt7-DQ-CTZ" customClass="PersonalWallViewController" sceneMemberID="viewController">
@@ -180,7 +180,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="个人墙" id="42b-fz-ZiF"/>
+                    <navigationItem key="navigationItem" title="动态" id="42b-fz-ZiF"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="headerBoard" destination="3gE-hE-H7r" id="gTo-JW-dzc"/>
@@ -2233,7 +2233,7 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="sR0-eS-rDJ"/>
         <segue reference="5c9-iE-HEP"/>
-        <segue reference="83Y-JL-KCk"/>
     </inferredMetricsTieBreakers>
 </document>

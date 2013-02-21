@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <archive type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="8.00">
 	<data>
-		<int key="IBDocument.SystemTarget">1536</int>
-		<string key="IBDocument.SystemVersion">11G63</string>
-		<string key="IBDocument.InterfaceBuilderVersion">2844</string>
-		<string key="IBDocument.AppKitVersion">1138.51</string>
-		<string key="IBDocument.HIToolboxVersion">569.00</string>
+		<int key="IBDocument.SystemTarget">1552</int>
+		<string key="IBDocument.SystemVersion">12C3012</string>
+		<string key="IBDocument.InterfaceBuilderVersion">3084</string>
+		<string key="IBDocument.AppKitVersion">1187.34</string>
+		<string key="IBDocument.HIToolboxVersion">625.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-			<string key="NS.object.0">1930</string>
+			<string key="NS.object.0">2083</string>
 		</object>
 		<array key="IBDocument.IntegratedClassDependencies">
 			<string>IBProxyObject</string>
@@ -42,8 +42,6 @@
 						<int key="NSvFlags">1316</int>
 						<string key="NSFrame">{{0, 107}, {320, 1}}</string>
 						<reference key="NSSuperview" ref="16818318"/>
-						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -58,7 +56,6 @@
 						<object class="NSPSMatrix" key="NSFrameMatrix"/>
 						<string key="NSFrame">{{10, 10}, {230, 44}}</string>
 						<reference key="NSSuperview" ref="16818318"/>
-						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="571912089"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -91,7 +88,6 @@
 						<object class="NSPSMatrix" key="NSFrameMatrix"/>
 						<string key="NSFrame">{{260, 12}, {53, 21}}</string>
 						<reference key="NSSuperview" ref="16818318"/>
-						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="926562711"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -132,7 +128,6 @@
 										<int key="NSvFlags">1316</int>
 										<string key="NSFrameSize">{58, 32}</string>
 										<reference key="NSSuperview" ref="818130046"/>
-										<reference key="NSWindow"/>
 										<reference key="NSNextKeyView" ref="605283833"/>
 										<string key="NSReuseIdentifierKey">_NS:9</string>
 										<bool key="IBUIUserInteractionEnabled">NO</bool>
@@ -148,7 +143,6 @@
 										<object class="NSPSMatrix" key="NSFrameMatrix"/>
 										<string key="NSFrame">{{8, 8}, {19, 16}}</string>
 										<reference key="NSSuperview" ref="818130046"/>
-										<reference key="NSWindow"/>
 										<reference key="NSNextKeyView" ref="1028792639"/>
 										<bool key="IBUIOpaque">NO</bool>
 										<bool key="IBUIUserInteractionEnabled">NO</bool>
@@ -190,7 +184,6 @@
 										<object class="NSPSMatrix" key="NSFrameMatrix"/>
 										<string key="NSFrame">{{36, 5}, {24, 21}}</string>
 										<reference key="NSSuperview" ref="818130046"/>
-										<reference key="NSWindow"/>
 										<reference key="NSNextKeyView" ref="593886187"/>
 										<bool key="IBUIOpaque">NO</bool>
 										<bool key="IBUIClipsSubviews">YES</bool>
@@ -222,7 +215,6 @@
 								<object class="NSPSMatrix" key="NSFrameMatrix"/>
 								<string key="NSFrame">{{14, 9}, {58, 32}}</string>
 								<reference key="NSSuperview" ref="926562711"/>
-								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="1008028341"/>
 								<object class="NSColor" key="IBUIBackgroundColor" id="136647697">
 									<int key="NSColorSpace">3</int>
@@ -239,7 +231,6 @@
 										<int key="NSvFlags">1316</int>
 										<string key="NSFrameSize">{58, 32}</string>
 										<reference key="NSSuperview" ref="593886187"/>
-										<reference key="NSWindow"/>
 										<reference key="NSNextKeyView" ref="288960233"/>
 										<string key="NSReuseIdentifierKey">_NS:9</string>
 										<bool key="IBUIUserInteractionEnabled">NO</bool>
@@ -252,7 +243,6 @@
 										<object class="NSPSMatrix" key="NSFrameMatrix"/>
 										<string key="NSFrame">{{8, 6}, {18, 19}}</string>
 										<reference key="NSSuperview" ref="593886187"/>
-										<reference key="NSWindow"/>
 										<reference key="NSNextKeyView" ref="825996665"/>
 										<bool key="IBUIOpaque">NO</bool>
 										<bool key="IBUIUserInteractionEnabled">NO</bool>
@@ -281,7 +271,6 @@
 										<object class="NSPSMatrix" key="NSFrameMatrix"/>
 										<string key="NSFrame">{{36, 5}, {24, 21}}</string>
 										<reference key="NSSuperview" ref="593886187"/>
-										<reference key="NSWindow"/>
 										<reference key="NSNextKeyView" ref="253835486"/>
 										<bool key="IBUIOpaque">NO</bool>
 										<bool key="IBUIClipsSubviews">YES</bool>
@@ -310,7 +299,6 @@
 								<object class="NSPSMatrix" key="NSFrameMatrix"/>
 								<string key="NSFrame">{{82, 9}, {58, 32}}</string>
 								<reference key="NSSuperview" ref="926562711"/>
-								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="870107685"/>
 								<reference key="IBUIBackgroundColor" ref="136647697"/>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -318,7 +306,6 @@
 						</array>
 						<string key="NSFrame">{{0, 55}, {170, 50}}</string>
 						<reference key="NSSuperview" ref="16818318"/>
-						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="818130046"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -327,7 +314,6 @@
 				<object class="NSPSMatrix" key="NSFrameMatrix"/>
 				<string key="NSFrameSize">{320, 105}</string>
 				<reference key="NSSuperview"/>
-				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="203977329"/>
 				<object class="NSColor" key="IBUIBackgroundColor">
 					<int key="NSColorSpace">1</int>
@@ -693,175 +679,7 @@
 			<nil key="sourceID"/>
 			<int key="maxID">133</int>
 		</object>
-		<object class="IBClassDescriber" key="IBDocument.Classes">
-			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
-				<object class="IBPartialClassDescription">
-					<string key="className">AutoResizeLabel</string>
-					<string key="superclassName">UILabel</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/AutoResizeLabel.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">WUTableHeaderView</string>
-					<string key="superclassName">UIView</string>
-					<dictionary class="NSMutableDictionary" key="outlets">
-						<string key="addScheduleButton">UIButton</string>
-						<string key="addToScheduleBg">UIButton</string>
-						<string key="buttonBoard">UIView</string>
-						<string key="eventTime">UILabel</string>
-						<string key="favoriteBackImage">UIImageView</string>
-						<string key="favoriteButton">UIButton</string>
-						<string key="favoriteButtonBg">UIButton</string>
-						<string key="favoriteNumber">UILabel</string>
-						<string key="likeBackImage">UIImageView</string>
-						<string key="likeButton">UIButton</string>
-						<string key="likeButtonBg">UIButton</string>
-						<string key="likeNumber">UILabel</string>
-						<string key="location">UILabel</string>
-						<string key="moveFavorView">UIView</string>
-						<string key="moveLikeView">UIView</string>
-						<string key="partitionline">UIImageView</string>
-						<string key="recommendBack">UIImageView</string>
-						<string key="recommendImage">UIImageView</string>
-						<string key="releaseTimeLabel">UILabel</string>
-						<string key="scheduleBackImage">UIImageView</string>
-						<string key="seeNumber">UILabel</string>
-						<string key="sourceLabel">UILabel</string>
-						<string key="starImage">UIImageView</string>
-						<string key="starName">UILabel</string>
-						<string key="starNumber">UILabel</string>
-						<string key="starSummary">UILabel</string>
-						<string key="starTitle">UILabel</string>
-						<string key="titleLabel">AutoResizeLabel</string>
-						<string key="upperHiddenView">UIView</string>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<object class="IBToOneOutletInfo" key="addScheduleButton">
-							<string key="name">addScheduleButton</string>
-							<string key="candidateClassName">UIButton</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="addToScheduleBg">
-							<string key="name">addToScheduleBg</string>
-							<string key="candidateClassName">UIButton</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="buttonBoard">
-							<string key="name">buttonBoard</string>
-							<string key="candidateClassName">UIView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="eventTime">
-							<string key="name">eventTime</string>
-							<string key="candidateClassName">UILabel</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="favoriteBackImage">
-							<string key="name">favoriteBackImage</string>
-							<string key="candidateClassName">UIImageView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="favoriteButton">
-							<string key="name">favoriteButton</string>
-							<string key="candidateClassName">UIButton</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="favoriteButtonBg">
-							<string key="name">favoriteButtonBg</string>
-							<string key="candidateClassName">UIButton</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="favoriteNumber">
-							<string key="name">favoriteNumber</string>
-							<string key="candidateClassName">UILabel</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="likeBackImage">
-							<string key="name">likeBackImage</string>
-							<string key="candidateClassName">UIImageView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="likeButton">
-							<string key="name">likeButton</string>
-							<string key="candidateClassName">UIButton</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="likeButtonBg">
-							<string key="name">likeButtonBg</string>
-							<string key="candidateClassName">UIButton</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="likeNumber">
-							<string key="name">likeNumber</string>
-							<string key="candidateClassName">UILabel</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="location">
-							<string key="name">location</string>
-							<string key="candidateClassName">UILabel</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="moveFavorView">
-							<string key="name">moveFavorView</string>
-							<string key="candidateClassName">UIView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="moveLikeView">
-							<string key="name">moveLikeView</string>
-							<string key="candidateClassName">UIView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="partitionline">
-							<string key="name">partitionline</string>
-							<string key="candidateClassName">UIImageView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="recommendBack">
-							<string key="name">recommendBack</string>
-							<string key="candidateClassName">UIImageView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="recommendImage">
-							<string key="name">recommendImage</string>
-							<string key="candidateClassName">UIImageView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="releaseTimeLabel">
-							<string key="name">releaseTimeLabel</string>
-							<string key="candidateClassName">UILabel</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="scheduleBackImage">
-							<string key="name">scheduleBackImage</string>
-							<string key="candidateClassName">UIImageView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="seeNumber">
-							<string key="name">seeNumber</string>
-							<string key="candidateClassName">UILabel</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="sourceLabel">
-							<string key="name">sourceLabel</string>
-							<string key="candidateClassName">UILabel</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="starImage">
-							<string key="name">starImage</string>
-							<string key="candidateClassName">UIImageView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="starName">
-							<string key="name">starName</string>
-							<string key="candidateClassName">UILabel</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="starNumber">
-							<string key="name">starNumber</string>
-							<string key="candidateClassName">UILabel</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="starSummary">
-							<string key="name">starSummary</string>
-							<string key="candidateClassName">UILabel</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="starTitle">
-							<string key="name">starTitle</string>
-							<string key="candidateClassName">UILabel</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="titleLabel">
-							<string key="name">titleLabel</string>
-							<string key="candidateClassName">AutoResizeLabel</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="upperHiddenView">
-							<string key="name">upperHiddenView</string>
-							<string key="candidateClassName">UIView</string>
-						</object>
-					</dictionary>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/WUTableHeaderView.h</string>
-					</object>
-				</object>
-			</array>
-		</object>
+		<object class="IBClassDescriber" key="IBDocument.Classes"/>
 		<int key="IBDocument.localizationMode">0</int>
 		<string key="IBDocument.TargetRuntimeIdentifier">IBCocoaTouchFramework</string>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
@@ -872,6 +690,6 @@
 			<string key="favourite">{16, 16}</string>
 			<string key="like">{16, 16}</string>
 		</dictionary>
-		<string key="IBCocoaTouchPluginVersion">1930</string>
+		<string key="IBCocoaTouchPluginVersion">2083</string>
 	</data>
 </archive>
