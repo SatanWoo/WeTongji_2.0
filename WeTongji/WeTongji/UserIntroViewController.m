@@ -10,8 +10,8 @@
 #import <QuartzCore/QuartzCore.h>
 #import "Macro.h"
 #import <math.h>
-#define kPageContent 460
-#define kLastContent 460
+#define kPageContent self.view.frame.size.height
+#define kLastContent self.view.frame.size.height
 #define kMoveDistance self.moveView.frame.size.height
 
 @interface UserIntroViewController ()<UIScrollViewDelegate>
@@ -31,6 +31,13 @@
 @synthesize moveView;
 
 #pragma mark - Private Method
+- (void) autolayout
+{
+    CGRect frame = self.moveView.frame;
+    frame.origin.y = self.view.frame.size.height - frame.size.height;
+    [self.moveView setFrame:frame];
+}
+
 - (void)configureScrollView
 {
     self.pageControl.currentPage = 0;
@@ -72,6 +79,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self autolayout];
     [self configureScrollView];
     originRect = self.moveView.center;
     bottomRect = self.moveView.center;

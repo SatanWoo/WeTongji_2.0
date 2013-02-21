@@ -730,19 +730,19 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" id="VeN-sM-Xzz">
-                                <rect key="frame" x="-20" y="-88" width="360" height="592"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="we_logo_reg.png" id="1Yv-KI-yCq">
-                                        <rect key="frame" x="128" y="119" width="104" height="59"/>
+                                        <rect key="frame" x="108" y="32" width="104" height="59"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="text_input.png" id="Pot-Re-ayc">
-                                        <rect key="frame" x="30" y="238" width="301" height="89"/>
+                                        <rect key="frame" x="10" y="151" width="301" height="89"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                     </imageView>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" id="6gs-nd-Asr">
-                                        <rect key="frame" x="105" y="245" width="209" height="30"/>
+                                        <rect key="frame" x="85" y="158" width="209" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
@@ -752,7 +752,7 @@
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" id="Itf-20-hYg">
-                                        <rect key="frame" x="105" y="289" width="209" height="30"/>
+                                        <rect key="frame" x="85" y="202" width="209" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
@@ -762,7 +762,7 @@
                                         </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="s7Q-cD-iWL">
-                                        <rect key="frame" x="30" y="345" width="301" height="40"/>
+                                        <rect key="frame" x="10" y="258" width="301" height="40"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" backgroundImage="login_btn.png">
@@ -777,7 +777,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="FPh-TU-kko">
-                                        <rect key="frame" x="29" y="493" width="137" height="44"/>
+                                        <rect key="frame" x="10" y="406" width="137" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" image="register_btn.png">
@@ -792,7 +792,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="IwL-kL-8Fi">
-                                        <rect key="frame" x="194" y="493" width="137" height="44"/>
+                                        <rect key="frame" x="174" y="406" width="137" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" image="directly_enter_btn.png">
@@ -807,11 +807,11 @@
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="no_account.png" id="d95-2V-ey0">
-                                        <rect key="frame" x="30" y="470" width="301" height="15"/>
+                                        <rect key="frame" x="10" y="383" width="301" height="15"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="6yM-YH-6CS">
-                                        <rect key="frame" x="33" y="195" width="22" height="23"/>
+                                        <rect key="frame" x="13" y="108" width="22" height="23"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="Button" backgroundImage="close_btn.png">
@@ -826,7 +826,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="0Gr-x2-YeB">
-                                        <rect key="frame" x="261" y="290" width="22" height="23"/>
+                                        <rect key="frame" x="241" y="203" width="22" height="23"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="Button" backgroundImage="password_forget.png">
@@ -841,7 +841,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ZIU-97-uAV">
-                                        <rect key="frame" x="29" y="96" width="41" height="41"/>
+                                        <rect key="frame" x="9" y="9" width="41" height="41"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" backgroundImage="list_btn.png">
@@ -868,9 +868,12 @@
                         <outlet property="NOTextField" destination="6gs-nd-Asr" id="vW2-Nk-1Ph"/>
                         <outlet property="closeBtn" destination="6yM-YH-6CS" id="U0o-3R-fMM"/>
                         <outlet property="navButton" destination="ZIU-97-uAV" id="QMv-It-35u"/>
+                        <outlet property="noAccountSign" destination="d95-2V-ey0" id="wwa-WE-e7Y"/>
                         <outlet property="passwordForgetBtn" destination="0Gr-x2-YeB" id="7Iw-Ff-vOc"/>
                         <outlet property="passwordTextField" destination="Itf-20-hYg" id="m8v-ZK-Aug"/>
+                        <outlet property="regButton" destination="FPh-TU-kko" id="vbJ-Nb-rfq"/>
                         <outlet property="scrollVIew" destination="VeN-sM-Xzz" id="MXF-bo-a0I"/>
+                        <outlet property="useButton" destination="IwL-kL-8Fi" id="pKn-9E-PgY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vha-ub-g5X" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2037,9 +2040,6 @@
         <class className="EditInfoViewController" superclassName="MiddleAbstractSecondViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/EditInfoViewController.h"/>
             <relationships>
-                <relationship kind="action" name="cancelEditClicked:"/>
-                <relationship kind="action" name="confirmEditClicked:"/>
-                <relationship kind="action" name="didClickAvatarButton:" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="ConfirmEditBarButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="avatar" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="cancelEditButton" candidateClass="UIBarButtonItem"/>
@@ -2072,12 +2072,17 @@
             <relationships>
                 <relationship kind="action" name="logInClick:"/>
                 <relationship kind="action" name="slide:"/>
+                <relationship kind="action" name="textDidEndEdit:"/>
+                <relationship kind="action" name="textEditDidBegin:"/>
                 <relationship kind="outlet" name="NOTextField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="closeBtn" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="navButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="noAccountSign" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="passwordForgetBtn" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="passwordTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="regButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="scrollVIew" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="useButton" candidateClass="UIButton"/>
             </relationships>
         </class>
         <class className="MiddleAbstractSecondViewController" superclassName="MiddleAbstractViewController">
@@ -2121,7 +2126,9 @@
         <class className="RegisterSecondViewController" superclassName="MiddleAbstractSecondViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/RegisterSecondViewController.h"/>
             <relationships>
+                <relationship kind="action" name="registerClicked:"/>
                 <relationship kind="action" name="showUserProtocol:"/>
+                <relationship kind="action" name="textDidEndEdit:"/>
                 <relationship kind="action" name="touchOnTextFiled:" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="confirmPassword" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="name" candidateClass="UITextField"/>
@@ -2138,6 +2145,9 @@
         </class>
         <class className="ScheduleViewController" superclassName="MiddleAbstractSecondViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ScheduleViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="todayClicked:"/>
+            </relationships>
         </class>
         <class className="SchoolNewsContactCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SchoolNewsContactCell.h"/>
@@ -2181,6 +2191,7 @@
         <class className="UpdatePasswordViewController" superclassName="MiddleAbstractSecondViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UpdatePasswordViewController.h"/>
             <relationships>
+                <relationship kind="action" name="confirm:"/>
                 <relationship kind="action" name="textDidEndEdit:"/>
                 <relationship kind="action" name="touchOnTextFiled:" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="confirm" candidateClass="UITextField"/>

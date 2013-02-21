@@ -16,6 +16,9 @@
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollVIew;
 @property (weak, nonatomic) IBOutlet UITextField *NOTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
+@property (weak, nonatomic) IBOutlet UIImageView *noAccountSign;
+@property (weak, nonatomic) IBOutlet UIButton *regButton;
+@property (weak, nonatomic) IBOutlet UIButton *useButton;
 @property (strong,nonatomic) MBProgressHUD * progress;
 - (void)configureButton;
 - (void)enableButton:(NSNotification *)notification;
@@ -35,6 +38,22 @@
     return _progress;
 }
 
+- (void)autolayout
+{
+    CGRect frame = self.scrollVIew.frame;
+    frame.size.height = self.view.frame.size.height;
+    [self.scrollVIew setFrame:frame];
+    frame = self.noAccountSign.frame;
+    frame.origin.y = self.view.frame.size.height-77;
+    [self.noAccountSign setFrame:frame];
+    frame = self.regButton.frame;
+    frame.origin.y = self.view.frame.size.height-54;
+    [self.regButton setFrame:frame];
+    frame = self.useButton.frame;
+    frame.origin.y = self.view.frame.size.height-54;
+    [self.useButton setFrame:frame];
+}
+
 - (void)configureButton
 {
     self.closeBtn.hidden = YES;
@@ -49,6 +68,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self autolayout];
     [self configureButton];
     [self.navigationItem setHidesBackButton:YES];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(enableButton:) name:kEnableInteractionNotification object:nil];
@@ -68,6 +88,9 @@
     [self setCloseBtn:nil];
     [self setPasswordForgetBtn:nil];
     [self setNavButton:nil];
+    [self setNoAccountSign:nil];
+    [self setRegButton:nil];
+    [self setUseButton:nil];
     [super viewDidUnload];
 }
 
