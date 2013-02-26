@@ -43,7 +43,6 @@
 						<string key="NSFrame">{{0, 146}, {320, 1}}</string>
 						<reference key="NSSuperview" ref="883244779"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -272,7 +271,7 @@
 										<reference key="NSNextResponder" ref="829231781"/>
 										<int key="NSvFlags">1280</int>
 										<object class="NSPSMatrix" key="NSFrameMatrix"/>
-										<string key="NSFrame">{{36, 5}, {24, 21}}</string>
+										<string key="NSFrame">{{34, 5}, {24, 21}}</string>
 										<reference key="NSSuperview" ref="829231781"/>
 										<reference key="NSWindow"/>
 										<reference key="NSNextKeyView" ref="551405642"/>
@@ -835,9 +834,9 @@
 						<int key="objectID">5</int>
 						<reference key="object" ref="829231781"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="506679636"/>
 							<reference ref="190400798"/>
 							<reference ref="449150290"/>
+							<reference ref="506679636"/>
 						</array>
 						<reference key="parent" ref="81375825"/>
 					</object>

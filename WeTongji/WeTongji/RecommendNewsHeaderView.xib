@@ -239,7 +239,7 @@
 										<reference key="NSNextResponder" ref="342411297"/>
 										<int key="NSvFlags">1280</int>
 										<object class="NSPSMatrix" key="NSFrameMatrix"/>
-										<string key="NSFrame">{{36, 5}, {24, 21}}</string>
+										<string key="NSFrame">{{33, 5}, {24, 21}}</string>
 										<reference key="NSSuperview" ref="342411297"/>
 										<reference key="NSWindow"/>
 										<reference key="NSNextKeyView" ref="134868995"/>
@@ -741,8 +741,8 @@
 						<reference key="object" ref="342411297"/>
 						<array class="NSMutableArray" key="children">
 							<reference ref="672641560"/>
-							<reference ref="947643537"/>
 							<reference ref="390618119"/>
+							<reference ref="947643537"/>
 						</array>
 						<reference key="parent" ref="1013233796"/>
 					</object>
@@ -866,6 +866,30 @@
 				<object class="IBPartialClassDescription">
 					<string key="className">WUTableHeaderView</string>
 					<string key="superclassName">UIView</string>
+					<dictionary class="NSMutableDictionary" key="actions">
+						<string key="addScheduleClicked:">id</string>
+						<string key="favoriteClicked:">id</string>
+						<string key="imageClicked:">id</string>
+						<string key="likeClicked:">id</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="actionInfosByName">
+						<object class="IBActionInfo" key="addScheduleClicked:">
+							<string key="name">addScheduleClicked:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="favoriteClicked:">
+							<string key="name">favoriteClicked:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="imageClicked:">
+							<string key="name">imageClicked:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="likeClicked:">
+							<string key="name">likeClicked:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="addScheduleButton">UIButton</string>
 						<string key="addToScheduleBg">UIButton</string>
