@@ -43,6 +43,7 @@
 						<string key="NSFrame">{{0, 107}, {320, 1}}</string>
 						<reference key="NSSuperview" ref="16818318"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -199,7 +200,7 @@
 											<integer value="320" key="IBUIAccessibilityTraits"/>
 										</object>
 										<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-										<string key="IBUIText">22</string>
+										<string key="IBUIText">222</string>
 										<object class="NSColor" key="IBUITextColor" id="163001404">
 											<int key="NSColorSpace">3</int>
 											<bytes key="NSWhite">MC4zMzMzMzMzMzMzAA</bytes>
@@ -278,7 +279,7 @@
 										<reference key="NSNextResponder" ref="593886187"/>
 										<int key="NSvFlags">1280</int>
 										<object class="NSPSMatrix" key="NSFrameMatrix"/>
-										<string key="NSFrame">{{36, 5}, {24, 21}}</string>
+										<string key="NSFrame">{{34, 6}, {24, 21}}</string>
 										<reference key="NSSuperview" ref="593886187"/>
 										<reference key="NSWindow"/>
 										<reference key="NSNextKeyView" ref="253835486"/>
@@ -290,7 +291,7 @@
 											<integer value="320" key="IBUIAccessibilityTraits"/>
 										</object>
 										<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-										<string key="IBUIText">22</string>
+										<string key="IBUIText">222</string>
 										<reference key="IBUITextColor" ref="163001404"/>
 										<nil key="IBUIHighlightedColor"/>
 										<int key="IBUIBaselineAdjustment">0</int>
@@ -594,8 +595,8 @@
 						<reference key="object" ref="593886187"/>
 						<array class="NSMutableArray" key="children">
 							<reference ref="288960233"/>
-							<reference ref="825996665"/>
 							<reference ref="870107685"/>
+							<reference ref="825996665"/>
 						</array>
 						<reference key="parent" ref="926562711"/>
 					</object>

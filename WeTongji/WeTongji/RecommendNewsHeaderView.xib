@@ -320,7 +320,7 @@
 										<reference key="NSNextResponder" ref="134868995"/>
 										<int key="NSvFlags">1280</int>
 										<object class="NSPSMatrix" key="NSFrameMatrix"/>
-										<string key="NSFrame">{{36, 5}, {24, 21}}</string>
+										<string key="NSFrame">{{34, 6}, {24, 21}}</string>
 										<reference key="NSSuperview" ref="134868995"/>
 										<reference key="NSWindow"/>
 										<reference key="NSNextKeyView" ref="406263416"/>
@@ -731,8 +731,8 @@
 						<reference key="object" ref="134868995"/>
 						<array class="NSMutableArray" key="children">
 							<reference ref="154833174"/>
-							<reference ref="425449762"/>
 							<reference ref="927499273"/>
+							<reference ref="425449762"/>
 						</array>
 						<reference key="parent" ref="1013233796"/>
 					</object>
