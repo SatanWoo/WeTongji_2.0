@@ -43,6 +43,7 @@
 						<string key="NSFrame">{{0, 146}, {320, 1}}</string>
 						<reference key="NSSuperview" ref="883244779"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -396,7 +397,7 @@
 									<object class="IBUIImageView" id="218134560">
 										<reference key="NSNextResponder" ref="234976442"/>
 										<int key="NSvFlags">1316</int>
-										<string key="NSFrame">{{-2, 0}, {104, 32}}</string>
+										<string key="NSFrame">{{-2, 0}, {72, 32}}</string>
 										<reference key="NSSuperview" ref="234976442"/>
 										<reference key="NSWindow"/>
 										<reference key="NSNextKeyView" ref="277208536"/>
@@ -445,7 +446,7 @@
 										<reference key="NSNextResponder" ref="234976442"/>
 										<int key="NSvFlags">1280</int>
 										<object class="NSPSMatrix" key="NSFrameMatrix"/>
-										<string key="NSFrame">{{32, 6}, {57, 20}}</string>
+										<string key="NSFrame">{{32, 6}, {31, 20}}</string>
 										<reference key="NSSuperview" ref="234976442"/>
 										<reference key="NSWindow"/>
 										<reference key="NSNextKeyView" ref="354443922"/>
@@ -468,7 +469,7 @@
 									</object>
 								</array>
 								<object class="NSPSMatrix" key="NSFrameMatrix"/>
-								<string key="NSFrame">{{150.5, 9}, {105, 32}}</string>
+								<string key="NSFrame">{{150, 9}, {72, 32}}</string>
 								<reference key="NSSuperview" ref="81375825"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="218134560"/>
@@ -476,7 +477,7 @@
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 							</object>
 						</array>
-						<string key="NSFrame">{{0, 97}, {273, 50}}</string>
+						<string key="NSFrame">{{0, 97}, {230, 50}}</string>
 						<reference key="NSSuperview" ref="883244779"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="829231781"/>
@@ -1023,15 +1024,25 @@
 					<string key="superclassName">UIView</string>
 					<dictionary class="NSMutableDictionary" key="actions">
 						<string key="addScheduleClicked:">id</string>
+						<string key="favoriteClicked:">id</string>
 						<string key="imageClicked:">id</string>
+						<string key="likeClicked:">id</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
 						<object class="IBActionInfo" key="addScheduleClicked:">
 							<string key="name">addScheduleClicked:</string>
 							<string key="candidateClassName">id</string>
 						</object>
+						<object class="IBActionInfo" key="favoriteClicked:">
+							<string key="name">favoriteClicked:</string>
+							<string key="candidateClassName">id</string>
+						</object>
 						<object class="IBActionInfo" key="imageClicked:">
 							<string key="name">imageClicked:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="likeClicked:">
+							<string key="name">likeClicked:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 					</dictionary>
