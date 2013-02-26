@@ -12,6 +12,7 @@
 #import <WeTongjiSDK/WeTongjiSDK.h>
 #import <CoreData/CoreData.h>
 #import "NSString+Addition.h"
+#import "proportion.h"
 
 #define DAY_TIME_INTERVAL (60 * 60 * 24)
 
@@ -33,9 +34,24 @@
     return self;
 }
 
+- (void) autolayout
+{
+    CGFloat screenWidth = [[UIScreen mainScreen] bounds].size.width;
+    CGFloat screenHeight = [[UIScreen mainScreen] bounds].size.height;
+    if ((screenWidth==568)||(screenHeight==568))
+    {
+        CGRect frame = self.rightTableView.frame;
+        frame.size.height  = frame.size.height + 88;
+        [self.rightTableView setFrame:frame];
+        frame = self.leftTableView.frame;
+        frame.size.height = frame.size.height + 88;
+        [self.leftTableView setFrame:frame];
+    }
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self autolayout];
     [self.rightTableView registerNib:[UINib nibWithNibName:@"ScheduleWeekRightTableViewCell" bundle:nil] forCellReuseIdentifier:@"ScheduleWeekRightTableViewCell"];
     [self.leftTableView registerNib:[UINib nibWithNibName:@"ScheduleWeekLeftTableViewCell" bundle:nil] forCellReuseIdentifier:@"ScheduleWeekLeftTableViewCell"];
     // Do any additional setup after loading the view from its nib.

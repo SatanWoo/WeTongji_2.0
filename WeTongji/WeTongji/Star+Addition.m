@@ -30,6 +30,7 @@
     result.images = [NSString stringWithFormat:@"%@",[[dict objectForKey:@"Images"] JSONRepresentation]];
     result.jobTitle = [NSString stringWithFormat:@"%@",[dict objectForKey:@"JobTitle"]];
     result.like = [NSNumber numberWithInt:[[dict objectForKey:@"Like"] intValue]];
+    result.favorite = [NSNumber numberWithInt:[[dict objectForKey:@"Favorite"] intValue]];
     result.count = [NSString stringWithFormat:@"%@",[dict objectForKey:@"NO"]];
     result.read = [NSNumber numberWithInt:[[dict objectForKey:@"Like"] intValue]];
     result.title = [NSString stringWithFormat:@"%@",[dict objectForKey:@"Name"]];

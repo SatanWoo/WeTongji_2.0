@@ -24,6 +24,14 @@
 
 - (void)awakeFromNib {
     self.transform = CGAffineTransformMakeRotation(M_PI_2);
+    CGFloat screenWidth = [[UIScreen mainScreen] bounds].size.width;
+    CGFloat screenHeight = [[UIScreen mainScreen] bounds].size.height;
+    if ((screenWidth==568)||(screenHeight==568))
+    {
+        CGRect frame = self.frame;
+        frame.size.height = frame.size.height;
+        [self setFrame:frame];
+    }
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated

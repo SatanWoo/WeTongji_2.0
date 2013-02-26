@@ -43,7 +43,6 @@
 						<string key="NSFrame">{{0, 146}, {320, 1}}</string>
 						<reference key="NSSuperview" ref="883244779"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -446,7 +445,7 @@
 										<reference key="NSNextResponder" ref="234976442"/>
 										<int key="NSvFlags">1280</int>
 										<object class="NSPSMatrix" key="NSFrameMatrix"/>
-										<string key="NSFrame">{{32, 6}, {70, 20}}</string>
+										<string key="NSFrame">{{32, 6}, {57, 20}}</string>
 										<reference key="NSSuperview" ref="234976442"/>
 										<reference key="NSWindow"/>
 										<reference key="NSNextKeyView" ref="354443922"/>
@@ -1024,25 +1023,15 @@
 					<string key="superclassName">UIView</string>
 					<dictionary class="NSMutableDictionary" key="actions">
 						<string key="addScheduleClicked:">id</string>
-						<string key="favoriteClicked:">id</string>
 						<string key="imageClicked:">id</string>
-						<string key="likeClicked:">id</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
 						<object class="IBActionInfo" key="addScheduleClicked:">
 							<string key="name">addScheduleClicked:</string>
 							<string key="candidateClassName">id</string>
 						</object>
-						<object class="IBActionInfo" key="favoriteClicked:">
-							<string key="name">favoriteClicked:</string>
-							<string key="candidateClassName">id</string>
-						</object>
 						<object class="IBActionInfo" key="imageClicked:">
 							<string key="name">imageClicked:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="likeClicked:">
-							<string key="name">likeClicked:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 					</dictionary>
@@ -1208,7 +1197,7 @@
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
 			<string key="add_to_schedule">{16, 16}</string>
-			<string key="btn_long_bg.png">{95, 29}</string>
+			<string key="btn_long_bg.png">{72, 29}</string>
 			<string key="btn_short_bg.png">{58, 29}</string>
 			<string key="detail_partition_line.png">{320, 1}</string>
 			<string key="favourite">{16, 16}</string>

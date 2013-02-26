@@ -10,8 +10,8 @@
 #import "CoreDataViewController.h"
 #import "ScheduleWeekLeftTableView.h"
 
-#define BEGIN_HOUR  8
-#define END_HOUR    21
+#define BEGIN_HOUR  5
+#define END_HOUR    22
 #define LEFT_TABLE_VIEW_ROW_COUNT   (END_HOUR - BEGIN_HOUR + 1)
 
 @interface ScheduleWeekViewController : CoreDataViewController<UITableViewDataSource, UITableViewDelegate, ScheduleWeekLeftTableViewDelegate> 

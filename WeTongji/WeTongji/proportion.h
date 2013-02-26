@@ -10,4 +10,6 @@
 
 @interface proportion : NSObject
 
++(float) proportion;
+
 @end
