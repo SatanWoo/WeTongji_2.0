@@ -270,7 +270,7 @@
                                    Star *star = [Star insertStarWithDict:starDict inManagedObjectContext:self.managedObjectContext];
                                    star.hiden = [NSNumber numberWithBool:NO];
                                }
-
+                               [self configureTodayRecommend];
                                [self.scheduleTableView reloadData];
                            }
                             failureBlock:^(NSError * error)
