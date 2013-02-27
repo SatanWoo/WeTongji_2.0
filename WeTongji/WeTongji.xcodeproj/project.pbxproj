@@ -155,8 +155,6 @@
 		0398838A165D395500A31620 /* UpdatePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03988389165D395500A31620 /* UpdatePasswordViewController.m */; };
 		0398838D165D39F100A31620 /* change_password_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 0398838B165D39F100A31620 /* change_password_btn.png */; };
 		0398838E165D39F100A31620 /* change_password_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0398838C165D39F100A31620 /* change_password_btn@2x.png */; };
-		03B3D033169DC86C000F2B05 /* vacation_mark.png in Resources */ = {isa = PBXBuildFile; fileRef = 03B3D031169DC86C000F2B05 /* vacation_mark.png */; };
-		03B3D034169DC86C000F2B05 /* vacation_mark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 03B3D032169DC86C000F2B05 /* vacation_mark@2x.png */; };
 		03BAB361164FD01B0049DA19 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = 03BAB35D164FD01B0049DA19 /* iTunesArtwork.png */; };
 		03BAB393164FDB620049DA19 /* bottom_bar.png in Resources */ = {isa = PBXBuildFile; fileRef = 03BAB389164FDB620049DA19 /* bottom_bar.png */; };
 		03BAB394164FDB620049DA19 /* bottom_bar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 03BAB38A164FDB620049DA19 /* bottom_bar@2x.png */; };
@@ -239,6 +237,9 @@
 		321DF95A16D5D5A5008C590E /* guide3-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 321DF95516D5D5A5008C590E /* guide3-568h@2x.png */; };
 		321DF95B16D5D5A5008C590E /* guide4-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 321DF95616D5D5A5008C590E /* guide4-568h@2x.png */; };
 		32201DF216D9DE040029768B /* proportion.m in Sources */ = {isa = PBXBuildFile; fileRef = 32201DF116D9DE040029768B /* proportion.m */; };
+		322E724516DDC8F40042C00F /* arrange_remind_bg-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 322E724416DDC8F40042C00F /* arrange_remind_bg-568h@2x.png */; };
+		322E724816DDC92A0042C00F /* vacation_mark.png in Resources */ = {isa = PBXBuildFile; fileRef = 322E724616DDC92A0042C00F /* vacation_mark.png */; };
+		322E724916DDC92A0042C00F /* vacation_mark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 322E724716DDC92A0042C00F /* vacation_mark@2x.png */; };
 		326DB6F716DCA3AC00EAC02C /* btn_long_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 326DB6F516DCA3AC00EAC02C /* btn_long_bg.png */; };
 		326DB6F816DCA3AC00EAC02C /* btn_long_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 326DB6F616DCA3AC00EAC02C /* btn_long_bg@2x.png */; };
 		326DB6FB16DCA3EB00EAC02C /* btn_long_bg_hl.png in Resources */ = {isa = PBXBuildFile; fileRef = 326DB6F916DCA3EB00EAC02C /* btn_long_bg_hl.png */; };
@@ -616,16 +617,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		B76A777E16DD0C1E007261B1 /* PBXContainerItemProxy */ = {
+		322E724016DDBD8D0042C00F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = B76A777A16DD0C1E007261B1 /* WeTongjiSDK.xcodeproj */;
+			containerPortal = 322E723C16DDBD8D0042C00F /* WeTongjiSDK.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = E110DF2B16365B990087EA46;
 			remoteInfo = WeTongjiSDK;
 		};
-		B76A778016DD0C24007261B1 /* PBXContainerItemProxy */ = {
+		322E724216DDBD990042C00F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = B76A777A16DD0C1E007261B1 /* WeTongjiSDK.xcodeproj */;
+			containerPortal = 322E723C16DDBD8D0042C00F /* WeTongjiSDK.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = E110DF2A16365B990087EA46;
 			remoteInfo = WeTongjiSDK;
@@ -793,8 +794,6 @@
 		03988389165D395500A31620 /* UpdatePasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdatePasswordViewController.m; sourceTree = "<group>"; };
 		0398838B165D39F100A31620 /* change_password_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = change_password_btn.png; sourceTree = "<group>"; };
 		0398838C165D39F100A31620 /* change_password_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "change_password_btn@2x.png"; sourceTree = "<group>"; };
-		03B3D031169DC86C000F2B05 /* vacation_mark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vacation_mark.png; sourceTree = "<group>"; };
-		03B3D032169DC86C000F2B05 /* vacation_mark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "vacation_mark@2x.png"; sourceTree = "<group>"; };
 		03BAB35A164FD01B0049DA19 /* Icon-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-57.png"; sourceTree = "<group>"; };
 		03BAB35B164FD01B0049DA19 /* Icon-Small-58@2x.png.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-58@2x.png.png"; sourceTree = "<group>"; };
 		03BAB35C164FD01B0049DA19 /* Icon@2x.png.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png.png"; sourceTree = "<group>"; };
@@ -896,6 +895,10 @@
 		321DF95616D5D5A5008C590E /* guide4-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "guide4-568h@2x.png"; sourceTree = "<group>"; };
 		32201DF016D9DE040029768B /* proportion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = proportion.h; sourceTree = "<group>"; };
 		32201DF116D9DE040029768B /* proportion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = proportion.m; sourceTree = "<group>"; };
+		322E723C16DDBD8D0042C00F /* WeTongjiSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = WeTongjiSDK.xcodeproj; path = ../../WeTongjiSDK/WeTongjiSDK.xcodeproj; sourceTree = "<group>"; };
+		322E724416DDC8F40042C00F /* arrange_remind_bg-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrange_remind_bg-568h@2x.png"; sourceTree = "<group>"; };
+		322E724616DDC92A0042C00F /* vacation_mark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vacation_mark.png; sourceTree = "<group>"; };
+		322E724716DDC92A0042C00F /* vacation_mark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "vacation_mark@2x.png"; sourceTree = "<group>"; };
 		326DB6F516DCA3AC00EAC02C /* btn_long_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_long_bg.png; sourceTree = "<group>"; };
 		326DB6F616DCA3AC00EAC02C /* btn_long_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_long_bg@2x.png"; sourceTree = "<group>"; };
 		326DB6F916DCA3EB00EAC02C /* btn_long_bg_hl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_long_bg_hl.png; sourceTree = "<group>"; };
@@ -994,7 +997,6 @@
 		B00D6941162CFDDE00592B1D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		B00D6948162D03EA00592B1D /* WUSlideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WUSlideViewController.h; sourceTree = "<group>"; };
 		B00D6949162D03EA00592B1D /* WUSlideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WUSlideViewController.m; sourceTree = "<group>"; };
-		B76A777A16DD0C1E007261B1 /* WeTongjiSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = WeTongjiSDK.xcodeproj; path = ../../wetongji_ios_sdk/WeTongjiSDK.xcodeproj; sourceTree = "<group>"; };
 		E514583616463F0100533761 /* WUScrollBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WUScrollBackgroundView.h; sourceTree = "<group>"; };
 		E514583716463F0100533761 /* WUScrollBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WUScrollBackgroundView.m; sourceTree = "<group>"; };
 		E514583816463F0100533761 /* WUTapImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WUTapImageView.h; sourceTree = "<group>"; };
@@ -1582,8 +1584,8 @@
 		038F9943169DAB9E00139544 /* Arrangement */ = {
 			isa = PBXGroup;
 			children = (
-				03B3D031169DC86C000F2B05 /* vacation_mark.png */,
-				03B3D032169DC86C000F2B05 /* vacation_mark@2x.png */,
+				322E724616DDC92A0042C00F /* vacation_mark.png */,
+				322E724716DDC92A0042C00F /* vacation_mark@2x.png */,
 			);
 			name = Arrangement;
 			sourceTree = "<group>";
@@ -1740,6 +1742,14 @@
 			name = WeeklyPerson;
 			sourceTree = "<group>";
 		};
+		322E723D16DDBD8D0042C00F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				322E724116DDBD8D0042C00F /* WeTongjiSDK.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		B00B6391162FCDB300AD7712 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
@@ -1758,7 +1768,7 @@
 		B00D6911162CFCAC00592B1D = {
 			isa = PBXGroup;
 			children = (
-				B76A777A16DD0C1E007261B1 /* WeTongjiSDK.xcodeproj */,
+				322E723C16DDBD8D0042C00F /* WeTongjiSDK.xcodeproj */,
 				5CE9BAD11670C1140087E6B2 /* Default.png */,
 				5CE9BAD21670C1140087E6B2 /* Default@2x.png */,
 				5CE9BAE11670C8620087E6B2 /* Icon-57.png */,
@@ -1866,14 +1876,6 @@
 				FFBEB29D164B6F1B0004AF4C /* CoreDataViewController.m */,
 			);
 			name = ViewController;
-			sourceTree = "<group>";
-		};
-		B76A777B16DD0C1E007261B1 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				B76A777F16DD0C1E007261B1 /* WeTongjiSDK.framework */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		E514583416463EC600533761 /* UIButton */ = {
@@ -2058,6 +2060,7 @@
 				E5D244961647CD2500DA43DD /* arrange_cell_bg@2x.png */,
 				E5D244971647CD2500DA43DD /* arrange_remind_bg.png */,
 				E5D244981647CD2600DA43DD /* arrange_remind_bg@2x.png */,
+				322E724416DDC8F40042C00F /* arrange_remind_bg-568h@2x.png */,
 				E5145881164645FF00533761 /* dot_blue.png */,
 				E5145882164645FF00533761 /* dot_blue@2x.png */,
 				E5145883164645FF00533761 /* dot_gray.png */,
@@ -2687,7 +2690,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				B76A778116DD0C24007261B1 /* PBXTargetDependency */,
+				322E724316DDBD990042C00F /* PBXTargetDependency */,
 			);
 			name = WeTongji;
 			productName = WeTongji;
@@ -2714,8 +2717,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = B76A777B16DD0C1E007261B1 /* Products */;
-					ProjectRef = B76A777A16DD0C1E007261B1 /* WeTongjiSDK.xcodeproj */;
+					ProductGroup = 322E723D16DDBD8D0042C00F /* Products */;
+					ProjectRef = 322E723C16DDBD8D0042C00F /* WeTongjiSDK.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -2726,11 +2729,11 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		B76A777F16DD0C1E007261B1 /* WeTongjiSDK.framework */ = {
+		322E724116DDBD8D0042C00F /* WeTongjiSDK.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = WeTongjiSDK.framework;
-			remoteRef = B76A777E16DD0C1E007261B1 /* PBXContainerItemProxy */;
+			remoteRef = 322E724016DDBD8D0042C00F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -3196,8 +3199,6 @@
 				03435A7416985947006AE436 /* texture.png in Resources */,
 				03435A7516985947006AE436 /* texture@2x.png in Resources */,
 				033780C7169DB9D60082BE02 /* WinterVacationFooterView.xib in Resources */,
-				03B3D033169DC86C000F2B05 /* vacation_mark.png in Resources */,
-				03B3D034169DC86C000F2B05 /* vacation_mark@2x.png in Resources */,
 				321DF95016D5CC9B008C590E /* Default-568h@2x.png in Resources */,
 				321DF95716D5D5A5008C590E /* guide_bg-568h@2x.png in Resources */,
 				321DF95816D5D5A5008C590E /* guide1-568h@2x.png in Resources */,
@@ -3215,6 +3216,9 @@
 				32E032A016DD0540008EE8AB /* tonggao_sl@2x.png in Resources */,
 				32E032A116DD0540008EE8AB /* tonggao_un.png in Resources */,
 				32E032A216DD0540008EE8AB /* tonggao_un@2x.png in Resources */,
+				322E724516DDC8F40042C00F /* arrange_remind_bg-568h@2x.png in Resources */,
+				322E724816DDC92A0042C00F /* vacation_mark.png in Resources */,
+				322E724916DDC92A0042C00F /* vacation_mark@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3351,10 +3355,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		B76A778116DD0C24007261B1 /* PBXTargetDependency */ = {
+		322E724316DDBD990042C00F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = WeTongjiSDK;
-			targetProxy = B76A778016DD0C24007261B1 /* PBXContainerItemProxy */;
+			targetProxy = 322E724216DDBD990042C00F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

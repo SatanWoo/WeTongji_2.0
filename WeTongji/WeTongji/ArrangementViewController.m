@@ -158,9 +158,24 @@
 }
 
 #pragma mark - Life Cycle
+
+- (void)autolayout
+{
+    UIImageView * imageView = [[UIImageView alloc] initWithFrame:self.view.bounds];
+    CGFloat screenWidth = [[UIScreen mainScreen] bounds].size.width;
+    CGFloat screenHeight = [[UIScreen mainScreen] bounds].size.height;
+    if ((screenWidth==568)||(screenHeight==568)) {
+        [imageView setImage:[UIImage imageNamed:@"arrange_remind_bg-568h"]];
+    } else {
+        [imageView setImage:[UIImage imageNamed:@"arrange_remind_bg"]];
+    }
+    [self.view insertSubview:imageView belowSubview:self.arrangementTableView];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self autolayout];
     [self configureTableView];
 }
 
