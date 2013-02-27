@@ -152,6 +152,7 @@
     
     if ([[NSDate date] compare:[NSUserDefaults getCurrentSemesterEndDate]] < 0) {
         self.arrangementTableView.tableFooterView = [[[NSBundle mainBundle] loadNibNamed:@"WinterVacationFooterView" owner:self options:nil] objectAtIndex:0];
+        [self.arrangementTableView.tableHeaderView setBackgroundColor:[UIColor clearColor]];
     }
     
     [self.arrangementTableView reloadData];
