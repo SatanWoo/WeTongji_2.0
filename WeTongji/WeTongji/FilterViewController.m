@@ -73,11 +73,13 @@
 -(void)showFilterView
 {
     if ( _isFilterViewAppear ) return;
+    [self.contentView bringSubviewToFront:self.shadowView];
     [self.view setHidden:NO];
     [self.shadowView setHidden:NO];
     [UIView animateWithDuration:0.3f animations:^{
-        UIView * view = self.contentView;
-        [view setFrame:CGRectMake(view.frame.origin.x, view.frame.origin.y+self.view.bounds.size.height, view.frame.size.width, view.frame.size.height)];
+        CGPoint center = self.contentView.center;
+        center.y = center.y + self.view.bounds.size.height;
+        [self.contentView setCenter:center];
         [self.shadowView setAlpha:0.6];
     } completion:^(BOOL isFinished){
         if (isFinished)
@@ -91,8 +93,9 @@
 {
     if ( !_isFilterViewAppear ) return;
     [UIView animateWithDuration:0.3f animations:^{
-        UIView * view = self.contentView;
-        [view setFrame:CGRectMake(view.frame.origin.x, view.frame.origin.y-self.view.bounds.size.height, view.frame.size.width, view.frame.size.height)];
+        CGPoint center = self.contentView.center;
+        center.y = center.y - self.view.bounds.size.height;
+        [self.contentView setCenter:center];
         [self.shadowView setAlpha:0.0];
     } completion:^(BOOL isFinished){
         if (isFinished)
