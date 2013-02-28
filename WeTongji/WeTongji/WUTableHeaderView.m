@@ -235,9 +235,9 @@
                                    self.likeNumber.text = [NSString stringWithFormat:@"%@",self.information.like];
                                if ( self.star )
                                    self.likeNumber.text = [NSString stringWithFormat:@"%@",self.star.like];
-                               //self.event.canLike = [NSNumber numberWithBool:!self.event.canLike.boolValue];
-                               //self.information.canLike = [NSNumber numberWithBool:!self.information.canLike.boolValue];
-                               //self.star.canLike = [NSNumber numberWithBool:!self.star.canLike.boolValue];
+                               self.event.canLike = [NSNumber numberWithBool:!self.event.canLike.boolValue];
+                               self.information.canLike = [NSNumber numberWithBool:!self.information.canLike.boolValue];
+                               self.star.canLike = [NSNumber numberWithBool:!self.star.canLike.boolValue];
                                [self.likeButton setImage:[UIImage imageNamed:purposeImage] forState:UIControlStateNormal];
                            }
                             failureBlock:^(NSError * error)
