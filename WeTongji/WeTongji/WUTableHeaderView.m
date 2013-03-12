@@ -277,8 +277,6 @@
     }
     if ( self.star )
     {
-        self.star.canLike = [NSNumber numberWithBool:!self.star.canLike.boolValue];
-        NSLog(@"Now self.star.cankie is %d",self.star.canLike.boolValue);
         if ( [self.star.canLike boolValue] )
         {
             [request likeStar:self.star.starId];
